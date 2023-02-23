@@ -17,6 +17,7 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "sideEffects": false,
+  "private": false,
   "license": "MIT",
   "files": [
     "dist/**"
