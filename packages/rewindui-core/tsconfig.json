@@ -1,0 +1,11 @@
+{
+  "extends": "@rewindui/tsconfig/react-library.json",
+  "include": ["."],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@theme/*": ["./src/theme/*"],
+    }
+  }
+}
