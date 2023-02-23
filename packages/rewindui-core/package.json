@@ -42,6 +42,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@tabler/icons": "^2.5.0",
     "class-variance-authority": "^0.4.0"
   },
   "peerDependencies": {

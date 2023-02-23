@@ -1,3 +1,4 @@
+import { buttonVariants } from '@theme/variants/Button.variants';
 import { createContext, useContext } from 'react';
 import { textVariants } from './variants';
 
@@ -7,11 +8,13 @@ export type Variant = {
 
 type VariantComponents = {
   Text: typeof textVariants;
+  Button: typeof buttonVariants;
 };
 
 const defaultVariant: Variant = {
   components: {
     Text: textVariants,
+    Button: buttonVariants,
   },
 };
 

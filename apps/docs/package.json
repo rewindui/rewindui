@@ -10,9 +10,10 @@
   },
   "dependencies": {
     "@rewindui/rewindui-core": "workspace:*",
+    "@tabler/icons": "^1.109.0",
+    "class-variance-authority": "^0.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "class-variance-authority": "^0.4.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@rewindui/tsconfig": "workspace:*",
@@ -25,9 +26,9 @@
     "@vitejs/plugin-react": "^1.3.2",
     "autoprefixer": "^10.4.13",
     "eslint-config-rewindui": "workspace:*",
-    "tailwind-config-rewindui": "workspace:*",
     "postcss": "^8.4.21",
     "serve": "^13.0.4",
+    "tailwind-config-rewindui": "workspace:*",
     "tailwindcss": "^3.2.7",
     "typescript": "^4.9.3",
     "vite": "^2.9.15"

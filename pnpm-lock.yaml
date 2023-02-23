@@ -26,6 +26,7 @@ importers:
       '@storybook/addon-links': ^6.5.14
       '@storybook/builder-vite': ^0.1.41
       '@storybook/react': ^6.5.14
+      '@tabler/icons': ^1.109.0
       '@vitejs/plugin-react': ^1.3.2
       autoprefixer: ^10.4.13
       class-variance-authority: ^0.4.0
@@ -40,6 +41,7 @@ importers:
       vite: ^2.9.15
     dependencies:
       '@rewindui/rewindui-core': link:../../packages/rewindui-core
+      '@tabler/icons': 1.119.0_biqbaboplfbrettd7655fr4n2y
       class-variance-authority: 0.4.0_typescript@4.9.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -78,6 +80,7 @@ importers:
   packages/rewindui-core:
     specifiers:
       '@rewindui/tsconfig': workspace:*
+      '@tabler/icons': ^2.5.0
       '@types/react': ^18.0.9
       '@types/react-dom': ^18.0.4
       class-variance-authority: ^0.4.0
@@ -88,6 +91,7 @@ importers:
       typescript: ^4.5.3
       vitest: ^0.28.5
     dependencies:
+      '@tabler/icons': 2.5.0
       class-variance-authority: 0.4.0_typescript@4.9.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -3733,6 +3737,25 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.4.1
+    dev: false
+
+  /@tabler/icons/1.119.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Fk3Qq4w2SXcTjc/n1cuL5bccPkylrOMo7cYpQIf/yw6zP76LQV9dtLcHQUjFiUnaYuswR645CnURIhlafyAh9g==}
+    peerDependencies:
+      react: ^16.x || 17.x || 18.x
+      react-dom: ^16.x || 17.x || 18.x
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@tabler/icons/2.5.0:
+    resolution: {integrity: sha512-gQceaW6itR2Wna2Kqcrxz3gm2cNxwg/DCgT17W1N9la4Iri1r9g681uO2LryDskGXfs71Trhd3CtrED/T6dzUQ==}
     dev: false
 
   /@types/chai-subset/1.3.3:

@@ -10,7 +10,7 @@ import { Text } from '@rewindui/rewindui-core';
 import { TextVariants } from '@rewindui/rewindui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { View, ViewGroup } from '../components/View';
+import { EnhancedView, View, ViewGroup } from '../components/View';
 
 const shortSentence =
   'The cat lazily stretched out on the sun-soaked windowsill, basking in the warmth of the afternoon sun.';
@@ -57,19 +57,7 @@ const sizes: TextSize[] = [
   '9xl',
 ];
 
-const variants: TextVariants[] = [
-  'd1',
-  'd2',
-  'd3',
-  'd4',
-  'h1',
-  'h2',
-  'h3',
-  'h4',
-  'h5',
-  'h6',
-  'p',
-];
+const variants: TextVariants[] = ['d1', 'd2', 'd3', 'd4', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
 
 const leadings: TextLeading[] = [
   '3',
@@ -88,14 +76,7 @@ const leadings: TextLeading[] = [
   'loose',
 ];
 
-const trackings: TextTracking[] = [
-  'tighter',
-  'tight',
-  'normal',
-  'wide',
-  'wider',
-  'widest',
-];
+const trackings: TextTracking[] = ['tighter', 'tight', 'normal', 'wide', 'wider', 'widest'];
 
 const glossaries = {
   variants: {
@@ -119,7 +100,7 @@ const meta: Meta = {
   argTypes: {
     variant: {
       options: variants,
-      control: { type: 'radio' },
+      control: { type: 'select' },
     },
     color: {
       options: colors,
@@ -127,19 +108,19 @@ const meta: Meta = {
     },
     weight: {
       options: weights,
-      control: { type: 'radio' },
+      control: { type: 'select' },
     },
     size: {
       options: sizes,
-      control: { type: 'radio' },
+      control: { type: 'select' },
     },
     tracking: {
       options: trackings,
-      control: { type: 'radio' },
+      control: { type: 'select' },
     },
     leading: {
       options: leadings,
-      control: { type: 'radio' },
+      control: { type: 'select' },
     },
     as: {
       table: {
@@ -161,17 +142,13 @@ export default meta;
 
 const DefaultTemplate: Story<TextProps> = (args) => {
   return (
-    <View prop="Default">
+    <EnhancedView prop="Default">
       <Text {...args}>{longText}</Text>
-    </View>
+    </EnhancedView>
   );
 };
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
-export const Default = DefaultTemplate.bind({
-  color: 'gray',
-});
+export const Default = DefaultTemplate.bind({});
 
 const VariantTemplate: Story<TextProps> = (args) => {
   const items = variants.map((variant) => (
