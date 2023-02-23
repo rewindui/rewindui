@@ -1,5 +1,11 @@
 # @rewindui/rewindui-core
 
+## 0.4.0
+
+### Minor Changes
+
+- 1516b57: Added Button and Spinner components
+
 ## 0.3.2
 
 ### Patch Changes
