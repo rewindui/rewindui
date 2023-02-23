@@ -15,10 +15,7 @@ export const Text: TextComponent = forwardRef(
     props: PolymorphicComponentProp<C, TextProps>,
     ref?: PolymorphicRef<C>
   ) => {
-    const variant = useComponentVariant(
-      'Text',
-      props.variant
-    ) as Partial<TextProps>;
+    const variant = useComponentVariant('Text', props.variant) as Partial<TextProps>;
     const theme = useComponentTheme('Text');
     const {
       as,
