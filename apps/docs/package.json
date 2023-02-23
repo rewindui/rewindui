@@ -1,6 +1,6 @@
 {
   "name": "@rewindui/docs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 6006",
@@ -9,7 +9,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
-    "@rewindui/core": "workspace:*",
+    "@rewindui/rewindui-core": "workspace:*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "class-variance-authority": "^0.4.0"
