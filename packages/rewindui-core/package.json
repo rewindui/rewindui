@@ -1,6 +1,6 @@
 {
   "name": "@rewindui/rewindui-core",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "RewindUI Core",
   "keywords": [
     "rewindui",
@@ -27,7 +27,7 @@
     "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
-    "test":  "vitest run"
+    "test": "vitest run"
   },
   "devDependencies": {
     "@rewindui/tsconfig": "workspace:*",
