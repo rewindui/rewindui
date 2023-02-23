@@ -1,6 +1,18 @@
 {
-  "name": "@rewindui/core",
-  "version": "0.0.0",
+  "name": "@rewindui/rewindui-core",
+  "version": "0.1.0",
+  "description": "RewindUI Core",
+  "keywords": [
+    "rewindui",
+    "react",
+    "ui",
+    "components",
+    "tailwindcss",
+    "typescript",
+    "javascript",
+    "framework"
+  ],
+  "author": "Nick Dunas",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

@@ -1,6 +1,6 @@
 {
   "name": "@rewindui/docs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 6006",
