@@ -1,10 +1,10 @@
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
-import React, { ElementType, forwardRef, useMemo } from 'react';
+import { ElementType, forwardRef, useMemo } from 'react';
+import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
 import { TextComponent, TextProps } from './Text.types';
-import { PolymorphicRef, PolymorphicComponentProp } from '@rewindui/types';
 
-const defaultProps: TextProps = {
+const defaultProps: Partial<TextProps> = {
   size: 'base',
   color: 'dark',
   weight: 'normal',
@@ -15,7 +15,10 @@ export const Text: TextComponent = forwardRef(
     props: PolymorphicComponentProp<C, TextProps>,
     ref?: PolymorphicRef<C>
   ) => {
-    const variant = useComponentVariant('Text', props.variant);
+    const variant = useComponentVariant(
+      'Text',
+      props.variant
+    ) as Partial<TextProps>;
     const theme = useComponentTheme('Text');
     const {
       as,
@@ -23,8 +26,8 @@ export const Text: TextComponent = forwardRef(
       className = '',
       color,
       leading,
-      tracking,
       size,
+      tracking,
       weight,
       ...additionalProps
     } = {

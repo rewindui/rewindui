@@ -1,4 +1,5 @@
-export { AsProp } from './polymorphic.types';
-export { PolymorphicRef } from './polymorphic.types';
-export { PolymorphicComponentProp } from './polymorphic.types';
-export { PolymorphicComponentPropWithRef } from './polymorphic.types';
+export type {
+  PolymorphicComponentProp,
+  PolymorphicComponentPropWithRef,
+  PolymorphicRef,
+} from './polymorphic.types';

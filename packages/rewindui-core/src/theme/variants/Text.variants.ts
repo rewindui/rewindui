@@ -1,5 +1,5 @@
 import { TextProps, TextVariants } from '@components/Text';
-import { AsProp } from '@rewindui/types';
+import { AsProp } from '../../types/polymorphic.types';
 
 export const textVariants: Record<TextVariants, TextProps & AsProp<any>> = {
   d1: {

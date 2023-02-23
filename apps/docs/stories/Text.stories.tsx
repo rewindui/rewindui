@@ -5,9 +5,9 @@ import {
   TextSize,
   TextTracking,
   TextWeight,
-} from '@rewindui/core';
-import { Text } from '@rewindui/core';
-import { TextVariants } from '@rewindui/core/src/components/Text/Text.types';
+} from '@rewindui/rewindui-core';
+import { Text } from '@rewindui/rewindui-core';
+import { TextVariants } from '@rewindui/rewindui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { View, ViewGroup } from '../components/View';
