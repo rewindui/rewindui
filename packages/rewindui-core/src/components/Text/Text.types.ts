@@ -1,6 +1,5 @@
-import { textVariants } from '@theme/variants';
 import { ElementType, ReactElement } from 'react';
-import { PolymorphicComponentPropWithRef } from '@rewindui/types';
+import { PolymorphicComponentPropWithRef } from '../../types';
 
 export type TextSize =
   | 'xs'
