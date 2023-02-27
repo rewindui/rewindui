@@ -1,4 +1,4 @@
-import React from 'react';
+import { ElementType, ReactElement } from 'react';
 import { PolymorphicComponentPropWithRef } from '../../types';
 
 export type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
@@ -51,14 +51,14 @@ export type ButtonProps = {
   withRing?: boolean;
 };
 
-type PolymorphicButtonProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<
+type PolymorphicButtonProps<C extends ElementType> = PolymorphicComponentPropWithRef<
   C,
   ButtonProps
 >;
 
-type PolymorphicButtonComponent = <C extends React.ElementType = 'button'>(
+type PolymorphicButtonComponent = <C extends ElementType = 'button'>(
   props: PolymorphicButtonProps<C>
-) => React.ReactElement | null;
+) => ReactElement | null;
 
 export type ButtonComponent = PolymorphicButtonComponent & {
   displayName?: string;

@@ -1,5 +1,6 @@
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
+import { usePropId } from '@utils/usePropId';
 import { ElementType, forwardRef, useMemo } from 'react';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
 import { TextComponent, TextProps } from './Text.types';
@@ -32,13 +33,23 @@ export const Text: TextComponent = forwardRef(
       ...variant,
       ...props,
     };
-    const Component = as || 'span';
+
     const classes = useMemo(() => {
-      return theme({ size, color, weight, leading, tracking, className });
-    }, [theme, size, color, weight, leading, tracking, className]);
+      return theme({
+        className,
+        color,
+        leading,
+        size,
+        tracking,
+        weight,
+      });
+    }, [className, color, leading, size, theme, tracking, weight]);
+
+    const Component = as || 'span';
+    const id = usePropId(props.id);
 
     return (
-      <Component ref={ref} className={classes} {...additionalProps}>
+      <Component id={id} ref={ref} className={classes} {...additionalProps}>
         {children}
       </Component>
     );
