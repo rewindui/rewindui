@@ -31,11 +31,14 @@
   },
   "devDependencies": {
     "@rewindui/tsconfig": "workspace:*",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
     "eslint": "^8.15.0",
+    "happy-dom": "^8.9.0",
     "tsup": "^5.10.1",
     "typescript": "^4.5.3",
+    "vite-tsconfig-paths": "^4.0.5",
     "vitest": "^0.28.5"
   },
   "publishConfig": {
