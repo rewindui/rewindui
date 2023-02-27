@@ -1,5 +1,11 @@
 # @rewindui/rewindui-core
 
+## 0.4.1
+
+### Patch Changes
+
+- 0cad74a: button styles updates and dependencies updates
+
 ## 0.4.0
 
 ### Minor Changes
