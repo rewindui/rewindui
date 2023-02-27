@@ -46,6 +46,10 @@ const meta: Meta = {
       options: tones,
       control: { type: 'select' },
     },
+    variant: {
+      options: variants,
+      control: { type: 'select' },
+    },
     color: {
       options: colors,
       control: { type: 'select' },

@@ -84,23 +84,12 @@ export const Button: ButtonComponent = forwardRef(
       className,
     ]);
     // const chevronClasses = withChevron ? chevronStyles({ open, size, chevronRotation }) : '';
-    const spinnerClasses = loading ? theme.spinner({ color, size, tone }) : '';
+    const spinnerClasses = loading ? theme.spinner({ size }) : '';
 
     const Component = as || 'button';
     const id = usePropId(props.id);
     const title = props.title || '';
     const type = props.type || 'button';
-    const spinnerColors = {
-      white: 'gray',
-      blue: 'white',
-      red: 'white',
-      green: 'white',
-      yellow: 'white',
-      purple: 'white',
-      gray: 'gray',
-      dark: 'white',
-      black: 'white',
-    } as const;
 
     return (
       <Component

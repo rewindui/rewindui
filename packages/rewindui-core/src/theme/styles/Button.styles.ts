@@ -638,83 +638,15 @@ const chevronStyles = cva([], {
   ],
 });
 
-const buttonSpinnerStyles = cva(['-ml-1', 'mr-2'], {
+const buttonSpinnerStyles = cva(['-ml-1', 'mr-2', 'animate-spin'], {
   variants: {
-    color: {
-      white: [],
-      blue: [],
-      red: [],
-      green: [],
-      yellow: [],
-      purple: [],
-      gray: [],
-      dark: [],
-      black: [],
-    },
-    tone: {
-      solid: [],
-      light: [],
-      outline: [],
-      transparent: [],
-    },
     size: {
-      xs: ['w-4', 'h-4'],
+      xs: ['w-3', 'h-3'],
       sm: ['w-5', 'h-5'],
       md: ['w-6', 'h-6'],
       lg: ['w-8', 'h-8'],
     },
   },
-  compoundVariants: [
-    {
-      color: 'white',
-      className: ['text-gray-600'],
-    },
-    {
-      tone: 'solid',
-      color: ['blue', 'red', 'green', 'yellow', 'purple', 'dark', 'black'],
-      className: ['text-white'],
-    },
-    // {
-    //   tone: 'light',
-    //   color: ['blue', 'red', 'green', 'yellow', 'purple'],
-    //   className: ['text-white'],
-    // },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'blue',
-      className: ['text-blue-600'],
-    },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'blue',
-      className: ['text-blue-600'],
-    },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'red',
-      className: ['text-red-600'],
-    },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'green',
-      className: ['text-green-600'],
-    },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'yellow',
-      className: ['text-yellow-500'],
-    },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'purple',
-      className: ['text-purple-600'],
-    },
-    {
-      tone: ['light', 'outline', 'transparent'],
-      color: 'blue',
-      className: ['text-blue-600'],
-    },
-  ],
 });
 
 export { buttonStyles, chevronStyles, buttonSpinnerStyles };

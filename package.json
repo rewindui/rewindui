@@ -13,11 +13,11 @@
     "test:watch": "turbo run test:watch"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
+    "eslint": "^8.35.0",
     "eslint-config-rewindui": "workspace:*",
-    "@changesets/cli": "^2.25.2",
-    "eslint": "^8.29.0",
-    "prettier": "^2.8.0",
-    "turbo": "latest"
+    "prettier": "^2.8.4",
+    "turbo": "^1.8.2"
   },
   "prettier": {
     "printWidth": 100,

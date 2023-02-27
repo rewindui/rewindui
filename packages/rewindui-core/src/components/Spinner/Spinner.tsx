@@ -1,11 +1,11 @@
 import { SpinnerProps } from '@components/Spinner/Spinner.types';
 import { useComponentTheme } from '@theme/theme.context';
-import React, { useMemo } from 'react';
+import React from 'react';
 
 export const Spinner = (props: SpinnerProps) => {
   const theme = useComponentTheme('Spinner');
   const { size = 'sm', color = 'gray', className = '' } = props;
-  const classes = useMemo(() => theme({ size, color, className }), [size, color, className, theme]);
+  const classes = className ? className : theme({ size, color, className });
 
   return (
     <svg className={classes} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

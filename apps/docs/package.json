@@ -10,27 +10,27 @@
   },
   "dependencies": {
     "@rewindui/rewindui-core": "workspace:*",
-    "@tabler/icons": "^1.109.0",
+    "@tabler/icons": "^1.119.0",
     "class-variance-authority": "^0.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@rewindui/tsconfig": "workspace:*",
-    "@storybook/addon-actions": "^6.5.14",
-    "@storybook/addon-docs": "^6.5.14",
-    "@storybook/addon-essentials": "^6.5.14",
-    "@storybook/addon-links": "^6.5.14",
-    "@storybook/builder-vite": "^0.1.41",
-    "@storybook/react": "^6.5.14",
-    "@vitejs/plugin-react": "^1.3.2",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-docs": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-vite": "^0.4.2",
+    "@storybook/react": "^6.5.16",
+    "@vitejs/plugin-react": "^3.1.0",
     "autoprefixer": "^10.4.13",
     "eslint-config-rewindui": "workspace:*",
     "postcss": "^8.4.21",
-    "serve": "^13.0.4",
+    "serve": "^14.2.0",
     "tailwind-config-rewindui": "workspace:*",
     "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.3",
-    "vite": "^2.9.15"
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
   }
 }
