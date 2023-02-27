@@ -88,18 +88,17 @@ export const Button: ButtonComponent = forwardRef(
 
     const Component = as || 'button';
     const id = usePropId(props.id);
-    const title = props.title || '';
     const type = props.type || 'button';
 
     return (
       <Component
         id={id}
-        title={title}
-        className={classes}
-        type={type}
-        {...additionalProps}
-        disabled={disabled || loading}
         ref={ref}
+        type={type}
+        className={classes}
+        disabled={disabled || loading}
+        aria-disabled={disabled || loading}
+        {...additionalProps}
       >
         {loading && <Spinner className={spinnerClasses} />}
         {children}
