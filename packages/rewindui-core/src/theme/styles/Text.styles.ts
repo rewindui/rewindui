@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const textStyles = cva(['antialiased'], {
+const textStyles = cva([], {
   variants: {
     color: {
       white: 'text-white',

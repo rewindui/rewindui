@@ -1,3 +1,4 @@
+import { alertVariants } from '@theme/variants/Alert.variants';
 import { buttonVariants } from '@theme/variants/Button.variants';
 import { createContext, useContext } from 'react';
 import { textVariants } from './variants';
@@ -7,14 +8,16 @@ export type Variant = {
 };
 
 type VariantComponents = {
-  Text: typeof textVariants;
+  Alert: typeof alertVariants;
   Button: typeof buttonVariants;
+  Text: typeof textVariants;
 };
 
 const defaultVariant: Variant = {
   components: {
-    Text: textVariants,
+    Alert: alertVariants,
     Button: buttonVariants,
+    Text: textVariants,
   },
 };
 

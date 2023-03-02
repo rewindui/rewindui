@@ -31,6 +31,7 @@ export type ButtonVariants =
   | 'primary'
   | 'secondary'
   | 'tertiary'
+  | 'link'
   | 'danger'
   | 'success'
   | 'warning'

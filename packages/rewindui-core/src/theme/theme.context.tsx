@@ -1,3 +1,11 @@
+import {
+  alertDismissIconStyles,
+  alertIconWrapper,
+  alertInfoWrapperStyles,
+  alertStyles,
+  alertTextStyles,
+  alertTitleStyles,
+} from '@theme/styles/Alert.styles';
 import { createContext, useContext } from 'react';
 import {
   buttonSpinnerStyles,
@@ -12,6 +20,14 @@ export type Theme = {
 };
 
 type ThemeComponents = {
+  Alert: {
+    base: typeof alertStyles;
+    infoWrapper: typeof alertInfoWrapperStyles;
+    iconWrapper: typeof alertIconWrapper;
+    dismissIcon: typeof alertDismissIconStyles;
+    title: typeof alertTitleStyles;
+    text: typeof alertTextStyles;
+  };
   Button: {
     base: typeof buttonStyles;
     chevron: typeof chevronStyles;
@@ -23,6 +39,14 @@ type ThemeComponents = {
 
 const defaultTheme: Theme = {
   components: {
+    Alert: {
+      base: alertStyles,
+      infoWrapper: alertInfoWrapperStyles,
+      iconWrapper: alertIconWrapper,
+      dismissIcon: alertDismissIconStyles,
+      title: alertTitleStyles,
+      text: alertTextStyles,
+    },
     Button: {
       base: buttonStyles,
       chevron: chevronStyles,

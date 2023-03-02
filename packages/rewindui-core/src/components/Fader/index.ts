@@ -1,0 +1,1 @@
+export { Fader } from './Fader';

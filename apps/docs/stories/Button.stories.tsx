@@ -1,8 +1,9 @@
-import { Button, ButtonVariants, Text, TextProps } from '@rewindui/rewindui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 import {
+  Button,
+  ButtonVariants,
   ButtonColor,
   ButtonRadius,
   ButtonShadow,
@@ -16,6 +17,7 @@ const variants: ButtonVariants[] = [
   'primary',
   'secondary',
   'tertiary',
+  'link',
   'danger',
   'success',
   'warning',
@@ -81,12 +83,6 @@ const meta: Meta = {
 
 export default meta;
 
-const primary: Partial<ButtonProps> = {
-  color: 'blue',
-  size: 'md',
-  tone: 'solid',
-};
-
 const DefaultTemplate: Story<ButtonProps> = (args) => {
   return (
     <EnhancedView prop="Default">
@@ -119,7 +115,7 @@ const ColorTemplate: Story<ButtonProps> = (args) => {
       <View prop="color" value={color}>
         {tones.map((tone) => (
           <Button {...args} key={tone} color={color} tone={tone} className="capitalize">
-            {color}
+            {tone}
           </Button>
         ))}
       </View>

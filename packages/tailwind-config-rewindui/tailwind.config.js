@@ -5,25 +5,12 @@ module.exports = {
   content: [
     './stories/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './theme/**/*.variants.ts',
     './src/**/*.{js,ts,jsx,tsx}',
     '../../packages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: 0 },
-          '100%': { opacity: 1 },
-        },
-        fadeOut: {
-          '0%': { opacity: 1 },
-          '100%': { opacity: 0 },
-        },
-      },
-      animation: {
-        fadeIn: 'fadeIn 300ms ease-in',
-        fadeOut: 'fadeOut 300ms ease-out',
-      },
       backgroundImage: {
         'select-arrow': "url('assets/select-arrow.svg')",
       },
@@ -88,11 +75,6 @@ module.exports = {
           800: '#2C0C6F',
           900: '#18063C',
         },
-        // blue: colors.blue,
-        // red: colors.red,
-        // green: colors.green,
-        // yellow: colors.yellow,
-        // purple: colors.purple,
         gray: colors.gray,
         black: colors.black,
         white: colors.white,

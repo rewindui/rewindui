@@ -246,20 +246,20 @@ const TrackingTemplate: Story<TextProps> = (args) => {
 
 export const Tracking = TrackingTemplate.bind({});
 
-const ShowOffTemplate: Story<TextProps> = (args) => {
+const ExampleTemplate: Story<TextProps> = (args) => {
   const classNames = ['underline decoration-2 decoration-sky-500'];
 
   const items = classNames.map((className) => (
     <React.Fragment key={className}>
-      <View prop="className" value={className}>
-        <Text {...args} className={className}>
+      <EnhancedView prop="className" value={className}>
+        <Text {...args} size="xl" className={className}>
           {shortSentence}
         </Text>
-      </View>
+      </EnhancedView>
     </React.Fragment>
   ));
 
   return <ViewGroup>{items}</ViewGroup>;
 };
 
-export const ShowOff = ShowOffTemplate.bind({});
+export const Examples = ExampleTemplate.bind({});

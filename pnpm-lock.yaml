@@ -89,6 +89,7 @@ importers:
       happy-dom: ^8.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
+      react-merge-refs: ^2.0.1
       tsup: ^5.10.1
       typescript: ^4.5.3
       vite-tsconfig-paths: ^4.0.5
@@ -98,6 +99,7 @@ importers:
       class-variance-authority: 0.4.0_typescript@4.9.3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-merge-refs: 2.0.1
     devDependencies:
       '@rewindui/tsconfig': link:../rewindui-tsconfig
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
@@ -11337,6 +11339,10 @@ packages:
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
     dev: true
+
+  /react-merge-refs/2.0.1:
+    resolution: {integrity: sha512-pywF6oouJWuqL26xV3OruRSIqai31R9SdJX/I3gP2q8jLxUnA1IwXcLW8werUHLZOrp4N7YOeQNZrh/BKrHI4A==}
+    dev: false
 
   /react-refresh/0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}

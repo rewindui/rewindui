@@ -1,7 +1,7 @@
-import { ButtonProps, ButtonVariants } from '@components/Button/Button.types';
+import { AlertProps, AlertVariants } from '@components/Alert/Alert.types';
 import { AsProp } from '../../types/polymorphic.types';
 
-export const buttonVariants: Record<ButtonVariants, ButtonProps & AsProp<any>> = {
+export const alertVariants: Record<AlertVariants, AlertProps & AsProp<any>> = {
   primary: {
     color: 'blue',
     tone: 'solid',
@@ -12,11 +12,7 @@ export const buttonVariants: Record<ButtonVariants, ButtonProps & AsProp<any>> =
   },
   tertiary: {
     color: 'gray',
-    tone: 'transparent',
-  },
-  link: {
-    color: 'blue',
-    tone: 'transparent',
+    tone: 'outline',
   },
   danger: {
     color: 'red',

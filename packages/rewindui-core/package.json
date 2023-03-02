@@ -46,7 +46,8 @@
   },
   "dependencies": {
     "@tabler/icons": "^2.5.0",
-    "class-variance-authority": "^0.4.0"
+    "class-variance-authority": "^0.4.0",
+    "react-merge-refs": "^2.0.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",

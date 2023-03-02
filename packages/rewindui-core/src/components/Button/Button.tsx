@@ -4,7 +4,7 @@ import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
 import { ButtonComponent, ButtonProps } from './Button.types';
-import React, { forwardRef, useMemo } from 'react';
+import { ElementType, forwardRef, useMemo } from 'react';
 
 const defaultProps: Partial<ButtonProps> = {
   animation: 'none',
@@ -21,7 +21,7 @@ const defaultProps: Partial<ButtonProps> = {
 };
 
 export const Button: ButtonComponent = forwardRef(
-  <C extends React.ElementType = 'button'>(
+  <C extends ElementType = 'button'>(
     props: PolymorphicComponentProp<C, ButtonProps>,
     ref?: PolymorphicRef<C>
   ) => {

@@ -28,16 +28,18 @@ export const EnhancedView = ({ prop, value = '', ...props }) => {
           {Object.keys(rest).map((prop) => (
             <div key={prop} className="flex items-center space-x-0 p-1.5">
               <div className="text-slate-500">{prop}</div>
-              <div className="text-slate-800">
-                <Badge>{rest[prop]}</Badge>
-              </div>
+              {typeof rest[prop] === 'string' && (
+                <div className="text-slate-800">
+                  <Badge>{rest[prop]}</Badge>
+                </div>
+              )}
             </div>
           ))}
           {!Object.keys(rest).length && (
             <span className="text-slate-700 p-1.5">No properties selected</span>
           )}
         </div>
-        <div className="flex p-2.5">{props.children}</div>
+        <div className="flex-1 p-2.5">{props.children}</div>
       </div>
     </div>
   );
