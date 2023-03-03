@@ -1,11 +1,15 @@
 import {
+  accordionBodyStyles,
+  accordionHeaderStyles,
+  accordionIconStyles,
+  accordionStyles,
   alertDismissIconStyles,
   alertIconWrapper,
   alertInfoWrapperStyles,
   alertStyles,
   alertTextStyles,
   alertTitleStyles,
-} from '@theme/styles/Alert.styles';
+} from './styles';
 import { createContext, useContext } from 'react';
 import {
   buttonSpinnerStyles,
@@ -20,6 +24,12 @@ export type Theme = {
 };
 
 type ThemeComponents = {
+  Accordion: {
+    base: typeof accordionStyles;
+    body: typeof accordionBodyStyles;
+    header: typeof accordionHeaderStyles;
+    icon: typeof accordionIconStyles;
+  };
   Alert: {
     base: typeof alertStyles;
     infoWrapper: typeof alertInfoWrapperStyles;
@@ -39,6 +49,12 @@ type ThemeComponents = {
 
 const defaultTheme: Theme = {
   components: {
+    Accordion: {
+      base: accordionStyles,
+      body: accordionBodyStyles,
+      header: accordionHeaderStyles,
+      icon: accordionIconStyles,
+    },
     Alert: {
       base: alertStyles,
       infoWrapper: alertInfoWrapperStyles,

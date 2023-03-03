@@ -141,6 +141,24 @@ const ColorTemplate: Story<AlertProps> = (args) => {
 
 export const Colors = ColorTemplate.bind({});
 
+const ToneTemplate: Story<AlertProps> = (args) => {
+  const items = tones.map((tone) => (
+    <React.Fragment key={tone}>
+      <View prop="tone" value={tone}>
+        {colors.map((color) => (
+          <Alert {...args} key={color} color={color} tone={tone} title={`Color: ${color}`}>
+            {text}
+          </Alert>
+        ))}
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
+};
+
+export const Tones = ToneTemplate.bind({});
+
 const AccentTemplate: Story<AlertProps> = (args) => {
   const items = accents.map((accent) => (
     <React.Fragment key={accent}>

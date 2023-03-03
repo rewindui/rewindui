@@ -5,8 +5,10 @@
   "compilerOptions": {
     "paths": {
       "@components/*": ["./src/components/*"],
+      "@icons/*": ["./src/icons/*"],
       "@theme/*": ["./src/theme/*"],
       "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
     }
   }
 }

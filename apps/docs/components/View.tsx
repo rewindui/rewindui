@@ -7,7 +7,7 @@ export const View = ({ prop, value = '', children }) => {
         {prop}
         {value && <Badge>{value}</Badge>}
       </div>
-      <div className="flex flex-wrap gap-x-2 gap-y-2 p-2.5">{children}</div>
+      <div className="bg-grid bg-stone-50 flex flex-wrap gap-x-2 gap-y-2 p-2.5">{children}</div>
     </div>
   );
 };
@@ -39,7 +39,7 @@ export const EnhancedView = ({ prop, value = '', ...props }) => {
             <span className="text-slate-700 p-1.5">No properties selected</span>
           )}
         </div>
-        <div className="flex-1 p-2.5">{props.children}</div>
+        <div className="bg-grid bg-stone-50 flex-1 p-2.5">{props.children}</div>
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import { accordionVariants } from '@theme/variants/Accordion.variants';
 import { alertVariants } from '@theme/variants/Alert.variants';
 import { buttonVariants } from '@theme/variants/Button.variants';
 import { createContext, useContext } from 'react';
@@ -8,6 +9,7 @@ export type Variant = {
 };
 
 type VariantComponents = {
+  Accordion: typeof accordionVariants;
   Alert: typeof alertVariants;
   Button: typeof buttonVariants;
   Text: typeof textVariants;
@@ -15,6 +17,7 @@ type VariantComponents = {
 
 const defaultVariant: Variant = {
   components: {
+    Accordion: accordionVariants,
     Alert: alertVariants,
     Button: buttonVariants,
     Text: textVariants,
