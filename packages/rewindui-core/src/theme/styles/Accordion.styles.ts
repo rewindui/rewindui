@@ -68,7 +68,7 @@ const accordionHeaderStyles = cva(
     'flex-row',
     'justify-between',
     'items-center',
-    'transition-colors',
+    'transition',
     'duration-250',
     'ease-in-out',
     'w-full',
@@ -118,6 +118,11 @@ const accordionHeaderStyles = cva(
       },
     },
     compoundVariants: [
+      {
+        state: 'active',
+        bordered: false,
+        className: ['scale-[1.01]'],
+      },
       {
         state: 'active',
         tone: 'solid',
