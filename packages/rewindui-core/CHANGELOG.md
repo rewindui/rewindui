@@ -1,5 +1,11 @@
 # @rewindui/rewindui-core
 
+## 0.6.0
+
+### Minor Changes
+
+- 14627e8: Added Checkbox/Radio components
+
 ## 0.5.0
 
 ### Minor Changes
