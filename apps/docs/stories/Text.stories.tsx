@@ -28,7 +28,6 @@ const colors: TextColor[] = [
   'dark',
   'black',
 ];
-
 const weights: TextWeight[] = [
   'thin',
   'extraLight',
@@ -40,7 +39,6 @@ const weights: TextWeight[] = [
   'extraBold',
   'black',
 ];
-
 const sizes: TextSize[] = [
   'xs',
   'sm',
@@ -56,9 +54,7 @@ const sizes: TextSize[] = [
   '8xl',
   '9xl',
 ];
-
 const variants: TextVariants[] = ['d1', 'd2', 'd3', 'd4', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
-
 const leadings: TextLeading[] = [
   '3',
   '4',
@@ -75,7 +71,6 @@ const leadings: TextLeading[] = [
   'relaxed',
   'loose',
 ];
-
 const trackings: TextTracking[] = ['tighter', 'tight', 'normal', 'wide', 'wider', 'widest'];
 
 const glossaries = {

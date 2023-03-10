@@ -49,7 +49,7 @@ const AccordionRoot: AccordionComponent = forwardRef<HTMLDivElement, AccordionPr
     };
     const id = usePropId(props.id);
     const [activeItemAnchor, setActiveItemAnchor] = useState(defaultItem);
-    const value: AccordionContext = {
+    const contextValue: AccordionContext = {
       activeColor,
       activeItemAnchor,
       bordered,
@@ -74,7 +74,7 @@ const AccordionRoot: AccordionComponent = forwardRef<HTMLDivElement, AccordionPr
     }, [bordered, className, color, radius, shadow, shadowColor, size, theme]);
 
     return (
-      <AccordionContextProvider value={value}>
+      <AccordionContextProvider value={contextValue}>
         <div id={id} ref={ref} className={classes} {...additionalProps}>
           {children}
         </div>

@@ -1,23 +1,5 @@
-import {
-  accordionBodyStyles,
-  accordionHeaderStyles,
-  accordionIconStyles,
-  accordionStyles,
-  alertDismissIconStyles,
-  alertIconWrapper,
-  alertInfoWrapperStyles,
-  alertStyles,
-  alertTextStyles,
-  alertTitleStyles,
-} from './styles';
+import * as styles from './styles';
 import { createContext, useContext } from 'react';
-import {
-  buttonSpinnerStyles,
-  buttonStyles,
-  chevronStyles,
-  spinnerStyles,
-  textStyles,
-} from './styles';
 
 export type Theme = {
   components: ThemeComponents;
@@ -25,51 +7,75 @@ export type Theme = {
 
 type ThemeComponents = {
   Accordion: {
-    base: typeof accordionStyles;
-    body: typeof accordionBodyStyles;
-    header: typeof accordionHeaderStyles;
-    icon: typeof accordionIconStyles;
+    base: typeof styles.accordionStyles;
+    body: typeof styles.accordionBodyStyles;
+    header: typeof styles.accordionHeaderStyles;
+    icon: typeof styles.accordionIconStyles;
   };
   Alert: {
-    base: typeof alertStyles;
-    infoWrapper: typeof alertInfoWrapperStyles;
-    iconWrapper: typeof alertIconWrapper;
-    dismissIcon: typeof alertDismissIconStyles;
-    title: typeof alertTitleStyles;
-    text: typeof alertTextStyles;
+    base: typeof styles.alertStyles;
+    infoWrapper: typeof styles.alertInfoWrapperStyles;
+    iconWrapper: typeof styles.alertIconWrapper;
+    dismissIcon: typeof styles.alertDismissIconStyles;
+    title: typeof styles.alertTitleStyles;
+    text: typeof styles.alertTextStyles;
   };
   Button: {
-    base: typeof buttonStyles;
-    chevron: typeof chevronStyles;
-    spinner: typeof buttonSpinnerStyles;
+    base: typeof styles.buttonStyles;
+    chevron: typeof styles.chevronStyles;
+    spinner: typeof styles.buttonSpinnerStyles;
   };
-  Spinner: typeof spinnerStyles;
-  Text: typeof textStyles;
+  Card: {
+    base: typeof styles.cardStyles;
+    body: typeof styles.cardBodyStyles;
+    header: typeof styles.cardHeaderStyles;
+    image: typeof styles.cardImageStyles;
+    footer: typeof styles.cardFooterStyles;
+  };
+  Image: {
+    base: typeof styles.imageStyles;
+    caption: typeof styles.imageCaptionStyles;
+    wrapper: typeof styles.imageWrapperStyles;
+  };
+  Spinner: typeof styles.spinnerStyles;
+  Text: typeof styles.textStyles;
 };
 
 const defaultTheme: Theme = {
   components: {
     Accordion: {
-      base: accordionStyles,
-      body: accordionBodyStyles,
-      header: accordionHeaderStyles,
-      icon: accordionIconStyles,
+      base: styles.accordionStyles,
+      body: styles.accordionBodyStyles,
+      header: styles.accordionHeaderStyles,
+      icon: styles.accordionIconStyles,
     },
     Alert: {
-      base: alertStyles,
-      infoWrapper: alertInfoWrapperStyles,
-      iconWrapper: alertIconWrapper,
-      dismissIcon: alertDismissIconStyles,
-      title: alertTitleStyles,
-      text: alertTextStyles,
+      base: styles.alertStyles,
+      infoWrapper: styles.alertInfoWrapperStyles,
+      iconWrapper: styles.alertIconWrapper,
+      dismissIcon: styles.alertDismissIconStyles,
+      title: styles.alertTitleStyles,
+      text: styles.alertTextStyles,
     },
     Button: {
-      base: buttonStyles,
-      chevron: chevronStyles,
-      spinner: buttonSpinnerStyles,
+      base: styles.buttonStyles,
+      chevron: styles.chevronStyles,
+      spinner: styles.buttonSpinnerStyles,
     },
-    Spinner: spinnerStyles,
-    Text: textStyles,
+    Card: {
+      base: styles.cardStyles,
+      body: styles.cardBodyStyles,
+      header: styles.cardHeaderStyles,
+      image: styles.cardImageStyles,
+      footer: styles.cardFooterStyles,
+    },
+    Image: {
+      base: styles.imageStyles,
+      caption: styles.imageCaptionStyles,
+      wrapper: styles.imageWrapperStyles,
+    },
+    Spinner: styles.spinnerStyles,
+    Text: styles.textStyles,
   },
 };
 
