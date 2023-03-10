@@ -1,5 +1,11 @@
 # @rewindui/rewindui-core
 
+## 0.5.0
+
+### Minor Changes
+
+- 73268d1: Added Card and Image components
+
 ## 0.4.1
 
 ### Patch Changes
