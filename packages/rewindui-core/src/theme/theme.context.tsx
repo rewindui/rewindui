@@ -32,6 +32,12 @@ type ThemeComponents = {
     image: typeof styles.cardImageStyles;
     footer: typeof styles.cardFooterStyles;
   };
+  Checkbox: {
+    base: typeof styles.checkBoxStyles;
+    label: typeof styles.checkBoxLabelStyles;
+    description: typeof styles.checkBoxDescriptionStyles;
+    error: typeof styles.checkBoxErrorStyles;
+  };
   Image: {
     base: typeof styles.imageStyles;
     caption: typeof styles.imageCaptionStyles;
@@ -68,6 +74,12 @@ const defaultTheme: Theme = {
       header: styles.cardHeaderStyles,
       image: styles.cardImageStyles,
       footer: styles.cardFooterStyles,
+    },
+    Checkbox: {
+      base: styles.checkBoxStyles,
+      label: styles.checkBoxLabelStyles,
+      description: styles.checkBoxDescriptionStyles,
+      error: styles.checkBoxErrorStyles,
     },
     Image: {
       base: styles.imageStyles,

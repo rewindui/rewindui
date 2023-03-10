@@ -2,6 +2,7 @@ export * from './components/Accordion';
 export * from './components/Alert';
 export * from './components/Button';
 export * from './components/Card';
+export * from './components/Checkbox';
 export * from './components/Collapse';
 export * from './components/Image';
 export * from './components/Spinner';
