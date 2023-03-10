@@ -1,8 +1,10 @@
 {
   "name": "tailwind-config-rewindui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
-  "files": ["tailwind.config.js"],
+  "files": [
+    "tailwind.config.js"
+  ],
   "publishConfig": {
     "access": "public"
   }
