@@ -1,20 +1,20 @@
-import { CheckboxComponent, CheckboxProps } from '@components/Checkbox';
+import { RadioComponent, RadioProps } from '@components/Radio';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
 
-const defaultProps: Partial<CheckboxProps> = {
+const defaultProps: Partial<RadioProps> = {
   color: 'blue',
   disabled: false,
-  radius: 'md',
+  radius: 'full',
   size: 'md',
   tone: 'solid',
   withRing: true,
 };
 
-export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
-  (props: CheckboxProps, ref?: Ref<HTMLInputElement>) => {
-    const theme = useComponentTheme('Checkbox');
+export const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
+  (props: RadioProps, ref?: Ref<HTMLInputElement>) => {
+    const theme = useComponentTheme('Radio');
     const {
       children,
       className = '',
@@ -59,7 +59,7 @@ export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, Checkbox
         <input
           id={id}
           ref={ref}
-          type="checkbox"
+          type="radio"
           className={classes}
           disabled={disabled}
           {...additionalProps}
@@ -91,4 +91,4 @@ export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, Checkbox
   }
 );
 
-Checkbox.displayName = 'Checkbox';
+Radio.displayName = 'Radio';

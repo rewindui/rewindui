@@ -1,36 +1,27 @@
 import {
-  Checkbox,
-  CheckboxProps,
-  CheckboxColor,
-  CheckboxRadius,
-  CheckboxSize,
-  CheckboxTone,
+  Radio,
+  RadioProps,
+  RadioColor,
+  RadioRadius,
+  RadioSize,
+  RadioTone,
 } from '@rewindui/rewindui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { View, ViewGroup } from '../components/View';
 
-const colors: CheckboxColor[] = [
-  'blue',
-  'red',
-  'green',
-  'yellow',
-  'purple',
-  'gray',
-  'dark',
-  'black',
-];
-const radiuses: CheckboxRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
-const sizes: CheckboxSize[] = ['sm', 'md', 'lg', 'xl'];
-const tones: CheckboxTone[] = ['solid', 'light'];
+const colors: RadioColor[] = ['blue', 'red', 'green', 'yellow', 'purple', 'gray', 'dark', 'black'];
+const radiuses: RadioRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
+const sizes: RadioSize[] = ['sm', 'md', 'lg', 'xl'];
+const tones: RadioTone[] = ['solid', 'light'];
 
 const label = 'I agree to the terms of service';
 const description = 'By checking this box, you agree to the Terms of Service';
 const error = 'You must agree to the Terms of Service';
 
 const meta: Meta = {
-  title: 'Components/Checkbox',
-  component: Checkbox,
+  title: 'Components/Radio',
+  component: Radio,
   argTypes: {
     tone: {
       options: tones,
@@ -61,20 +52,21 @@ const meta: Meta = {
 
 export default meta;
 
-const DefaultTemplate: Story<CheckboxProps> = (args) => {
+const DefaultTemplate: Story<RadioProps> = (args) => {
   return (
     <View prop="Default">
-      <Checkbox label={label} description={description} error={error} {...args} />
+      <Radio {...args} label="Option A" name="configurator" />
+      <Radio {...args} label="Option B" name="configurator" defaultChecked />
     </View>
   );
 };
 
 export const Default = DefaultTemplate.bind({});
 
-const ColorTemplate: Story<CheckboxProps> = (args) => {
+const ColorTemplate: Story<RadioProps> = (args) => {
   const items = colors.map((color) => (
     <View prop="color" value={color} key={color}>
-      <Checkbox label={label} color={color} defaultChecked={true} {...args} />
+      <Radio name={'color'} label={label} color={color} defaultChecked={true} {...args} />
     </View>
   ));
 
@@ -83,13 +75,14 @@ const ColorTemplate: Story<CheckboxProps> = (args) => {
 
 export const Colors = ColorTemplate.bind({});
 
-const ToneTemplate: Story<CheckboxProps> = (args) => {
+const ToneTemplate: Story<RadioProps> = (args) => {
   const items = tones.map((tone) => (
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Checkbox
+          <Radio
             key={color}
+            name={'color'}
             label={label}
             color={color}
             tone={tone}
@@ -106,10 +99,10 @@ const ToneTemplate: Story<CheckboxProps> = (args) => {
 
 export const Tones = ToneTemplate.bind({});
 
-const SizeTemplate: Story<CheckboxProps> = (args) => {
+const SizeTemplate: Story<RadioProps> = (args) => {
   const items = sizes.map((size) => (
     <View prop="size" value={size} key={size}>
-      <Checkbox label={label} size={size} defaultChecked={true} {...args} />
+      <Radio label={label} size={size} defaultChecked={true} {...args} />
     </View>
   ));
 
@@ -118,10 +111,10 @@ const SizeTemplate: Story<CheckboxProps> = (args) => {
 
 export const Sizes = SizeTemplate.bind({});
 
-const RadiusTemplate: Story<CheckboxProps> = (args) => {
+const RadiusTemplate: Story<RadioProps> = (args) => {
   const items = radiuses.map((radius) => (
     <View prop="radius" value={radius} key={radius}>
-      <Checkbox label={label} radius={radius} defaultChecked={true} {...args} />
+      <Radio label={label} radius={radius} defaultChecked={true} {...args} />
     </View>
   ));
 

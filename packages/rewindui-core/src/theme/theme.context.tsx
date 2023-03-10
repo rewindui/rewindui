@@ -43,6 +43,12 @@ type ThemeComponents = {
     caption: typeof styles.imageCaptionStyles;
     wrapper: typeof styles.imageWrapperStyles;
   };
+  Radio: {
+    base: typeof styles.radioStyles;
+    label: typeof styles.radioLabelStyles;
+    description: typeof styles.radioDescriptionStyles;
+    error: typeof styles.radioErrorStyles;
+  };
   Spinner: typeof styles.spinnerStyles;
   Text: typeof styles.textStyles;
 };
@@ -85,6 +91,12 @@ const defaultTheme: Theme = {
       base: styles.imageStyles,
       caption: styles.imageCaptionStyles,
       wrapper: styles.imageWrapperStyles,
+    },
+    Radio: {
+      base: styles.radioStyles,
+      label: styles.radioLabelStyles,
+      description: styles.radioDescriptionStyles,
+      error: styles.radioErrorStyles,
     },
     Spinner: styles.spinnerStyles,
     Text: styles.textStyles,

@@ -5,6 +5,7 @@ export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/Collapse';
 export * from './components/Image';
+export * from './components/Radio';
 export * from './components/Spinner';
 export * from './components/Text';
 export * from './theme';
