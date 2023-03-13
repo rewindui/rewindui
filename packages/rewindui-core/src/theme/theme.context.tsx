@@ -50,6 +50,13 @@ type ThemeComponents = {
     error: typeof styles.radioErrorStyles;
   };
   Spinner: typeof styles.spinnerStyles;
+  Switch: {
+    base: typeof styles.switchStyles;
+    inner: typeof styles.switchInnerStyles;
+    label: typeof styles.switchLabelStyles;
+    description: typeof styles.switchDescriptionStyles;
+    error: typeof styles.switchErrorStyles;
+  };
   Text: typeof styles.textStyles;
 };
 
@@ -99,6 +106,13 @@ const defaultTheme: Theme = {
       error: styles.radioErrorStyles,
     },
     Spinner: styles.spinnerStyles,
+    Switch: {
+      base: styles.switchStyles,
+      inner: styles.switchInnerStyles,
+      label: styles.switchLabelStyles,
+      description: styles.switchDescriptionStyles,
+      error: styles.switchErrorStyles,
+    },
     Text: styles.textStyles,
   },
 };

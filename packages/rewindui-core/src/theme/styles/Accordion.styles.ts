@@ -77,13 +77,13 @@ const accordionHeaderStyles = cva(
   {
     variants: {
       activeColor: {
-        white: ['focus:ring-gray-50'],
-        blue: ['focus:ring-blue-50'],
-        red: ['focus:ring-red-50'],
-        green: ['focus:ring-green-50'],
-        yellow: ['focus:ring-yellow-50'],
-        purple: ['focus:ring-purple-50'],
-        gray: ['focus:ring-gray-50'],
+        white: ['focus:ring-gray-100'],
+        blue: ['focus:ring-blue-100'],
+        red: ['focus:ring-red-100'],
+        green: ['focus:ring-green-100'],
+        yellow: ['focus:ring-yellow-100'],
+        purple: ['focus:ring-purple-100'],
+        gray: ['focus:ring-gray-100'],
         dark: ['focus:ring-gray-200'],
         black: ['focus:ring-gray-300'],
       },

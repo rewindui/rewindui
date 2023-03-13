@@ -7,7 +7,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
         'text-blue-500',
         'hover:text-blue-600',
         'focus:text-blue-600',
-        'focus:ring-blue-50',
+        'focus:ring-blue-100',
         'active:text-blue-700',
         'disabled:text-blue-300',
         'disabled:hover:text-blue-300',
@@ -16,7 +16,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
         'text-red-500',
         'hover:text-red-600',
         'focus:text-red-600',
-        'focus:ring-red-50',
+        'focus:ring-red-100',
         'active:text-red-700',
         'disabled:text-red-300',
         'disabled:hover:text-red-300',
@@ -25,7 +25,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
         'text-green-500',
         'hover:text-green-600',
         'focus:text-green-600',
-        'focus:ring-green-50',
+        'focus:ring-green-100',
         'active:text-green-700',
         'disabled:text-green-300',
         'disabled:hover:text-green-300',
@@ -34,7 +34,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
         'text-yellow-400',
         'hover:text-yellow-500',
         'focus:text-yellow-500',
-        'focus:ring-yellow-50',
+        'focus:ring-yellow-100',
         'active:text-yellow-600',
         'disabled:text-yellow-200',
         'disabled:hover:text-yellow-200',
@@ -43,7 +43,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
         'text-purple-500',
         'hover:text-purple-600',
         'focus:text-purple-600',
-        'focus:ring-purple-50',
+        'focus:ring-purple-100',
         'active:text-purple-700',
         'disabled:text-purple-300',
         'disabled:hover:text-purple-300',
@@ -52,7 +52,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
         'text-gray-200',
         'hover:text-gray-300',
         'focus:text-gray-300',
-        'focus:ring-gray-50',
+        'focus:ring-gray-100',
         'active:text-gray-400',
         'disabled:text-gray-100',
         'disabled:hover:text-gray-100',
@@ -123,6 +123,17 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
   },
 });
 
+const radioLabelStyles = cva(['cursor-pointer'], {
+  variants: {
+    size: {
+      sm: ['text-sm', 'pl-1.5'],
+      md: ['text-base', 'pl-1.5'],
+      lg: ['text-lg', 'pl-2'],
+      xl: ['text-xl', 'pl-2'],
+    },
+  },
+});
+
 const radioDescriptionStyles = cva([], {
   variants: {
     size: {
@@ -141,17 +152,6 @@ const radioErrorStyles = cva(['text-red-500'], {
       md: ['text-sm', 'ml-1.5'],
       lg: ['text-base', 'ml-2'],
       xl: ['text-lg', 'ml-2'],
-    },
-  },
-});
-
-const radioLabelStyles = cva(['cursor-pointer'], {
-  variants: {
-    size: {
-      sm: ['text-sm', 'pl-1.5'],
-      md: ['text-base', 'pl-1.5'],
-      lg: ['text-lg', 'pl-2'],
-      xl: ['text-xl', 'pl-2'],
     },
   },
 });
