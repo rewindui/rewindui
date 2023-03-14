@@ -4,8 +4,6 @@ import {
   SwitchColor,
   SwitchRadius,
   SwitchSize,
-  CheckboxProps,
-  Checkbox,
 } from '@rewindui/rewindui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';

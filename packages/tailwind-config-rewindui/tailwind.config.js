@@ -87,7 +87,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    // require('tailwind-scrollbar')({ nocompatible: true }),
+    require('tailwind-scrollbar')({ nocompatible: true }),
     require('@tailwindcss/forms')({
       strategy: 'class', // only generate classes
     }),

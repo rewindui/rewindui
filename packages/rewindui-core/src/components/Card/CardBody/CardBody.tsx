@@ -3,6 +3,7 @@ import { CardBodyComponent, CardBodyProps } from '@components/Card/CardBody/Card
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const CardBody: CardBodyComponent = forwardRef<HTMLDivElement, CardBodyProps>(
   (props: CardBodyProps, ref?: Ref<HTMLDivElement>) => {
@@ -11,11 +12,13 @@ export const CardBody: CardBodyComponent = forwardRef<HTMLDivElement, CardBodyPr
     const { size, withDivider } = useCardContext();
     const id = usePropId(props.id);
     const classes = useMemo(() => {
-      return theme.body({
-        className,
-        size,
-        withDivider,
-      });
+      return twMerge(
+        theme.body({
+          className,
+          size,
+          withDivider,
+        })
+      );
     }, [theme, className, size, withDivider]);
 
     return (

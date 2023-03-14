@@ -2,6 +2,7 @@ import { SwitchComponent, SwitchProps } from '@components/Switch/Switch.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const defaultProps: SwitchProps = {
   color: 'blue',
@@ -44,14 +45,16 @@ export const Switch: SwitchComponent = forwardRef(
     const state = isOn ? 'active' : 'inactive';
 
     const classes = useMemo(() => {
-      return theme.base({
-        className,
-        color,
-        radius,
-        size,
-        state,
-        withRing,
-      });
+      return twMerge(
+        theme.base({
+          className,
+          color,
+          radius,
+          size,
+          state,
+          withRing,
+        })
+      );
     }, [theme, color, size, radius, state, withRing, className]);
 
     useLayoutEffect(() => {
@@ -128,21 +131,24 @@ export const Switch: SwitchComponent = forwardRef(
         <div className="flex flex-col">
           <label
             htmlFor={id}
-            className={theme.label({ size, className: labelClassName })}
+            className={twMerge(theme.label({ size, className: labelClassName }))}
             {...labelProps}
           >
             {label}
           </label>
           {description && (
             <span
-              className={theme.description({ size, className: descriptionClassName })}
+              className={twMerge(theme.description({ size, className: descriptionClassName }))}
               {...descriptionProps}
             >
               {description}
             </span>
           )}
           {error && (
-            <span className={theme.error({ size, className: errorClassName })} {...errorProps}>
+            <span
+              className={twMerge(theme.error({ size, className: errorClassName }))}
+              {...errorProps}
+            >
               {error}
             </span>
           )}

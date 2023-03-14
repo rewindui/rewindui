@@ -263,7 +263,7 @@ const alertTitleStyles = cva(['font-medium'], {
   },
 });
 const alertTextStyles = cva([]);
-const alertIconWrapper = cva(['cursor-pointer', 'self-start']);
+const alertIconWrapper = cva(['self-start']);
 const alertDismissIconStyles = cva(['hover:opacity-75'], {
   variants: {
     size: {

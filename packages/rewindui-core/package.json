@@ -48,7 +48,9 @@
     "@tabler/icons": "^2.5.0",
     "@tailwindcss/forms": "^0.5.3",
     "class-variance-authority": "^0.4.0",
-    "react-merge-refs": "^2.0.1"
+    "react-merge-refs": "^2.0.1",
+    "tailwind-merge": "^1.10.0",
+    "tailwind-scrollbar": "^2.0.1"
   },
   "peerDependencies": {
     "react": "^18.2.0",

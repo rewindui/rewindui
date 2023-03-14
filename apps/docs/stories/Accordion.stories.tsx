@@ -8,10 +8,10 @@ import {
   AccordionSize,
   AccordionProps,
 } from '@rewindui/rewindui-core';
-import { InfoIcon } from '@rewindui/rewindui-core/src/icons/Info';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
+import { HandWaving, Sparkle, Info, Lifebuoy } from '@phosphor-icons/react';
 
 const colors: AccordionColor[] = ['white', 'gray', 'zinc', 'slate'];
 const tones: AccordionTone[] = ['solid', 'light'];
@@ -34,21 +34,25 @@ const accordionItems = [
   {
     anchor: 'item-1',
     header: 'What is Rewind UI?',
+    icon: <HandWaving weight="duotone" className="w-h h-5" />,
     body: "Rewind UI is a React component library that provides a set of accessible, reusable, and customizable components to help you build your next project. We've designed our components to be flexible and easy to use, so you can focus on what matters most: building great user experiences.",
   },
   {
     anchor: 'item-2',
     header: 'How do I get started?',
+    icon: <Sparkle weight="duotone" className="" />,
     body: "Getting started with Rewind UI is easy! Simply install the package using your package manager of choice, and you're ready to go. We've also included a set of Storybook stories to help you get familiar with our components and how to use them.",
   },
   {
     anchor: 'item-3',
     header: 'How do I contribute?',
+    icon: <Lifebuoy weight="duotone" className="" />,
     body: "We're always looking for new contributors to help us improve Rewind UI! If you'd like to contribute, please check out our contribution guidelines to get started. We're looking forward to working with you!",
   },
   {
     anchor: 'item-4',
     header: 'Where can I find more information?',
+    icon: <Info weight="duotone" className="" />,
     body: "If you'd like to learn more about Rewind UI, please visit our website. You can also follow us on Twitter to stay up to date with the latest news and updates.",
   },
 ];
@@ -297,7 +301,7 @@ const ExampleTemplate: Story<AccordionProps> = (args) => {
             <Accordion.Item key={item.anchor} anchor={item.anchor}>
               <Accordion.Header>
                 <div className="flex items-center space-x-2">
-                  <InfoIcon className="w-6 h-6" />
+                  {item.icon}
                   <span>{item.header}</span>
                 </div>
               </Accordion.Header>

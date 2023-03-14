@@ -5,6 +5,7 @@ import { usePropId } from '@utils/usePropId';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
 import { ButtonComponent, ButtonProps } from './Button.types';
 import { ElementType, forwardRef, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ButtonProps> = {
   animation: 'none',
@@ -54,20 +55,22 @@ export const Button: ButtonComponent = forwardRef(
     // };
 
     const classes = useMemo(() => {
-      return theme.base({
-        animation,
-        className,
-        color,
-        disabled,
-        icon,
-        loading,
-        radius,
-        shadow,
-        shadowColor,
-        size,
-        tone,
-        withRing,
-      });
+      return twMerge(
+        theme.base({
+          animation,
+          className,
+          color,
+          disabled,
+          icon,
+          loading,
+          radius,
+          shadow,
+          shadowColor,
+          size,
+          tone,
+          withRing,
+        })
+      );
     }, [
       animation,
       className,

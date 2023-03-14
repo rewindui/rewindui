@@ -10,6 +10,7 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { AccordionContextProvider } from './Accordion.context';
 
 const defaultProps: Partial<AccordionProps> = {
@@ -62,15 +63,17 @@ const AccordionRoot: AccordionComponent = forwardRef<HTMLDivElement, AccordionPr
     };
 
     const classes = useMemo(() => {
-      return theme.base({
-        bordered,
-        className,
-        color,
-        radius,
-        shadow,
-        shadowColor,
-        size,
-      });
+      return twMerge(
+        theme.base({
+          bordered,
+          className,
+          color,
+          radius,
+          shadow,
+          shadowColor,
+          size,
+        })
+      );
     }, [bordered, className, color, radius, shadow, shadowColor, size, theme]);
 
     return (

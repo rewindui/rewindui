@@ -9,6 +9,7 @@
     "clean": "rm -rf .turbo && rm -rf node_modules"
   },
   "dependencies": {
+    "@phosphor-icons/react": "^2.0.5",
     "@rewindui/rewindui-core": "workspace:*",
     "@tabler/icons": "^1.119.0",
     "class-variance-authority": "^0.4.0",

@@ -57,6 +57,10 @@ type ThemeComponents = {
     description: typeof styles.switchDescriptionStyles;
     error: typeof styles.switchErrorStyles;
   };
+  Tab: {
+    base: typeof styles.tabStyles;
+    list: typeof styles.tabListStyles;
+  };
   Text: typeof styles.textStyles;
 };
 
@@ -112,6 +116,10 @@ const defaultTheme: Theme = {
       label: styles.switchLabelStyles,
       description: styles.switchDescriptionStyles,
       error: styles.switchErrorStyles,
+    },
+    Tab: {
+      base: styles.tabStyles,
+      list: styles.tabListStyles,
     },
     Text: styles.textStyles,
   },

@@ -22,7 +22,7 @@ export const EnhancedView = ({ prop, value = '', ...props }) => {
         {prop}
         {value && <Badge>{value}</Badge>}
       </div>
-      <div className="flex">
+      <div className="flex flex-wrap">
         <div className="flex flex-col min-w-[250px] border divide-y divide-slate-200 rounded m-2.5 text-sm">
           <span className="font-medium p-1.5">Props</span>
           {Object.keys(rest).map((prop) => (

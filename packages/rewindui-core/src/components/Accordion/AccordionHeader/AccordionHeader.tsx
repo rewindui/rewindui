@@ -7,6 +7,7 @@ import { useAccordionItemContext } from '@components/Accordion/AccordionItem/Acc
 import { ChevronDownIcon } from '@icons/ChevronDown';
 import { useComponentTheme } from '@theme/theme.context';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const AccordionHeader: AccordionHeaderComponent = forwardRef<
   HTMLButtonElement,
@@ -39,16 +40,18 @@ export const AccordionHeader: AccordionHeaderComponent = forwardRef<
   const state = expanded ? 'active' : 'inactive';
 
   const classes = useMemo(() => {
-    return theme.header({
-      bordered,
-      className,
-      size,
-      activeColor,
-      radius,
-      state,
-      tone,
-      withRing,
-    });
+    return twMerge(
+      theme.header({
+        bordered,
+        className,
+        size,
+        activeColor,
+        radius,
+        state,
+        tone,
+        withRing,
+      })
+    );
   }, [bordered, className, radius, activeColor, size, state, theme, tone, withRing]);
 
   const iconClasses = theme.icon({ size, state });

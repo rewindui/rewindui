@@ -11,10 +11,10 @@ import {
   Button,
   Text,
 } from '@rewindui/rewindui-core';
-import { InfoIcon } from '@rewindui/rewindui-core/src/icons/Info';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
+import { WarningCircle } from '@phosphor-icons/react';
 
 const variants: AlertVariants[] = [
   'primary',
@@ -263,7 +263,7 @@ const ExampleTemplate: Story<AlertProps> = (args) => {
         <Alert
           {...args}
           title="Informative Alert"
-          icon={<InfoIcon className="w-10 h-10" />}
+          icon={<WarningCircle weight="duotone" className="w-10 h-10" />}
           tone="light"
           color="purple"
           className="border border-2 border-dashed border-purple-700"
@@ -275,7 +275,7 @@ const ExampleTemplate: Story<AlertProps> = (args) => {
       <EnhancedView prop="Alert with custom JSX content">
         <Alert {...args} tone="light" color="red" size="lg" shadow="base" className="border">
           <div className="grid gap-y-3 justify-items-center text-red-600 w-full">
-            <InfoIcon className="w-16 h-16" />
+            <WarningCircle weight="duotone" className="w-16 h-16" />
             <Text variant="h3" className="text-red-600">
               Watch out!
             </Text>

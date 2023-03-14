@@ -3,6 +3,7 @@ import { CardHeaderComponent, CardHeaderProps } from '@components/Card/CardHeade
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const CardHeader: CardHeaderComponent = forwardRef<HTMLDivElement, CardHeaderProps>(
   (props: CardHeaderProps, ref?: Ref<HTMLDivElement>) => {
@@ -11,11 +12,13 @@ export const CardHeader: CardHeaderComponent = forwardRef<HTMLDivElement, CardHe
     const { size, radius } = useCardContext();
     const id = usePropId(props.id);
     const classes = useMemo(() => {
-      return theme.header({
-        className,
-        radius,
-        size,
-      });
+      return twMerge(
+        theme.header({
+          className,
+          radius,
+          size,
+        })
+      );
     }, [theme, className, radius, size]);
 
     return (

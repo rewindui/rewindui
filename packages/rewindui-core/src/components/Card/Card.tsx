@@ -6,6 +6,7 @@ import { CardImage } from '@components/Card/CardImage';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 import { CardContextProvider } from './Card.context';
 
 const defaultProps: Partial<CardProps> = {
@@ -42,14 +43,16 @@ const CardRoot: CardComponent = forwardRef<HTMLDivElement, CardProps>(
     };
 
     const classes = useMemo(() => {
-      return theme.base({
-        bordered,
-        className,
-        color,
-        radius,
-        shadow,
-        withDivider,
-      });
+      return twMerge(
+        theme.base({
+          bordered,
+          className,
+          color,
+          radius,
+          shadow,
+          withDivider,
+        })
+      );
     }, [bordered, className, color, radius, shadow, withDivider, theme]);
 
     return (

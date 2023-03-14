@@ -2,6 +2,7 @@ import { ImageComponent, ImageProps } from '@components/Image/Image.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ImageProps> = {
   fit: 'contain',
@@ -36,15 +37,22 @@ export const Image: ImageComponent = forwardRef<HTMLDivElement, ImageProps>(
     };
     const id = usePropId(props.id);
     const classes = useMemo(() => {
-      return theme.base({
-        className,
-        fit,
-        radius,
-      });
+      return twMerge(
+        theme.base({
+          className,
+          fit,
+          radius,
+        })
+      );
     }, [theme, className, fit, radius]);
 
     return (
-      <div id={id} ref={ref} className={theme.wrapper()} {...additionalProps}>
+      <div
+        id={id}
+        ref={ref}
+        className={twMerge(theme.wrapper({ className: wrapperClassName }))}
+        {...additionalProps}
+      >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           className={classes}

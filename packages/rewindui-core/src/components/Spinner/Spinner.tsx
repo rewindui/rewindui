@@ -1,11 +1,12 @@
 import { SpinnerProps } from '@components/Spinner/Spinner.types';
 import { useComponentTheme } from '@theme/theme.context';
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const Spinner = (props: SpinnerProps) => {
   const theme = useComponentTheme('Spinner');
   const { size = 'sm', color = 'gray', className = '' } = props;
-  const classes = className ? className : theme({ size, color, className });
+  const classes = twMerge(theme({ size, color, className }));
 
   return (
     <svg className={classes} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">

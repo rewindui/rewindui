@@ -18,6 +18,7 @@ importers:
 
   apps/docs:
     specifiers:
+      '@phosphor-icons/react': ^2.0.5
       '@rewindui/rewindui-core': workspace:*
       '@rewindui/tsconfig': workspace:*
       '@storybook/addon-actions': ^6.5.16
@@ -40,6 +41,7 @@ importers:
       typescript: ^4.9.5
       vite: ^4.1.4
     dependencies:
+      '@phosphor-icons/react': 2.0.5_biqbaboplfbrettd7655fr4n2y
       '@rewindui/rewindui-core': link:../../packages/rewindui-core
       '@tabler/icons': 1.119.0_biqbaboplfbrettd7655fr4n2y
       class-variance-authority: 0.4.0_typescript@4.9.5
@@ -71,9 +73,9 @@ importers:
       eslint-plugin-react: 7.29.4
       next: ^13.1.6
     dependencies:
-      eslint-config-next: 13.2.1_ycpbpc6yetojsgtrx3mwntkhsu
+      eslint-config-next: 13.2.4_ycpbpc6yetojsgtrx3mwntkhsu
       eslint-config-prettier: 8.5.0_eslint@8.35.0
-      eslint-config-turbo: 0.0.8_eslint@8.35.0
+      eslint-config-turbo: 0.0.9_eslint@8.35.0
       eslint-plugin-react: 7.29.4_eslint@8.35.0
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
 
@@ -91,6 +93,8 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       react-merge-refs: ^2.0.1
+      tailwind-merge: ^1.10.0
+      tailwind-scrollbar: ^2.0.1
       tsup: ^5.10.1
       typescript: ^4.5.3
       vite-tsconfig-paths: ^4.0.5
@@ -102,6 +106,8 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-merge-refs: 2.0.1
+      tailwind-merge: 1.10.0
+      tailwind-scrollbar: 2.1.0_tailwindcss@3.2.7
     devDependencies:
       '@rewindui/tsconfig': link:../rewindui-tsconfig
       '@testing-library/react': 14.0.0_biqbaboplfbrettd7655fr4n2y
@@ -2289,8 +2295,8 @@ packages:
     resolution: {integrity: sha512-s+W9Fdqh5MFk6ECrbnVmmAOwxKQuhGMT7xXHrkYIBMBcTiOqNWhv5KbJIboKR5STXxNXl32hllnvKaffzFaWQg==}
     dev: false
 
-  /@next/eslint-plugin-next/13.2.1:
-    resolution: {integrity: sha512-r0i5rcO6SMAZtqiGarUVMr3k256X0R0j6pEkKg4PxqUW+hG0qgMxRVAJsuoRG5OBFkCOlSfWZJ0mP9fQdCcyNg==}
+  /@next/eslint-plugin-next/13.2.4:
+    resolution: {integrity: sha512-ck1lI+7r1mMJpqLNa3LJ5pxCfOB1lfJncKmRJeJxcJqcngaFwylreLP7da6Rrjr6u2gVRTfmnkSkjc80IiQCwQ==}
     dependencies:
       glob: 7.1.7
     dev: false
@@ -2450,6 +2456,17 @@ packages:
       mkdirp: 1.0.4
       rimraf: 3.0.2
     dev: true
+
+  /@phosphor-icons/react/2.0.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Ghohi+Dk+Y0RoI1vra3jH2QC3sO6C16a/Km0gfy05ONIsC62Vwn1SK2Qaim77VPyn1FS7qjMxocdi9kx6btvXg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@pkgr/utils/2.3.1:
     resolution: {integrity: sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw==}
@@ -7022,8 +7039,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-next/13.2.1_ycpbpc6yetojsgtrx3mwntkhsu:
-    resolution: {integrity: sha512-2GAx7EjSiCzJN6H2L/v1kbYrNiwQxzkyjy6eWSjuhAKt+P6d3nVNHGy9mON8ZcYd72w/M8kyMjm4UB9cvijgrw==}
+  /eslint-config-next/13.2.4_ycpbpc6yetojsgtrx3mwntkhsu:
+    resolution: {integrity: sha512-lunIBhsoeqw6/Lfkd6zPt25w1bn0znLA/JCL+au1HoEpSb4/PpsOYsYtgV/q+YPsoKIOzFyU5xnb04iZnXjUvg==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -7031,7 +7048,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 13.2.1
+      '@next/eslint-plugin-next': 13.2.4
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/parser': 5.45.0_ycpbpc6yetojsgtrx3mwntkhsu
       eslint: 8.35.0
@@ -7056,13 +7073,13 @@ packages:
       eslint: 8.35.0
     dev: false
 
-  /eslint-config-turbo/0.0.8_eslint@8.35.0:
-    resolution: {integrity: sha512-ijj6uv0QX2kWahg3OYnTK1/q4MueXsqY2uE4MP9yeUA5CzVhL7GU+biKlv1BfMMqPltixHUcpZoW4yyNLCnMiw==}
+  /eslint-config-turbo/0.0.9_eslint@8.35.0:
+    resolution: {integrity: sha512-j1cTdx3tRmKo0csyfQKhpuT8dynK9oddbK5nmrShoMpXI2qMbxHLYH7MWAid4FmJN8rYympy3VKw5U63Yazycg==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.35.0
-      eslint-plugin-turbo: 0.0.8_eslint@8.35.0
+      eslint-plugin-turbo: 0.0.9_eslint@8.35.0
     dev: false
 
   /eslint-import-resolver-node/0.3.6:
@@ -7230,8 +7247,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-turbo/0.0.8_eslint@8.35.0:
-    resolution: {integrity: sha512-pExSCmjWw/KFKb3/0PVqxiWb30FbcwDEf6kKv3alvNBSVEzDHalyAGHc9klbLSG+nFmbkfNE3Ky/UHDryCqt8g==}
+  /eslint-plugin-turbo/0.0.9_eslint@8.35.0:
+    resolution: {integrity: sha512-fEsuSnYU3GLtT+s66mUuzDL1LaSieIx5uk3tPO0ToGv7hI2XzOfP24aPkQItTBGl7kq2JaVkRzPwcnfz8hkp0w==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -12510,6 +12527,19 @@ packages:
     dependencies:
       '@pkgr/utils': 2.3.1
       tslib: 2.5.0
+    dev: false
+
+  /tailwind-merge/1.10.0:
+    resolution: {integrity: sha512-WFnDXSS4kFTZwjKg5/oZSGzBRU/l+qcbv5NVTzLUQvJ9yovDAP05h0F2+ZFW0Lw9EcgRoc2AfURUdZvnEFrXKg==}
+    dev: false
+
+  /tailwind-scrollbar/2.1.0_tailwindcss@3.2.7:
+    resolution: {integrity: sha512-zpvY5mDs0130YzYjZKBiDaw32rygxk5RyJ4KmeHjGnwkvbjm/PszON1m4Bbt2DkMRIXlXsfNevykAESgURN4KA==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: 3.x
+    dependencies:
+      tailwindcss: 3.2.7_postcss@8.4.21
     dev: false
 
   /tailwindcss/3.2.7_postcss@8.4.21:

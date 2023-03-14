@@ -1,11 +1,11 @@
 import { AlertComponent, AlertProps } from '@components/Alert/Alert.types';
 import { Fader } from '@components/Fader';
-import { IconX } from '@tabler/icons';
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { Ref, forwardRef, useMemo, useState } from 'react';
-import { XMarkIcon } from '../../icons/XMark';
+import { XMarkIcon } from '@icons/XMark';
+import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<AlertProps> = {
   color: 'blue',
@@ -43,16 +43,18 @@ export const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HT
   const [visible, setVisible] = useState(true);
 
   const classes = useMemo(() => {
-    return theme.base({
-      accent,
-      className,
-      color,
-      radius,
-      shadow,
-      shadowColor,
-      size,
-      tone,
-    });
+    return twMerge(
+      theme.base({
+        accent,
+        className,
+        color,
+        radius,
+        shadow,
+        shadowColor,
+        size,
+        tone,
+      })
+    );
   }, [theme, accent, className, color, radius, shadow, shadowColor, size, tone]);
 
   const id = usePropId(props.id);

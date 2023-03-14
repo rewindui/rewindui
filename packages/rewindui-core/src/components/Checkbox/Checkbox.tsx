@@ -2,6 +2,7 @@ import { CheckboxComponent, CheckboxProps } from '@components/Checkbox';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<CheckboxProps> = {
   color: 'blue',
@@ -43,15 +44,17 @@ export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, Checkbox
     const validation = !!error ? 'invalid' : 'valid';
 
     const classes = useMemo(() => {
-      return theme.base({
-        className,
-        color,
-        radius,
-        size,
-        tone,
-        validation,
-        withRing,
-      });
+      return twMerge(
+        theme.base({
+          className,
+          color,
+          radius,
+          size,
+          tone,
+          validation,
+          withRing,
+        })
+      );
     }, [theme, color, tone, size, radius, validation, withRing, className]);
 
     return (
@@ -67,21 +70,24 @@ export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, Checkbox
         <div className="flex flex-col">
           <label
             htmlFor={id}
-            className={theme.label({ size, className: labelClassName })}
+            className={twMerge(theme.label({ size, className: labelClassName }))}
             {...labelProps}
           >
             {label}
           </label>
           {description && (
             <span
-              className={theme.description({ size, className: descriptionClassName })}
+              className={twMerge(theme.description({ size, className: descriptionClassName }))}
               {...descriptionProps}
             >
               {description}
             </span>
           )}
           {error && (
-            <span className={theme.error({ size, className: errorClassName })} {...errorProps}>
+            <span
+              className={twMerge(theme.error({ size, className: errorClassName }))}
+              {...errorProps}
+            >
               {error}
             </span>
           )}

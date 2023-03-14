@@ -7,6 +7,7 @@ import { useAccordionItemContext } from '@components/Accordion/AccordionItem/Acc
 import { Collapse } from '@components/Collapse';
 import { useComponentTheme } from '@theme/theme.context';
 import { forwardRef, Ref, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const AccordionBody: AccordionBodyComponent = forwardRef<HTMLDivElement, AccordionBodyProps>(
   (props: AccordionBodyProps, ref?: Ref<HTMLDivElement>) => {
@@ -22,11 +23,13 @@ export const AccordionBody: AccordionBodyComponent = forwardRef<HTMLDivElement, 
     const { anchor, bodyId, headerId } = useAccordionItemContext();
 
     const classes = useMemo(() => {
-      return theme.body({
-        bordered,
-        className,
-        size,
-      });
+      return twMerge(
+        theme.body({
+          bordered,
+          className,
+          size,
+        })
+      );
     }, [bordered, className, size, theme]);
 
     return (
