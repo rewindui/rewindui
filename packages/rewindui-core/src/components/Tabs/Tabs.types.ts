@@ -23,13 +23,13 @@ export interface TabsContext {
 }
 
 export interface TabsProps extends ComponentPropsWithRef<'div'> {
-  color: TabsColor;
+  color?: TabsColor;
   defaultTab: string;
-  fullWidth: boolean;
-  method: TabsMethod;
-  radius: TabsRadius;
-  size: TabsSize;
-  tone: TabsTone;
+  fullWidth?: boolean;
+  method?: TabsMethod;
+  radius?: TabsRadius;
+  size?: TabsSize;
+  tone?: TabsTone;
 }
 
 export type TabsComponent = ForwardRefExoticComponent<
