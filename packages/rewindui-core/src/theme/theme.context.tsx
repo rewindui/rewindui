@@ -76,6 +76,7 @@ type ThemeComponents = {
     list: typeof styles.tabStyles.list;
   };
   Text: typeof styles.textStyles.base;
+  Textarea: typeof styles.textareaStyles.base;
 };
 
 const defaultTheme: Theme = {
@@ -150,6 +151,7 @@ const defaultTheme: Theme = {
       list: styles.tabStyles.list,
     },
     Text: styles.textStyles.base,
+    Textarea: styles.textareaStyles.base,
   },
 };
 

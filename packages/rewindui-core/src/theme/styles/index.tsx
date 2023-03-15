@@ -11,3 +11,4 @@ export * from './Spinner.styles';
 export * from './Switch.styles';
 export * from './Tab.styles';
 export * from './Text.styles';
+export * from './Textarea.styles';
