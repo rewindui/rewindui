@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const checkBoxStyles = cva(['cursor-pointer', 'form-checkbox'], {
+const base = cva(['cursor-pointer', 'form-checkbox'], {
   variants: {
     color: {
       blue: [
@@ -123,7 +123,7 @@ const checkBoxStyles = cva(['cursor-pointer', 'form-checkbox'], {
   },
 });
 
-const checkBoxLabelStyles = cva(['cursor-pointer'], {
+const label = cva(['cursor-pointer'], {
   variants: {
     size: {
       sm: ['text-sm', 'pl-1.5'],
@@ -134,7 +134,7 @@ const checkBoxLabelStyles = cva(['cursor-pointer'], {
   },
 });
 
-const checkBoxDescriptionStyles = cva([], {
+const description = cva([], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
@@ -145,7 +145,7 @@ const checkBoxDescriptionStyles = cva([], {
   },
 });
 
-const checkBoxErrorStyles = cva(['text-red-500'], {
+const error = cva(['text-red-500'], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
@@ -156,4 +156,11 @@ const checkBoxErrorStyles = cva(['text-red-500'], {
   },
 });
 
-export { checkBoxStyles, checkBoxLabelStyles, checkBoxDescriptionStyles, checkBoxErrorStyles };
+const checkBoxStyles = {
+  base,
+  description,
+  error,
+  label,
+};
+
+export { checkBoxStyles };

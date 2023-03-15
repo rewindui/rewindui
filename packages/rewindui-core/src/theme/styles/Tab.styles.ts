@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const tabStyles = cva(
+const tab = cva(
   ['flex', 'flex-inline', 'justify-center', 'items-center', 'focus-visible:outline-0'],
   {
     variants: {
@@ -282,7 +282,7 @@ const tabStyles = cva(
   }
 );
 
-const tabListStyles = cva([
+const list = cva([
   'flex',
   'flex-inline',
   'space-x-2',
@@ -298,4 +298,9 @@ const tabListStyles = cva([
   'scrollbar-track-rounded-lg',
 ]);
 
-export { tabStyles, tabListStyles };
+const tabStyles = {
+  tab,
+  list,
+};
+
+export { tabStyles };

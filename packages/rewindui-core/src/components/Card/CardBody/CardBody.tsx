@@ -5,7 +5,7 @@ import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export const CardBody: CardBodyComponent = forwardRef<HTMLDivElement, CardBodyProps>(
+const CardBody: CardBodyComponent = forwardRef<HTMLDivElement, CardBodyProps>(
   (props: CardBodyProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Card');
     const { children, className = '', ...additionalProps } = props;
@@ -30,3 +30,5 @@ export const CardBody: CardBodyComponent = forwardRef<HTMLDivElement, CardBodyPr
 );
 
 CardBody.displayName = 'CardBody';
+
+export { CardBody };

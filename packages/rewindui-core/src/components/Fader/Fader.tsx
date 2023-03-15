@@ -2,7 +2,7 @@ import { FaderProps } from '@components/Fader/Fader.types';
 import { forwardRef, Ref, useLayoutEffect, useRef, useState } from 'react';
 import { mergeRefs } from 'react-merge-refs';
 
-export const Fader = forwardRef((props: FaderProps, ref?: Ref<HTMLDivElement>) => {
+const Fader = forwardRef((props: FaderProps, ref?: Ref<HTMLDivElement>) => {
   const localRef = useRef<HTMLDivElement>(null);
   const {
     children,
@@ -69,3 +69,5 @@ export const Fader = forwardRef((props: FaderProps, ref?: Ref<HTMLDivElement>) =
 });
 
 Fader.displayName = 'Fader';
+
+export { Fader };

@@ -13,7 +13,7 @@ const defaultProps: Partial<ImageProps> = {
   width: '100%',
 };
 
-export const Image: ImageComponent = forwardRef<HTMLDivElement, ImageProps>(
+const Image: ImageComponent = forwardRef<HTMLDivElement, ImageProps>(
   (props: ImageProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Image');
     const {
@@ -71,3 +71,5 @@ export const Image: ImageComponent = forwardRef<HTMLDivElement, ImageProps>(
 );
 
 Image.displayName = 'Image';
+
+export { Image };

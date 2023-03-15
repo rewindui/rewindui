@@ -2,12 +2,12 @@ import * as React from 'react';
 
 export const View = ({ prop, value = '', children }) => {
   return (
-    <div className="flex flex-col border divide-y divide-slate-200 rounded-lg shadow-sm">
-      <div className="flex space-x-2 items-center bg-slate-100/75 text-slate-800 p-2.5">
+    <div className="flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
+      <div className="flex space-x-2 items-center bg-gray-100/75 text-gray-800 p-2.5">
         {prop}
         {value && <Badge>{value}</Badge>}
       </div>
-      <div className="bg-grid bg-stone-50 flex flex-wrap gap-x-2 gap-y-2 p-2.5">{children}</div>
+      <div className="bg-grid bg-gray-50/25 flex flex-wrap gap-x-2 gap-y-2 p-2.5">{children}</div>
     </div>
   );
 };
@@ -17,29 +17,29 @@ export const EnhancedView = ({ prop, value = '', ...props }) => {
   const { children, ...rest } = child.props;
 
   return (
-    <div className="flex flex-col border divide-y divide-slate-200 rounded-lg shadow-sm">
-      <div className="flex space-x-2 items-center bg-slate-100/75 text-slate-800 p-2.5">
+    <div className="flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
+      <div className="flex space-x-2 items-center bg-gray-100/75 text-gray-800 p-2.5">
         {prop}
         {value && <Badge>{value}</Badge>}
       </div>
       <div className="flex flex-wrap">
-        <div className="flex flex-col min-w-[250px] border divide-y divide-slate-200 rounded m-2.5 text-sm">
+        <div className="flex flex-col min-w-[250px] border divide-y divide-gray-200 rounded m-2.5 text-sm ">
           <span className="font-medium p-1.5">Props</span>
           {Object.keys(rest).map((prop) => (
             <div key={prop} className="flex items-center space-x-0 p-1.5">
-              <div className="text-slate-500">{prop}</div>
+              <div className="text-gray-500">{prop}</div>
               {typeof rest[prop] === 'string' && (
-                <div className="text-slate-800">
+                <div className="text-gray-800">
                   <Badge>{rest[prop]}</Badge>
                 </div>
               )}
             </div>
           ))}
           {!Object.keys(rest).length && (
-            <span className="text-slate-700 p-1.5">No properties selected</span>
+            <span className="text-gray-700 p-1.5">No properties selected</span>
           )}
         </div>
-        <div className="bg-grid bg-stone-50 flex-1 p-2.5">{props.children}</div>
+        <div className="bg-grid bg-gray-50/50 flex-1 p-2.5">{props.children}</div>
       </div>
     </div>
   );

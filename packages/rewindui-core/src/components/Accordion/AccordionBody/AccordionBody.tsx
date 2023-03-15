@@ -9,7 +9,7 @@ import { useComponentTheme } from '@theme/theme.context';
 import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export const AccordionBody: AccordionBodyComponent = forwardRef<HTMLDivElement, AccordionBodyProps>(
+const AccordionBody: AccordionBodyComponent = forwardRef<HTMLDivElement, AccordionBodyProps>(
   (props: AccordionBodyProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Accordion');
     const {
@@ -50,3 +50,5 @@ export const AccordionBody: AccordionBodyComponent = forwardRef<HTMLDivElement, 
 );
 
 AccordionBody.displayName = 'AccordionBody';
+
+export { AccordionBody };

@@ -5,7 +5,7 @@ import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref } from 'react';
 
-export const CardImage: CardImageComponent = forwardRef<HTMLDivElement, CardImageProps>(
+const CardImage: CardImageComponent = forwardRef<HTMLDivElement, CardImageProps>(
   (props: CardImageProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Card');
     const {
@@ -37,3 +37,5 @@ export const CardImage: CardImageComponent = forwardRef<HTMLDivElement, CardImag
 );
 
 CardImage.displayName = 'CardImage';
+
+export { CardImage };

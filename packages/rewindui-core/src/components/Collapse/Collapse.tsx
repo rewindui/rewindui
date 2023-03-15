@@ -1,7 +1,7 @@
 import { CollapseProps } from '@components/Collapse/Collapse.types';
 import { useLayoutEffect, useRef } from 'react';
 
-export const Collapse = (props: CollapseProps) => {
+const Collapse = (props: CollapseProps) => {
   const collapseRef = useRef<HTMLDivElement>(null);
   const { duration = 250, isOpen = false, children } = props;
   const mounted = useRef(true);
@@ -52,3 +52,5 @@ export const Collapse = (props: CollapseProps) => {
 };
 
 Collapse.displayName = 'Collapse';
+
+export { Collapse };

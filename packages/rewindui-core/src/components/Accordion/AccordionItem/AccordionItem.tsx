@@ -6,7 +6,7 @@ import {
 import React from 'react';
 import { AccordionItemContextProvider } from './AccordionItem.context';
 
-export const AccordionItem: AccordionItemComponent = (props: AccordionItemProps) => {
+const AccordionItem: AccordionItemComponent = (props: AccordionItemProps) => {
   const { anchor, children } = {
     ...props,
   };
@@ -23,3 +23,5 @@ export const AccordionItem: AccordionItemComponent = (props: AccordionItemProps)
 };
 
 AccordionItem.displayName = 'AccordionItem';
+
+export { AccordionItem };

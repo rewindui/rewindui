@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const cardStyles = cva(['flex', 'flex-col'], {
+const base = cva(['flex', 'flex-col'], {
   variants: {
     bordered: {
       true: ['border'],
@@ -76,7 +76,7 @@ const cardStyles = cva(['flex', 'flex-col'], {
   ],
 });
 
-const cardBodyStyles = cva([], {
+const body = cva([], {
   variants: {
     size: {
       sm: ['px-4', 'text-sm'],
@@ -133,7 +133,7 @@ const cardBodyStyles = cva([], {
   ],
 });
 
-const cardHeaderStyles = cva(['flex', 'flex-row', 'justify-between', 'items-center'], {
+const header = cva(['flex', 'flex-row', 'justify-between', 'items-center'], {
   variants: {
     size: {
       sm: ['px-4', 'py-3', 'text-sm', 'max-h-[70px]'],
@@ -151,7 +151,7 @@ const cardHeaderStyles = cva(['flex', 'flex-row', 'justify-between', 'items-cent
   },
 });
 
-const cardFooterStyles = cva(['flex', 'items-center'], {
+const footer = cva(['flex', 'items-center'], {
   variants: {
     size: {
       sm: ['px-4', 'py-3', 'text-sm', 'max-h-[70px]'],
@@ -169,7 +169,7 @@ const cardFooterStyles = cva(['flex', 'items-center'], {
   },
 });
 
-const cardImageStyles = cva(['flex', 'flex-row', 'items-center', 'justify-center'], {
+const image = cva(['flex', 'flex-row', 'items-center', 'justify-center'], {
   variants: {
     radius: {
       none: ['rounded-t-none'],
@@ -181,4 +181,12 @@ const cardImageStyles = cva(['flex', 'flex-row', 'items-center', 'justify-center
   },
 });
 
-export { cardStyles, cardBodyStyles, cardFooterStyles, cardHeaderStyles, cardImageStyles };
+const cardStyles = {
+  base,
+  body,
+  footer,
+  header,
+  image,
+};
+
+export { cardStyles };

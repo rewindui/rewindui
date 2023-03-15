@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const accordionStyles = cva([], {
+const base = cva([], {
   variants: {
     color: {
       white: 'bg-white',
@@ -46,7 +46,7 @@ const accordionStyles = cva([], {
   },
 });
 
-const accordionBodyStyles = cva([], {
+const body = cva([], {
   variants: {
     size: {
       sm: ['text-sm', 'px-4', 'py-2'],
@@ -61,7 +61,7 @@ const accordionBodyStyles = cva([], {
   },
 });
 
-const accordionHeaderStyles = cva(
+const header = cva(
   [
     'cursor-pointer',
     'flex',
@@ -260,7 +260,7 @@ const accordionHeaderStyles = cva(
   }
 );
 
-const accordionIconStyles = cva(['transition', 'transform', 'duration-250', 'ease-in-out'], {
+const icon = cva(['transition', 'transform', 'duration-250', 'ease-in-out'], {
   variants: {
     state: {
       active: 'rotate-180',
@@ -275,4 +275,11 @@ const accordionIconStyles = cva(['transition', 'transform', 'duration-250', 'eas
   },
 });
 
-export { accordionStyles, accordionBodyStyles, accordionHeaderStyles, accordionIconStyles };
+const accordionStyles = {
+  base,
+  body,
+  header,
+  icon,
+};
+
+export { accordionStyles };

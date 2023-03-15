@@ -1,7 +1,7 @@
 import { useTabsContext } from '@components/Tabs/Tabs.context';
 import { FunctionComponent, PropsWithoutRef } from 'react';
 
-export const TabContent: FunctionComponent<PropsWithoutRef<any>> = (props: any) => {
+const TabContent: FunctionComponent<PropsWithoutRef<any>> = (props: any) => {
   const { activeTabAnchor, method } = useTabsContext();
   const { anchor, children, ...additionalProps } = props;
   const id = `tabpanel-${anchor}`;
@@ -25,3 +25,7 @@ export const TabContent: FunctionComponent<PropsWithoutRef<any>> = (props: any) 
 
   return content;
 };
+
+TabContent.displayName = 'TabContent';
+
+export { TabContent };

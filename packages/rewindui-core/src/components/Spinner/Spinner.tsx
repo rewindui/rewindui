@@ -3,7 +3,7 @@ import { useComponentTheme } from '@theme/theme.context';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export const Spinner = (props: SpinnerProps) => {
+const Spinner = (props: SpinnerProps) => {
   const theme = useComponentTheme('Spinner');
   const { size = 'sm', color = 'gray', className = '' } = props;
   const classes = twMerge(theme({ size, color, className }));
@@ -28,3 +28,5 @@ export const Spinner = (props: SpinnerProps) => {
 };
 
 Spinner.displayName = 'Spinner';
+
+export { Spinner };

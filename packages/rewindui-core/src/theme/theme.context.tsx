@@ -7,121 +7,135 @@ export type Theme = {
 
 type ThemeComponents = {
   Accordion: {
-    base: typeof styles.accordionStyles;
-    body: typeof styles.accordionBodyStyles;
-    header: typeof styles.accordionHeaderStyles;
-    icon: typeof styles.accordionIconStyles;
+    base: typeof styles.accordionStyles.base;
+    body: typeof styles.accordionStyles.body;
+    header: typeof styles.accordionStyles.header;
+    icon: typeof styles.accordionStyles.icon;
   };
   Alert: {
-    base: typeof styles.alertStyles;
-    infoWrapper: typeof styles.alertInfoWrapperStyles;
-    iconWrapper: typeof styles.alertIconWrapper;
-    dismissIcon: typeof styles.alertDismissIconStyles;
-    title: typeof styles.alertTitleStyles;
-    text: typeof styles.alertTextStyles;
+    base: typeof styles.alertStyles.base;
+    infoWrapper: typeof styles.alertStyles.infoWrapper;
+    iconWrapper: typeof styles.alertStyles.iconWrapper;
+    dismissIcon: typeof styles.alertStyles.dismissIcon;
+    title: typeof styles.alertStyles.title;
+    text: typeof styles.alertStyles.text;
   };
   Button: {
-    base: typeof styles.buttonStyles;
-    chevron: typeof styles.chevronStyles;
-    spinner: typeof styles.buttonSpinnerStyles;
+    base: typeof styles.buttonStyles.base;
+    chevron: typeof styles.buttonStyles.chevron;
+    spinner: typeof styles.buttonStyles.spinner;
   };
   Card: {
-    base: typeof styles.cardStyles;
-    body: typeof styles.cardBodyStyles;
-    header: typeof styles.cardHeaderStyles;
-    image: typeof styles.cardImageStyles;
-    footer: typeof styles.cardFooterStyles;
+    base: typeof styles.cardStyles.base;
+    body: typeof styles.cardStyles.body;
+    header: typeof styles.cardStyles.header;
+    image: typeof styles.cardStyles.image;
+    footer: typeof styles.cardStyles.footer;
   };
   Checkbox: {
-    base: typeof styles.checkBoxStyles;
-    label: typeof styles.checkBoxLabelStyles;
-    description: typeof styles.checkBoxDescriptionStyles;
-    error: typeof styles.checkBoxErrorStyles;
+    base: typeof styles.checkBoxStyles.base;
+    label: typeof styles.checkBoxStyles.label;
+    description: typeof styles.checkBoxStyles.description;
+    error: typeof styles.checkBoxStyles.error;
   };
   Image: {
-    base: typeof styles.imageStyles;
-    caption: typeof styles.imageCaptionStyles;
-    wrapper: typeof styles.imageWrapperStyles;
+    base: typeof styles.imageStyles.base;
+    caption: typeof styles.imageStyles.caption;
+    wrapper: typeof styles.imageStyles.wrapper;
+  };
+  Input: {
+    base: typeof styles.inputStyles.base;
+    wrapper: typeof styles.inputStyles.wrapper;
+    icon: typeof styles.inputStyles.icon;
+    leftIconWrapper: typeof styles.inputStyles.leftIconWrapper;
+    rightIconWrapper: typeof styles.inputStyles.rightIconWrapper;
   };
   Radio: {
-    base: typeof styles.radioStyles;
-    label: typeof styles.radioLabelStyles;
-    description: typeof styles.radioDescriptionStyles;
-    error: typeof styles.radioErrorStyles;
+    base: typeof styles.radioStyles.base;
+    label: typeof styles.radioStyles.label;
+    description: typeof styles.radioStyles.description;
+    error: typeof styles.radioStyles.error;
   };
-  Spinner: typeof styles.spinnerStyles;
+  Spinner: typeof styles.spinnerStyles.base;
   Switch: {
-    base: typeof styles.switchStyles;
-    inner: typeof styles.switchInnerStyles;
-    label: typeof styles.switchLabelStyles;
-    description: typeof styles.switchDescriptionStyles;
-    error: typeof styles.switchErrorStyles;
+    base: typeof styles.switchStyles.base;
+    inner: typeof styles.switchStyles.inner;
+    label: typeof styles.switchStyles.label;
+    description: typeof styles.switchStyles.description;
+    error: typeof styles.switchStyles.error;
   };
-  Tab: {
-    base: typeof styles.tabStyles;
-    list: typeof styles.tabListStyles;
+  Tabs: {
+    tab: typeof styles.tabStyles.tab;
+    list: typeof styles.tabStyles.list;
   };
-  Text: typeof styles.textStyles;
+  Text: typeof styles.textStyles.base;
 };
 
 const defaultTheme: Theme = {
   components: {
     Accordion: {
-      base: styles.accordionStyles,
-      body: styles.accordionBodyStyles,
-      header: styles.accordionHeaderStyles,
-      icon: styles.accordionIconStyles,
+      base: styles.accordionStyles.base,
+      body: styles.accordionStyles.body,
+      header: styles.accordionStyles.header,
+      icon: styles.accordionStyles.icon,
     },
     Alert: {
-      base: styles.alertStyles,
-      infoWrapper: styles.alertInfoWrapperStyles,
-      iconWrapper: styles.alertIconWrapper,
-      dismissIcon: styles.alertDismissIconStyles,
-      title: styles.alertTitleStyles,
-      text: styles.alertTextStyles,
+      base: styles.alertStyles.base,
+      infoWrapper: styles.alertStyles.infoWrapper,
+      iconWrapper: styles.alertStyles.iconWrapper,
+      dismissIcon: styles.alertStyles.dismissIcon,
+      title: styles.alertStyles.title,
+      text: styles.alertStyles.text,
     },
     Button: {
-      base: styles.buttonStyles,
-      chevron: styles.chevronStyles,
-      spinner: styles.buttonSpinnerStyles,
+      base: styles.buttonStyles.base,
+      chevron: styles.buttonStyles.chevron,
+      spinner: styles.buttonStyles.spinner,
     },
     Card: {
-      base: styles.cardStyles,
-      body: styles.cardBodyStyles,
-      header: styles.cardHeaderStyles,
-      image: styles.cardImageStyles,
-      footer: styles.cardFooterStyles,
+      base: styles.cardStyles.base,
+      body: styles.cardStyles.body,
+      header: styles.cardStyles.header,
+      image: styles.cardStyles.image,
+      footer: styles.cardStyles.footer,
     },
     Checkbox: {
-      base: styles.checkBoxStyles,
-      label: styles.checkBoxLabelStyles,
-      description: styles.checkBoxDescriptionStyles,
-      error: styles.checkBoxErrorStyles,
+      base: styles.checkBoxStyles.base,
+      label: styles.checkBoxStyles.label,
+      description: styles.checkBoxStyles.description,
+      error: styles.checkBoxStyles.error,
     },
     Image: {
-      base: styles.imageStyles,
-      caption: styles.imageCaptionStyles,
-      wrapper: styles.imageWrapperStyles,
+      base: styles.imageStyles.base,
+      caption: styles.imageStyles.caption,
+      wrapper: styles.imageStyles.wrapper,
+    },
+    Input: {
+      base: styles.inputStyles.base,
+      wrapper: styles.inputStyles.wrapper,
+      icon: styles.inputStyles.icon,
+      leftIconWrapper: styles.inputStyles.leftIconWrapper,
+      rightIconWrapper: styles.inputStyles.rightIconWrapper,
     },
     Radio: {
-      base: styles.radioStyles,
-      label: styles.radioLabelStyles,
-      description: styles.radioDescriptionStyles,
-      error: styles.radioErrorStyles,
+      base: styles.radioStyles.base,
+      label: styles.radioStyles.label,
+      description: styles.radioStyles.description,
+      error: styles.radioStyles.error,
     },
-    Spinner: styles.spinnerStyles,
+    Spinner: styles.spinnerStyles.base,
     Switch: {
-      base: styles.switchStyles,
-      inner: styles.switchInnerStyles,
-      label: styles.switchLabelStyles,
-      description: styles.switchDescriptionStyles,
-      error: styles.switchErrorStyles,
+      base: styles.switchStyles.base,
+      inner: styles.switchStyles.inner,
+      label: styles.switchStyles.label,
+      description: styles.switchStyles.description,
+      error: styles.switchStyles.error,
     },
-    Tab: {
-      base: styles.tabStyles,
-      list: styles.tabListStyles,
+    Tabs: {
+      tab: styles.tabStyles.tab,
+      list: styles.tabStyles.list,
     },
-    Text: styles.textStyles,
+    Text: styles.textStyles.base,
   },
 };
 

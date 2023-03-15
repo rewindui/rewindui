@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const buttonStyles = cva(
+const base = cva(
   [
     'inline-flex',
     'items-center',
@@ -583,7 +583,7 @@ const buttonStyles = cva(
   }
 );
 
-const chevronStyles = cva([], {
+const chevron = cva([], {
   variants: {
     open: {
       true: [],
@@ -613,7 +613,7 @@ const chevronStyles = cva([], {
   ],
 });
 
-const buttonSpinnerStyles = cva(['-ml-1', 'mr-2', 'animate-spin'], {
+const spinner = cva(['-ml-1', 'mr-2', 'animate-spin'], {
   variants: {
     size: {
       xs: ['w-3', 'h-3'],
@@ -624,4 +624,10 @@ const buttonSpinnerStyles = cva(['-ml-1', 'mr-2', 'animate-spin'], {
   },
 });
 
-export { buttonStyles, chevronStyles, buttonSpinnerStyles };
+const buttonStyles = {
+  base,
+  chevron,
+  spinner,
+};
+
+export { buttonStyles };

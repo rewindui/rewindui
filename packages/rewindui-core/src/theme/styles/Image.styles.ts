@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const imageStyles = cva([], {
+const base = cva([], {
   variants: {
     fit: {
       contain: 'object-contain',
@@ -23,18 +23,21 @@ const imageStyles = cva([], {
   },
 });
 
-const imageCaptionStyles = cva(
-  ['w-full', 'text-base', 'text-center', 'p-2', 'absolute', 'bottom-0'],
-  {
-    variants: {
-      mode: {
-        light: ['bg-gray-200/75', 'text-gray-900'],
-        dark: ['bg-gray-800/50', 'text-gray-50'],
-      },
+const caption = cva(['w-full', 'text-base', 'text-center', 'p-2', 'absolute', 'bottom-0'], {
+  variants: {
+    mode: {
+      light: ['bg-gray-200/75', 'text-gray-900'],
+      dark: ['bg-gray-800/50', 'text-gray-50'],
     },
-  }
-);
+  },
+});
 
-const imageWrapperStyles = cva(['relative']);
+const wrapper = cva(['relative']);
 
-export { imageStyles, imageCaptionStyles, imageWrapperStyles };
+const imageStyles = {
+  base,
+  caption,
+  wrapper,
+};
+
+export { imageStyles };

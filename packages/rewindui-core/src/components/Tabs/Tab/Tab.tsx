@@ -4,9 +4,9 @@ import { useComponentTheme } from '@theme/theme.context';
 import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export const Tab: TabComponent = forwardRef<HTMLButtonElement, TabProps>(
+const Tab: TabComponent = forwardRef<HTMLButtonElement, TabProps>(
   (props: TabProps, ref?: Ref<HTMLButtonElement>) => {
-    const theme = useComponentTheme('Tab');
+    const theme = useComponentTheme('Tabs');
     const { anchor, children, className, ...additionalProps } = props;
     const id = `tab-${anchor}`;
     const panelId = `tabpanel-${anchor}`;
@@ -22,7 +22,7 @@ export const Tab: TabComponent = forwardRef<HTMLButtonElement, TabProps>(
 
     const classes = useMemo(() => {
       return twMerge(
-        theme.base({
+        theme.tab({
           className,
           color,
           fullWidth,
@@ -53,3 +53,5 @@ export const Tab: TabComponent = forwardRef<HTMLButtonElement, TabProps>(
 );
 
 Tab.displayName = 'Tab';
+
+export { Tab };

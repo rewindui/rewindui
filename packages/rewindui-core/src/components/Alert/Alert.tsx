@@ -17,7 +17,7 @@ const defaultProps: Partial<AlertProps> = {
   tone: 'solid',
 };
 
-export const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivElement>) => {
+const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivElement>) => {
   const variant = useComponentVariant('Alert', props.variant) as Partial<AlertProps>;
   const theme = useComponentTheme('Alert');
   const {
@@ -82,3 +82,5 @@ export const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HT
 });
 
 Alert.displayName = 'Alert';
+
+export { Alert };

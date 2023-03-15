@@ -13,7 +13,7 @@ const defaultProps: Partial<CheckboxProps> = {
   withRing: true,
 };
 
-export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
+const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
   (props: CheckboxProps, ref?: Ref<HTMLInputElement>) => {
     const theme = useComponentTheme('Checkbox');
     const {
@@ -98,3 +98,5 @@ export const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, Checkbox
 );
 
 Checkbox.displayName = 'Checkbox';
+
+export { Checkbox };

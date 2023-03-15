@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const radioStyles = cva(['cursor-pointer', 'form-radio'], {
+const base = cva(['cursor-pointer', 'form-radio'], {
   variants: {
     color: {
       blue: [
@@ -123,7 +123,7 @@ const radioStyles = cva(['cursor-pointer', 'form-radio'], {
   },
 });
 
-const radioLabelStyles = cva(['cursor-pointer'], {
+const label = cva(['cursor-pointer'], {
   variants: {
     size: {
       sm: ['text-sm', 'pl-1.5'],
@@ -134,7 +134,7 @@ const radioLabelStyles = cva(['cursor-pointer'], {
   },
 });
 
-const radioDescriptionStyles = cva([], {
+const description = cva([], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
@@ -145,7 +145,7 @@ const radioDescriptionStyles = cva([], {
   },
 });
 
-const radioErrorStyles = cva(['text-red-500'], {
+const error = cva(['text-red-500'], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
@@ -156,4 +156,11 @@ const radioErrorStyles = cva(['text-red-500'], {
   },
 });
 
-export { radioStyles, radioLabelStyles, radioDescriptionStyles, radioErrorStyles };
+const radioStyles = {
+  base,
+  description,
+  error,
+  label,
+};
+
+export { radioStyles };

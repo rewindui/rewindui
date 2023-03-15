@@ -9,7 +9,7 @@ import { useComponentTheme } from '@theme/theme.context';
 import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-export const AccordionHeader: AccordionHeaderComponent = forwardRef<
+const AccordionHeader: AccordionHeaderComponent = forwardRef<
   HTMLButtonElement,
   AccordionHeaderProps
 >((props: AccordionHeaderProps, ref?: Ref<HTMLButtonElement>) => {
@@ -73,3 +73,5 @@ export const AccordionHeader: AccordionHeaderComponent = forwardRef<
 });
 
 AccordionHeader.displayName = 'AccordionHeader';
+
+export { AccordionHeader };

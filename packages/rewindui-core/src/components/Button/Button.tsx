@@ -21,7 +21,7 @@ const defaultProps: Partial<ButtonProps> = {
   withRing: true,
 };
 
-export const Button: ButtonComponent = forwardRef(
+const Button: ButtonComponent = forwardRef(
   <C extends ElementType = 'button'>(
     props: PolymorphicComponentProp<C, ButtonProps>,
     ref?: PolymorphicRef<C>
@@ -112,3 +112,5 @@ export const Button: ButtonComponent = forwardRef(
 );
 
 Button.displayName = 'Button';
+
+export { Button };

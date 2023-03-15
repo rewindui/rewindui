@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const switchStyles = cva(
+const base = cva(
   [
     'relative',
     'border-0',
@@ -208,7 +208,7 @@ const switchStyles = cva(
   }
 );
 
-const switchInnerStyles = cva(['inline-block', 'bg-white', 'shadow'], {
+const inner = cva(['inline-block', 'bg-white', 'shadow'], {
   variants: {
     size: {
       sm: ['w-[17px]', 'h-[17px]'],
@@ -232,7 +232,7 @@ const switchInnerStyles = cva(['inline-block', 'bg-white', 'shadow'], {
   compoundVariants: [],
 });
 
-const switchLabelStyles = cva(['cursor-pointer'], {
+const label = cva(['cursor-pointer'], {
   variants: {
     size: {
       sm: ['text-sm', 'pl-1.5'],
@@ -243,7 +243,7 @@ const switchLabelStyles = cva(['cursor-pointer'], {
   },
 });
 
-const switchDescriptionStyles = cva([], {
+const description = cva([], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
@@ -254,7 +254,7 @@ const switchDescriptionStyles = cva([], {
   },
 });
 
-const switchErrorStyles = cva(['text-red-500'], {
+const error = cva(['text-red-500'], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
@@ -265,10 +265,12 @@ const switchErrorStyles = cva(['text-red-500'], {
   },
 });
 
-export {
-  switchStyles,
-  switchInnerStyles,
-  switchLabelStyles,
-  switchDescriptionStyles,
-  switchErrorStyles,
+const switchStyles = {
+  base,
+  description,
+  error,
+  inner,
+  label,
 };
+
+export { switchStyles };

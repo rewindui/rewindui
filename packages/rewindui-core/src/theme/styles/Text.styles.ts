@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const textStyles = cva([], {
+const base = cva([], {
   variants: {
     color: {
       white: 'text-white',
@@ -65,5 +65,9 @@ const textStyles = cva([], {
     },
   },
 });
+
+const textStyles = {
+  base,
+};
 
 export { textStyles };

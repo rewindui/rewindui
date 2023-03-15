@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const alertStyles = cva(['flex', 'gap-x-3', 'w-full'], {
+const base = cva(['flex', 'gap-x-3', 'w-full'], {
   variants: {
     tone: {
       solid: ['border', 'border-transparent', 'antialiased'],
@@ -242,7 +242,7 @@ const alertStyles = cva(['flex', 'gap-x-3', 'w-full'], {
   ],
 });
 
-const alertInfoWrapperStyles = cva(['flex', 'flex-col', 'w-full'], {
+const infoWrapper = cva(['flex', 'flex-col', 'w-full'], {
   variants: {
     size: {
       xs: ['gap-y-0.5'],
@@ -252,7 +252,8 @@ const alertInfoWrapperStyles = cva(['flex', 'flex-col', 'w-full'], {
     },
   },
 });
-const alertTitleStyles = cva(['font-medium'], {
+
+const title = cva(['font-medium'], {
   variants: {
     size: {
       xs: ['text-sm'],
@@ -262,9 +263,12 @@ const alertTitleStyles = cva(['font-medium'], {
     },
   },
 });
-const alertTextStyles = cva([]);
-const alertIconWrapper = cva(['self-start']);
-const alertDismissIconStyles = cva(['hover:opacity-75'], {
+
+const text = cva([]);
+
+const iconWrapper = cva(['self-start']);
+
+const dismissIcon = cva(['hover:opacity-75'], {
   variants: {
     size: {
       xs: ['w-4', 'h-4'],
@@ -275,11 +279,13 @@ const alertDismissIconStyles = cva(['hover:opacity-75'], {
   },
 });
 
-export {
-  alertStyles,
-  alertInfoWrapperStyles,
-  alertTitleStyles,
-  alertTextStyles,
-  alertIconWrapper,
-  alertDismissIconStyles,
+const alertStyles = {
+  base,
+  infoWrapper,
+  iconWrapper,
+  dismissIcon,
+  title,
+  text,
 };
+
+export { alertStyles };

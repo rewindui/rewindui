@@ -13,13 +13,13 @@ export type TabsMethod = 'unmount' | 'hide';
 
 export interface TabsContext {
   activeTabAnchor?: string;
-  color: TabsColor;
-  fullWidth: boolean;
-  method: TabsMethod;
-  radius: TabsRadius;
+  color?: TabsColor;
+  fullWidth?: boolean;
+  method?: TabsMethod;
+  radius?: TabsRadius;
   setActiveTabAnchor(value: string): void;
-  size: TabsSize;
-  tone: TabsTone;
+  size?: TabsSize;
+  tone?: TabsTone;
 }
 
 export interface TabsProps extends ComponentPropsWithRef<'div'> {

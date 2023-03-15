@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const spinnerStyles = cva(['animate-spin'], {
+const base = cva(['animate-spin'], {
   variants: {
     color: {
       gray: ['text-gray-800'],
@@ -15,5 +15,9 @@ const spinnerStyles = cva(['animate-spin'], {
     },
   },
 });
+
+const spinnerStyles = {
+  base,
+};
 
 export { spinnerStyles };

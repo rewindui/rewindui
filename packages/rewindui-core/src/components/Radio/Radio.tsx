@@ -13,7 +13,7 @@ const defaultProps: Partial<RadioProps> = {
   withRing: true,
 };
 
-export const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
+const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
   (props: RadioProps, ref?: Ref<HTMLInputElement>) => {
     const theme = useComponentTheme('Radio');
     const {
@@ -98,3 +98,5 @@ export const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
 );
 
 Radio.displayName = 'Radio';
+
+export { Radio };

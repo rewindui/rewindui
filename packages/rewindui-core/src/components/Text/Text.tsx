@@ -12,7 +12,7 @@ const defaultProps: Partial<TextProps> = {
   weight: 'normal',
 };
 
-export const Text: TextComponent = forwardRef(
+const Text: TextComponent = forwardRef(
   <C extends ElementType = 'span'>(
     props: PolymorphicComponentProp<C, TextProps>,
     ref?: PolymorphicRef<C>
@@ -60,3 +60,5 @@ export const Text: TextComponent = forwardRef(
 );
 
 Text.displayName = 'Text';
+
+export { Text };
