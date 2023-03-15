@@ -7,6 +7,7 @@ export * from './components/Collapse';
 export * from './components/Image';
 export * from './components/Input';
 export * from './components/Radio';
+export * from './components/Select';
 export * from './components/Spinner';
 export * from './components/Switch';
 export * from './components/Tabs';

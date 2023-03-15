@@ -56,6 +56,13 @@ type ThemeComponents = {
     description: typeof styles.radioStyles.description;
     error: typeof styles.radioStyles.error;
   };
+  Select: {
+    base: typeof styles.selectStyles.base;
+    wrapper: typeof styles.selectStyles.wrapper;
+    icon: typeof styles.selectStyles.icon;
+    leftIconWrapper: typeof styles.selectStyles.leftIconWrapper;
+    rightIconWrapper: typeof styles.selectStyles.rightIconWrapper;
+  };
   Spinner: typeof styles.spinnerStyles.base;
   Switch: {
     base: typeof styles.switchStyles.base;
@@ -122,6 +129,13 @@ const defaultTheme: Theme = {
       label: styles.radioStyles.label,
       description: styles.radioStyles.description,
       error: styles.radioStyles.error,
+    },
+    Select: {
+      base: styles.selectStyles.base,
+      wrapper: styles.selectStyles.wrapper,
+      icon: styles.selectStyles.icon,
+      leftIconWrapper: styles.selectStyles.leftIconWrapper,
+      rightIconWrapper: styles.selectStyles.rightIconWrapper,
     },
     Spinner: styles.spinnerStyles.base,
     Switch: {

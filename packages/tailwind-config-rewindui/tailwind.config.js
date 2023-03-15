@@ -11,9 +11,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'select-arrow': "url('assets/select-arrow.svg')",
-      },
       // colors: {
       //   blue: {
       //     50: '#F0F9FF',
