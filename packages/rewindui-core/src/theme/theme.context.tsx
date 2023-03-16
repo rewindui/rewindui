@@ -38,6 +38,11 @@ type ThemeComponents = {
     description: typeof styles.checkBoxStyles.description;
     error: typeof styles.checkBoxStyles.error;
   };
+  FormControl: {
+    base: typeof styles.formControlStyles.base;
+    label: typeof styles.formControlStyles.label;
+    text: typeof styles.formControlStyles.text;
+  };
   Image: {
     base: typeof styles.imageStyles.base;
     caption: typeof styles.imageStyles.caption;
@@ -121,6 +126,11 @@ const defaultTheme: Theme = {
       base: styles.imageStyles.base,
       caption: styles.imageStyles.caption,
       wrapper: styles.imageStyles.wrapper,
+    },
+    FormControl: {
+      base: styles.formControlStyles.base,
+      label: styles.formControlStyles.label,
+      text: styles.formControlStyles.text,
     },
     Input: {
       base: styles.inputStyles.base,

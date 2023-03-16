@@ -1,3 +1,4 @@
+import { useFormControlContext } from '@components/FormControl/FormControl.context';
 import { InputComponent, InputProps } from '@components/Input/Input.types';
 import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { usePropId } from '@utils/usePropId';
@@ -33,7 +34,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     ...additionalProps
   } = {
     ...defaultProps,
-    // ...useFormControlContext(),
+    ...useFormControlContext(),
     ...useInputGroupContext(),
     ...props,
   };

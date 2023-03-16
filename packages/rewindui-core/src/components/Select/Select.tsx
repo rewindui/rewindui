@@ -1,3 +1,4 @@
+import { useFormControlContext } from '@components/FormControl/FormControl.context';
 import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { SelectComponent, SelectProps } from '@components/Select/Select.types';
 import { CaretUpDown } from '@icons/CaretUpDown';
@@ -32,7 +33,7 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
     ...additionalProps
   } = {
     ...defaultProps,
-    // ...useFormControlContext(),
+    ...useFormControlContext(),
     ...useInputGroupContext(),
     ...props,
   };

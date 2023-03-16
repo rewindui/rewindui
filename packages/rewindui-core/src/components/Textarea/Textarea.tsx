@@ -1,3 +1,4 @@
+import { useFormControlContext } from '@components/FormControl/FormControl.context';
 import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { TextareaComponent, TextareaProps } from '@components/Textarea/Textarea.types';
 import { useComponentTheme } from '@theme/theme.context';
@@ -31,7 +32,7 @@ const Textarea: TextareaComponent = forwardRef(
       ...additionalProps
     } = {
       ...defaultProps,
-      // ...useFormControlContext(),
+      ...useFormControlContext(),
       ...useInputGroupContext(),
       ...props,
     };

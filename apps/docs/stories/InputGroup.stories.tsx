@@ -132,6 +132,15 @@ const InputExample = (args) => (
   </InputGroup>
 );
 
+const DatesExample = (args) => (
+  <InputGroup {...args}>
+    <InputGroup.Text>From</InputGroup.Text>
+    <InputGroup.Input placeholder={'Search...'} type="date" />
+    <InputGroup.Text>To</InputGroup.Text>
+    <InputGroup.Input placeholder={'Search...'} type="date"></InputGroup.Input>
+  </InputGroup>
+);
+
 const SelectExample = (args) => (
   <InputGroup {...args}>
     <InputGroup.Text>
@@ -162,6 +171,9 @@ const DefaultTemplate: Story<InputGroupProps> = (args) => {
       <EnhancedView prop="Text Input">
         <InputExample {...args} />
       </EnhancedView>
+      <EnhancedView prop="Date Input">
+        <DatesExample {...args} />
+      </EnhancedView>
       <EnhancedView prop="Select">
         <SelectExample {...args} />
       </EnhancedView>
@@ -178,6 +190,7 @@ const ToneTemplate: Story<InputGroupProps> = (args) => {
   const items = tones.map((tone) => (
     <View direction="column" key={tone} prop="tone" value={tone}>
       <InputExample {...args} tone={tone} />
+      <DatesExample {...args} tone={tone} />
       <SelectExample {...args} tone={tone} />
       <TextareaExample {...args} tone={tone} />
     </View>
@@ -192,6 +205,7 @@ const SizeTemplate: Story<InputGroupProps> = (args) => {
   const items = sizes.map((size) => (
     <View direction="column" key={size} prop="size" value={size}>
       <InputExample {...args} size={size} />
+      <DatesExample {...args} size={size} />
       <SelectExample {...args} size={size} />
       <TextareaExample {...args} size={size} />
     </View>
@@ -206,6 +220,7 @@ const RadiusTemplate: Story<InputGroupProps> = (args) => {
   const items = radiuses.map((radius) => (
     <View direction="column" key={radius} prop="radius" value={radius}>
       <InputExample {...args} radius={radius} />
+      <DatesExample {...args} radius={radius} />
       <SelectExample {...args} radius={radius} />
       <TextareaExample {...args} radius={radius} />
     </View>
@@ -220,6 +235,7 @@ const ShadowTemplate: Story<InputGroupProps> = (args) => {
   const items = shadows.map((shadow) => (
     <View direction="column" key={shadow} prop="shadow" value={shadow}>
       <InputExample {...args} shadow={shadow} />
+      <DatesExample {...args} shadow={shadow} />
       <SelectExample {...args} shadow={shadow} />
       <TextareaExample {...args} shadow={shadow} />
     </View>

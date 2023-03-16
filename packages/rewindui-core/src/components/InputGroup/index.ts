@@ -4,4 +4,5 @@ export type {
   InputGroupTone,
   InputGroupSize,
   InputGroupRadius,
+  InputGroupShadow,
 } from './InputGroup.types';
