@@ -1,3 +1,4 @@
+import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { SelectComponent, SelectProps } from '@components/Select/Select.types';
 import { CaretUpDown } from '@icons/CaretUpDown';
 import { useComponentTheme } from '@theme/theme.context';
@@ -32,7 +33,7 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
   } = {
     ...defaultProps,
     // ...useFormControlContext(),
-    // ...useInputGroupContext(),
+    ...useInputGroupContext(),
     ...props,
   };
   const id = usePropId(props.id);

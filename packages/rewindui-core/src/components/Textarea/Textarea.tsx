@@ -1,3 +1,4 @@
+import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { TextareaComponent, TextareaProps } from '@components/Textarea/Textarea.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
@@ -31,7 +32,7 @@ const Textarea: TextareaComponent = forwardRef(
     } = {
       ...defaultProps,
       // ...useFormControlContext(),
-      // ...useInputGroupContext(),
+      ...useInputGroupContext(),
       ...props,
     };
     const id = usePropId(props.id);

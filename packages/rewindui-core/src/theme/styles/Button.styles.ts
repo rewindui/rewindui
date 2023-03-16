@@ -14,6 +14,7 @@ const base = cva(
     'data-[has-right-element=true]:rounded-r-none',
     'data-[has-left-element=true]:h-auto',
     'data-[has-right-element=true]:h-auto',
+    'focus:z-20',
   ],
   {
     variants: {

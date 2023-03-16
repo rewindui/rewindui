@@ -50,6 +50,10 @@ type ThemeComponents = {
     leftIconWrapper: typeof styles.inputStyles.leftIconWrapper;
     rightIconWrapper: typeof styles.inputStyles.rightIconWrapper;
   };
+  InputGroup: {
+    base: typeof styles.inputGroupStyles.base;
+    text: typeof styles.inputGroupStyles.text;
+  };
   Radio: {
     base: typeof styles.radioStyles.base;
     label: typeof styles.radioStyles.label;
@@ -124,6 +128,10 @@ const defaultTheme: Theme = {
       icon: styles.inputStyles.icon,
       leftIconWrapper: styles.inputStyles.leftIconWrapper,
       rightIconWrapper: styles.inputStyles.rightIconWrapper,
+    },
+    InputGroup: {
+      base: styles.inputGroupStyles.base,
+      text: styles.inputGroupStyles.text,
     },
     Radio: {
       base: styles.radioStyles.base,

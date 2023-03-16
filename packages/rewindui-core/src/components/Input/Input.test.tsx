@@ -5,6 +5,6 @@ import { Input } from '.';
 
 describe('Input', () => {
   it('should render', () => {
-    render(<Input placeholder="This is a checkbox" />);
+    render(<Input placeholder="This is an input" />);
   });
 });

@@ -6,6 +6,7 @@ export * from './components/Checkbox';
 export * from './components/Collapse';
 export * from './components/Image';
 export * from './components/Input';
+export * from './components/InputGroup';
 export * from './components/Radio';
 export * from './components/Select';
 export * from './components/Spinner';

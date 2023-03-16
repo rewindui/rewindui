@@ -1,13 +1,19 @@
 import * as React from 'react';
 
-export const View = ({ prop, value = '', children }) => {
+export const View = ({ prop, value = '', direction = 'row', children }) => {
+  const flexDirection = direction === 'column' ? 'column' : 'row';
   return (
     <div className="flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
       <div className="flex space-x-2 items-center bg-gray-100/75 text-gray-800 p-2.5">
         {prop}
         {value && <Badge>{value}</Badge>}
       </div>
-      <div className="bg-grid bg-gray-50/25 flex flex-wrap gap-x-2 gap-y-2 p-2.5">{children}</div>
+      <div
+        style={{ flexDirection }}
+        className="bg-grid bg-gray-50/25 flex flex-wrap gap-x-2 gap-y-2 p-2.5"
+      >
+        {children}
+      </div>
     </div>
   );
 };

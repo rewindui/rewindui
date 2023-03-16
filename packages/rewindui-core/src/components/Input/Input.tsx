@@ -1,4 +1,5 @@
 import { InputComponent, InputProps } from '@components/Input/Input.types';
+import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { usePropId } from '@utils/usePropId';
 import { cloneElement, forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -33,7 +34,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
   } = {
     ...defaultProps,
     // ...useFormControlContext(),
-    // ...useInputGroupContext(),
+    ...useInputGroupContext(),
     ...props,
   };
   const id = usePropId(props.id);

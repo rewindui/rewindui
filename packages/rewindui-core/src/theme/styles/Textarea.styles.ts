@@ -82,7 +82,7 @@ const base = cva(
       {
         tone: 'solid',
         disabled: false,
-        className: ['bg-gray-100'],
+        className: ['bg-gray-50'],
       },
       {
         tone: 'transparent',

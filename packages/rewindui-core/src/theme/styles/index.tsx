@@ -5,6 +5,7 @@ export * from './Card.styles';
 export * from './Checkbox.styles';
 export * from './Image.styles';
 export * from './Input.styles';
+export * from './InputGroup.styles';
 export * from './Radio.styles';
 export * from './Select.styles';
 export * from './Spinner.styles';
