@@ -59,6 +59,10 @@ type ThemeComponents = {
     base: typeof styles.inputGroupStyles.base;
     text: typeof styles.inputGroupStyles.text;
   };
+  Popover: {
+    base: typeof styles.popoverStyles.base;
+    arrow: typeof styles.popoverStyles.arrow;
+  };
   Radio: {
     base: typeof styles.radioStyles.base;
     label: typeof styles.radioStyles.label;
@@ -146,6 +150,10 @@ const defaultTheme: Theme = {
     InputGroup: {
       base: styles.inputGroupStyles.base,
       text: styles.inputGroupStyles.text,
+    },
+    Popover: {
+      base: styles.popoverStyles.base,
+      arrow: styles.popoverStyles.arrow,
     },
     Radio: {
       base: styles.radioStyles.base,

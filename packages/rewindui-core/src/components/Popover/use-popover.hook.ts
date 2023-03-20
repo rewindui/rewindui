@@ -1,10 +1,10 @@
-import { TooltipArrowPlacement, TooltipProps } from '@components/Tooltip/Tooltip.types';
 import {
   arrow,
   autoUpdate,
   offset as offsetModifier,
   safePolygon,
   shift,
+  useClick,
   useDismiss,
   useFloating,
   useFocus,
@@ -13,14 +13,14 @@ import {
   useRole,
 } from '@floating-ui/react';
 import { flip, inline } from '@floating-ui/react-dom';
-import { arrowSideDictionary } from '@helpers/arrow-side.dictionary';
 import { useMemo, useRef, useState } from 'react';
+import { PopoverProps } from './Popover.types';
 
-export function useTooltip({
+export function usePopover({
+  placement = 'bottom',
   initiallyOpen = false,
-  offset = 5,
-  placement = 'top',
-}: Partial<TooltipProps>) {
+  offset = 8,
+}: Partial<PopoverProps>) {
   const arrowRef = useRef(null);
   const [open, setOpen] = useState(initiallyOpen);
   const { x, y, reference, floating, strategy, context } = useFloating({
@@ -38,53 +38,34 @@ export function useTooltip({
     ],
     whileElementsMounted: autoUpdate,
   });
-
-  const { getReferenceProps, getFloatingProps } = useInteractions([
+  const { getFloatingProps, getReferenceProps } = useInteractions([
+    useClick(context, {
+      enabled: open == null,
+    }),
     useHover(context, {
-      move: false,
+      move: true,
       handleClose: safePolygon(),
     }),
     useFocus(context),
     useDismiss(context, {
-      referencePress: true,
+      referencePress: false,
     }),
-    useRole(context, { role: 'tooltip' }),
+    useRole(context, { role: 'dialog' }),
   ]);
-  const arrowX = context.middlewareData.arrow?.x || 0;
-  const arrowY = context.middlewareData.arrow?.y || 0;
-  const arrowSide = arrowSideDictionary({
-    side: context.placement,
-  }) as TooltipArrowPlacement;
 
   return useMemo(
     () => ({
-      arrowRef,
-      arrowSide,
-      arrowX,
-      arrowY,
-      context,
+      x,
+      y,
+      reference,
       floating,
+      strategy,
+      context,
       getFloatingProps: getFloatingProps(),
       getReferenceProps: getReferenceProps(),
       open,
-      reference,
-      strategy,
-      x,
-      y,
+      arrowRef,
     }),
-    [
-      arrowSide,
-      arrowX,
-      arrowY,
-      context,
-      floating,
-      getFloatingProps,
-      getReferenceProps,
-      open,
-      reference,
-      strategy,
-      x,
-      y,
-    ]
+    [open, setOpen, x, y]
   );
 }

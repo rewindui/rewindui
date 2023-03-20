@@ -288,8 +288,8 @@ const arrow = cva([], {
 });
 
 const tooltipStyles = {
-  base,
   arrow,
+  base,
 };
 
 export { tooltipStyles };

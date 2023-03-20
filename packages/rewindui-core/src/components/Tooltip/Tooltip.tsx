@@ -7,9 +7,9 @@ import { usePropId } from '@utils/usePropId';
 import {
   Children,
   cloneElement,
-  ForwardedRef,
   forwardRef,
   ReactElement,
+  Ref,
   useEffect,
   useMemo,
   useState,
@@ -30,7 +30,7 @@ const defaultProps: Partial<TooltipProps> = {
 };
 
 const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
-  (props: TooltipProps, ref?: ForwardedRef<HTMLDivElement>) => {
+  (props: TooltipProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Tooltip');
     const {
       accent,
@@ -45,7 +45,6 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
       shadow,
       size,
       withinPortal,
-      ...additionalProps
     } = {
       ...defaultProps,
       ...useInputGroupContext(),
@@ -58,8 +57,6 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
     const {
       arrowRef,
       arrowSide,
-      arrowX,
-      arrowY,
       context,
       floating,
       getFloatingProps,
