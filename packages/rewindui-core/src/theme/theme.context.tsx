@@ -86,6 +86,10 @@ type ThemeComponents = {
   };
   Text: typeof styles.textStyles.base;
   Textarea: typeof styles.textareaStyles.base;
+  Tooltip: {
+    base: typeof styles.tooltipStyles.base;
+    arrow: typeof styles.tooltipStyles.arrow;
+  };
 };
 
 const defaultTheme: Theme = {
@@ -170,6 +174,10 @@ const defaultTheme: Theme = {
     },
     Text: styles.textStyles.base,
     Textarea: styles.textareaStyles.base,
+    Tooltip: {
+      base: styles.tooltipStyles.base,
+      arrow: styles.tooltipStyles.arrow,
+    },
   },
 };
 

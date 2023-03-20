@@ -80,11 +80,6 @@ const meta: Meta = {
     bordered: {
       control: { type: 'boolean' },
     },
-    as: {
-      table: {
-        disable: true,
-      },
-    },
     ref: {
       table: {
         disable: true,

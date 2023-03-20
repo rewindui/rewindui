@@ -1,7 +1,8 @@
 import * as React from 'react';
 
-export const View = ({ prop, value = '', direction = 'row', children }) => {
+export const View = ({ prop, value = '', direction = 'row', justify = 'evenly', children }) => {
   const flexDirection = direction === 'column' ? 'column' : 'row';
+  const justifyContent = justify === 'start' ? 'flex-start' : 'space-evenly';
   return (
     <div className="flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
       <div className="flex space-x-2 items-center bg-gray-100/75 text-gray-800 p-2.5">
@@ -9,8 +10,8 @@ export const View = ({ prop, value = '', direction = 'row', children }) => {
         {value && <Badge>{value}</Badge>}
       </div>
       <div
-        style={{ flexDirection }}
-        className="bg-grid bg-gray-50/25 flex flex-wrap gap-x-2 gap-y-2 p-2.5"
+        style={{ flexDirection, justifyContent }}
+        className="bg-grid bg-gray-50/25 flex flex-wrap justify-center gap-x-2 gap-y-2 p-2.5"
       >
         {children}
       </div>
