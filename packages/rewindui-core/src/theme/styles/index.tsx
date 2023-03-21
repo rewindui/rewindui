@@ -8,6 +8,7 @@ export * from './FormControl.styles';
 export * from './Image.styles';
 export * from './Input.styles';
 export * from './InputGroup.styles';
+export * from './Overlay.styles';
 export * from './Popover.styles';
 export * from './Radio.styles';
 export * from './Select.styles';

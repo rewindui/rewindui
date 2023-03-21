@@ -67,6 +67,7 @@ type ThemeComponents = {
     base: typeof styles.inputGroupStyles.base;
     text: typeof styles.inputGroupStyles.text;
   };
+  Overlay: typeof styles.overlayStyles.base;
   Popover: {
     base: typeof styles.popoverStyles.base;
     arrow: typeof styles.popoverStyles.arrow;
@@ -167,6 +168,7 @@ const defaultTheme: Theme = {
       base: styles.inputGroupStyles.base,
       text: styles.inputGroupStyles.text,
     },
+    Overlay: styles.overlayStyles.base,
     Popover: {
       base: styles.popoverStyles.base,
       arrow: styles.popoverStyles.arrow,
