@@ -3,6 +3,7 @@ export * from './Alert.styles';
 export * from './Button.styles';
 export * from './Card.styles';
 export * from './Checkbox.styles';
+export * from './Dropdown.styles';
 export * from './FormControl.styles';
 export * from './Image.styles';
 export * from './Input.styles';

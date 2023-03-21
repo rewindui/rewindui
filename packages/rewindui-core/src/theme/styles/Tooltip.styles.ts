@@ -5,8 +5,8 @@ const base = cva(
   {
     variants: {
       open: {
-        true: ['opacity-100'],
-        false: ['opacity-0'],
+        true: ['opacity-100', 'scale-100'],
+        false: ['opacity-0', 'scale-95', 'invisible'],
       },
       accent: {
         solid: [],

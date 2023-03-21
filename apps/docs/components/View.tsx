@@ -1,10 +1,12 @@
+import { cva } from 'class-variance-authority';
+import { ReactNode } from 'react';
 import * as React from 'react';
 
 export const View = ({ prop, value = '', direction = 'row', justify = 'evenly', children }) => {
   const flexDirection = direction === 'column' ? 'column' : 'row';
   const justifyContent = justify === 'start' ? 'flex-start' : 'space-evenly';
   return (
-    <div className="flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
+    <div className="grow flex flex-col border divide-y divide-gray-200 rounded-lg shadow-sm">
       <div className="flex space-x-2 items-center bg-gray-100/75 text-gray-800 p-2.5">
         {prop}
         {value && <Badge>{value}</Badge>}
@@ -64,6 +66,21 @@ export const Badge = ({ children }) => {
   );
 };
 
-export const ViewGroup = ({ children }) => {
-  return <div className="flex flex-col space-y-5">{children}</div>;
+export const ViewGroup = ({
+  children,
+  direction = 'column',
+}: {
+  children: ReactNode;
+  direction?: 'column' | 'row';
+}) => {
+  const viewClasses = cva(['flex', 'justify-evenly'], {
+    variants: {
+      direction: {
+        row: ['flex-row', 'space-x-5'],
+        column: ['flex-col', 'space-y-5'],
+      },
+    },
+  });
+
+  return <div className={viewClasses({ direction })}>{children}</div>;
 };

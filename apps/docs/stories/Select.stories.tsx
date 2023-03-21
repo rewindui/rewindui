@@ -10,9 +10,9 @@ import {
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
-import { MagnifyingGlass, Rocket, RocketLaunch } from '@phosphor-icons/react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
 
-const tones: SelectTone[] = ['base', 'solid', 'transparent'];
+const tones: SelectTone[] = ['light', 'solid', 'transparent'];
 const sizes: SelectSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: SelectRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
 const validations: SelectValidation[] = ['none', 'invalid', 'valid', 'warning'];

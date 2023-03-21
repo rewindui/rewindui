@@ -20,7 +20,7 @@ const base = cva(
         lg: ['text-lg', 'h-12'],
       },
       tone: {
-        base: ['text-gray-800', 'border', 'focus:bg-gray-50', 'placeholder:text-gray-400'],
+        light: ['text-gray-800', 'border', 'focus:bg-gray-50', 'placeholder:text-gray-400'],
         solid: ['text-gray-800', 'border', 'focus:bg-gray-100', 'placeholder:text-gray-400'],
         transparent: ['text-gray-800', 'border', 'placeholder:text-gray-400'],
       },
@@ -119,7 +119,7 @@ const base = cva(
       },
       {
         type: 'file',
-        tone: ['base', 'solid'],
+        tone: ['light', 'solid'],
         className: [
           'file:bg-gray-100',
           'file:hover:bg-gray-200',
@@ -198,7 +198,7 @@ const base = cva(
         className: ['py-4'],
       },
       {
-        tone: 'base',
+        tone: 'light',
         disabled: false,
         className: ['bg-white'],
       },
@@ -213,7 +213,7 @@ const base = cva(
         className: ['bg-transparent'],
       },
       {
-        tone: 'base',
+        tone: 'light',
         disabled: true,
         className: ['bg-gray-100'],
       },
@@ -228,7 +228,7 @@ const base = cva(
         className: ['bg-gray-50'],
       },
       {
-        tone: 'base',
+        tone: 'light',
         validation: 'none',
         className: ['border-gray-300', 'focus-visible:border-blue-500'],
       },
@@ -443,7 +443,7 @@ const wrapper = cva(['relative', 'flex', 'items-center', 'w-full']);
 const icon = cva([], {
   variants: {
     tone: {
-      base: ['text-gray-600'],
+      light: ['text-gray-600'],
       solid: ['text-gray-600'],
       transparent: ['text-gray-600'],
     },

@@ -13,7 +13,7 @@ import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 import { MagnifyingGlass, Rocket, RocketLaunch } from '@phosphor-icons/react';
 
-const tones: InputTone[] = ['base', 'solid', 'transparent'];
+const tones: InputTone[] = ['light', 'solid', 'transparent'];
 const sizes: InputSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: InputRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
 const validations: InputValidation[] = ['none', 'invalid', 'valid', 'warning'];

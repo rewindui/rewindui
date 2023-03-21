@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement } from 'react';
 
-export type SelectTone = 'base' | 'solid' | 'transparent';
+export type SelectTone = 'light' | 'solid' | 'transparent';
 export type SelectSize = 'xs' | 'sm' | 'md' | 'lg';
 export type SelectValidation = 'none' | 'invalid' | 'valid' | 'warning';
 export type SelectRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';

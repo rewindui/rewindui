@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement } from 'react';
 
-export type InputTone = 'base' | 'solid' | 'transparent';
+export type InputTone = 'light' | 'solid' | 'transparent';
 export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
 export type InputValidation = 'none' | 'invalid' | 'valid' | 'warning';
 export type InputRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';

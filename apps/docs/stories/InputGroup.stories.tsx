@@ -17,7 +17,7 @@ import {
 import * as React from 'react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 
-const tones: InputGroupTone[] = ['base', 'solid', 'transparent'];
+const tones: InputGroupTone[] = ['light', 'solid', 'transparent'];
 const sizes: InputGroupSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: InputGroupRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
 const shadows: InputGroupShadow[] = ['none', 'sm', 'base', 'md'];

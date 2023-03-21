@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
-export type InputGroupTone = 'base' | 'solid' | 'transparent';
+export type InputGroupTone = 'light' | 'solid' | 'transparent';
 export type InputGroupSize = 'xs' | 'sm' | 'md' | 'lg';
 export type InputGroupRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
 export type InputGroupShadow = 'none' | 'sm' | 'base' | 'md';

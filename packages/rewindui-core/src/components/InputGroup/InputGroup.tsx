@@ -1,4 +1,5 @@
 import { Button } from '@components/Button';
+import { useFormControlContext } from '@components/FormControl/FormControl.context';
 import { Input } from '@components/Input';
 import {
   InputGroupComponent,
@@ -15,7 +16,7 @@ import { twMerge } from 'tailwind-merge';
 import { InputGroupContextProvider } from './InputGroup.context';
 
 const defaultProps: Partial<InputGroupProps> = {
-  tone: 'base',
+  tone: 'light',
   radius: 'md',
   size: 'md',
   shadow: 'none',
@@ -33,14 +34,14 @@ const _InputGroup: InputGroupComponent = forwardRef(
       type = 'text',
       ...additionalProps
     } = {
-      // ...useFormControlContext(),
+      ...useFormControlContext(),
       ...defaultProps,
       ...props,
     };
     const id = usePropId(props.id);
     const classes = useMemo(() => {
-      return twMerge(theme.base({ className, tone, radius, shadow, size }));
-    }, [className, radius, shadow, size, theme, tone]);
+      return twMerge(theme.base({ className, radius, shadow, size }));
+    }, [className, radius, shadow, size, theme]);
     const contextValue: InputGroupContext = { tone, size, radius };
     const children: ReactNode[] = [];
 

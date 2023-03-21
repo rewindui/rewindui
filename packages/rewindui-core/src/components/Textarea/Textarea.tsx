@@ -7,7 +7,7 @@ import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<TextareaProps> = {
-  tone: 'base',
+  tone: 'light',
   radius: 'md',
   size: 'md',
   validation: 'none',

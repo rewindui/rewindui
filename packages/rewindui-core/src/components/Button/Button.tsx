@@ -1,4 +1,7 @@
+import { useDropdownContext } from '@components/Dropdown/Dropdown.context';
+import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { Spinner } from '@components/Spinner';
+import { ChevronDownIcon } from '@icons/ChevronDown';
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
@@ -46,13 +49,13 @@ const Button: ButtonComponent = forwardRef(
       ...additionalProps
     } = {
       ...defaultProps,
-      // ...useInputGroupContext(),
+      ...useInputGroupContext(),
       ...variant,
       ...props,
     };
-    // const { open, withChevron, chevronRotation } = {
-    //   ...useDropdownContext(),
-    // };
+    const { open, withChevron, chevronRotation } = {
+      ...useDropdownContext(),
+    };
 
     const classes = useMemo(() => {
       return twMerge(
@@ -86,7 +89,7 @@ const Button: ButtonComponent = forwardRef(
       tone,
       withRing,
     ]);
-    // const chevronClasses = withChevron ? chevronStyles({ open, size, chevronRotation }) : '';
+    const chevronClasses = withChevron ? theme.chevron({ open, size, chevronRotation }) : '';
     const spinnerClasses = loading ? theme.spinner({ size }) : '';
 
     const Component = as || 'button';
@@ -105,7 +108,7 @@ const Button: ButtonComponent = forwardRef(
       >
         {loading && <Spinner className={spinnerClasses} />}
         {children}
-        {/*{withChevron && <IconChevronDown className={chevronClasses} />}*/}
+        {withChevron && <ChevronDownIcon className={chevronClasses} />}
       </Component>
     );
   }

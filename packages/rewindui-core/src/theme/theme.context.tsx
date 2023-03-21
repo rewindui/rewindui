@@ -38,6 +38,14 @@ type ThemeComponents = {
     description: typeof styles.checkBoxStyles.description;
     error: typeof styles.checkBoxStyles.error;
   };
+  Dropdown: {
+    base: typeof styles.dropdownStyles.base;
+    arrow: typeof styles.dropdownStyles.arrow;
+    content: typeof styles.dropdownStyles.content;
+    divider: typeof styles.dropdownStyles.divider;
+    item: typeof styles.dropdownStyles.item;
+    label: typeof styles.dropdownStyles.label;
+  };
   FormControl: {
     base: typeof styles.formControlStyles.base;
     label: typeof styles.formControlStyles.label;
@@ -129,6 +137,14 @@ const defaultTheme: Theme = {
       label: styles.checkBoxStyles.label,
       description: styles.checkBoxStyles.description,
       error: styles.checkBoxStyles.error,
+    },
+    Dropdown: {
+      arrow: styles.dropdownStyles.arrow,
+      base: styles.dropdownStyles.base,
+      content: styles.dropdownStyles.content,
+      divider: styles.dropdownStyles.divider,
+      item: styles.dropdownStyles.item,
+      label: styles.dropdownStyles.label,
     },
     Image: {
       base: styles.imageStyles.base,

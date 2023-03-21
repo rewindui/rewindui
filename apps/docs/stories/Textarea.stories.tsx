@@ -11,8 +11,7 @@ import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 
-const tones: TextareaTone[] = ['base', 'solid', 'transparent'];
-
+const tones: TextareaTone[] = ['light', 'solid', 'transparent'];
 const sizes: TextareaSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: TextareaRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
 const validations: TextareaValidation[] = ['none', 'invalid', 'valid', 'warning'];

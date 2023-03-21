@@ -7,7 +7,7 @@ import { twMerge } from 'tailwind-merge';
 import { Spinner, useComponentTheme } from '../..';
 
 const defaultProps: Partial<InputProps> = {
-  tone: 'base',
+  tone: 'light',
   radius: 'md',
   size: 'md',
   validation: 'none',

@@ -8,11 +8,6 @@ const base = cva(['flex', 'items-stretch', 'group'], {
       md: ['text-base'],
       lg: ['text-lg'],
     },
-    tone: {
-      base: [],
-      solid: [],
-      transparent: [],
-    },
     radius: {
       none: ['rounded-none'],
       sm: ['rounded-sm'],
@@ -49,7 +44,7 @@ const text = cva(
         lg: ['text-lg', 'px-4'],
       },
       tone: {
-        base: ['border', 'border-gray-300', 'bg-gray-50', 'text-gray-800'],
+        light: ['border', 'border-gray-300', 'bg-gray-50', 'text-gray-800'],
         solid: ['border', 'border-gray-200', 'bg-gray-100', 'text-gray-800'],
         transparent: ['border', 'border-transparent', 'text-gray-800'],
       },

@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
-export type TextareaTone = 'base' | 'solid' | 'transparent';
+export type TextareaTone = 'light' | 'solid' | 'transparent';
 export type TextareaSize = 'xs' | 'sm' | 'md' | 'lg';
 export type TextareaValidation = 'none' | 'invalid' | 'valid' | 'warning';
 export type TextareaRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
