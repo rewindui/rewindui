@@ -305,6 +305,30 @@ const ExampleTemplate: Story<AccordionProps> = (args) => {
           ))}
         </Accordion>
       </EnhancedView>
+
+      <EnhancedView prop="Borderless Accordion with extra padding & Icons">
+        <Accordion
+          {...args}
+          className="px-3 py-2"
+          activeColor="purple"
+          size="md"
+          shadow="base"
+          bordered={false}
+          defaultItem={'item-2'}
+        >
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>
+                <div className="flex items-center space-x-2">
+                  {item.icon}
+                  <span>{item.header}</span>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body className="font-light">{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </EnhancedView>
     </ViewGroup>
   );
 };
