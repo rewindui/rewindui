@@ -35,7 +35,6 @@ importers:
       react: ^18.2.0
       react-dom: ^18.2.0
       serve: ^14.2.0
-      tailwind-config-rewindui: workspace:*
       tailwindcss: ^3.2.7
       typescript: ^4.9.5
       vite: ^4.1.4
@@ -58,7 +57,6 @@ importers:
       eslint-config-rewindui: link:../../packages/eslint-config-rewindui
       postcss: 8.4.21
       serve: 14.2.0
-      tailwind-config-rewindui: link:../../packages/tailwind-config-rewindui
       tailwindcss: 3.2.7_postcss@8.4.21
       typescript: 4.9.5
       vite: 4.1.4
@@ -73,7 +71,7 @@ importers:
     dependencies:
       eslint-config-next: 13.2.4_ycpbpc6yetojsgtrx3mwntkhsu
       eslint-config-prettier: 8.5.0_eslint@8.35.0
-      eslint-config-turbo: 0.0.9_eslint@8.35.0
+      eslint-config-turbo: 0.0.10_eslint@8.35.0
       eslint-plugin-react: 7.29.4_eslint@8.35.0
       next: 13.1.6_biqbaboplfbrettd7655fr4n2y
 
@@ -7103,13 +7101,13 @@ packages:
       eslint: 8.35.0
     dev: false
 
-  /eslint-config-turbo/0.0.9_eslint@8.35.0:
-    resolution: {integrity: sha512-j1cTdx3tRmKo0csyfQKhpuT8dynK9oddbK5nmrShoMpXI2qMbxHLYH7MWAid4FmJN8rYympy3VKw5U63Yazycg==}
+  /eslint-config-turbo/0.0.10_eslint@8.35.0:
+    resolution: {integrity: sha512-o4ULFZYM1OihSd63eDGEuy9rt6tW4ma6xnW9grnr44BoJwKaGQko2aka9kfqQs0vtmwD1++Os3ThPHETmzkFzA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 8.35.0
-      eslint-plugin-turbo: 0.0.9_eslint@8.35.0
+      eslint-plugin-turbo: 0.0.10_eslint@8.35.0
     dev: false
 
   /eslint-import-resolver-node/0.3.6:
@@ -7277,8 +7275,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: false
 
-  /eslint-plugin-turbo/0.0.9_eslint@8.35.0:
-    resolution: {integrity: sha512-fEsuSnYU3GLtT+s66mUuzDL1LaSieIx5uk3tPO0ToGv7hI2XzOfP24aPkQItTBGl7kq2JaVkRzPwcnfz8hkp0w==}
+  /eslint-plugin-turbo/0.0.10_eslint@8.35.0:
+    resolution: {integrity: sha512-T7QRwF4rjBQCJD9AHLHn9ShtHCHNkfIZW5Oio92WtQYhoU5jZCU3ynU+ONFXLuvoUx4dJ19WergIyHL+DwL2+g==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
