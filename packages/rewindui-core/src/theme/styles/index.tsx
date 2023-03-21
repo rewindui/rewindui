@@ -13,6 +13,7 @@ export * from './Overlay.styles';
 export * from './Popover.styles';
 export * from './Radio.styles';
 export * from './Select.styles';
+export * from './Selector.styles';
 export * from './Spinner.styles';
 export * from './Switch.styles';
 export * from './Tab.styles';

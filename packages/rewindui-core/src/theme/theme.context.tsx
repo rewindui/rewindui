@@ -86,6 +86,12 @@ type ThemeComponents = {
     leftIconWrapper: typeof styles.selectStyles.leftIconWrapper;
     rightIconWrapper: typeof styles.selectStyles.rightIconWrapper;
   };
+  Selector: {
+    base: typeof styles.selectorStyles.base;
+    separator: typeof styles.selectorStyles.separator;
+    tab: typeof styles.selectorStyles.tab;
+    wrapper: typeof styles.selectorStyles.wrapper;
+  };
   Spinner: typeof styles.spinnerStyles.base;
   Switch: {
     base: typeof styles.switchStyles.base;
@@ -187,6 +193,12 @@ const defaultTheme: Theme = {
       icon: styles.selectStyles.icon,
       leftIconWrapper: styles.selectStyles.leftIconWrapper,
       rightIconWrapper: styles.selectStyles.rightIconWrapper,
+    },
+    Selector: {
+      base: styles.selectorStyles.base,
+      separator: styles.selectorStyles.separator,
+      tab: styles.selectorStyles.tab,
+      wrapper: styles.selectorStyles.wrapper,
     },
     Spinner: styles.spinnerStyles.base,
     Switch: {

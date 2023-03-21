@@ -14,6 +14,7 @@ export * from './components/Overlay';
 export * from './components/Popover';
 export * from './components/Radio';
 export * from './components/Select';
+export * from './components/Selector';
 export * from './components/Spinner';
 export * from './components/Switch';
 export * from './components/Tabs';
