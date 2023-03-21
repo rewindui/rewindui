@@ -11,7 +11,6 @@
   "dependencies": {
     "@phosphor-icons/react": "^2.0.5",
     "@rewindui/rewindui-core": "workspace:*",
-    "@tabler/icons": "^1.119.0",
     "class-variance-authority": "^0.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -29,7 +28,6 @@
     "eslint-config-rewindui": "workspace:*",
     "postcss": "^8.4.21",
     "serve": "^14.2.0",
-    "tailwind-config-rewindui": "workspace:*",
     "tailwindcss": "^3.2.7",
     "typescript": "^4.9.5",
     "vite": "^4.1.4"

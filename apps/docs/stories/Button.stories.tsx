@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
+import { MagnifyingGlass } from '@phosphor-icons/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 import {
   Button,
@@ -11,7 +12,6 @@ import {
   ButtonTone,
   ButtonProps,
 } from '@rewindui/rewindui-core';
-import { IconSearch } from '@tabler/icons';
 
 const variants: ButtonVariants[] = [
   'primary',
@@ -269,7 +269,7 @@ const IconTemplate: Story<ButtonProps> = (args) => {
       <View prop="color" value={color}>
         {tones.map((tone) => (
           <Button {...args} key={tone} color={color} tone={tone} className="capitalize" icon>
-            <IconSearch className={'w-3.5 h-3.5'} />
+            <MagnifyingGlass className={'w-3.5 h-3.5'} />
           </Button>
         ))}
       </View>

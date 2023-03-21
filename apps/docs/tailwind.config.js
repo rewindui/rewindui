@@ -1,2 +1,14 @@
-const config = require('tailwind-config-rewindui/tailwind.config.js');
-module.exports = config;
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './stories/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@rewindui/rewindui-core/src/theme/styles/*.ts',
+  ],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+    require('@tailwindcss/forms')({
+      strategy: 'class', // only generate classes
+    }),
+  ],
+};

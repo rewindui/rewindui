@@ -7,9 +7,6 @@ module.exports = {
   core: {
     builder: '@storybook/builder-vite',
   },
-  typescript: {
-    reactDocgen: 'react-docgen', // 👈 react-docgen configured here.
-  },
   async viteFinal(config, { configType }) {
     // customize the Vite config here
     return {

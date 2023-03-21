@@ -27,7 +27,6 @@ importers:
       '@storybook/addon-links': ^6.5.16
       '@storybook/builder-vite': ^0.4.2
       '@storybook/react': ^6.5.16
-      '@tabler/icons': ^1.119.0
       '@vitejs/plugin-react': ^3.1.0
       autoprefixer: ^10.4.13
       class-variance-authority: ^0.4.0
@@ -43,7 +42,6 @@ importers:
     dependencies:
       '@phosphor-icons/react': 2.0.5_biqbaboplfbrettd7655fr4n2y
       '@rewindui/rewindui-core': link:../../packages/rewindui-core
-      '@tabler/icons': 1.119.0_biqbaboplfbrettd7655fr4n2y
       class-variance-authority: 0.4.0_typescript@4.9.5
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -91,6 +89,7 @@ importers:
       '@types/react-dom': ^18.0.4
       class-variance-authority: ^0.4.0
       eslint: ^8.15.0
+      focus-trap-react: ^10.1.1
       happy-dom: ^8.9.0
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -107,6 +106,7 @@ importers:
       '@tabler/icons': 2.5.0
       '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.7
       class-variance-authority: 0.4.0_typescript@4.9.3
+      focus-trap-react: 10.1.1_v2m5e27vhdewzwhryxwfaorcca
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-merge-refs: 2.0.1
@@ -3862,21 +3862,6 @@ packages:
     resolution: {integrity: sha512-4C7nX/dvpzB7za4Ql9K81xK3HPxCpHMgwTZVyf+9JQ6VUbn9jjZVN7/Nkdz/Ugzs2CSjqnL/UPXroiVBVHUWUw==}
     dependencies:
       tslib: 2.4.1
-    dev: false
-
-  /@tabler/icons/1.119.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Fk3Qq4w2SXcTjc/n1cuL5bccPkylrOMo7cYpQIf/yw6zP76LQV9dtLcHQUjFiUnaYuswR645CnURIhlafyAh9g==}
-    peerDependencies:
-      react: ^16.x || 17.x || 18.x
-      react-dom: ^16.x || 17.x || 18.x
-    peerDependenciesMeta:
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@tabler/icons/2.5.0:
@@ -7914,6 +7899,26 @@ packages:
       inherits: 2.0.4
       readable-stream: 2.3.8
     dev: true
+
+  /focus-trap-react/10.1.1_v2m5e27vhdewzwhryxwfaorcca:
+    resolution: {integrity: sha512-OtLeSIQPKFzMzbLHkGtfZYwGLMhTRHd3CDhfyd0DDx8tvXzlgpseClDiuiKoiIHZtdjsbXTfTmUuuLKaxrwSyQ==}
+    peerDependencies:
+      prop-types: ^15.8.1
+      react: '>=16.3.0'
+      react-dom: '>=16.3.0'
+    dependencies:
+      focus-trap: 7.4.0
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tabbable: 6.1.1
+    dev: false
+
+  /focus-trap/7.4.0:
+    resolution: {integrity: sha512-yI7FwUqU4TVb+7t6PaQ3spT/42r/KLEi8mtdGoQo2li/kFzmu9URmalTvw7xCCJtSOyhBxscvEAmvjeN9iHARg==}
+    dependencies:
+      tabbable: 6.1.1
+    dev: false
 
   /for-each/0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
