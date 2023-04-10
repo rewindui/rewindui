@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { Overlay } from '@rewind-ui/core';
 
 const headerButtonClasses =
-  'flex items-center justify-center w-10 h-10 rounded-lg bg-gray-50 hover:bg-gray-100 p-2';
+  'flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gray-50 hover:bg-gray-100 p-2';
 
 const SocialLink = ({ href, children }: { href: string; children: ReactNode }) => {
   return (
@@ -31,20 +31,22 @@ export const Header = () => {
     <>
       <div className="sticky top-0 flex items-center w-full h-20 backdrop-blur-md border-b border-b-gray-100 z-50">
         <div className="container max-w-8xl h-full flex items-center justify-between mx-auto px-4 2xl:px-0">
-          <Link href="/" className="text-3xl flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/rewind.svg"
-              width={50}
-              height={50}
+              width={48}
+              height={48}
               alt="Rewind-UI"
-              className="mr-2"
+              className="mr-2 h-8 w-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
             />
             <span className="font-bold hidden px-2 h-[50px] rounded bg-gradient-to-r from-blue-500 to-blue-700 flex items-center shadow shadow-blue-500/75 text-white">
               <span className="mx-auto">rewind</span>
             </span>
             <div className="flex flex-col space-y-0">
-              <span className="flex items-center font-semibold text-gray-800">rewind-ui</span>
-              <span className="text-sm text-gray-700">A React component library</span>
+              <span className="flex items-center font-semibold text-gray-800 text-xl sm:text-2xl md:text-3xl">
+                rewind-ui
+              </span>
+              <span className="hidden md:block text-gray-700">A React component library</span>
             </div>
           </Link>
 
