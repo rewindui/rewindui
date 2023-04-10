@@ -2,6 +2,7 @@
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { Button } from '@rewind-ui/core';
+import { HTMLAttributes } from 'react';
 import { View } from './View';
 
 const components = {
@@ -17,6 +18,9 @@ const components = {
   a: ({ ...props }) => (
     <a className="text-blue-500 underline decoration-2 decoration-blue-500" {...props} />
   ),
+  ul: ({ ...props }: HTMLAttributes<HTMLUListElement>) => (
+    <ul className="my-6 ml-6 list-disc" {...props} />
+  ),
   pre: ({ ...props }) => (
     <div className="mt-4 overflow-auto">
       <CustomMdxSandpack {...props} />
@@ -28,7 +32,7 @@ const components = {
       {...props}
     />
   ),
-  hr: ({ ...props }) => <hr className="my-2 border-gray-200" {...props} />,
+  hr: ({ ...props }) => <hr className="my-2 border-gray-200 border-dashed" {...props} />,
   Button: ({ ...props }) => <Button {...props} />,
   View: ({ ...props }) => <View {...props} />,
 };

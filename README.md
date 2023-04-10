@@ -1,9 +1,3 @@
----
-title: Introduction
-description: A quick introduction to Rewind-UI
----
-
----
 # Introduction
 Rewind-UI is a powerful [React](https://react.dev) component library designed to help developers save time and effort by providing a comprehensive set of pre-built UI components. The library was created with the goal of solving a common problem faced by many developers - the need to re-write the same UI components repeatedly for each new project.
 
