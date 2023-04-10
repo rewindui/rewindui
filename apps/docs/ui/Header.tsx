@@ -51,7 +51,7 @@ export const Header = () => {
           </Link>
 
           <div className="flex space-x-2">
-            <SocialLink href="/">
+            <SocialLink href="https://github.com/rewindui/rewindui">
               <Image
                 priority
                 src="/images/github.svg"
@@ -61,7 +61,7 @@ export const Header = () => {
               />
             </SocialLink>
 
-            <SocialLink href="/">
+            <SocialLink href="https://storybook.rewind-ui.dev/">
               <Image
                 priority
                 src="/images/storybook.svg"
@@ -71,7 +71,7 @@ export const Header = () => {
               />
             </SocialLink>
 
-            <SocialLink href="/">
+            <SocialLink href="#">
               <Image
                 priority
                 src="/images/twitter.svg"
