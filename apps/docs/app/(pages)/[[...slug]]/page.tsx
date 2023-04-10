@@ -16,8 +16,9 @@ export const generateMetadata = ({ params }: any) => {
   return { title: page?.title };
 };
 
-const PageLayout = async ({ params }: { params: { slug: string } }) => {
-  const page: Page | undefined = allPages.find((page) => page._raw.flattenedPath === params.slug);
+const PageLayout = async ({ params }: { params: { slug: string[] } }) => {
+  const slug = params.slug?.join('/') || '';
+  const page: Page | undefined = allPages.find((page) => page._raw.flattenedPath === slug);
 
   if (!page) {
     notFound();
