@@ -15,7 +15,7 @@ const components = {
   h4: ({ ...props }) => <p className="mt-8 text-lg text-gray-700 font-medium" {...props} />,
   p: ({ ...props }) => <p className="mt-6" {...props} />,
   pre: ({ ...props }) => (
-    <div className="mt-4">
+    <div className="mt-4 overflow-auto">
       <CustomMdxSandpack {...props} />
     </div>
   ),
