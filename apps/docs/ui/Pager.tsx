@@ -1,16 +1,20 @@
 'use client';
-import { allPages, Component, Page } from 'contentlayer/generated';
+import { allComponents, allPages, Component, Page } from 'contentlayer/generated';
 import Link from 'next/link';
 import { clsx } from 'clsx';
 import * as React from 'react';
 import { CaretCircleLeft, CaretCircleRight } from '@phosphor-icons/react';
 
+export type CollectionItem = {
+  title: string;
+  url: string;
+  slug: string;
+};
 type PagerProps = {
   current: Component | Page;
-  collection: Component[] | Page[];
 };
 
-function getPrevAndNext(array: Component[] | Page[], index: number) {
+function getPrevAndNext(array: CollectionItem[], index: number) {
   let prev = null;
   let next = null;
 
@@ -28,7 +32,7 @@ function getPrevAndNext(array: Component[] | Page[], index: number) {
   };
 }
 
-const PagerItem = ({ item, side }: { item: Component | Page; side: 'left' | 'right' }) => {
+const PagerItem = ({ item, side }: { item: CollectionItem; side: 'left' | 'right' }) => {
   return (
     <Link
       href={item.url}
@@ -45,9 +49,25 @@ const PagerItem = ({ item, side }: { item: Component | Page; side: 'left' | 'rig
 };
 
 export const Pager = (props: PagerProps) => {
-  const { current, collection } = props;
+  const collection: CollectionItem[] = [
+    ...allPages.map((page) => {
+      return {
+        title: page.title,
+        url: page.url,
+        slug: page.slug,
+      };
+    }),
+    ...allComponents.map((component) => {
+      return {
+        title: component.title,
+        url: component.url,
+        slug: component.slug,
+      };
+    }),
+  ];
+  const { current } = props;
   const index: number | undefined = collection.findIndex(
-    (item: Component | Page) => item.slug === current.slug
+    (item: CollectionItem) => item.slug === current.slug
   );
 
   const { prev, next } = getPrevAndNext(collection, index);

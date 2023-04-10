@@ -46,7 +46,7 @@ export const Header = () => {
               <span className="flex items-center font-semibold text-gray-800 text-xl sm:text-2xl md:text-3xl">
                 rewind-ui
               </span>
-              <span className="hidden md:block text-gray-700">A React component library</span>
+              <span className="hidden md:block text-gray-700">Effortless user interfaces</span>
             </div>
           </Link>
 

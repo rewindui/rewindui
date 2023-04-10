@@ -14,6 +14,9 @@ const components = {
   h3: ({ ...props }) => <p className="mt-8 text-xl text-gray-700 font-semibold" {...props} />,
   h4: ({ ...props }) => <p className="mt-8 text-lg text-gray-700 font-medium" {...props} />,
   p: ({ ...props }) => <p className="mt-6" {...props} />,
+  a: ({ ...props }) => (
+    <a className="text-blue-500 underline decoration-2 decoration-blue-500" {...props} />
+  ),
   pre: ({ ...props }) => (
     <div className="mt-4 overflow-auto">
       <CustomMdxSandpack {...props} />

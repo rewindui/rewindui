@@ -1,5 +1,5 @@
 import { Mdx } from '@/ui/Mdx';
-import { Pager } from '@/ui/Pager';
+import { CollectionItem, Pager } from '@/ui/Pager';
 import { Toc } from '@/ui/Toc';
 import { getTableOfContents } from '@/utils/toc.util';
 import { allPages, Page } from 'contentlayer/generated';
@@ -34,7 +34,7 @@ const PageLayout = async ({ params }: { params: { slug: string[] } }) => {
           <p className="text-lg md:text-xl leading-7 text-gray-600">{page.description}</p>
         </div>
         <Mdx code={page.body.code} />
-        <Pager current={page} collection={allPages} />
+        <Pager current={page} />
       </article>
 
       <div className="hidden 2xl:block 2xl:w-1/6">

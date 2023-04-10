@@ -5,8 +5,6 @@ import { Mdx } from '@/ui/Mdx';
 import { Toc } from '@/ui/Toc';
 import { getTableOfContents } from '@/utils/toc.util';
 import { allComponents, Component } from 'contentlayer/generated';
-import Link from 'next/link';
-import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import * as React from 'react';
 import { Pager } from '@/ui/Pager';
@@ -46,7 +44,7 @@ const ComponentLayout = async ({ params }: { params: { slug: ComponentSlug } }) 
           </div>
           <Configurator component={slug} />
           <Mdx code={component.body.code} />
-          <Pager current={component} collection={allComponents} />
+          <Pager current={component} />
         </article>
 
         <div className="hidden 2xl:block 2xl:w-1/6">

@@ -36,6 +36,7 @@
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "remark": "^14.0.2",
+    "remark-gfm": "^3.0.1",
     "tailwindcss": "^3.3.1",
     "unist-util-visit": "^4.1.2"
   }

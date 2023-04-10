@@ -32,11 +32,6 @@ const menuItems: MenuItem[] = [
         icon: <Rocket size={18} weight="duotone" />,
       },
       {
-        title: 'Installation',
-        path: '/installation',
-        icon: <GearSix size={18} weight="duotone" />,
-      },
-      {
         title: 'Theming',
         path: '/theming',
         icon: <Palette size={18} weight="duotone" />,
