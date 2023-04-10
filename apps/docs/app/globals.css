@@ -15,8 +15,8 @@ code {
 }
 
 .sp-layout {
-  max-height: 300px;
-  overflow: auto;
+  max-height: 300px !important;
+  overflow: auto !important;
 }
 
 .sp-wrapper {
