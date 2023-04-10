@@ -3,6 +3,7 @@ import { Aside } from '@/ui/Aside';
 import { Inter } from 'next/font/google';
 import { Footer } from '@/ui/Footer';
 import { Header } from '@/ui/Header';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Create Next App',
@@ -33,6 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <Footer />
         </main>
+
+        <Analytics />
       </body>
     </html>
   );
