@@ -8,14 +8,13 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
     "version-packages": "changeset version",
-    "release": "turbo run build --filter=docs^... && turbo run lint && turbo run test && changeset publish",
+    "release": "turbo run build --filter=docs^... --filter=storybook^... && turbo run lint && turbo run test && changeset publish",
     "test": "turbo run test",
     "test:watch": "turbo run test:watch"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
     "eslint": "^8.35.0",
-    "eslint-config-rewindui": "workspace:*",
     "prettier": "^2.8.4",
     "turbo": "^1.8.2"
   },

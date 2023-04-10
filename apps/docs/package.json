@@ -1,35 +1,41 @@
 {
-  "name": "@rewindui/docs",
-  "version": "0.2.0",
+  "name": "@rewind-ui/docs",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "start-storybook -p 6006",
-    "build": "build-storybook --docs",
-    "preview-storybook": "serve storybook-static",
-    "clean": "rm -rf .turbo && rm -rf node_modules"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "@phosphor-icons/react": "^2.0.5",
-    "@rewindui/rewindui-core": "workspace:*",
+    "@codesandbox/sandpack-react": "^2.2.9",
+    "@rewind-ui/core": "workspace:0.0.0",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.31",
+    "@types/react-dom": "18.0.11",
     "class-variance-authority": "^0.4.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "clsx": "^1.2.1",
+    "contentlayer": "^0.3.1",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "mdast-util-toc": "^6.1.1",
+    "next": "13.2.4",
+    "next-contentlayer": "^0.3.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "rehype-pretty-code": "^0.9.4",
+    "rehype-slug": "^5.1.0",
+    "shiki": "^0.14.1",
+    "typescript": "5.0.3"
   },
   "devDependencies": {
-    "@rewindui/tsconfig": "workspace:*",
-    "@storybook/addon-actions": "^6.5.16",
-    "@storybook/addon-docs": "^6.5.16",
-    "@storybook/addon-essentials": "^6.5.16",
-    "@storybook/addon-links": "^6.5.16",
-    "@storybook/builder-vite": "^0.4.2",
-    "@storybook/react": "^6.5.16",
-    "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.13",
-    "eslint-config-rewindui": "workspace:*",
+    "@codesandbox/sandpack-themes": "^2.0.21",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "serve": "^14.2.0",
-    "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5",
-    "vite": "^4.1.4"
+    "remark": "^14.0.2",
+    "tailwindcss": "^3.3.1",
+    "unist-util-visit": "^4.1.2"
   }
 }

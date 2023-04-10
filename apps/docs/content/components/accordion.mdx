@@ -1,0 +1,34 @@
+---
+title: Accordion
+description: A collapsible list for displaying and organizing information.
+intro: The Accordion component is a versatile and easy-to-use component that allows you to display a list of headers, each of which can be clicked to expand or collapse the associated content. This makes it a great choice for organizing content in a compact and user-friendly way.
+source: components/Accordion
+theme: Accordion.styles.ts
+---
+
+## Installation
+
+```tsx
+import { Accordion } from '@rewind-ui/core';
+```
+
+When you change a source file, Contentlayer automatically updates the content cache, which prompts Next.js to reload the content on screen. Cool!!
+
+```tsx
+<Accordion defaultItem="item-1">
+  <Accordion.Item anchor="item-1">
+    <Accordion.Header>Header</Accordion.Header>
+    <Accordion.Body>Body</Accordion.Body>
+  </Accordion.Item>
+
+  <Accordion.Item anchor="item-2">
+    <Accordion.Header>Header</Accordion.Header>
+    <Accordion.Body>Body</Accordion.Body>
+  </Accordion.Item>
+
+  <Accordion.Item anchor="item-3">
+    <Accordion.Header>Header</Accordion.Header>
+    <Accordion.Body>Body</Accordion.Body>
+  </Accordion.Item>
+</Accordion>
+```

@@ -1,0 +1,247 @@
+---
+title: Button
+description: A clickable element that can function as either a hyperlink or a regular button.
+intro: The Button component is a versatile component that can function as either a regular button or an anchor link element. It can be configured in a variety of ways by adjusting properties such as size, color and more.
+source: components/Button
+theme: Button.styles.ts
+variants: Button.variants.ts
+storybook: button--default
+---
+
+# Import
+---
+Import the Button component using the following import statement.
+
+```tsx
+import { Button } from '@rewindui@core';
+```
+
+# Variants
+---
+The Button component comes with a number of pre-defined variants that can be used to change the appearance of the component. The variants can be used by passing the variant name as a prop to the component. A variant is basically a pre-set set of properties and can be modified by using the...
+
+Available variants are: `primary`, `secondary`, `tertiary`, `link`, `danger`, `success`, `warning` and `info`.
+
+<View>
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="tertiary">Tertiary</Button>
+  <Button variant="link">Link</Button>
+  <Button variant="danger">Danger</Button>
+  <Button variant="success">Success</Button>
+  <Button variant="warning">Warning</Button>
+  <Button variant="info">Info</Button>
+</View>
+
+```tsx
+<View>
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="tertiary">Tertiary</Button>
+  <Button variant="link">Link</Button>
+  <Button variant="danger">Danger</Button>
+  <Button variant="success">Success</Button>
+  <Button variant="warning">Warning</Button>
+  <Button variant="info">Info</Button>
+</View>
+```
+
+# Tones & Colors
+---
+The Button component comes with four tones: `solid`, `light`, `outline` and `transparent`.
+
+The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid tone
+<View>
+  <Button color="white">White</Button>
+  <Button color="blue">Blue</Button>
+  <Button color="red">Red</Button>
+  <Button color="green">Green</Button>
+  <Button color="yellow">Yellow</Button>
+  <Button color="purple">Purple</Button>
+  <Button color="gray">Gray</Button>
+  <Button color="dark">Dark</Button>
+  <Button color="black">Black</Button>
+</View>
+
+```tsx
+<View>
+  <Button color="white">White</Button>
+  <Button color="blue">Blue</Button>
+  <Button color="red">Red</Button>
+  <Button color="green">Green</Button>
+  <Button color="yellow">Yellow</Button>
+  <Button color="purple">Purple</Button>
+  <Button color="gray">Gray</Button>
+  <Button color="dark">Dark</Button>
+  <Button color="black">Black</Button>
+</View>
+```
+
+## Light tone
+<View>
+  <Button tone="light" color="white">White</Button>
+  <Button tone="light" color="blue">Blue</Button>
+  <Button tone="light" color="red">Red</Button>
+  <Button tone="light" color="green">Green</Button>
+  <Button tone="light" color="yellow">Yellow</Button>
+  <Button tone="light" color="purple">Purple</Button>
+  <Button tone="light" color="gray">Gray</Button>
+  <Button tone="light" color="dark">Dark</Button>
+  <Button tone="light" color="black">Black</Button>
+</View>
+
+```tsx
+<View>
+  <Button tone="light" color="white">White</Button>
+  <Button tone="light" color="blue">Blue</Button>
+  <Button tone="light" color="red">Red</Button>
+  <Button tone="light" color="green">Green</Button>
+  <Button tone="light" color="yellow">Yellow</Button>
+  <Button tone="light" color="purple">Purple</Button>
+  <Button tone="light" color="gray">Gray</Button>
+  <Button tone="light" color="dark">Dark</Button>
+  <Button tone="light" color="black">Black</Button>
+</View>
+```
+
+## Outline tone
+<View>
+  <Button tone="outline" color="white">White</Button>
+  <Button tone="outline" color="blue">Blue</Button>
+  <Button tone="outline" color="red">Red</Button>
+  <Button tone="outline" color="green">Green</Button>
+  <Button tone="outline" color="yellow">Yellow</Button>
+  <Button tone="outline" color="purple">Purple</Button>
+  <Button tone="outline" color="gray">Gray</Button>
+  <Button tone="outline" color="dark">Dark</Button>
+  <Button tone="outline" color="black">Black</Button>
+</View>
+
+```tsx
+<View>
+  <Button tone="outline" color="white">White</Button>
+  <Button tone="outline" color="blue">Blue</Button>
+  <Button tone="outline" color="red">Red</Button>
+  <Button tone="outline" color="green">Green</Button>
+  <Button tone="outline" color="yellow">Yellow</Button>
+  <Button tone="outline" color="purple">Purple</Button>
+  <Button tone="outline" color="gray">Gray</Button>
+  <Button tone="outline" color="dark">Dark</Button>
+  <Button tone="outline" color="black">Black</Button>
+</View>
+```
+
+## Transparent tone
+<View>
+  <Button tone="transparent" color="white">White</Button>
+  <Button tone="transparent" color="blue">Blue</Button>
+  <Button tone="transparent" color="red">Red</Button>
+  <Button tone="transparent" color="green">Green</Button>
+  <Button tone="transparent" color="yellow">Yellow</Button>
+  <Button tone="transparent" color="purple">Purple</Button>
+  <Button tone="transparent" color="gray">Gray</Button>
+  <Button tone="transparent" color="dark">Dark</Button>
+  <Button tone="transparent" color="black">Black</Button>
+</View>
+
+```tsx
+<View>
+  <Button tone="transparent" color="white">White</Button>
+  <Button tone="transparent" color="blue">Blue</Button>
+  <Button tone="transparent" color="red">Red</Button>
+  <Button tone="transparent" color="green">Green</Button>
+  <Button tone="transparent" color="yellow">Yellow</Button>
+  <Button tone="transparent" color="purple">Purple</Button>
+  <Button tone="transparent" color="gray">Gray</Button>
+  <Button tone="transparent" color="dark">Dark</Button>
+  <Button tone="transparent" color="black">Black</Button>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Button size="xs">Button</Button>
+  <Button size="sm">Button</Button>
+  <Button size="md">Button</Button>
+  <Button size="lg">Button</Button>
+</View>
+
+```tsx
+<View>
+  <Button size="xs">Button</Button>
+  <Button size="sm">Button</Button>
+  <Button size="md">Button</Button>
+  <Button size="lg">Button</Button>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Button radius="none">Button</Button>
+  <Button radius="sm">Button</Button>
+  <Button radius="md">Button</Button>
+  <Button radius="lg">Button</Button>
+  <Button radius="full">Button</Button>
+</View>
+
+```tsx
+<View>
+  <Button radius="none">Button</Button>
+  <Button radius="sm">Button</Button>
+  <Button radius="md">Button</Button>
+  <Button radius="lg">Button</Button>
+  <Button radius="full">Button</Button>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Button shadow="sm" shadowColor="black">Button</Button>
+  <Button shadow="base" shadowColor="black">Button</Button>
+  <Button shadow="md" shadowColor="black">Button</Button>
+  <Button shadow="lg" shadowColor="black">Button</Button>
+  <Button shadow="xl" shadowColor="black">Button</Button>
+</View>
+
+```tsx
+<View>
+  <Button shadow="sm">Button</Button>
+  <Button shadow="base">Button</Button>
+  <Button shadow="md">Button</Button>
+  <Button shadow="lg">Button</Button>
+  <Button shadow="xl">Button</Button>
+</View>
+```
+
+## Shadow colors
+Available `shadow` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Button shadow="sm" color="blue" shadowColor="blue">Button</Button>
+  <Button shadow="base" color="blue" shadowColor="blue">Button</Button>
+  <Button shadow="md" color="blue" shadowColor="blue">Button</Button>
+  <Button shadow="lg" color="blue" shadowColor="blue">Button</Button>
+  <Button shadow="xl" color="blue" shadowColor="blue">Button</Button>
+</View>
+
+```tsx
+<View>
+  <Button shadow="none">Button</Button>
+  <Button shadow="sm">Button</Button>
+  <Button shadow="base">Button</Button>
+  <Button shadow="md">Button</Button>
+  <Button shadow="lg">Button</Button>
+  <Button shadow="xl">Button</Button>
+</View>
+```

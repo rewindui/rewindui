@@ -1,0 +1,71 @@
+import {
+  arrow,
+  autoUpdate,
+  offset as offsetModifier,
+  safePolygon,
+  shift,
+  useClick,
+  useDismiss,
+  useFloating,
+  useFocus,
+  useHover,
+  useInteractions,
+  useRole,
+} from '@floating-ui/react';
+import { flip, inline } from '@floating-ui/react-dom';
+import { useMemo, useRef, useState } from 'react';
+import { PopoverProps } from './Popover.types';
+
+export function usePopover({
+  placement = 'bottom',
+  initiallyOpen = false,
+  offset = 8,
+}: Partial<PopoverProps>): any {
+  const arrowRef = useRef(null);
+  const [open, setOpen] = useState(initiallyOpen);
+  const { x, y, reference, floating, strategy, context } = useFloating({
+    open,
+    onOpenChange: setOpen,
+    placement,
+    middleware: [
+      offsetModifier(offset),
+      shift(),
+      inline(),
+      flip(),
+      arrow({
+        element: arrowRef,
+      }),
+    ],
+    whileElementsMounted: autoUpdate,
+  });
+  const { getFloatingProps, getReferenceProps } = useInteractions([
+    useClick(context, {
+      enabled: open == null,
+    }),
+    useHover(context, {
+      move: true,
+      handleClose: safePolygon(),
+    }),
+    useFocus(context),
+    useDismiss(context, {
+      referencePress: false,
+    }),
+    useRole(context, { role: 'dialog' }),
+  ]);
+
+  return useMemo(
+    () => ({
+      x,
+      y,
+      reference,
+      floating,
+      strategy,
+      context,
+      getFloatingProps: getFloatingProps(),
+      getReferenceProps: getReferenceProps(),
+      open,
+      arrowRef,
+    }),
+    [open, setOpen, x, y]
+  );
+}
