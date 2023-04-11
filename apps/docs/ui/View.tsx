@@ -12,7 +12,7 @@ export const View = ({
   const flexDirection = direction === 'column' ? 'column' : 'row';
   const justifyContent = justify === 'start' ? 'flex-start' : 'space-evenly';
   return (
-    <div className="grow mt-6 flex flex-col outline outline-gray-100 divide-y divide-gray-200 rounded shadow-sm">
+    <div className="grow mt-6 flex flex-col divide-y divide-neutral-200 rounded border border-neutral-200 shadow-sm shadow-neutral-100">
       {prop && (
         <div className="flex space-x-2 items-center bg-slate-100/75 text-gray-800 p-2.5">
           {prop}
@@ -21,7 +21,7 @@ export const View = ({
       )}
       <div
         style={{ flexDirection, justifyContent }}
-        className="bg-grid bg-neutral-50 flex flex-wrap justify-center items-center gap-x-2 gap-y-2 p-5"
+        className="bg-grid bg-neutral-50 rounded flex flex-wrap justify-center items-center gap-x-2 gap-y-2 p-5"
       >
         {children}
       </div>

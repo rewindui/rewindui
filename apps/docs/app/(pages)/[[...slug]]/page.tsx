@@ -1,5 +1,5 @@
 import { Mdx } from '@/ui/Mdx';
-import { CollectionItem, Pager } from '@/ui/Pager';
+import { Pager } from '@/ui/Pager';
 import { Toc } from '@/ui/Toc';
 import { getTableOfContents } from '@/utils/toc.util';
 import { allPages, Page } from 'contentlayer/generated';
