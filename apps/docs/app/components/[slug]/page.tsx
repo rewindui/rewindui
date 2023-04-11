@@ -36,7 +36,7 @@ const ComponentLayout = async ({ params }: { params: { slug: ComponentSlug } }) 
       <div className="flex space-x-10 p-4 2xl:py-8 2xl:px-10">
         <article className="w-full 2xl:w-5/6">
           <div className="mb-8 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800">{component.title}</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-800">{component.title}</h2>
             <p className="text-lg md:text-xl leading-7 text-gray-600">{component.description}</p>
             <p className="text-gray-800">{component.intro}</p>
 
