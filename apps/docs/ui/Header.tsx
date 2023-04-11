@@ -92,8 +92,8 @@ export const Header = () => {
 
       {open && (
         <div className="fixed top-0 left-0 overflow-auto w-full sm:w-fit min-w-[300px] h-full bg-white z-[70]">
-          <div className="flex justify-between items-center px-4 py-2 bg-gray-50 border-b border-b-gray-100">
-            <span className="font-semibold">Menu</span>
+          <div className="flex h-20 justify-between items-center px-4 py-2 bg-gray-50 border-b border-b-gray-100">
+            <span className="text-xl font-semibold">Menu</span>
             <button onClick={() => setOpen(false)} className={headerButtonClasses}>
               <X size={16} />
             </button>
