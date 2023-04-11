@@ -3,7 +3,7 @@ import { Menu } from './Menu';
 
 export const Aside = () => {
   return (
-    <aside className="fixed top-25 py-8">
+    <aside className="fixed py-8 h-[calc(100vh-10rem)] w-full overflow-auto">
       <Menu />
     </aside>
   );

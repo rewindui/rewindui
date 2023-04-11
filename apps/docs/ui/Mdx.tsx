@@ -18,7 +18,11 @@ const components = {
     <p className="mt-6 text-base text-gray-600 leading-normal md:leading-relaxed" {...props} />
   ),
   a: ({ ...props }) => (
-    <a className="text-blue-500 underline decoration-2 decoration-blue-500" {...props} />
+    <a
+      className="text-blue-500 underline decoration-2 decoration-blue-500"
+      target="_blank"
+      {...props}
+    />
   ),
   ul: ({ ...props }: HTMLAttributes<HTMLUListElement>) => (
     <ul className="my-6 ml-6 list-disc" {...props} />
