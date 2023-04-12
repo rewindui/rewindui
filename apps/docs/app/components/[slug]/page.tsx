@@ -9,17 +9,26 @@ import { notFound } from 'next/navigation';
 import * as React from 'react';
 import { Pager } from '@/ui/Pager';
 
-export const generateStaticParams = async () =>
-  allComponents.map((component: Component) => ({ slug: component.slug }));
+type ComponentProps = {
+  params: {
+    slug: string;
+  };
+};
 
-export const generateMetadata = ({ params }: any) => {
+export const generateStaticParams = async (): Promise<ComponentProps['params'][]> => {
+  return allComponents.map((page: Component) => ({
+    slug: page.slug,
+  }));
+};
+
+export const generateMetadata = ({ params }: ComponentProps) => {
   const component: Component | undefined = allComponents.find(
     (component: Component) => component.slug === params.slug
   );
   return { title: `Rewind-UI - ${component?.title}`, description: component?.description };
 };
 
-const ComponentLayout = async ({ params }: { params: { slug: ComponentSlug } }) => {
+const ComponentLayout = async ({ params }: ComponentProps) => {
   const component: Component | undefined = allComponents.find(
     (component: Component) => component.slug === params.slug
   );

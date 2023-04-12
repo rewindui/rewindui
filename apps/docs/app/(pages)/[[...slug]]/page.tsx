@@ -6,17 +6,26 @@ import { allPages, Page } from 'contentlayer/generated';
 import { notFound } from 'next/navigation';
 import * as React from 'react';
 
-export const generateStaticParams = async () =>
-  allPages.map((page: Page) => ({ slug: page._raw.flattenedPath }));
+type PageProps = {
+  params: {
+    slug: string[];
+  };
+};
 
-export const generateMetadata = ({ params }: any) => {
+export const generateStaticParams = async (): Promise<PageProps['params'][]> => {
+  return allPages.map((page: Page) => ({
+    slug: page.slug.split('/'),
+  }));
+};
+
+export const generateMetadata = ({ params }: PageProps) => {
   const slug = params.slug?.join('/') || '';
   const page: Page | undefined = allPages.find((page: Page) => page._raw.flattenedPath === slug);
 
   return { title: `Rewind-UI - ${page?.title}`, description: page?.description };
 };
 
-const PageLayout = async ({ params }: { params: { slug: string[] } }) => {
+const PageLayout = async ({ params }: PageProps) => {
   const slug = params.slug?.join('/') || '';
   const page: Page | undefined = allPages.find((page) => page._raw.flattenedPath === slug);
 
