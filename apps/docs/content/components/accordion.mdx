@@ -8,29 +8,821 @@ variants: Accordion.variants.ts
 storybook: accordion--default
 ---
 
-## Installation
+# Import
+---
+Import the Accordion component using the following import statement.
 
 ```tsx
 import { Accordion } from '@rewind-ui/core';
 ```
 
-When you change a source file, Contentlayer automatically updates the content cache, which prompts Next.js to reload the content on screen. Cool!!
+# Colors
+---
+The Accordion component comes with four colors: `white`, `gray`, `zinc` and `slate`.
+
+<View>
+  <Accordion color="white">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion color="gray">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion color="zinc">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion color="slate">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
 
 ```tsx
-<Accordion defaultItem="item-1">
-  <Accordion.Item anchor="item-1">
-    <Accordion.Header>Header</Accordion.Header>
-    <Accordion.Body>Body</Accordion.Body>
-  </Accordion.Item>
+<View>
+  <Accordion color="white">
+    <Accordion.Item anchor="item-1">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some text...</Accordion.Body>
+    </Accordion.Item>
 
-  <Accordion.Item anchor="item-2">
-    <Accordion.Header>Header</Accordion.Header>
-    <Accordion.Body>Body</Accordion.Body>
-  </Accordion.Item>
+    <Accordion.Item anchor="item-2">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some more text...</Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
 
-  <Accordion.Item anchor="item-3">
-    <Accordion.Header>Header</Accordion.Header>
-    <Accordion.Body>Body</Accordion.Body>
-  </Accordion.Item>
-</Accordion>
+  <Accordion color="gray">
+    <Accordion.Item anchor="item-1">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some text...</Accordion.Body>
+    </Accordion.Item>
+
+    <Accordion.Item anchor="item-2">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some more text...</Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
+
+  <Accordion color="zinc">
+    <Accordion.Item anchor="item-1">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some text...</Accordion.Body>
+    </Accordion.Item>
+
+    <Accordion.Item anchor="item-2">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some more text...</Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
+
+  <Accordion color="slate">
+    <Accordion.Item anchor="item-1">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some text...</Accordion.Body>
+    </Accordion.Item>
+
+    <Accordion.Item anchor="item-2">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some more text...</Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
+</View>
+```
+
+# Tones & Active item colors
+---
+The Accordion component comes with two tones: `solid` and `light`.
+
+Moreover, the active item can be styled with the `activeColor` prop.
+
+The available `activeColor` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <Accordion tone="solid" activeColor="white" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="blue" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="red" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="green" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="yellow" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="purple" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="gray" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="dark" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="black" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion tone="solid" activeColor="white">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="blue">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="red">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="green">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="yellow">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="purple">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="gray">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="dark">
+    // ...
+  </Accordion>
+
+  <Accordion tone="solid" activeColor="black">
+    // ...
+  </Accordion>
+</View>
+```
+
+## Light
+<View>
+  <Accordion tone="light" activeColor="white" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="blue" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="red" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="green" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="yellow" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="purple" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="gray" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="dark" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion tone="light" activeColor="black" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion tone="light" activeColor="white">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="blue">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="red">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="green">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="yellow">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="purple">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="gray">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="dark">
+    // ...
+  </Accordion>
+
+  <Accordion tone="light" activeColor="black">
+    // ...
+  </Accordion>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are:  `sm`, `md`, `lg` and `xl`.
+
+<View>
+  <Accordion size="sm">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion size="md">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion size="lg">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion size="xl">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion size="sm">
+    // ...
+  </Accordion>
+
+  <Accordion size="md">
+    // ...
+  </Accordion>
+
+  <Accordion size="lg">
+    // ...
+  </Accordion>
+
+  <Accordion size="xl">
+    // ...
+  </Accordion>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are:  `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Accordion radius="xs" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion radius="sm" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion radius="md" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion radius="lg" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion size="sm">
+    // ...
+  </Accordion>
+
+  <Accordion size="md">
+    // ...
+  </Accordion>
+
+  <Accordion size="lg">
+    // ...
+  </Accordion>
+
+  <Accordion size="xl">
+    // ...
+  </Accordion>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `md`, `lg` and `xl`.
+
+<View>
+  <Accordion shadow="none" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="sm" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="md" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="lg" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="xl" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion shadow="none">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="sm">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="md">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="lg">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="xl">
+    // ...
+  </Accordion>
+</View>
+```
+
+## Shadow colors
+Available `shadowColor` values are: `none`, `gray`, `zinc` and `slate`.
+
+<View>
+  <Accordion shadow="lg" shadowColor="none" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="lg" shadowColor="gray" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="lg" shadowColor="zinc" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="lg" shadowColor="slate" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion shadow="lg" shadowColor="none">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="lg" shadowColor="gray">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="lg" shadowColor="zinc">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="lg" shadowColor="slate">
+    // ...
+  </Accordion>
+</View>
+```
+
+# Borders
+---
+You can optionally add or remove borders by using the boolean `bordered` prop.
+
+<View>
+  <Accordion bordered={true} defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion bordered={false} defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion bordered={true}>
+    // ...
+  </Accordion>
+
+  <Accordion bordered={false}>
+    // ...
+  </Accordion>
+</View>
+```
+
+# Ring
+---
+You can add a ring to the accordion by setting the `withRing` prop to `true`.
+
+<View>
+  <Accordion withRing={true} defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion withRing={false} defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion withRing={true}>
+    // ...
+  </Accordion>
+
+  <Accordion withRing={false}>
+    // ...
+  </Accordion>
+</View>
 ```

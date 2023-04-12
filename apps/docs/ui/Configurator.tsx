@@ -35,7 +35,7 @@ export const Configurator = ({ component }: Props) => {
   };
 
   const Example = settings.example;
-  const Default = settings.default;
+  const defaultCode = settings.default({ ...state });
   const controls = options.map((option: ConfiguratorOption, index) => (
     <FormControl key={index} size="sm">
       {option.type !== 'switch' && (
@@ -61,7 +61,7 @@ export const Configurator = ({ component }: Props) => {
         </div>
       </div>
 
-      <CustomSandpack>{Default({ ...state })}</CustomSandpack>
+      <CustomSandpack>{defaultCode}</CustomSandpack>
     </div>
   );
 };

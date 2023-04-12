@@ -1,7 +1,8 @@
 'use client';
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
+import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Button } from '@rewind-ui/core';
+import { Accordion, AccordionProps, Button } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
 
@@ -39,6 +40,12 @@ const components = {
     />
   ),
   hr: ({ ...props }) => <hr className="my-2 border-gray-200 border-dashed" {...props} />,
+  Accordion: ({ ...props }) => <Accordion {...props} />,
+  AccordionItem: ({ anchor, ...props }: AccordionItemProps) => (
+    <Accordion.Item anchor={anchor} {...props} />
+  ),
+  AccordionHeader: ({ ...props }) => <Accordion.Header {...props} />,
+  AccordionBody: ({ ...props }) => <Accordion.Body {...props} />,
   Button: ({ ...props }) => <Button {...props} />,
   View: ({ ...props }) => <View {...props} />,
 };
