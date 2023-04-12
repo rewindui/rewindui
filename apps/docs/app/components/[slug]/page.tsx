@@ -16,7 +16,7 @@ export const generateMetadata = ({ params }: any) => {
   const component: Component | undefined = allComponents.find(
     (component: Component) => component.slug === params.slug
   );
-  return { title: component?.title };
+  return { title: `Rewind-UI - ${component?.title}`, description: component?.description };
 };
 
 const ComponentLayout = async ({ params }: { params: { slug: ComponentSlug } }) => {

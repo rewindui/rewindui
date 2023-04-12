@@ -7,7 +7,7 @@ import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'Rewind-UI',
-  description: 'Yet another React UI library',
+  description: 'Effortless user interfaces',
 };
 
 const inter = Inter({

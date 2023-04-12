@@ -10,10 +10,10 @@ export const generateStaticParams = async () =>
   allPages.map((page: Page) => ({ slug: page._raw.flattenedPath }));
 
 export const generateMetadata = ({ params }: any) => {
-  const page: Page | undefined = allPages.find(
-    (page: Page) => page._raw.flattenedPath === params.slug
-  );
-  return { title: page?.title };
+  const slug = params.slug?.join('/') || '';
+  const page: Page | undefined = allPages.find((page: Page) => page._raw.flattenedPath === slug);
+
+  return { title: `Rewind-UI - ${page?.title}`, description: page?.description };
 };
 
 const PageLayout = async ({ params }: { params: { slug: string[] } }) => {
