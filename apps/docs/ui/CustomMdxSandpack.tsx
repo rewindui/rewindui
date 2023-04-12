@@ -14,7 +14,7 @@ export const CustomMdxSandpack = (props: any) => {
       template="react"
     >
       <SandpackLayout>
-        <SandpackCodeViewer showLineNumbers={true} wrapContent />
+        <SandpackCodeViewer showLineNumbers={true} />
       </SandpackLayout>
     </SandpackProvider>
   );
