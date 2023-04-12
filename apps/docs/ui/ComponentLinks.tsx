@@ -12,7 +12,7 @@ export const ComponentLinks = (props: { component: Component }) => {
       {source && (
         <Button
           as="a"
-          href={`${config.GITHUB_REPO_COMPONENTS}/${source}`}
+          href={`${config.github.repo_url}/${config.github.component_dir}/${source}`}
           target="_blank"
           color="white"
           size="sm"
@@ -33,7 +33,7 @@ export const ComponentLinks = (props: { component: Component }) => {
       {theme && (
         <Button
           as="a"
-          href={`${config.GITHUB_REPO_THEME}/${theme}`}
+          href={`${config.github.repo_url}/${config.github.theme_dir}/${theme}`}
           target="_blank"
           color="white"
           size="sm"
@@ -54,7 +54,7 @@ export const ComponentLinks = (props: { component: Component }) => {
       {variants && (
         <Button
           as="a"
-          href={`${config.GITHUB_REPO_VARIANTS}/${variants}`}
+          href={`${config.github.repo_url}/${config.github.variants_dir}/${variants}`}
           target="_blank"
           color="white"
           size="sm"
@@ -75,7 +75,7 @@ export const ComponentLinks = (props: { component: Component }) => {
       {storybook && (
         <Button
           as="a"
-          href={`${config.STORYBOOK_URL}/${storybook}`}
+          href={`${config.storybook.url}${storybook}`}
           target="_blank"
           size="sm"
           color="white"

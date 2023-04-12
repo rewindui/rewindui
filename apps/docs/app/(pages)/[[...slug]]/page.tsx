@@ -22,7 +22,10 @@ export const generateMetadata = ({ params }: PageProps) => {
   const slug = params.slug?.join('/') || '';
   const page: Page | undefined = allPages.find((page: Page) => page._raw.flattenedPath === slug);
 
-  return { title: `Rewind-UI - ${page?.title}`, description: page?.description };
+  return {
+    title: page?.title,
+    description: page?.description,
+  };
 };
 
 const PageLayout = async ({ params }: PageProps) => {
