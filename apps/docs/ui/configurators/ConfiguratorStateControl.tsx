@@ -28,6 +28,7 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
 
   if (option.type === 'select') {
     const props: Partial<SelectProps> = {
+      tone: 'solid',
       size: 'sm',
       value: state,
       shadow: 'sm',

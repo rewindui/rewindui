@@ -14,6 +14,7 @@ export const CheckboxCode = (props: any) => {
   };
 
   const attributes = [
+    'label="Click me!"',
     color !== defaultProps.color ? `color="${color}"` : null,
     tone !== defaultProps.tone ? `tone="${tone}"` : null,
     radius !== defaultProps.radius ? `radius="${radius}"` : null,
@@ -26,7 +27,7 @@ export const CheckboxCode = (props: any) => {
 
 function App() {
   return (
-    <Checkbox label="Click me!" ${attributes.filter(Boolean).join(' ')} />
+    <Checkbox ${attributes.filter(Boolean).join(' ')} />
   );
 }
 `.trim();

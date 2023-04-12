@@ -164,7 +164,7 @@ export const components = {
         label: 'Tone',
         name: 'tone',
         type: 'select',
-        options: ['solid', 'light', 'outline', 'transparent'],
+        options: ['solid', 'light'],
       },
       {
         label: 'Color',

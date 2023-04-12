@@ -57,7 +57,7 @@ export const Configurator = ({ component }: Props) => {
         </div>
 
         <div className="w-full lg:w-1/3 flex flex-auto p-5">
-          <div className="flex flex-col space-y-3">{controls}</div>
+          <div className="flex flex-col space-y-3 w-full">{controls}</div>
         </div>
       </div>
 
