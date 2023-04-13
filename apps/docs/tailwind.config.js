@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './content/**/*.mdx',
     './ui/**/*.{js,ts,jsx,tsx,mdx}',
     './node_modules/@rewind-ui/core/src/theme/styles/*.ts',
   ],

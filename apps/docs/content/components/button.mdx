@@ -331,3 +331,80 @@ Available `animation` values are: `pulse` and `bounce`.
   <Button animation="bounce">Button</Button>
 </View>
 ```
+
+# Polymorphic
+---
+The `Button` component is a polymorphic component. This means that you can use it as a button, a link or any html element. You can use the `as` prop to change the underlying html element.
+
+<View>
+  <Button variant="link" as="a" href="https://www.google.com" target="_blank">Google</Button>
+</View>
+
+```tsx
+<View>
+  <Button
+    variant="link"
+    as="a"
+    href="https://www.google.com"
+    target="_blank"
+  >
+    Google
+  </Button>
+</View>
+```
+
+# Ref
+---
+The `Button` component supports the `ref` prop. This means that you can use the `ref` prop to get a reference to the underlying html element.
+
+```tsx
+import { useRef } from 'react';
+import { Button } from '@rewind-ui/core';
+
+function App() {
+  const ref = useRef<HTMLButtonElement>(null);
+  return <Button ref={ref}>Click me!</Button>;
+}
+```
+
+# Examples
+---
+## Full width
+
+<View>
+  <Button className="w-full">Click me!</Button>
+</View>
+
+```tsx
+<View>
+  <Button className="w-full">Click me!</Button>
+</View>
+```
+
+## On click event
+
+<View>
+  <Button onClick={() => alert('Hello World!')}>Click me!</Button>
+</View>
+
+```tsx
+<View>
+  <Button onClick={() => alert('Hello World!')}>Click me!</Button>
+</View>
+```
+
+## Classname overrides
+
+If you want to avoid overwriting the default styles, you can use the `className` prop to override the default classes. Rewind-UI is using [tailwind-merge](https://github.com/dcastil/tailwind-merge) to merge the default classes with the classes you provide in the `className` prop.
+
+<View>
+  <Button className="text-white bg-pink-500 focus:bg-pink-600 hover:bg-pink-600 active:bg-pink-600/90 focus:ring-pink-300">I am pink</Button>
+</View>
+
+```tsx
+<View>
+  <Button className="text-white bg-pink-500 focus:bg-pink-600 hover:bg-pink-600 active:bg-pink-600/90 focus:ring-pink-300">
+    I am pink
+  </Button>
+</View>
+```
