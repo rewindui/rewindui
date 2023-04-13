@@ -81,7 +81,6 @@ export const Pager = (props: PagerProps) => {
       slug: 'checkbox',
     },
   ];
-  console.log(collection);
   const { current } = props;
   const index: number | undefined = collection.findIndex(
     (item: CollectionItem) => item.slug === current.slug
