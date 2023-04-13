@@ -3,7 +3,6 @@ import { Text } from '@rewind-ui/core';
 import { ReactNode } from 'react';
 import { MenuItem } from './MenuItem';
 import {
-  GearSix,
   Lifebuoy,
   Palette,
   PersonArmsSpread,
