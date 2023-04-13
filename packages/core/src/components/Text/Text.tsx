@@ -2,13 +2,14 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { ElementType, forwardRef, useMemo } from 'react';
-import { twMerge } from 'tailwind-merge';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
 import { TextComponent, TextProps } from './Text.types';
 
 const defaultProps: Partial<TextProps> = {
-  size: 'base',
   color: 'dark',
+  leading: 'normal',
+  size: 'base',
+  tracking: 'normal',
   weight: 'normal',
 };
 
@@ -36,16 +37,14 @@ const Text: TextComponent = forwardRef(
     };
 
     const classes = useMemo(() => {
-      return twMerge(
-        theme({
-          className,
-          color,
-          leading,
-          size,
-          tracking,
-          weight,
-        })
-      );
+      return theme({
+        className,
+        color,
+        leading,
+        size,
+        tracking,
+        weight,
+      });
     }, [className, color, leading, size, theme, tracking, weight]);
 
     const Component = as || 'span';
