@@ -50,7 +50,7 @@ export const Configurator = ({ component }: Props) => {
   ));
 
   return (
-    <div className="w-full lg:block flex flex-col space-y-5">
+    <div className="lg:block flex flex-col space-y-5">
       <div className="flex flex-wrap rounded-md shadow-sm shadow-neutral-100 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200 border border-neutral-200">
         <div className="w-full lg:w-2/3 bg-grid rounded-md flex p-4 items-center justify-center">
           <Example {...state} />

@@ -14,17 +14,14 @@ export type Color =
   | 'gray'
   | 'dark'
   | 'black';
-type Tone = 'light' | 'solid';
 
 const Color = ({
   color,
   selectedColor,
-  tone,
   onClick,
 }: {
   color: Color;
   selectedColor: Color;
-  tone: Tone;
   onClick: (color: Color) => void;
 }) => {
   const style = cva(
@@ -38,6 +35,7 @@ const Color = ({
       'flex',
       'items-center',
       'justify-center',
+      'outline',
     ],
     {
       variants: {
@@ -46,100 +44,75 @@ const Color = ({
           white: ['bg-white'],
           zinc: ['bg-zinc-500'],
           slate: ['bg-slate-500'],
-          blue: [],
-          red: [],
-          green: [],
-          yellow: [],
-          purple: [],
-          gray: [],
-          dark: [],
-          black: [],
+          blue: ['bg-blue-500'],
+          red: ['bg-red-500'],
+          green: ['bg-green-500'],
+          yellow: ['bg-yellow-400'],
+          purple: ['bg-purple-500'],
+          gray: ['bg-gray-200'],
+          dark: ['bg-gray-700'],
+          black: ['bg-black'],
         },
-        tone: {
-          light: [],
-          solid: [],
+        selected: {
+          true: [],
+          false: ['outline-transparent'],
         },
       },
       compoundVariants: [
         {
-          color: 'blue',
-          tone: 'light',
-          className: ['bg-blue-50'],
+          color: 'white',
+          selected: true,
+          className: ['outline-gray-50'],
+        },
+        {
+          color: 'zinc',
+          selected: true,
+          className: ['outline-zinc-300'],
+        },
+        {
+          color: 'slate',
+          selected: true,
+          className: ['outline-slate-300'],
         },
         {
           color: 'blue',
-          tone: 'solid',
-          className: ['bg-blue-500'],
+          selected: true,
+          className: ['outline-blue-300'],
         },
         {
           color: 'red',
-          tone: 'light',
-          className: ['bg-red-50'],
-        },
-        {
-          color: 'red',
-          tone: 'solid',
-          className: ['bg-red-500'],
+          selected: true,
+          className: ['outline-red-300'],
         },
         {
           color: 'green',
-          tone: 'light',
-          className: ['bg-green-50'],
-        },
-        {
-          color: 'green',
-          tone: 'solid',
-          className: ['bg-green-500'],
+          selected: true,
+          className: ['outline-green-300'],
         },
         {
           color: 'yellow',
-          tone: 'light',
-          className: ['bg-yellow-50'],
-        },
-        {
-          color: 'yellow',
-          tone: 'solid',
-          className: ['bg-yellow-400'],
+          selected: true,
+          className: ['outline-yellow-200'],
         },
         {
           color: 'purple',
-          tone: 'light',
-          className: ['bg-purple-50'],
-        },
-        {
-          color: 'purple',
-          tone: 'solid',
-          className: ['bg-purple-500'],
+          selected: true,
+          className: ['outline-purple-300'],
         },
         {
           color: 'gray',
-          tone: 'light',
-          className: ['bg-gray-50'],
-        },
-        {
-          color: 'gray',
-          tone: 'solid',
-          className: ['bg-gray-200'],
+          selected: true,
+          className: ['outline-gray-100'],
         },
         {
           color: 'dark',
-          tone: 'light',
-          className: ['bg-gray-200'],
-        },
-        {
-          color: 'dark',
-          tone: 'solid',
-          className: ['bg-gray-700'],
+          selected: true,
+          className: ['outline-gray-500'],
         },
         {
           color: 'black',
-          tone: 'light',
-          className: ['bg-gray-400'],
-        },
-        {
-          color: 'black',
-          tone: 'solid',
-          className: ['bg-black'],
+          selected: true,
+          className: ['outline-gray-700'],
         },
       ],
     }
@@ -164,21 +137,22 @@ const Color = ({
     },
   });
   return (
-    <div onClick={() => onClick(color)} className={style({ color, tone })}>
+    <div
+      onClick={() => onClick(color)}
+      className={style({ color, selected: selectedColor === color })}
+    >
       {selectedColor === color && (
-        <CheckFat size={14} weight="duotone" className={iconStyle({ color })} />
+        <CheckFat size={13} weight="duotone" className={iconStyle({ color })} />
       )}
     </div>
   );
 };
 
 export const ColorPicker = ({
-  tone = 'solid',
   onClick,
   colors = ['white', 'blue', 'red', 'green', 'yellow', 'purple', 'gray', 'dark', 'black'],
   initialValue = 'white',
 }: {
-  tone?: Tone;
   onClick: (color: Color) => void;
   colors?: Color[];
   initialValue?: Color;
@@ -196,7 +170,6 @@ export const ColorPicker = ({
           }}
           selectedColor={selectedColor}
           color={color}
-          tone={tone}
         />
       ))}
     </div>

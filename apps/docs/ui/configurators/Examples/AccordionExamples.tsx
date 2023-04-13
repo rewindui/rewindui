@@ -65,12 +65,12 @@ function App() {
         <Accordion.Header>Header</Accordion.Header>
         <Accordion.Body>Body</Accordion.Body>
       </Accordion.Item>
-      
+
       <Accordion.Item anchor="item-2">
         <Accordion.Header>Header</Accordion.Header>
         <Accordion.Body>Body</Accordion.Body>
       </Accordion.Item>
-      
+
       <Accordion.Item anchor="item-3">
         <Accordion.Header>Header</Accordion.Header>
         <Accordion.Body>Body</Accordion.Body>

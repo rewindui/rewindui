@@ -45,8 +45,8 @@ export const components = {
       {
         label: 'Shadow',
         name: 'shadow',
-        type: 'selector',
-        options: ['none', 'sm', 'base', 'md', 'lg'],
+        type: 'select',
+        options: ['none', 'sm', 'base', 'md', 'lg', 'xl'],
       },
       {
         label: 'Shadow Color',
@@ -58,7 +58,7 @@ export const components = {
         label: 'Radius',
         name: 'radius',
         type: 'selector',
-        options: ['none', 'sm', 'md', 'lg'],
+        options: ['none', 'sm', 'base', 'md', 'lg'],
       },
       {
         label: 'Bordered',

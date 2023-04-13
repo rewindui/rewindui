@@ -476,10 +476,10 @@ Available `size` values are:  `sm`, `md`, `lg` and `xl`.
 
 # Radiuses
 ---
-Available `radius` values are:  `xs`, `sm`, `md` and `lg`.
+Available `radius` values are:  `none`, `sm`, `base`, `md` and `lg`.
 
 <View>
-  <Accordion radius="xs" defaultItem="item-1">
+  <Accordion radius="none" defaultItem="item-1">
     <AccordionItem anchor="item-1">
       <AccordionHeader>Header</AccordionHeader>
       <AccordionBody>Some text...</AccordionBody>
@@ -492,6 +492,18 @@ Available `radius` values are:  `xs`, `sm`, `md` and `lg`.
   </Accordion>
 
   <Accordion radius="sm" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion radius="base" defaultItem="item-1">
     <AccordionItem anchor="item-1">
       <AccordionHeader>Header</AccordionHeader>
       <AccordionBody>Some text...</AccordionBody>
@@ -530,19 +542,23 @@ Available `radius` values are:  `xs`, `sm`, `md` and `lg`.
 
 ```tsx
 <View>
-  <Accordion size="sm">
+  <Accordion radius="none">
     // ...
   </Accordion>
 
-  <Accordion size="md">
+  <Accordion radius="sm">
     // ...
   </Accordion>
 
-  <Accordion size="lg">
+  <Accordion radius="base">
     // ...
   </Accordion>
 
-  <Accordion size="xl">
+  <Accordion radius="md">
+    // ...
+  </Accordion>
+
+  <Accordion radius="lg">
     // ...
   </Accordion>
 </View>
@@ -550,7 +566,7 @@ Available `radius` values are:  `xs`, `sm`, `md` and `lg`.
 
 # Shadows
 ---
-Available `shadow` values are: `none`, `sm`, `md`, `lg` and `xl`.
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
 
 <View>
   <Accordion shadow="none" defaultItem="item-1">
@@ -566,6 +582,18 @@ Available `shadow` values are: `none`, `sm`, `md`, `lg` and `xl`.
   </Accordion>
 
   <Accordion shadow="sm" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion shadow="base" defaultItem="item-1">
     <AccordionItem anchor="item-1">
       <AccordionHeader>Header</AccordionHeader>
       <AccordionBody>Some text...</AccordionBody>
@@ -621,6 +649,10 @@ Available `shadow` values are: `none`, `sm`, `md`, `lg` and `xl`.
   </Accordion>
 
   <Accordion shadow="sm">
+    // ...
+  </Accordion>
+
+  <Accordion shadow="base">
     // ...
   </Accordion>
 
