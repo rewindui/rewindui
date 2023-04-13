@@ -68,6 +68,10 @@ const Component = defineDocumentType(() => ({
       type: 'string',
       required: false,
     },
+    polymorphic: {
+      type: 'boolean',
+      required: false,
+    },
   },
   computedFields: {
     url: {

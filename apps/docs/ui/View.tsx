@@ -14,7 +14,7 @@ export const View = ({
   return (
     <div className="grow mt-6 flex flex-col divide-y divide-neutral-200 rounded border border-neutral-200 shadow-sm shadow-neutral-100">
       {prop && (
-        <div className="flex space-x-2 items-center bg-slate-100/75 text-gray-800 p-2.5">
+        <div className="flex space-x-2 items-center bg-neutral-100/50 text-gray-800 p-2.5">
           {prop}
           {value && <Badge>{value}</Badge>}
         </div>

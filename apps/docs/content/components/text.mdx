@@ -1,0 +1,276 @@
+---
+title: Text
+description: A versatile component for rendering and formatting text content with ease.
+intro: The Text component is a polymorphic component that can be used to render a variety of text content on a web page, including headings, paragraphs, spans or hyperlinks. It can be easily styled using a variety of props.
+source: Text
+theme: Text.styles.ts
+variants: Text.variants.ts
+storybook: text--default
+polymorphic: true
+---
+
+# Import
+---
+Import the Text component using the following import statement.
+
+```tsx
+import { Text } from '@rewind-ui@core';
+```
+
+# Variants
+---
+The Text component has a number of variants that can be used to change the appearance of the component. The variants can be used by passing the variant prop to the component.
+
+Available variants are: `d1`, `d2`, `d3`, `d4`, `h1`, `h2`, `h3`, `h4`, `h5`, `h6` and `p`.
+
+Since Text component is a polymorphic component, all the above variants will be rendered as `h` or `p` tags automatically.
+
+<View direction="column">
+  <Text variant="d1">Display 1</Text>
+  <Text variant="d2">Display 2</Text>
+  <Text variant="d3">Display 3</Text>
+  <Text variant="d4">Display 4</Text>
+  <Text variant="h1">Heading 1</Text>
+  <Text variant="h2">Heading 2</Text>
+  <Text variant="h3">Heading 3</Text>
+  <Text variant="h4">Heading 4</Text>
+  <Text variant="h5">Heading 5</Text>
+  <Text variant="h6">Heading 6</Text>
+  <Text variant="p">Paragraph</Text>
+</View>
+
+```tsx
+<View>
+  <Text variant="d1">Display 1</Text>
+  <Text variant="d2">Display 2</Text>
+  <Text variant="d3">Display 3</Text>
+  <Text variant="d4">Display 4</Text>
+  <Text variant="h1">Heading 1</Text>
+  <Text variant="h2">Heading 2</Text>
+  <Text variant="h3">Heading 3</Text>
+  <Text variant="h4">Heading 4</Text>
+  <Text variant="h5">Heading 5</Text>
+  <Text variant="h6">Heading 6</Text>
+  <Text variant="p">Paragraph</Text>
+</View>
+```
+
+# Colors
+---
+The Text component comes with nine colors: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`. The color can be changed by passing the color prop to the component.
+
+<View>
+  <Text color="white">White</Text>
+  <Text color="blue">Blue</Text>
+  <Text color="red">Red</Text>
+  <Text color="green">Green</Text>
+  <Text color="yellow">Yellow</Text>
+  <Text color="purple">Purple</Text>
+  <Text color="gray">Gray</Text>
+  <Text color="dark">Dark</Text>
+  <Text color="black">Black</Text>
+</View>
+
+```tsx
+<View>
+  <Text color="white">White</Text>
+  <Text color="blue">Blue</Text>
+  <Text color="red">Red</Text>
+  <Text color="green">Green</Text>
+  <Text color="yellow">Yellow</Text>
+  <Text color="purple">Purple</Text>
+  <Text color="gray">Gray</Text>
+  <Text color="dark">Dark</Text>
+  <Text color="black">Black</Text>
+</View>
+```
+
+# Sizes
+---
+
+The Text component comes with 13 sizes: `xs`, `sm`, `base`, `lg`, `xl`, `2xl`, `3xl`, `4xl`, `5xl`, `6xl`, `7xl`, `8xl` and `9xl`. The size can be changed by passing the size prop to the component.
+
+<View direction="column">
+  <Text size="xs">Extra small</Text>
+  <Text size="sm">Small</Text>
+  <Text size="base">Base</Text>
+  <Text size="lg">Large</Text>
+  <Text size="xl">Extra large</Text>
+  <Text size="2xl">2xl</Text>
+  <Text size="3xl">3xl</Text>
+  <Text size="4xl">4xl</Text>
+  <Text size="5xl">5xl</Text>
+  <Text size="6xl">6xl</Text>
+  <Text size="7xl">7xl</Text>
+  <Text size="8xl">8xl</Text>
+  <Text size="9xl">9xl</Text>
+</View>
+
+```tsx
+<View>
+  <Text size="xs">Extra small</Text>
+  <Text size="sm">Small</Text>
+  <Text size="base">Base</Text>
+  <Text size="lg">Large</Text>
+  <Text size="xl">Extra large</Text>
+  <Text size="2xl">2xl</Text>
+  <Text size="3xl">3xl</Text>
+  <Text size="4xl">4xl</Text>
+  <Text size="5xl">5xl</Text>
+  <Text size="6xl">6xl</Text>
+  <Text size="7xl">7xl</Text>
+  <Text size="8xl">8xl</Text>
+  <Text size="9xl">9xl</Text>
+</View>
+```
+
+# Weight
+---
+The Text component comes with 9 weights: `thin`, `extraLight`, `light`, `normal`, `medium`, `semiBold`, `bold`, `extraBold` and `black`. The weight can be changed by passing the `weight` prop to the component.
+
+<View direction="column">
+  <Text weight="thin">Thin</Text>
+  <Text weight="extraLight">Extra Light</Text>
+  <Text weight="light">Light</Text>
+  <Text weight="normal">Normal</Text>
+  <Text weight="medium">Medium</Text>
+  <Text weight="semiBold">Semi Bold</Text>
+  <Text weight="bold">Bold</Text>
+  <Text weight="extraBold">Extra Bold</Text>
+  <Text weight="black">Black</Text>
+</View>
+
+```tsx
+<View>
+  <Text weight="thin">Thin</Text>
+  <Text weight="extraLight">Extra Light</Text>
+  <Text weight="light">Light</Text>
+  <Text weight="normal">Normal</Text>
+  <Text weight="medium">Medium</Text>
+  <Text weight="semiBold">Semi Bold</Text>
+  <Text weight="bold">Bold</Text>
+  <Text weight="extraBold">Extra Bold</Text>
+  <Text weight="black">Black</Text>
+</View>
+```
+
+# Tracking
+---
+The Text component comes with 9 tracking options: `tighter`, `tight`, `normal`, `wide`, `wider` and `widest`. The tracking can be changed by passing the `tracking` prop to the component.
+
+<View direction="column">
+  <Text tracking="tighter">Tighter</Text>
+  <Text tracking="tight">Tight</Text>
+  <Text tracking="normal">Normal</Text>
+  <Text tracking="wide">Wide</Text>
+  <Text tracking="wider">Wider</Text>
+  <Text tracking="widest">Widest</Text>
+</View>
+
+```tsx
+<View>
+  <Text tracking="tighter">Tighter</Text>
+  <Text tracking="tight">Tight</Text>
+  <Text tracking="normal">Normal</Text>
+  <Text tracking="wide">Wide</Text>
+  <Text tracking="wider">Wider</Text>
+  <Text tracking="widest">Widest</Text>
+</View>
+```
+
+# Leading
+---
+The Text component comes with 14 leading options: `3`, `4`, `5`, `6`, `7`, `8`, `9`, `10`, `none`, `tight`, `snug`, `normal`, `relaxed` and `loose`. The leading can be changed by passing the `leading` prop to the component.
+
+<View prop="leading" value="3">
+  <Text leading="3">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="4">
+  <Text leading="4">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="5">
+  <Text leading="5">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="6">
+  <Text leading="6">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="7">
+  <Text leading="7">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="8">
+  <Text leading="8">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="9">
+  <Text leading="9">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="none">
+  <Text leading="none">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="tight">
+  <Text leading="tight">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="snug">
+  <Text leading="snug">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="normal">
+  <Text leading="normal">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="relaxed">
+  <Text leading="relaxed">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+<View prop="leading" value="loose">
+  <Text leading="loose">The sun slowly rose over the horizon, casting a warm glow across the peaceful meadow. The flowers swayed gently in the breeze, their sweet fragrance filling the air. A group of birds chirped happily in the distance, their melodies creating a beautiful symphony. In the distance, a lone figure could be seen walking along the path, lost in thought. As the morning continued, the world around them came to life, with animals scurrying about and the gentle hum of insects buzzing in the air. It was a perfect day, filled with promise and possibility.</Text>
+</View>
+
+```tsx
+<View>
+  <Text leading="1">Hello world!</Text>
+  <Text leading="2">Hello world!</Text>
+  <Text leading="3">Hello world!</Text>
+  <Text leading="4">Hello world!</Text>
+  <Text leading="5">Hello world!</Text>
+  <Text leading="6">Hello world!</Text>
+  <Text leading="7">Hello world!</Text>
+  <Text leading="8">Hello world!</Text>
+  <Text leading="9">Hello world!</Text>
+  <Text leading="none">Hello world!</Text>
+  <Text leading="tight">Hello world!</Text>
+  <Text leading="snug">Hello world!</Text>
+  <Text leading="normal">Hello world!</Text>
+  <Text leading="relaxed">Hello world!</Text>
+  <Text leading="loose">Hello world!</Text>
+</View>
+```
+
+# Polymorphic
+---
+The `Text` component is a polymorphic component. This means that you can use it as a text, a heading or any html element. You can use the `as` prop to change the underlying html element.
+
+<View direction="column">
+  <Text as="h1">Heading 1</Text>
+  <Text as="h2">Heading 2</Text>
+  <Text as="h3">Heading 3</Text>
+  <Text as="h4">Heading 4</Text>
+  <Text as="h5">Heading 5</Text>
+  <Text as="h6">Heading 6</Text>
+  <Text as="p">Paragraph</Text>
+  <Text as="span">Span</Text>
+  <Text as="a" href="#polymorphic">Anchor</Text>
+  <Text as="label">Label</Text>
+</View>
+
+```tsx
+<View>
+  <Text as="h1">Heading 1</Text>
+  <Text as="h2">Heading 2</Text>
+  <Text as="h3">Heading 3</Text>
+  <Text as="h4">Heading 4</Text>
+  <Text as="h5">Heading 5</Text>
+  <Text as="h6">Heading 6</Text>
+  <Text as="p">Paragraph</Text>
+  <Text as="span">Span</Text>
+  <Text as="a" href="#">Anchor</Text>
+  <Text as="label">Label</Text>
+</View>
+```
+

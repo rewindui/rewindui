@@ -50,21 +50,38 @@ const PagerItem = ({ item, side }: { item: CollectionItem; side: 'left' | 'right
 
 export const Pager = (props: PagerProps) => {
   const collection: CollectionItem[] = [
-    ...allPages.map((page) => {
-      return {
-        title: page.title,
-        url: page.url,
-        slug: page.slug,
-      };
-    }),
-    ...allComponents.map((component) => {
-      return {
-        title: component.title,
-        url: component.url,
-        slug: component.slug,
-      };
-    }),
+    {
+      title: 'Introduction',
+      url: '/',
+      slug: '',
+    },
+    {
+      title: 'Theming',
+      url: '/theming',
+      slug: 'theming',
+    },
+    {
+      title: 'Accordion',
+      url: '/components/accordion',
+      slug: 'accordion',
+    },
+    {
+      title: 'Text',
+      url: '/components/text',
+      slug: 'text',
+    },
+    {
+      title: 'Button',
+      url: '/components/button',
+      slug: 'button',
+    },
+    {
+      title: 'Checkbox',
+      url: '/components/checkbox',
+      slug: 'checkbox',
+    },
   ];
+  console.log(collection);
   const { current } = props;
   const index: number | undefined = collection.findIndex(
     (item: CollectionItem) => item.slug === current.slug

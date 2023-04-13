@@ -102,7 +102,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Text',
         path: '/components/text',
-        wip: true,
       },
       {
         title: 'Tooltip',

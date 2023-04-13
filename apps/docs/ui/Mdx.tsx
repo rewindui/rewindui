@@ -2,7 +2,7 @@
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Accordion, AccordionProps, Button } from '@rewind-ui/core';
+import { Accordion, Text, Button } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
 
@@ -47,6 +47,7 @@ const components = {
   AccordionHeader: ({ ...props }) => <Accordion.Header {...props} />,
   AccordionBody: ({ ...props }) => <Accordion.Body {...props} />,
   Button: ({ ...props }) => <Button {...props} />,
+  Text: ({ ...props }) => <Text {...props} />,
   View: ({ ...props }) => <View {...props} />,
 };
 
