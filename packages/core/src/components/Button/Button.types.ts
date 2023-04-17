@@ -1,10 +1,6 @@
 import { ElementType, ReactElement } from 'react';
 import { PolymorphicComponentPropWithRef } from '../../types';
 
-export type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
-export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
-export type ButtonRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
-export type ButtonShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type ButtonAnimation = 'none' | 'pulse' | 'bounce';
 export type ButtonColor =
   | 'white'
@@ -16,6 +12,8 @@ export type ButtonColor =
   | 'gray'
   | 'dark'
   | 'black';
+export type ButtonRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+export type ButtonShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type ButtonShadowColor =
   | 'none'
   | 'white'
@@ -27,6 +25,8 @@ export type ButtonShadowColor =
   | 'gray'
   | 'dark'
   | 'black';
+export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
+export type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
 export type ButtonVariants =
   | 'primary'
   | 'secondary'

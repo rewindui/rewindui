@@ -40,6 +40,26 @@ const components = {
     />
   ),
   hr: ({ ...props }) => <hr className="my-2 border-gray-200 border-dashed" {...props} />,
+  table: ({ className, ...props }: HTMLAttributes<HTMLTableElement>) => (
+    <div className="my-6 w-full overflow-y-auto text-sm">
+      <table className="w-full rounded" {...props} />
+    </div>
+  ),
+  tr: ({ className, ...props }: HTMLAttributes<HTMLTableRowElement>) => (
+    <tr className="m-0 border-t border-gray-300 p-0 even:bg-gray-50" {...props} />
+  ),
+  th: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
+    <th
+      className="border border-gray-100 bg-gray-50 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
+      {...props}
+    />
+  ),
+  td: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
+    <td
+      className="border border-gray-100 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+      {...props}
+    />
+  ),
   Accordion: ({ ...props }) => <Accordion {...props} />,
   AccordionItem: ({ anchor, ...props }: AccordionItemProps) => (
     <Accordion.Item anchor={anchor} {...props} />

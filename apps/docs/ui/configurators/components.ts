@@ -155,6 +155,8 @@ export const components = {
     state: {
       color: 'blue',
       disabled: false,
+      description: '',
+      error: '',
       radius: 'md',
       size: 'md',
       tone: 'solid',
@@ -189,6 +191,18 @@ export const components = {
         label: 'Disabled',
         name: 'disabled',
         type: 'switch',
+      },
+      {
+        label: 'Error',
+        name: 'error',
+        type: 'input',
+        placeholder: 'Error message',
+      },
+      {
+        label: 'Description',
+        name: 'description',
+        type: 'input',
+        placeholder: 'Checkbox description',
       },
       {
         label: 'With ring',

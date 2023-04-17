@@ -15,7 +15,8 @@ type Props = {
 export type ConfiguratorOption = {
   label: string;
   name: any;
-  type: 'selector' | 'color' | 'switch' | 'select';
+  placeholder?: string;
+  type: 'selector' | 'color' | 'switch' | 'select' | 'input';
   options?: string[];
   colors?: Color[];
   orientation?: 'horizontal' | 'vertical';

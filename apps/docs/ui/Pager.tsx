@@ -1,5 +1,5 @@
 'use client';
-import { allComponents, allPages, Component, Page } from 'contentlayer/generated';
+import { Component, Page } from 'contentlayer/generated';
 import Link from 'next/link';
 import { clsx } from 'clsx';
 import * as React from 'react';

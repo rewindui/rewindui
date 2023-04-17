@@ -1,6 +1,14 @@
 import { ColorPicker } from '@/ui/ColorPicker';
 import { ConfiguratorOption } from '@/ui/Configurator';
-import { Selector, SelectorProps, Select, SelectProps, Switch } from '@rewind-ui/core';
+import {
+  Selector,
+  SelectorProps,
+  Select,
+  SelectProps,
+  Switch,
+  Input,
+  InputProps,
+} from '@rewind-ui/core';
 import * as React from 'react';
 
 type Props = {
@@ -43,6 +51,18 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
         ))}
       </Select>
     );
+  }
+
+  if (option.type === 'input') {
+    const props: Partial<InputProps> = {
+      tone: 'solid',
+      size: 'sm',
+      value: state,
+      shadow: 'sm',
+      placeholder: option.placeholder || '',
+      onChange: (event: any) => onChange(option.name, event.target.value),
+    };
+    return <Input {...props} />;
   }
 
   if (option.type === 'switch') {

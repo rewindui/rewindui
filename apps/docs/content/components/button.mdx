@@ -409,3 +409,89 @@ If you want to avoid overwriting the default styles, you can use the `className`
   </Button>
 </View>
 ```
+
+# API Reference
+---
+## Properties
+All known button properties (e.g. type="submit") can be used on the `Button` component. Furthermore, the `Button` component supports the following properties:
+
+| Prop        | Type                | Description                                                                                                | Default |
+|:------------|:--------------------|:-----------------------------------------------------------------------------------------------------------|:--------|
+| animation   | `ButtonAnimation`   | Sets the animation type                                                                                    | `none`  |
+| color       | `ButtonColor`       | Sets the color                                                                                             | `blue`  |
+| disabled    | `boolean`           | Disables button                                                                                            | `false` |
+| icon        | `boolean`           | Makes the button a perfect square. This prop can be used when button contains just an icon instead of text | `false` |
+| loading     | `boolean`           | Shows a loading spinner and disables the button                                                            | `false` |
+| radius      | `ButtonRadius`      | Sets the border radius                                                                                     | `md`    |
+| shadow      | `ButtonShadow`      | Sets the shadow size                                                                                       | `none`  |
+| shadowColor | `ButtonShadowColor` | Sets the shadow color                                                                                      | `none`  |
+| size        | `ButtonSize`        | Sets the button size                                                                                       | `md`    |
+| tone        | `ButtonTone`        | Sets the button tone                                                                                       | `solid` |
+| withRing    | `boolean`           | Shows a ring around the button on active state                                                             | `false` |
+
+## Events
+The `Button` component supports all known button events (e.g. `onClick`, `onMouseEnter`, `onMouseLeave`, `onFocus`, `onBlur`, etc.).
+<View>
+  <Button onMouseEnter={() => alert('Hello World!')}>On mouse enter!</Button>
+</View>
+
+## Types
+
+```tsx
+type ButtonAnimation = 'none' | 'pulse' | 'bounce';
+```
+
+```tsx
+type ButtonColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ButtonRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type ButtonShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type ButtonShadowColor =
+  | 'none'
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
+```
+
+```tsx
+type ButtonVariants =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'link'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info';
+```
