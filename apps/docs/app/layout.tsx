@@ -26,19 +26,10 @@ export const metadata = {
     telephone: false,
   },
   openGraph: {
-    locale: 'en_US',
-    url: 'https://rewind-ui.dev',
-    title: config.metadata.title,
-    description: config.metadata.description,
-    siteName: config.metadata.title,
-    images: [
-      {
-        url: config.metadata.ogImage,
-        width: 1200,
-        height: 630,
-        alt: config.metadata.title,
-      },
-    ],
+    title: {
+      default: config.metadata.title,
+      template: 'Rewind-UI - %s',
+    },
   },
   icons: {
     icon: '/favicon.ico',

@@ -1,4 +1,5 @@
 import { ComponentSlug } from '@/contentlayer.config';
+import { config } from '@/lib/config';
 import { ComponentLinks } from '@/ui/ComponentLinks';
 import { Configurator } from '@/ui/Configurator';
 import { Mdx } from '@/ui/Mdx';
@@ -29,6 +30,21 @@ export const generateMetadata = ({ params }: ComponentProps) => {
   return {
     title: component?.title,
     description: component?.description,
+    openGraph: {
+      locale: 'en_US',
+      url: `https://rewind-ui.dev/components/${params.slug}`,
+      title: component?.title,
+      description: component?.description,
+      siteName: config.metadata.title,
+      images: [
+        {
+          url: config.metadata.ogImage,
+          width: 1200,
+          height: 630,
+          alt: config.metadata.title,
+        },
+      ],
+    },
   };
 };
 

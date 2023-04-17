@@ -1,3 +1,4 @@
+import { config } from '@/lib/config';
 import { Mdx } from '@/ui/Mdx';
 import { Pager } from '@/ui/Pager';
 import { Toc } from '@/ui/Toc';
@@ -25,6 +26,21 @@ export const generateMetadata = ({ params }: PageProps) => {
   return {
     title: page?.title,
     description: page?.description,
+    openGraph: {
+      locale: 'en_US',
+      url: `https://rewind-ui.dev/${params.slug}`,
+      title: page?.title,
+      description: page?.description,
+      siteName: config.metadata.title,
+      images: [
+        {
+          url: config.metadata.ogImage,
+          width: 1200,
+          height: 630,
+          alt: config.metadata.title,
+        },
+      ],
+    },
   };
 };
 
