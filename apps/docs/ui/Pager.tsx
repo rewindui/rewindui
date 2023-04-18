@@ -66,6 +66,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'accordion',
     },
     {
+      title: 'Card',
+      url: '/components/card',
+      slug: 'card',
+    },
+    {
       title: 'Text',
       url: '/components/text',
       slug: 'text',

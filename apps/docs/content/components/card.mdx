@@ -1,0 +1,438 @@
+---
+title: Card
+description: A container separated into image, header, body and footer sections.
+intro: The Card component can be used to present content in a visually cohesive and structured way. Each section of the container can be tailored to suit the unique requirements of the content it contains.
+source: Card
+theme: Card.styles.ts
+storybook: card--default
+---
+
+# Import
+---
+Import the `Card` component using the following import statement.
+
+```tsx
+import { Card } from '@rewind-ui@core';
+```
+
+# Colors
+---
+The `Card` component comes with four colors: `white`, `gray`, `zinc` and `slate`.
+
+<View>
+  <Card color="white">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card color="gray">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card color="zinc">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card color="slate">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card color="white">
+    // ...
+  </Card>
+
+  <Card color="gray">
+    // ...
+  </Card>
+
+  <Card color="zinc">
+    // ...
+  </Card>
+
+  <Card color="slate">
+    // ...
+  </Card>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `sm`, `base`, `md` and `lg`.
+
+<View>
+  <Card size="sm">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card size="base">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card size="md">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card size="lg">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card size="sm">
+    // ...
+  </Card>
+
+  <Card size="base">
+    // ...
+  </Card>
+
+  <Card size="md">
+    // ...
+  </Card>
+
+  <Card size="lg">
+    // ...
+  </Card>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <Card radius="none">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card radius="sm">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card radius="base">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card radius="md">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card radius="lg">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card radius="none">
+    // ...
+  </Card>
+
+  <Card radius="sm">
+    // ...
+  </Card>
+
+  <Card radius="base">
+    // ...
+  </Card>
+
+  <Card radius="md">
+    // ...
+  </Card>
+
+  <Card radius="lg">
+    // ...
+  </Card>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+<View>
+  <Card shadow="none">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card shadow="sm">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card shadow="base">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card shadow="md">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card shadow="lg">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card shadow="xl">
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card shadow="none">
+    // ...
+  </Card>
+
+  <Card shadow="sm">
+    // ...
+  </Card>
+
+  <Card shadow="base">
+    // ...
+  </Card>
+
+  <Card shadow="md">
+    // ...
+  </Card>
+
+  <Card shadow="lg">
+    // ...
+  </Card>
+
+  <Card shadow="xl">
+    // ...
+  </Card>
+</View>
+```
+
+# Borders
+---
+Borders can be added to the `Card` component by using the `bordered` prop.
+
+<View>
+  <Card bordered={true}>
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card bordered={false}>
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card bordered={true}>
+    // ...
+  </Card>
+
+  <Card bordered={false}>
+    // ...
+  </Card>
+</View>
+```
+
+# Dividers
+---
+Dividers can be added to the `Card` component by using the `withDivider` prop.
+
+<View>
+  <Card withDivider={true}>
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+
+  <Card withDivider={false}>
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card withDivider={true}>
+    // ...
+  </Card>
+
+  <Card withDivider={false}>
+    // ...
+  </Card>
+</View>
+```
+
+# Image
+---
+An image can be displayed in the `Card` component by using the `Card.Image` component.
+
+<View>
+  <Card>
+    <CardImage caption="This is a beautiful image" mode="dark" src="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4140&q=80" />
+    <CardHeader>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Image caption="This is a beautiful image" mode="dark" src="..." />
+    // ...
+  </Card>
+</View>
+```
+
+# Examples
+---
+
+## Basic
+This is a basic example of a `Card` component.
+<View>
+  <Card className="max-w-[350px]">
+    <CardHeader className="flex justify-between font-medium">
+      <span className="font-medium">Terms of service</span>
+      <Button size="xs" color="gray">Action</Button>
+    </CardHeader>
+    <CardBody className="font-light">Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.</CardBody>
+    <CardFooter className="flex justify-end space-x-2">
+      <Button variant="tertiary">Leave</Button>
+      <Button variant="primary">Accept</Button>
+    </CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card className="max-w-[350px]">
+    <Card.Header className="flex justify-between font-medium">
+      <span className="font-medium">Terms of service</span>
+      <Button size="xs" color="gray">Action</Button>
+    </Card.Header>
+    <Card.Body className="font-light">
+      Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.
+    </Card.Body>
+    <Card.Footer className="flex justify-end space-x-2">
+      <Button variant="tertiary">Leave</Button>
+      <Button variant="primary">Accept</Button>
+    </Card.Footer>
+  </Card>
+</View>
+```
+
+## Cards with images
+This is an example of a `Card` component showcasing how to use the `Card.Image` component on a travel agency website.
+<View>
+  <Card className="max-w-[450px]">
+    <CardImage caption="New york" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+    <CardBody>
+      <div className='flex flex-col space-y-2'>
+        <div className="flex justify-between items-center">
+          <span className="text-xl text-gray-800 font-medium">Full day city tour</span>
+          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$1,500.00</span>
+        </div>
+        <span className="text-gray-700">Discover the magic of the city that never sleeps, as our experienced guides lead you through the vibrant streets of New York, showcasing its iconic landmarks, hidden gems and rich history.</span>
+      </div>
+    </CardBody>
+    <CardFooter>
+      <Button className="w-full" color="black">Book now!</Button>
+    </CardFooter>
+  </Card>
+
+  <Card className="max-w-[450px]">
+    <CardImage caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+    <CardBody>
+      <div className='flex flex-col space-y-2'>
+        <div className="flex justify-between items-center">
+          <span className="text-xl text-gray-800 font-medium">Milos island boat tour</span>
+          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$2,500.00</span>
+        </div>
+        <span className="text-gray-700">Discover the stunning beauty of Milos Island on our unforgettable boat tour. Let our experienced captain take you on a journey to explore the crystal-clear waters of this idyllic Greek island.</span>
+      </div>
+    </CardBody>
+    <CardFooter>
+      <Button className="w-full" color="black">Book now!</Button>
+    </CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card className="max-w-[450px]">
+    <Card.Image caption="New york" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+    <Card.Body>
+      <div className='flex flex-col space-y-2'>
+        <div className="flex justify-between items-center">
+          <span className="text-xl text-gray-800 font-medium">Full day city tour</span>
+          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$1,500.00</span>
+        </div>
+        <span className="text-gray-700">Discover the magic of the city that never sleeps, as our experienced guides lead you through the vibrant streets of New York, showcasing its iconic landmarks, hidden gems and rich history.</span>
+      </div>
+    </Card.Body>
+    <Card.Footer>
+      <Button className="w-full" color="black">Book now!</Button>
+    </Card.Footer>
+  </Card>
+
+  <Card className="max-w-[450px]">
+    <Card.Image caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+    <Card.Body>
+      <div className='flex flex-col space-y-2'>
+        <div className="flex justify-between items-center">
+          <span className="text-xl text-gray-800 font-medium">Milos island boat tour</span>
+          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$2,500.00</span>
+        </div>
+        <span className="text-gray-700">Discover the stunning beauty of Milos Island on our unforgettable boat tour. Let our experienced captain take you on a journey to explore the crystal-clear waters of this idyllic Greek island.</span>
+      </div>
+    </Card.Body>
+    <Card.Footer>
+      <Button className="w-full" color="black">Book now!</Button>
+    </Card.Footer>
+  </Card>
+</View>
+```
+

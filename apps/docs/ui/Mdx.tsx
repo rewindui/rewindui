@@ -1,8 +1,9 @@
 'use client';
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
+import { CardImageProps } from '@rewind-ui/core/src/components/Card/CardImage/CardImage.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Accordion, Text, Button, Checkbox } from '@rewind-ui/core';
+import { Accordion, Text, Button, Card, Checkbox } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
 
@@ -67,6 +68,11 @@ const components = {
   AccordionHeader: ({ ...props }) => <Accordion.Header {...props} />,
   AccordionBody: ({ ...props }) => <Accordion.Body {...props} />,
   Button: ({ ...props }) => <Button {...props} />,
+  Card: ({ ...props }) => <Card {...props} />,
+  CardHeader: ({ ...props }) => <Card.Header {...props} />,
+  CardImage: ({ src, ...props }: CardImageProps) => <Card.Image src={src} {...props} />,
+  CardBody: ({ ...props }) => <Card.Body {...props} />,
+  CardFooter: ({ ...props }) => <Card.Footer {...props} />,
   Checkbox: ({ ...props }) => <Checkbox {...props} />,
   Text: ({ ...props }) => <Text {...props} />,
   View: ({ ...props }) => <View {...props} />,

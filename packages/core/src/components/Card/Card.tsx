@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 import { CardContextProvider } from './Card.context';
 
 const defaultProps: Partial<CardProps> = {
-  bordered: false,
+  bordered: true,
   color: 'white',
   radius: 'base',
   shadow: 'sm',

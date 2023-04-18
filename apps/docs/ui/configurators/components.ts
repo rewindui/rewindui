@@ -1,5 +1,6 @@
 import { AccordionCode, AccordionExample } from '@/ui/configurators/Examples/AccordionExamples';
 import { ButtonCode, ButtonExample } from '@/ui/configurators/Examples/ButtonExamples';
+import { CardCode, CardExample } from '@/ui/configurators/Examples/CardExamples';
 import { CheckboxCode, CheckboxExample } from '@/ui/configurators/Examples/CheckboxExamples';
 import { TextCode, TextExample } from '@/ui/configurators/Examples/TextExamples';
 
@@ -207,6 +208,54 @@ export const components = {
       {
         label: 'With ring',
         name: 'withRing',
+        type: 'switch',
+      },
+    ],
+  },
+  card: {
+    example: CardExample,
+    default: CardCode,
+    state: {
+      bordered: true,
+      color: 'white',
+      radius: 'base',
+      shadow: 'sm',
+      size: 'base',
+      withDivider: true,
+    },
+    options: [
+      {
+        label: 'Color',
+        name: 'color',
+        type: 'color',
+        colors: ['white', 'gray', 'zinc', 'slate'],
+      },
+      {
+        label: 'Size',
+        name: 'size',
+        type: 'selector',
+        options: ['sm', 'base', 'md', 'lg'],
+      },
+      {
+        label: 'Shadow',
+        name: 'shadow',
+        type: 'select',
+        options: ['none', 'sm', 'base', 'md', 'lg', 'xl'],
+      },
+      {
+        label: 'Radius',
+        name: 'radius',
+        type: 'select',
+        options: ['none', 'sm', 'base', 'md', 'lg'],
+      },
+      {
+        label: 'Bordered',
+        name: 'bordered',
+        type: 'switch',
+      },
+      {
+        label: 'With divider',
+        name: 'withDivider',
         type: 'switch',
       },
     ],

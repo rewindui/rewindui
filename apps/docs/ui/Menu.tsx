@@ -76,7 +76,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Card',
         path: '/components/card',
-        wip: true,
       },
       {
         title: 'Collapse',
