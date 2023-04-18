@@ -24,16 +24,12 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
       radius,
       size,
       tone,
-      wrapperProps,
       withRing,
       label,
-      labelProps,
       labelClassName = '',
       description,
-      descriptionProps,
       descriptionClassName = '',
       error,
-      errorProps,
       errorClassName = '',
       ...additionalProps
     } = {
@@ -58,7 +54,7 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
     }, [theme, color, tone, size, radius, validation, withRing, className]);
 
     return (
-      <div className="flex items-center" {...wrapperProps}>
+      <div className="flex items-center">
         <input
           id={id}
           ref={ref}
@@ -70,24 +66,21 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
         <div className="flex flex-col">
           <label
             htmlFor={id}
-            className={twMerge(theme.label({ size, className: labelClassName }))}
-            {...labelProps}
+            className={twMerge(theme.label({ disabled, size, className: labelClassName }))}
           >
             {label}
           </label>
           {description && (
             <span
-              className={twMerge(theme.description({ size, className: descriptionClassName }))}
-              {...descriptionProps}
+              className={twMerge(
+                theme.description({ disabled, size, className: descriptionClassName })
+              )}
             >
               {description}
             </span>
           )}
           {error && (
-            <span
-              className={twMerge(theme.error({ size, className: errorClassName }))}
-              {...errorProps}
-            >
+            <span className={twMerge(theme.error({ disabled, size, className: errorClassName }))}>
               {error}
             </span>
           )}

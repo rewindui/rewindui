@@ -30,13 +30,17 @@ export const ButtonCode = (props: any) => {
     disabled !== defaultProps.disabled ? `disabled={${disabled}}` : null,
     loading !== defaultProps.loading ? `loading={${loading}}` : null,
     withRing !== defaultProps.withRing ? `withRing={${withRing}}` : null,
-  ];
+  ].filter(Boolean);
+
+  if (attributes.length) {
+    attributes.unshift(null);
+  }
 
   return `import { Button } from '@rewind-ui/core';
 
 function App() {
   return (
-    <Button ${attributes.filter(Boolean).join(' ')}>
+    <Button${attributes.join(' ')}>
       Click me!
     </Button>
   );

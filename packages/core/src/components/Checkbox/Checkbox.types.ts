@@ -23,18 +23,14 @@ export interface CheckboxProps extends Omit<ComponentPropsWithRef<'input'>, 'siz
   color?: CheckboxColor;
   description?: string | ReactNode;
   descriptionClassName?: string;
-  descriptionProps?: Record<string, any>;
   error?: string | ReactNode;
   errorClassName?: string;
-  errorProps?: Record<string, any>;
   disabled?: boolean;
   label?: string | ReactNode;
   labelClassName?: string;
-  labelProps?: Record<string, any>;
   radius?: CheckboxRadius;
   size?: CheckboxSize;
   tone?: CheckboxTone;
-  wrapperProps?: Record<string, any>;
   withRing?: boolean;
 }
 

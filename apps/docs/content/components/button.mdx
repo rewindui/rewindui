@@ -183,7 +183,7 @@ Available `size` values are: `xs`, `sm`, `md` and `lg`.
 
 # Radiuses
 ---
-Available `radius` values are: `xs`, `sm`, `md` and `lg`.
+Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
 
 <View>
   <Button radius="none">Button</Button>
@@ -256,7 +256,7 @@ Available `shadowColor` values are: `blue`, `red`, `green`, `yellow`, `purple`, 
 
 # States
 ---
-Button component supports `disabled` and `loading` states.
+`Button` component supports `disabled` and `loading` states.
 
 <View>
   <Button disabled>Button</Button>
@@ -303,7 +303,7 @@ If your button children contain just an icon, you can use the `icon` prop to mak
 
 # Ring
 ---
-You can add a ring to the button by setting the `withRing` prop to `true`.
+You can add a ring to the `Button` by setting the `withRing` prop to `true`.
 
 <View>
   <Button withRing={true}>Click me!</Button>
@@ -356,7 +356,7 @@ The `Button` component is a polymorphic component. This means that you can use i
 
 # Ref
 ---
-The `Button` component supports the `ref` prop. This means that you can use the `ref` prop to get a reference to the underlying html element.
+The `Button` component supports the `ref` prop, which allows for obtaining a reference to the associated underlying HTML element.
 
 ```tsx
 import { useRef } from 'react';
@@ -396,7 +396,7 @@ function App() {
 
 ## Classname overrides
 
-If you want to avoid overwriting the default styles, you can use the `className` prop to override the default classes. Rewind-UI is using [tailwind-merge](https://github.com/dcastil/tailwind-merge) to merge the default classes with the classes you provide in the `className` prop.
+To avoid overwriting the default styles, the `className` prop can be used to override the default classes. Rewind-UI is using [tailwind-merge](https://github.com/dcastil/tailwind-merge) to merge the default classes with the classes you provide in the `className` prop and resolve any possible conflicts.
 
 <View>
   <Button className="text-white bg-pink-500 focus:bg-pink-600 hover:bg-pink-600 active:bg-pink-600/90 focus:ring-pink-300">I am pink</Button>
@@ -415,19 +415,19 @@ If you want to avoid overwriting the default styles, you can use the `className`
 ## Properties
 All known button properties (e.g. type="submit") can be used on the `Button` component. Furthermore, the following properties are also supported:
 
-| Prop        | Type                | Description                                                                                                | Default |
-|:------------|:--------------------|:-----------------------------------------------------------------------------------------------------------|:--------|
-| animation   | `ButtonAnimation`   | Sets the animation type                                                                                    | `none`  |
-| color       | `ButtonColor`       | Sets the color                                                                                             | `blue`  |
-| disabled    | `boolean`           | Disables button                                                                                            | `false` |
-| icon        | `boolean`           | Makes the button a perfect square. This prop can be used when button contains just an icon instead of text | `false` |
-| loading     | `boolean`           | Shows a loading spinner and disables the button                                                            | `false` |
-| radius      | `ButtonRadius`      | Sets the border radius                                                                                     | `md`    |
-| shadow      | `ButtonShadow`      | Sets the shadow size                                                                                       | `none`  |
-| shadowColor | `ButtonShadowColor` | Sets the shadow color                                                                                      | `none`  |
-| size        | `ButtonSize`        | Sets the button size                                                                                       | `md`    |
-| tone        | `ButtonTone`        | Sets the button tone                                                                                       | `solid` |
-| withRing    | `boolean`           | Shows a ring around the button on active state                                                             | `false` |
+| Prop        | Type                | Description                                                                                | Default |
+|:------------|:--------------------|:-------------------------------------------------------------------------------------------|:--------|
+| animation   | `ButtonAnimation`   | Sets the animation type                                                                    | `none`  |
+| color       | `ButtonColor`       | Sets the color                                                                             | `blue`  |
+| disabled    | `boolean`           | Disables button                                                                            | `false` |
+| icon        | `boolean`           | Makes the button a perfect square in case the button contains just an icon instead of text | `false` |
+| loading     | `boolean`           | Shows a loading spinner and disables the button                                            | `false` |
+| radius      | `ButtonRadius`      | Sets the border radius                                                                     | `md`    |
+| shadow      | `ButtonShadow`      | Sets the shadow size                                                                       | `none`  |
+| shadowColor | `ButtonShadowColor` | Sets the shadow color                                                                      | `none`  |
+| size        | `ButtonSize`        | Sets the button size                                                                       | `md`    |
+| tone        | `ButtonTone`        | Sets the button tone                                                                       | `solid` |
+| withRing    | `boolean`           | Shows a ring around the button on active state                                             | `true`  |
 
 ## Events
 The `Button` component supports all known button events (e.g. `onClick`, `onMouseEnter`, `onMouseLeave`, `onFocus`, `onBlur`, etc.).

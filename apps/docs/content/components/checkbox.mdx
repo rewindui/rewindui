@@ -16,7 +16,226 @@ Import the Checkbox component using the following import statement.
 import { Checkbox } from '@rewind-ui@core';
 ```
 
-| Prop | Type | Description | Default |
-| :--- | :----: | ----: | :----: |
-| 1    |   2    |     3 | 4      |
+# Tones & Colors
+---
+The Button component comes with four tones: `solid` and `light`. The only difference between the two tones is the unchecked state. The `solid` tone has a white background and the `light` tone has a light gray background.
 
+The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <Checkbox label="Unchecked" defaultChecked={false} />
+  <Checkbox label="Blue" color="blue" defaultChecked={true} />
+  <Checkbox label="Red" color="red" defaultChecked={true} />
+  <Checkbox label="Green" color="green" defaultChecked={true} />
+  <Checkbox label="Yellow" color="yellow" defaultChecked={true} />
+  <Checkbox label="Purple" color="purple" defaultChecked={true} />
+  <Checkbox label="Gray" color="gray" defaultChecked={true} />
+  <Checkbox label="Dark" color="dark" defaultChecked={true} />
+  <Checkbox label="Black" color="black" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Checkbox label="Unchecked" defaultChecked={false} />
+  <Checkbox label="Blue" color="blue" defaultChecked={true} />
+  <Checkbox label="Red" color="red" defaultChecked={true} />
+  <Checkbox label="Green" color="green" defaultChecked={true} />
+  <Checkbox label="Yellow" color="yellow" defaultChecked={true} />
+  <Checkbox label="Purple" color="purple" defaultChecked={true} />
+  <Checkbox label="Gray" color="gray" defaultChecked={true} />
+  <Checkbox label="Dark" color="dark" defaultChecked={true} />
+  <Checkbox label="Black" color="black" defaultChecked={true} />
+</View>
+```
+
+## Light
+<View>
+  <Checkbox tone="light" label="Unchecked" defaultChecked={false} />
+  <Checkbox tone="light" label="Blue" color="blue" defaultChecked={true} />
+  <Checkbox tone="light" label="Red" color="red" defaultChecked={true} />
+  <Checkbox tone="light" label="Green" color="green" defaultChecked={true} />
+  <Checkbox tone="light" label="Yellow" color="yellow" defaultChecked={true} />
+  <Checkbox tone="light" label="Purple" color="purple" defaultChecked={true} />
+  <Checkbox tone="light" label="Gray" color="gray" defaultChecked={true} />
+  <Checkbox tone="light" label="Dark" color="dark" defaultChecked={true} />
+  <Checkbox tone="light" label="Black" color="black" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Checkbox tone="light" label="Unchecked" defaultChecked={false} />
+  <Checkbox tone="light" label="Blue" color="blue" defaultChecked={true} />
+  <Checkbox tone="light" label="Red" color="red" defaultChecked={true} />
+  <Checkbox tone="light" label="Green" color="green" defaultChecked={true} />
+  <Checkbox tone="light" label="Yellow" color="yellow" defaultChecked={true} />
+  <Checkbox tone="light" label="Purple" color="purple" defaultChecked={true} />
+  <Checkbox tone="light" label="Gray" color="gray" defaultChecked={true} />
+  <Checkbox tone="light" label="Dark" color="dark" defaultChecked={true} />
+  <Checkbox tone="light" label="Black" color="black" defaultChecked={true} />
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `sm`, `md`, `lg` and `xl`.
+
+<View>
+  <Checkbox label="Small" size="sm" defaultChecked={true} />
+  <Checkbox label="Medium" size="md" defaultChecked={true} />
+  <Checkbox label="Large" size="lg" defaultChecked={true} />
+  <Checkbox label="Extra large" size="xl" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Checkbox label="Small" size="sm" defaultChecked={true} />
+  <Checkbox label="Medium" size="md" defaultChecked={true} />
+  <Checkbox label="Large" size="lg" defaultChecked={true} />
+  <Checkbox label="Extra large" size="xl" defaultChecked={true} />
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
+
+<View>
+  <Checkbox label="None" radius="none" defaultChecked={true} />
+  <Checkbox label="Small" radius="sm" defaultChecked={true} />
+  <Checkbox label="Medium" radius="md" defaultChecked={true} />
+  <Checkbox label="Large" radius="lg" defaultChecked={true} />
+  <Checkbox label="Full" radius="full" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Checkbox label="None" radius="none" defaultChecked={true} />
+  <Checkbox label="Small" radius="sm" defaultChecked={true} />
+  <Checkbox label="Medium" radius="md" defaultChecked={true} />
+  <Checkbox label="Large" radius="lg" defaultChecked={true} />
+  <Checkbox label="Full" radius="full" defaultChecked={true} />
+</View>
+```
+
+# States
+---
+`Checkbox` component supports `disabled` and `error` states. The `error` state is enabled automatically by passing an error message to the `error` prop.
+
+<View>
+  <Checkbox label="Disabled" disabled />
+  <Checkbox label="Click me!" error="Something went wrong..." />
+</View>
+
+```tsx
+<View>
+  <Checkbox label="Disabled" disabled />
+  <Checkbox label="Click me!" error="Something went wrong..." />
+</View>
+```
+
+# Description
+---
+The `description` prop can be used to display a description below the checkbox.
+
+<View>
+  <Checkbox label="Click me!" description="This is a description" />
+</View>
+
+```tsx
+<View>
+  <Checkbox label="Click me!" description="This is a description" />
+</View>
+```
+
+Furthermore, a `ReactNode` can be passed to the `description` prop to display a more complex description that may contain multiple jsx elements.
+
+<View>
+  <Checkbox label="Click me!" description={<span className="text-purple-500 bg-purple-50 p-1 rounded">This is a purple description</span>} />
+</View>
+
+```tsx
+<View>
+  <Checkbox
+    label="Click me!"
+    description={<span className="text-purple-500 bg-purple-50 p-1 rounded">This is a purple description</span>}
+  />
+</View>
+```
+
+Similar styling can be achieved by using the `descriptionClassName` prop.
+
+<View>
+  <Checkbox label="Click me!" descriptionClassName="text-pink-500 bg-pink-50 p-1 rounded" description="This is a pink description" />
+</View>
+
+```tsx
+<View>
+  <Checkbox
+    label="Click me!"
+    descriptionClassName="text-pink-500 bg-pink-50 p-1 rounded"
+    description="This is a pink description"
+  />
+</View>
+```
+
+# Ring
+---
+You can add a ring to the `Checkbox` by setting the `withRing` prop to `true`.
+
+<View>
+  <Checkbox label="Click me!" withRing={true} />
+  <Checkbox label="Click me!" withRing={false} />
+</View>
+
+```tsx
+<View>
+  <Checkbox label="Click me!" withRing={true} />
+  <Checkbox label="Click me!" withRing={false} />
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop                 | Type                    | Description                                      | Default     |
+|:---------------------|:------------------------|:-------------------------------------------------|:------------|
+| color                | `CheckboxColor`         | Sets the color                                   | `dark`      |
+| disabled             | `boolean`               | Disables the checkbox                            | `false`     |
+| description          | `string` or `ReactNode` | Description content                              | `undefined` |
+| descriptionClassName | `string`                | Description span element classes                 | `undefined` |
+| error                | `string` or `ReactNode` | Error content                                    | `undefined` |
+| errorClassName       | `string`                | Error span element classes                       | `undefined` |
+| label                | `string` or `ReactNode` | Label content                                    | `undefined` |
+| labelClassName       | `string`                | Label element classes                            | `undefined` |
+| radius               | `CheckboxRadius`        | Sets the border radius                           | `normal`    |
+| size                 | `CheckboxSize`          | Sets the checkbox size                           | `base`      |
+| tone                 | `CheckboxTone`          | Sets the color tone                              | `solid`     |
+| withRing             | `boolean`               | Shows a ring around the checkbox on active state | `true`      |
+
+## Types
+
+```tsx
+type CheckboxColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type CheckboxRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type CheckboxSize = 'sm' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type CheckboxTone = 'solid' | 'light';
+```

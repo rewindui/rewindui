@@ -21,7 +21,7 @@ export const View = ({
       )}
       <div
         style={{ flexDirection, justifyContent }}
-        className="bg-grid bg-neutral-50 rounded flex flex-wrap justify-center items-center gap-x-2 gap-y-2 p-5 overflow-auto"
+        className="bg-grid bg-neutral-50 rounded flex flex-wrap justify-center items-center gap-x-2 gap-y-6 p-5 overflow-auto"
       >
         {children}
       </div>

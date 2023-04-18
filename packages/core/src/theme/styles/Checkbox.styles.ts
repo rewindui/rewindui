@@ -131,6 +131,10 @@ const label = cva(['cursor-pointer'], {
       lg: ['text-lg', 'pl-2'],
       xl: ['text-xl', 'pl-2'],
     },
+    disabled: {
+      true: ['text-gray-500'],
+      false: ['text-gray-700'],
+    },
   },
 });
 
@@ -142,16 +146,24 @@ const description = cva([], {
       lg: ['text-base', 'ml-2'],
       xl: ['text-lg', 'ml-2'],
     },
+    disabled: {
+      true: ['text-gray-400'],
+      false: ['text-gray-500'],
+    },
   },
 });
 
-const error = cva(['text-red-500'], {
+const error = cva([], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],
       md: ['text-sm', 'ml-1.5'],
       lg: ['text-base', 'ml-2'],
       xl: ['text-lg', 'ml-2'],
+    },
+    disabled: {
+      true: ['text-red-300'],
+      false: ['text-red-500'],
     },
   },
 });

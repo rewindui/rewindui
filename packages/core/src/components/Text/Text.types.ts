@@ -1,20 +1,6 @@
 import { ElementType, ReactElement } from 'react';
 import { PolymorphicComponentPropWithRef } from '../../types';
 
-export type TextSize =
-  | 'xs'
-  | 'sm'
-  | 'base'
-  | 'lg'
-  | 'xl'
-  | '2xl'
-  | '3xl'
-  | '4xl'
-  | '5xl'
-  | '6xl'
-  | '7xl'
-  | '8xl'
-  | '9xl';
 export type TextColor =
   | 'white'
   | 'blue'
@@ -25,35 +11,6 @@ export type TextColor =
   | 'gray'
   | 'dark'
   | 'black';
-export type TextWeight =
-  | 'thin'
-  | 'extraLight'
-  | 'light'
-  | 'normal'
-  | 'medium'
-  | 'semiBold'
-  | 'bold'
-  | 'extraBold'
-  | 'black';
-export type TextVariants =
-  | 'd1'
-  | 'd2'
-  | 'd3'
-  | 'd4'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'p';
-export type TextTracking =
-  | 'tighter'
-  | 'tight'
-  | 'normal'
-  | 'wide'
-  | 'wider'
-  | 'widest';
 export type TextLeading =
   | '3'
   | '4'
@@ -69,6 +26,43 @@ export type TextLeading =
   | 'normal'
   | 'relaxed'
   | 'loose';
+export type TextSize =
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl'
+  | '7xl'
+  | '8xl'
+  | '9xl';
+export type TextTracking = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
+export type TextVariants =
+  | 'd1'
+  | 'd2'
+  | 'd3'
+  | 'd4'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'p';
+export type TextWeight =
+  | 'thin'
+  | 'extraLight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semiBold'
+  | 'bold'
+  | 'extraBold'
+  | 'black';
 
 export type TextProps = {
   color?: TextColor;
@@ -79,8 +73,7 @@ export type TextProps = {
   weight?: TextWeight;
 };
 
-type PolymorphicTextProps<C extends ElementType> =
-  PolymorphicComponentPropWithRef<C, TextProps>;
+type PolymorphicTextProps<C extends ElementType> = PolymorphicComponentPropWithRef<C, TextProps>;
 
 type PolymorphicTextComponent = <C extends ElementType = 'span'>(
   props: PolymorphicTextProps<C>

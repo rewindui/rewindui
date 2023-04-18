@@ -5,8 +5,6 @@ import {
   RefAttributes,
 } from 'react';
 
-export type AccordionTone = 'solid' | 'light';
-export type AccordionColor = 'white' | 'gray' | 'slate' | 'zinc';
 export type AccordionActiveColor =
   | 'white'
   | 'blue'
@@ -17,10 +15,12 @@ export type AccordionActiveColor =
   | 'gray'
   | 'dark'
   | 'black';
-export type AccordionShadowColor = 'none' | 'gray' | 'slate' | 'zinc';
+export type AccordionColor = 'white' | 'gray' | 'slate' | 'zinc';
 export type AccordionRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
-export type AccordionSize = 'sm' | 'md' | 'lg' | 'xl';
 export type AccordionShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+export type AccordionShadowColor = 'none' | 'gray' | 'slate' | 'zinc';
+export type AccordionSize = 'sm' | 'md' | 'lg' | 'xl';
+export type AccordionTone = 'solid' | 'light';
 export type AccordionVariants = 'primary';
 
 export interface AccordionContext {

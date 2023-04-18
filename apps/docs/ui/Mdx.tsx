@@ -2,7 +2,7 @@
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Accordion, Text, Button } from '@rewind-ui/core';
+import { Accordion, Text, Button, Checkbox } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
 
@@ -42,7 +42,7 @@ const components = {
   hr: ({ ...props }) => <hr className="my-2 border-gray-200 border-dashed" {...props} />,
   table: ({ className, ...props }: HTMLAttributes<HTMLTableElement>) => (
     <div className="my-6 w-full overflow-y-auto text-sm">
-      <table className="w-full rounded" {...props} />
+      <table className="w-full rounded overflow-hidden" {...props} />
     </div>
   ),
   tr: ({ className, ...props }: HTMLAttributes<HTMLTableRowElement>) => (
@@ -50,13 +50,13 @@ const components = {
   ),
   th: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
     <th
-      className="border border-gray-100 bg-gray-50 px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
+      className="border border-gray-100 bg-gray-50 px-4 py-2 text-left text-gray-700 font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     />
   ),
   td: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
     <td
-      className="border border-gray-100 px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
+      className="border border-gray-100 px-4 py-2 text-left text-gray-600 [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     />
   ),
@@ -67,6 +67,7 @@ const components = {
   AccordionHeader: ({ ...props }) => <Accordion.Header {...props} />,
   AccordionBody: ({ ...props }) => <Accordion.Body {...props} />,
   Button: ({ ...props }) => <Button {...props} />,
+  Checkbox: ({ ...props }) => <Checkbox {...props} />,
   Text: ({ ...props }) => <Text {...props} />,
   View: ({ ...props }) => <View {...props} />,
 };

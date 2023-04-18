@@ -826,3 +826,158 @@ You can add a ring to the accordion by setting the `withRing` prop to `true`.
   </Accordion>
 </View>
 ```
+
+# Ref
+---
+`Accordion`, `Accordion.Header` and `Accordion.Body` elements support the `ref` prop, which allows for obtaining a reference to the associated underlying HTML elements.
+
+```tsx
+import { useRef } from 'react';
+import { Accordion } from '@rewind-ui/core';
+
+function App() {
+  const accordionRef = useRef<HTMLDivElement>(null);
+  const accordionHeaderRef = useRef<HTMLButtonElement>(null);
+  const accordionBodyRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <Accordion ref={accordionRef}>
+      <Accordion.Item anchor="item-1">
+        <Accordion.Header ref={accordionHeaderRef}>Header</Accordion.Header>
+        <Accordion.Body ref={accordionBodyRef}>Some text...</Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+```
+
+# Examples
+---
+## Full width
+
+<View>
+  <Accordion className="w-full" defaultItem="item-1">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some text...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader>Header</AccordionHeader>
+      <AccordionBody>Some more text...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion className="w-full" defaultItem="item-1">
+    <Accordion.Item anchor="item-1">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some text...</Accordion.Body>
+    </Accordion.Item>
+
+    <Accordion.Item anchor="item-2">
+      <Accordion.Header>Header</Accordion.Header>
+      <Accordion.Body>Some more text...</Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
+</View>
+```
+
+## Classname overrides
+
+To avoid overwriting the default styles, the `className` prop can be used to override the default classes. Rewind-UI is using [tailwind-merge](https://github.com/dcastil/tailwind-merge) to merge the default classes with the classes you provide in the `className` prop and resolve any possible conflicts.
+
+<View>
+  <Accordion activeColor="black" bordered={false} defaultItem="item-2">
+    <AccordionItem anchor="item-1">
+      <AccordionHeader className="font-semibold">Semi-bold header</AccordionHeader>
+      <AccordionBody className="text-pink-700 bg-pink-50">Some pink text on a pink background...</AccordionBody>
+    </AccordionItem>
+
+    <AccordionItem anchor="item-2">
+      <AccordionHeader className="font-semibold">Header</AccordionHeader>
+      <AccordionBody className="text-green-700 bg-green-50">Some green text on a green background...</AccordionBody>
+    </AccordionItem>
+  </Accordion>
+</View>
+
+```tsx
+<View>
+  <Accordion activeColor="black" bordered={false} defaultItem="item-2">
+    <Accordion.Item anchor="item-1">
+      <Accordion.Header className="font-semibold">Semi-bold header</Accordion.Header>
+      <Accordion.Body className="text-red-700 bg-red-50">Some red text on a red background...</Accordion.Body>
+    </Accordion.Item>
+
+    <Accordion.Item anchor="item-2">
+      <Accordion.Header className="font-semibold">Header</Accordion.Header>
+      <Accordion.Body className="text-green-700 bg-green-50">Some green text on a green background...</Accordion.Body>
+    </Accordion.Item>
+  </Accordion>
+</View>
+```
+
+# API Reference
+---
+## Properties
+### Accordion
+
+| Prop        | Type                   | Description                                                     | Default     |
+|:------------|:-----------------------|:----------------------------------------------------------------|:------------|
+| activeColor | `AccordionActiveColor` | Sets the color of the active accordion header                   | `blue`      |
+| bordered    | `boolean`              | Adds borders                                                    | `true`      |
+| color       | `AccordionColor`       | Sets the accordion body color                                   | `white`     |
+| defaultItem | `string`               | Sets which item needs to be open by default                     | `undefined` |
+| radius      | `AccordionRadius`      | Sets the border radius                                          | `md`        |
+| shadow      | `AccordionShadow`      | Sets the shadow size                                            | `none`      |
+| shadowColor | `AccordionShadowColor` | Sets the shadow color                                           | `none`      |
+| size        | `AccordionSize`        | Sets the accordion size                                         | `md`        |
+| tone        | `AccordionTone`        | Sets the accordion tone                                         | `solid`     |
+| withRing    | `boolean`              | Shows a ring around the active accordion header on active state | `true`      |
+
+### Accordion.Item
+
+| Prop   | Type     | Description                    | Default     |
+|:-------|:---------|:-------------------------------|:------------|
+| anchor | `string` | Sets the accordion item anchor | `undefined` |
+
+## Types
+
+```tsx
+type AccordionActiveColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type AccordionColor = 'white' | 'gray' | 'slate' | 'zinc';
+```
+
+```tsx
+type AccordionRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type AccordionShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type AccordionShadowColor = 'none' | 'gray' | 'slate' | 'zinc';
+```
+
+```tsx
+type AccordionSize = 'sm' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type AccordionTone = 'solid' | 'light';
+```

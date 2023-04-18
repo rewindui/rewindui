@@ -244,7 +244,7 @@ The Text component comes with 14 leading options: `3`, `4`, `5`, `6`, `7`, `8`, 
 
 # Polymorphic
 ---
-The `Text` component is a polymorphic component. This means that you can use it as a text, a heading or any html element. You can use the `as` prop to change the underlying html element.
+The `Text` component is a polymorphic component. This means that it can be used as a span, a heading or any html element. You can use the `as` prop to change the underlying html element.
 
 <View direction="column">
   <Text as="h1">Heading 1</Text>
@@ -274,3 +274,117 @@ The `Text` component is a polymorphic component. This means that you can use it 
 </View>
 ```
 
+# Ref
+---
+The `Text` component supports the `ref` prop, which allows for obtaining a reference to the associated underlying HTML element. By default the `ref` will be of type `HTMLSpanElement`, but you can use the `as` prop to change the underlying html element.
+
+```tsx
+import { useRef } from 'react';
+import { Text } from '@rewind-ui/core';
+
+function App() {
+  const ref = useRef<HTMLSpanElement>(null);
+  return <Text ref={ref}>Hello world!</Text>;
+}
+```
+
+# API Reference
+---
+## Properties
+
+| Prop     | Type           | Description             | Default     |
+|:---------|:---------------|:------------------------|:------------|
+| color    | `TextColor`    | Sets the color          | `dark`      |
+| leading  | `TextLeading`  | Sets the line height    | `normal`    |
+| size     | `TextSize`     | Sets the font size      | `base`      |
+| tracking | `TextTracking` | Sets the letter spacing | `normal`    |
+| variant  | `TextVariants` | Sets the text variant   | `undefined` |
+| weight   | `TextWeight`   | Sets the font weight    | `normal`    |
+
+## Types
+
+```tsx
+type TextColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type TextLeading =
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | '10'
+  | 'none'
+  | 'tight'
+  | 'snug'
+  | 'normal'
+  | 'relaxed'
+  | 'loose';
+```
+
+```tsx
+type TextSize =
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
+  | '6xl'
+  | '7xl'
+  | '8xl'
+  | '9xl';
+```
+
+```tsx
+type TextTracking =
+  | 'tighter'
+  | 'tight'
+  | 'normal'
+  | 'wide'
+  | 'wider'
+  | 'widest';
+```
+
+```tsx
+type TextVariants =
+  | 'd1'
+  | 'd2'
+  | 'd3'
+  | 'd4'
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'p';
+```
+
+```tsx
+type TextWeight =
+  | 'thin'
+  | 'extraLight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semiBold'
+  | 'bold'
+  | 'extraBold'
+  | 'black';
+```
