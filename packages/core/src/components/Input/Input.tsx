@@ -21,6 +21,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
   const theme = useComponentTheme('Input');
   const {
     className = '',
+    controlId,
     leftIcon,
     loading,
     radius,
@@ -38,7 +39,8 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     ...useInputGroupContext(),
     ...props,
   };
-  const id = usePropId(props.id);
+  const propId = usePropId(props.id);
+  const id = controlId || propId;
   const hasLeftIcon = !!leftIcon;
   const hasRightIcon = !!rightIcon;
   const disabled = props.disabled || loading;

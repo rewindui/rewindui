@@ -34,7 +34,8 @@ const _FormControl: FormControlComponent = forwardRef(
       ...props,
     };
     const id = usePropId(props.id);
-    const contextValue: FormControlContext = { size, validation };
+    const controlId = `control-${id}`;
+    const contextValue: FormControlContext = { controlId, size, validation };
     const classes = useMemo(() => {
       return twMerge(theme.base({ className }));
     }, [className, theme]);

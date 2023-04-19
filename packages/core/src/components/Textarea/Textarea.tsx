@@ -21,6 +21,7 @@ const Textarea: TextareaComponent = forwardRef(
     const theme = useComponentTheme('Textarea');
     const {
       className = '',
+      controlId,
       disabled,
       tone,
       size,
@@ -36,7 +37,8 @@ const Textarea: TextareaComponent = forwardRef(
       ...useInputGroupContext(),
       ...props,
     };
-    const id = usePropId(props.id);
+    const propId = usePropId(props.id);
+    const id = controlId || propId;
 
     const classes = useMemo(() => {
       return twMerge(

@@ -25,11 +25,10 @@ import { At } from '@phosphor-icons/react';
 function App() {
   return (
     <FormControl${attributes.join(' ')}>
-      <FormControl.Label formControlId="input-id">
+      <FormControl.Label>
         Email address
       </FormControl.Label>
       <FormControl.Input 
-        id="input-id"
         leftIcon={<At className="text-gray-500" />}
         type="email"
         placeholder="An email address"
@@ -43,9 +42,8 @@ function App() {
 export const FormControlExample = (props: FormControlProps) => {
   return (
     <FormControl {...props}>
-      <FormControl.Label formControlId="input-id">Email address</FormControl.Label>
+      <FormControl.Label>Email address</FormControl.Label>
       <FormControl.Input
-        id="input-id"
         leftIcon={<At className="text-gray-500" />}
         type="email"
         placeholder="An email address"

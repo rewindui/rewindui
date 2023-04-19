@@ -41,7 +41,7 @@ const components = {
     />
   ),
   ul: ({ ...props }: HTMLAttributes<HTMLUListElement>) => (
-    <ul className="my-6 ml-6 list-disc" {...props} />
+    <ul className="mt-3 mb-6 ml-6 list-disc" {...props} />
   ),
   pre: ({ ...props }) => (
     <div className="mt-4 overflow-auto">

@@ -78,11 +78,6 @@ const menuItems: MenuItem[] = [
         path: '/components/card',
       },
       {
-        title: 'Collapse',
-        path: '/components/collapse',
-        wip: true,
-      },
-      {
         title: 'Modal',
         path: '/components/modal',
         wip: true,
@@ -90,6 +85,11 @@ const menuItems: MenuItem[] = [
       {
         title: 'Popover',
         path: '/components/popover',
+        wip: true,
+      },
+      {
+        title: 'Selector',
+        path: '/components/selector',
         wip: true,
       },
       {
@@ -157,6 +157,16 @@ const menuItems: MenuItem[] = [
   {
     title: 'Miscellaneous',
     items: [
+      {
+        title: 'Collapse',
+        path: '/components/collapse',
+        wip: true,
+      },
+      {
+        title: 'Fader',
+        path: '/components/fader',
+        wip: true,
+      },
       {
         title: 'Overlay',
         path: '/components/overlay',

@@ -146,6 +146,10 @@ The `FormControl.Label` component can be marked as required by adding the `requi
 </View>
 ```
 
+# Control ID
+---
+The `FormControl` component automatically generates an id for the form (`Input`, `Select` and `Textarea`) elements and assigns its value to the `htmlFor` attribute of the `FormControl.Label` component. This allows the user to click on the label to focus the form element.
+
 # Examples
 ---
 ## Input Group
@@ -153,24 +157,28 @@ The `FormControl` component can be combined with `InputGroup` component.
 
 <View>
   <FormControl>
-    <FormControlLabel>Password</FormControlLabel>
+    <FormControlLabel>Price</FormControlLabel>
     <InputGroup>
-      <InputGroupText><Key weight="duotone" /></InputGroupText>
-      <InputGroupInput placeholder={'Type a password...'} type="password" />
+      <InputGroupText>Min:</InputGroupText>
+      <InputGroupInput type="number" />
+      <InputGroupText>Max:</InputGroupText>
+      <InputGroupInput type="number" />
     </InputGroup>
-    <FormControlText className="text-gray-400">* Password must be minimum 8 characters long</FormControlText>
+    <FormControlText className="text-gray-400">* Enter a price range</FormControlText>
   </FormControl>
 </View>
 
 ```tsx
 <View>
   <FormControl>
-    <FormControl.Label>Password</FormControl.Label>
+    <FormControl.Label>Price</FormControl.Label>
     <InputGroup>
-      <InputGroup.Text><Key weight="duotone" /></InputGroup.Text>
-      <InputGroup.Input placeholder={'Type a password...'} type="password" />
+      <InputGroup.Text>Min:</InputGroup.Text>
+      <InputGroup.Input type="number" />
+      <InputGroup.Text>Max:</InputGroup.Text>
+      <InputGroup.Input type="number" />
     </InputGroup>
-    <FormControl.Text className="text-gray-400">* Password must be minimum 8 characters long</FormControl.Text>
+    <FormControl.Text className="text-gray-400">* Enter a price range</FormControl.Text>
   </FormControl>
 </View>
 ```

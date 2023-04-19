@@ -27,6 +27,7 @@ const _InputGroup: InputGroupComponent = forwardRef(
     const theme = useComponentTheme('InputGroup');
     const {
       className = '',
+      controlId,
       radius,
       shadow,
       size,

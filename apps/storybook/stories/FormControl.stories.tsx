@@ -41,11 +41,8 @@ const DefaultTemplate: Story<FormControlProps> = (args) => {
   return (
     <EnhancedView prop="Default">
       <FormControl {...args}>
-        <FormControl.Label formControlId="input-id" required>
-          Email address
-        </FormControl.Label>
+        <FormControl.Label required>Email address</FormControl.Label>
         <FormControl.Input
-          id="input-id"
           shadow="sm"
           leftIcon={<At className="text-gray-500" />}
           type="email"
@@ -63,12 +60,9 @@ const SizeTemplate: Story<FormControlProps> = (args) => {
   const items = sizes.map((size) => (
     <View key={size} prop="size" value={size}>
       <FormControl size={size} {...args}>
-        <FormControl.Label formControlId="input-id" required>
-          Email address
-        </FormControl.Label>
+        <FormControl.Label required>Email address</FormControl.Label>
         <FormControl.Text>Your email address should be a valid email</FormControl.Text>
         <FormControl.Input
-          id="input-id"
           shadow="sm"
           leftIcon={<At className="text-gray-500" />}
           type="email"
@@ -89,14 +83,11 @@ const ValidationTemplate: Story<FormControlProps> = (args) => {
   const items = validations.map((validation) => (
     <View key={validation} prop="validation" value={validation}>
       <FormControl {...args} validation={validation}>
-        <FormControl.Label formControlId="input-id" required>
-          Email address
-        </FormControl.Label>
+        <FormControl.Label required>Email address</FormControl.Label>
         <FormControl.Text validation="none">
           Your email address should be a valid email
         </FormControl.Text>
         <FormControl.Input
-          id="input-id"
           shadow="sm"
           leftIcon={<At className="text-gray-500" />}
           type="email"

@@ -22,6 +22,7 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
   const {
     children,
     className = '',
+    controlId,
     disabled,
     leftIcon,
     radius,
@@ -37,7 +38,8 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
     ...useInputGroupContext(),
     ...props,
   };
-  const id = usePropId(props.id);
+  const propId = usePropId(props.id);
+  const id = controlId || propId;
   const hasLeftIcon = !!leftIcon;
 
   const classes = useMemo(() => {

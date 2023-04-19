@@ -16,7 +16,7 @@ const FormControlLabel: FormControlLabelComponent = forwardRef(
     const {
       className = '',
       children,
-      formControlId,
+      controlId,
       required,
       size,
       ...additionalProps
@@ -31,7 +31,7 @@ const FormControlLabel: FormControlLabelComponent = forwardRef(
     }, [className, required, size, theme]);
 
     return (
-      <label id={id} ref={ref} htmlFor={formControlId} className={classes} {...additionalProps}>
+      <label id={id} ref={ref} htmlFor={controlId} className={classes} {...additionalProps}>
         {children}
       </label>
     );

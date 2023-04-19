@@ -16,6 +16,7 @@ const FormControlText: FormControlTextComponent = forwardRef(
     const {
       className = '',
       children,
+      controlId,
       size,
       validation,
       ...additionalProps
