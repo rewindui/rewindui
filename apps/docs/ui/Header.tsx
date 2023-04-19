@@ -37,12 +37,12 @@ export const Header = () => {
               width={48}
               height={48}
               alt="Rewind-UI"
-              className="mr-2 h-8 w-8 sm:w-10 sm:h-10 md:w-12 md:h-12"
+              className="mr-0.5 sm:mr-2 h-7 w-7 sm:w-10 sm:h-10 md:w-12 md:h-12"
             />
             <div className="flex flex-col space-y-0">
               <span className="flex items-center font-semibold text-gray-800 text-xl sm:text-2xl md:text-3xl">
                 <span>rewind-ui</span>
-                <span className="ml-2 text-sm text-red-50 py-0.5 px-1 bg-gradient-to-r from-red-500 to-red-900 shadow shadow-red-200 rounded">
+                <span className="ml-2 text-xs text-red-50 py-0.5 px-1 bg-gradient-to-r from-red-500 to-red-900 shadow shadow-red-200 rounded">
                   beta
                 </span>
               </span>
