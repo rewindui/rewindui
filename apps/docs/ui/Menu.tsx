@@ -127,7 +127,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Form Control',
         path: '/components/form-control',
-        wip: true,
       },
       {
         title: 'Input',
@@ -136,7 +135,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Input Group',
         path: '/components/input-group',
-        wip: true,
       },
       {
         title: 'Radio',
@@ -149,12 +147,10 @@ const menuItems: MenuItem[] = [
       {
         title: 'Switch',
         path: '/components/switch',
-        wip: true,
       },
       {
         title: 'Textarea',
         path: '/components/textarea',
-        wip: true,
       },
     ],
   },

@@ -13,7 +13,7 @@ import { EnhancedView, View, ViewGroup } from '../components/View';
 
 const tones: TextareaTone[] = ['light', 'solid', 'transparent'];
 const sizes: TextareaSize[] = ['xs', 'sm', 'md', 'lg'];
-const radiuses: TextareaRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
+const radiuses: TextareaRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
 const validations: TextareaValidation[] = ['none', 'invalid', 'valid', 'warning'];
 const shadows: TextareaShadow[] = ['none', 'sm', 'base', 'md'];
 

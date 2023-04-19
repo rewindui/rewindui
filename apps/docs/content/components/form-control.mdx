@@ -1,0 +1,279 @@
+---
+title: FormControl
+description: A wrapper component for all form components to add labels, descriptions and hints.
+intro: The FormControl component is a bootstrap style component that enables the developer to give more information to the end user by adding supportive labels, descriptions and text to form components.
+source: FormControl
+theme: FormControl.styles.ts
+storybook: formcontrol--default
+---
+
+# Import
+---
+Import the `FormControl` component using the following import statement.
+
+```tsx
+import { FormControl } from '@rewind-ui/core';
+```
+
+# Sizes
+---
+The following `size` options are supported: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <FormControl size="xs">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Extra small...'} />
+  </FormControl>
+  <FormControl size="sm">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Small...'} />
+  </FormControl>
+  <FormControl size="md">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Medium...'} />
+  </FormControl>
+  <FormControl size="lg">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Large...'} />
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl size="xs">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'Extra small...'} />
+  </FormControl>
+  <FormControl size="sm">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControlInput placeholder={'Small...'} />
+  </FormControl>
+  <FormControl size="md">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'Medium...'} />
+  </FormControl>
+  <FormControl size="lg">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'Large...'} />
+  </FormControl>
+</View>
+```
+
+# Validation
+---
+The following `validation` options are supported: `none`, `invalid`, `valid` and `warning`.
+
+<View>
+  <FormControl validation="none">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'None...'} />
+  </FormControl>
+  <FormControl validation="invalid">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Invalid...'} />
+  </FormControl>
+  <FormControl validation="valid">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Valid...'} />
+  </FormControl>
+  <FormControl validation="warning">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Warning...'} />
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl validation="none">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'None...'} />
+  </FormControl>
+  <FormControl validation="invalid">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControlInput placeholder={'Invalid...'} />
+  </FormControl>
+  <FormControl validation="valid">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'Valid...'} />
+  </FormControl>
+  <FormControl validation="warning">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'Warning...'} />
+  </FormControl>
+</View>
+```
+
+All `FormControl.Text` elements will inherit the validation state of the `FormControl` component. To exclude a `FormControl.Text` element from inheriting the validation state, set the `validation` prop to `none`.
+
+<View>
+  <FormControl className="min-w-[300px]" validation="invalid">
+    <FormControlLabel>Email address</FormControlLabel>
+    <FormControlText validation="none">Description with no validation</FormControlText>
+    <FormControlInput placeholder={'Enter an email address...'} />
+    <FormControlText>* Hint with validation</FormControlText>
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl className="min-w-[300px]" validation="invalid">
+    <FormControl.Label>Email address</FormControl.Label>
+    <FormControl.Text validation="none">Description with no validation</FormControl.Text>
+    <FormControl.Input placeholder={'Enter an email address...'} />
+    <FormControl.Text>* Hint with validation</FormControl.Text>
+  </FormControl>
+</View>
+
+````
+
+# Required
+---
+The `FormControl.Label` component can be marked as required by adding the `required` prop.
+
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControlLabel required>Email address</FormControlLabel>
+    <FormControlInput placeholder={'Required email address...'} />
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControl.Label required>Email address</FormControl.Label>
+    <FormControl.Input placeholder={'Required email address...'} />
+  </FormControl>
+</View>
+```
+
+# Examples
+---
+## Input Group
+The `FormControl` component can be combined with `InputGroup` component.
+
+<View>
+  <FormControl>
+    <FormControlLabel>Password</FormControlLabel>
+    <InputGroup>
+      <InputGroupText><Key weight="duotone" /></InputGroupText>
+      <InputGroupInput placeholder={'Type a password...'} type="password" />
+    </InputGroup>
+    <FormControlText className="text-gray-400">* Password must be minimum 8 characters long</FormControlText>
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl>
+    <FormControl.Label>Password</FormControl.Label>
+    <InputGroup>
+      <InputGroup.Text><Key weight="duotone" /></InputGroup.Text>
+      <InputGroup.Input placeholder={'Type a password...'} type="password" />
+    </InputGroup>
+    <FormControl.Text className="text-gray-400">* Password must be minimum 8 characters long</FormControl.Text>
+  </FormControl>
+</View>
+```
+
+<View>
+  <FormControl>
+    <FormControlLabel>Password</FormControlLabel>
+    <FormControlText>Minimum 8 characters</FormControlText>
+    <InputGroup>
+      <InputGroupText><Key weight="duotone" /></InputGroupText>
+      <InputGroupInput placeholder={'Type a password...'} type="password" />
+    </InputGroup>
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl>
+    <FormControl.Label>Password</FormControl.Label>
+    <FormControl.Text>Minimum 8 characters</FormControl.Text>
+    <InputGroup>
+      <InputGroup.Text><Key weight="duotone" /></InputGroup.Text>
+      <InputGroup.Input placeholder={'Type a password...'} type="password" />
+    </InputGroup>
+  </FormControl>
+</View>
+```
+
+## Select
+The `FormControl` component can be combined with `Select` component.
+
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControlLabel>Gender</FormControlLabel>
+    <FormControlSelect>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </FormControlSelect>
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControl.Label>Gender</FormControl.Label>
+    <FormControl.Select>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </FormControl.Select>
+  </FormControl>
+</View>
+```
+
+## Textarea
+The `FormControl` component can be combined with `Textarea` component.
+
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControlLabel>Comment</FormControlLabel>
+    <FormControlTextarea placeholder="Type your comment..." />
+  </FormControl>
+</View>
+
+```tsx
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControl.Label>Comment</FormControl.Label>
+    <FormControl.Textarea placeholder="Type your comment..." />
+  </FormControl>
+</View>
+```
+
+
+# API Reference
+---
+## Properties
+### FormControl
+All available properties are automatically inherited to all child components.
+
+| Prop       | Type                    | Description                | Default |
+|:-----------|:------------------------|:---------------------------|:--------|
+| size       | `FormControlSize`       | Sets the form control size | `md`    |
+| validation | `FormControlValidation` | Sets the validation state  | `none`  |
+
+### FormControl.Label
+| Prop     | Type      | Description                 | Default |
+|:---------|:----------|:----------------------------|:--------|
+| required | `boolean` | Marks the label as required | `false` |
+
+### FormControl.Text
+| Prop       | Type                        | Description               | Default |
+|:-----------|:----------------------------|:--------------------------|:--------|
+| validation | `FormControlTextValidation` | Sets the validation state | `none`  |
+
+## Types
+```tsx
+type FormControlSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type FormControlValidation = 'none' | 'invalid' | 'valid' | 'warning';
+```
+
+```tsx
+type FormControlTextValidation = 'none' | 'invalid' | 'valid' | 'warning';
+```

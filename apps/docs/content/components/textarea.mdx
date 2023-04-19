@@ -1,0 +1,198 @@
+---
+title: Textarea
+description: A simple text area element that can be used to collect user input.
+intro: The Textarea component can be configured in multiple ways, allowing the developer to customize the look and feel of the component, by specifying properties such as size and radius.
+source: Textarea
+theme: Textarea.styles.ts
+storybook: textarea--default
+---
+
+# Import
+---
+Import the `Textarea` component using the following import statement.
+
+```tsx
+import { Textarea } from '@rewind-ui/core';
+```
+
+# Tones
+---
+The `Textarea` component supports three tones: `light`, `solid` and `transparent`.
+
+<View>
+  <Textarea tone="light" placeholder="Light tone" />
+  <Textarea tone="solid" placeholder="Solid tone" />
+  <Textarea tone="transparent" placeholder="Transparent tone" />
+</View>
+
+```tsx
+<View>
+  <Textarea tone="light" placeholder="Light tone" />
+  <Textarea tone="solid" placeholder="Solid tone" />
+  <Textarea tone="transparent" placeholder="Transparent tone" />
+</View>
+```
+
+# Sizes
+---
+The `Textarea` component supports four size options: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Textarea size="xs" placeholder="Extra small" />
+  <Textarea size="sm" placeholder="Small" />
+  <Textarea size="md" placeholder="Medium" />
+  <Textarea size="lg" placeholder="Large" />
+</View>
+
+```tsx
+<View>
+  <Textarea size="xs" placeholder="Extra small" />
+  <Textarea size="sm" placeholder="Small" />
+  <Textarea size="md" placeholder="Medium" />
+  <Textarea size="lg" placeholder="Large" />
+</View>
+```
+
+# Radiuses
+---
+The `Textarea` component supports the following radius options: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+<View>
+  <Textarea radius="none" placeholder="none" />
+  <Textarea radius="sm" placeholder="sm" />
+  <Textarea radius="base" placeholder="base" />
+  <Textarea radius="md" placeholder="md" />
+  <Textarea radius="lg" placeholder="lg" />
+  <Textarea radius="xl" placeholder="xl" />
+</View>
+
+```tsx
+<View>
+  <Textarea radius="none" placeholder="none" />
+  <Textarea radius="sm" placeholder="sm" />
+  <Textarea radius="base" placeholder="base" />
+  <Textarea radius="md" placeholder="md" />
+  <Textarea radius="lg" placeholder="lg" />
+  <Textarea radius="xl" placeholder="xl" />
+</View>
+```
+
+# Shadows
+---
+The `Textarea` component supports the following shadow options: `none`, `sm`, `base` and `md`.
+
+<View>
+  <Textarea shadow="none" placeholder="none" />
+  <Textarea shadow="sm" placeholder="sm" />
+  <Textarea shadow="base" placeholder="base" />
+  <Textarea shadow="md" placeholder="md" />
+</View>
+
+```tsx
+<View>
+  <Textarea shadow="none" placeholder="none" />
+  <Textarea shadow="sm" placeholder="sm" />
+  <Textarea shadow="base" placeholder="base" />
+  <Textarea shadow="md" placeholder="md" />
+</View>
+```
+
+# Validation
+---
+The `Textarea` component supports the following validation options: `none`, `invalid`, `valid` and `warning`.
+
+<View>
+  <Textarea validation="none" placeholder="none" />
+  <Textarea validation="invalid" placeholder="invalid" />
+  <Textarea validation="valid" placeholder="valid" />
+  <Textarea validation="warning" placeholder="warning" />
+</View>
+
+```tsx
+<View>
+  <Textarea validation="none" placeholder="none" />
+  <Textarea validation="invalid" placeholder="invalid" />
+  <Textarea validation="valid" placeholder="valid" />
+  <Textarea validation="warning" placeholder="warning" />
+</View>
+```
+
+# States
+---
+`Textarea` component supports `disabled` state.
+
+<View>
+  <Textarea disabled placeholder="Disabled..." />
+</View>
+
+```tsx
+<View>
+  <Textarea disabled placeholder="Disabled..." />
+</View>
+```
+
+# Ring
+---
+You can add a ring to the `Textarea` by setting the `withRing` prop to `true`.
+
+<View>
+  <Textarea withRing={true} placeholder="With ring..." />
+  <Textarea withRing={false} placeholder="Without ring..." />
+</View>
+
+```tsx
+<View>
+  <Textarea withRing={true} placeholder="With ring..." />
+  <Textarea withRing={false} placeholder="Without ring..." />
+</View>
+```
+
+# Ref
+---
+The `Textarea` component supports the `ref` prop, which allows for obtaining a reference to the associated underlying HTML element.
+
+```tsx
+import { useRef } from 'react';
+import { Textarea } from '@rewind-ui/core';
+
+function App() {
+  const ref = useRef<HTMLTextAreaElement>(null);
+  return <Textarea ref={ref} />;
+}
+```
+
+# API Reference
+---
+## Properties
+
+| Prop       | Type                 | Description                                      | Default |
+|:-----------|:---------------------|:-------------------------------------------------|:--------|
+| disabled   | `boolean`            | Disables textarea                                | `false` |
+| radius     | `TextareaRadius`     | Sets the border radius                           | `md`    |
+| shadow     | `TextareaShadow`     | Sets the shadow size                             | `none`  |
+| size       | `TextareaSize`       | Sets the textarea size                           | `md`    |
+| tone       | `TextareaTone`       | Sets the textarea tone                           | `light` |
+| validation | `TextareaValidation` | Sets the validation state                        | `none`  |
+| withRing   | `boolean`            | Shows a ring around the textarea on active state | `true`  |
+
+
+## Types
+```tsx
+type TextareaRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type TextareaShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type TextareaSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type TextareaTone = 'light' | 'solid' | 'transparent';
+```
+
+```tsx
+type TextareaValidation = 'none' | 'invalid' | 'valid' | 'warning';
+```

@@ -3,10 +3,23 @@ import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
 import { CardImageProps } from '@rewind-ui/core/src/components/Card/CardImage/CardImage.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Accordion, Select, Text, Button, Card, Checkbox, Input, Radio } from '@rewind-ui/core';
+import {
+  Accordion,
+  Select,
+  Text,
+  Textarea,
+  Button,
+  Card,
+  Checkbox,
+  Input,
+  InputGroup,
+  Radio,
+  Switch,
+  FormControl,
+} from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
-import { MagnifyingGlass, Rocket, RocketLaunch } from '@phosphor-icons/react';
+import { MagnifyingGlass, Rocket, RocketLaunch, At, Key } from '@phosphor-icons/react';
 
 const components = {
   h1: ({ ...props }) => (
@@ -48,7 +61,7 @@ const components = {
     </div>
   ),
   tr: ({ className, ...props }: HTMLAttributes<HTMLTableRowElement>) => (
-    <tr className="m-0 border-t border-gray-300 p-0 even:bg-gray-50" {...props} />
+    <tr className="m-0 border-t border-gray-300 p-0 hover:bg-gray-100 even:bg-gray-50" {...props} />
   ),
   th: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
     <th
@@ -78,12 +91,28 @@ const components = {
   Checkbox: ({ ...props }) => <Checkbox {...props} />,
   Text: ({ ...props }) => <Text {...props} />,
   Input: ({ ...props }) => <Input {...props} />,
+  InputGroup: ({ ...props }) => <InputGroup {...props} />,
+  InputGroupText: ({ ...props }) => <InputGroup.Text {...props} />,
+  InputGroupInput: ({ ...props }) => <InputGroup.Input {...props} />,
+  InputGroupSelect: ({ ...props }) => <InputGroup.Select {...props} />,
+  InputGroupTextarea: ({ ...props }) => <InputGroup.Textarea {...props} />,
+  InputGroupButton: ({ ...props }) => <InputGroup.Button {...props} />,
+  FormControl: ({ ...props }) => <FormControl {...props} />,
+  FormControlLabel: ({ ...props }) => <FormControl.Label {...props} />,
+  FormControlText: ({ ...props }) => <FormControl.Text {...props} />,
+  FormControlInput: ({ ...props }) => <FormControl.Input {...props} />,
+  FormControlSelect: ({ ...props }) => <FormControl.Select {...props} />,
+  FormControlTextarea: ({ ...props }) => <FormControl.Textarea {...props} />,
+  Textarea: ({ ...props }) => <Textarea {...props} />,
   Select: ({ ...props }) => <Select {...props} />,
   Radio: ({ ...props }) => <Radio {...props} />,
+  Switch: ({ ...props }) => <Switch {...props} />,
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,
   Rocket: ({ ...props }) => <Rocket {...props} />,
+  At: ({ ...props }) => <At {...props} />,
+  Key: ({ ...props }) => <Key {...props} />,
 };
 
 export function Mdx({ code }: { code: string }) {

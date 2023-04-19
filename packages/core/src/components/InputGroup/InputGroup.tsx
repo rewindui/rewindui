@@ -16,10 +16,10 @@ import { twMerge } from 'tailwind-merge';
 import { InputGroupContextProvider } from './InputGroup.context';
 
 const defaultProps: Partial<InputGroupProps> = {
-  tone: 'light',
   radius: 'md',
-  size: 'md',
   shadow: 'none',
+  size: 'md',
+  tone: 'light',
 };
 
 const _InputGroup: InputGroupComponent = forwardRef(
@@ -27,11 +27,10 @@ const _InputGroup: InputGroupComponent = forwardRef(
     const theme = useComponentTheme('InputGroup');
     const {
       className = '',
-      tone,
-      size,
       radius,
       shadow,
-      type = 'text',
+      size,
+      tone,
       ...additionalProps
     } = {
       ...useFormControlContext(),

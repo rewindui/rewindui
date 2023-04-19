@@ -1,0 +1,55 @@
+import { FormControl, FormControlProps } from '@rewind-ui/core';
+import * as React from 'react';
+import { At } from '@phosphor-icons/react';
+
+export const FormControlCode = (props: any) => {
+  const { size, validation } = props;
+
+  const defaultProps = {
+    size: 'md',
+    validation: 'none',
+  };
+
+  const attributes = [
+    validation !== defaultProps.validation ? `validation="${validation}"` : null,
+    size !== defaultProps.size ? `size="${size}"` : null,
+  ].filter(Boolean);
+
+  if (attributes.length) {
+    attributes.unshift(null);
+  }
+
+  return `import { FormControl } from '@rewind-ui/core';
+import { At } from '@phosphor-icons/react';
+
+function App() {
+  return (
+    <FormControl${attributes.join(' ')}>
+      <FormControl.Label formControlId="input-id">
+        Email address
+      </FormControl.Label>
+      <FormControl.Input 
+        id="input-id"
+        leftIcon={<At className="text-gray-500" />}
+        type="email"
+        placeholder="An email address"
+      />
+    </FormControl>
+  );
+}
+`.trim();
+};
+
+export const FormControlExample = (props: FormControlProps) => {
+  return (
+    <FormControl {...props}>
+      <FormControl.Label formControlId="input-id">Email address</FormControl.Label>
+      <FormControl.Input
+        id="input-id"
+        leftIcon={<At className="text-gray-500" />}
+        type="email"
+        placeholder="An email address"
+      />
+    </FormControl>
+  );
+};

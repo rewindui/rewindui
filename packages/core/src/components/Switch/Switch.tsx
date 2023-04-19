@@ -21,16 +21,12 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
     onChange,
     radius,
     size,
-    wrapperProps,
     withRing,
     label,
-    labelProps,
     labelClassName = '',
     description,
-    descriptionProps,
     descriptionClassName = '',
     error,
-    errorProps,
     errorClassName = '',
     ...additionalProps
   } = {
@@ -122,7 +118,6 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
         setIsOn(!isOn);
       }}
       className="flex items-center"
-      {...wrapperProps}
     >
       <button
         ref={ref}
@@ -137,24 +132,21 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
       <div className="flex flex-col">
         <label
           htmlFor={id}
-          className={twMerge(theme.label({ size, className: labelClassName }))}
-          {...labelProps}
+          className={twMerge(theme.label({ disabled, size, className: labelClassName }))}
         >
           {label}
         </label>
         {description && (
           <span
-            className={twMerge(theme.description({ size, className: descriptionClassName }))}
-            {...descriptionProps}
+            className={twMerge(
+              theme.description({ disabled, size, className: descriptionClassName })
+            )}
           >
             {description}
           </span>
         )}
         {error && (
-          <span
-            className={twMerge(theme.error({ size, className: errorClassName }))}
-            {...errorProps}
-          >
+          <span className={twMerge(theme.error({ disabled, size, className: errorClassName }))}>
             {error}
           </span>
         )}

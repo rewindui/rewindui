@@ -51,7 +51,7 @@ const DefaultTemplate: Story<FormControlProps> = (args) => {
           type="email"
           placeholder="An email address"
           withRing
-        ></FormControl.Input>
+        />
       </FormControl>
     </EnhancedView>
   );
@@ -74,7 +74,7 @@ const SizeTemplate: Story<FormControlProps> = (args) => {
           type="email"
           placeholder="An email address"
           withRing
-        ></FormControl.Input>
+        />
         <FormControl.Text>This is just a hint</FormControl.Text>
       </FormControl>
     </View>
@@ -102,7 +102,7 @@ const ValidationTemplate: Story<FormControlProps> = (args) => {
           type="email"
           placeholder="An email address"
           withRing
-        ></FormControl.Input>
+        />
         <FormControl.Text>This is just a hint</FormControl.Text>
       </FormControl>
     </View>

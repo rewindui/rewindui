@@ -1,0 +1,210 @@
+---
+title: Switch
+description: A clickable element that can be used to get a true or false value.
+intro: The Switch component is a very basic component that can be parametrized by its size, tone, shadow and other properties.
+source: Switch
+theme: Switch.styles.ts
+storybook: switch--default
+---
+
+# Import
+---
+Import the `Switch` component using the following import statement.
+
+```tsx
+import { Switch } from '@rewind-ui@core';
+```
+
+# Colors
+---
+The available `color` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <Switch label="Blue" color="blue" checked={true} />
+  <Switch label="Red" color="red" checked={true} />
+  <Switch label="Green" color="green" checked={true} />
+  <Switch label="Yellow" color="yellow" checked={true} />
+  <Switch label="Purple" color="purple" checked={true} />
+  <Switch label="Gray" color="gray" checked={true} />
+  <Switch label="Dark" color="dark" checked={true} />
+  <Switch label="Black" color="black" checked={true} />
+</View>
+
+```tsx
+<View>
+  <Switch label="Blue" color="blue" checked={true} />
+  <Switch label="Red" color="red" checked={true} />
+  <Switch label="Green" color="green" checked={true} />
+  <Switch label="Yellow" color="yellow" checked={true} />
+  <Switch label="Purple" color="purple" checked={true} />
+  <Switch label="Gray" color="gray" checked={true} />
+  <Switch label="Dark" color="dark" checked={true} />
+  <Switch label="Black" color="black" checked={true} />
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `sm`, `md`, `lg` and `xl`.
+
+<View>
+  <Switch label="Small" size="sm" checked={true} />
+  <Switch label="Medium" size="md" checked={true} />
+  <Switch label="Large" size="lg" checked={true} />
+  <Switch label="Extra large" size="xl" checked={true} />
+</View>
+
+```tsx
+<View>
+  <Switch label="Small" size="sm" checked={true} />
+  <Switch label="Medium" size="md" checked={true} />
+  <Switch label="Large" size="lg" checked={true} />
+  <Switch label="Extra large" size="xl" checked={true} />
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
+
+<View>
+  <Switch label="None" radius="none" checked={true} />
+  <Switch label="Small" radius="sm" checked={true} />
+  <Switch label="Medium" radius="md" checked={true} />
+  <Switch label="Large" radius="lg" checked={true} />
+  <Switch label="Full" radius="full" checked={true} />
+</View>
+
+```tsx
+<View>
+  <Switch label="None" radius="none" checked={true} />
+  <Switch label="Small" radius="sm" checked={true} />
+  <Switch label="Medium" radius="md" checked={true} />
+  <Switch label="Large" radius="lg" checked={true} />
+  <Switch label="Full" radius="full" checked={true} />
+</View>
+```
+
+# States
+---
+`Switch` component supports `disabled` and `error` states. The `error` state is enabled automatically by passing an error message to the `error` prop.
+
+<View>
+  <Switch label="Disabled" disabled />
+  <Switch label="Click me!" error="Something went wrong..." />
+</View>
+
+```tsx
+<View>
+  <Switch label="Disabled" disabled />
+  <Switch label="Click me!" error="Something went wrong..." />
+</View>
+```
+
+# Description
+---
+The `description` prop can be used to display a description below the checkbox.
+
+<View>
+  <Switch label="Click me!" description="This is a description" />
+</View>
+
+```tsx
+<View>
+  <Switch label="Click me!" description="This is a description" />
+</View>
+```
+
+Furthermore, a `ReactNode` can be passed to the `description` prop to display a more complex description that may contain multiple jsx elements.
+
+<View>
+  <Switch label="Click me!" description={<span className="text-purple-500 bg-purple-50 p-1 rounded">This is a purple description</span>} />
+</View>
+
+```tsx
+<View>
+  <Switch
+    label="Click me!"
+    description={<span className="text-purple-500 bg-purple-50 p-1 rounded">This is a purple description</span>}
+  />
+</View>
+```
+
+Similar styling can be achieved by using the `descriptionClassName` prop.
+
+<View>
+  <Switch label="Click me!" descriptionClassName="text-pink-500 bg-pink-50 p-1 rounded" description="This is a pink description" />
+</View>
+
+```tsx
+<View>
+  <Switch
+    label="Click me!"
+    descriptionClassName="text-pink-500 bg-pink-50 p-1 rounded"
+    description="This is a pink description"
+  />
+</View>
+```
+
+# Ring
+---
+You can add a ring to the `Switch` by setting the `withRing` prop to `true`.
+
+<View>
+  <Switch label="Click me!" withRing={true} />
+  <Switch label="Click me!" withRing={false} />
+</View>
+
+```tsx
+<View>
+  <Switch label="Click me!" withRing={true} />
+  <Switch label="Click me!" withRing={false} />
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop                 | Type                    | Description                                      | Default     |
+|:---------------------|:------------------------|:-------------------------------------------------|:------------|
+| color                | `SwitchColor`           | Sets the color                                   | `blue`      |
+| disabled             | `boolean`               | Disables the checkbox                            | `false`     |
+| description          | `string` or `ReactNode` | Description content                              | `undefined` |
+| descriptionClassName | `string`                | Description span element classes                 | `undefined` |
+| error                | `string` or `ReactNode` | Error content                                    | `undefined` |
+| errorClassName       | `string`                | Error span element classes                       | `undefined` |
+| label                | `string` or `ReactNode` | Label content                                    | `undefined` |
+| labelClassName       | `string`                | Label element classes                            | `undefined` |
+| radius               | `SwitchRadius`          | Sets the border radius                           | `full`      |
+| size                 | `SwitchSize`            | Sets the checkbox size                           | `md`        |
+| withRing             | `boolean`               | Shows a ring around the checkbox on active state | `true`      |
+
+## Events
+
+| Event    | Type                       | Description                              |
+|:---------|:---------------------------|:-----------------------------------------|
+| onChange | `(value: boolean) => void` | Fires when the switch state is changed   |
+
+## Types
+
+```tsx
+type SwitchColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type SwitchRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type SwitchSize = 'sm' | 'md' | 'lg' | 'xl';
+```
+

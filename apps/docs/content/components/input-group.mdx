@@ -1,0 +1,456 @@
+---
+title: InputGroup
+description: A wrapper component for all form components to combine them with icons or text.
+intro: The InputGroup component is a bootstrap style component that enables the developer to give more information to the end user by adding supportive icons and text to the sides of a form element, or by even combining multiple form elements.
+source: InputGroup
+theme: InputGroup.styles.ts
+storybook: inputgroup--default
+---
+
+# Import
+---
+Import the `InputGroup` component using the following import statement.
+
+```tsx
+import { InputGroup } from '@rewind-ui/core';
+```
+
+# Tones
+---
+The `InputGroup` component supports three tones: `light`, `solid` and `transparent`.
+
+<View>
+  <InputGroup tone="light">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Light...'} />
+  </InputGroup>
+  <InputGroup tone="solid">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Solid...'} />
+  </InputGroup>
+  <InputGroup tone="transparent">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Transparent...'} />
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup tone="light">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Search...'} />
+  </InputGroup>
+  <InputGroup tone="solid">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Search...'} />
+  </InputGroup>
+  <InputGroup tone="transparent">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Search...'} />
+  </InputGroup>
+</View>
+```
+
+# Sizes
+---
+The `InputGroup` component supports four size options: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <InputGroup size="xs">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Extra small...'} />
+  </InputGroup>
+  <InputGroup size="sm">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Small...'} />
+  </InputGroup>
+  <InputGroup size="md">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Medium...'} />
+  </InputGroup>
+  <InputGroup size="lg">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Large...'} />
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup size="xs">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Extra small...'} />
+  </InputGroup>
+  <InputGroup size="sm">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Small...'} />
+  </InputGroup>
+  <InputGroup size="md">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Medium...'} />
+  </InputGroup>
+  <InputGroup size="lg">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Large...'} />
+  </InputGroup>
+</View>
+```
+
+# Radiuses
+---
+The `InputGroup` component supports the following radius options: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <InputGroup radius="none">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'None...'} />
+  </InputGroup>
+  <InputGroup radius="sm">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Small...'} />
+  </InputGroup>
+  <InputGroup radius="base">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Base...'} />
+  </InputGroup>
+  <InputGroup radius="md">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Medium...'} />
+  </InputGroup>
+  <InputGroup radius="lg">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Large...'} />
+  </InputGroup>
+  <InputGroup radius="full">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Full...'} />
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup radius="none">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'None...'} />
+  </InputGroup>
+  <InputGroup radius="sm">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Small...'} />
+  </InputGroup>
+  <InputGroup radius="base">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Base...'} />
+  </InputGroup>
+  <InputGroup radius="md">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Medium...'} />
+  </InputGroup>
+  <InputGroup radius="lg">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Large...'} />
+  </InputGroup>
+  <InputGroup radius="full">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Full...'} />
+  </InputGroup>
+</View>
+```
+
+# Shadows
+---
+The `InputGroup` component supports the following shadow options: `none`, `sm`, `base` and `md`.
+
+<View>
+  <InputGroup shadow="none">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'None...'} />
+  </InputGroup>
+  <InputGroup shadow="sm">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Small...'} />
+  </InputGroup>
+  <InputGroup shadow="base">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Base...'} />
+  </InputGroup>
+  <InputGroup shadow="md">
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+    <InputGroupInput placeholder={'Medium...'} />
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup shadow="none">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'None...'} />
+  </InputGroup>
+  <InputGroup shadow="sm">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Small...'} />
+  </InputGroup>
+  <InputGroup shadow="base">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Base...'} />
+  </InputGroup>
+  <InputGroup shadow="md">
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Medium...'} />
+  </InputGroup>
+</View>
+```
+
+# Examples
+---
+## Select component
+An `InputGroup.Select` component can be added.
+
+<View>
+  <InputGroup className="w-full">
+    <InputGroupText>
+      <span>Select:</span>
+    </InputGroupText>
+    <InputGroupSelect>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </InputGroupSelect>
+    <InputGroupText>
+      <Rocket weight="duotone" />
+    </InputGroupText>
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup className="w-full">
+    <InputGroup.Text>
+      Search:
+    </InputGroup.Text>
+    <InputGroup.Select>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </InputGroup.Select>
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+  </InputGroup>
+</View>
+```
+
+## Textarea component
+An `InputGroup.Textarea` component can be added.
+
+<View>
+  <InputGroup className="w-full">
+    <InputGroupText>
+      <span>Comment:</span>
+    </InputGroupText>
+    <InputGroupTextarea placeholder="Enter your comment..." />
+    <InputGroupButton tone="solid">
+      <Rocket weight="duotone" />
+    </InputGroupButton>
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup className="w-full">
+    <InputGroup.Text>
+      Comment:
+    </InputGroup.Text>
+    <InputGroup.Textarea placeholder="Enter your comment..." />
+    <InputGroup.Button tone="solid">
+      <Rocket weight="duotone" />
+    </InputGroup.Button>
+  </InputGroup>
+</View>
+```
+
+## Text components
+An `InputGroup.Text` component can be added on both sides.
+
+<View>
+  <InputGroup className="w-full">
+    <InputGroupText>
+      <span>Search:</span>
+    </InputGroupText>
+    <InputGroupInput placeholder={'Find user by email address...'} type="search" />
+    <InputGroupText>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupText>
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup className="w-full">
+    <InputGroup.Text>
+      Search:
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Find user by email address...'} type="search" />
+    <InputGroup.Text>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Text>
+  </InputGroup>
+</View>
+```
+
+## Button component
+A `Button` component can be added by using the `InputGroup.Button` component.
+
+<View>
+  <InputGroup className="w-full">
+    <InputGroupText>
+      <span>Search:</span>
+    </InputGroupText>
+    <InputGroupInput placeholder={'Find user by email address...'} type="search" />
+    <InputGroupButton tone="solid">
+      <MagnifyingGlass weight="duotone" />
+    </InputGroupButton>
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup className="w-full">
+    <InputGroup.Text>
+      Search:
+    </InputGroup.Text>
+    <InputGroup.Input placeholder={'Find user by email address...'} type="search" />
+    <InputGroup.Button>
+      <MagnifyingGlass weight="duotone" />
+    </InputGroup.Button>
+  </InputGroup>
+</View>
+```
+
+## Multiple inputs
+More than one input elements can be used.
+
+<View>
+  <InputGroup className="w-full">
+    <InputGroupText>
+      <span>From:</span>
+    </InputGroupText>
+    <InputGroupInput type="date" />
+    <InputGroupText>
+      <span>To:</span>
+    </InputGroupText>
+    <InputGroupInput type="date" />
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup className="w-full">
+    <InputGroup.Text>
+      From:
+    </InputGroup.Text>
+    <InputGroup.Input type="date" />
+    <InputGroup.Text>
+      To:
+    </InputGroup.Text>
+    <InputGroup.Input type="date" />
+  </InputGroup>
+</View>
+```
+
+# API Reference
+---
+## Properties
+All available properties are automatically inherited to all child components.
+
+| Prop   | Type               | Description            | Default |
+|:-------|:-------------------|:-----------------------|:--------|
+| radius | `InputGroupRadius` | Sets the border radius | `md`    |
+| shadow | `InputGroupShadow` | Sets the shadow size   | `none`  |
+| size   | `InputGroupSize`   | Sets the input size    | `md`    |
+| tone   | `InputGroupTone`   | Sets the input tone    | `light` |
+
+
+## Types
+```tsx
+type InputGroupRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type InputGroupShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type InputGroupSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type InputGroupTone = 'light' | 'solid' | 'transparent';
+```
+

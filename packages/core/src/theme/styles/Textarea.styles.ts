@@ -30,7 +30,7 @@ const base = cva(
         base: ['rounded'],
         md: ['rounded-md'],
         lg: ['rounded-lg'],
-        full: ['rounded-full'],
+        xl: ['rounded-xl'],
       },
       shadow: {
         none: ['shadow-none'],

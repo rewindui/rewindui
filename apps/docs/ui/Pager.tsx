@@ -86,9 +86,19 @@ export const Pager = (props: PagerProps) => {
       slug: 'checkbox',
     },
     {
+      title: 'Form Control',
+      url: '/components/form-control',
+      slug: 'form-control',
+    },
+    {
       title: 'Input',
       url: '/components/input',
       slug: 'input',
+    },
+    {
+      title: 'Input Group',
+      url: '/components/input-group',
+      slug: 'input-group',
     },
     {
       title: 'Radio',
@@ -99,6 +109,16 @@ export const Pager = (props: PagerProps) => {
       title: 'Select',
       url: '/components/select',
       slug: 'select',
+    },
+    {
+      title: 'Switch',
+      url: '/components/switch',
+      slug: 'switch',
+    },
+    {
+      title: 'Textarea',
+      url: '/components/textarea',
+      slug: 'textarea',
     },
   ];
   const { current } = props;
