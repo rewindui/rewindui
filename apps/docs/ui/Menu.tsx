@@ -132,7 +132,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Input',
         path: '/components/input',
-        wip: true,
       },
       {
         title: 'Input Group',
@@ -142,12 +141,10 @@ const menuItems: MenuItem[] = [
       {
         title: 'Radio',
         path: '/components/radio',
-        wip: true,
       },
       {
         title: 'Select',
         path: '/components/select',
-        wip: true,
       },
       {
         title: 'Switch',

@@ -1,21 +1,19 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement } from 'react';
 
-export type SelectTone = 'light' | 'solid' | 'transparent';
-export type SelectSize = 'xs' | 'sm' | 'md' | 'lg';
-export type SelectValidation = 'none' | 'invalid' | 'valid' | 'warning';
 export type SelectRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type SelectShadow = 'none' | 'sm' | 'base' | 'md';
+export type SelectSize = 'xs' | 'sm' | 'md' | 'lg';
+export type SelectTone = 'light' | 'solid' | 'transparent';
+export type SelectValidation = 'none' | 'invalid' | 'valid' | 'warning';
 
 export interface SelectProps extends Omit<ComponentPropsWithRef<'select'>, 'size'> {
   disabled?: boolean;
-  loading?: boolean;
-  tone?: SelectTone;
-  size?: SelectSize;
-  radius?: SelectRadius;
-  validation?: SelectValidation;
   leftIcon?: ReactElement;
-  rightIcon?: ReactElement;
+  radius?: SelectRadius;
   shadow?: SelectShadow;
+  size?: SelectSize;
+  tone?: SelectTone;
+  validation?: SelectValidation;
   withRing?: boolean;
 }
 

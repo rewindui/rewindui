@@ -311,7 +311,11 @@ An image can be displayed in the `Card` component by using the `Card.Image` comp
 
 <View>
   <Card>
-    <CardImage caption="This is a beautiful image" mode="dark" src="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4140&q=80" />
+    <CardImage
+      alt="A beautiful image"
+      caption="This is a beautiful image"
+      mode="dark"
+      src="https://images.unsplash.com/photo-1563089145-599997674d42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=4140&q=80" />
     <CardHeader>Header</CardHeader>
     <CardBody>Some text...</CardBody>
     <CardFooter>Footer</CardFooter>
@@ -321,7 +325,32 @@ An image can be displayed in the `Card` component by using the `Card.Image` comp
 ```tsx
 <View>
   <Card>
-    <Card.Image caption="This is a beautiful image" mode="dark" src="..." />
+    <Card.Image
+      alt="A beautiful image"
+      caption="This is a beautiful image"
+      mode="dark"
+      src="..." />
+    // ...
+  </Card>
+</View>
+```
+
+# Actions
+---
+An action button can be added to the `Card.Header` component by using the `actions` property.
+
+<View>
+  <Card className="min-w-[350px]">
+    <CardHeader actions={<Button size="xs" color="gray">Action</Button>}>Header</CardHeader>
+    <CardBody>Some text...</CardBody>
+    <CardFooter>Footer</CardFooter>
+  </Card>
+</View>
+
+```tsx
+<View>
+  <Card className="min-w-[350px]">
+    <Card.Header actions={<Button size="xs" color="gray">Action</Button>}>Header</Card.Header>
     // ...
   </Card>
 </View>
@@ -334,9 +363,8 @@ An image can be displayed in the `Card` component by using the `Card.Image` comp
 This is a basic example of a `Card` component.
 <View>
   <Card className="max-w-[350px]">
-    <CardHeader className="flex justify-between font-medium">
-      <span className="font-medium">Terms of service</span>
-      <Button size="xs" color="gray">Action</Button>
+    <CardHeader className="font-medium">
+      <span>Terms of service</span>
     </CardHeader>
     <CardBody className="font-light">Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.</CardBody>
     <CardFooter className="flex justify-end space-x-2">
@@ -349,9 +377,8 @@ This is a basic example of a `Card` component.
 ```tsx
 <View>
   <Card className="max-w-[350px]">
-    <Card.Header className="flex justify-between font-medium">
-      <span className="font-medium">Terms of service</span>
-      <Button size="xs" color="gray">Action</Button>
+    <Card.Header className="font-medium">
+      Terms of service
     </Card.Header>
     <Card.Body className="font-light">
       Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.
@@ -370,7 +397,7 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
   <Card className="max-w-[450px]">
     <CardImage caption="New york" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <CardBody>
-      <div className='flex flex-col space-y-2'>
+      <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
           <span className="text-xl text-gray-800 font-medium">Full day city tour</span>
           <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$1,500.00</span>
@@ -386,7 +413,7 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
   <Card className="max-w-[450px]">
     <CardImage caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <CardBody>
-      <div className='flex flex-col space-y-2'>
+      <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
           <span className="text-xl text-gray-800 font-medium">Milos island boat tour</span>
           <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$2,500.00</span>
@@ -405,7 +432,7 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
   <Card className="max-w-[450px]">
     <Card.Image caption="New york" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <Card.Body>
-      <div className='flex flex-col space-y-2'>
+      <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
           <span className="text-xl text-gray-800 font-medium">Full day city tour</span>
           <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$1,500.00</span>
@@ -421,7 +448,7 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
   <Card className="max-w-[450px]">
     <Card.Image caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <Card.Body>
-      <div className='flex flex-col space-y-2'>
+      <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
           <span className="text-xl text-gray-800 font-medium">Milos island boat tour</span>
           <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$2,500.00</span>
@@ -436,3 +463,49 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
 </View>
 ```
 
+# API Reference
+---
+## Properties
+### Card
+
+| Prop        | Type         | Description              | Default |
+|:------------|:-------------|:-------------------------|:--------|
+| bordered    | `boolean`    | Adds borders             | `true`  |
+| color       | `CardColor`  | Sets the card color      | `white` |
+| radius      | `CardRadius` | Sets the border radius   | `base`  |
+| shadow      | `CardShadow` | Sets the shadow size     | `sm`    |
+| size        | `CardSize`   | Sets the card size       | `base`  |
+| withDivider | `boolean`    | Adds horizontal dividers | `true`  |
+
+### Card.Header
+
+| Prop    | Type        | Description                | Default     |
+|:--------|:------------|:---------------------------|:------------|
+| actions | `ReactNode` | Right-side actions content | `undefined` |
+
+### Card.Image
+
+| Prop    | Type              | Description                        | Default     |
+|:--------|:------------------|:-----------------------------------|:------------|
+| src     | `string`          | Image url                          | `undefined` |
+| alt     | `string`          | Alternative text description       | `undefined` |
+| caption | `string`          | Visible image contents description | `undefined` |
+| mode    | `dark` or `light` | Caption background color           | `light`     |
+
+## Types
+
+```tsx
+type CardColor = 'white' | 'gray' | 'slate' | 'zinc';
+```
+
+```tsx
+type CardRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type CardShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type CardSize = 'sm' | 'base' | 'md' | 'lg';
+```

@@ -3,9 +3,10 @@ import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
 import { CardImageProps } from '@rewind-ui/core/src/components/Card/CardImage/CardImage.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { Accordion, Text, Button, Card, Checkbox } from '@rewind-ui/core';
+import { Accordion, Select, Text, Button, Card, Checkbox, Input, Radio } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
+import { MagnifyingGlass, Rocket, RocketLaunch } from '@phosphor-icons/react';
 
 const components = {
   h1: ({ ...props }) => (
@@ -61,6 +62,7 @@ const components = {
       {...props}
     />
   ),
+  option: ({ ...props }) => <option {...props} />,
   Accordion: ({ ...props }) => <Accordion {...props} />,
   AccordionItem: ({ anchor, ...props }: AccordionItemProps) => (
     <Accordion.Item anchor={anchor} {...props} />
@@ -75,7 +77,13 @@ const components = {
   CardFooter: ({ ...props }) => <Card.Footer {...props} />,
   Checkbox: ({ ...props }) => <Checkbox {...props} />,
   Text: ({ ...props }) => <Text {...props} />,
+  Input: ({ ...props }) => <Input {...props} />,
+  Select: ({ ...props }) => <Select {...props} />,
+  Radio: ({ ...props }) => <Radio {...props} />,
   View: ({ ...props }) => <View {...props} />,
+  MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
+  RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,
+  Rocket: ({ ...props }) => <Rocket {...props} />,
 };
 
 export function Mdx({ code }: { code: string }) {

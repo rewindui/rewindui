@@ -85,6 +85,21 @@ export const Pager = (props: PagerProps) => {
       url: '/components/checkbox',
       slug: 'checkbox',
     },
+    {
+      title: 'Input',
+      url: '/components/input',
+      slug: 'input',
+    },
+    {
+      title: 'Radio',
+      url: '/components/radio',
+      slug: 'radio',
+    },
+    {
+      title: 'Select',
+      url: '/components/select',
+      slug: 'select',
+    },
   ];
   const { current } = props;
   const index: number | undefined = collection.findIndex(

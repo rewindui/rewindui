@@ -1,0 +1,370 @@
+---
+title: Select
+description: A simple select element that can be used to allow the users select an option.
+intro: The Select component can be configured in multiple ways, allowing the developer to customize the look and feel of the component, by specifying properties such as size and radius or by adding side icons.
+source: Select
+theme: Select.styles.ts
+storybook: select--default
+---
+
+# Import
+---
+Import the `Select` component using the following import statement.
+
+```tsx
+import { Select } from '@rewind-ui/core';
+```
+
+# Tones
+---
+The `Select` component supports three tones: `light`, `solid` and `transparent`.
+
+<View>
+  <Select tone="light">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select tone="solid">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select tone="transparent">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select tone="light">
+    // ...
+  </Select>
+  <Select tone="solid">
+    // ...
+  </Select>
+  <Select tone="transparent">
+    // ...
+  </Select>
+</View>
+```
+
+# Sizes
+---
+The `Select` component supports four size options: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Select size="xs">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select size="sm">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select size="md">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select size="lg">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select size="xs">
+    // ...
+  </Select>
+  <Select size="sm">
+    // ...
+  </Select>
+  <Select size="md">
+    // ...
+  </Select>
+  <Select size="lg">
+    // ...
+  </Select>
+</View>
+```
+
+# Radiuses
+---
+The `Select` component supports the following radius options: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <Select radius="none">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select radius="sm">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select radius="base">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select radius="md">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select radius="lg">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select radius="full">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select radius="none">
+    // ...
+  </Select>
+  <Select radius="sm">
+    // ...
+  </Select>
+  <Select radius="base">
+    // ...
+  </Select>
+  <Select radius="md">
+    // ...
+  </Select>
+  <Select radius="lg">
+    // ...
+  </Select>
+  <Select radius="full">
+    // ...
+  </Select>
+</View>
+```
+
+# Shadows
+---
+The `Select` component supports the following shadow options: `none`, `sm`, `base` and `md`.
+
+<View>
+  <Select shadow="none">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select shadow="sm">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select shadow="base">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select shadow="md">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select shadow="none">
+    // ...
+  </Select>
+  <Select shadow="sm">
+    // ...
+  </Select>
+  <Select shadow="base">
+    // ...
+  </Select>
+  <Select shadow="md">
+    // ...
+  </Select>
+</View>
+```
+
+# Validation
+---
+The `Select` component supports the following validation options: `none`, `invalid`, `valid` and `warning`.
+
+<View>
+  <Select validation="none">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select validation="invalid">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select validation="valid">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select validation="warning">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select validation="none">
+    // ...
+  </Select>
+  <Select validation="invalid">
+    // ...
+  </Select>
+  <Select validation="valid">
+    // ...
+  </Select>
+  <Select validation="warning">
+    // ...
+  </Select>
+</View>
+```
+
+
+# States
+---
+`Select` component supports `disabled` state.
+
+<View>
+  <Select disabled>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select disabled>
+    // ...
+  </Select>
+</View>
+```
+
+# Ring
+---
+You can add a ring to the `Select` by setting the `withRing` prop to `true`.
+
+<View>
+  <Select withRing={true}>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select withRing={false}>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select withRing={true}>
+    // ...
+  </Select>
+  <Select withRing={false}>
+    // ...
+  </Select>
+</View>
+```
+
+# Icons
+---
+You can add an icon to the `Select` by setting the `leftIcon` prop to a valid React element.
+
+<View>
+  <Select leftIcon={<MagnifyingGlass weight="duotone" />}>
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select leftIcon="...">
+    // ...
+  </Select>
+</View>
+```
+
+# Ref
+---
+The `Select` component supports the `ref` prop, which allows for obtaining a reference to the associated underlying HTML element.
+
+```tsx
+import { useRef } from 'react';
+import { Select } from '@rewind-ui/core';
+
+function App() {
+  const ref = useRef<HTMLInputElement>(null);
+  return (
+    <Select ref={ref}>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+    </Select>
+  );
+}
+```
+
+# API Reference
+---
+## Properties
+
+| Prop       | Type               | Description                                                | Default     |
+|:-----------|:-------------------|:-----------------------------------------------------------|:------------|
+| disabled   | `boolean`          | Disables select element                                    | `false`     |
+| leftIcon   | `ReactElement`     | Adds the given icon to the left side of the select element | `undefined` |
+| radius     | `SelectRadius`     | Sets the border radius                                     | `md`        |
+| shadow     | `SelectShadow`     | Sets the shadow size                                       | `none`      |
+| size       | `SelectSize`       | Sets the select size                                       | `md`        |
+| tone       | `SelectTone`       | Sets the select tone                                       | `light`     |
+| validation | `SelectValidation` | Sets the validation state                                  | `none`      |
+| withRing   | `boolean`          | Shows a ring around the select element on active state     | `true`      |
+
+
+## Types
+```tsx
+type SelectRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type SelectShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type SelectSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type SelectTone = 'light' | 'solid' | 'transparent';
+```
+
+```tsx
+type SelectValidation = 'none' | 'invalid' | 'valid' | 'warning';
+```

@@ -1,0 +1,242 @@
+---
+title: Radio
+description: A clickable element that can be used to get a true or false value.
+intro: The Radio component is a very basic component that can be parametrized by its size, tone, shadow and other properties.
+source: Radio
+theme: Radio.styles.ts
+storybook: radio--default
+---
+
+# Import
+---
+Import the `Radio` component using the following import statement.
+
+```tsx
+import { Radio } from '@rewind-ui@core';
+```
+
+# Tones & Colors
+---
+The following tones are supported: `solid` and `light`.
+
+The only difference between the above tones is the unchecked state. The `solid` tone has a white background and the `light` tone has a light gray background.
+
+The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <Radio label="Unchecked" defaultChecked={false} />
+  <Radio label="Blue" color="blue" defaultChecked={true} />
+  <Radio label="Red" color="red" defaultChecked={true} />
+  <Radio label="Green" color="green" defaultChecked={true} />
+  <Radio label="Yellow" color="yellow" defaultChecked={true} />
+  <Radio label="Purple" color="purple" defaultChecked={true} />
+  <Radio label="Gray" color="gray" defaultChecked={true} />
+  <Radio label="Dark" color="dark" defaultChecked={true} />
+  <Radio label="Black" color="black" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Radio label="Unchecked" defaultChecked={false} />
+  <Radio label="Blue" color="blue" defaultChecked={true} />
+  <Radio label="Red" color="red" defaultChecked={true} />
+  <Radio label="Green" color="green" defaultChecked={true} />
+  <Radio label="Yellow" color="yellow" defaultChecked={true} />
+  <Radio label="Purple" color="purple" defaultChecked={true} />
+  <Radio label="Gray" color="gray" defaultChecked={true} />
+  <Radio label="Dark" color="dark" defaultChecked={true} />
+  <Radio label="Black" color="black" defaultChecked={true} />
+</View>
+```
+
+## Light
+<View>
+  <Radio tone="light" label="Unchecked" defaultChecked={false} />
+  <Radio tone="light" label="Blue" color="blue" defaultChecked={true} />
+  <Radio tone="light" label="Red" color="red" defaultChecked={true} />
+  <Radio tone="light" label="Green" color="green" defaultChecked={true} />
+  <Radio tone="light" label="Yellow" color="yellow" defaultChecked={true} />
+  <Radio tone="light" label="Purple" color="purple" defaultChecked={true} />
+  <Radio tone="light" label="Gray" color="gray" defaultChecked={true} />
+  <Radio tone="light" label="Dark" color="dark" defaultChecked={true} />
+  <Radio tone="light" label="Black" color="black" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Radio tone="light" label="Unchecked" defaultChecked={false} />
+  <Radio tone="light" label="Blue" color="blue" defaultChecked={true} />
+  <Radio tone="light" label="Red" color="red" defaultChecked={true} />
+  <Radio tone="light" label="Green" color="green" defaultChecked={true} />
+  <Radio tone="light" label="Yellow" color="yellow" defaultChecked={true} />
+  <Radio tone="light" label="Purple" color="purple" defaultChecked={true} />
+  <Radio tone="light" label="Gray" color="gray" defaultChecked={true} />
+  <Radio tone="light" label="Dark" color="dark" defaultChecked={true} />
+  <Radio tone="light" label="Black" color="black" defaultChecked={true} />
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `sm`, `md`, `lg` and `xl`.
+
+<View>
+  <Radio label="Small" size="sm" defaultChecked={true} />
+  <Radio label="Medium" size="md" defaultChecked={true} />
+  <Radio label="Large" size="lg" defaultChecked={true} />
+  <Radio label="Extra large" size="xl" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Radio label="Small" size="sm" defaultChecked={true} />
+  <Radio label="Medium" size="md" defaultChecked={true} />
+  <Radio label="Large" size="lg" defaultChecked={true} />
+  <Radio label="Extra large" size="xl" defaultChecked={true} />
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
+
+<View>
+  <Radio label="None" radius="none" defaultChecked={true} />
+  <Radio label="Small" radius="sm" defaultChecked={true} />
+  <Radio label="Medium" radius="md" defaultChecked={true} />
+  <Radio label="Large" radius="lg" defaultChecked={true} />
+  <Radio label="Full" radius="full" defaultChecked={true} />
+</View>
+
+```tsx
+<View>
+  <Radio label="None" radius="none" defaultChecked={true} />
+  <Radio label="Small" radius="sm" defaultChecked={true} />
+  <Radio label="Medium" radius="md" defaultChecked={true} />
+  <Radio label="Large" radius="lg" defaultChecked={true} />
+  <Radio label="Full" radius="full" defaultChecked={true} />
+</View>
+```
+
+# States
+---
+`Checkbox` component supports `disabled` and `error` states. The `error` state is enabled automatically by passing an error message to the `error` prop.
+
+<View>
+  <Radio label="Disabled" disabled />
+  <Radio label="Click me!" error="Something went wrong..." />
+</View>
+
+```tsx
+<View>
+  <Radio label="Disabled" disabled />
+  <Radio label="Click me!" error="Something went wrong..." />
+</View>
+```
+
+# Description
+---
+The `description` prop can be used to display a description below the checkbox.
+
+<View>
+  <Radio label="Click me!" description="This is a description" />
+</View>
+
+```tsx
+<View>
+  <Radio label="Click me!" description="This is a description" />
+</View>
+```
+
+Furthermore, a `ReactNode` can be passed to the `description` prop to display a more complex description that may contain multiple jsx elements.
+
+<View>
+  <Radio label="Click me!" description={<span className="text-purple-500 bg-purple-50 p-1 rounded">This is a purple description</span>} />
+</View>
+
+```tsx
+<View>
+  <Radio
+    label="Click me!"
+    description={<span className="text-purple-500 bg-purple-50 p-1 rounded">This is a purple description</span>}
+  />
+</View>
+```
+
+Similar styling can be achieved by using the `descriptionClassName` prop.
+
+<View>
+  <Radio label="Click me!" descriptionClassName="text-pink-500 bg-pink-50 p-1 rounded" description="This is a pink description" />
+</View>
+
+```tsx
+<View>
+  <Radio
+    label="Click me!"
+    descriptionClassName="text-pink-500 bg-pink-50 p-1 rounded"
+    description="This is a pink description"
+  />
+</View>
+```
+
+# Ring
+---
+You can add a ring to the `Checkbox` by setting the `withRing` prop to `true`.
+
+<View>
+  <Radio label="Click me!" withRing={true} />
+  <Radio label="Click me!" withRing={false} />
+</View>
+
+```tsx
+<View>
+  <Radio label="Click me!" withRing={true} />
+  <Radio label="Click me!" withRing={false} />
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop                 | Type                    | Description                                      | Default     |
+|:---------------------|:------------------------|:-------------------------------------------------|:------------|
+| color                | `RadioColor`            | Sets the color                                   | `dark`      |
+| disabled             | `boolean`               | Disables the checkbox                            | `false`     |
+| description          | `string` or `ReactNode` | Description content                              | `undefined` |
+| descriptionClassName | `string`                | Description span element classes                 | `undefined` |
+| error                | `string` or `ReactNode` | Error content                                    | `undefined` |
+| errorClassName       | `string`                | Error span element classes                       | `undefined` |
+| label                | `string` or `ReactNode` | Label content                                    | `undefined` |
+| labelClassName       | `string`                | Label element classes                            | `undefined` |
+| radius               | `RadioRadius`           | Sets the border radius                           | `normal`    |
+| size                 | `RadioSize`             | Sets the checkbox size                           | `base`      |
+| tone                 | `RadioTone`             | Sets the color tone                              | `solid`     |
+| withRing             | `boolean`               | Shows a ring around the checkbox on active state | `true`      |
+
+## Types
+
+```tsx
+type RadioColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type RadioRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type RadioSize = 'sm' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type RadioTone = 'solid' | 'light';
+```

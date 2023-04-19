@@ -15,18 +15,14 @@ export interface RadioProps extends Omit<ComponentPropsWithRef<'input'>, 'size'>
   color?: RadioColor;
   description?: string | ReactNode;
   descriptionClassName?: string;
-  descriptionProps?: Record<string, any>;
+  disabled?: boolean;
   error?: string | ReactNode;
   errorClassName?: string;
-  errorProps?: Record<string, any>;
-  disabled?: boolean;
   label?: string | ReactNode;
   labelClassName?: string;
-  labelProps?: Record<string, any>;
   radius?: RadioRadius;
   size?: RadioSize;
   tone?: RadioTone;
-  wrapperProps?: Record<string, any>;
   withRing?: boolean;
 }
 

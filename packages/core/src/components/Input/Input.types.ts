@@ -1,10 +1,9 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement } from 'react';
 
-export type InputTone = 'light' | 'solid' | 'transparent';
-export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
-export type InputValidation = 'none' | 'invalid' | 'valid' | 'warning';
 export type InputRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type InputShadow = 'none' | 'sm' | 'base' | 'md';
+export type InputSize = 'xs' | 'sm' | 'md' | 'lg';
+export type InputTone = 'light' | 'solid' | 'transparent';
 export type InputType =
   | 'text'
   | 'number'
@@ -17,18 +16,19 @@ export type InputType =
   | 'range'
   | 'datetime-local'
   | 'color';
+export type InputValidation = 'none' | 'invalid' | 'valid' | 'warning';
 
 export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'size' | 'type'> {
   disabled?: boolean;
-  loading?: boolean;
-  tone?: InputTone;
-  size?: InputSize;
-  radius?: InputRadius;
-  validation?: InputValidation;
   leftIcon?: ReactElement;
+  loading?: boolean;
+  radius?: InputRadius;
   rightIcon?: ReactElement;
   shadow?: InputShadow;
+  size?: InputSize;
+  tone?: InputTone;
   type?: InputType;
+  validation?: InputValidation;
   withRing?: boolean;
 }
 

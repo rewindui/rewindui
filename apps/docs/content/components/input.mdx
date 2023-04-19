@@ -1,0 +1,271 @@
+---
+title: Input
+description: A simple input element that can be used to collect user input.
+intro: The Input component can be configured in multiple ways, allowing the developer to customize the look and feel of the component, by specifying properties such as size and radius or by adding side icons.
+source: Input
+theme: Input.styles.ts
+storybook: input--default
+---
+
+# Import
+---
+Import the `Input` component using the following import statement.
+
+```tsx
+import { Input } from '@rewind-ui/core';
+```
+
+# Tones
+---
+The `Input` component supports three tones: `light`, `solid` and `transparent`.
+
+<View>
+  <Input tone="light" placeholder="Light tone" />
+  <Input tone="solid" placeholder="Solid tone" />
+  <Input tone="transparent" placeholder="Transparent tone" />
+</View>
+
+```tsx
+<View>
+  <Input tone="light" placeholder="Light tone" />
+  <Input tone="solid" placeholder="Solid tone" />
+  <Input tone="transparent" placeholder="Transparent tone" />
+</View>
+```
+
+# Sizes
+---
+The `Input` component supports four size options: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Input size="xs" placeholder="Extra small" />
+  <Input size="sm" placeholder="Small" />
+  <Input size="md" placeholder="Medium" />
+  <Input size="lg" placeholder="Large" />
+</View>
+
+```tsx
+<View>
+  <Input size="xs" placeholder="Extra small" />
+  <Input size="sm" placeholder="Small" />
+  <Input size="md" placeholder="Medium" />
+  <Input size="lg" placeholder="Large" />
+</View>
+```
+
+# Radiuses
+---
+The `Input` component supports the following radius options: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <Input radius="none" placeholder="none" />
+  <Input radius="sm" placeholder="sm" />
+  <Input radius="base" placeholder="base" />
+  <Input radius="md" placeholder="md" />
+  <Input radius="lg" placeholder="lg" />
+  <Input radius="full" placeholder="full" />
+</View>
+
+```tsx
+<View>
+  <Input radius="none" placeholder="none" />
+  <Input radius="sm" placeholder="sm" />
+  <Input radius="base" placeholder="base" />
+  <Input radius="md" placeholder="md" />
+  <Input radius="lg" placeholder="lg" />
+  <Input radius="full" placeholder="full" />
+</View>
+```
+
+# Shadows
+---
+The `Input` component supports the following shadow options: `none`, `sm`, `base` and `md`.
+
+<View>
+  <Input shadow="none" placeholder="none" />
+  <Input shadow="sm" placeholder="sm" />
+  <Input shadow="base" placeholder="base" />
+  <Input shadow="md" placeholder="md" />
+</View>
+
+```tsx
+<View>
+  <Input shadow="none" placeholder="none" />
+  <Input shadow="sm" placeholder="sm" />
+  <Input shadow="base" placeholder="base" />
+  <Input shadow="md" placeholder="md" />
+</View>
+```
+
+# Validation
+---
+The `Input` component supports the following validation options: `none`, `invalid`, `valid` and `warning`.
+
+<View>
+  <Input validation="none" placeholder="none" />
+  <Input validation="invalid" placeholder="invalid" />
+  <Input validation="valid" placeholder="valid" />
+  <Input validation="warning" placeholder="warning" />
+</View>
+
+```tsx
+<View>
+  <Input validation="none" placeholder="none" />
+  <Input validation="invalid" placeholder="invalid" />
+  <Input validation="valid" placeholder="valid" />
+  <Input validation="warning" placeholder="warning" />
+</View>
+```
+
+# Types
+---
+The `Input` component supports the following type options: `color`, `datetime-local`, `date`, `email`, `file`, `number`, `password`, `range`, `search`, `text` and `time`.
+
+<View>
+  <Input type="color" placeholder="color" />
+  <Input type="datetime-local" placeholder="datetime-local" />
+  <Input type="date" placeholder="date" />
+  <Input type="email" placeholder="email" />
+  <Input type="file" placeholder="file" />
+  <Input type="number" placeholder="number" />
+  <Input type="password" placeholder="password" />
+  <Input type="range" placeholder="range" />
+  <Input type="search" placeholder="search" />
+  <Input type="text" placeholder="text" />
+  <Input type="time" placeholder="time" />
+</View>
+
+```tsx
+<View>
+  <Input type="color" placeholder="color" />
+  <Input type="datetime-local" placeholder="datetime-local" />
+  <Input type="date" placeholder="date" />
+  <Input type="email" placeholder="email" />
+  <Input type="file" placeholder="file" />
+  <Input type="number" placeholder="number" />
+  <Input type="password" placeholder="password" />
+  <Input type="range" placeholder="range" />
+  <Input type="search" placeholder="search" />
+  <Input type="text" placeholder="text" />
+  <Input type="time" placeholder="time" />
+</View>
+```
+
+# States
+---
+`Input` component supports `disabled` and `loading` states.
+
+<View>
+  <Input disabled placeholder="Disabled..." />
+  <Input loading placeholder="Loading..." />
+</View>
+
+```tsx
+<View>
+  <Input disabled placeholder="Disabled..." />
+  <Input loading placeholder="Loading..." />
+</View>
+```
+
+# Ring
+---
+You can add a ring to the `Input` by setting the `withRing` prop to `true`.
+
+<View>
+  <Input withRing={true} placeholder="With ring..." />
+  <Input withRing={false} placeholder="Without ring..." />
+</View>
+
+```tsx
+<View>
+  <Input withRing={true} placeholder="With ring..." />
+  <Input withRing={false} placeholder="Without ring..." />
+</View>
+```
+
+# Icons
+---
+You can add an icon to the `Input` by setting the `leftIcon` or `rightIcon` prop to a valid React element.
+
+<View>
+  <Input leftIcon={<MagnifyingGlass weight="duotone" />} placeholder="Left icon..." />
+  <Input rightIcon={<RocketLaunch weight="duotone" />} placeholder="Right icon..." />
+  <Input leftIcon={<MagnifyingGlass weight="duotone" />} rightIcon={<Rocket weight="duotone" />} placeholder="Left and right icon..." />
+</View>
+
+```tsx
+<View>
+  <Input leftIcon="..." placeholder="Left icon..." />
+  <Input rightIcon="..." placeholder="Right icon..." />
+  <Input leftIcon="..." rightIcon="..." placeholder="Left and right icon..." />
+</View>
+```
+
+# Ref
+---
+The `Input` component supports the `ref` prop, which allows for obtaining a reference to the associated underlying HTML element.
+
+```tsx
+import { useRef } from 'react';
+import { Input } from '@rewind-ui/core';
+
+function App() {
+  const ref = useRef<HTMLInputElement>(null);
+  return <Input ref={ref} />;
+}
+```
+
+# API Reference
+---
+## Properties
+
+| Prop       | Type              | Description                                        | Default     |
+|:-----------|:------------------|:---------------------------------------------------|:------------|
+| disabled   | `boolean`         | Disables input                                     | `false`     |
+| leftIcon   | `ReactElement`    | Adds the given icon to the left side of the input  | `undefined` |
+| loading    | `boolean`         | Shows a loading spinner and disables the input     | `false`     |
+| radius     | `InputRadius`     | Sets the border radius                             | `md`        |
+| rightIcon  | `ReactElement`    | Adds the given icon to the right side of the input | `undefined` |
+| shadow     | `InputShadow`     | Sets the shadow size                               | `none`      |
+| size       | `InputSize`       | Sets the input size                                | `md`        |
+| tone       | `InputTone`       | Sets the input tone                                | `light`     |
+| type       | `InputType`       | Sets the input type                                | `text`      |
+| validation | `InputValidation` | Sets the validation state                          | `none`      |
+| withRing   | `boolean`         | Shows a ring around the input on active state      | `true`      |
+
+
+## Types
+```tsx
+type InputRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type InputShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type InputSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type InputTone = 'light' | 'solid' | 'transparent';
+```
+
+```tsx
+type InputType =
+  | 'text'
+  | 'number'
+  | 'password'
+  | 'file'
+  | 'date'
+  | 'time'
+  | 'email'
+  | 'search'
+  | 'range'
+  | 'datetime-local'
+  | 'color';
+```
+
+```tsx
+type InputValidation = 'none' | 'invalid' | 'valid' | 'warning';
+```

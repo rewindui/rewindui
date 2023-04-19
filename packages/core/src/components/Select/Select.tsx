@@ -8,13 +8,13 @@ import { cloneElement, forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<SelectProps> = {
-  tone: 'light',
-  radius: 'md',
-  size: 'md',
-  validation: 'none',
-  shadow: 'none',
-  withRing: true,
   disabled: false,
+  radius: 'md',
+  shadow: 'none',
+  size: 'md',
+  tone: 'light',
+  validation: 'none',
+  withRing: true,
 };
 
 const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSelectElement>) => {

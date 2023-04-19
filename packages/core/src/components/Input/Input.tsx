@@ -7,30 +7,30 @@ import { twMerge } from 'tailwind-merge';
 import { Spinner, useComponentTheme } from '../..';
 
 const defaultProps: Partial<InputProps> = {
-  tone: 'light',
-  radius: 'md',
-  size: 'md',
-  validation: 'none',
-  shadow: 'none',
-  withRing: true,
   disabled: false,
   loading: false,
+  radius: 'md',
+  shadow: 'none',
+  size: 'md',
+  tone: 'light',
+  validation: 'none',
+  withRing: true,
 };
 
 const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInputElement>) => {
   const theme = useComponentTheme('Input');
   const {
     className = '',
-    loading,
-    tone,
-    size,
-    radius,
-    validation,
     leftIcon,
+    loading,
+    radius,
     rightIcon,
     shadow,
-    withRing,
+    size,
+    tone,
     type = 'text',
+    validation,
+    withRing,
     ...additionalProps
   } = {
     ...defaultProps,

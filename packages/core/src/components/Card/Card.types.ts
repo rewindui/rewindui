@@ -7,15 +7,15 @@ import {
 
 export type CardColor = 'white' | 'gray' | 'slate' | 'zinc';
 export type CardRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
-export type CardSize = 'sm' | 'base' | 'md' | 'lg';
 export type CardShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+export type CardSize = 'sm' | 'base' | 'md' | 'lg';
 
 export interface CardProps extends ComponentPropsWithRef<'div'> {
+  bordered?: boolean;
   color?: CardColor;
   radius?: CardRadius;
   shadow?: CardShadow;
   size?: CardSize;
-  bordered?: boolean;
   withDivider?: boolean;
 }
 
