@@ -33,7 +33,9 @@ export type DropdownShowcaseProps = {
     | 'label-color'
     | 'label-weight'
     | 'label-size'
-    | 'divider-colors';
+    | 'divider-colors'
+    | 'examples-basic'
+    | 'examples-with-description';
 };
 
 const colors: DropdownColor[] = ['white', 'gray', 'slate', 'zinc'];
@@ -123,6 +125,14 @@ export const DropdownShowcase = (props: DropdownShowcaseProps) => {
 
   if (showcase === 'divider-colors') {
     return <DividerColors />;
+  }
+
+  if (showcase === 'examples-basic') {
+    return <ExamplesBasic />;
+  }
+
+  if (showcase === 'examples-with-description') {
+    return <ExamplesWithDescriptions />;
   }
 
   return <Colors />;
@@ -1181,5 +1191,109 @@ const DividerColors = () => {
         </Dropdown.Content>
       </Dropdown>
     </>
+  );
+};
+
+const ExamplesBasic = () => {
+  return (
+    <Dropdown itemColor="gray" trigger="hover">
+      <Dropdown.Trigger>
+        <Button size="md" color="purple" shadow="base" shadowColor="purple">
+          Menu
+        </Button>
+      </Dropdown.Trigger>
+      <Dropdown.Content>
+        <Dropdown.Label>Application</Dropdown.Label>
+        <Dropdown.Divider />
+        <Dropdown.Item>
+          <Gear size={20} weight="duotone" className="mr-1.5" />
+          Settings
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <ChatCircleText size={20} weight="duotone" className="mr-1.5" />
+          Messages
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <Images size={20} weight="duotone" className="mr-1.5" />
+          Gallery
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <MagnifyingGlass size={20} weight="duotone" className="mr-1.5" />
+          Search
+        </Dropdown.Item>
+        <Dropdown.Label color="red">Danger Zone</Dropdown.Label>
+        <Dropdown.Divider />
+        <Dropdown.Item color="yellow">
+          <Export size={20} weight="duotone" className="mr-1.5" />
+          Transfer my data
+        </Dropdown.Item>
+        <Dropdown.Item disabled>
+          <Trash size={20} weight="duotone" className="mr-1.5" />
+          Delete my account
+        </Dropdown.Item>
+        <Dropdown.Item color="red">
+          <SignOut size={20} weight="duotone" className="mr-1.5" />
+          Logout
+        </Dropdown.Item>
+        <Dropdown.Item color="gray">
+          <XCircle size={20} weight="duotone" className="mr-1.5" />
+          Close
+        </Dropdown.Item>
+      </Dropdown.Content>
+    </Dropdown>
+  );
+};
+
+const ExamplesWithDescriptions = () => {
+  return (
+    <Dropdown itemColor="gray" tone="light" trigger="hover">
+      <Dropdown.Trigger>
+        <Button size="md" color="dark" shadow="base" shadowColor="dark">
+          Menu
+        </Button>
+      </Dropdown.Trigger>
+      <Dropdown.Content>
+        <Dropdown.Label weight="medium" size="md" color="black">
+          User menu
+        </Dropdown.Label>
+        <Dropdown.Divider />
+        <Dropdown.Item>
+          <div className="flex">
+            <Gear size={22} weight="duotone" className="mr-2.5 mt-0.5 text-gray-500" />
+            <div className="grid grid-cols-1 justify-items-start">
+              <span className="font-medium">Settings</span>
+              <span className="font-light text-gray-500">Adjust your system settings</span>
+            </div>
+          </div>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <div className="flex">
+            <ChatCircleText size={22} weight="duotone" className="mr-2.5 mt-0.5 text-gray-500" />
+            <div className="grid grid-cols-1 justify-items-start">
+              <span className="font-medium">Messages</span>
+              <span className="font-light text-gray-500">View your inbox</span>
+            </div>
+          </div>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <div className="flex">
+            <Images size={22} weight="duotone" className="mr-2.5 mt-0.5 text-gray-500" />
+            <div className="grid grid-cols-1 justify-items-start">
+              <span className="font-medium">Gallery</span>
+              <span className="font-light text-gray-500">Open your uploaded photos</span>
+            </div>
+          </div>
+        </Dropdown.Item>
+        <Dropdown.Item>
+          <div className="flex">
+            <MagnifyingGlass size={22} weight="duotone" className="mr-2.5 mt-0.5 text-gray-500" />
+            <div className="grid grid-cols-1 justify-items-start">
+              <span className="font-medium">Search</span>
+              <span className="font-light text-gray-500">Find your data</span>
+            </div>
+          </div>
+        </Dropdown.Item>
+      </Dropdown.Content>
+    </Dropdown>
   );
 };
