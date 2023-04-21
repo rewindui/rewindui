@@ -333,7 +333,7 @@ const SeparatorCustom = () => {
 const BorderBackground = () => {
   return (
     <>
-      <Selector className="border border-2 border-slate-200 bg-slate-50" shadow="none" value="1">
+      <Selector className="border border-gray-100 bg-white" shadow="none" value="1">
         <Selector.Tab label="Apple" anchor="1" />
         <Selector.Tab label="Banana" anchor="2" />
       </Selector>
