@@ -17,7 +17,7 @@ const SelectorTab: SelectorTabComponent = forwardRef(
       label,
       orientation,
       radius,
-      separator = '|',
+      separator,
       setActiveTabAnchor,
       size,
       tone,
@@ -58,7 +58,7 @@ const SelectorTab: SelectorTabComponent = forwardRef(
         >
           <span className="z-40 h-full flex items-center">{label}</span>
         </button>
-        {withSeparator && <span className={theme.separator()}>{separator}</span>}
+        {(withSeparator && separator) || <span className={theme.separator({ orientation })}></span>}
       </>
     );
   }

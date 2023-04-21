@@ -43,99 +43,33 @@ const colors: DropdownColor[] = ['white', 'gray', 'slate', 'zinc'];
 export const DropdownShowcase = (props: DropdownShowcaseProps) => {
   const { showcase } = props;
 
-  if (showcase === 'colors') {
-    return <Colors />;
-  }
+  const components = {
+    colors: <Colors />,
+    'tones-solid': <ToneSolid />,
+    'tones-light': <ToneLight />,
+    modes: <Modes />,
+    sizes: <Sizes />,
+    radiuses: <Radiuses />,
+    shadows: <Shadows />,
+    placements: <Placements />,
+    'placements-extended-top': <PlacementsExtendedTop />,
+    'placements-extended-bottom': <PlacementsExtendedBottom />,
+    'placements-extended-left': <PlacementsExtendedLeft />,
+    'placements-extended-right': <PlacementsExtendedRight />,
+    triggers: <Triggers />,
+    chevrons: <Chevrons />,
+    'chevrons-rotation': <ChevronsRotation />,
+    'initially-open': <InitiallyOpen />,
+    'outside-press': <OutsidePress />,
+    'label-color': <LabelColor />,
+    'label-weight': <LabelWeight />,
+    'label-size': <LabelSize />,
+    'divider-colors': <DividerColors />,
+    'examples-basic': <ExamplesBasic />,
+    'examples-with-description': <ExamplesWithDescriptions />,
+  };
 
-  if (showcase === 'tones-solid') {
-    return <ToneSolid />;
-  }
-
-  if (showcase === 'tones-light') {
-    return <ToneLight />;
-  }
-
-  if (showcase === 'modes') {
-    return <Modes />;
-  }
-
-  if (showcase === 'sizes') {
-    return <Sizes />;
-  }
-
-  if (showcase === 'radiuses') {
-    return <Radiuses />;
-  }
-
-  if (showcase === 'shadows') {
-    return <Shadows />;
-  }
-
-  if (showcase === 'placements') {
-    return <Placements />;
-  }
-
-  if (showcase === 'placements-extended-top') {
-    return <PlacementsExtendedTop />;
-  }
-
-  if (showcase === 'placements-extended-bottom') {
-    return <PlacementsExtendedBottom />;
-  }
-
-  if (showcase === 'placements-extended-left') {
-    return <PlacementsExtendedLeft />;
-  }
-
-  if (showcase === 'placements-extended-right') {
-    return <PlacementsExtendedRight />;
-  }
-
-  if (showcase === 'triggers') {
-    return <Triggers />;
-  }
-
-  if (showcase === 'chevrons') {
-    return <Chevrons />;
-  }
-
-  if (showcase === 'chevrons-rotation') {
-    return <ChevronsRotation />;
-  }
-
-  if (showcase === 'initially-open') {
-    return <InitiallyOpen />;
-  }
-
-  if (showcase === 'outside-press') {
-    return <OutsidePress />;
-  }
-
-  if (showcase === 'label-color') {
-    return <LabelColor />;
-  }
-
-  if (showcase === 'label-weight') {
-    return <LabelWeight />;
-  }
-
-  if (showcase === 'label-size') {
-    return <LabelSize />;
-  }
-
-  if (showcase === 'divider-colors') {
-    return <DividerColors />;
-  }
-
-  if (showcase === 'examples-basic') {
-    return <ExamplesBasic />;
-  }
-
-  if (showcase === 'examples-with-description') {
-    return <ExamplesWithDescriptions />;
-  }
-
-  return <Colors />;
+  return components[showcase] || <div>Error: Invalid showcase type</div>;
 };
 
 const Template = (args: DropdownProps) => (

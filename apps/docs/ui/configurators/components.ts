@@ -8,6 +8,7 @@ import { InputConfig } from '@/ui/configurators/components/Input.config';
 import { InputGroupConfig } from '@/ui/configurators/components/InputGroup.config';
 import { RadioConfig } from '@/ui/configurators/components/Radio.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
+import { SelectorConfig } from '@/ui/configurators/components/Selector.config';
 import { SwitchConfig } from '@/ui/configurators/components/Switch.config';
 import { TextConfig } from '@/ui/configurators/components/Text.config';
 import { TextareaConfig } from '@/ui/configurators/components/Textarea.config';
@@ -23,6 +24,7 @@ export const components = {
   'input-group': InputGroupConfig,
   radio: RadioConfig,
   select: SelectConfig,
+  selector: SelectorConfig,
   switch: SwitchConfig,
   text: TextConfig,
   textarea: TextareaConfig,

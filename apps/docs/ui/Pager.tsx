@@ -71,6 +71,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'card',
     },
     {
+      title: 'Selector',
+      url: '/components/Selector',
+      slug: 'selector',
+    },
+    {
       title: 'Text',
       url: '/components/text',
       slug: 'text',

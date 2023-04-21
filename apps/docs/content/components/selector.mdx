@@ -1,0 +1,475 @@
+---
+title: Selector
+description: A tabs style selection component.
+intro: The Selector component can be used as a simple selection component, or as a tabs style component.
+source: Selector
+theme: Selector.styles.ts
+storybook: selector--default
+---
+
+# Import
+---
+Import the `Selector` component using the following import statement.
+
+```tsx
+import { Selector } from '@rewind-ui@core';
+```
+
+# Tones & Colors
+---
+The `Selector` component comes with two tones: `solid` and `light`.
+
+The available `color` values, which are applied to the `Selector.Tab` are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <SelectorShowcase showcase="tones-solid" />
+</View>
+
+```tsx
+<View>
+  <Selector color="white" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="blue" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="red" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="green" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="yellow" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="purple" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="gray" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="dark" tone="solid" value="1">
+    // ...
+  </Selector>
+  <Selector color="black" tone="solid" value="1">
+    // ...
+  </Selector>
+</View>
+```
+
+## Light
+<View>
+  <SelectorShowcase showcase="tones-light" />
+</View>
+
+```tsx
+<View>
+  <Selector color="white" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="blue" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="red" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="green" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="yellow" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="purple" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="gray" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="dark" tone="light" value="1">
+    // ...
+  </Selector>
+  <Selector color="black" tone="light" value="1">
+    // ...
+  </Selector>
+</View>
+```
+
+## Multiple colors
+The color prop can be set directly to the `Selector.Tab` component, which will override the color set on the `Selector` component.
+
+<View>
+  <SelectorShowcase showcase="colors-multiple" />
+</View>
+
+```tsx
+<View>
+  <Selector value="1">
+    <Selector.Tab label="White" color="white" anchor="1" />
+    <Selector.Tab label="Default" anchor="2" />
+    <Selector.Tab label="Red" color="red" anchor="3" />
+    <Selector.Tab label="Green" color="green" anchor="4" />
+  </Selector>
+</View>
+```
+
+
+# Sizes
+---
+Available `size` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <SelectorShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Selector size="xs" value="1">
+    // ...
+  </Selector>
+  <Selector size="sm" value="1">
+    // ...
+  </Selector>
+  <Selector size="md" value="1">
+    // ...
+  </Selector>
+  <Selector size="lg" value="1">
+    // ...
+  </Selector>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <SelectorShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Selector radius="none" value="1">
+    // ...
+  </Selector>
+  <Selector radius="sm" value="1">
+    // ...
+  </Selector>
+  <Selector radius="base" value="1">
+    // ...
+  </Selector>
+  <Selector radius="md" value="1">
+    // ...
+  </Selector>
+  <Selector radius="lg" value="1">
+    // ...
+  </Selector>
+  <Selector radius="full" value="1">
+    // ...
+  </Selector>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <SelectorShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Selector shadow="none" value="1">
+    // ...
+  </Selector>
+  <Selector shadow="sm" value="1">
+    // ...
+  </Selector>
+  <Selector shadow="base" value="1">
+    // ...
+  </Selector>
+  <Selector shadow="md" value="1">
+    // ...
+  </Selector>
+  <Selector shadow="lg" value="1">
+    // ...
+  </Selector>
+  <Selector shadow="xl" value="1">
+    // ...
+  </Selector>
+</View>
+```
+
+# Orientation
+---
+The `Selector` component can be set to `horizontal` or `vertical` orientation.
+
+<View>
+  <SelectorShowcase showcase="orientation" />
+</View>
+
+```tsx
+<View>
+  <Selector orientation="horizontal" value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector orientation="vertical" value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+</View>
+```
+
+# Full width
+---
+The `Selector` component can be set to full width by setting the `fullWidth` prop to `true`.
+
+<View>
+  <SelectorShowcase showcase="full-width" />
+</View>
+
+```tsx
+<View>
+  <Selector orientation="horizontal" fullWidth={true} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector orientation="horizontal" fullWidth={false} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector orientation="vertical" fullWidth={true} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector orientation="vertical" fullWidth={false} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+</View>
+```
+
+# Animation
+---
+The animation effect can be disabled by setting the `withAnimation` prop to `false`.
+
+<View>
+  <SelectorShowcase showcase="animation" />
+</View>
+
+```tsx
+<View>
+  <Selector withAnimation={true} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector withAnimation={false} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+</View>
+```
+
+# Separator
+---
+The separator can be hidden by setting the `withSeparator` prop to `false`.
+
+<View>
+  <SelectorShowcase showcase="separator" />
+</View>
+
+```tsx
+<View>
+  <Selector withSeparator={true} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector withSeparator={false} value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+</View>
+```
+
+## Custom separator
+The separator can be customized by setting the `separator` prop to a custom element.
+
+<View>
+  <SelectorShowcase showcase="separator-custom" />
+</View>
+
+```tsx
+<View>
+  <Selector
+    separator={
+      <span className="last-of-type:hidden self-center mx-1 w-1 h-1 bg-gray-200 rounded-full" />
+    }
+    orientation="horizontal"
+    value="1"
+  >
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector
+    separator={
+      <span className="last-of-type:hidden self-center mx-1 w-1 h-8 bg-gray-200 rounded-full" />
+    }
+    orientation="horizontal"
+    value="1"
+  >
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+  <Selector
+    separator={
+      <span className="last-of-type:hidden self-center mx-1 w-8 h-1 bg-gray-200 rounded-full" />
+    }
+    orientation="vertical"
+    value="1"
+  >
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+</View>
+```
+
+# Examples
+---
+## Border & background
+A border and a background color can be added to the main wrapper by passing the desired `className` prop.
+
+<View>
+  <SelectorShowcase showcase="border-background" />
+</View>
+
+```tsx
+<View>
+  <Selector className="border border-2 border-slate-200 bg-slate-50" shadow="none" value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+  </Selector>
+</View>
+```
+
+## Multiple colors
+Each `Selector.Tab` can have a different color.
+
+<View>
+  <SelectorShowcase showcase="multiple-colors" />
+</View>
+
+```tsx
+<View>
+  <Selector value="1">
+    <Selector.Tab color="red" label="Apple" anchor="1" />
+    <Selector.Tab color="yellow" label="Banana" anchor="2" />
+    <Selector.Tab color="green" label="Watermelon" anchor="3" />
+  </Selector>
+</View>
+```
+
+## Extended composition
+
+<View>
+  <SelectorShowcase showcase="extended-composition" />
+</View>
+
+```tsx
+<View>
+  <Selector color="white" value="1">
+    <Selector.Tab label="Apple" anchor="1" />
+    <Selector.Tab label="Banana" anchor="2" />
+    <Selector.Tab
+      label={
+        <Tooltip
+          label="This is a react node with a tooltip"
+          accent="solid"
+          color="dark"
+          offset={15}
+          shadow="base"
+        >
+          <span className="whitespace-nowrap underline underline-offset-2 decoration-2 decoration-pink-500">
+            React Node
+          </span>
+        </Tooltip>
+      }
+      anchor="3"
+    />
+  </Selector>
+</View>
+```
+
+# API Reference
+---
+## Properties
+### Selector
+
+| Prop          | Type                  | Description                                           | Default      |
+|:--------------|:----------------------|:------------------------------------------------------|:-------------|
+| color         | `SelectorTabColor`    | Sets the tab color                                    | `blue`       |
+| fullWidth     | `boolean`             | Sets the wrapper width to 100%                        | `false`      |
+| orientation   | `SelectorOrientation` | Sets the tab list orientation                         | `horizontal` |
+| radius        | `SelectorRadius`      | Sets the wrapper border radius                        | `md`         |
+| separator     | `ReactNode`           | Overrides the default separator                       | `undefined`  |
+| shadow        | `SelectorShadow`      | Sets the shadow size                                  | `base`       |
+| size          | `SelectorSize`        | Sets the wrapper size                                 | `md`         |
+| tone          | `ButtonTone`          | Sets the wrapper tone                                 | `solid`      |
+| value         | `string`              | Sets the preselected value                            | `undefined`  |
+| withAnimation | `boolean`             | Enables or disables the animation effect              | `true`       |
+| withSeparator | `boolean`             | Enables or disables the pre-defined separator element | `true`       |
+
+### Selector.Tab
+
+| Prop     | Type               | Description               | Default     |
+|:---------|:-------------------|:--------------------------|:------------|
+| anchor   | `string`           | Sets the tab anchor value | `undefined` |
+| color    | `SelectorTabColor` | Sets the tab color        | `blue`      |
+| disabled | `boolean`          | Disables the tab button   | `false`     |
+| label    | `ReactNode`        | Sets the tab label        | `undefined` |
+
+## Events
+### Selector
+
+| Event    | Type                      | Description                                   |
+|:---------|:--------------------------|:----------------------------------------------|
+| onChange | `(value: string) => void` | Fires when the selected tab anchor is changed |
+
+## Types
+### Selector
+
+```tsx
+type SelectorOrientation = 'horizontal' | 'vertical';
+```
+
+```tsx
+type SelectorRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type SelectorSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type SelectorShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type SelectorTone = 'solid' | 'light';
+```
+
+### SelectorTab
+
+```tsx
+type SelectorTabColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```

@@ -284,7 +284,14 @@ const tab = cva(
   }
 );
 
-const separator = cva(['last-of-type:hidden', 'text-gray-300', 'mx-0.5', 'self-center']);
+const separator = cva(['last-of-type:hidden', 'text-gray-300', 'mx-0.5', 'self-center'], {
+  variants: {
+    orientation: {
+      horizontal: ['w-px h-5 rounded-full bg-gray-300'],
+      vertical: ['w-5 h-px rounded-full bg-gray-300'],
+    },
+  },
+});
 
 const selectorStyles = {
   base,

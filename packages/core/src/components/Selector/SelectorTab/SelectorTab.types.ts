@@ -13,11 +13,10 @@ export type SelectorTabColor =
   | 'black';
 
 export interface SelectorTabProps extends ComponentPropsWithRef<'button'> {
-  size?: SelectorSize;
-  color?: SelectorTabColor;
   anchor: string;
-  label: string | ReactNode;
+  color?: SelectorTabColor;
   disabled?: boolean;
+  label: string | ReactNode;
 }
 
 export type SelectorTabComponent = ForwardRefExoticComponent<SelectorTabProps> & {

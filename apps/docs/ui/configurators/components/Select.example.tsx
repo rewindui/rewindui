@@ -28,7 +28,7 @@ export const SelectCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Input } from '@rewind-ui/core';
+  return `import { Select } from '@rewind-ui/core';
 
 function App() {
   return (

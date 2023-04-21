@@ -26,9 +26,9 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
       onChange: (value: any) => onChange(option.name, value),
     };
     return (
-      <Selector {...props}>
+      <Selector {...props} className="border">
         {option.options?.map((option, index) => (
-          <Selector.Tab key={index} anchor={option} label={option} color="blue" />
+          <Selector.Tab key={index} anchor={option} label={option} />
         ))}
       </Selector>
     );

@@ -138,11 +138,11 @@ const options: SelectorTabProps[] = [
   {
     label: (
       <Tooltip
-        label={'This is a react node with a tooltip'}
-        accent={'solid'}
+        label="This is a react node with a tooltip"
+        accent="solid"
         color="dark"
         offset={15}
-        shadow={'base'}
+        shadow="base"
       >
         <span className="whitespace-nowrap underline underline-offset-2 decoration-2 decoration-pink-500">
           React Node

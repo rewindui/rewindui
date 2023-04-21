@@ -3,6 +3,10 @@ import {
   DropdownShowcase,
   DropdownShowcaseProps,
 } from '@/ui/configurators/components/Dropdown.showcase';
+import {
+  SelectorShowcase,
+  SelectorShowcaseProps,
+} from '@/ui/configurators/components/Selector.showcase';
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import {
@@ -114,6 +118,9 @@ const components = {
   Switch: ({ ...props }) => <Switch {...props} />,
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />
+  ),
+  SelectorShowcase: ({ showcase }: SelectorShowcaseProps) => (
+    <SelectorShowcase showcase={showcase} />
   ),
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,

@@ -882,7 +882,7 @@ By default, when the `initiallyOpen` prop is set to `true`, the `Dropdown` compo
 | outsidePress    | `boolean`           | Determines whether the dropdown container will be closed if a click event outside of the container is detected, when the initiallyOpen prop is set to true | `true`   |
 | placement       | `DropdownPlacement` | Sets the placement of the dropdown container in relation to the trigger element                                                                            | `bottom` |
 | radius          | `DropdownRadius`    | Sets the container radius                                                                                                                                  | `md`     |
-| shadow          | `DropdownShadow`    | Sets the container shadow                                                                                                                                  | `none``  |
+| shadow          | `DropdownShadow`    | Sets the container shadow                                                                                                                                  | `none`   |
 | size            | `DropdownSize`      | Sets the container size                                                                                                                                    | `sm`     |
 | tone            | `DropdownTone`      | Sets the dropdown items tone                                                                                                                               | `solid`  |
 | trigger         | `DropdownTrigger`   | Sets the trigger event that will enable the dropdown container                                                                                             | `click`  |
@@ -911,6 +911,13 @@ By default, when the `initiallyOpen` prop is set to `true`, the `Dropdown` compo
 | size     | `DropdownSize`      | Sets the dropdown item font size          | `sm`    |
 | tone     | `DropdownTone`      | Sets the dropdown item tone               | `solid` |
 | tabIndex | `number`            | Sets the dropdown item tabIndex attribute | `-1`    |
+
+## Events
+### Dropdown.Item
+
+| Event   | Type                                                   | Description                             |
+|:--------|:-------------------------------------------------------|:----------------------------------------|
+| onClick | `(event: React.MouseEvent<HTMLButtonElement>) => void` | Fires when the dropdown item is clicked |
 
 ## Types
 ### Dropdown
