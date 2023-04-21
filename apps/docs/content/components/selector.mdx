@@ -370,6 +370,27 @@ Each `Selector.Tab` can have a different color.
 </View>
 ```
 
+## Icons
+
+<View>
+  <SelectorShowcase showcase="icons" />
+</View>
+
+```tsx
+<View>
+  <Selector
+    radius="full"
+    className="bg-gray-50 border border-gray-100"
+    shadow="none"
+    separator={<span className="last-of-type:hidden self-center w-1 h-1 bg-transparent" />}
+    value="1"
+  >
+    <Selector.Tab color="yellow" label={<SunDim size={16} weight="duotone" />} anchor="1" />
+    <Selector.Tab color="dark" label={<MoonStars size={16} weight="duotone" />} anchor="2" />
+  </Selector>
+</View>
+```
+
 ## Extended composition
 
 <View>

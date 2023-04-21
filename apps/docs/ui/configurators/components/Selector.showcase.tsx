@@ -1,5 +1,6 @@
 import { Selector, Tooltip } from '@rewind-ui/core';
 import * as React from 'react';
+import { SunDim, MoonStars } from '@phosphor-icons/react';
 
 export type SelectorShowcaseProps = {
   showcase:
@@ -15,7 +16,8 @@ export type SelectorShowcaseProps = {
     | 'separator'
     | 'multiple-colors'
     | 'border-background'
-    | 'extended-composition';
+    | 'extended-composition'
+    | 'icons';
 };
 
 export const SelectorShowcase = (props: SelectorShowcaseProps) => {
@@ -36,6 +38,7 @@ export const SelectorShowcase = (props: SelectorShowcaseProps) => {
     'multiple-colors': <MultipleColors />,
     'border-background': <BorderBackground />,
     'extended-composition': <ExtendedComposition />,
+    icons: <Icons />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -375,6 +378,23 @@ const ExtendedComposition = () => {
           }
           anchor="3"
         />
+      </Selector>
+    </>
+  );
+};
+
+const Icons = () => {
+  return (
+    <>
+      <Selector
+        radius="full"
+        className="bg-gray-50 border border-gray-100"
+        shadow="none"
+        separator={<span className="last-of-type:hidden self-center w-1 h-1 bg-transparent" />}
+        value="1"
+      >
+        <Selector.Tab color="yellow" label={<SunDim size={16} weight="duotone" />} anchor="1" />
+        <Selector.Tab color="dark" label={<MoonStars size={16} weight="duotone" />} anchor="2" />
       </Selector>
     </>
   );

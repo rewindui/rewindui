@@ -56,7 +56,7 @@ const base = cva(['absolute', 'shadow-sm', 'z-30'], {
     {
       color: 'yellow',
       tone: 'solid',
-      className: ['bg-yellow-500'],
+      className: ['bg-yellow-400'],
     },
     {
       color: 'purple',
@@ -266,7 +266,7 @@ const tab = cva(
         active: true,
         tone: 'light',
         color: 'yellow',
-        className: ['text-yellow-500'],
+        className: ['text-yellow-400'],
       },
       {
         active: true,
