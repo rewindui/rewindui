@@ -32,7 +32,7 @@ export function Toc({ toc }: TocProps) {
   }
 
   return (
-    <div className="fixed top-25 space-y-2">
+    <div className="fixed h-[calc(100vh-10rem)] space-y-2 w-[16rem] overflow-auto">
       <Text weight="medium" color="dark" size="base">
         Quick navigation
       </Text>

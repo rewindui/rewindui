@@ -106,6 +106,7 @@ const Template = (args: DropdownProps) => (
     withinPortal={true}
     withChevron={true}
     chevronRotation={true}
+    outsidePress={false}
     {...args}
   >
     <Dropdown.Trigger>
@@ -191,8 +192,8 @@ export const Colors = ColorTemplate.bind({});
 const ItemColorTemplate: Story<DropdownProps> = (args) => {
   const items = itemColors.map((color) => (
     <View direction="row" key={color} value={color} prop="color">
-      <Template itemColor={color} accent="solid" {...args} />
-      <Template itemColor={color} accent="light" {...args} />
+      <Template itemColor={color} tone="solid" {...args} />
+      <Template itemColor={color} tone="light" {...args} />
     </View>
   ));
 

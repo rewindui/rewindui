@@ -10,3 +10,4 @@ export type {
   AccordionTone,
   AccordionVariants,
 } from './Accordion.types';
+export type { AccordionItemProps } from './AccordionItem/AccordionItem.types';

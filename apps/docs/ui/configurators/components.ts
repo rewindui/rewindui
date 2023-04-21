@@ -2,6 +2,7 @@ import { AccordionConfig } from '@/ui/configurators/components/Accordion.config'
 import { ButtonConfig } from '@/ui/configurators/components/Button.config';
 import { CardConfig } from '@/ui/configurators/components/Card.config';
 import { CheckboxConfig } from '@/ui/configurators/components/Checkbox.config';
+import { DropdownConfig } from '@/ui/configurators/components/Dropdown.config';
 import { FormControlConfig } from '@/ui/configurators/components/FormControl.config';
 import { InputConfig } from '@/ui/configurators/components/Input.config';
 import { InputGroupConfig } from '@/ui/configurators/components/InputGroup.config';
@@ -16,6 +17,7 @@ export const components = {
   button: ButtonConfig,
   card: CardConfig,
   checkbox: CheckboxConfig,
+  dropdown: DropdownConfig,
   'form-control': FormControlConfig,
   input: InputConfig,
   'input-group': InputGroupConfig,

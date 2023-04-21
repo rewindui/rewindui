@@ -7,11 +7,10 @@ const base = cva(
     'flex-col',
     'gap-y-1',
     'max-w-prose',
-    'transition-all',
+    'transition',
     'duration-50',
     'ease-in-out',
     'border',
-    'transform',
   ],
   {
     variants: {
@@ -124,9 +123,9 @@ const content = cva(['flex', 'flex-col'], {
   variants: {
     size: {
       xs: ['space-y-0.5'],
-      sm: ['space-y-1'],
+      sm: ['space-y-0.5'],
       md: ['space-y-1'],
-      lg: ['space-y-1.5'],
+      lg: ['space-y-1'],
     },
   },
 });
@@ -134,9 +133,9 @@ const content = cva(['flex', 'flex-col'], {
 const divider = cva([], {
   variants: {
     color: {
-      gray: 'bg-gray-500',
-      slate: 'bg-slate-500',
-      dark: 'bg-gray-900',
+      gray: 'border-gray-200',
+      slate: 'border-slate-200',
+      dark: 'border-gray-400',
     },
   },
 });
@@ -159,7 +158,7 @@ const item = cva(
   ],
   {
     variants: {
-      accent: {
+      tone: {
         solid: [],
         light: [],
       },
@@ -183,10 +182,37 @@ const item = cva(
         md: ['text-base', 'py-1.5', 'px-2'],
         lg: ['text-lg', 'py-1.5', 'px-2'],
       },
+      radius: {
+        none: [],
+        sm: [],
+        base: [],
+        md: [],
+        lg: [],
+      },
     },
     compoundVariants: [
       {
-        accent: 'solid',
+        mode: 'tight',
+        radius: 'sm',
+        className: ['last:rounded-b-sm'],
+      },
+      {
+        mode: 'tight',
+        radius: 'base',
+        className: ['last:rounded-b'],
+      },
+      {
+        mode: 'tight',
+        radius: 'md',
+        className: ['last:rounded-b-md'],
+      },
+      {
+        mode: 'tight',
+        radius: 'lg',
+        className: ['last:rounded-b-lg'],
+      },
+      {
+        tone: 'solid',
         color: 'blue',
         className: [
           'focus-visible:ring-blue-500',
@@ -196,7 +222,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'blue',
         className: [
           'focus-visible:ring-blue-100',
@@ -206,7 +232,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'red',
         className: [
           'focus-visible:ring-red-500',
@@ -216,7 +242,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'red',
         className: [
           'focus-visible:ring-red-100',
@@ -226,7 +252,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'green',
         className: [
           'focus-visible:ring-green-500',
@@ -236,7 +262,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'green',
         className: [
           'focus-visible:ring-green-100',
@@ -246,7 +272,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'yellow',
         className: [
           'focus-visible:ring-yellow-400',
@@ -256,7 +282,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'yellow',
         className: [
           'focus-visible:ring-yellow-100',
@@ -266,7 +292,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'purple',
         className: [
           'focus-visible:ring-purple-500',
@@ -276,7 +302,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'purple',
         className: [
           'focus-visible:ring-purple-100',
@@ -286,7 +312,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'gray',
         className: [
           'focus-visible:ring-gray-200',
@@ -296,7 +322,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'gray',
         className: [
           'focus-visible:ring-gray-100',
@@ -306,7 +332,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'dark',
         className: [
           'focus-visible:ring-gray-500',
@@ -316,7 +342,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'dark',
         className: [
           'focus-visible:ring-gray-300',
@@ -326,7 +352,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'black',
         className: [
           'focus-visible:ring-gray-900',
@@ -336,7 +362,7 @@ const item = cva(
         ],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'black',
         className: [
           'focus-visible:ring-gray-700',
@@ -362,7 +388,7 @@ const label = cva([], {
       yellow: 'text-yellow-400',
       purple: 'text-purple-500',
       gray: 'text-gray-400',
-      dark: 'text-gray-900',
+      dark: 'text-gray-800',
       black: 'text-black',
     },
     weight: {

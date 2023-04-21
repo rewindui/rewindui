@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 const base = cva(
-  ['relative', 'text-center', 'max-w-xs', 'transition-all', 'duration-50', 'ease-in-out', 'z-50'],
+  ['relative', 'text-center', 'max-w-xs', 'transition', 'duration-50', 'ease-in-out', 'z-50'],
   {
     variants: {
       open: {

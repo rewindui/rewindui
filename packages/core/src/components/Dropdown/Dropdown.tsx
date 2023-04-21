@@ -9,22 +9,22 @@ import { DropdownItem } from '@components/Dropdown/DropdownItem/DropdownItem';
 import { DropdownLabel } from '@components/Dropdown/DropdownLabel/DropdownLabel';
 import { DropdownTrigger } from '@components/Dropdown/DropdownTrigger/DropdownTrigger';
 import { useDropdown } from '@components/Dropdown/use-dropdown.hook';
-import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref } from 'react';
 import { DropdownContextProvider } from './Dropdown.context';
 
 const defaultProps: Partial<DropdownProps> = {
-  accent: 'solid',
   chevronRotation: true,
   color: 'white',
   initiallyOpen: false,
   itemColor: 'blue',
   mode: 'spacey',
+  outsidePress: true,
   placement: 'bottom',
   radius: 'md',
   shadow: 'none',
-  size: 'md',
+  size: 'sm',
+  tone: 'solid',
   trigger: 'click',
   withChevron: true,
   withinPortal: true,
@@ -33,24 +33,25 @@ const defaultProps: Partial<DropdownProps> = {
 const _Dropdown: DropdownComponent = forwardRef<HTMLDivElement, DropdownProps>(
   (props: DropdownProps, ref?: Ref<HTMLDivElement>) => {
     const {
-      accent,
       chevronRotation,
       children,
       color,
       initiallyOpen,
       itemColor,
       mode,
+      outsidePress,
       placement,
       radius,
       shadow,
       size,
+      tone,
       trigger,
       withChevron,
       withinPortal,
       ...additionalProps
     } = {
       ...defaultProps,
-      ...useInputGroupContext(),
+      // ...useInputGroupContext(),
       ...props,
     };
     const id = usePropId(props.id);
@@ -61,18 +62,19 @@ const _Dropdown: DropdownComponent = forwardRef<HTMLDivElement, DropdownProps>(
       getFloatingProps,
       getReferenceProps,
       open,
+      setOpen,
       reference,
       strategy,
       x,
       y,
     } = useDropdown({
+      outsidePress,
       placement,
       initiallyOpen,
       trigger,
     });
 
     const contextValue: DropdownContext = {
-      accent,
       arrowRef,
       chevronRotation,
       color,
@@ -83,11 +85,13 @@ const _Dropdown: DropdownComponent = forwardRef<HTMLDivElement, DropdownProps>(
       itemColor,
       mode,
       open,
+      setOpen,
       radius,
       reference,
       shadow,
       size,
       strategy,
+      tone,
       withChevron,
       withinPortal,
       x,

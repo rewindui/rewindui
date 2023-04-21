@@ -1,6 +1,6 @@
 export { Dropdown } from './Dropdown';
 export type {
-  DropdownAccent,
+  DropdownTone,
   DropdownArrowPlacement,
   DropdownColor,
   DropdownComponent,

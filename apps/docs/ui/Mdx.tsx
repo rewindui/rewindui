@@ -1,9 +1,13 @@
 'use client';
+import {
+  DropdownShowcase,
+  DropdownShowcaseProps,
+} from '@/ui/configurators/components/Dropdown.showcase';
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
-import { AccordionItemProps } from '@rewind-ui/core/src/components/Accordion/AccordionItem/AccordionItem.types';
-import { CardImageProps } from '@rewind-ui/core/src/components/Card/CardImage/CardImage.types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import {
+  AccordionItemProps,
+  CardImageProps,
   Accordion,
   Select,
   Text,
@@ -16,6 +20,7 @@ import {
   Radio,
   Switch,
   FormControl,
+  Dropdown,
 } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
@@ -107,6 +112,9 @@ const components = {
   Select: ({ ...props }) => <Select {...props} />,
   Radio: ({ ...props }) => <Radio {...props} />,
   Switch: ({ ...props }) => <Switch {...props} />,
+  DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
+    <DropdownShowcase showcase={showcase} />
+  ),
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,

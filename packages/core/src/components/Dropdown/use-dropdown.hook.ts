@@ -19,6 +19,7 @@ import { useMemo, useRef, useState } from 'react';
 export function useDropdown({
   placement = 'bottom',
   initiallyOpen = false,
+  outsidePress = true,
   trigger = 'click',
 }: Partial<DropdownProps>): any {
   const arrowRef = useRef(null);
@@ -38,18 +39,20 @@ export function useDropdown({
     ],
     whileElementsMounted: autoUpdate,
   });
-  const click = useClick(context, {
-    toggle: true,
-  });
-  const hover = useHover(context, {
-    move: true,
-    handleClose: safePolygon(),
-  });
   const { getFloatingProps, getReferenceProps } = useInteractions([
-    ...(trigger === 'click' ? [click] : [hover]),
+    useClick(context, {
+      enabled: trigger === 'click',
+      toggle: true,
+    }),
+    useHover(context, {
+      enabled: trigger === 'hover',
+      move: true,
+      handleClose: safePolygon(),
+    }),
     useFocus(context),
     useDismiss(context, {
       referencePress: false,
+      outsidePress,
     }),
     useRole(context, { role: 'dialog' }),
   ]);
@@ -62,11 +65,23 @@ export function useDropdown({
       getFloatingProps: getFloatingProps(),
       getReferenceProps: getReferenceProps(),
       open,
+      setOpen,
       reference,
       strategy,
       x,
       y,
     }),
-    [context, floating, getFloatingProps, getReferenceProps, open, reference, strategy, x, y]
+    [
+      context,
+      floating,
+      getFloatingProps,
+      getReferenceProps,
+      open,
+      setOpen,
+      reference,
+      strategy,
+      x,
+      y,
+    ]
   );
 }

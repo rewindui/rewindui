@@ -1,0 +1,876 @@
+---
+title: Dropdown
+description: A dropdown component to display lists of clickable options.
+intro: The Dropdown component can be used to create lists of clickable options such as Menus, Selects, and more.
+source: Dropdown
+theme: Dropdown.styles.ts
+storybook: dropdown--default
+---
+
+# Import
+---
+Import the `Dropdown` component using the following import statement.
+
+```tsx
+import { Dropdown } from '@rewind-ui@core';
+```
+
+# Colors
+---
+The following colors are available for the `Dropdown` component: `white`, `gray`, `slate` and `zinc`.
+
+<View>
+  <DropdownShowcase showcase="colors" />
+</View>
+
+```tsx
+<View>
+  <Dropdown color="white">
+    // ...
+  </Dropdown>
+
+  <Dropdown color="gray">
+    // ...
+  </Dropdown>
+
+  <Dropdown color="slate">
+    // ...
+  </Dropdown>
+
+  <Dropdown color="zinc">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Tones & Item Colors
+---
+The following tones are supported by the `Dropdown.Item` component: `solid` and `light`.
+
+Moreover, the above tones can be combined with the following colors: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <DropdownShowcase showcase="tones-solid" />
+</View>
+
+```tsx
+<View>
+  <Dropdown tone="solid" itemColor="blue">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="red">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="green">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="yellow">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="purple">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="gray">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="dark">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="solid" itemColor="black">
+    // ...
+  </Dropdown>
+</View>
+```
+
+## Light
+<View>
+  <DropdownShowcase showcase="tones-light" />
+</View>
+
+```tsx
+<View>
+  <Dropdown tone="light" itemColor="blue">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="red">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="green">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="yellow">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="purple">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="gray">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="dark">
+    // ...
+  </Dropdown>
+
+  <Dropdown tone="light" itemColor="black">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Modes
+---
+The following modes are supported by the `Dropdown` component: `tight` and `spacey`.
+
+<View>
+  <DropdownShowcase showcase="modes" />
+</View>
+
+```tsx
+<View>
+  <Dropdown mode="tight">
+    // ...
+  </Dropdown>
+
+  <Dropdown mode="spacey">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Sizes
+---
+The following sizes are supported by the `Dropdown` component: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <DropdownShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Dropdown size="xs">
+    // ...
+  </Dropdown>
+
+  <Dropdown size="sm">
+    // ...
+  </Dropdown>
+
+  <Dropdown size="md">
+    // ...
+  </Dropdown>
+
+  <Dropdown size="lg">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Radiuses
+---
+The following radiuses are supported by the `Dropdown` component: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <DropdownShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Dropdown radius="none">
+    // ...
+  </Dropdown>
+
+  <Dropdown radius="sm">
+    // ...
+  </Dropdown>
+
+  <Dropdown radius="base">
+    // ...
+  </Dropdown>
+
+  <Dropdown radius="md">
+    // ...
+  </Dropdown>
+
+  <Dropdown radius="lg">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Shadows
+---
+The following shadows are supported by the `Dropdown` component: `none`, `sm`, `base` and `md`.
+
+<View>
+  <DropdownShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Dropdown shadow="none">
+    // ...
+  </Dropdown>
+
+  <Dropdown shadow="sm">
+    // ...
+  </Dropdown>
+
+  <Dropdown shadow="base">
+    // ...
+  </Dropdown>
+
+  <Dropdown shadow="md">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Placements
+---
+## Basic placements
+The following basic placements are supported by the `Dropdown` component: `top`, `bottom`, `left` and `right`.
+
+<View>
+  <DropdownShowcase showcase="placements" />
+</View>
+
+```tsx
+<View>
+  <Dropdown placement="top">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="bottom">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="left">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="right">
+    // ...
+  </Dropdown>
+</View>
+```
+
+## Extended placements
+Furthermore, the above placements can be combined with the following modifiers: `start` and `end`.
+
+### Top
+<View>
+  <DropdownShowcase showcase="placements-extended-top" />
+</View>
+
+```tsx
+<View>
+  <Dropdown placement="top-start">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="top-end">
+    // ...
+  </Dropdown>
+</View>
+```
+
+### Bottom
+<View>
+  <DropdownShowcase showcase="placements-extended-bottom" />
+</View>
+
+```tsx
+<View>
+  <Dropdown placement="bottom-start">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="bottom-end">
+    // ...
+  </Dropdown>
+</View>
+```
+
+### Left
+<View>
+  <DropdownShowcase showcase="placements-extended-left" />
+</View>
+
+```tsx
+<View>
+  <Dropdown placement="left-start">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="left-end">
+    // ...
+  </Dropdown>
+</View>
+```
+
+### Right
+<View>
+  <DropdownShowcase showcase="placements-extended-right" />
+</View>
+
+```tsx
+<View>
+  <Dropdown placement="right-start">
+    // ...
+  </Dropdown>
+
+  <Dropdown placement="right-end">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Label
+---
+## Color
+The `Dropdown.Label` component label can be colored by setting the `color` prop to one of the following values: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <DropdownShowcase showcase="label-color" />
+</View>
+
+```tsx
+<View>
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="blue">Blue</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Red</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="red">Red</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Green</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="green">Green</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Yellow</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="yellow">Yellow</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Purple</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="purple">Purple</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Gray</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="gray">Gray</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Dark</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="dark">Dark</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Black</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label color="black">Black</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+</View>
+```
+
+## Weight
+The `Dropdown.Label` component weight can be adjusted by setting the `weight` prop to one of the following values: `thin`, `extraLight`, `light`, `normal`, `medium`, `semiBold`, `bold`, `extraBold` and `black`.
+
+<View>
+  <DropdownShowcase showcase="label-weight" />
+</View>
+
+```tsx
+<View>
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="thin">Thin</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="extraLight">Extra light</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="light">Light</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="normal">Normal</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="medium">Medium</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="semiBold">Semi bold</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="bold">Bold</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="extraBold">Extra bold</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label weight="black">Black</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+</View>
+````
+
+## Size
+The `Dropdown.Label` component size can be adjusted by setting the `size` prop to one of the following values: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <DropdownShowcase showcase="label-size" />
+</View>
+
+```tsx
+<View>
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label size="xs">Extra small</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label size="sm">Small</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label size="md">Medium</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Blue</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label size="lg">Large</Dropdown.Label>
+      <Dropdown.Divider />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+</View>
+````
+
+# Divider
+---
+## Color
+The `Dropdown.Divider` component color can be adjusted by setting the `color` prop to one of the following values: `gray`, `slate` and `dark`.
+
+<View>
+  <DropdownShowcase showcase="divider-colors" />
+</View>
+
+```tsx
+<View>
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Gray</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label>Gray</Dropdown.Label>
+      <Dropdown.Divider color="gray" />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Slate</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label>Slate</Dropdown.Label>
+      <Dropdown.Divider color="slate" />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    <Dropdown.Trigger>
+      <Button>Dark</Button>
+    </Dropdown.Trigger>
+    <Dropdown.Content>
+      <Dropdown.Label>Dark</Dropdown.Label>
+      <Dropdown.Divider color="dark" />
+      <Dropdown.Item>Some more Settings</Dropdown.Item>
+    </Dropdown.Content>
+  </Dropdown>
+</View>
+```
+
+# Trigger
+---
+The `Dropdown` component can be triggered by the following events: `click` and `hover`.
+
+<View>
+  <DropdownShowcase showcase="triggers" />
+</View>
+
+```tsx
+<View>
+  <Dropdown trigger="click">
+    // ...
+  </Dropdown>
+
+  <Dropdown trigger="hover">
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Chevron
+---
+The chevron icon can be hidden by setting the `withChevron` prop to `false`.
+
+<View>
+  <DropdownShowcase showcase="chevrons" />
+</View>
+
+```tsx
+<View>
+  <Dropdown withChevron={true}>
+    // ...
+  </Dropdown>
+
+  <Dropdown withChevron={false}>
+    // ...
+  </Dropdown>
+</View>
+```
+
+## Chevron rotation
+The chevron icon rotation can be disabled by setting the `chevronRotation` prop to `false`.
+
+<View>
+  <DropdownShowcase showcase="chevrons-rotation" />
+</View>
+
+```tsx
+<View>
+  <Dropdown chevronRotation={true}>
+    // ...
+  </Dropdown>
+
+  <Dropdown chevronRotation={false}>
+    // ...
+  </Dropdown>
+</View>
+```
+
+# Initial state
+---
+The initial state of the `Dropdown` component can be controlled by setting the `initiallyOpen` prop.
+
+<View>
+  <DropdownShowcase showcase="initially-open" />
+</View>
+
+```tsx
+<View>
+  <Dropdown initiallyOpen={true}>
+    // ...
+  </Dropdown>
+
+  <Dropdown initiallyOpen={false}>
+    // ...
+  </Dropdown>
+</View>
+```
+
+## Outside press
+By default, when the `initiallyOpen` prop is set to `true`, the `Dropdown` component will close when the user presses outside of it. This behaviour can be disabled by setting the `outsidePress` prop to `false`.
+
+<View>
+  <DropdownShowcase showcase="outside-press" />
+</View>
+
+```tsx
+<View>
+  <Dropdown initiallyOpen={true} outsidePress={true}>
+    // ...
+  </Dropdown>
+
+  <Dropdown initiallyOpen={true} outsidePress={false}>
+    // ...
+  </Dropdown>
+</View>
+```
+
+# API Reference
+---
+## Properties
+### Dropdown
+
+| Prop            | Type                | Description                                                                                                                                                | Default  |
+|:----------------|:--------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|
+| chevronRotation | `boolean`           | Enables/disables the chevron icon rotation                                                                                                                 | `true`   |
+| color           | `DropdownColor`     | Sets the dropdown container color                                                                                                                          | `white`  |
+| initiallyOpen   | `boolean`           | Sets the initial state of the dropdown container                                                                                                           | `false`  |
+| itemColor       | `DropdownItemColor` | Sets the dropdown items color                                                                                                                              | `blue`   |
+| mode            | `DropdownMode`      | Sets some or zero padding around the dropdown container                                                                                                    | `spacey` |
+| outsidePress    | `boolean`           | Determines whether the dropdown container will be closed if a click event outside of the container is detected, when the initiallyOpen prop is set to true | `true`   |
+| placement       | `DropdownPlacement` | Sets the placement of the dropdown container in relation to the trigger element                                                                            | `bottom` |
+| radius          | `DropdownRadius`    | Sets the container radius                                                                                                                                  | `md`     |
+| shadow          | `DropdownShadow`    | Sets the container shadow                                                                                                                                  | `none``  |
+| size            | `DropdownSize`      | Sets the container size                                                                                                                                    | `sm`     |
+| tone            | `DropdownTone`      | Sets the dropdown items tone                                                                                                                               | `solid`  |
+| trigger         | `DropdownTrigger`   | Sets the trigger event that will enable the dropdown container                                                                                             | `click`  |
+| withChevron     | `boolean`           | Shows a chevron if the dropdown trigger component is a button                                                                                              | `true`   |
+| withinPortal    | `boolean`           | Renders the dropdown container within a portal                                                                                                             | `true`   |
+
+### Dropdown.Label
+
+| Prop   | Type                  | Description                         | Default  |
+|:-------|:----------------------|:------------------------------------|:---------|
+| color  | `DropdownLabelColor`  | Sets the dropdown label color       | `gray`   |
+| size   | `DropdownSize`        | Sets the dropdown label font size   | `sm`     |
+| weight | `DropdownLabelWeight` | Sets the dropdown label font weight | `normal` |
+
+### Dropdown.Divider
+
+| Prop  | Type                   | Description                     | Default |
+|:------|:-----------------------|:--------------------------------|:--------|
+| color | `DropdownDividerColor` | Sets the dropdown divider color | `gray`  |
+
+### Dropdown.Item
+
+| Prop     | Type                | Description                               | Default |
+|:---------|:--------------------|:------------------------------------------|:--------|
+| color    | `DropdownItemColor` | Sets the dropdown item color              | `blue`  |
+| size     | `DropdownSize`      | Sets the dropdown item font size          | `sm`    |
+| tone     | `DropdownTone`      | Sets the dropdown item tone               | `solid` |
+| tabIndex | `number`            | Sets the dropdown item tabIndex attribute | `-1`    |
+
+## Types
+### Dropdown
+
+```tsx
+type DropdownArrowPlacement = 'left' | 'right' | 'top' | 'bottom';
+```
+
+```tsx
+type DropdownColor = 'white' | 'gray' | 'slate' | 'zinc';
+```
+
+```tsx
+type DropdownMode = 'tight' | 'spacey';
+```
+
+```tsx
+type Alignment = 'start' | 'end';
+type Side = 'top' | 'right' | 'bottom' | 'left';
+type AlignedPlacement = `${Side}-${Alignment}`;
+type DropdownPlacement = Side | AlignedPlacement;
+```
+
+```tsx
+type DropdownRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type DropdownShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type DropdownSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type DropdownTone = 'solid' | 'light';
+```
+
+```tsx
+type DropdownTrigger = 'click' | 'hover';
+```
+
+### Dropdown.Label
+
+```tsx
+type DropdownLabelColor = 'blue' | 'red' | 'green' | 'yellow' | 'purple' | 'gray' | 'dark';
+```
+
+```tsx
+type DropdownLabelWeight =
+  | 'thin'
+  | 'extraLight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semiBold'
+  | 'bold'
+  | 'extraBold'
+  | 'black';
+```
+
+### Dropdown.Divider
+
+```tsx
+type DropdownDividerColor = 'gray' | 'slate' | 'zinc';
+```
+
+### Dropdown.Item
+
+```tsx
+type DropdownItemColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```

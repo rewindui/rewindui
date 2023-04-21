@@ -1,8 +1,6 @@
-import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactNode } from 'react';
+import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
-export interface DropdownContentProps extends Omit<ComponentPropsWithRef<'div'>, 'size'> {
-  children: ReactNode;
-}
+export interface DropdownContentProps extends Omit<ComponentPropsWithRef<'div'>, 'size'> {}
 
 export type DropdownContentComponent = ForwardRefExoticComponent<DropdownContentProps> & {
   displayName?: string;

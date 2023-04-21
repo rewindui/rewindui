@@ -2,7 +2,15 @@ import { DropdownSize } from '@components/Dropdown/Dropdown.types';
 import { ElementType, ReactElement } from 'react';
 import { PolymorphicComponentPropWithRef } from '../../../types';
 
-export type DropdownLabelColor = 'blue' | 'red' | 'green' | 'yellow' | 'purple' | 'gray' | 'dark';
+export type DropdownLabelColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
 export type DropdownLabelWeight =
   | 'thin'
   | 'extraLight'

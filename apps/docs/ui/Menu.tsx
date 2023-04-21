@@ -122,7 +122,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Dropdown',
         path: '/components/dropdown',
-        wip: true,
       },
       {
         title: 'Form Control',

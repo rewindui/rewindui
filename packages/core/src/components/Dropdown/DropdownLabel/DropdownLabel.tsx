@@ -10,8 +10,8 @@ import { twMerge } from 'tailwind-merge';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../../types';
 
 const defaultProps: DropdownLabelProps = {
-  size: 'sm',
   color: 'gray',
+  size: 'sm',
   weight: 'normal',
 };
 

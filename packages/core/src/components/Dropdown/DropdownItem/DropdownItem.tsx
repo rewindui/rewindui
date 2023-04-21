@@ -12,7 +12,7 @@ import { twMerge } from 'tailwind-merge';
 const DropdownItem: DropdownItemComponent = forwardRef(
   (props: DropdownItemProps, ref?: Ref<HTMLButtonElement>) => {
     const theme = useComponentTheme('Dropdown');
-    const { accent, itemColor, mode, size } = {
+    const { tone, itemColor, mode, radius, size, setOpen } = {
       ...props,
       ...useDropdownContext(),
     };
@@ -21,6 +21,7 @@ const DropdownItem: DropdownItemComponent = forwardRef(
       className = '',
       color = itemColor,
       tabIndex,
+      onClick,
       ...additionalProps
     } = {
       ...props,
@@ -32,14 +33,15 @@ const DropdownItem: DropdownItemComponent = forwardRef(
     const classes = useMemo(() => {
       return twMerge(
         theme.item({
-          accent,
+          tone,
           className,
           color,
           mode,
+          radius,
           size,
         })
       );
-    }, [accent, className, color, mode, size, theme]);
+    }, [tone, className, color, mode, radius, size, theme]);
 
     const handleMouseEnter = () => {
       if (localRef.current) {
@@ -59,6 +61,13 @@ const DropdownItem: DropdownItemComponent = forwardRef(
         tabIndex={tabIndex}
         className={classes}
         role={'menuitem'}
+        onClick={(event) => {
+          setOpen(false);
+
+          if (onClick) {
+            onClick(event);
+          }
+        }}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         {...additionalProps}

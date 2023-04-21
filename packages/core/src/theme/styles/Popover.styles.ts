@@ -5,7 +5,7 @@ const base = cva(
     'relative',
     'max-w-prose',
     'text-center',
-    'transition-all',
+    'transition',
     'duration-50',
     'ease-in-out',
     'border',

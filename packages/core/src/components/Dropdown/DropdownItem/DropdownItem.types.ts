@@ -1,4 +1,4 @@
-import { DropdownAccent, DropdownSize } from '@components/Dropdown/Dropdown.types';
+import { DropdownSize, DropdownTone } from '@components/Dropdown/Dropdown.types';
 import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
 export type DropdownItemColor =
@@ -14,7 +14,7 @@ export type DropdownItemColor =
 export interface DropdownItemProps extends ComponentPropsWithRef<'button'> {
   color?: DropdownItemColor;
   size?: DropdownSize;
-  accent?: DropdownAccent;
+  tone?: DropdownTone;
   tabIndex?: number;
 }
 

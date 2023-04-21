@@ -74,6 +74,7 @@ const DropdownContent: DropdownContentComponent = forwardRef<HTMLDivElement, Dro
           ...(arrowSide !== 'right' && { left: `${arrowX}px` }),
           ...(arrowSide !== 'top' && arrowSide !== 'left' && { bottom: `${arrowY}px` }),
           ...(arrowSide === 'left' && { top: `${arrowY}px` }),
+          ...(arrowSide === 'right' && { top: `${arrowY}px` }),
           [arrowSide]: '-5px',
         }}
       />

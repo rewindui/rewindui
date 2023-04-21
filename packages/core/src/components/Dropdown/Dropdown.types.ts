@@ -4,18 +4,34 @@ import { Placement } from '@floating-ui/react-dom';
 import { FloatingContext, ReferenceType } from '@floating-ui/react';
 import { ComponentPropsWithRef, ForwardRefExoticComponent, Ref } from 'react';
 
+export type DropdownArrowPlacement = 'left' | 'right' | 'top' | 'bottom';
 export type DropdownColor = 'white' | 'gray' | 'slate' | 'zinc';
-export type DropdownSize = 'xs' | 'sm' | 'md' | 'lg';
+export type DropdownMode = 'tight' | 'spacey';
+export type DropdownPlacement = Placement;
 export type DropdownRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
 export type DropdownShadow = 'none' | 'sm' | 'base' | 'md';
-export type DropdownArrowPlacement = 'left' | 'right' | 'top' | 'bottom';
-export type DropdownPlacement = Placement;
+export type DropdownSize = 'xs' | 'sm' | 'md' | 'lg';
+export type DropdownTone = 'solid' | 'light';
 export type DropdownTrigger = 'click' | 'hover';
-export type DropdownMode = 'tight' | 'spacey';
-export type DropdownAccent = 'solid' | 'light';
+
+export interface DropdownProps extends Omit<ComponentPropsWithRef<'div'>, 'size'> {
+  chevronRotation?: boolean;
+  color?: DropdownColor;
+  initiallyOpen?: boolean;
+  itemColor?: DropdownItemColor;
+  mode?: DropdownMode;
+  outsidePress?: boolean;
+  placement?: DropdownPlacement;
+  radius?: DropdownRadius;
+  shadow?: DropdownShadow;
+  size?: DropdownSize;
+  tone?: DropdownTone;
+  trigger?: DropdownTrigger;
+  withChevron?: boolean;
+  withinPortal?: boolean;
+}
 
 export interface DropdownContext<RT extends ReferenceType = ReferenceType> {
-  accent?: DropdownAccent;
   arrowRef?: Ref<HTMLSpanElement>;
   chevronRotation?: boolean;
   color?: DropdownColor;
@@ -26,31 +42,17 @@ export interface DropdownContext<RT extends ReferenceType = ReferenceType> {
   itemColor?: DropdownItemColor;
   mode?: DropdownMode;
   open?: boolean;
+  setOpen: (open: boolean) => void;
   radius?: DropdownRadius;
   reference: (node: RT | null) => void;
   shadow?: DropdownShadow;
   size?: DropdownSize;
   strategy: Strategy;
+  tone?: DropdownTone;
   withChevron?: boolean;
   withinPortal?: boolean;
   x: number | null;
   y: number | null;
-}
-
-export interface DropdownProps extends Omit<ComponentPropsWithRef<'div'>, 'size'> {
-  accent?: DropdownAccent;
-  chevronRotation?: boolean;
-  color?: DropdownColor;
-  initiallyOpen?: boolean;
-  itemColor?: DropdownItemColor;
-  mode?: DropdownMode;
-  placement?: DropdownPlacement;
-  radius?: DropdownRadius;
-  shadow?: DropdownShadow;
-  size?: DropdownSize;
-  trigger?: DropdownTrigger;
-  withChevron?: boolean;
-  withinPortal?: boolean;
 }
 
 export type DropdownComponent = ForwardRefExoticComponent<DropdownProps> & {

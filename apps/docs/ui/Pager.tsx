@@ -86,6 +86,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'checkbox',
     },
     {
+      title: 'Dropdown',
+      url: '/components/dropdown',
+      slug: 'dropdown',
+    },
+    {
       title: 'Form Control',
       url: '/components/form-control',
       slug: 'form-control',
