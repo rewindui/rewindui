@@ -11,6 +11,7 @@ const base = cva(
     'duration-50',
     'ease-in-out',
     'border',
+    'z-40',
   ],
   {
     variants: {
