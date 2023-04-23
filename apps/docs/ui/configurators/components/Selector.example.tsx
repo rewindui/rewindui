@@ -36,9 +36,9 @@ export const SelectorCode = (props: any) => {
 function App() {
   return (
      <Selector value="apple"${attributes.join(' ')}>
-      <Selector.Tab anchor="apple" label="Apple"></Selector.Tab>
-      <Selector.Tab anchor="orange" label="Orange"></Selector.Tab>
-      <Selector.Tab anchor="banana" label="Banana"></Selector.Tab>
+      <Selector.Tab anchor="apple" label="Apple" />
+      <Selector.Tab anchor="orange" label="Orange" />
+      <Selector.Tab anchor="banana" label="Banana" />
     </Selector>
   );
 }
@@ -48,9 +48,9 @@ function App() {
 export const SelectorExample = (props: SelectorProps) => {
   return (
     <Selector {...props} value="apple">
-      <Selector.Tab anchor="apple" label="Apple"></Selector.Tab>
-      <Selector.Tab anchor="orange" label="Orange"></Selector.Tab>
-      <Selector.Tab anchor="banana" label="Banana"></Selector.Tab>
+      <Selector.Tab anchor="apple" label="Apple" />
+      <Selector.Tab anchor="orange" label="Orange" />
+      <Selector.Tab anchor="banana" label="Banana" />
     </Selector>
   );
 };

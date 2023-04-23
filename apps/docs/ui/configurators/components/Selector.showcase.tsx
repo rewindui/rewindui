@@ -14,7 +14,6 @@ export type SelectorShowcaseProps = {
     | 'orientation'
     | 'animation'
     | 'separator'
-    | 'multiple-colors'
     | 'border-background'
     | 'extended-composition'
     | 'icons';
@@ -35,7 +34,6 @@ export const SelectorShowcase = (props: SelectorShowcaseProps) => {
     animation: <Animation />,
     separator: <Separator />,
     'separator-custom': <SeparatorCustom />,
-    'multiple-colors': <MultipleColors />,
     'border-background': <BorderBackground />,
     'extended-composition': <ExtendedComposition />,
     icons: <Icons />,
@@ -339,18 +337,6 @@ const BorderBackground = () => {
       <Selector className="border border-gray-100 bg-white" shadow="none" value="1">
         <Selector.Tab label="Apple" anchor="1" />
         <Selector.Tab label="Banana" anchor="2" />
-      </Selector>
-    </>
-  );
-};
-
-const MultipleColors = () => {
-  return (
-    <>
-      <Selector value="1">
-        <Selector.Tab color="red" label="Apple" anchor="1" />
-        <Selector.Tab color="yellow" label="Banana" anchor="2" />
-        <Selector.Tab color="green" label="Watermelon" anchor="3" />
       </Selector>
     </>
   );
