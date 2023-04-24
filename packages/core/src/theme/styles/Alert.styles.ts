@@ -162,37 +162,37 @@ const base = cva(['flex', 'gap-x-3', 'w-full'], {
     {
       tone: 'light',
       color: 'blue',
-      className: ['text-blue-800', 'bg-blue-50', 'border-blue-500'],
+      className: ['text-blue-600', 'bg-blue-100/50', 'border-blue-500'],
     },
     {
       tone: 'light',
       color: 'red',
-      className: ['text-red-800', 'bg-red-50', 'border-red-500'],
+      className: ['text-red-600', 'bg-red-100/50', 'border-red-500'],
     },
     {
       tone: 'light',
       color: 'green',
-      className: ['text-green-800', 'bg-green-50', 'border-green-500'],
+      className: ['text-green-600', 'bg-green-100/50', 'border-green-500'],
     },
     {
       tone: 'light',
       color: 'yellow',
-      className: ['text-yellow-700', 'bg-yellow-50', 'border-yellow-400'],
+      className: ['text-yellow-600', 'bg-yellow-100/50', 'border-yellow-500'],
     },
     {
       tone: 'light',
       color: 'purple',
-      className: ['text-purple-800', 'bg-purple-50', 'border-purple-500'],
+      className: ['text-purple-600', 'bg-purple-100/50', 'border-purple-500'],
     },
     {
       tone: 'light',
       color: 'gray',
-      className: ['text-gray-800', 'bg-gray-50', 'border-gray-500'],
+      className: ['text-gray-600', 'bg-gray-100/50', 'border-gray-500'],
     },
     {
       tone: 'light',
       color: 'dark',
-      className: ['text-gray-900', 'bg-gray-200', 'border-gray-700'],
+      className: ['text-gray-700', 'bg-gray-300/50', 'border-gray-700'],
     },
     {
       tone: 'light',
