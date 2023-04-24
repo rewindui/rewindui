@@ -71,7 +71,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Alert',
         path: '/components/alert',
-        wip: true,
       },
       {
         title: 'Card',

@@ -8,8 +8,10 @@ import { XMarkIcon } from '@icons/XMark';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<AlertProps> = {
+  accent: 'none',
   color: 'blue',
   dismissable: false,
+  dismissableAnimation: true,
   radius: 'md',
   shadow: 'none',
   shadowColor: 'none',

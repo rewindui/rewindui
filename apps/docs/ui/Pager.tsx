@@ -66,18 +66,23 @@ export const Pager = (props: PagerProps) => {
       slug: 'accordion',
     },
     {
+      title: 'Alert',
+      url: '/components/alert',
+      slug: 'alert',
+    },
+    {
       title: 'Card',
       url: '/components/card',
       slug: 'card',
     },
     {
       title: 'Popover',
-      url: '/components/Popover',
+      url: '/components/popover',
       slug: 'popover',
     },
     {
       title: 'Selector',
-      url: '/components/Selector',
+      url: '/components/selector',
       slug: 'selector',
     },
     {
@@ -87,7 +92,7 @@ export const Pager = (props: PagerProps) => {
     },
     {
       title: 'Tooltip',
-      url: '/components/Tooltip',
+      url: '/components/tooltip',
       slug: 'tooltip',
     },
     {
