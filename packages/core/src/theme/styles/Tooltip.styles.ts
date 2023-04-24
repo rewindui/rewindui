@@ -8,7 +8,7 @@ const base = cva(
         true: ['opacity-100', 'scale-100'],
         false: ['opacity-0', 'scale-95', 'invisible'],
       },
-      accent: {
+      tone: {
         solid: [],
         light: [],
       },
@@ -82,92 +82,92 @@ const base = cva(
         className: ['translate-y-1'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'white',
         className: ['bg-white', 'text-gray-800'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'blue',
         className: ['bg-blue-500', 'text-white'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'red',
         className: ['bg-red-500', 'text-white'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'green',
         className: ['bg-green-500', 'text-white'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'yellow',
         className: ['bg-yellow-400', 'text-white'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'purple',
         className: ['bg-purple-500', 'text-white'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'gray',
         className: ['bg-gray-200', 'text-gray-800'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'dark',
         className: ['bg-gray-700', 'text-white'],
       },
       {
-        accent: 'solid',
+        tone: 'solid',
         color: 'black',
         className: ['bg-black', 'text-white'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'white',
         className: ['bg-white', 'text-gray-800'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'blue',
         className: ['bg-blue-100', 'text-blue-500'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'red',
         className: ['bg-red-100', 'text-red-500'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'green',
         className: ['bg-green-100', 'text-green-500'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'yellow',
         className: ['bg-yellow-100', 'text-yellow-500'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'purple',
         className: ['bg-purple-100', 'text-purple-500'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'gray',
         className: ['bg-gray-100', 'text-gray-500'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'dark',
         className: ['bg-gray-200', 'text-gray-600'],
       },
       {
-        accent: 'light',
+        tone: 'light',
         color: 'black',
         className: ['bg-gray-300', 'text-gray-700'],
       },
@@ -177,7 +177,7 @@ const base = cva(
 
 const arrow = cva([], {
   variants: {
-    accent: {
+    tone: {
       solid: [],
       light: [],
     },
@@ -195,92 +195,92 @@ const arrow = cva([], {
   },
   compoundVariants: [
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'white',
       className: ['fill-white'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'blue',
       className: ['fill-blue-500'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'red',
       className: ['fill-red-500'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'green',
       className: ['fill-green-500'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'yellow',
       className: ['fill-yellow-400'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'purple',
       className: ['fill-purple-500'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'gray',
       className: ['fill-gray-200'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'dark',
       className: ['fill-gray-700'],
     },
     {
-      accent: 'solid',
+      tone: 'solid',
       color: 'black',
       className: ['fill-black'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'white',
       className: ['fill-white'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'blue',
       className: ['fill-blue-100'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'red',
       className: ['fill-red-100'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'green',
       className: ['fill-green-100'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'yellow',
       className: ['fill-yellow-100'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'purple',
       className: ['fill-purple-100'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'gray',
       className: ['fill-gray-100'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'dark',
       className: ['fill-gray-200'],
     },
     {
-      accent: 'light',
+      tone: 'light',
       color: 'black',
       className: ['fill-gray-300'],
     },

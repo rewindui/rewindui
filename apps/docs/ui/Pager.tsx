@@ -71,6 +71,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'card',
     },
     {
+      title: 'Popover',
+      url: '/components/Popover',
+      slug: 'popover',
+    },
+    {
       title: 'Selector',
       url: '/components/Selector',
       slug: 'selector',
@@ -79,6 +84,11 @@ export const Pager = (props: PagerProps) => {
       title: 'Text',
       url: '/components/text',
       slug: 'text',
+    },
+    {
+      title: 'Tooltip',
+      url: '/components/Tooltip',
+      slug: 'tooltip',
     },
     {
       title: 'Button',

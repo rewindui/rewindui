@@ -1,6 +1,7 @@
 import { Placement } from '@floating-ui/react-dom';
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactNode } from 'react';
 
+export type TooltipArrowPlacement = 'left' | 'right' | 'top' | 'bottom';
 export type TooltipColor =
   | 'white'
   | 'blue'
@@ -11,15 +12,13 @@ export type TooltipColor =
   | 'gray'
   | 'dark'
   | 'black';
-export type TooltipSize = 'xs' | 'sm' | 'md' | 'lg';
-export type TooltipRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
-export type TooltipAccent = 'solid' | 'light';
-export type TooltipArrowPlacement = 'left' | 'right' | 'top' | 'bottom';
-export type TooltipShadow = 'none' | 'sm' | 'base' | 'md';
 export type TooltipPlacement = Placement;
+export type TooltipRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+export type TooltipShadow = 'none' | 'sm' | 'base' | 'md';
+export type TooltipSize = 'xs' | 'sm' | 'md' | 'lg';
+export type TooltipTone = 'solid' | 'light';
 
 export interface TooltipProps extends Omit<ComponentPropsWithRef<'div'>, 'size'> {
-  accent?: TooltipAccent;
   children: ReactNode;
   color?: TooltipColor;
   initiallyOpen?: boolean;
@@ -29,6 +28,7 @@ export interface TooltipProps extends Omit<ComponentPropsWithRef<'div'>, 'size'>
   radius?: TooltipRadius;
   shadow?: TooltipShadow;
   size?: TooltipSize;
+  tone?: TooltipTone;
   withinPortal?: boolean;
 }
 

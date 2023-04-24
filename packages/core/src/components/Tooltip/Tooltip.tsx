@@ -1,4 +1,3 @@
-import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { TooltipComponent, TooltipProps } from '@components/Tooltip/Tooltip.types';
 import { useTooltip } from '@components/Tooltip/use-tooltip.hook';
 import { FloatingArrow, FloatingPortal } from '@floating-ui/react';
@@ -18,7 +17,6 @@ import { useMergeRefs } from '@floating-ui/react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<TooltipProps> = {
-  accent: 'solid',
   color: 'dark',
   initiallyOpen: false,
   offset: 6,
@@ -26,6 +24,7 @@ const defaultProps: Partial<TooltipProps> = {
   radius: 'md',
   shadow: 'none',
   size: 'sm',
+  tone: 'solid',
   withinPortal: true,
 };
 
@@ -33,7 +32,7 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
   (props: TooltipProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Tooltip');
     const {
-      accent,
+      tone,
       children,
       className = '',
       color,
@@ -47,7 +46,7 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
       withinPortal,
     } = {
       ...defaultProps,
-      ...useInputGroupContext(),
+      // ...useInputGroupContext(),
       ...props,
     };
     const id = usePropId(props.id);
@@ -86,7 +85,7 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
     const classes = useMemo(() => {
       return twMerge(
         theme.base({
-          accent,
+          tone,
           arrowSide,
           className,
           color,
@@ -96,7 +95,7 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
           size,
         })
       );
-    }, [accent, arrowSide, className, color, open, radius, shadow, size, theme]);
+    }, [tone, arrowSide, className, color, open, radius, shadow, size, theme]);
 
     const tooltipElement = !hidden && (
       <div
@@ -112,7 +111,7 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
         {...getFloatingProps}
       >
         <FloatingArrow
-          className={theme.arrow({ accent, color })}
+          className={theme.arrow({ tone, color })}
           ref={arrowRef}
           width={8}
           height={4}

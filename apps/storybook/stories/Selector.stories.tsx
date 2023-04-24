@@ -150,6 +150,7 @@ const options: SelectorTabProps[] = [
       </Tooltip>
     ),
     anchor: 'k',
+    color: 'white',
   },
 ];
 
@@ -318,7 +319,9 @@ const SeparatorTemplate: Story<SelectorProps> = (args) => {
         <Selector
           {...args}
           withSeparator={true}
-          separator={<div className="w-1 h-1 rounded-full bg-gray-300"></div>}
+          separator={
+            <span className="last-of-type:hidden self-center mx-1 w-1 h-1 bg-gray-200 rounded-full" />
+          }
           value={generateRandomLetter(options)}
         >
           {options.map((option) => (

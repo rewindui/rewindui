@@ -4,9 +4,17 @@ import {
   DropdownShowcaseProps,
 } from '@/ui/configurators/components/Dropdown.showcase';
 import {
+  PopoverShowcase,
+  PopoverShowcaseProps,
+} from '@/ui/configurators/components/Popover.showcase';
+import {
   SelectorShowcase,
   SelectorShowcaseProps,
 } from '@/ui/configurators/components/Selector.showcase';
+import {
+  TooltipShowcase,
+  TooltipShowcaseProps,
+} from '@/ui/configurators/components/Tooltip.showcase';
 import { CustomMdxSandpack } from '@/ui/CustomMdxSandpack';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import {
@@ -122,6 +130,8 @@ const components = {
   SelectorShowcase: ({ showcase }: SelectorShowcaseProps) => (
     <SelectorShowcase showcase={showcase} />
   ),
+  TooltipShowcase: ({ showcase }: TooltipShowcaseProps) => <TooltipShowcase showcase={showcase} />,
+  PopoverShowcase: ({ showcase }: PopoverShowcaseProps) => <PopoverShowcase showcase={showcase} />,
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,

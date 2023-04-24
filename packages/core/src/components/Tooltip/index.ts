@@ -1,6 +1,6 @@
 export { Tooltip } from './Tooltip';
 export type {
-  TooltipAccent,
+  TooltipTone,
   TooltipArrowPlacement,
   TooltipColor,
   TooltipProps,

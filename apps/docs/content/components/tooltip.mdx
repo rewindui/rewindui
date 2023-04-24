@@ -1,0 +1,380 @@
+---
+title: Tooltip
+description: Display essential information on hover over an element.
+intro: The Tooltip component is suitable to display essential information on hover over an element. It is a small box that appears when the user hovers over an element.
+source: Tooltip
+theme: Tooltip.styles.ts
+storybook: tooltip--default
+---
+
+# Import
+---
+Import the `Tooltip` component using the following import statement.
+
+```tsx
+import { Tooltip } from '@rewind-ui@core';
+```
+
+# Tones & Colors
+---
+The following tones are available for the `Tooltip` component: `solid` and `light`.
+
+Furthermore, the above tones can be combined with the following colors: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <TooltipShowcase showcase="tones-solid" />
+</View>
+
+```tsx
+<View>
+  <Tooltip tone="solid" color="white" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="blue" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="red" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="green" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="yellow" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="purple" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="gray" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="dark" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="solid" color="black" >
+    // ...
+  </Tooltip>
+</View>
+```
+
+## Light
+<View>
+  <TooltipShowcase showcase="tones-light" />
+</View>
+
+```tsx
+<View>
+  <Tooltip tone="light" color="white" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="blue" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="red" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="green" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="yellow" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="purple" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="gray" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="dark" >
+    // ...
+  </Tooltip>
+
+  <Tooltip tone="light" color="black" >
+    // ...
+  </Tooltip>
+</View>
+```
+
+# Sizes
+---
+The following sizes are available for the `Tooltip` component: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <TooltipShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" size="xs">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" size="sm">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" size="md">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" size="lg">
+    // ...
+  </Tooltip>
+</View>
+```
+
+# Radiuses
+---
+The following radiuses are available for the `Tooltip` component: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <TooltipShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" radius="none">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" radius="sm">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" radius="base">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" radius="md">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" radius="lg">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" radius="full">
+    // ...
+  </Tooltip>
+</View>
+```
+
+# Shadows
+---
+The following shadows are available for the `Tooltip` component: `none`, `sm`, `base` and `md`.
+
+<View>
+  <TooltipShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" shadow="none" color="white">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" shadow="sm" color="white">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" shadow="base" color="white">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" shadow="md" color="white">
+    // ...
+  </Tooltip>
+</View>
+```
+
+# Placements
+---
+## Basic placements
+The following basic placements are supported by the `Tooltip` component: `top`, `bottom`, `left` and `right`.
+
+<View>
+  <TooltipShowcase showcase="placements" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" placement="top">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="bottom">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="left">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="right">
+    // ...
+  </Tooltip>
+</View>
+```
+
+
+## Extended placements
+Furthermore, the above placements can be combined with the following modifiers: `start` and `end`.
+
+### Top
+<View>
+  <TooltipShowcase showcase="placements-extended-top" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" placement="top-start">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="top-end">
+    // ...
+  </Tooltip>
+</View>
+```
+
+### Bottom
+<View>
+  <TooltipShowcase showcase="placements-extended-bottom" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" placement="bottom-start">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="bottom-end">
+    // ...
+  </Tooltip>
+</View>
+```
+
+### Left
+<View>
+  <TooltipShowcase showcase="placements-extended-left" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" placement="left-start">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="left-end">
+    // ...
+  </Tooltip>
+</View>
+```
+
+### Right
+<View>
+  <TooltipShowcase showcase="placements-extended-right" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" placement="right-start">
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" placement="right-end">
+    // ...
+  </Tooltip>
+</View>
+```
+
+# Initial state
+---
+The initial state of the `Tooltip` component can be controlled by setting the `initiallyOpen` prop.
+
+<View>
+  <TooltipShowcase showcase="initially-open" />
+</View>
+
+```tsx
+<View>
+  <Tooltip label="This is a Tooltip" initiallyOpen={true}>
+    // ...
+  </Tooltip>
+
+  <Tooltip label="This is a Tooltip" initiallyOpen={false}>
+    // ...
+  </Tooltip>
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop          | Type               | Description                                                          | Default     |
+|:--------------|:-------------------|:---------------------------------------------------------------------|:------------|
+| color         | `TooltipColor`     | Sets the tooltip color                                               | `dark`      |
+| initiallyOpen | `boolean`          | Sets the initial state of the tooltip                                | `false`     |
+| offset        | `number`           | Sets the tooltip offset                                              | `6`         |
+| label         | `string`           | Sets the tooltip label                                               | `undefined` |
+| placement     | `TooltipPlacement` | Sets the placement of the tooltip in relation to the trigger element | `top`       |
+| radius        | `TooltipRadius`    | Sets the tooltip radius                                              | `md`        |
+| shadow        | `TooltipShadow`    | Sets the tooltip shadow                                              | `none`      |
+| size          | `TooltipSize`      | Sets the tooltip size                                                | `sm`        |
+| tone          | `TooltipTone`      | Sets the tooltip tone                                                | `solid`     |
+| withinPortal  | `boolean`          | Renders the tooltip within a portal                                  | `true`      |
+
+
+## Types
+```tsx
+type TooltipColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type Alignment = 'start' | 'end';
+type Side = 'top' | 'right' | 'bottom' | 'left';
+type AlignedPlacement = `${Side}-${Alignment}`;
+type TooltipPlacement = Side | AlignedPlacement;
+```
+
+```tsx
+type TooltipRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type TooltipShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type TooltipSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type TooltipTone = 'solid' | 'light';
+```

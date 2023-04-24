@@ -129,7 +129,7 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
       >
         <span ref={circleRef} className={theme.inner({ radius, size, state })}></span>
       </button>
-      <div className="flex flex-col">
+      <div className="grid grid-cols-1 justify-items-start">
         <label
           htmlFor={id}
           className={twMerge(theme.label({ disabled, size, className: labelClassName }))}

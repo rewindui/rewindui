@@ -85,7 +85,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Popover',
         path: '/components/popover',
-        wip: true,
       },
       {
         title: 'Selector',
@@ -103,7 +102,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Tooltip',
         path: '/components/tooltip',
-        wip: true,
       },
     ],
   },

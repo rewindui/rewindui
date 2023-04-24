@@ -1,0 +1,386 @@
+---
+title: Popover
+description: Display advanced information on hover over an element.
+intro: The Popover component is suitable to display advanced information on hover over an element. It is a small box that appears when the user hovers over an element.
+source: Popover
+theme: Popover.styles.ts
+storybook: popover--default
+---
+
+# Import
+---
+Import the `Popover` component using the following import statement.
+
+```tsx
+import { Popover } from '@rewind-ui@core';
+```
+
+#  Colors
+---
+The following colors are available for the `Popover` component: `white`, `gray`, `zinc` and `slate`.
+
+<View>
+  <PopoverShowcase showcase="colors" />
+</View>
+
+```tsx
+<View>
+  <Popover color="white" >
+    // ...
+  </Popover>
+
+  <Popover color="gray" >
+    // ...
+  </Popover>
+
+  <Popover color="slate" >
+    // ...
+  </Popover>
+
+  <Popover color="zinc" >
+    // ...
+  </Popover>
+</View>
+```
+
+# Sizes
+---
+The following sizes are available for the `Popover` component: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <PopoverShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Popover size="xs">
+    // ...
+  </Popover>
+
+  <Popover size="sm">
+    // ...
+  </Popover>
+
+  <Popover size="md">
+    // ...
+  </Popover>
+
+  <Popover size="lg">
+    // ...
+  </Popover>
+</View>
+```
+
+# Radiuses
+---
+The following radiuses are available for the `Popover` component: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <PopoverShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Popover radius="none">
+    // ...
+  </Popover>
+
+  <Popover radius="sm">
+    // ...
+  </Popover>
+
+  <Popover radius="base">
+    // ...
+  </Popover>
+
+  <Popover radius="md">
+    // ...
+  </Popover>
+
+  <Popover radius="lg">
+    // ...
+  </Popover>
+
+  <Popover radius="full">
+    // ...
+  </Popover>
+</View>
+```
+
+# Shadows
+---
+The following shadows are available for the `Popover` component: `none`, `sm`, `base` and `md`.
+
+<View>
+  <PopoverShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Popover shadow="none" color="white">
+    // ...
+  </Popover>
+
+  <Popover shadow="sm" color="white">
+    // ...
+  </Popover>
+
+  <Popover shadow="base" color="white">
+    // ...
+  </Popover>
+
+  <Popover shadow="md" color="white">
+    // ...
+  </Popover>
+</View>
+```
+
+# Placements
+---
+## Basic placements
+The following basic placements are supported by the `Popover` component: `top`, `bottom`, `left` and `right`.
+
+<View>
+  <PopoverShowcase showcase="placements" />
+</View>
+
+```tsx
+<View>
+  <Popover placement="top">
+    // ...
+  </Popover>
+
+  <Popover placement="bottom">
+    // ...
+  </Popover>
+
+  <Popover placement="left">
+    // ...
+  </Popover>
+
+  <Popover placement="right">
+    // ...
+  </Popover>
+</View>
+```
+
+## Extended placements
+Furthermore, the above placements can be combined with the following modifiers: `start` and `end`.
+
+### Top
+<View>
+  <PopoverShowcase showcase="placements-extended-top" />
+</View>
+
+```tsx
+<View>
+  <Popover placement="top-start">
+    // ...
+  </Popover>
+
+  <Popover placement="top-end">
+    // ...
+  </Popover>
+</View>
+```
+
+### Bottom
+<View>
+  <PopoverShowcase showcase="placements-extended-bottom" />
+</View>
+
+```tsx
+<View>
+  <Popover placement="bottom-start">
+    // ...
+  </Popover>
+
+  <Popover placement="bottom-end">
+    // ...
+  </Popover>
+</View>
+```
+
+### Left
+<View>
+  <PopoverShowcase showcase="placements-extended-left" />
+</View>
+
+```tsx
+<View>
+  <Popover placement="left-start">
+    // ...
+  </Popover>
+
+  <Popover placement="left-end">
+    // ...
+  </Popover>
+</View>
+```
+
+### Right
+<View>
+  <PopoverShowcase showcase="placements-extended-right" />
+</View>
+
+```tsx
+<View>
+  <Popover placement="right-start">
+    // ...
+  </Popover>
+
+  <Popover placement="right-end">
+    // ...
+  </Popover>
+</View>
+```
+
+# Initial state
+---
+The initial state of the `Popover` component can be controlled by setting the `initiallyOpen` prop.
+
+<View>
+  <PopoverShowcase showcase="initially-open" />
+</View>
+
+```tsx
+<View>
+  <Popover initiallyOpen={true}>
+    // ...
+  </Popover>
+
+  <Popover initiallyOpen={false}>
+    // ...
+  </Popover>
+</View>
+```
+
+# Examples
+---
+## With Card component
+The `Popover` component can be combined with the `Card` component to create a more complex popover.
+
+<View>
+  <PopoverShowcase showcase="example-card" />
+</View>
+
+```tsx
+<View>
+  <Popover
+    size="tight"
+    color="gray"
+    placement="bottom-start"
+    withinPortal={true}
+  >
+    <Popover.Trigger>
+      <Button>I am the trigger</Button>
+    </Popover.Trigger>
+    <Popover.Content>
+      <Card shadow="none" size="sm" radius="md">
+        <Card.Header className="bg-gray-50">This is a Card Header</Card.Header>
+        <Card.Body>This is the body of the card</Card.Body>
+        <Card.Footer className="bg-gray-50">And here is the footer</Card.Footer>
+      </Card>
+    </Popover.Content>
+  </Popover>
+</View>
+```
+
+## With Radio component
+
+<View>
+  <PopoverShowcase showcase="example-radio" />
+</View>
+
+```tsx
+<View>
+  <Popover size="tight" color="gray" placement="bottom-start" withinPortal={true}>
+    <Popover.Trigger>
+      <Button color="black">Deploy</Button>
+    </Popover.Trigger>
+    <Popover.Content>
+      <Card shadow="none" size="sm" radius="md">
+        <Card.Header className="bg-gray-50">Select deployment target</Card.Header>
+        <Card.Body className="flex flex-col space-y-2">
+          <Radio
+            color="dark"
+            name="radio-example"
+            size="sm"
+            label="Testing"
+            description="testing.example.com"
+            defaultChecked={true}
+          />
+          <Radio
+            color="dark"
+            name="radio-example"
+            size="sm"
+            label="Staging"
+            description="staging.example.com"
+          />
+          <Radio
+            color="dark"
+            name="radio-example"
+            size="sm"
+            label="Production"
+            description="example.com"
+          />
+        </Card.Body>
+        <Card.Footer className="bg-gray-50">
+          <Button color="black" size="sm" className="w-full">
+            Run
+          </Button>
+        </Card.Footer>
+      </Card>
+    </Popover.Content>
+  </Popover>
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop          | Type               | Description                                                          | Default     |
+|:--------------|:-------------------|:---------------------------------------------------------------------|:------------|
+| color         | `PopoverColor`     | Sets the Popover color                                               | `dark`      |
+| initiallyOpen | `boolean`          | Sets the initial state of the Popover                                | `false`     |
+| offset        | `number`           | Sets the Popover offset                                              | `6`         |
+| placement     | `PopoverPlacement` | Sets the placement of the Popover in relation to the trigger element | `top`       |
+| radius        | `PopoverRadius`    | Sets the Popover radius                                              | `md`        |
+| shadow        | `PopoverShadow`    | Sets the Popover shadow                                              | `none`      |
+| size          | `PopoverSize`      | Sets the Popover size                                                | `sm`        |
+| tone          | `PopoverTone`      | Sets the Popover tone                                                | `solid`     |
+| withinPortal  | `boolean`          | Renders the Popover within a portal                                  | `true`      |
+
+
+## Types
+```tsx
+type PopoverColor =
+  | 'white'
+  | 'gray'
+  | 'slate'
+  | 'zinc';
+```
+
+```tsx
+type Alignment = 'start' | 'end';
+type Side = 'top' | 'right' | 'bottom' | 'left';
+type AlignedPlacement = `${Side}-${Alignment}`;
+type PopoverPlacement = Side | AlignedPlacement;
+```
+
+```tsx
+type PopoverRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type PopoverShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type PopoverSize = 'tight' | 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type PopoverTone = 'solid' | 'light';
+```

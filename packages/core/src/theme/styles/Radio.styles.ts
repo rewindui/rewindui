@@ -153,7 +153,7 @@ const description = cva([], {
   },
 });
 
-const error = cva(['text-red-500'], {
+const error = cva([], {
   variants: {
     size: {
       sm: ['text-xs', 'ml-1.5'],

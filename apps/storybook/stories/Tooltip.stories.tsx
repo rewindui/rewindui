@@ -97,7 +97,7 @@ const ColorTemplate: Story<TooltipProps> = (args) => {
         <View key={color} prop="color" value={color} justify="evenly">
           <Tooltip
             label="This is a Tooltip"
-            accent="solid"
+            tone="solid"
             color={color}
             initiallyOpen={true}
             {...args}
@@ -109,7 +109,7 @@ const ColorTemplate: Story<TooltipProps> = (args) => {
 
           <Tooltip
             label="This is a Tooltip"
-            accent="light"
+            tone="light"
             color={color}
             initiallyOpen={true}
             {...args}
@@ -133,7 +133,7 @@ const SizeTemplate: Story<TooltipProps> = (args) => {
         <View key={size} prop="size" value={size} justify="evenly">
           <Tooltip
             label="This is a Tooltip"
-            accent="solid"
+            tone="solid"
             size={size}
             initiallyOpen={true}
             {...args}
@@ -155,7 +155,7 @@ const RadiusTemplate: Story<TooltipProps> = (args) => {
         <View key={radius} prop="radius" value={radius} justify="evenly">
           <Tooltip
             label="This is a Tooltip"
-            accent="solid"
+            tone="solid"
             radius={radius}
             initiallyOpen={true}
             {...args}
@@ -177,7 +177,7 @@ const ShadowTemplate: Story<TooltipProps> = (args) => {
         <View key={shadow} prop="shadow" value={shadow} justify="evenly">
           <Tooltip
             label="This is a Tooltip"
-            accent="solid"
+            tone="solid"
             shadow={shadow}
             initiallyOpen={true}
             color="white"
@@ -200,7 +200,7 @@ const PlacementTemplate: Story<TooltipProps> = (args) => {
         <View key={placement} prop="placement" value={placement} justify="evenly">
           <Tooltip
             label="This is a Tooltip"
-            accent="solid"
+            tone="solid"
             placement={placement}
             initiallyOpen={true}
             radius="none"

@@ -521,7 +521,7 @@ const Placements = () => {
     <>
       <Dropdown placement="top" trigger="hover">
         <Dropdown.Trigger>
-          <Button>Menu</Button>
+          <Button>Top</Button>
         </Dropdown.Trigger>
         <Dropdown.Content>
           <Dropdown.Label>Application</Dropdown.Label>
@@ -533,7 +533,7 @@ const Placements = () => {
 
       <Dropdown placement="bottom" trigger="hover">
         <Dropdown.Trigger>
-          <Button>Menu</Button>
+          <Button>Bottom</Button>
         </Dropdown.Trigger>
         <Dropdown.Content>
           <Dropdown.Label>Application</Dropdown.Label>
@@ -545,7 +545,7 @@ const Placements = () => {
 
       <Dropdown placement="left" trigger="hover">
         <Dropdown.Trigger>
-          <Button>Menu</Button>
+          <Button>Left</Button>
         </Dropdown.Trigger>
         <Dropdown.Content>
           <Dropdown.Label>Application</Dropdown.Label>
@@ -557,7 +557,7 @@ const Placements = () => {
 
       <Dropdown placement="right" trigger="hover">
         <Dropdown.Trigger>
-          <Button>Menu</Button>
+          <Button>Right</Button>
         </Dropdown.Trigger>
         <Dropdown.Content>
           <Dropdown.Label>Application</Dropdown.Label>

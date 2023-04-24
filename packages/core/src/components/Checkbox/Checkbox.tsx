@@ -63,7 +63,7 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
           disabled={disabled}
           {...additionalProps}
         />
-        <div className="flex flex-col">
+        <div className="grid grid-cols-1 justify-items-start">
           <label
             htmlFor={id}
             className={twMerge(theme.label({ disabled, size, className: labelClassName }))}
