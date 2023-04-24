@@ -352,7 +352,7 @@ const ExtendedComposition = () => {
           label={
             <Tooltip
               label="This is a react node with a tooltip"
-              accent="solid"
+              tone="solid"
               color="dark"
               offset={15}
               shadow="base"
