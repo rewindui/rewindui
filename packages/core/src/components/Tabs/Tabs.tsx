@@ -2,6 +2,7 @@ import { Tab } from '@components/Tabs/Tab';
 import { TabContent } from '@components/Tabs/TabContent';
 import { TabList } from '@components/Tabs/TabList';
 import { TabsComponent, TabsContext, TabsProps } from '@components/Tabs/Tabs.types';
+import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useState } from 'react';
 import { TabsContextProvider } from './Tabs.context';
@@ -30,6 +31,7 @@ const TabsRoot: TabsComponent = forwardRef<HTMLDivElement, TabsProps>(
       ...defaultProps,
       ...props,
     };
+    const theme = useComponentTheme('Tabs');
     const id = usePropId(props.id);
     const [activeTabAnchor, setActiveTabAnchor] = useState(defaultTab);
     const contextValue: TabsContext = {
@@ -45,7 +47,7 @@ const TabsRoot: TabsComponent = forwardRef<HTMLDivElement, TabsProps>(
 
     return (
       <TabsContextProvider value={contextValue}>
-        <div id={id} ref={ref} {...additionalProps}>
+        <div id={id} ref={ref} className={theme.wrapper({ fullWidth })} {...additionalProps}>
           {children}
         </div>
       </TabsContextProvider>

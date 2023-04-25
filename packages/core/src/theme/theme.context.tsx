@@ -101,6 +101,7 @@ type ThemeComponents = {
     error: typeof styles.switchStyles.error;
   };
   Tabs: {
+    wrapper: typeof styles.tabStyles.wrapper;
     tab: typeof styles.tabStyles.tab;
     list: typeof styles.tabStyles.list;
   };
@@ -209,6 +210,7 @@ const defaultTheme: Theme = {
       error: styles.switchStyles.error,
     },
     Tabs: {
+      wrapper: styles.tabStyles.wrapper,
       tab: styles.tabStyles.tab,
       list: styles.tabStyles.list,
     },

@@ -87,7 +87,7 @@ export default meta;
 const DefaultTemplate: Story<TabsProps> = (args) => {
   return (
     <EnhancedView prop="Default">
-      <Tabs {...args} defaultTab={'tab-1'}>
+      <Tabs {...args} defaultTab="tab-1">
         <Tabs.List>
           {tabs.map((tab) => (
             <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -113,7 +113,7 @@ const ColorTemplate: Story<TabsProps> = (args) => {
     <React.Fragment key={color}>
       <View prop="color" value={color}>
         {tones.map((tone) => (
-          <Tabs key={tone} {...args} tone={tone} color={color} defaultTab={'tab-1'}>
+          <Tabs key={tone} {...args} tone={tone} color={color} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -143,7 +143,7 @@ const ToneTemplate: Story<TabsProps> = (args) => {
     <React.Fragment key={tone}>
       <View prop="tone" value={tone}>
         {colors.map((color) => (
-          <Tabs key={color} {...args} tone={tone} color={color} defaultTab={'tab-1'}>
+          <Tabs key={color} {...args} tone={tone} color={color} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -173,7 +173,7 @@ const SizeTemplate: Story<TabsProps> = (args) => {
     <React.Fragment key={size}>
       <View prop="size" value={size}>
         {tones.map((tone) => (
-          <Tabs key={tone} {...args} tone={tone} size={size} defaultTab={'tab-1'}>
+          <Tabs key={tone} {...args} tone={tone} size={size} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -202,7 +202,7 @@ const RadiusTemplate: Story<TabsProps> = (args) => {
   const items = radiuses.map((radius) => (
     <React.Fragment key={radius}>
       <View prop="radius" value={radius}>
-        <Tabs {...args} tone="pill" radius={radius} defaultTab={'tab-1'}>
+        <Tabs {...args} tone="pill" radius={radius} defaultTab="tab-1">
           <Tabs.List>
             {tabs.map((tab) => (
               <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -231,7 +231,7 @@ const FullWidthTemplate: Story<TabsProps> = (args) => {
     <React.Fragment key={fullWidth ? '1' : '2'}>
       <View prop="fullWidth" value={fullWidth ? 'true' : 'false'}>
         {tones.map((tone) => (
-          <Tabs key={tone} {...args} tone={tone} fullWidth={fullWidth} defaultTab={'tab-1'}>
+          <Tabs key={tone} {...args} tone={tone} fullWidth={fullWidth} defaultTab="tab-1">
             <Tabs.List>
               {tabs.map((tab) => (
                 <Tabs.Tab key={`tab-${tab.anchor}`} anchor={tab.anchor}>
@@ -260,7 +260,7 @@ const ExampleTemplate: Story<TabsProps> = (args) => {
   return (
     <ViewGroup>
       <EnhancedView prop="Content in Cards">
-        <Tabs {...args} defaultTab={'tab-1'}>
+        <Tabs {...args} defaultTab="tab-1">
           <Tabs.List>
             {tabs.map((tab) => (
               <Tabs.Tab
@@ -286,7 +286,7 @@ const ExampleTemplate: Story<TabsProps> = (args) => {
       <EnhancedView prop="Tabs in Card">
         <Card shadow="base">
           <Card.Body className="p-0">
-            <Tabs tone="line" fullWidth={true} {...args} defaultTab={'tab-1'}>
+            <Tabs tone="line" fullWidth={true} {...args} defaultTab="tab-1">
               <Tabs.List className="m-0 p-0 bg-gray-100/50">
                 {tabs.map((tab) => (
                   <Tabs.Tab

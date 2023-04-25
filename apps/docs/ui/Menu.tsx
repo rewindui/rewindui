@@ -92,7 +92,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Tabs',
         path: '/components/tabs',
-        wip: true,
       },
       {
         title: 'Text',

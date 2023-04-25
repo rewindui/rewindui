@@ -12,6 +12,7 @@ import { RadioConfig } from '@/ui/configurators/components/Radio.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
 import { SelectorConfig } from '@/ui/configurators/components/Selector.config';
 import { SwitchConfig } from '@/ui/configurators/components/Switch.config';
+import { TabsConfig } from '@/ui/configurators/components/Tabs.config';
 import { TextConfig } from '@/ui/configurators/components/Text.config';
 import { TextareaConfig } from '@/ui/configurators/components/Textarea.config';
 import { TooltipConfig } from '@/ui/configurators/components/Tooltip.config';
@@ -31,6 +32,7 @@ export const components = {
   select: SelectConfig,
   selector: SelectorConfig,
   switch: SwitchConfig,
+  tabs: TabsConfig,
   text: TextConfig,
   textarea: TextareaConfig,
   tooltip: TooltipConfig,

@@ -282,23 +282,19 @@ const tab = cva(
   }
 );
 
-const list = cva([
-  'flex',
-  'flex-inline',
-  'space-x-2',
-  'px-1',
-  'mb-2',
-  'py-2',
-  'overflow-x-scroll',
-  'scrollbar-thin',
-  'scrollbar-track-gray-200',
-  'scrollbar-thumb-gray-300',
-  'scrollbar-h-1',
-  'scrollbar-thumb-rounded-lg',
-  'scrollbar-track-rounded-lg',
-]);
+const wrapper = cva([], {
+  variants: {
+    fullWidth: {
+      true: ['w-full'],
+      false: [],
+    },
+  },
+});
+
+const list = cva(['flex', 'flex-inline', 'space-x-2', 'px-1', 'mb-2', 'py-2', 'overflow-auto']);
 
 const tabStyles = {
+  wrapper,
   tab,
   list,
 };

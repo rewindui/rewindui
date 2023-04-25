@@ -11,6 +11,7 @@ import {
   SelectorShowcase,
   SelectorShowcaseProps,
 } from '@/ui/configurators/components/Selector.showcase';
+import { TabsShowcase, TabsShowcaseProps } from '@/ui/configurators/components/Tabs.showcase';
 import {
   TooltipShowcase,
   TooltipShowcaseProps,
@@ -140,6 +141,7 @@ const components = {
   ),
   TooltipShowcase: ({ showcase }: TooltipShowcaseProps) => <TooltipShowcase showcase={showcase} />,
   PopoverShowcase: ({ showcase }: PopoverShowcaseProps) => <PopoverShowcase showcase={showcase} />,
+  TabsShowcase: ({ showcase }: TabsShowcaseProps) => <TabsShowcase showcase={showcase} />,
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,

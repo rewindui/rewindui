@@ -1,0 +1,313 @@
+---
+title: Tabs
+description: Organize content into separate views.
+intro: Tabs organize content into separate views where only one view can be visible at a time. Use tabs to reduce visual clutter and make it easier to find content.
+source: Tabs
+theme: Tabs.styles.ts
+storybook: tabs--default
+---
+
+# Import
+---
+Import the `Tabs` component using the following import statement.
+
+```tsx
+import { Tabs } from '@rewind-ui@core';
+```
+
+# Tones & Colors
+---
+The `Tabs` component comes with two tones: `line` and `pill`.
+
+The available `color` values, which are applied to the `Tabs.Tab` are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Line
+<View>
+  <TabsShowcase showcase="tones-line" />
+</View>
+
+```tsx
+<View>
+  <Tabs color="blue" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="red" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="green" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="yellow" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="purple" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="gray" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="dark" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="black" tone="line" defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+## Pill
+<View>
+  <TabsShowcase showcase="tones-pill" />
+</View>
+
+```tsx
+<View>
+  <Tabs color="blue" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="red" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="green" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="yellow" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="purple" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="gray" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="dark" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs color="black" tone="pill" defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <TabsShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Tabs size="sm" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs size="md" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs size="lg" defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <TabsShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Tabs tone="pill" radius="none" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs tone="pill" radius="sm" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs tone="pill" radius="base" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs tone="pill" radius="md" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs tone="pill" radius="lg" defaultTab="1">
+    // ...
+  </Tabs>
+  <Tabs tone="pill" radius="full" defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+# Full width
+---
+The tabs list can be set to full width by setting the `fullWidth` prop to `true`.
+
+<View>
+  <TabsShowcase showcase="full-width" />
+</View>
+
+```tsx
+<View>
+  <Tabs fullWidth={true} defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+# Method
+---
+The `Tabs` component supports an `unmount` and a `hide` method. The `unmount` method will unmount the tab content when the tab is not active. The `hide` method will just hide the tab content when the tab is not active. If the state of the tab content needs to be preserved, the `hide` method should be used.
+
+## Hide
+<View>
+  <TabsShowcase showcase="methods-hide" />
+</View>
+
+```tsx
+<View>
+  <Tabs method="hide" defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+## Unmount
+<View>
+  <TabsShowcase showcase="methods-unmount" />
+</View>
+
+```tsx
+<View>
+  <Tabs method="unmount" defaultTab="1">
+    // ...
+  </Tabs>
+</View>
+```
+
+# Examples
+---
+## Content in Cards
+<View>
+  <TabsShowcase showcase="examples-content-in-cards" />
+</View>
+
+```tsx
+const tabs = [
+  // ...
+];
+
+<View>
+  <Tabs defaultTab="tab-1">
+    <Tabs.List>
+      {tabs.map((tab) => (
+        <Tabs.Tab
+          key={`tab-${tab.anchor}`}
+          anchor={tab.anchor}
+          className="flex items-center gap-x-2"
+        >
+          {tab.icon} {tab.label}
+        </Tabs.Tab>
+      ))}
+    </Tabs.List>
+
+    {tabs.map((tab) => (
+      <Tabs.Content key={`content-${tab.anchor}`} anchor={tab.anchor}>
+        <Card>
+          <Card.Body>{tab.content}</Card.Body>
+        </Card>
+      </Tabs.Content>
+    ))}
+  </Tabs>
+</View>
+```
+
+## Tabs in Card
+<View>
+  <TabsShowcase showcase="examples-tabs-in-card" />
+</View>
+
+```tsx
+const tabs = [
+  // ...
+];
+
+<View>
+  <Card shadow="base">
+    <Card.Body className="p-0">
+      <Tabs tone="line" fullWidth={true} defaultTab="tab-1">
+        <Tabs.List className="m-0 p-0 bg-gray-100/50">
+          {tabs.map((tab) => (
+            <Tabs.Tab
+              key={`tab-${tab.anchor}`}
+              anchor={tab.anchor}
+              className="py-3.5 flex items-center gap-x-2"
+            >
+              {tab.icon} {tab.label}
+            </Tabs.Tab>
+          ))}
+        </Tabs.List>
+
+        {tabs.map((tab) => (
+          <Tabs.Content key={`content-${tab.anchor}`} anchor={tab.anchor} className="p-5">
+            {tab.content}
+          </Tabs.Content>
+        ))}
+      </Tabs>
+    </Card.Body>
+  </Card>
+</View>
+```
+
+# API Reference
+---
+## Properties
+### Tabs
+
+| Prop       | Type         | Description                    | Default     |
+|:-----------|:-------------|:-------------------------------|:------------|
+| color      | `TabsColor`  | Sets the tab color             | `blue`      |
+| defaultTab | `string`     | Sets the default tab           | `undefined` |
+| fullWidth  | `boolean`    | Sets the wrapper width to 100% | `false`     |
+| method     | `TabsMethod` | Sets the hide method           | `hide`      |
+| radius     | `TabsRadius` | Sets the tab border radius     | `none`      |
+| size       | `TabsSize`   | Sets the tab size              | `md`        |
+| tone       | `TabsTone`   | Sets the tab tone              | `line`      |
+
+### Tabs.Tab
+
+| Prop     | Type               | Description               | Default     |
+|:---------|:-------------------|:--------------------------|:------------|
+| anchor   | `string`           | Sets the tab anchor value | `undefined` |
+
+### Tabs.Content
+
+| Prop     | Type               | Description               | Default     |
+|:---------|:-------------------|:--------------------------|:------------|
+| anchor   | `string`           | Sets the tab anchor value | `undefined` |
+
+## Types
+### Tabs
+
+```tsx
+type TabsColor = 'blue' | 'red' | 'green' | 'yellow' | 'purple' | 'gray' | 'dark' | 'black';
+```
+
+```tsx
+type TabsMethod = 'unmount' | 'hide';
+```
+
+```tsx
+type TabsRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type TabsSize = 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type TabsTone = 'line' | 'pill';
+```
