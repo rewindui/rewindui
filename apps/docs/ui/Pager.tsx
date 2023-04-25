@@ -101,29 +101,14 @@ export const Pager = (props: PagerProps) => {
       slug: 'button',
     },
     {
-      title: 'Checkbox',
-      url: '/components/checkbox',
-      slug: 'checkbox',
-    },
-    {
       title: 'Dropdown',
       url: '/components/dropdown',
       slug: 'dropdown',
     },
     {
-      title: 'Form Control',
-      url: '/components/form-control',
-      slug: 'form-control',
-    },
-    {
-      title: 'Input',
-      url: '/components/input',
-      slug: 'input',
-    },
-    {
-      title: 'Input Group',
-      url: '/components/input-group',
-      slug: 'input-group',
+      title: 'Checkbox',
+      url: '/components/checkbox',
+      slug: 'checkbox',
     },
     {
       title: 'Radio',
@@ -131,19 +116,34 @@ export const Pager = (props: PagerProps) => {
       slug: 'radio',
     },
     {
-      title: 'Select',
-      url: '/components/select',
-      slug: 'select',
-    },
-    {
       title: 'Switch',
       url: '/components/switch',
       slug: 'switch',
     },
     {
+      title: 'Input',
+      url: '/components/input',
+      slug: 'input',
+    },
+    {
+      title: 'Select',
+      url: '/components/select',
+      slug: 'select',
+    },
+    {
       title: 'Textarea',
       url: '/components/textarea',
       slug: 'textarea',
+    },
+    {
+      title: 'Input Group',
+      url: '/components/input-group',
+      slug: 'input-group',
+    },
+    {
+      title: 'Form Control',
+      url: '/components/form-control',
+      slug: 'form-control',
     },
   ];
   const { current } = props;

@@ -112,40 +112,45 @@ const menuItems: MenuItem[] = [
         path: '/components/button',
       },
       {
-        title: 'Checkbox',
-        path: '/components/checkbox',
-      },
-      {
         title: 'Dropdown',
         path: '/components/dropdown',
       },
       {
-        title: 'Form Control',
-        path: '/components/form-control',
-      },
-      {
-        title: 'Input',
-        path: '/components/input',
-      },
-      {
-        title: 'Input Group',
-        path: '/components/input-group',
+        title: 'Checkbox',
+        path: '/components/checkbox',
       },
       {
         title: 'Radio',
         path: '/components/radio',
       },
       {
-        title: 'Select',
-        path: '/components/select',
-      },
-      {
         title: 'Switch',
         path: '/components/switch',
       },
       {
+        title: 'Input',
+        path: '/components/input',
+      },
+      {
+        title: 'Select',
+        path: '/components/select',
+      },
+      {
         title: 'Textarea',
         path: '/components/textarea',
+      },
+      {
+        title: 'Combobox',
+        path: '/components/combobox',
+        wip: true,
+      },
+      {
+        title: 'Input Group',
+        path: '/components/input-group',
+      },
+      {
+        title: 'Form Control',
+        path: '/components/form-control',
       },
     ],
   },
