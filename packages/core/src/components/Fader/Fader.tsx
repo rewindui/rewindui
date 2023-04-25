@@ -65,7 +65,11 @@ const Fader = forwardRef((props: FaderProps, ref?: Ref<HTMLDivElement>) => {
     };
   }, [isActive, isShown, fadeInDuration, fadeOutDuration, method]);
 
-  return <div ref={mergedRef}>{mountChildren && children}</div>;
+  return (
+    <div ref={mergedRef} className="w-full">
+      {mountChildren && children}
+    </div>
+  );
 });
 
 Fader.displayName = 'Fader';

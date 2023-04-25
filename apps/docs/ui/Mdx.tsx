@@ -20,6 +20,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import {
   AccordionItemProps,
   CardImageProps,
+  Alert,
   Accordion,
   Select,
   Text,
@@ -32,11 +33,17 @@ import {
   Radio,
   Switch,
   FormControl,
-  Dropdown,
 } from '@rewind-ui/core';
 import { HTMLAttributes } from 'react';
 import { View } from './View';
-import { MagnifyingGlass, Rocket, RocketLaunch, At, Key } from '@phosphor-icons/react';
+import {
+  MagnifyingGlass,
+  Rocket,
+  RocketLaunch,
+  At,
+  Key,
+  WarningCircle,
+} from '@phosphor-icons/react';
 
 const components = {
   h1: ({ ...props }) => (
@@ -93,6 +100,7 @@ const components = {
     />
   ),
   option: ({ ...props }) => <option {...props} />,
+  Alert: ({ ...props }) => <Alert {...props} />,
   Accordion: ({ ...props }) => <Accordion {...props} />,
   AccordionItem: ({ anchor, ...props }: AccordionItemProps) => (
     <Accordion.Item anchor={anchor} {...props} />
@@ -138,6 +146,7 @@ const components = {
   Rocket: ({ ...props }) => <Rocket {...props} />,
   At: ({ ...props }) => <At {...props} />,
   Key: ({ ...props }) => <Key {...props} />,
+  WarningCircle: ({ ...props }) => <WarningCircle {...props} />,
 };
 
 export function Mdx({ code }: { code: string }) {

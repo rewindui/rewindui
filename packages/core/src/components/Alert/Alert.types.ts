@@ -18,8 +18,6 @@ export type AlertColor =
   | 'gray'
   | 'dark'
   | 'black';
-export type AlertTone = 'solid' | 'light' | 'outline';
-export type AlertSize = 'xs' | 'sm' | 'md' | 'lg';
 export type AlertRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type AlertShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type AlertShadowColor =
@@ -33,6 +31,8 @@ export type AlertShadowColor =
   | 'gray'
   | 'dark'
   | 'black';
+export type AlertSize = 'xs' | 'sm' | 'md' | 'lg';
+export type AlertTone = 'solid' | 'light' | 'outline';
 export type AlertVariants =
   | 'primary'
   | 'secondary'

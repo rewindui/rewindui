@@ -13,34 +13,37 @@ export const MenuItem = (props: {
   const pathname = usePathname();
   const active = pathname === path;
   const hasIcon = !!icon;
-  const styles = cva(['group', 'w-full', 'py-1', 'flex', 'space-x-3', 'items-center'], {
-    variants: {
-      active: {
-        true: ['text-blue-600', 'font-medium'],
-        false: ['text-gray-600'],
+  const styles = cva(
+    ['group', 'w-full', 'py-1.5', 'flex', 'space-x-3', 'items-center', 'text-sm'],
+    {
+      variants: {
+        active: {
+          true: ['text-blue-600', 'font-medium'],
+          false: ['text-gray-600'],
+        },
+        hasIcon: {
+          true: ['pr-4'],
+          false: ['border-l-2', 'px-4'],
+        },
+        wip: {
+          true: ['cursor-not-allowed', 'opacity-50'],
+          false: [],
+        },
       },
-      hasIcon: {
-        true: ['pr-4'],
-        false: ['border-l-2', 'px-4'],
-      },
-      wip: {
-        true: ['cursor-not-allowed', 'opacity-50'],
-        false: [],
-      },
-    },
-    compoundVariants: [
-      {
-        active: true,
-        hasIcon: false,
-        className: ['border-l-blue-500'],
-      },
-      {
-        active: false,
-        hasIcon: false,
-        className: ['hover:border-l-blue-300'],
-      },
-    ],
-  });
+      compoundVariants: [
+        {
+          active: true,
+          hasIcon: false,
+          className: ['border-l-blue-500', 'bg-blue-50'],
+        },
+        {
+          active: false,
+          hasIcon: false,
+          className: ['hover:border-l-blue-300', 'hover:bg-blue-50/25'],
+        },
+      ],
+    }
+  );
 
   const iconStyles = cva(['border', 'rounded', 'p-1'], {
     variants: {
