@@ -1,6 +1,6 @@
-import { Accordion, AccordionProps, Tabs, TabsProps } from '@rewind-ui/core';
+import { Tabs, TabsProps } from '@rewind-ui/core';
 import * as React from 'react';
-import { HandWaving, Sparkle, Info, Lifebuoy } from '@phosphor-icons/react';
+import { HandWaving, Lifebuoy } from '@phosphor-icons/react';
 
 const tabs = [
   {

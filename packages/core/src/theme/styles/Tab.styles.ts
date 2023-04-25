@@ -282,7 +282,7 @@ const tab = cva(
   }
 );
 
-const wrapper = cva([], {
+const wrapper = cva(['overflow-auto'], {
   variants: {
     fullWidth: {
       true: ['w-full'],

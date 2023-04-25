@@ -1,6 +1,6 @@
 import { Tabs, Radio, Card } from '@rewind-ui/core';
 import * as React from 'react';
-import { HandWaving, Sparkle, Info, Lifebuoy } from '@phosphor-icons/react';
+import { HandWaving, Lifebuoy } from '@phosphor-icons/react';
 
 export type TabsShowcaseProps = {
   showcase:
