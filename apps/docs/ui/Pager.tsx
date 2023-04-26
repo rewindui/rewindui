@@ -76,6 +76,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'card',
     },
     {
+      title: 'Modal',
+      url: '/components/modal',
+      slug: 'modal',
+    },
+    {
       title: 'Popover',
       url: '/components/popover',
       slug: 'popover',

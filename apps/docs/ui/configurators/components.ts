@@ -7,6 +7,7 @@ import { DropdownConfig } from '@/ui/configurators/components/Dropdown.config';
 import { FormControlConfig } from '@/ui/configurators/components/FormControl.config';
 import { InputConfig } from '@/ui/configurators/components/Input.config';
 import { InputGroupConfig } from '@/ui/configurators/components/InputGroup.config';
+import { ModalConfig } from '@/ui/configurators/components/Modal.config';
 import { PopoverConfig } from '@/ui/configurators/components/Popover.config';
 import { RadioConfig } from '@/ui/configurators/components/Radio.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
@@ -27,6 +28,7 @@ export const components = {
   'form-control': FormControlConfig,
   input: InputConfig,
   'input-group': InputGroupConfig,
+  modal: ModalConfig,
   popover: PopoverConfig,
   radio: RadioConfig,
   select: SelectConfig,

@@ -79,7 +79,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Modal',
         path: '/components/modal',
-        wip: true,
       },
       {
         title: 'Popover',

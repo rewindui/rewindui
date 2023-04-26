@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['fixed', 'inset-0', 'z-40'], {
+const base = cva(['fixed', 'inset-0', 'z-50', 'overflow-hidden'], {
   variants: {
     opacity: {
       '25': [],

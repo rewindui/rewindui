@@ -2,10 +2,10 @@ import { cva } from 'class-variance-authority';
 
 const base = cva(
   [
-    'absolute',
+    'fixed',
     'top-0',
     'flex',
-    'items-center',
+    'overflow-auto',
     'justify-center',
     'transition',
     'transform',
@@ -16,7 +16,7 @@ const base = cva(
     variants: {
       mode: {
         fullscreen: ['inset-0', 'mt-0'],
-        dialog: ['inset-x-0', 'mt-12', 'mx-auto'],
+        dialog: ['inset-x-0', 'mt-12', 'mx-auto', 'max-h-[calc(100%-6rem)]'],
       },
       open: {
         true: ['opacity-100', 'scale-100', 'z-50'],

@@ -1,7 +1,7 @@
 import { OverlayComponent, OverlayProps } from '@components/Overlay/Overlay.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import { forwardRef, Ref, useMemo, useState } from 'react';
+import { forwardRef, Ref, useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<OverlayProps> = {
@@ -30,6 +30,15 @@ const Overlay: OverlayComponent = forwardRef((props: OverlayProps, ref?: Ref<HTM
   const classes = useMemo(() => {
     return twMerge(theme({ blur, className, color, opacity }));
   }, [blur, className, color, opacity, theme]);
+
+  useEffect(() => {
+    document.body.classList.add('overflow-hidden');
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  });
+
   const handleClick = () => {
     if (!closeOnClick) {
       return;
