@@ -66,9 +66,7 @@ const components = {
       {...props}
     />
   ),
-  ul: ({ ...props }: HTMLAttributes<HTMLUListElement>) => (
-    <ul className="mt-3 mb-6 ml-6 list-disc" {...props} />
-  ),
+  ul: ({ ...props }) => <ul className="mt-3 mb-6 ml-6 list-disc" {...props} />,
   pre: ({ ...props }) => (
     <div className="mt-4 overflow-auto">
       <CustomMdxSandpack {...props} />
@@ -81,21 +79,21 @@ const components = {
     />
   ),
   hr: ({ ...props }) => <hr className="my-2 border-gray-200 border-dashed" {...props} />,
-  table: ({ className, ...props }: HTMLAttributes<HTMLTableElement>) => (
+  table: ({ ...props }) => (
     <div className="my-6 w-full overflow-y-auto text-sm">
       <table className="w-full rounded overflow-hidden" {...props} />
     </div>
   ),
-  tr: ({ className, ...props }: HTMLAttributes<HTMLTableRowElement>) => (
+  tr: ({ ...props }) => (
     <tr className="m-0 border-t border-gray-300 p-0 hover:bg-gray-100 even:bg-gray-50" {...props} />
   ),
-  th: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
+  th: ({ ...props }) => (
     <th
       className="border border-gray-100 bg-gray-50 px-4 py-2 text-left text-gray-700 font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     />
   ),
-  td: ({ className, ...props }: HTMLAttributes<HTMLTableCellElement>) => (
+  td: ({ ...props }) => (
     <td
       className="border border-gray-100 px-4 py-2 text-left text-gray-600 [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
