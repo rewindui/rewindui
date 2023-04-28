@@ -3,7 +3,7 @@ import {
   DropdownShowcase,
   DropdownShowcaseProps,
 } from '@/ui/configurators/components/Dropdown.showcase';
-import { ModalShowcase } from '@/ui/configurators/components/Modal.showcase';
+import { ModalShowcase, ModalShowcaseProps } from '@/ui/configurators/components/Modal.showcase';
 import {
   PopoverShowcase,
   PopoverShowcaseProps,
@@ -143,7 +143,7 @@ const components = {
   TooltipShowcase: ({ showcase }: TooltipShowcaseProps) => <TooltipShowcase showcase={showcase} />,
   PopoverShowcase: ({ showcase }: PopoverShowcaseProps) => <PopoverShowcase showcase={showcase} />,
   TabsShowcase: ({ showcase }: TabsShowcaseProps) => <TabsShowcase showcase={showcase} />,
-  ModalShowcase,
+  ModalShowcase: ({ showcase }: ModalShowcaseProps) => <ModalShowcase showcase={showcase} />,
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,
