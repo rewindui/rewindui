@@ -20,7 +20,7 @@ const defaultProps: Partial<AlertProps> = {
 };
 
 const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivElement>) => {
-  const variant = useComponentVariant('Alert', props.variant) as Partial<AlertProps>;
+  const variantProps = useComponentVariant('Alert', props.variant) as Partial<AlertProps>;
   const theme = useComponentTheme('Alert');
   const {
     accent,
@@ -36,10 +36,11 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
     size,
     title,
     tone,
+    variant,
     ...additionalProps
   } = {
     ...defaultProps,
-    ...variant,
+    ...variantProps,
     ...props,
   };
   const [visible, setVisible] = useState(true);

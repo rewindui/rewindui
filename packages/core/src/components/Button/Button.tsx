@@ -29,7 +29,7 @@ const Button: ButtonComponent = forwardRef(
     props: PolymorphicComponentProp<C, ButtonProps>,
     ref?: PolymorphicRef<C>
   ) => {
-    const variant = useComponentVariant('Button', props.variant) as Partial<ButtonProps>;
+    const variantProps = useComponentVariant('Button', props.variant) as Partial<ButtonProps>;
     const theme = useComponentTheme('Button');
     const {
       animation,
@@ -45,12 +45,13 @@ const Button: ButtonComponent = forwardRef(
       shadowColor,
       size,
       tone,
+      variant,
       withRing,
       ...additionalProps
     } = {
       ...defaultProps,
       ...useInputGroupContext(),
-      ...variant,
+      ...variantProps,
       ...props,
     };
     const { open, withChevron, chevronRotation } = {

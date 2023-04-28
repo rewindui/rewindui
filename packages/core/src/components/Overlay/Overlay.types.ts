@@ -8,6 +8,7 @@ export interface OverlayProps extends ComponentPropsWithRef<'div'> {
   blur?: OverlayBlur;
   closeOnClick?: boolean;
   color?: OverlayColor;
+  open?: boolean;
   onClose?: () => void;
   opacity?: OverlayOpacity;
 }

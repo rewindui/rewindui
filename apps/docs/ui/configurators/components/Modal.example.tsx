@@ -60,7 +60,7 @@ function App() {
         <div className="flex flex-col p-10 space-y-2">
           <p>I am a modal!</p>
 
-          <Button variant="secondary" size="md" onClick={() => setOpen(false)}>
+          <Button variant="secondary" onClick={() => setOpen(false)}>
             Close
           </Button>
         </div>
@@ -82,7 +82,7 @@ export const ModalExample = (props: ModalProps) => {
         <div className="flex flex-col p-10 space-y-2">
           <p>I am a modal!</p>
 
-          <Button variant="secondary" size="md" onClick={() => setOpen(false)}>
+          <Button variant="secondary" onClick={() => setOpen(false)}>
             Close
           </Button>
         </div>

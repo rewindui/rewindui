@@ -18,7 +18,7 @@ const Text: TextComponent = forwardRef(
     props: PolymorphicComponentProp<C, TextProps>,
     ref?: PolymorphicRef<C>
   ) => {
-    const variant = useComponentVariant('Text', props.variant) as Partial<TextProps>;
+    const variantProps = useComponentVariant('Text', props.variant) as Partial<TextProps>;
     const theme = useComponentTheme('Text');
     const {
       as,
@@ -28,11 +28,12 @@ const Text: TextComponent = forwardRef(
       leading,
       size,
       tracking,
+      variant,
       weight,
       ...additionalProps
     } = {
       ...defaultProps,
-      ...variant,
+      ...variantProps,
       ...props,
     };
 

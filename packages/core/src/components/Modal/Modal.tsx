@@ -1,11 +1,14 @@
 import { ModalComponent, ModalProps } from '@components/Modal/Modal.types';
-import { FloatingFocusManager, FloatingPortal, useFloating } from '@floating-ui/react';
+import {
+  FloatingFocusManager,
+  FloatingPortal,
+  useFloating,
+  useMergeRefs,
+} from '@floating-ui/react';
 import { useKeypress } from '@hooks/use-keypress';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import FocusTrap from 'focus-trap-react';
-import { forwardRef, Ref, useMemo } from 'react';
-import React from 'react';
+import { forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay } from '@components/Overlay';
 import { twMerge } from 'tailwind-merge';
 
@@ -46,28 +49,74 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
     ...props,
   };
   const id = usePropId(props.id);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const mergedRef = useMergeRefs<HTMLDivElement | null>([modalRef, ref || null]);
+  const animation = useRef<Animation | null>(null);
+  const [activeFocusTrap, setActiveFocusTrap] = useState(false);
+
   const classes = useMemo(() => {
     return twMerge(
       theme({
         className,
         color,
         mode,
-        open,
         radius,
         shadow,
         size,
       })
     );
-  }, [className, color, mode, open, radius, shadow, size, theme]);
-  const { context } = useFloating();
+  }, [className, color, mode, radius, shadow, size, theme]);
 
   useKeypress('Escape', closeOnEscape, onClose);
 
+  const handleOverlayClick = () => {
+    if (overlayCloseOnClick && onClose) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    const easing = open ? 'ease-in-out' : 'ease-out';
+    const duration = open ? 300 : 100;
+    const keyframes = new KeyframeEffect(
+      modalRef.current,
+      [
+        { opacity: 0, transform: 'translateY(-50px)', filter: 'blur(15px)', visibility: 'hidden' },
+        { opacity: 1, transform: 'translateY(0%)', filter: 'blur(0)', visibility: 'visible' },
+      ],
+      { duration, fill: 'both', easing }
+    );
+
+    animation.current = new Animation(keyframes, document.timeline);
+  }, [open, modalRef]);
+
+  useEffect(() => {
+    if (!animation.current) {
+      return;
+    }
+
+    if (open) {
+      animation.current.play();
+      animation.current.onfinish = () => {
+        setActiveFocusTrap(true);
+      };
+    } else {
+      animation.current.reverse();
+      setActiveFocusTrap(false);
+    }
+  }, [open]);
+
+  const { refs, context } = useFloating({
+    open: activeFocusTrap,
+    onOpenChange: setActiveFocusTrap,
+  });
+
   return (
     <>
-      {open && mode !== 'fullscreen' && (
+      {mode !== 'fullscreen' && (
         <Overlay
-          onClose={onClose}
+          open={open}
+          onClick={handleOverlayClick}
           blur={overlayBlur}
           color={overlayColor}
           opacity={overlayOpacity}
@@ -76,13 +125,23 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
       )}
 
       <FloatingPortal>
-        {open && (
-          <FloatingFocusManager context={context}>
-            <div id={id} ref={ref} className={classes} {...additionalProps}>
+        <FloatingFocusManager context={context}>
+          <div ref={refs.setFloating} className="flex justify-center">
+            <div
+              id={id}
+              style={{
+                opacity: 0,
+                transform: 'translateY(-200%)',
+                visibility: 'hidden',
+              }}
+              ref={mergedRef}
+              className={classes}
+              {...additionalProps}
+            >
               {children}
             </div>
-          </FloatingFocusManager>
-        )}
+          </div>
+        </FloatingFocusManager>
       </FloatingPortal>
     </>
   );

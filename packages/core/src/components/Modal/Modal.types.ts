@@ -12,7 +12,7 @@ export interface ModalProps extends ComponentPropsWithRef<'div'> {
   color?: ModalColor;
   mode?: ModalMode;
   onClose?: () => void;
-  open?: boolean;
+  open: boolean;
   overlayBlur?: OverlayBlur;
   overlayCloseOnClick?: boolean;
   overlayColor?: OverlayColor;

@@ -1,7 +1,7 @@
 import { OverlayComponent, OverlayProps } from '@components/Overlay/Overlay.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import { forwardRef, Ref, useEffect, useMemo, useState } from 'react';
+import { forwardRef, Ref, useEffect, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<OverlayProps> = {
@@ -19,6 +19,7 @@ const Overlay: OverlayComponent = forwardRef((props: OverlayProps, ref?: Ref<HTM
     opacity,
     closeOnClick,
     onClose,
+    open,
     className = '',
     ...additionalProps
   } = {
@@ -26,41 +27,19 @@ const Overlay: OverlayComponent = forwardRef((props: OverlayProps, ref?: Ref<HTM
     ...props,
   };
   const id = usePropId(props.id);
-  const [isOpen, setIsOpen] = useState(true);
   const classes = useMemo(() => {
-    return twMerge(theme({ blur, className, color, opacity }));
-  }, [blur, className, color, opacity, theme]);
+    return twMerge(theme({ blur, className, color, open, opacity }));
+  }, [blur, className, color, open, opacity, theme]);
 
   useEffect(() => {
-    document.body.classList.add('overflow-hidden');
-
-    return () => {
+    if (open) {
+      document.body.classList.add('overflow-hidden');
+    } else {
       document.body.classList.remove('overflow-hidden');
-    };
-  });
-
-  const handleClick = () => {
-    if (!closeOnClick) {
-      return;
     }
+  }, [open]);
 
-    setIsOpen(false);
-
-    if (onClose) {
-      onClose();
-    }
-  };
-
-  return isOpen ? (
-    <div
-      id={id}
-      ref={ref}
-      className={classes}
-      onClick={handleClick}
-      aria-hidden="true"
-      {...additionalProps}
-    ></div>
-  ) : null;
+  return <div id={id} ref={ref} className={classes} aria-hidden="true" {...additionalProps}></div>;
 });
 
 Overlay.displayName = 'Overlay';
