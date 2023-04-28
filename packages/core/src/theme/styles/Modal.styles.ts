@@ -45,23 +45,23 @@ const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', '
     {
       size: 'sm',
       mode: 'dialog',
-      className: ['w-auto', 'sm:w-[18.75rem]'],
+      className: ['w-[calc(100vw-6rem)]', 'sm:w-[18.75rem]'],
     },
     {
       size: 'md',
       mode: 'dialog',
-      className: ['w-auto', 'sm:w-[18.75rem]', 'md:w-[31.25rem]'],
+      className: ['w-[calc(100vw-6rem)]', 'sm:w-[18.75rem]', 'md:w-[31.25rem]'],
     },
     {
       size: 'lg',
       mode: 'dialog',
-      className: ['w-auto', 'sm:w-[18.75rem]', 'md:w-[31.25rem]', 'lg:w-[50rem]'],
+      className: ['w-[calc(100vw-6rem)]', 'sm:w-[18.75rem]', 'md:w-[31.25rem]', 'lg:w-[50rem]'],
     },
     {
       size: 'xl',
       mode: 'dialog',
       className: [
-        'w-auto',
+        'w-[calc(100vw-6rem)]',
         'sm:w-[18.75rem]',
         'md:w-[31.25rem]',
         'lg:w-[50rem]',
