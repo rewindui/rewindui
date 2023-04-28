@@ -1,3 +1,4 @@
+import { comboboxOptionStyles } from './styles';
 import * as styles from './styles';
 import { createContext, useContext } from 'react';
 
@@ -37,6 +38,22 @@ type ThemeComponents = {
     label: typeof styles.checkBoxStyles.label;
     description: typeof styles.checkBoxStyles.description;
     error: typeof styles.checkBoxStyles.error;
+  };
+  Combobox: {
+    base: typeof styles.comboboxStyles.base;
+    wrapper: typeof styles.comboboxStyles.wrapper;
+    noResults: typeof styles.comboboxStyles.noResults;
+    list: typeof styles.comboboxStyles.list;
+    icon: typeof styles.comboboxStyles.icon;
+    leftIconWrapper: typeof styles.comboboxStyles.leftIconWrapper;
+    rightIconWrapper: typeof styles.comboboxStyles.rightIconWrapper;
+    group: typeof styles.comboboxStyles.group;
+    button: typeof styles.comboboxOptionStyles.button;
+    optionIcon: typeof styles.comboboxOptionStyles.optionIcon;
+    optionWrapper: typeof styles.comboboxOptionStyles.optionWrapper;
+    infoWrapper: typeof styles.comboboxOptionStyles.infoWrapper;
+    label: typeof styles.comboboxOptionStyles.label;
+    description: typeof styles.comboboxOptionStyles.description;
   };
   Dropdown: {
     base: typeof styles.dropdownStyles.base;
@@ -146,6 +163,22 @@ const defaultTheme: Theme = {
       label: styles.checkBoxStyles.label,
       description: styles.checkBoxStyles.description,
       error: styles.checkBoxStyles.error,
+    },
+    Combobox: {
+      base: styles.comboboxStyles.base,
+      wrapper: styles.comboboxStyles.wrapper,
+      noResults: styles.comboboxStyles.noResults,
+      list: styles.comboboxStyles.list,
+      icon: styles.comboboxStyles.icon,
+      leftIconWrapper: styles.comboboxStyles.leftIconWrapper,
+      rightIconWrapper: styles.comboboxStyles.rightIconWrapper,
+      group: styles.comboboxStyles.group,
+      button: styles.comboboxOptionStyles.button,
+      optionIcon: styles.comboboxOptionStyles.optionIcon,
+      optionWrapper: styles.comboboxOptionStyles.optionWrapper,
+      infoWrapper: styles.comboboxOptionStyles.infoWrapper,
+      label: styles.comboboxOptionStyles.label,
+      description: styles.comboboxOptionStyles.description,
     },
     Dropdown: {
       arrow: styles.dropdownStyles.arrow,

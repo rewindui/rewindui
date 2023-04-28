@@ -1,4 +1,5 @@
 import { Button } from '@components/Button';
+import { Combobox } from '@components/Combobox';
 import { useFormControlContext } from '@components/FormControl/FormControl.context';
 import { Input } from '@components/Input';
 import {
@@ -71,7 +72,7 @@ export const InputGroup = Object.assign(_InputGroup, {
   Input: Input,
   Textarea: Textarea,
   Select: Select,
-  // Combobox: Combobox,
+  Combobox: Combobox,
   Text: InputGroupText,
   Button: Button,
 });
