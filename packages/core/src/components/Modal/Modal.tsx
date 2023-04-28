@@ -1,16 +1,12 @@
 import { ModalComponent, ModalProps } from '@components/Modal/Modal.types';
-import {
-  FloatingFocusManager,
-  FloatingPortal,
-  useFloating,
-  useMergeRefs,
-} from '@floating-ui/react';
+import { FloatingPortal, useMergeRefs } from '@floating-ui/react';
 import { useKeypress } from '@hooks/use-keypress';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay } from '@components/Overlay';
 import { twMerge } from 'tailwind-merge';
+import FocusLock from 'react-focus-lock';
 
 const defaultProps: Partial<ModalProps> = {
   closeOnEscape: true,
@@ -106,11 +102,6 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
     }
   }, [open]);
 
-  const { refs, context } = useFloating({
-    open: activeFocusTrap,
-    onOpenChange: setActiveFocusTrap,
-  });
-
   return (
     <>
       {mode !== 'fullscreen' && (
@@ -125,23 +116,21 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
       )}
 
       <FloatingPortal>
-        <FloatingFocusManager context={context}>
-          <div ref={refs.setFloating} className="flex justify-center">
-            <div
-              id={id}
-              style={{
-                opacity: 0,
-                transform: 'translateY(-200%)',
-                visibility: 'hidden',
-              }}
-              ref={mergedRef}
-              className={classes}
-              {...additionalProps}
-            >
-              {children}
-            </div>
+        <FocusLock disabled={!activeFocusTrap} className="flex justify-center">
+          <div
+            id={id}
+            style={{
+              opacity: 0,
+              transform: 'translateY(-200%)',
+              visibility: 'hidden',
+            }}
+            ref={mergedRef}
+            className={classes}
+            {...additionalProps}
+          >
+            {children}
           </div>
-        </FloatingFocusManager>
+        </FocusLock>
       </FloatingPortal>
     </>
   );

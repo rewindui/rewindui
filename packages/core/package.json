@@ -36,6 +36,7 @@
     "@floating-ui/react-dom": "^1.3.0",
     "@tailwindcss/forms": "^0.5.3",
     "class-variance-authority": "^0.4.0",
+    "react-focus-lock": "^2.9.4",
     "tailwind-merge": "^1.10.0",
     "tailwind-scrollbar": "^2.0.1"
   },

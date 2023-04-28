@@ -44,7 +44,7 @@ export const ModalConfig = {
       label: 'Size',
       name: 'size',
       type: 'select',
-      options: ['auto', 'sm', 'base', 'md', 'lg', 'xl', 'screen'],
+      options: ['auto', 'sm', 'md', 'lg', 'xl', 'screen'],
     },
     {
       label: 'Shadow',

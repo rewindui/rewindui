@@ -30,7 +30,6 @@ const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', '
     size: {
       auto: [],
       sm: [],
-      base: [],
       md: [],
       lg: [],
       xl: [],
@@ -46,27 +45,33 @@ const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', '
     {
       size: 'sm',
       mode: 'dialog',
-      className: ['min-w-[18.75rem]'],
+      className: ['w-auto', 'sm:w-[18.75rem]'],
     },
     {
       size: 'md',
       mode: 'dialog',
-      className: ['min-w-[31.25rem]'],
+      className: ['w-auto', 'sm:w-[18.75rem]', 'md:w-[31.25rem]'],
     },
     {
       size: 'lg',
       mode: 'dialog',
-      className: ['min-w-[50rem]'],
+      className: ['w-auto', 'sm:w-[18.75rem]', 'md:w-[31.25rem]', 'lg:w-[50rem]'],
     },
     {
       size: 'xl',
       mode: 'dialog',
-      className: ['min-w-[71.25rem]'],
+      className: [
+        'w-auto',
+        'sm:w-[18.75rem]',
+        'md:w-[31.25rem]',
+        'lg:w-[50rem]',
+        'xl:w-[71.25rem]',
+      ],
     },
     {
       size: 'screen',
       mode: 'dialog',
-      className: ['min-w-screen'],
+      className: ['w-[calc(100vw-6rem)]'],
     },
   ],
 });

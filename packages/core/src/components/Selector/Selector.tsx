@@ -57,6 +57,7 @@ const _Selector: SelectorComponent = forwardRef(
     const [activeTabAnchor, setActiveTabAnchor] = useState(value);
     const mounted = useRef(true);
     const selectorRef = useRef<HTMLDivElement>(null);
+    const observer = useRef<ResizeObserver | null>(null);
     const [selectorClasses, setSelectorClasses] = useState('');
     const colorsMap: Map<string, SelectorTabColor> = new Map();
     const wrapperClasses = useMemo(() => {
@@ -100,6 +101,8 @@ const _Selector: SelectorComponent = forwardRef(
       );
     };
 
+    useEffect(() => {}, []);
+
     useEffect(() => {
       if (!activeTabAnchor) {
         return;
@@ -118,6 +121,20 @@ const _Selector: SelectorComponent = forwardRef(
       positionSelector(activeTab, selectorRef.current, activeTabAnchor, mounted.current);
 
       mounted.current = false;
+
+      observer.current = new ResizeObserver((entries: ResizeObserverEntry[]) => {
+        if (!selectorRef.current) {
+          return;
+        }
+        positionSelector(activeTab, selectorRef.current, activeTabAnchor, mounted.current);
+      });
+      observer.current.observe(selectorRef.current);
+
+      return () => {
+        if (observer.current) {
+          observer.current.disconnect();
+        }
+      };
     }, [
       activeTabAnchor,
       color,

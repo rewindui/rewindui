@@ -5,7 +5,7 @@ export type ModalColor = 'white' | 'gray' | 'slate' | 'zinc';
 export type ModalMode = 'fullscreen' | 'dialog';
 export type ModalRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
 export type ModalShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
-export type ModalSize = 'auto' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'screen';
+export type ModalSize = 'auto' | 'sm' | 'md' | 'lg' | 'xl' | 'screen';
 
 export interface ModalProps extends ComponentPropsWithRef<'div'> {
   closeOnEscape?: boolean;

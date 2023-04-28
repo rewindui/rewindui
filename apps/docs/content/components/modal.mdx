@@ -14,3 +14,393 @@ Import the `Modal` component using the following import statement.
 ```tsx
 import { Modal } from '@rewind-ui@core';
 ```
+
+# Mode
+---
+The `Modal` component can be used as a normal dialog or a fullscreen dialog. The `mode` prop can be used to set the mode of the dialog.
+
+<View>
+  <ModalShowcase showcase="modes" />
+</View>
+
+```tsx
+<View>
+  <Modal mode="dialog">
+    // ...
+  </Modal>
+
+  <Modal mode="fullscreen">
+    // ...
+  </Modal>
+</View>
+```
+
+
+# Colors
+---
+The `Modal` component comes with four colors: `white`, `gray`, `zinc` and `slate`.
+
+<View>
+  <ModalShowcase showcase="colors" />
+</View>
+
+```tsx
+<View>
+  <Modal color="white">
+    // ...
+  </Modal>
+
+  <Modal color="gray">
+    // ...
+  </Modal>
+
+  <Modal color="zinc">
+    // ...
+  </Modal>
+
+  <Modal color="slate">
+    // ...
+  </Modal>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `auto`, `sm`, `md`, `lg` and `screen`. The available sizes are responsive and will change based on the screen size.
+
+<View>
+  <ModalShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Modal size="auto">
+    // ...
+  </Modal>
+
+  <Modal size="sm">
+    // ...
+  </Modal>
+
+  <Modal size="md">
+    // ...
+  </Modal>
+
+  <Modal size="lg">
+    // ...
+  </Modal>
+
+  <Modal size="xl">
+    // ...
+  </Modal>
+
+  <Modal size="screen">
+    // ...
+  </Modal>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <ModalShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Modal radius="none">
+    // ...
+  </Modal>
+
+  <Modal radius="sm">
+    // ...
+  </Modal>
+
+  <Modal radius="base">
+    // ...
+  </Modal>
+
+  <Modal radius="md">
+    // ...
+  </Modal>
+
+  <Modal radius="lg">
+    // ...
+  </Modal>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+<View>
+  <ModalShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Modal shadow="none" overlayColor="white">
+    // ...
+  </Modal>
+
+  <Modal shadow="sm" overlayColor="white">
+    // ...
+  </Modal>
+
+  <Modal shadow="base" overlayColor="white">
+    // ...
+  </Modal>
+
+  <Modal shadow="md" overlayColor="white">
+    // ...
+  </Modal>
+
+  <Modal shadow="lg" overlayColor="white">
+    // ...
+  </Modal>
+
+  <Modal shadow="xl" overlayColor="white">
+    // ...
+  </Modal>
+</View>
+```
+
+# Overlay
+---
+The underlying Overlay component can be customized using the `overlayColor`, `overlayBlur` and `overlayOpacity` props. For more information on the Overlay component, see the [Overlay](https://rewind-ui.dev/components/overlay) component documentation.
+
+## Close on click
+The `closeOnClick` prop can be used to close the modal when the overlay is clicked.
+
+<View>
+  <ModalShowcase showcase="close-on-click" />
+</View>
+
+```tsx
+<View>
+  <Modal overlayCloseOnClick={true}>
+    // ...
+  </Modal>
+
+  <Modal overlayCloseOnClick={false}>
+    // ...
+  </Modal>
+</View>
+```
+
+# Close on escape
+---
+The `closeOnEscape` prop can be used to close the modal when the escape key is pressed.
+
+<View>
+  <ModalShowcase showcase="close-on-escape" />
+</View>
+
+```tsx
+<View>
+  <Modal closeOnEscape={true}>
+    // ...
+  </Modal>
+
+  <Modal closeOnEscape={false}>
+    // ...
+  </Modal>
+</View>
+```
+
+# Focus trap
+---
+The `Modal` component is using the [react-focus-lock](https://github.com/theKashey/react-focus-lock) library to trap focus within the modal. This means that when the modal is open, the user can only interact with the modal and not with the rest of the page.
+
+# Examples
+---
+## Card example
+
+Combining the `Modal` component with the `Card` component can be used to create a modal with a header, a body and a footer.
+
+<View>
+  <ModalShowcase showcase="examples-card" />
+</View>
+
+```tsx
+import { Button, Card, Modal, Text } from '@rewind-ui/core';
+import { useState } from 'react';
+import * as React from 'react';
+import { X } from '@phosphor-icons/react';
+
+const App = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Modal open={open} size="md" onClose={() => setOpen(false)}>
+        <Card>
+          <Card.Header
+            className="bg-gray-50/50"
+            actions={
+              <Button onClick={() => setOpen(false)} size="xs" color="gray" icon={true}>
+                <X />
+              </Button>
+            }
+          >
+            Privacy Policy
+          </Card.Header>
+          <Card.Body className="max-h-[300px] overflow-auto space-y-3">
+            <Text className="block">
+              At [Company], we are committed to protecting your privacy and personal information. We
+              collect information about you when you use our services and when you provide it to us
+              directly. This information is used to provide, maintain, and improve our services, as
+              well as to develop new features and protect the rights and safety of our users and the
+              public.
+            </Text>
+
+            <Text className="block">
+              We may share your information with third parties in certain circumstances, such as
+              with your consent, to service providers and partners, or to comply with legal
+              obligations. We take steps to secure your information, but cannot guarantee its
+              complete protection.
+            </Text>
+
+            <Text className="block">
+              We respect your right to privacy and will allow you to control your personal
+              information. You may access and update your information, or opt out of certain
+              communications, at any time by contacting us. If you have any concerns about how we
+              handle your information, please don't hesitate to reach out. We are committed to
+              addressing any issues and to continually improving our privacy practices.
+            </Text>
+          </Card.Body>
+          <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+            <Button onClick={() => setOpen(false)} size="md" tone="transparent" color="gray">
+              Cancel
+            </Button>
+            <Button
+              className="font-semibold"
+              onClick={() => setOpen(false)}
+              size="md"
+              color="blue"
+              tone="light"
+            >
+              Accept
+            </Button>
+          </Card.Footer>
+        </Card>
+      </Modal>
+
+      <Button onClick={() => setOpen(true)}>Open</Button>
+    </>
+  );
+};
+```
+
+## Form example
+
+Click Tab button on the following modal it can be noticed that the focus is trapped within the modal.
+
+<View>
+  <ModalShowcase showcase="examples-form" />
+</View>
+
+```tsx
+import { Button, Card, Modal } from '@rewind-ui/core';
+import { useState } from 'react';
+import * as React from 'react';
+import { X } from '@phosphor-icons/react';
+
+const App = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Modal open={open} size="sm" onClose={() => setOpen(false)}>
+        <Card size="sm" className="w-full">
+          <Card.Header
+            className="bg-gray-50/50 font-medium"
+            actions={
+              <Button onClick={() => setOpen(false)} size="xs" color="gray" icon={true}>
+                <X />
+              </Button>
+            }
+          >
+            Sign in
+          </Card.Header>
+          <Card.Body className="space-y-3">
+            <FormControl size="sm">
+              <FormControl.Label required>Email address</FormControl.Label>
+              <FormControl.Input type="email" tone="solid" placeholder="Enter your email..." />
+            </FormControl>
+
+            <FormControl size="sm">
+              <FormControl.Label required>Password</FormControl.Label>
+              <FormControl.Input
+                type="password"
+                tone="solid"
+                placeholder="Enter your password..."
+              />
+            </FormControl>
+          </Card.Body>
+          <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+            <Button onClick={() => setOpen(false)} size="sm" tone="transparent" color="gray">
+              Close
+            </Button>
+            <Button
+              className="font-semibold"
+              onClick={() => setOpen(false)}
+              size="sm"
+              color="blue"
+              tone="light"
+            >
+              Login
+            </Button>
+          </Card.Footer>
+        </Card>
+      </Modal>
+
+      <Button onClick={() => setOpen(true)}>Open</Button>
+    </>
+  );
+};
+```
+
+# API Reference
+---
+## Properties
+
+| Prop                | Type             | Description                                          | Default     |
+|:--------------------|:-----------------|:-----------------------------------------------------|:------------|
+| closeOnEscape       | `boolean`        | Makes the modal close when the escape key is pressed | `true`      |
+| color               | `ModalColor`     | Sets the modal color                                 | `white`     |
+| mode                | `ModalMode`      | Sets the modal mode                                  | `dialog`    |
+| onClose             | `() => void`     | Sets the onClose callback function                   | `undefined` |
+| open                | `boolean`        | Sets the open state                                  | `false`     |
+| overlayBlur         | `OverlayBlur`    | Sets the overlay backdrop blur filter                | `sm`        |
+| overlayCloseOnClick | `boolean`        | Makes the modal close when the overlay is clicked    | `true`      |
+| overlayColor        | `OverlayColor`   | Sets the overlay color                               | `dark`      |
+| overlayOpacity      | `OverlayOpacity` | Sets the overlay opacity                             | `50`        |
+| radius              | `ModalRadius`    | Sets the border radius                               | `md`        |
+| shadow              | `ModalShadow`    | Sets the shadow size                                 | `base`      |
+| size                | `ModalSize`      | Sets the modal size                                  | `sm`        |
+
+## Types
+
+```tsx
+type ModalColor = 'white' | 'gray' | 'slate' | 'zinc';
+```
+
+```tsx
+type ModalMode = 'fullscreen' | 'dialog';
+```
+
+```tsx
+type ModalRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type ModalShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type ModalSize = 'auto' | 'sm' | 'md' | 'lg' | 'xl' | 'screen';
+```
