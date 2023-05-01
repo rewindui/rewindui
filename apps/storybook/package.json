@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.0.5",
-    "@rewind-ui/core": "workspace:0.1.0",
+    "@rewind-ui/core": "workspace:*",
     "class-variance-authority": "^0.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
