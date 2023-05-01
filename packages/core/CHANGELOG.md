@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.1
+
+### Patch Changes
+
+- e2232cb: Fixed build issues
+
 ## 0.1.0
 
 ### Minor Changes
