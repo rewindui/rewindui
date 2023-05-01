@@ -1,4 +1,5 @@
 {
+  "name": "@rewind-ui/monorepo",
   "private": true,
   "scripts": {
     "build": "turbo run build",
@@ -10,10 +11,12 @@
     "version-packages": "changeset version",
     "release": "turbo run build --filter=docs^... --filter=storybook^... && turbo run lint && turbo run test && changeset publish",
     "test": "turbo run test",
-    "test:watch": "turbo run test:watch"
+    "test:watch": "turbo run test:watch",
+    "check": "manypkg check"
   },
-  "devDependencies": {
+  "dependencies": {
     "@changesets/cli": "^2.26.0",
+    "@manypkg/cli": "latest",
     "eslint": "^8.35.0",
     "prettier": "^2.8.4",
     "turbo": "^1.8.2"
