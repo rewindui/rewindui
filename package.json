@@ -1,5 +1,5 @@
 {
-  "name": "@rewind-ui/monorepo",
+  "name": "@rewind-ui/rewind-ui",
   "private": true,
   "scripts": {
     "build": "turbo run build",
