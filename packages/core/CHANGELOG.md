@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.2
+
+### Patch Changes
+
+- 2cee880: Build hotfix
+
 ## 0.1.1
 
 ### Patch Changes
