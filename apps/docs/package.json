@@ -28,7 +28,6 @@
     "react-dom": "18.2.0",
     "rehype-pretty-code": "^0.9.4",
     "rehype-slug": "^5.1.0",
-    "shiki": "^0.14.1",
     "typescript": "5.0.3"
   },
   "devDependencies": {
