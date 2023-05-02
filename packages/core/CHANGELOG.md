@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.3
+
+### Patch Changes
+
+- af3b456: Tree shaking fix
+
 ## 0.1.2
 
 ### Patch Changes
