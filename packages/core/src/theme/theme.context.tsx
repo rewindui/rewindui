@@ -256,11 +256,11 @@ const defaultTheme: Theme = {
   },
 };
 
-export type ThemeContext = {
+export type ThemeContextType = {
   theme: Theme;
 };
 
-export const ThemeContext = createContext<ThemeContext>({
+export const ThemeContext = createContext<ThemeContextType>({
   theme: defaultTheme,
 });
 

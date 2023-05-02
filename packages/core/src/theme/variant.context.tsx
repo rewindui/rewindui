@@ -24,11 +24,11 @@ const defaultVariant: Variant = {
   },
 };
 
-export type VariantContext = {
+export type VariantContextType = {
   variant: Variant;
 };
 
-export const VariantContext = createContext<VariantContext>({
+export const VariantContext = createContext<VariantContextType>({
   variant: defaultVariant,
 });
 
