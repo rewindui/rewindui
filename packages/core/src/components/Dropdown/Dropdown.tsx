@@ -110,10 +110,12 @@ const _Dropdown: DropdownComponent = forwardRef<HTMLDivElement, DropdownProps>(
 
 _Dropdown.displayName = 'Dropdown';
 
-export const Dropdown = Object.assign(_Dropdown, {
+const Dropdown = Object.assign(_Dropdown, {
   Trigger: DropdownTrigger,
   Content: DropdownContent,
   Label: DropdownLabel,
   Divider: DropdownDivider,
   Item: DropdownItem,
 });
+
+export default Dropdown;

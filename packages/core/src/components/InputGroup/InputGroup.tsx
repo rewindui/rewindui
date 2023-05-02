@@ -68,7 +68,7 @@ const _InputGroup: InputGroupComponent = forwardRef(
 
 _InputGroup.displayName = 'InputGroup';
 
-export const InputGroup = Object.assign(_InputGroup, {
+const InputGroup = Object.assign(_InputGroup, {
   Input: Input,
   Textarea: Textarea,
   Select: Select,
@@ -76,3 +76,5 @@ export const InputGroup = Object.assign(_InputGroup, {
   Text: InputGroupText,
   Button: Button,
 });
+
+export default InputGroup;

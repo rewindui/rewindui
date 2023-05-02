@@ -74,4 +74,4 @@ const Fader = forwardRef((props: FaderProps, ref?: Ref<HTMLDivElement>) => {
 
 Fader.displayName = 'Fader';
 
-export { Fader };
+export default Fader;

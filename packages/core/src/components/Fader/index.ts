@@ -1,1 +1,1 @@
-export { Fader } from './Fader';
+export { default as Fader } from './Fader';

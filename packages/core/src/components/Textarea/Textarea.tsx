@@ -63,4 +63,4 @@ const Textarea: TextareaComponent = forwardRef(
 
 Textarea.displayName = 'Textarea';
 
-export { Textarea };
+export default Textarea;

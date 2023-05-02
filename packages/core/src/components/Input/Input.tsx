@@ -119,4 +119,4 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
 
 Input.displayName = 'Input';
 
-export { Input };
+export default Input;

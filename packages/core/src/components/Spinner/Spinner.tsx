@@ -29,4 +29,4 @@ const Spinner = (props: SpinnerProps) => {
 
 Spinner.displayName = 'Spinner';
 
-export { Spinner };
+export default Spinner;

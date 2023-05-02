@@ -85,7 +85,9 @@ const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
 
 _Popover.displayName = 'Popover';
 
-export const Popover = Object.assign(_Popover, {
+const Popover = Object.assign(_Popover, {
   Trigger: PopoverTrigger,
   Content: PopoverContent,
 });
+
+export default Popover;

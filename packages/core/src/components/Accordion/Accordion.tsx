@@ -88,8 +88,10 @@ const AccordionRoot: AccordionComponent = forwardRef<HTMLDivElement, AccordionPr
 
 AccordionRoot.displayName = 'Accordion';
 
-export const Accordion = Object.assign(AccordionRoot, {
+const Accordion = Object.assign(AccordionRoot, {
   Item: AccordionItem,
   Header: AccordionHeader,
   Body: AccordionBody,
 });
+
+export default Accordion;

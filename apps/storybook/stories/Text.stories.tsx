@@ -1,13 +1,13 @@
 import {
+  Text,
   TextColor,
   TextLeading,
   TextProps,
   TextSize,
   TextTracking,
+  TextVariants,
   TextWeight,
 } from '@rewind-ui/core';
-import { Text } from '@rewind-ui/core';
-import { TextVariants } from '@rewind-ui/core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

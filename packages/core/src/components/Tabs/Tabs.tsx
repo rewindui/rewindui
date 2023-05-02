@@ -57,8 +57,10 @@ const TabsRoot: TabsComponent = forwardRef<HTMLDivElement, TabsProps>(
 
 TabsRoot.displayName = 'Tabs';
 
-export const Tabs = Object.assign(TabsRoot, {
+const Tabs = Object.assign(TabsRoot, {
   Tab: Tab,
   List: TabList,
   Content: TabContent,
 });
+
+export default Tabs;

@@ -138,4 +138,4 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
 
 Modal.displayName = 'Modal';
 
-export { Modal };
+export default Modal;

@@ -67,9 +67,11 @@ const CardRoot: CardComponent = forwardRef<HTMLDivElement, CardProps>(
 
 CardRoot.displayName = 'Card';
 
-export const Card = Object.assign(CardRoot, {
+const Card = Object.assign(CardRoot, {
   Header: CardHeader,
   Image: CardImage,
   Body: CardBody,
   Footer: CardFooter,
 });
+
+export default Card;

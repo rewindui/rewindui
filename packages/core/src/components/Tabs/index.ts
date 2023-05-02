@@ -1,4 +1,4 @@
-export { Tabs } from './Tabs';
+export { default as Tabs } from './Tabs';
 export type {
   TabsColor,
   TabsContext,

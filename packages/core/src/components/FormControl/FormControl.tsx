@@ -52,7 +52,7 @@ const _FormControl: FormControlComponent = forwardRef(
 
 _FormControl.displayName = 'FormControl';
 
-export const FormControl = Object.assign(_FormControl, {
+const FormControl = Object.assign(_FormControl, {
   Label: FormControlLabel,
   Text: FormControlText,
   InputGroup: InputGroup,
@@ -60,3 +60,5 @@ export const FormControl = Object.assign(_FormControl, {
   Textarea: Textarea,
   Select: Select,
 });
+
+export default FormControl;

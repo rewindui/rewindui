@@ -44,4 +44,4 @@ const Overlay: OverlayComponent = forwardRef((props: OverlayProps, ref?: Ref<HTM
 
 Overlay.displayName = 'Overlay';
 
-export { Overlay };
+export default Overlay;

@@ -157,4 +157,4 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
 
 Switch.displayName = 'Switch';
 
-export { Switch };
+export default Switch;

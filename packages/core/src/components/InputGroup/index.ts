@@ -1,4 +1,4 @@
-export { InputGroup } from './InputGroup';
+export { default as InputGroup } from './InputGroup';
 export type {
   InputGroupProps,
   InputGroupTone,

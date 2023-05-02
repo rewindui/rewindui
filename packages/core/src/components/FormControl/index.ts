@@ -1,4 +1,4 @@
-export { FormControl } from './FormControl';
+export { default as FormControl } from './FormControl';
 export type { FormControlProps, FormControlSize, FormControlValidation } from './FormControl.types';
 export type {
   FormControlTextProps,

@@ -188,6 +188,8 @@ const _Selector: SelectorComponent = forwardRef(
 
 _Selector.displayName = 'Selector';
 
-export const Selector = Object.assign(_Selector, {
+const Selector = Object.assign(_Selector, {
   Tab: SelectorTab,
 });
+
+export default Selector;

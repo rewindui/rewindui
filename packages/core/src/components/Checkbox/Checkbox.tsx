@@ -92,4 +92,4 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
 
 Checkbox.displayName = 'Checkbox';
 
-export { Checkbox };
+export default Checkbox;

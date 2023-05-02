@@ -137,4 +137,4 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
 
 Tooltip.displayName = 'Tooltip';
 
-export { Tooltip };
+export default Tooltip;

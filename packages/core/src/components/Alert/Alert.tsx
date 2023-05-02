@@ -86,4 +86,4 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
 
 Alert.displayName = 'Alert';
 
-export { Alert };
+export default Alert;

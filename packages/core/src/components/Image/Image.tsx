@@ -72,4 +72,4 @@ const Image: ImageComponent = forwardRef<HTMLDivElement, ImageProps>(
 
 Image.displayName = 'Image';
 
-export { Image };
+export default Image;

@@ -83,4 +83,4 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
 
 Select.displayName = 'Select';
 
-export { Select };
+export default Select;

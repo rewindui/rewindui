@@ -6,6 +6,8 @@
     "lib": ["dom", "ES2015"],
     "module": "ESNext",
     "target": "es6",
+    "rootDir": "src",
+    "outDir": "dist",
     "composite": false,
     "declaration": true,
     "declarationMap": true,

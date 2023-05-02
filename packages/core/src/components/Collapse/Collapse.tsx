@@ -53,4 +53,4 @@ const Collapse = (props: CollapseProps) => {
 
 Collapse.displayName = 'Collapse';
 
-export { Collapse };
+export default Collapse;

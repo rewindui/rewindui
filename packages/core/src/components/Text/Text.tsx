@@ -61,4 +61,4 @@ const Text: TextComponent = forwardRef(
 
 Text.displayName = 'Text';
 
-export { Text };
+export default Text;

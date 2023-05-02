@@ -307,7 +307,9 @@ const _Combobox: ComboboxComponent = forwardRef(
 
 _Combobox.displayName = 'Combobox';
 
-export const Combobox = Object.assign(_Combobox, {
+const Combobox = Object.assign(_Combobox, {
   Group: ComboboxGroup,
   Option: ComboboxOption,
 });
+
+export default Combobox;

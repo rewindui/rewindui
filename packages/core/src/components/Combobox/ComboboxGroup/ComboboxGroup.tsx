@@ -2,7 +2,7 @@ import { useComboboxContext } from '@components/Combobox/Combobox.context';
 import {
   ComboboxGroupComponent,
   ComboboxGroupProps,
-} from '@components/Combobox/ComboboxGroup/ComboxboxGroup.types';
+} from '@components/Combobox/ComboboxGroup/ComboboxGroup.types';
 import { useMergeRefs } from '@floating-ui/react';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
