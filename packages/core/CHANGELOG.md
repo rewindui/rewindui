@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.6
+
+### Patch Changes
+
+- 1a9a3e4: Types hotfix
+
 ## 0.1.5
 
 ### Patch Changes
