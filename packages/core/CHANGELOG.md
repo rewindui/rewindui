@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.7
+
+### Patch Changes
+
+- cf6e6a2: Rollup build fix
+
 ## 0.1.6
 
 ### Patch Changes
