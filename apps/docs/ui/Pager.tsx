@@ -144,6 +144,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'select',
     },
     {
+      title: 'Combobox',
+      url: '/components/combobox',
+      slug: 'combobox',
+    },
+    {
       title: 'Textarea',
       url: '/components/textarea',
       slug: 'textarea',

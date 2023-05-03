@@ -18,7 +18,7 @@ import React, {
 
 const defaultProps: Partial<ComboboxGroupProps> = {
   color: 'gray',
-  weight: 'medium',
+  weight: 'normal',
 };
 
 const ComboboxGroup: ComboboxGroupComponent = forwardRef(
@@ -56,11 +56,11 @@ const ComboboxGroup: ComboboxGroupComponent = forwardRef(
 
     useEffect(() => {
       setHidden(hiddenChildrenCount === Children.count(children));
-    }, [hiddenChildrenCount]);
+    }, [children, hiddenChildrenCount]);
 
     useEffect(() => {
       setClasses(theme.group({ className, hidden, size, mode, color, weight }));
-    }, [hidden]);
+    }, [className, color, hidden, mode, size, theme, weight]);
 
     return (
       <>

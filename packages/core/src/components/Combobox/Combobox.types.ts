@@ -1,15 +1,25 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement, ReactNode } from 'react';
 
+export type ComboboxColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
 export type ComboboxMode = 'spacey' | 'tight';
 export type ComboboxRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
 export type ComboboxShadow = 'none' | 'sm' | 'base' | 'md' | 'lg';
 export type ComboboxSize = 'xs' | 'sm' | 'md' | 'lg';
-export type ComboboxTone = 'base' | 'solid' | 'transparent';
+export type ComboboxTone = 'light' | 'solid' | 'transparent';
 export type ComboboxValidation = 'none' | 'invalid' | 'valid' | 'warning';
 
 export interface ComboboxProps extends ComponentPropsWithRef<'div'> {
   clearable?: boolean;
   closeOnEscape?: boolean;
+  color?: ComboboxColor;
   disabled?: boolean;
   initialValue?: string;
   leftIcon?: ReactElement;
@@ -29,6 +39,7 @@ export interface ComboboxProps extends ComponentPropsWithRef<'div'> {
 }
 
 export interface ComboboxContext {
+  color?: ComboboxColor;
   mode?: ComboboxMode;
   search?: string;
   selectedLabel?: string | null;

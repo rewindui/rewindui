@@ -13,6 +13,10 @@ export function useKeypress(
     const handle = (event: KeyboardEvent) => {
       if (event.key === key && callback) {
         callback(event);
+
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+        }
       }
     };
 
@@ -21,5 +25,5 @@ export function useKeypress(
     return () => {
       document.removeEventListener('keydown', handle);
     };
-  }, [key, callback]);
+  }, [key, callback, active]);
 }

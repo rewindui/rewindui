@@ -134,13 +134,12 @@ const menuItems: MenuItem[] = [
         path: '/components/select',
       },
       {
-        title: 'Textarea',
-        path: '/components/textarea',
-      },
-      {
         title: 'Combobox',
         path: '/components/combobox',
-        wip: true,
+      },
+      {
+        title: 'Textarea',
+        path: '/components/textarea',
       },
       {
         title: 'Input Group',

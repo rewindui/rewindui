@@ -29,19 +29,20 @@ import { CaretUpDown } from '@icons/CaretUpDown';
 const defaultProps: Partial<ComboboxProps> = {
   clearable: true,
   closeOnEscape: true,
+  color: 'blue',
   disabled: false,
   loading: false,
   maxHeight: 250,
-  minWidth: 400,
+  minWidth: 250,
   mode: 'spacey',
   offset: 5,
   radius: 'md',
   searchable: true,
   shadow: 'none',
   size: 'md',
-  tone: 'base',
+  tone: 'light',
   validation: 'none',
-  withRing: false,
+  withRing: true,
 };
 
 const _Combobox: ComboboxComponent = forwardRef(
@@ -52,6 +53,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       className,
       clearable,
       closeOnEscape,
+      color,
       initialValue,
       leftIcon,
       loading,
@@ -89,14 +91,15 @@ const _Combobox: ComboboxComponent = forwardRef(
     const listRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const contextValue: ComboboxContext = {
-      size,
+      color,
       mode,
       search,
-      setSearch,
-      selectedValue,
-      setSelectedValue,
       selectedLabel,
+      selectedValue,
+      setSearch,
       setSelectedLabel,
+      setSelectedValue,
+      size,
     };
     const { x, y, reference, floating, strategy, getFloatingProps, open, setOpen } = useCombobox({
       offset,
@@ -231,7 +234,19 @@ const _Combobox: ComboboxComponent = forwardRef(
           withRing,
         })
       );
-    }, []);
+    }, [
+      className,
+      disabled,
+      hasLeftIcon,
+      hasRightIcon,
+      radius,
+      shadow,
+      size,
+      theme,
+      tone,
+      validation,
+      withRing,
+    ]);
 
     return (
       <div

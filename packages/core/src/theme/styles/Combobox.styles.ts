@@ -11,8 +11,8 @@ const base = cva(
         lg: ['text-lg', 'h-12'],
       },
       tone: {
-        base: ['text-gray-800', 'border', 'focus:bg-gray-50/50', 'placeholder:text-gray-400'],
-        solid: ['text-gray-800', 'border', 'focus:bg-slate-200/60', 'placeholder:text-slate-400'],
+        light: ['text-gray-800', 'border', 'focus:bg-gray-50', 'placeholder:text-gray-400'],
+        solid: ['text-gray-800', 'border', 'focus:bg-gray-100', 'placeholder:text-gray-400'],
         transparent: ['text-gray-800', 'border', 'placeholder:text-gray-400'],
       },
       radius: {
@@ -53,8 +53,8 @@ const base = cva(
         warning: ['border-yellow-400', 'focus-visible:border-yellow-400'],
       },
       withRing: {
-        true: ['focus:ring-2'],
-        false: [],
+        true: ['focus:ring-2', 'focus:ring-offset-1'],
+        false: ['focus:ring-0'],
       },
       disabled: {
         true: ['cursor-not-allowed'],
@@ -83,14 +83,14 @@ const base = cva(
         className: ['focus:ring-yellow-200'],
       },
       {
-        tone: 'base',
+        tone: 'light',
         disabled: false,
         className: ['bg-white'],
       },
       {
         tone: 'solid',
         disabled: false,
-        className: ['bg-slate-100'],
+        className: ['bg-gray-50'],
       },
       {
         tone: 'transparent',
@@ -98,14 +98,14 @@ const base = cva(
         className: ['bg-transparent'],
       },
       {
-        tone: 'base',
+        tone: 'light',
         disabled: true,
         className: ['bg-gray-100'],
       },
       {
         tone: 'solid',
         disabled: true,
-        className: ['bg-slate-200'],
+        className: ['bg-gray-200'],
       },
       {
         tone: 'transparent',
@@ -113,24 +113,14 @@ const base = cva(
         className: ['bg-gray-50'],
       },
       {
-        tone: ['base', 'transparent'],
-        shadow: ['sm', 'base', 'md', 'lg'],
-        className: ['shadow-gray-400/50'],
-      },
-      {
-        tone: 'solid',
-        shadow: ['sm', 'base', 'md', 'lg'],
-        className: ['shadow-slate-400/50'],
-      },
-      {
-        tone: 'base',
+        tone: 'light',
         validation: 'none',
         className: ['border-gray-300', 'focus-visible:border-blue-500'],
       },
       {
         tone: 'solid',
         validation: 'none',
-        className: ['border-slate-100', 'focus-visible:border-blue-500'],
+        className: ['border-gray-200', 'focus-visible:border-blue-500'],
       },
       {
         tone: 'transparent',
@@ -322,7 +312,7 @@ const list = cva(
 const icon = cva([], {
   variants: {
     tone: {
-      base: ['text-gray-600'],
+      light: ['text-gray-600'],
       solid: ['text-gray-600'],
       transparent: ['text-gray-600'],
     },
@@ -399,6 +389,7 @@ const group = cva(
         purple: 'text-purple-500',
         gray: 'text-gray-400',
         dark: 'text-gray-900',
+        black: 'text-black',
       },
       weight: {
         thin: 'font-thin',
@@ -444,6 +435,16 @@ const button = cva(
         true: ['hidden'],
         false: [],
       },
+      color: {
+        blue: [],
+        red: [],
+        green: [],
+        yellow: [],
+        purple: [],
+        gray: [],
+        dark: [],
+        black: [],
+      },
       mode: {
         spacey: ['rounded'],
         tight: [],
@@ -455,7 +456,7 @@ const button = cva(
         lg: ['text-lg', 'px-2', 'py-2'],
       },
       selected: {
-        true: ['bg-blue-500', 'text-gray-50'],
+        true: [],
         false: [
           'focus-within:bg-gray-100',
           'focus:bg-gray-100',
@@ -464,6 +465,48 @@ const button = cva(
         ],
       },
     },
+    compoundVariants: [
+      {
+        selected: true,
+        color: 'blue',
+        className: ['bg-blue-500', 'text-white'],
+      },
+      {
+        selected: true,
+        color: 'red',
+        className: ['bg-red-500', 'text-white'],
+      },
+      {
+        selected: true,
+        color: 'green',
+        className: ['bg-green-500', 'text-white'],
+      },
+      {
+        selected: true,
+        color: 'yellow',
+        className: ['bg-yellow-400', 'text-white'],
+      },
+      {
+        selected: true,
+        color: 'purple',
+        className: ['bg-purple-500', 'text-white'],
+      },
+      {
+        selected: true,
+        color: 'gray',
+        className: ['bg-gray-200', 'text-gray-700'],
+      },
+      {
+        selected: true,
+        color: 'dark',
+        className: ['bg-gray-500', 'text-white'],
+      },
+      {
+        selected: true,
+        color: 'black',
+        className: ['bg-gray-900', 'text-white'],
+      },
+    ],
   }
 );
 
@@ -482,7 +525,7 @@ const optionWrapper = cva(['flex', 'items-center', 'space-x-2', 'mr-5']);
 
 const infoWrapper = cva(['grid', 'grid-cols-1', 'justify-items-start']);
 
-const label = cva(['font-medium'], {
+const label = cva([], {
   variants: {
     disabled: {
       true: [],
