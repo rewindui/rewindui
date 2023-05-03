@@ -4,7 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 
-import dts from "rollup-plugin-dts";
+import dts from 'rollup-plugin-dts';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 
@@ -16,10 +16,10 @@ const outputOptions = {
 
 const tscAlias = () => {
   return {
-    name: "tsAlias",
+    name: 'tsAlias',
     writeBundle: () => {
       return new Promise((resolve, reject) => {
-        exec("tsc-alias", function callback(error, stdout, stderr) {
+        exec('tsc-alias', function callback(error, stdout, stderr) {
           if (stderr || error) {
             reject(stderr || error);
           } else {
