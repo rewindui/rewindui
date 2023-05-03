@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 
+import dts from "rollup-plugin-dts";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 
@@ -51,5 +52,11 @@ export default [
       typescriptPaths(),
       terser(),
     ],
+  },
+  {
+    input: 'dist/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    plugins: [dts()],
+    external: [/\.css$/],
   },
 ];
