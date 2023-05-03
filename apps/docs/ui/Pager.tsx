@@ -14,9 +14,12 @@ type PagerProps = {
   current: Component | Page;
 };
 
-function getPrevAndNext(array: CollectionItem[], index: number) {
-  let prev = null;
-  let next = null;
+function getPrevAndNext(
+  array: CollectionItem[],
+  index: number
+): { next: null | CollectionItem; prev: null | CollectionItem } {
+  let prev: CollectionItem | null = null;
+  let next: CollectionItem | null = null;
 
   if (index > 0) {
     prev = array[index - 1];
