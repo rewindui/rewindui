@@ -139,7 +139,6 @@ importers:
       react-dom: ^18.2.0
       react-focus-lock: ^2.9.4
       rollup: ^3.21.3
-      rollup-plugin-dts: ^5.3.0
       rollup-plugin-peer-deps-external: ^2.2.4
       rollup-plugin-typescript-paths: ^1.4.0
       tailwind-merge: ^1.10.0
@@ -174,7 +173,6 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       rollup: 3.21.3
-      rollup-plugin-dts: 5.3.0_ttb5m633tv2t6hn6xwiassyuka
       rollup-plugin-peer-deps-external: 2.2.4_rollup@3.21.3
       rollup-plugin-typescript-paths: 1.4.0_typescript@4.9.5
       tsc-alias: 1.8.6
@@ -11136,13 +11134,6 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /magic-string/0.30.0:
-    resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
-
   /make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
@@ -14062,20 +14053,6 @@ packages:
     dependencies:
       hash-base: 3.1.0
       inherits: 2.0.4
-    dev: true
-
-  /rollup-plugin-dts/5.3.0_ttb5m633tv2t6hn6xwiassyuka:
-    resolution: {integrity: sha512-8FXp0ZkyZj1iU5klkIJYLjIq/YZSwBoERu33QBDxm/1yw5UU4txrEtcmMkrq+ZiKu3Q4qvPCNqc3ovX6rjqzbQ==}
-    engines: {node: '>=v14'}
-    peerDependencies:
-      rollup: ^3.0.0
-      typescript: ^4.1 || ^5.0
-    dependencies:
-      magic-string: 0.30.0
-      rollup: 3.21.3
-      typescript: 4.9.5
-    optionalDependencies:
-      '@babel/code-frame': 7.21.4
     dev: true
 
   /rollup-plugin-peer-deps-external/2.2.4_rollup@3.21.3:

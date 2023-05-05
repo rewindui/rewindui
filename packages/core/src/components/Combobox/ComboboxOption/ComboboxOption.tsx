@@ -19,6 +19,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
       color,
       size,
       mode,
+      radius,
       search,
       selectedValue,
       setSelectedValue,
@@ -43,7 +44,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
       <button
         id={id}
         ref={ref}
-        className={theme.button({ color, selected, hidden, size, mode })}
+        className={theme.button({ color, radius, selected, hidden, size, mode })}
         aria-hidden={hidden}
         disabled={disabled}
         aria-disabled={disabled}

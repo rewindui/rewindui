@@ -61,6 +61,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       minWidth,
       mode,
       offset,
+      onChange,
       placeholder,
       radius,
       searchable,
@@ -87,12 +88,14 @@ const _Combobox: ComboboxComponent = forwardRef(
     const [visibleRefs, setVisibleRefs] = useState<HTMLButtonElement[]>([]);
     const [listClasses, setListClasses] = useState<string>('');
     const [inputClasses, setInputClasses] = useState<string>('');
+    const mounted = useRef(true);
     const localWrapperRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const contextValue: ComboboxContext = {
       color,
       mode,
+      radius,
       search,
       selectedLabel,
       selectedValue,
@@ -104,7 +107,7 @@ const _Combobox: ComboboxComponent = forwardRef(
     const { x, y, reference, floating, strategy, getFloatingProps, open, setOpen } = useCombobox({
       offset,
     });
-    const wrapperRef = useMergeRefs([ref || null, reference, localWrapperRef]);
+    const wrapperRef = useMergeRefs([reference, localWrapperRef, ref || null]);
     const floatingRef = useMergeRefs([listRef, floating]);
 
     const wrapperClasses = theme.wrapper({ disabled });
@@ -120,6 +123,14 @@ const _Combobox: ComboboxComponent = forwardRef(
       setSearch('');
       setSearching(false);
     }, [selectedLabel]);
+
+    useEffect(() => {
+      if (onChange && !mounted.current) {
+        onChange(selectedValue);
+      }
+
+      mounted.current = false;
+    }, [onChange, selectedValue]);
 
     useEffect(() => {
       inputRef.current?.focus();
@@ -176,6 +187,7 @@ const _Combobox: ComboboxComponent = forwardRef(
 
     const inputElement = (
       <input
+        ref={inputRef}
         disabled={disabled}
         value={searching ? search : selectedLabel || ''}
         placeholder={placeholder}

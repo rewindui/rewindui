@@ -16,7 +16,7 @@ export type ComboboxSize = 'xs' | 'sm' | 'md' | 'lg';
 export type ComboboxTone = 'light' | 'solid' | 'transparent';
 export type ComboboxValidation = 'none' | 'invalid' | 'valid' | 'warning';
 
-export interface ComboboxProps extends ComponentPropsWithRef<'div'> {
+export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onChange'> {
   clearable?: boolean;
   closeOnEscape?: boolean;
   color?: ComboboxColor;
@@ -28,6 +28,7 @@ export interface ComboboxProps extends ComponentPropsWithRef<'div'> {
   minWidth?: number;
   mode?: ComboboxMode;
   offset?: number;
+  onChange?(value: string | null | undefined): void;
   placeholder?: string;
   radius?: ComboboxRadius;
   searchable?: boolean;
@@ -41,6 +42,7 @@ export interface ComboboxProps extends ComponentPropsWithRef<'div'> {
 export interface ComboboxContext {
   color?: ComboboxColor;
   mode?: ComboboxMode;
+  radius?: ComboboxRadius;
   search?: string;
   selectedLabel?: string | null;
   selectedValue?: string | null;

@@ -36,7 +36,6 @@ import {
   Switch,
   FormControl,
 } from '@rewind-ui/core';
-import { HTMLAttributes } from 'react';
 import { View } from './View';
 import {
   MagnifyingGlass,
@@ -46,6 +45,10 @@ import {
   Key,
   WarningCircle,
 } from '@phosphor-icons/react';
+import {
+  ComboboxShowcase,
+  ComboboxShowcaseProps,
+} from '@/ui/configurators/components/Combobox.showcase';
 
 const components = {
   h1: ({ ...props }) => (
@@ -142,6 +145,9 @@ const components = {
   PopoverShowcase: ({ showcase }: PopoverShowcaseProps) => <PopoverShowcase showcase={showcase} />,
   TabsShowcase: ({ showcase }: TabsShowcaseProps) => <TabsShowcase showcase={showcase} />,
   ModalShowcase: ({ showcase }: ModalShowcaseProps) => <ModalShowcase showcase={showcase} />,
+  ComboboxShowcase: ({ showcase }: ComboboxShowcaseProps) => (
+    <ComboboxShowcase showcase={showcase} />
+  ),
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,

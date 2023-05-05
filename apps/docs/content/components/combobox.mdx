@@ -14,3 +14,547 @@ Import the `Combobox` component using the following import statement.
 ```tsx
 import { Combobox } from '@rewind-ui/core';
 ```
+
+# Tones
+---
+The `Combobox` component supports three tones: `light`, `solid` and `transparent`.
+
+<View>
+  <ComboboxShowcase showcase="tones" />
+</View>
+
+```tsx
+<View>
+  <Combobox tone="light">
+    // ...
+  </Combobox>
+  <Combobox tone="solid">
+    // ...
+  </Combobox>
+  <Combobox tone="transparent">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Colors
+---
+Using the `color` prop, the color of the selected option can be adjusted.
+
+The available `color` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <ComboboxShowcase showcase="colors" />
+</View>
+
+```tsx
+<View>
+  <Combobox color="blue">
+    // ...
+  </Combobox>
+  <Combobox color="red">
+    // ...
+  </Combobox>
+  <Combobox color="green">
+    // ...
+  </Combobox>
+  <Combobox color="yellow">
+    // ...
+  </Combobox>
+  <Combobox color="purple">
+    // ...
+  </Combobox>
+  <Combobox color="gray">
+    // ...
+  </Combobox>
+  <Combobox color="dark">
+    // ...
+  </Combobox>
+  <Combobox color="black">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Modes
+---
+The following modes are supported by the `Combobox` component: `tight` and `spacey`.
+
+<View>
+  <ComboboxShowcase showcase="modes" />
+</View>
+
+```tsx
+<View>
+  <Combobox mode="tight">
+    // ...
+  </Combobox>
+
+  <Combobox mode="spacey">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Sizes
+---
+The following sizes are supported by the `Combobox` component: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <ComboboxShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Combobox size="xs">
+    // ...
+  </Combobox>
+
+  <Combobox size="sm">
+    // ...
+  </Combobox>
+
+  <Combobox size="md">
+    // ...
+  </Combobox>
+
+  <Combobox size="lg">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Radiuses
+---
+The following radiuses are supported by the `Combobox` component: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <ComboboxShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Combobox radius="none">
+    // ...
+  </Combobox>
+
+  <Combobox radius="sm">
+    // ...
+  </Combobox>
+
+  <Combobox radius="base">
+    // ...
+  </Combobox>
+
+  <Combobox radius="md">
+    // ...
+  </Combobox>
+
+  <Combobox radius="lg">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Shadows
+---
+The following shadows are supported by the `Combobox` component: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <ComboboxShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Combobox shadow="none">
+    // ...
+  </Combobox>
+
+  <Combobox shadow="sm">
+    // ...
+  </Combobox>
+
+  <Combobox shadow="base">
+    // ...
+  </Combobox>
+
+  <Combobox shadow="md">
+    // ...
+  </Combobox>
+
+  <Combobox shadow="lg">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Validation
+---
+The `Combobox` component supports the following validation options: `none`, `invalid`, `valid` and `warning`.
+
+<View>
+  <ComboboxShowcase showcase="validations" />
+</View>
+
+```tsx
+<View>
+  <Combobox validation="none">
+    // ...
+  </Combobox>
+  <Combobox validation="invalid">
+    // ...
+  </Combobox>
+  <Combobox validation="valid">
+    // ...
+  </Combobox>
+  <Combobox validation="warning">
+    // ...
+  </Combobox>
+</View>
+```
+
+# States
+---
+`Combobox` component supports `disabled` and `loading` states.
+
+<View>
+  <ComboboxShowcase showcase="states" />
+</View>
+
+```tsx
+<View>
+  <Combobox disabled>
+    // ...
+  </Combobox>
+  <Combobox loading>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Ring
+---
+A ring can be added to the `Combobox` by setting the `withRing` prop to `true`.
+
+<View>
+  <ComboboxShowcase showcase="ring" />
+</View>
+
+```tsx
+<View>
+  <Combobox withRing={true}>
+    // ...
+  </Combobox>
+  <Combobox withRing={false}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Icons
+---
+An icon can be added to the `Combobox` by setting the `leftIcon` prop to a valid React element.
+
+<View>
+  <ComboboxShowcase showcase="icon" />
+</View>
+
+```tsx
+<View>
+  <Combobox leftIcon="...">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Clearable
+---
+The `Combobox` component can be made clearable by setting the `clearable` prop to `true`. Setting the `clearable` prop to `false` will hide the clear button.
+
+<View>
+  <ComboboxShowcase showcase="clearable" />
+</View>
+
+```tsx
+<View>
+  <Combobox clearable={true}>
+    // ...
+  </Combobox>
+  <Combobox clearable={false}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Close on escape
+---
+The `Combobox` component can be made to close on escape by setting the `closeOnEscape` prop to `true`. Setting the `closeOnEscape` prop to `false` will disable this behavior.
+
+<View>
+  <ComboboxShowcase showcase="close-on-escape" />
+</View>
+
+```tsx
+<View>
+  <Combobox closeOnEscape={true}>
+    // ...
+  </Combobox>
+  <Combobox closeOnEscape={false}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Max height
+---
+The `Combobox` component drop down can be made to have a maximum height by setting the `maxHeight` prop.
+
+<View>
+  <ComboboxShowcase showcase="max-height" />
+</View>
+
+```tsx
+<View>
+  <Combobox maxHeight={200}>
+    // ...
+  </Combobox>
+  <Combobox maxHeight={350}>
+    // ...
+  </Combobox>
+  <Combobox maxHeight={500}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Min width
+---
+The `Combobox` component drop down can be made to have a minimum width by setting the `minWidth` prop.
+
+<View>
+  <ComboboxShowcase showcase="min-width" />
+</View>
+
+```tsx
+<View>
+  <Combobox minWidth={200}>
+    // ...
+  </Combobox>
+  <Combobox minWidth={300}>
+    // ...
+  </Combobox>
+  <Combobox minWidth={400}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Offset
+---
+The `Combobox` component drop down offset can be adjusted by setting the `offset` prop.
+
+<View>
+  <ComboboxShowcase showcase="offset" />
+</View>
+
+```tsx
+<View>
+  <Combobox offset={0}>
+    // ...
+  </Combobox>
+  <Combobox offset={5}>
+    // ...
+  </Combobox>
+  <Combobox offset={10}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Searchable
+---
+The `Combobox` component can be made searchable by setting the `searchable` prop to `true`. Setting the `searchable` prop to `false` will disable this behavior.
+
+<View>
+  <ComboboxShowcase showcase="searchable" />
+</View>
+
+```tsx
+<View>
+  <Combobox searchable={true}>
+    // ...
+  </Combobox>
+  <Combobox searchable={false}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Groups
+---
+The `Combobox.Option` components can be grouped using the `Combobox.Group` component.
+
+The `Combobox.Group` component accepts a `heading` prop which is used as the group heading.
+
+<View>
+  <ComboboxShowcase showcase="groups" />
+</View>
+
+```tsx
+<View>
+  <Combobox>
+    <Combobox.Group heading="Europe">
+      // ...
+    </Combobox.Group>
+    <Combobox.Group heading="Asia">
+      // ...
+    </Combobox.Group>
+  </Combobox>
+</View>
+```
+
+# Options
+---
+
+## Description
+A description can be added to the `Combobox.Option` component by setting the `description` prop. By using the search functionality, the description will be included in the search.
+
+<View>
+  <ComboboxShowcase showcase="option-description" />
+</View>
+
+```tsx
+<View>
+  <Combobox>
+    <Combobox.Option
+      value="1"
+      label="Germany"
+      description="The second-most populous country in Europe"
+    />
+    // ...
+  </Combobox>
+</View>
+```
+
+## Media
+An image can be added to the `Combobox.Option` component by setting the `media` prop.
+
+<View>
+  <ComboboxShowcase showcase="option-media" />
+</View>
+
+```tsx
+<View>
+  <Combobox>
+    <Combobox.Option
+      value="1"
+      label="Germany"
+      media={<Image src="..." />}
+    />
+    // ...
+  </Combobox>
+</View>
+```
+
+# API Reference
+---
+## Properties
+### Combobox
+
+| Prop          | Type                 | Description                                        | Default     |
+|:--------------|:---------------------|:---------------------------------------------------|:------------|
+| clearable     | `boolean`            | Adds a clear button                                | `true`      |
+| closeOnEscape | `boolean`            | Closes the combobox listbox on escape              | `true`      |
+| color         | `ComboboxColor`      | Sets the selected option color                     | `blue`      |
+| disabled      | `boolean`            | Disables combobox                                  | `false`     |
+| initialValue  | `string`             | Sets the initial value of the combobox             | `undefined` |
+| leftIcon      | `ReactElement`       | Sets the left icon element                         | `undefined` |
+| loading       | `boolean`            | Enables loading state                              | `false`     |
+| maxHeight     | `number`             | Sets the combobox list max height css property     | `250`       |
+| minWidth      | `number`             | Sets the combobox list min width css property      | `250`       |
+| mode          | `ComboboxMode`       | Sets some or zero padding around the combobox list | `spacey`    |
+| offset        | `number`             | Sets the combobox list offset                      | `5`         |
+| placeholder   | `string`             | Adds a placeholder to the combobox                 | `undefined` |
+| radius        | `ComboboxRadius`     | Sets the combobox, list and option radius          | `md`        |
+| searchable    | `boolean`            | Makes the combobox searchable                      | `true`      |
+| shadow        | `ComboboxShadow`     | Sets the combobox shadow                           | `none`      |
+| size          | `ComboboxSize`       | Sets the combobox size                             | `md`        |
+| tone          | `ComboboxTone`       | Sets the combobox tone                             | `light`     |
+| validation    | `ComboboxValidation` | Sets the validation state                          | `none`      |
+| withRing      | `boolean`            | Shows a ring around the combobox on active state   | `true`      |
+
+### Combobox.Group
+
+| Prop    | Type                  | Description                        | Default     |
+|:--------|:----------------------|:-----------------------------------|:------------|
+| color   | `ComboboxColor`       | Sets the group heading color       | `gray`      |
+| heading | `string`              | Sets the group heading             | `undefined` |
+| weight  | `ComboboxGroupWeight` | Sets the group heading font weight | `normal`    |
+
+### Combobox.Option
+
+| Prop        | Type        | Description                 | Default     |
+|:------------|:------------|:----------------------------|:------------|
+| description | `string`    | Sets the option description | `undefined` |
+| label       | `string`    | Sets the option label       | `undefined` |
+| media       | `ReactNode` | Sets the option image/icon  | `undefined` |
+| value       | `string`    | Sets the option value       | `undefined` |
+
+## Events
+### Combobox
+
+| Event    | Type                      | Description                               |
+|:---------|:--------------------------|:------------------------------------------|
+| onChange | `(value: string) => void` | Fires when the selected option is changed |
+
+## Types
+### Combobox
+
+```tsx
+type ComboboxColor =
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ComboboxMode = 'spacey' | 'tight';
+```
+
+```tsx
+type ComboboxRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type ComboboxShadow = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type ComboboxSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type ComboboxTone = 'light' | 'solid' | 'transparent';
+```
+
+```tsx
+type ComboboxValidation = 'none' | 'invalid' | 'valid' | 'warning';
+```
+
+```tsx
+type ComboboxGroupWeight =
+  | 'thin'
+  | 'extraLight'
+  | 'light'
+  | 'normal'
+  | 'medium'
+  | 'semiBold'
+  | 'bold'
+  | 'extraBold'
+  | 'black';
+```

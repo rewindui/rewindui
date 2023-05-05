@@ -14,7 +14,7 @@ import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 
-const tones: ComboboxTone[] = ['base', 'solid', 'transparent'];
+const tones: ComboboxTone[] = ['light', 'solid', 'transparent'];
 const sizes: ComboboxSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: ComboboxRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
 const shadows: ComboboxShadow[] = ['none', 'sm', 'base', 'md', 'lg'];
@@ -164,7 +164,7 @@ const options: ComboboxGroupType[] = [
     options: [
       {
         value: '7',
-        label: 'United States',
+        label: 'USA',
         description: 'Commonly known as the United States',
         media: (
           <Image
@@ -219,7 +219,7 @@ const meta: Meta = {
 
 export default meta;
 
-const ConfiguratorTemplate: Story<ComboboxProps> = (args) => {
+const DefaultTemplate: Story<ComboboxProps> = (args) => {
   return (
     <Combobox
       {...args}
@@ -245,9 +245,7 @@ const ConfiguratorTemplate: Story<ComboboxProps> = (args) => {
   );
 };
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
-export const Configurator = ConfiguratorTemplate.bind({});
+export const Default = DefaultTemplate.bind({});
 
 const ToneTemplate: Story<ComboboxProps> = (args) => {
   const items = tones.map((tone) => (

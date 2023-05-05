@@ -21,7 +21,6 @@ const base = cva(
         base: ['rounded'],
         md: ['rounded-md'],
         lg: ['rounded-lg'],
-        full: ['rounded-full'],
       },
       shadow: {
         none: ['shadow-none'],
@@ -58,29 +57,29 @@ const base = cva(
       },
       disabled: {
         true: ['cursor-not-allowed'],
-        false: [],
+        false: ['read-only:cursor-default'],
       },
     },
     compoundVariants: [
       {
         validation: 'none',
         withRing: true,
-        className: ['focus:ring-blue-300'],
+        className: ['focus:ring-blue-100'],
       },
       {
         validation: 'invalid',
         withRing: true,
-        className: ['focus:ring-red-300'],
+        className: ['focus:ring-red-100'],
       },
       {
         validation: 'valid',
         withRing: true,
-        className: ['focus:ring-green-300'],
+        className: ['focus:ring-green-100'],
       },
       {
         validation: 'warning',
         withRing: true,
-        className: ['focus:ring-yellow-200'],
+        className: ['focus:ring-yellow-100'],
       },
       {
         tone: 'light',
@@ -366,6 +365,7 @@ const group = cva(
     'snap-always',
     'snap-mandatory',
     'snap-start',
+    '[scroll-margin-top:6px]',
     'border-dashed',
     'border-b',
     'border-b-gray-200',
@@ -420,6 +420,7 @@ const button = cva(
     'snap-always',
     'snap-mandatory',
     'snap-start',
+    '[scroll-margin-top:6px]',
     'w-full',
     'flex',
     'items-center',
@@ -446,8 +447,15 @@ const button = cva(
         black: [],
       },
       mode: {
-        spacey: ['rounded'],
+        spacey: [],
         tight: [],
+      },
+      radius: {
+        none: [],
+        sm: [],
+        base: [],
+        md: [],
+        lg: [],
       },
       size: {
         xs: ['text-xs', 'px-2', 'py-1'],
@@ -466,6 +474,31 @@ const button = cva(
       },
     },
     compoundVariants: [
+      {
+        mode: 'spacey',
+        radius: 'none',
+        className: ['rounded-none'],
+      },
+      {
+        mode: 'spacey',
+        radius: 'sm',
+        className: ['rounded-sm'],
+      },
+      {
+        mode: 'spacey',
+        radius: 'base',
+        className: ['rounded'],
+      },
+      {
+        mode: 'spacey',
+        radius: 'md',
+        className: ['rounded-md'],
+      },
+      {
+        mode: 'spacey',
+        radius: 'lg',
+        className: ['rounded-lg'],
+      },
       {
         selected: true,
         color: 'blue',
@@ -504,7 +537,7 @@ const button = cva(
       {
         selected: true,
         color: 'black',
-        className: ['bg-gray-900', 'text-white'],
+        className: ['bg-black', 'text-white'],
       },
     ],
   }
@@ -541,11 +574,6 @@ const label = cva([], {
       disabled: false,
       selected: false,
       className: ['text-gray-700'],
-    },
-    {
-      disabled: false,
-      selected: true,
-      className: ['text-gray-50'],
     },
   ],
 });
