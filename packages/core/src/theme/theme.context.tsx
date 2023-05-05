@@ -1,6 +1,5 @@
-import { comboboxOptionStyles } from './styles';
 import * as styles from './styles';
-import { createContext, useContext } from 'react';
+import { createContext, Provider, useContext } from 'react';
 
 export type Theme = {
   components: ThemeComponents;
@@ -260,9 +259,11 @@ export type ThemeContextType = {
   theme: Theme;
 };
 
-export const ThemeContext = createContext<ThemeContextType>({
+const ThemeContext = createContext<ThemeContextType>({
   theme: defaultTheme,
 });
+
+export const ThemeProvider: Provider<ThemeContextType> = ThemeContext.Provider;
 
 export function useTheme(): Theme {
   return useContext(ThemeContext)?.theme || defaultTheme;

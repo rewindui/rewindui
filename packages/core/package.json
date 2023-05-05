@@ -1,11 +1,34 @@
 {
   "name": "@rewind-ui/core",
+  "description": "A React component library for building modern web applications using Tailwind CSS.",
   "version": "0.1.7",
+  "license": "MIT",
+  "author": {
+    "name": "Nick Dunas",
+    "email": "nick.dunas@gmail.com"
+  },
+  "homepage": "https://rewind-ui.dev/",
+  "repository": {
+    "url": "https://github.com/rewindui/rewindui.git",
+    "type": "git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/rewindui/rewindui/issues"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "tailwind",
+    "tailwindcss",
+    "nextjs",
+    "components",
+    "ui-kit"
+  ],
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "license": "MIT",
   "files": [
     "dist/**"
   ],

@@ -306,34 +306,29 @@ An `InputGroup.Select` component can be added.
 </View>
 ```
 
-## Textarea component
-An `InputGroup.Textarea` component can be added.
+## Combobox component
+An `InputGroup.Combobox` component can be added.
 
 <View>
-  <InputGroup className="w-full">
-    <InputGroupText>
-      <span>Comment:</span>
-    </InputGroupText>
-    <InputGroupTextarea placeholder="Enter your comment..." />
-    <InputGroupButton tone="solid">
-      <Rocket weight="duotone" />
-    </InputGroupButton>
-  </InputGroup>
+  <ComboboxShowcase showcase="input-group" />
 </View>
 
 ```tsx
 <View>
   <InputGroup className="w-full">
+    <InputGroup.Text>Search:</InputGroup.Text>
+    <InputGroup.Combobox initialValue="1">
+      <InputGroup.Combobox.Option value="1" label="Item 1" />
+      <InputGroup.Combobox.Option value="2" label="Item 2" />
+      <InputGroup.Combobox.Option value="3" label="Item 3" />
+    </InputGroup.Combobox>
     <InputGroup.Text>
-      Comment:
+      <MagnifyingGlass weight="duotone" />
     </InputGroup.Text>
-    <InputGroup.Textarea placeholder="Enter your comment..." />
-    <InputGroup.Button tone="solid">
-      <Rocket weight="duotone" />
-    </InputGroup.Button>
   </InputGroup>
 </View>
 ```
+
 
 ## Text components
 An `InputGroup.Text` component can be added on both sides.
@@ -360,6 +355,35 @@ An `InputGroup.Text` component can be added on both sides.
     <InputGroup.Text>
       <MagnifyingGlass weight="duotone" />
     </InputGroup.Text>
+  </InputGroup>
+</View>
+```
+
+## Textarea component
+An `InputGroup.Textarea` component can be added.
+
+<View>
+  <InputGroup className="w-full">
+    <InputGroupText>
+      <span>Comment:</span>
+    </InputGroupText>
+    <InputGroupTextarea placeholder="Enter your comment..." />
+    <InputGroupButton tone="solid">
+      <Rocket weight="duotone" />
+    </InputGroupButton>
+  </InputGroup>
+</View>
+
+```tsx
+<View>
+  <InputGroup className="w-full">
+    <InputGroup.Text>
+      Comment:
+    </InputGroup.Text>
+    <InputGroup.Textarea placeholder="Enter your comment..." />
+    <InputGroup.Button tone="solid">
+      <Rocket weight="duotone" />
+    </InputGroup.Button>
   </InputGroup>
 </View>
 ```

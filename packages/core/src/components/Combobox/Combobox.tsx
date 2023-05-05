@@ -7,6 +7,7 @@ import { ComboboxGroup } from '@components/Combobox/ComboboxGroup/ComboboxGroup'
 import { ComboboxOption } from '@components/Combobox/ComboboxOption/ComboboxOption';
 import { useCombobox } from '@components/Combobox/use-combobox.hook';
 import { useFormControlContext } from '@components/FormControl/FormControl.context';
+import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { Spinner } from '@components/Spinner';
 import { FloatingPortal, useMergeRefs } from '@floating-ui/react';
 import { useKeypress } from '@hooks/use-keypress';
@@ -74,7 +75,7 @@ const _Combobox: ComboboxComponent = forwardRef(
     } = {
       ...defaultProps,
       ...useFormControlContext(),
-      // ...useInputGroupContext(),
+      ...useInputGroupContext(),
       ...props,
     };
     const id = usePropId(props.id);
@@ -236,8 +237,14 @@ const _Combobox: ComboboxComponent = forwardRef(
     };
 
     useEffect(() => {
-      const hasLeftElement = !!localWrapperRef.current?.dataset.hasOwnProperty('hasLeftElement');
-      const hasRightElement = !!localWrapperRef.current?.dataset.hasOwnProperty('hasRightElement');
+      if (!localWrapperRef.current?.dataset) {
+        return;
+      }
+
+      const dataset = Object.assign({}, localWrapperRef.current?.dataset);
+
+      const hasLeftElement = dataset.hasOwnProperty('hasLeftElement');
+      const hasRightElement = dataset.hasOwnProperty('hasRightElement');
 
       setInputClasses(
         theme.base({

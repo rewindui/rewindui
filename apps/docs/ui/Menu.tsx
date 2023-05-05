@@ -151,31 +151,6 @@ const menuItems: MenuItem[] = [
       },
     ],
   },
-  {
-    title: 'Miscellaneous',
-    items: [
-      {
-        title: 'Collapse',
-        path: '/components/collapse',
-        wip: true,
-      },
-      {
-        title: 'Fader',
-        path: '/components/fader',
-        wip: true,
-      },
-      {
-        title: 'Overlay',
-        path: '/components/overlay',
-        wip: true,
-      },
-      {
-        title: 'Spinner',
-        path: '/components/spinner',
-        wip: true,
-      },
-    ],
-  },
 ];
 
 export const Menu = () => {

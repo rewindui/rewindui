@@ -12,6 +12,7 @@ import {
   ComboboxColor,
   ComboboxGroupProps,
   Image,
+  InputGroup,
 } from '@rewind-ui/core';
 import * as React from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
@@ -36,7 +37,8 @@ export type ComboboxShowcaseProps = {
     | 'searchable'
     | 'groups'
     | 'option-description'
-    | 'option-media';
+    | 'option-media'
+    | 'input-group';
 };
 
 export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
@@ -62,6 +64,7 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
     groups: <Groups />,
     'option-description': <OptionDescription />,
     'option-media': <OptionMedia />,
+    'input-group': <InputGroupCombobox />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -471,4 +474,20 @@ const OptionDescription = () => {
 
 const OptionMedia = () => {
   return <MediaTemplate />;
+};
+
+const InputGroupCombobox = () => {
+  return (
+    <InputGroup className="w-full">
+      <InputGroup.Text>Search:</InputGroup.Text>
+      <InputGroup.Combobox initialValue="1">
+        <InputGroup.Combobox.Option value="1" label="Item 1" />
+        <InputGroup.Combobox.Option value="2" label="Item 2" />
+        <InputGroup.Combobox.Option value="3" label="Item 3" />
+      </InputGroup.Combobox>
+      <InputGroup.Text>
+        <MagnifyingGlass weight="duotone" />
+      </InputGroup.Text>
+    </InputGroup>
+  );
 };
