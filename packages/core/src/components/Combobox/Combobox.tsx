@@ -88,6 +88,7 @@ const _Combobox: ComboboxComponent = forwardRef(
     const [visibleRefs, setVisibleRefs] = useState<HTMLButtonElement[]>([]);
     const [listClasses, setListClasses] = useState<string>('');
     const [inputClasses, setInputClasses] = useState<string>('');
+    const [maxWidth, setMaxWidth] = useState<number | null>(null);
     const mounted = useRef(true);
     const localWrapperRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLDivElement>(null);
@@ -118,6 +119,14 @@ const _Combobox: ComboboxComponent = forwardRef(
     const leftWrapperStyles = theme.leftIconWrapper({ size });
     const rightIconClasses = theme.icon({ tone, size });
     const rightWrapperStyles = theme.rightIconWrapper({ size });
+
+    useEffect(() => {
+      if (!localWrapperRef.current) {
+        return;
+      }
+
+      setMaxWidth(localWrapperRef.current.getBoundingClientRect().width);
+    }, []);
 
     useEffect(() => {
       setSearch('');
@@ -314,6 +323,7 @@ const _Combobox: ComboboxComponent = forwardRef(
                 opacity: open && !disabled ? 1 : 0,
                 maxHeight: `${maxHeight}px`,
                 minWidth: `${minWidth}px`,
+                maxWidth: `${maxWidth}px`,
                 position: strategy,
                 top: y ?? 0,
                 left: x ?? 0,

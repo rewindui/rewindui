@@ -36,21 +36,25 @@ const simpleOptions: ComboboxGroupType[] = [
         value: '3',
         label: 'Greece',
       },
+      {
+        value: '4',
+        label: 'Sweden',
+      },
     ],
   },
   {
     heading: 'Asia',
     options: [
       {
-        value: '4',
+        value: '5',
         label: 'Japan',
       },
       {
-        value: '5',
+        value: '6',
         label: 'China',
       },
       {
-        value: '6',
+        value: '7',
         label: 'India',
         disabled: true,
       },
@@ -60,15 +64,15 @@ const simpleOptions: ComboboxGroupType[] = [
     heading: 'America',
     options: [
       {
-        value: '7',
+        value: '8',
         label: 'United States',
       },
       {
-        value: '8',
+        value: '9',
         label: 'Canada',
       },
       {
-        value: '9',
+        value: '10',
         label: 'Mexico',
       },
     ],
@@ -115,13 +119,25 @@ const options: ComboboxGroupType[] = [
           />
         ),
       },
+      {
+        value: '4',
+        label: 'Sweden',
+        description: 'An economic powerhouse',
+        media: (
+          <Image
+            alt="Greece"
+            className="w-10 h-10"
+            src="https://img.icons8.com/color/64/sweden-circular.png"
+          />
+        ),
+      },
     ],
   },
   {
     heading: 'Asia',
     options: [
       {
-        value: '4',
+        value: '5',
         label: 'Japan',
         description: 'An island country in East Asia',
         media: (
@@ -133,7 +149,7 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '5',
+        value: '6',
         label: 'China',
         description: "The world's third largest country",
         disabled: true,
@@ -146,7 +162,7 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '6',
+        value: '7',
         label: 'India',
         description: 'The most populous democracy in the world',
         media: (
@@ -163,7 +179,7 @@ const options: ComboboxGroupType[] = [
     heading: 'North America',
     options: [
       {
-        value: '7',
+        value: '8',
         label: 'USA',
         description: 'Commonly known as the United States',
         media: (
@@ -175,7 +191,7 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '8',
+        value: '9',
         label: 'Canada',
         description: 'It has the longest coastline in the world',
         media: (
@@ -187,7 +203,7 @@ const options: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '9',
+        value: '10',
         label: 'Mexico',
         description: 'It is organized as a federal republic',
         media: (

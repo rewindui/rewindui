@@ -554,9 +554,9 @@ const optionIcon = cva([], {
   },
 });
 
-const optionWrapper = cva(['flex', 'items-center', 'space-x-2', 'mr-5']);
+const optionWrapper = cva(['grid', 'grid-flow-col', 'justify-items-start', 'gap-x-2', 'mr-5']);
 
-const infoWrapper = cva(['grid', 'grid-cols-1', 'justify-items-start']);
+const infoWrapper = cva(['flex', 'flex-col', 'text-left']);
 
 const label = cva([], {
   variants: {
@@ -578,7 +578,7 @@ const label = cva([], {
   ],
 });
 
-const description = cva([], {
+const description = cva(['whitespace-normal'], {
   variants: {
     disabled: {
       true: [],

@@ -82,27 +82,31 @@ const simpleOptions: ComboboxOptionType[] = [
   },
   {
     value: '4',
-    label: 'Japan',
+    label: 'Sweden',
   },
   {
     value: '5',
-    label: 'China',
+    label: 'Japan',
   },
   {
     value: '6',
+    label: 'China',
+  },
+  {
+    value: '7',
     label: 'India',
     disabled: true,
   },
   {
-    value: '7',
+    value: '8',
     label: 'United States',
   },
   {
-    value: '8',
+    value: '9',
     label: 'Canada',
   },
   {
-    value: '9',
+    value: '10',
     label: 'Mexico',
   },
 ];
@@ -147,13 +151,25 @@ const groupedOptions: ComboboxGroupType[] = [
           />
         ),
       },
+      {
+        value: '4',
+        label: 'Sweden',
+        description: 'An economic powerhouse',
+        media: (
+          <Image
+            alt="Greece"
+            className="w-10 h-10"
+            src="https://img.icons8.com/color/64/sweden-circular.png"
+          />
+        ),
+      },
     ],
   },
   {
     heading: 'Asia',
     options: [
       {
-        value: '4',
+        value: '5',
         label: 'Japan',
         description: 'An island country in East Asia',
         media: (
@@ -165,7 +181,7 @@ const groupedOptions: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '5',
+        value: '6',
         label: 'China',
         description: "The world's third largest country",
         disabled: true,
@@ -178,7 +194,7 @@ const groupedOptions: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '6',
+        value: '7',
         label: 'India',
         description: 'The most populous democracy in the world',
         media: (
@@ -195,7 +211,7 @@ const groupedOptions: ComboboxGroupType[] = [
     heading: 'North America',
     options: [
       {
-        value: '7',
+        value: '8',
         label: 'USA',
         description: 'Commonly known as the United States',
         media: (
@@ -207,7 +223,7 @@ const groupedOptions: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '8',
+        value: '9',
         label: 'Canada',
         description: 'It has the longest coastline in the world',
         media: (
@@ -219,7 +235,7 @@ const groupedOptions: ComboboxGroupType[] = [
         ),
       },
       {
-        value: '9',
+        value: '10',
         label: 'Mexico',
         description: 'It is organized as a federal republic',
         media: (
