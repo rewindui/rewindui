@@ -30,7 +30,8 @@
   "types": "dist/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist/**"
+    "dist/**",
+    "README.md"
   ],
   "scripts": {
     "prebuild": "rm -rf dist",
