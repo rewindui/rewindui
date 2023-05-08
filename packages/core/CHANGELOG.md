@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.10
+
+### Patch Changes
+
+- eb7f4d2: Include README.md on npm
+
 ## 0.1.9
 
 ### Patch Changes
