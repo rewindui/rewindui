@@ -4,126 +4,54 @@ description: Easily customise the look and feel of Rewind-UI components
 ---
 Rewind-UI theming system is built on top of [Class Variance Authority](https://cva.style/docs) library. Please make sure you are familiar with the CVA library before proceeding.
 
-# Base theme
+# Customization
 ---
-As an example we are going to change the theme of our `Text` component. It is highly recommended to use the default styles as a starting point. Find and copy the [existing](https://github.com/rewindui/rewindui/blob/main/packages/core/src/theme/styles/Text.styles.ts) Text styles file.
+The default theme can be easily customized by passing the new theme object to the `ThemeProvider` component.
 
-```ts
-import { cva } from 'class-variance-authority';
+To store your custom styles it is suggested to create a `theme` directory into your project containing a `styles` subdirectory.
 
-const base = cva([], {
-  variants: {
-    color: {
-      // ...
-    },
-    leading: {
-      // ...
-    },
-    size: {
-      // ...
-    },
-    tracking: {
-      // ...
-    },
-    weight: {
-      // ...
-    },
-  },
-});
-
-const textStyles = {
-  base,
-};
-
-export { textStyles };
 ```
-On each component page you can easily find the link to each corresponding styles file.
-
-# Custom theme
----
-Let's say we just want to add a single class to change the letter spacing. We can do this by just adding a `tracking-widest` tailwind class to our `cva()` instance.
-
-```ts
-import { cva } from 'class-variance-authority';
-
-const base = cva(['tracking-widest'], {
-  variants: {
-    color: {
-      // ...
-    },
-    leading: {
-      // ...
-    },
-    size: {
-      // ...
-    },
-    tracking: {
-      // ...
-    },
-    weight: {
-      // ...
-    },
-  },
-});
-
-const textStyles = {
-  base,
-};
-
-export { textStyles };
+public
+src
+theme
+├── styles
+│   ├── Button.styles.ts
 ```
-Of course you can add as many classes as you want, or even override the existing ones. Just make sure that you will not change tha variants properties.
 
-It would be a good practise to store the above file into a `theme` folder.
+Then, you can copy all or some of the default styles from the [@rewind-ui/core](https://github.com/rewindui/rewindui/tree/main/packages/core/src/theme/styles) package and customize them as you wish. Finally you can import them into your `App.tsx` file and pass them to the `ThemeProvider` component.
 
-# Usage
----
-Finally, we will need to import the `ThemeContext` and wrap our `App` content with the `ThemeContext.Provider`. We will also need to pass the `textStyles` object to the `ThemeContext` provider.
+<Callout>Don't forget to adjust your tailwind.config.js file to include the new theme/styles files!</Callout>
 
 ```tsx
-import { useTheme, ThemeContext, Theme, Text } from '@rewind-ui/core';
-import { textStyles } from './theme/textStyles';
+import {
+  Button,
+  ThemeContextType,
+  useTheme,
+  ThemeProvider,
+} from '@rewind-ui/core';
+import './App.css'
+import { buttonStyles } from './theme/styles/Button.styles';
 
 function App() {
   const defaultTheme = useTheme();
-  const theme: Theme = {
-    components: {
-      ...defaultTheme.components,
-      Text: textStyles.base,
+
+  const themeContext: ThemeContextType = {
+    theme: {
+      components: {
+        ...defaultTheme.components,
+        Button: buttonStyles,
+      }
     },
   };
 
   return (
-    <ThemeContext.Provider value={{ theme }}>
-      <Text>Hello</Text>
-    </ThemeContext.Provider>
+    <div className="App">
+      <ThemeProvider value={themeContext}>
+        <Button color="blue">Blue</Button>
+      </ThemeProvider>
+    </div>
   );
 }
-```
 
-If our theme object contains more styles rather than a base one we will need to pass them all to our new theme object.
-
-```tsx
-import { useTheme, ThemeContext, Theme, Button } from '@rewind-ui/core';
-import { buttonStyles } from './theme/buttonStyles';
-
-function App() {
-  const defaultTheme = useTheme();
-  const theme: Theme = {
-    components: {
-      ...defaultTheme.components,
-      Button: {
-        base: buttonStyles.base,
-        chevron: buttonStyles.chevron,
-        spinner: buttonStyles.spinner,
-      },
-    },
-  };
-
-  return (
-    <ThemeContext.Provider value={{ theme }}>
-      <Button>Click me</Button>
-    </ThemeContext.Provider>
-  );
-}
+export default App;
 ```

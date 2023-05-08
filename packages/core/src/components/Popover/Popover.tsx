@@ -75,7 +75,14 @@ const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
 
     return (
       <PopoverContextProvider value={contextValue}>
-        <div id={id} ref={ref} className={className} {...additionalProps}>
+        <div
+          id={id}
+          ref={ref}
+          role="dialog"
+          aria-modal={true}
+          className={className}
+          {...additionalProps}
+        >
           {children}
         </div>
       </PopoverContextProvider>

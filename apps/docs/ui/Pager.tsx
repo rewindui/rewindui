@@ -64,6 +64,16 @@ export const Pager = (props: PagerProps) => {
       slug: 'theming',
     },
     {
+      title: 'Variants',
+      url: '/variants',
+      slug: 'variants',
+    },
+    {
+      title: 'Accessibility',
+      url: '/accessibility',
+      slug: 'accessibility',
+    },
+    {
       title: 'Accordion',
       url: '/components/accordion',
       slug: 'accordion',

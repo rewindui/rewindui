@@ -1,3 +1,4 @@
+import { Combobox } from '@components/Combobox';
 import {
   FormControlComponent,
   FormControlContext,
@@ -59,6 +60,7 @@ const FormControl = Object.assign(_FormControl, {
   Input: Input,
   Textarea: Textarea,
   Select: Select,
+  Combobox: Combobox,
 });
 
 export default FormControl;

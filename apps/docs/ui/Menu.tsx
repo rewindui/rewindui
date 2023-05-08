@@ -39,13 +39,11 @@ const menuItems: MenuItem[] = [
         title: 'Variants',
         path: '/variants',
         icon: <SlidersHorizontal size={18} weight="duotone" />,
-        wip: true,
       },
       {
         title: 'Accessibility',
         path: '/accessibility',
         icon: <PersonArmsSpread size={18} weight="duotone" />,
-        wip: true,
       },
       {
         title: 'Roadmap',

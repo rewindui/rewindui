@@ -124,6 +124,7 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
         className={classes}
         role="switch"
         aria-checked={isOn}
+        aria-labelledby={`${id}-label`}
         disabled={disabled}
         {...additionalProps}
       >
@@ -131,6 +132,7 @@ const Switch: SwitchComponent = forwardRef((props: SwitchProps, ref?: Ref<HTMLBu
       </button>
       <div className="grid grid-cols-1 justify-items-start">
         <label
+          id={`${id}-label`}
           htmlFor={id}
           className={twMerge(theme.label({ disabled, size, className: labelClassName }))}
         >

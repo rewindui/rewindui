@@ -981,3 +981,15 @@ type AccordionSize = 'sm' | 'md' | 'lg' | 'xl';
 ```tsx
 type AccordionTone = 'solid' | 'light';
 ```
+
+# Accessibility
+---
+The `Accordion` component adheres to the [WAI-ARIA Accordion Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/).
+
+## Keyboard interactions
+
+| Key                | Description                                   |
+|:-------------------|:----------------------------------------------|
+| `Enter` or `Space` | Toggles the state of focused header           |
+| `Tab`              | Moves focus to the next focusable element     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element |

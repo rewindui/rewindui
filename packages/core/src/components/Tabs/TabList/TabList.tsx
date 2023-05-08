@@ -9,7 +9,13 @@ const TabList: FunctionComponent<PropsWithoutRef<any>> = (props: any) => {
   const id = usePropId(props.id);
 
   return (
-    <div id={id} className={twMerge(theme.list({ className }))} {...additionalProps}>
+    <div
+      id={id}
+      role="tablist"
+      aria-orientation="horizontal"
+      className={twMerge(theme.list({ className }))}
+      {...additionalProps}
+    >
       {children}
     </div>
   );

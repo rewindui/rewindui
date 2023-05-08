@@ -476,3 +476,16 @@ type SelectorTabColor =
   | 'dark'
   | 'black';
 ```
+
+# Accessibility
+---
+The `Selector` component adheres to the [WAI-ARIA Radio Group Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
+
+## Keyboard interactions
+
+| Key                | Description                                   |
+|:-------------------|:----------------------------------------------|
+| `Enter` or `Space` | Selects the focused tab                       |
+| `Tab`              | Moves focus to the next focusable element     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element |
+

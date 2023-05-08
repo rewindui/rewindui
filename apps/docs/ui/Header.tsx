@@ -9,7 +9,7 @@ import { usePathname } from 'next/navigation';
 import { Overlay } from '@rewind-ui/core';
 
 const headerButtonClasses =
-  'flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg bg-gray-50 hover:bg-gray-100 p-2';
+  'flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg border border-gray-100 p-2';
 
 const SocialLink = ({ href, children }: { href: string; children: ReactNode }) => {
   return (

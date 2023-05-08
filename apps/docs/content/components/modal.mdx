@@ -404,3 +404,18 @@ type ModalShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 ```tsx
 type ModalSize = 'auto' | 'sm' | 'md' | 'lg' | 'xl' | 'screen';
 ```
+
+# Accessibility
+---
+The `Modal` component partially adheres to the [WAI-ARIA Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+
+To make the modal dialog fully accessible, `aria-labelledby` and `aria-describedby` props should be provided to the `Modal` component. The `aria-labelledby` prop should point to the `id` of the Modal header element, and the `aria-describedby` prop should point to the `id` of the body element.
+
+## Keyboard interactions
+
+| Key             | Description                                   |
+|:----------------|:----------------------------------------------|
+| `Tab`           | Moves focus to the next focusable element     |
+| `Shift` + `Tab` | Moves focus to the previous focusable element |
+| `Escape`        | Closes the dialog                             |
+

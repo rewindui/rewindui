@@ -13,6 +13,7 @@ const TabContent: FunctionComponent<PropsWithoutRef<any>> = (props: any) => {
       style={{ display: isVisible ? 'block' : 'none' }}
       role="tabpanel"
       aria-labelledby={tabId}
+      aria-hidden={!isVisible}
       {...additionalProps}
     >
       {children}

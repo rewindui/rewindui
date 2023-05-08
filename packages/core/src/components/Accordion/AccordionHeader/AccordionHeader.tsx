@@ -60,6 +60,7 @@ const AccordionHeader: AccordionHeaderComponent = forwardRef<
     <button
       id={headerId}
       ref={ref}
+      type="button"
       onClick={handleClick}
       className={classes}
       aria-expanded={expanded}

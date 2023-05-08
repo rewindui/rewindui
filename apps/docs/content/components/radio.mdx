@@ -9,10 +9,10 @@ storybook: radio--default
 
 # Import
 ---
-Import the `Radio` component using the following import statement.
+Import the `Radio` and `RadioGroup` components using the following import statement.
 
 ```tsx
-import { Radio } from '@rewind-ui/core';
+import { Radio, RadioGroup } from '@rewind-ui/core';
 ```
 
 # Tones & Colors
@@ -196,9 +196,52 @@ You can add a ring to the `Checkbox` by setting the `withRing` prop to `true`.
 </View>
 ```
 
+# Radio Group
+---
+The `RadioGroup` component can be used to group multiple `Radio` components together.
+
+## Initial value
+
+When using the `Radio` component without a `RadioGroup` component, the `defaultChecked` prop can be used to set the initial value of the `Radio` component. When using the `Radio` component within a `RadioGroup` component, the `initialValue` prop of the `RadioGroup` component can be used to set the initial value of the group.
+
+## Orientation
+
+The orientation of the `RadioGroup` can be set to `horizontal` or `vertical`.
+
+<View>
+  <RadioGroup name="horizontal" orientation="horizontal" initialValue="1">
+    <Radio label="Apple" value="1" />
+    <Radio label="Banana" value="2" />
+    <Radio label="Orange" value="3" />
+  </RadioGroup>
+
+  <RadioGroup name="vertical" orientation="vertical" initialValue="1">
+    <Radio label="Apple" value="1" />
+    <Radio label="Banana" value="2" />
+    <Radio label="Orange" value="3" />
+  </RadioGroup>
+</View>
+
+```tsx
+<View>
+  <RadioGroup name="horizontal" orientation="horizontal" initialValue="1">
+    <Radio label="Apple" value="1" />
+    <Radio label="Banana" value="2" />
+    <Radio label="Orange" value="3" />
+  </RadioGroup>
+
+  <RadioGroup name="vertical" orientation="vertical" initialValue="1">
+    <Radio label="Apple" value="1" />
+    <Radio label="Banana" value="2" />
+    <Radio label="Orange" value="3" />
+  </RadioGroup>
+</View>
+```
+
 # API Reference
 ---
 ## Properties
+### Radio
 
 | Prop                 | Type                    | Description                                      | Default     |
 |:---------------------|:------------------------|:-------------------------------------------------|:------------|
@@ -215,7 +258,23 @@ You can add a ring to the `Checkbox` by setting the `withRing` prop to `true`.
 | tone                 | `RadioTone`             | Sets the color tone                              | `solid`     |
 | withRing             | `boolean`               | Shows a ring around the checkbox on active state | `true`      |
 
+### RadioGroup
+
+| Prop         | Type                    | Description                      | Default      |
+|:-------------|:------------------------|:---------------------------------|:-------------|
+| initialValue | `string`                | Sets the radios initial value    | `undefined`  |
+| name         | `string`                | Sets the radios name             | `undefined`  |
+| orientation  | `RadioGroupOrientation` | Sets the radio group orientation | `horizontal` |
+
+## Events
+### RadioGroup
+
+| Event    | Type                      | Description                              |
+|:---------|:--------------------------|:-----------------------------------------|
+| onChange | `(value: string) => void` | Fires when the selected radio is changed |
+
 ## Types
+### Radio
 
 ```tsx
 type RadioColor =
@@ -240,3 +299,13 @@ type RadioSize = 'sm' | 'md' | 'lg' | 'xl';
 ```tsx
 type RadioTone = 'solid' | 'light';
 ```
+
+### RadioGroup
+
+```tsx
+type RadioGroupOrientation = 'horizontal' | 'vertical';
+```
+
+# Accessibility
+---
+The `Radio` and `RadioGroup` components adhere to the [WAI-ARIA Radio Group Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).

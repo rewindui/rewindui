@@ -13,6 +13,7 @@ import {
   ComboboxGroupProps,
   Image,
   InputGroup,
+  FormControl,
 } from '@rewind-ui/core';
 import * as React from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
@@ -38,7 +39,8 @@ export type ComboboxShowcaseProps = {
     | 'groups'
     | 'option-description'
     | 'option-media'
-    | 'input-group';
+    | 'input-group'
+    | 'form-control';
 };
 
 export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
@@ -65,6 +67,7 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
     'option-description': <OptionDescription />,
     'option-media': <OptionMedia />,
     'input-group': <InputGroupCombobox />,
+    'form-control': <FormControlCombobox />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -489,5 +492,18 @@ const InputGroupCombobox = () => {
         <MagnifyingGlass weight="duotone" />
       </InputGroup.Text>
     </InputGroup>
+  );
+};
+
+const FormControlCombobox = () => {
+  return (
+    <FormControl className="min-w-[300px]">
+      <FormControl.Label>Search</FormControl.Label>
+      <FormControl.Combobox initialValue="1">
+        <FormControl.Combobox.Option value="1" label="Item 1" />
+        <FormControl.Combobox.Option value="2" label="Item 2" />
+        <FormControl.Combobox.Option value="3" label="Item 3" />
+      </FormControl.Combobox>
+    </FormControl>
   );
 };

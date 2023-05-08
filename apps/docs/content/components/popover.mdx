@@ -384,3 +384,9 @@ type PopoverSize = 'tight' | 'xs' | 'sm' | 'md' | 'lg';
 ```tsx
 type PopoverTone = 'solid' | 'light';
 ```
+
+# Accessibility
+---
+The `Popover` component partially adheres to the [WAI-ARIA Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+
+To make the modal dialog fully accessible, `aria-labelledby` and `aria-describedby` props should be provided to the `Popover` component. The `aria-labelledby` prop should point to the `id` of the popover header element, and the `aria-describedby` prop should point to the `id` of the body element.

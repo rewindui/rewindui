@@ -9,12 +9,13 @@ import { useMergeRefs } from '@floating-ui/react';
 const DropdownTrigger: DropdownTriggerComponent = forwardRef<HTMLDivElement, DropdownTriggerProps>(
   (props: DropdownTriggerProps, ref?: ForwardedRef<HTMLDivElement>) => {
     const { children } = props;
-    const { reference, getReferenceProps } = useDropdownContext();
+    const { open, reference, getReferenceProps } = useDropdownContext();
     const child = Children.only(children) as ReactElement;
     const childRef = useMergeRefs([reference, ref || null]);
 
     const triggerElement = cloneElement(child, {
       ref: childRef,
+      ...{ 'aria-expanded': open, 'aria-pressed': true, 'aria-haspopup': true },
       ...child.props,
       ...getReferenceProps,
     });

@@ -1,4 +1,12 @@
-import { Radio, RadioProps, RadioColor, RadioRadius, RadioSize, RadioTone } from '@rewind-ui/core';
+import {
+  Radio,
+  RadioGroup,
+  RadioProps,
+  RadioColor,
+  RadioRadius,
+  RadioSize,
+  RadioTone,
+} from '@rewind-ui/core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { View, ViewGroup } from '../components/View';
@@ -9,8 +17,6 @@ const sizes: RadioSize[] = ['sm', 'md', 'lg', 'xl'];
 const tones: RadioTone[] = ['solid', 'light'];
 
 const label = 'I agree to the terms of service';
-const description = 'By checking this box, you agree to the Terms of Service';
-const error = 'You must agree to the Terms of Service';
 
 const meta: Meta = {
   title: 'Components/Radio',
@@ -48,8 +54,14 @@ export default meta;
 const DefaultTemplate: Story<RadioProps> = (args) => {
   return (
     <View prop="Default">
-      <Radio {...args} label="Option A" name="configurator" />
-      <Radio {...args} label="Option B" name="configurator" defaultChecked />
+      <RadioGroup orientation="vertical" name="vertical" initialValue="1">
+        <Radio {...args} label="Option A" value="1" />
+        <Radio {...args} label="Option B" value="2" />
+      </RadioGroup>
+      <RadioGroup orientation="horizontal" name="horizontal">
+        <Radio {...args} label="Option A" value="1" />
+        <Radio {...args} label="Option B" value="2" defaultChecked />
+      </RadioGroup>
     </View>
   );
 };

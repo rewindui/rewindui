@@ -99,7 +99,7 @@ const PopoverContent: PopoverContentComponent = forwardRef<HTMLDivElement, Popov
     );
 
     return (
-      <div ref={ref} className={className}>
+      <div ref={ref} className={className} aria-hidden={!open}>
         {withinPortal ? <FloatingPortal>{popoverElement}</FloatingPortal> : popoverElement}
       </div>
     );

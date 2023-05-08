@@ -102,6 +102,9 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
         id={id}
         ref={floating}
         className={classes}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!open}
         style={{
           position: strategy,
           top: y ?? 0,

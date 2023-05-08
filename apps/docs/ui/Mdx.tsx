@@ -33,6 +33,7 @@ import {
   Input,
   InputGroup,
   Radio,
+  RadioGroup,
   Switch,
   FormControl,
 } from '@rewind-ui/core';
@@ -60,7 +61,7 @@ const components = {
   h3: ({ ...props }) => <p className="mt-8 text-xl text-gray-700 font-semibold" {...props} />,
   h4: ({ ...props }) => <p className="mt-8 text-lg text-gray-700 font-medium" {...props} />,
   p: ({ ...props }) => (
-    <p className="mt-6 text-base text-gray-600 leading-normal md:leading-relaxed" {...props} />
+    <p className="mt-6 text-base text-gray-700 leading-normal md:leading-relaxed" {...props} />
   ),
   a: ({ ...props }) => (
     <a
@@ -69,7 +70,7 @@ const components = {
       {...props}
     />
   ),
-  ul: ({ ...props }) => <ul className="mt-3 mb-6 ml-6 list-disc" {...props} />,
+  ul: ({ ...props }) => <ul className="mt-3 mb-6 ml-6 list-disc text-gray-700" {...props} />,
   pre: ({ ...props }) => (
     <div className="mt-4 overflow-auto">
       <CustomMdxSandpack {...props} />
@@ -103,6 +104,9 @@ const components = {
     />
   ),
   option: ({ ...props }) => <option {...props} />,
+  Callout: ({ ...props }) => (
+    <Alert {...props} accent="left" color="yellow" tone="light" className="mt-6" />
+  ),
   Alert: ({ ...props }) => <Alert {...props} />,
   Accordion: ({ ...props }) => <Accordion {...props} />,
   AccordionItem: ({ anchor, ...props }: AccordionItemProps) => (
@@ -134,6 +138,7 @@ const components = {
   Textarea: ({ ...props }) => <Textarea {...props} />,
   Select: ({ ...props }) => <Select {...props} />,
   Radio: ({ ...props }) => <Radio {...props} />,
+  RadioGroup: ({ ...props }) => <RadioGroup {...props} />,
   Switch: ({ ...props }) => <Switch {...props} />,
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />

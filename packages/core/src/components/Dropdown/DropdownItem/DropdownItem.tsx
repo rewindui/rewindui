@@ -20,7 +20,7 @@ const DropdownItem: DropdownItemComponent = forwardRef(
       children,
       className = '',
       color = itemColor,
-      tabIndex,
+      tabIndex = -1,
       onClick,
       ...additionalProps
     } = {
@@ -60,7 +60,7 @@ const DropdownItem: DropdownItemComponent = forwardRef(
         ref={mergedRef}
         tabIndex={tabIndex}
         className={classes}
-        role={'menuitem'}
+        role="menuitem"
         onClick={(event) => {
           setOpen(false);
 

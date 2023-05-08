@@ -148,7 +148,7 @@ The `FormControl.Label` component can be marked as required by adding the `requi
 
 # Control ID
 ---
-The `FormControl` component automatically generates an id for the form (`Input`, `Select` and `Textarea`) elements and assigns its value to the `htmlFor` attribute of the `FormControl.Label` component. This allows the user to click on the label to focus the form element.
+The `FormControl` component automatically generates an id for the form (`Input`, `Select`, `Combobox` and `Textarea`) elements and assigns its value to the `htmlFor` attribute of the `FormControl.Label` component. This allows the user to click on the label to focus the form element.
 
 # Examples
 ---
@@ -228,6 +228,26 @@ The `FormControl` component can be combined with `Select` component.
       <option value="male">Male</option>
       <option value="female">Female</option>
     </FormControl.Select>
+  </FormControl>
+</View>
+```
+
+## Combobox
+The `FormControl` component can be combined with `Combobox` component.
+
+<View>
+  <ComboboxShowcase showcase="form-control" />
+</View>
+
+```tsx
+<View>
+  <FormControl className="min-w-[300px]">
+    <FormControl.Label>Search</FormControl.Label>
+    <FormControl.Combobox initialValue="1">
+      <FormControl.Combobox.Option value="1" label="Item 1" />
+      <FormControl.Combobox.Option value="2" label="Item 2" />
+      <FormControl.Combobox.Option value="3" label="Item 3" />
+    </FormControl.Combobox>
   </FormControl>
 </View>
 ```

@@ -20,6 +20,7 @@ import React, {
   ForwardedRef,
   forwardRef,
   useEffect,
+  useId,
   useLayoutEffect,
   useRef,
   useState,
@@ -55,6 +56,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       clearable,
       closeOnEscape,
       color,
+      controlId,
       initialValue,
       leftIcon,
       loading,
@@ -79,6 +81,8 @@ const _Combobox: ComboboxComponent = forwardRef(
       ...props,
     };
     const id = usePropId(props.id);
+    const contentId = useId();
+    const inputId = usePropId(controlId);
     const disabled = props.disabled || loading;
     const hasLeftIcon = !!leftIcon;
     const hasRightIcon = true;
@@ -197,8 +201,12 @@ const _Combobox: ComboboxComponent = forwardRef(
 
     const inputElement = (
       <input
+        id={inputId}
         ref={inputRef}
         disabled={disabled}
+        role="combobox"
+        aria-controls={contentId}
+        aria-expanded={open}
         value={searching ? search : selectedLabel || ''}
         placeholder={placeholder}
         className={inputClasses}
@@ -323,6 +331,7 @@ const _Combobox: ComboboxComponent = forwardRef(
         <ComboboxContextProvider value={contextValue}>
           <FloatingPortal>
             <div
+              id={contentId}
               ref={floatingRef}
               className={listClasses}
               style={{

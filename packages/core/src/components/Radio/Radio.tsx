@@ -1,7 +1,8 @@
 import { RadioComponent, RadioProps } from '@components/Radio';
+import { useRadioGroupContext } from '@components/Radio/RadioGroup.context';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import { forwardRef, Ref, useMemo } from 'react';
+import { ChangeEvent, forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<RadioProps> = {
@@ -20,6 +21,7 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
       children,
       className = '',
       color,
+      defaultChecked,
       description,
       descriptionClassName = '',
       disabled,
@@ -27,6 +29,10 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
       errorClassName = '',
       label,
       labelClassName = '',
+      name,
+      setValue,
+      initialValue,
+      value,
       radius,
       size,
       tone,
@@ -34,10 +40,17 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
       ...additionalProps
     } = {
       ...defaultProps,
+      ...useRadioGroupContext(),
       ...props,
     };
     const id = usePropId(props.id);
     const validation = !!error ? 'invalid' : 'valid';
+
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+      if (setValue) {
+        setValue(event.target.value);
+      }
+    };
 
     const classes = useMemo(() => {
       return twMerge(
@@ -59,12 +72,17 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
           id={id}
           ref={ref}
           type="radio"
+          aria-labelledby={`${id}-label`}
           className={classes}
           disabled={disabled}
+          onChange={handleChange}
+          name={name}
+          defaultChecked={!!initialValue ? initialValue === value : defaultChecked}
           {...additionalProps}
         />
         <div className="grid grid-cols-1 justify-items-start">
           <label
+            id={`${id}-label`}
             htmlFor={id}
             className={twMerge(theme.label({ disabled, size, className: labelClassName }))}
           >

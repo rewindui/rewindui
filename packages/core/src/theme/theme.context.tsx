@@ -94,6 +94,7 @@ type ThemeComponents = {
     label: typeof styles.radioStyles.label;
     description: typeof styles.radioStyles.description;
     error: typeof styles.radioStyles.error;
+    group: typeof styles.radioStyles.group;
   };
   Select: {
     base: typeof styles.selectStyles.base;
@@ -219,6 +220,7 @@ const defaultTheme: Theme = {
       label: styles.radioStyles.label,
       description: styles.radioStyles.description,
       error: styles.radioStyles.error,
+      group: styles.radioStyles.group,
     },
     Select: {
       base: styles.selectStyles.base,

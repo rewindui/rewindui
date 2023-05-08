@@ -1,4 +1,4 @@
-import { Radio, RadioProps } from '@rewind-ui/core';
+import { Radio, RadioGroup, RadioProps } from '@rewind-ui/core';
 import * as React from 'react';
 
 export const RadioCode = (props: any) => {
@@ -16,7 +16,6 @@ export const RadioCode = (props: any) => {
   };
 
   const attributes = [
-    'name="example"',
     color !== defaultProps.color ? `color="${color}"` : null,
     error !== defaultProps.error ? `error="${error}"` : null,
     description !== defaultProps.description ? `description="${description}"` : null,
@@ -25,17 +24,21 @@ export const RadioCode = (props: any) => {
     size !== defaultProps.size ? `size="${size}"` : null,
     disabled !== defaultProps.disabled ? `disabled={${disabled}}` : null,
     withRing !== defaultProps.withRing ? `withRing={${withRing}}` : null,
-  ];
+  ].filter(Boolean);
 
-  return `import { Checkbox } from '@rewind-ui/core';
+  if (attributes.length) {
+    attributes.unshift(null);
+  }
+
+  return `import { Radio, RadioGroup } from '@rewind-ui/core';
 
 function App() {
   return (
-    <>
-      <Radio label="Option A" ${attributes.filter(Boolean).join(' ')} defaultChecked />
-      <Radio label="Option B" ${attributes.filter(Boolean).join(' ')} />
-      <Radio label="Option C" ${attributes.filter(Boolean).join(' ')} />
-    </>
+    <RadioGroup orientation="vertical" initialValue="1" name="example">
+      <Radio label="Apple" value="1"${attributes.join(' ')} />
+      <Radio label="Banana" value="2"${attributes.join(' ')} />
+      <Radio label="Orange" value="3"${attributes.join(' ')} />
+    </RadioGroup>
   );
 }
 `.trim();
@@ -43,10 +46,10 @@ function App() {
 
 export const RadioExample = (props: RadioProps) => {
   return (
-    <div className="flex flex-col space-y-2">
-      <Radio label="Option A" name="example" {...props} defaultChecked />
-      <Radio label="Option B" name="example" {...props} />
-      <Radio label="Option C" name="example" {...props} />
-    </div>
+    <RadioGroup orientation="vertical" initialValue="1" name="example">
+      <Radio label="Apple" value="1" {...props} />
+      <Radio label="Banana" value="2" {...props} />
+      <Radio label="Orange" value="3" {...props} />
+    </RadioGroup>
   );
 };

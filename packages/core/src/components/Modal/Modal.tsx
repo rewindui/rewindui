@@ -119,6 +119,9 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
         <FocusLock disabled={!activeFocusTrap} className="flex justify-center">
           <div
             id={id}
+            role="dialog"
+            aria-modal="true"
+            aria-hidden={!open}
             style={{
               opacity: 0,
               transform: 'translateY(-200%)',

@@ -59,12 +59,14 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
           id={id}
           ref={ref}
           type="checkbox"
+          aria-labelledby={`${id}-label`}
           className={classes}
           disabled={disabled}
           {...additionalProps}
         />
         <div className="grid grid-cols-1 justify-items-start">
           <label
+            id={`${id}-label`}
             htmlFor={id}
             className={twMerge(theme.label({ disabled, size, className: labelClassName }))}
           >

@@ -168,11 +168,21 @@ const error = cva([], {
   },
 });
 
+const group = cva(['flex'], {
+  variants: {
+    orientation: {
+      vertical: ['flex-col', 'space-y-1.5'],
+      horizontal: ['flex-row', 'space-x-3'],
+    },
+  },
+});
+
 const radioStyles = {
   base,
   description,
   error,
   label,
+  group,
 };
 
 export { radioStyles };

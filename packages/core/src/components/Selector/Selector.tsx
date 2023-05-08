@@ -6,6 +6,7 @@ import {
 import { SelectorTab } from '@components/Selector/SelectorTab/SelectorTab';
 import { SelectorTabColor } from '@components/Selector/SelectorTab/SelectorTab.types';
 import { useComponentTheme } from '@theme/theme.context';
+import { usePropId } from '@utils/usePropId';
 import React, {
   Children,
   cloneElement,
@@ -54,6 +55,7 @@ const _Selector: SelectorComponent = forwardRef(
       ...defaultProps,
       ...props,
     };
+    const id = usePropId(props.id);
     const [activeTabAnchor, setActiveTabAnchor] = useState(value);
     const mounted = useRef(true);
     const selectorRef = useRef<HTMLDivElement>(null);
@@ -177,7 +179,7 @@ const _Selector: SelectorComponent = forwardRef(
 
     return (
       <SelectorContextProvider value={contextValue}>
-        <div ref={ref} className={wrapperClasses} {...additionalProps}>
+        <div id={id} ref={ref} role="radiogroup" className={wrapperClasses} {...additionalProps}>
           {items}
           <div ref={selectorRef} className={selectorClasses}></div>
         </div>
