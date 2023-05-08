@@ -49,7 +49,6 @@ const menuItems: MenuItem[] = [
         title: 'Roadmap',
         path: '/roadmap',
         icon: <RoadHorizon size={18} weight="duotone" />,
-        wip: true,
       },
       {
         title: 'Contributing',

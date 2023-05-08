@@ -2,9 +2,7 @@
 title: Introduction
 description: A quick introduction to Rewind-UI
 ---
-Built specifically for use with [React](https://react.dev) and [Tailwind CSS](https://tailwindcss.com/), Rewind-UI offers a range of accessible, highly customizable components that can be easily integrated into any web application or page. Rewind-UI comes with a set of default styles that can be easily customized using Tailwind CSS classes. Furthermore, each component can be parameterized using a set of props that can be used to change the default styles of the component.
-
-Our goal with Rewind-UI is to provide a reliable and efficient solution for building UI components, while also ensuring that each component is fully accessible and customizable to meet the specific needs of each project. We believe that Rewind-UI will be an invaluable tool for developers looking to streamline their workflow and deliver high-quality, consistent UIs across all of their projects.
+Built specifically for use with [React](https://react.dev) and [Tailwind CSS](https://tailwindcss.com/), Rewind-UI offers a range of accessible, highly customizable components that can be easily integrated into any react project. Rewind-UI comes with a set of default styles that can be [easily customized](https://rewind-ui.dev/theming) using Tailwind CSS classes. Furthermore, each component can be parameterized using a set of props that can be used to change the default styles of the component.
 
 # Installation
 ---
@@ -23,6 +21,8 @@ npm install tailwind-scrollbar @tailwindcss/forms @tailwindcss/typography
 ```
 
 After having installed Tailwind CSS, you must configure it to work with Rewind-UI. To do this, you must first create a `tailwind.config.js` file in the root directory of your project. Then, add the following code to that config file:
+
+<Callout>It is highly recommended to add only the needed style files to avoid having a bloated css file</Callout>
 
 ```js
 module.exports = {
@@ -73,7 +73,9 @@ Each component has a set of default styles that can be parameterized using the c
   <Button color="black" size="sm">Click Me</Button>
 </View>
 
-Moreover, a component can be customized by passing a `className` prop to it. This prop can be used to override the default styles of the component. For example, the following code will change the font weight of the button to semi-bold:
+Moreover, the style of a component can be customized by passing the normal `className` prop to it. This prop can be used to override the default styles of the component. For example, the following code will change the font weight of the button to semi-bold:
+
+Rewind-UI is using [tailwind-merge](https://github.com/dcastil/tailwind-merge) to merge the default classes with the classes you provide in the `className` prop and resolve any possible conflicts.
 
 ```tsx
   <Button color="black" size="sm" className="font-semibold">Click Me</Button>
@@ -94,11 +96,11 @@ Trying to avoid to make the user use multiple properties again and again we have
   <Button variant="success">Click Me</Button>
 </View>
 
-You can read more about the variants of each component in the documentation of the component.
+You can read more about the variants of each component in their corresponding documentation page.
 
 # Customization
 ---
-All Rewind-UI components are highly customizable. This means that you can easily change the default styles of a component by overriding the corresponding Tailwind CSS classes. You can read more about style customisation on the [theming](https://rewind-ui.dev/theming) page.
+All Rewind-UI components are highly customizable. This means that you can easily change the default styles of a component by overriding the corresponding Tailwind CSS classes. You can read more about style customization on the [theming](https://rewind-ui.dev/theming) page.
 
 # Credits
 ---
