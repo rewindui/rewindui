@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.11
+
+### Patch Changes
+
+- 1a3e23d: ARIA updates
+
 ## 0.1.10
 
 ### Patch Changes
