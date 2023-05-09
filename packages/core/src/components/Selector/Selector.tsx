@@ -5,6 +5,7 @@ import {
 } from '@components/Selector/Selector.types';
 import { SelectorTab } from '@components/Selector/SelectorTab/SelectorTab';
 import { SelectorTabColor } from '@components/Selector/SelectorTab/SelectorTab.types';
+import { useHorizontalArrows } from '@hooks/use-horizontal-arrows.hook';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import React, {
@@ -176,6 +177,8 @@ const _Selector: SelectorComponent = forwardRef(
         ref: (ref: HTMLButtonElement) => refsMap.set(child.props.anchor, ref),
       });
     });
+
+    useHorizontalArrows(refsMap);
 
     return (
       <SelectorContextProvider value={contextValue}>

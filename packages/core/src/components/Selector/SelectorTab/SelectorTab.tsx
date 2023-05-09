@@ -22,6 +22,7 @@ const SelectorTab: SelectorTabComponent = forwardRef(
       radius,
       separator,
       setActiveTabAnchor,
+      shadow,
       size,
       tone,
       withSeparator,
@@ -63,6 +64,7 @@ const SelectorTab: SelectorTabComponent = forwardRef(
           onClick={handleClick}
           className={classes}
           disabled={disabled}
+          tabIndex={active ? 0 : -1}
           {...additionalProps}
         >
           <span className="z-40 h-full flex items-center">{label}</span>
