@@ -36,6 +36,7 @@ const TabsRoot: TabsComponent = forwardRef<HTMLDivElement, TabsProps>(
     const [activeTabAnchor, setActiveTabAnchor] = useState(defaultTab);
     const contextValue: TabsContext = {
       activeTabAnchor,
+      baseId: id,
       color,
       fullWidth,
       method,

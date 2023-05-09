@@ -19,6 +19,7 @@ export interface TabsContext {
   radius?: TabsRadius;
   setActiveTabAnchor(value: string): void;
   size?: TabsSize;
+  baseId?: string;
   tone?: TabsTone;
 }
 

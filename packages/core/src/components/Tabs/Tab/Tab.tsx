@@ -8,12 +8,12 @@ const Tab: TabComponent = forwardRef<HTMLButtonElement, TabProps>(
   (props: TabProps, ref?: Ref<HTMLButtonElement>) => {
     const theme = useComponentTheme('Tabs');
     const { anchor, children, className, ...additionalProps } = props;
-    const id = `tab-${anchor}`;
-    const panelId = `tabpanel-${anchor}`;
 
-    const { activeTabAnchor, color, fullWidth, radius, setActiveTabAnchor, size, tone } = {
+    const { activeTabAnchor, baseId, color, fullWidth, radius, setActiveTabAnchor, size, tone } = {
       ...useTabsContext(),
     };
+    const id = `tab-${baseId}-${anchor}`;
+    const panelId = `tabpanel-${baseId}-${anchor}`;
     const handleClick = () => {
       setActiveTabAnchor(anchor);
     };
@@ -42,6 +42,7 @@ const Tab: TabComponent = forwardRef<HTMLButtonElement, TabProps>(
         role="tab"
         aria-selected={selected}
         aria-controls={panelId}
+        tabIndex={selected ? 0 : -1}
         onClick={handleClick}
         className={classes}
         {...additionalProps}

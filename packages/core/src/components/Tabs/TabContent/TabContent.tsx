@@ -2,10 +2,10 @@ import { useTabsContext } from '@components/Tabs/Tabs.context';
 import { FunctionComponent, PropsWithoutRef } from 'react';
 
 const TabContent: FunctionComponent<PropsWithoutRef<any>> = (props: any) => {
-  const { activeTabAnchor, method } = useTabsContext();
+  const { activeTabAnchor, baseId, method } = useTabsContext();
   const { anchor, children, ...additionalProps } = props;
-  const id = `tabpanel-${anchor}`;
-  const tabId = `tab-${anchor}`;
+  const id = `tabpanel-${baseId}-${anchor}`;
+  const tabId = `tab-${baseId}-${anchor}`;
   const isVisible = anchor === activeTabAnchor;
   const content = (
     <div
