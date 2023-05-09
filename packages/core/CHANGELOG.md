@@ -1,5 +1,12 @@
 # @rewind-ui/core
 
+## 0.1.12
+
+### Patch Changes
+
+- a79b552: \* bug: The Selector component should adhere to the WAI-ARIA Radio Group Pattern
+  - bug: The Tabs component should adhere to the WAI-ARIA Tabs Pattern with manual activation
+
 ## 0.1.11
 
 ### Patch Changes
