@@ -71,16 +71,6 @@ export const Header = () => {
               />
             </SocialLink>
 
-            <SocialLink href="#">
-              <Image
-                priority
-                src="/images/twitter.svg"
-                height={18}
-                width={18}
-                alt="Follow us on Twitter"
-              />
-            </SocialLink>
-
             <div className="2xl:hidden">
               <button onClick={() => setOpen(true)} className={headerButtonClasses}>
                 <List size={32} />
