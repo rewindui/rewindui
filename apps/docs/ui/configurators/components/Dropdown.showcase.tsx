@@ -28,8 +28,6 @@ export type DropdownShowcaseProps = {
     | 'triggers'
     | 'chevrons'
     | 'chevrons-rotation'
-    | 'initially-open'
-    | 'outside-press'
     | 'label-color'
     | 'label-weight'
     | 'label-size'
@@ -59,8 +57,6 @@ export const DropdownShowcase = (props: DropdownShowcaseProps) => {
     triggers: <Triggers />,
     chevrons: <Chevrons />,
     'chevrons-rotation': <ChevronsRotation />,
-    'initially-open': <InitiallyOpen />,
-    'outside-press': <OutsidePress />,
     'label-color': <LabelColor />,
     'label-weight': <LabelWeight />,
     'label-size': <LabelSize />,
@@ -766,66 +762,6 @@ const ChevronsRotation = () => {
       </Dropdown>
 
       <Dropdown chevronRotation={false} trigger="hover">
-        <Dropdown.Trigger>
-          <Button>Menu</Button>
-        </Dropdown.Trigger>
-        <Dropdown.Content>
-          <Dropdown.Label>Application</Dropdown.Label>
-          <Dropdown.Divider />
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Messages</Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown>
-    </>
-  );
-};
-
-const InitiallyOpen = () => {
-  return (
-    <>
-      <Dropdown initiallyOpen={true} trigger="hover">
-        <Dropdown.Trigger>
-          <Button>Menu</Button>
-        </Dropdown.Trigger>
-        <Dropdown.Content>
-          <Dropdown.Label>Application</Dropdown.Label>
-          <Dropdown.Divider />
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Messages</Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown>
-
-      <Dropdown initiallyOpen={false} trigger="hover">
-        <Dropdown.Trigger>
-          <Button>Menu</Button>
-        </Dropdown.Trigger>
-        <Dropdown.Content>
-          <Dropdown.Label>Application</Dropdown.Label>
-          <Dropdown.Divider />
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Messages</Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown>
-    </>
-  );
-};
-
-const OutsidePress = () => {
-  return (
-    <>
-      <Dropdown initiallyOpen={true} outsidePress={true} trigger="hover">
-        <Dropdown.Trigger>
-          <Button>Menu</Button>
-        </Dropdown.Trigger>
-        <Dropdown.Content>
-          <Dropdown.Label>Application</Dropdown.Label>
-          <Dropdown.Divider />
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Messages</Dropdown.Item>
-        </Dropdown.Content>
-      </Dropdown>
-
-      <Dropdown initiallyOpen={true} outsidePress={false} trigger="hover">
         <Dropdown.Trigger>
           <Button>Menu</Button>
         </Dropdown.Trigger>
