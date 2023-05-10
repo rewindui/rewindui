@@ -24,7 +24,7 @@ export type BadgeShadowColor =
   | 'dark'
   | 'black';
 export type BadgeSize = 'xs' | 'sm' | 'md' | 'lg';
-export type BadgeTone = 'solid' | 'light' | 'outline';
+export type BadgeTone = 'solid' | 'light' | 'glossy' | 'outline';
 export type BadgeVariants = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info';
 
 export interface BadgeProps extends ComponentPropsWithRef<'span'> {
