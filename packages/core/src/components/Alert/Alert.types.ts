@@ -1,11 +1,4 @@
-import {
-  ComponentPropsWithRef,
-  ElementType,
-  ForwardRefExoticComponent,
-  ReactElement,
-  ReactNode,
-} from 'react';
-import { PolymorphicComponentPropWithRef } from '../../types';
+import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactNode } from 'react';
 
 export type AlertAccent = 'none' | 'top' | 'right' | 'bottom' | 'left';
 export type AlertColor =
