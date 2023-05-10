@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.2.0
+
+### Minor Changes
+
+- bc4a738: Added Badge component
+
 ## 0.1.13
 
 ### Patch Changes
