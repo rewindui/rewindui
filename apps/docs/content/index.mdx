@@ -22,7 +22,7 @@ npm install tailwind-scrollbar @tailwindcss/forms @tailwindcss/typography
 
 After having installed Tailwind CSS, you must configure it to work with Rewind-UI. To do this, you must first create a `tailwind.config.js` file in the root directory of your project. Then, add the following code to that config file:
 
-<Callout>It is highly recommended to add only the needed style files to avoid having a bloated css file</Callout>
+<Callout>It is highly recommended to add only the needed style files to avoid having a bloated css file.</Callout>
 
 ```js
 module.exports = {
@@ -43,6 +43,8 @@ module.exports = {
   ]
 };
 ```
+
+To use the custom color palette of our documentation simply copy/paste the colors section from the [github repo](https://github.com/rewindui/rewindui/blob/main/apps/docs/tailwind.config.js) to your `tailwind.config.js` file. The palette has been generated using [tints.dev](https://www.tints.dev/).
 
 # Usage
 ---

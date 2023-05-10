@@ -108,7 +108,14 @@ const components = {
   ),
   option: ({ ...props }) => <option {...props} />,
   Callout: ({ ...props }) => (
-    <Alert {...props} accent="left" color="blue" tone="light" className="mt-6" />
+    <Alert
+      {...props}
+      shadow="sm"
+      shadowColor="yellow"
+      color="yellow"
+      tone="light"
+      className="mt-6"
+    />
   ),
   Alert: ({ ...props }) => <Alert {...props} />,
   Accordion: ({ ...props }) => <Accordion {...props} />,
