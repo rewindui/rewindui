@@ -20,7 +20,7 @@ const DropdownItem: DropdownItemComponent = forwardRef(
       children,
       className = '',
       color = itemColor,
-      tabIndex = -1,
+      tabIndex = 0,
       onClick,
       ...additionalProps
     } = {

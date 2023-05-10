@@ -9,6 +9,7 @@ import { DropdownItem } from '@components/Dropdown/DropdownItem/DropdownItem';
 import { DropdownLabel } from '@components/Dropdown/DropdownLabel/DropdownLabel';
 import { DropdownTrigger } from '@components/Dropdown/DropdownTrigger/DropdownTrigger';
 import { useDropdown } from '@components/Dropdown/use-dropdown.hook';
+import { useKeypress } from '@hooks/use-keypress';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref } from 'react';
 import { DropdownContextProvider } from './Dropdown.context';
@@ -97,6 +98,12 @@ const _Dropdown: DropdownComponent = forwardRef<HTMLDivElement, DropdownProps>(
       x,
       y,
     };
+
+    useKeypress('Tab', open, () => {
+      if (open) {
+        setOpen(false);
+      }
+    });
 
     return (
       <DropdownContextProvider value={contextValue}>
