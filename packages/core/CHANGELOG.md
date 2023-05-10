@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.1.13
+
+### Patch Changes
+
+- 66cec72: bug: close dropdown on tab
+
 ## 0.1.12
 
 ### Patch Changes
