@@ -1,0 +1,341 @@
+---
+title: Badge
+description: An information box.
+intro: The Badge component serves the purpose of presenting information to the user. It can display some quick info and can be customized to draw the user's attention by modifying its color, size and other properties.
+source: Badge
+theme: Badge.styles.ts
+variants: Badge.variants.ts
+storybook: badge--default
+---
+
+# Import
+---
+Import the `Badge` component using the following import statement.
+
+```tsx
+import { Badge } from '@rewind-ui/core';
+```
+
+# Variants
+---
+The `Badge` component comes with a number of pre-defined variants that can be used to change the appearance of the component. The variants can be used by passing the variant name as a prop to the component. A variant is basically a pre-set set of properties. Read more about variants [here](https://rewind-ui.dev/variants).
+
+Available variants are: `primary`, `secondary`, `link`, `danger`, `success`, `warning` and `info`.
+
+<View>
+  <Badge variant="primary">Primary</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="danger">Danger</Badge>
+  <Badge variant="success">Success</Badge>
+  <Badge variant="warning">Warning</Badge>
+  <Badge variant="info">Info</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge variant="primary">Primary</Badge>
+  <Badge variant="secondary">Secondary</Badge>
+  <Badge variant="danger">Danger</Badge>
+  <Badge variant="success">Success</Badge>
+  <Badge variant="warning">Warning</Badge>
+  <Badge variant="info">Info</Badge>
+</View>
+```
+
+# Tones & Colors
+---
+The `Badge` component comes with four tones: `solid`, `light` and `outline`.
+
+The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <Badge color="white">White</Badge>
+  <Badge color="blue">Blue</Badge>
+  <Badge color="red">Red</Badge>
+  <Badge color="green">Green</Badge>
+  <Badge color="yellow">Yellow</Badge>
+  <Badge color="purple">Purple</Badge>
+  <Badge color="gray">Gray</Badge>
+  <Badge color="dark">Dark</Badge>
+  <Badge color="black">Black</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge color="white">White</Badge>
+  <Badge color="blue">Blue</Badge>
+  <Badge color="red">Red</Badge>
+  <Badge color="green">Green</Badge>
+  <Badge color="yellow">Yellow</Badge>
+  <Badge color="purple">Purple</Badge>
+  <Badge color="gray">Gray</Badge>
+  <Badge color="dark">Dark</Badge>
+  <Badge color="black">Black</Badge>
+</View>
+```
+
+## Light
+<View>
+  <Badge tone="light" color="white">White</Badge>
+  <Badge tone="light" color="blue">Blue</Badge>
+  <Badge tone="light" color="red">Red</Badge>
+  <Badge tone="light" color="green">Green</Badge>
+  <Badge tone="light" color="yellow">Yellow</Badge>
+  <Badge tone="light" color="purple">Purple</Badge>
+  <Badge tone="light" color="gray">Gray</Badge>
+  <Badge tone="light" color="dark">Dark</Badge>
+  <Badge tone="light" color="black">Black</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge tone="light" color="white">White</Badge>
+  <Badge tone="light" color="blue">Blue</Badge>
+  <Badge tone="light" color="red">Red</Badge>
+  <Badge tone="light" color="green">Green</Badge>
+  <Badge tone="light" color="yellow">Yellow</Badge>
+  <Badge tone="light" color="purple">Purple</Badge>
+  <Badge tone="light" color="gray">Gray</Badge>
+  <Badge tone="light" color="dark">Dark</Badge>
+  <Badge tone="light" color="black">Black</Badge>
+</View>
+```
+
+## Outline
+<View>
+  <Badge tone="outline" color="white">White</Badge>
+  <Badge tone="outline" color="blue">Blue</Badge>
+  <Badge tone="outline" color="red">Red</Badge>
+  <Badge tone="outline" color="green">Green</Badge>
+  <Badge tone="outline" color="yellow">Yellow</Badge>
+  <Badge tone="outline" color="purple">Purple</Badge>
+  <Badge tone="outline" color="gray">Gray</Badge>
+  <Badge tone="outline" color="dark">Dark</Badge>
+  <Badge tone="outline" color="black">Black</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge tone="outline" color="white">White</Badge>
+  <Badge tone="outline" color="blue">Blue</Badge>
+  <Badge tone="outline" color="red">Red</Badge>
+  <Badge tone="outline" color="green">Green</Badge>
+  <Badge tone="outline" color="yellow">Yellow</Badge>
+  <Badge tone="outline" color="purple">Purple</Badge>
+  <Badge tone="outline" color="gray">Gray</Badge>
+  <Badge tone="outline" color="dark">Dark</Badge>
+  <Badge tone="outline" color="black">Black</Badge>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Badge size="xs">Badge</Badge>
+  <Badge size="sm">Badge</Badge>
+  <Badge size="md">Badge</Badge>
+  <Badge size="lg">Badge</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge size="xs">Badge</Badge>
+  <Badge size="sm">Badge</Badge>
+  <Badge size="md">Badge</Badge>
+  <Badge size="lg">Badge</Badge>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
+
+<View>
+  <Badge radius="none">Badge</Badge>
+  <Badge radius="sm">Badge</Badge>
+  <Badge radius="md">Badge</Badge>
+  <Badge radius="lg">Badge</Badge>
+  <Badge radius="full">Badge</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge radius="none">Badge</Badge>
+  <Badge radius="sm">Badge</Badge>
+  <Badge radius="md">Badge</Badge>
+  <Badge radius="lg">Badge</Badge>
+  <Badge radius="full">Badge</Badge>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <Badge shadow="none" shadowColor="black">Badge</Badge>
+  <Badge shadow="sm" shadowColor="black">Badge</Badge>
+  <Badge shadow="base" shadowColor="black">Badge</Badge>
+  <Badge shadow="md" shadowColor="black">Badge</Badge>
+  <Badge shadow="lg" shadowColor="black">Badge</Badge>
+  <Badge shadow="xl" shadowColor="black">Badge</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge shadow="none">Badge</Badge>
+  <Badge shadow="sm">Badge</Badge>
+  <Badge shadow="base">Badge</Badge>
+  <Badge shadow="md">Badge</Badge>
+  <Badge shadow="lg">Badge</Badge>
+  <Badge shadow="xl">Badge</Badge>
+</View>
+```
+
+## Shadow colors
+Available `shadowColor` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <Badge shadow="lg" color="blue" shadowColor="blue">Badge</Badge>
+  <Badge shadow="lg" color="red" shadowColor="red">Badge</Badge>
+  <Badge shadow="lg" color="green" shadowColor="green">Badge</Badge>
+  <Badge shadow="lg" color="yellow" shadowColor="yellow">Badge</Badge>
+  <Badge shadow="lg" color="purple" shadowColor="purple">Badge</Badge>
+  <Badge shadow="lg" color="gray" shadowColor="gray">Badge</Badge>
+  <Badge shadow="lg" color="dark" shadowColor="dark">Badge</Badge>
+  <Badge shadow="lg" color="black" shadowColor="black">Badge</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge shadow="lg" color="blue" shadowColor="blue">Badge</Badge>
+  <Badge shadow="lg" color="red" shadowColor="red">Badge</Badge>
+  <Badge shadow="lg" color="green" shadowColor="green">Badge</Badge>
+  <Badge shadow="lg" color="yellow" shadowColor="yellow">Badge</Badge>
+  <Badge shadow="lg" color="purple" shadowColor="purple">Badge</Badge>
+  <Badge shadow="lg" color="gray" shadowColor="gray">Badge</Badge>
+  <Badge shadow="lg" color="dark" shadowColor="dark">Badge</Badge>
+  <Badge shadow="lg" color="black" shadowColor="black">Badge</Badge>
+</View>
+```
+
+# Examples
+---
+## With icon
+
+<View>
+  <Badge color="green" tone="outline"><ChartLineUp size={16} className="mr-1" weight="duotone" />+$250</Badge>
+  <Badge color="red" tone="outline"><ChartLineDown size={16} className="mr-1" weight="duotone" />-$150</Badge>
+</View>
+
+```tsx
+<View>
+  <Badge color="green" tone="outline"><ChartLineUp size={16} className="mr-1" weight="duotone" />+$250</Badge>
+  <Badge color="red" tone="outline"><ChartLineDown size={16} className="mr-1" weight="duotone" />-$150</Badge>
+</View>
+```
+
+## Button badge
+<View>
+  <Button color="purple" tone="outline" className="relative">
+    <Badge size="xs" color="purple" radius="full" className="absolute -right-3 -top-2.5">10</Badge>
+    <span>View Tickets</span>
+  </Button>
+</View>
+
+```tsx
+<View>
+  <Button color="purple" tone="outline" className="relative">
+    <Badge size="xs" color="purple" radius="full" className="absolute -right-3 -top-2.5">10</Badge>
+    <span>View Tickets</span>
+  </Button>
+</View>
+```
+
+<View>
+  <Button color="black" tone="outline" className="space-x-2">
+    <span>Notifications</span>
+    <Badge size="xs" color="black" radius="full">10</Badge>
+  </Button>
+</View>
+
+```tsx
+<View>
+  <Button color="black" tone="outline" className="space-x-2">
+    <span>Notifications</span>
+    <Badge size="xs" color="black" radius="full">10</Badge>
+  </Button>
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop        | Type               | Description            | Default |
+|:------------|:-------------------|:-----------------------|:--------|
+| color       | `BadgeColor`       | Sets the color         | `blue`  |
+| radius      | `BadgeRadius`      | Sets the border radius | `md`    |
+| shadow      | `BadgeShadow`      | Sets the shadow size   | `none`  |
+| shadowColor | `BadgeShadowColor` | Sets the shadow color  | `none`  |
+| size        | `BadgeSize`        | Sets the badge size    | `sm`    |
+| tone        | `BadgeTone`        | Sets the badge tone    | `solid` |
+| variant     | `BadgeVariants`    | Sets the badge variant | `true`  |
+
+## Types
+
+```tsx
+type BadgeColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type BadgeRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type BadgeShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type BadgeShadowColor =
+  | 'none'
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type BadgeSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type BadgeTone = 'solid' | 'light' | 'outline';
+```
+
+```tsx
+type BadgeVariants =
+  | 'primary'
+  | 'secondary'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info';
+```

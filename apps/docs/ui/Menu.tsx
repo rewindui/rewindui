@@ -70,6 +70,10 @@ const menuItems: MenuItem[] = [
         path: '/components/alert',
       },
       {
+        title: 'Badge',
+        path: '/components/badge',
+      },
+      {
         title: 'Card',
         path: '/components/card',
       },

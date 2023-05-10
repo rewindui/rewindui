@@ -1,5 +1,6 @@
 import { AccordionConfig } from '@/ui/configurators/components/Accordion.config';
 import { AlertConfig } from '@/ui/configurators/components/Alert.config';
+import { BadgeConfig } from '@/ui/configurators/components/Badge.config';
 import { ButtonConfig } from '@/ui/configurators/components/Button.config';
 import { CardConfig } from '@/ui/configurators/components/Card.config';
 import { CheckboxConfig } from '@/ui/configurators/components/Checkbox.config';
@@ -22,6 +23,7 @@ import { TooltipConfig } from '@/ui/configurators/components/Tooltip.config';
 export const components = {
   accordion: AccordionConfig,
   alert: AlertConfig,
+  badge: BadgeConfig,
   button: ButtonConfig,
   card: CardConfig,
   checkbox: CheckboxConfig,

@@ -1,19 +1,15 @@
-import { AlertCode, AlertExample } from '@/ui/configurators/components/Alert.example';
+import { BadgeCode, BadgeExample } from '@/ui/configurators/components/Badge.example';
 
-export const AlertConfig = {
-  example: AlertExample,
-  default: AlertCode,
+export const BadgeConfig = {
+  example: BadgeExample,
+  default: BadgeCode,
   state: {
-    accent: 'none',
     color: 'blue',
-    dismissable: false,
-    dismissableAnimation: true,
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',
-    size: 'md',
+    size: 'sm',
     tone: 'solid',
-    title: '',
   },
   options: [
     {
@@ -21,12 +17,6 @@ export const AlertConfig = {
       name: 'tone',
       type: 'select',
       options: ['solid', 'light', 'outline'],
-    },
-    {
-      label: 'Accent',
-      name: 'accent',
-      type: 'select',
-      options: ['none', 'top', 'bottom', 'left', 'right'],
     },
     {
       label: 'Color',
@@ -57,21 +47,6 @@ export const AlertConfig = {
       name: 'radius',
       type: 'select',
       options: ['none', 'sm', 'base', 'md', 'lg', 'full'],
-    },
-    {
-      label: 'Dismissable',
-      name: 'dismissable',
-      type: 'switch',
-    },
-    {
-      label: 'Dismissable animation',
-      name: 'dismissableAnimation',
-      type: 'switch',
-    },
-    {
-      label: 'Title',
-      name: 'title',
-      type: 'input',
     },
   ],
 };

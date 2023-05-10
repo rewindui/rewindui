@@ -23,6 +23,7 @@ import {
   AccordionItemProps,
   CardImageProps,
   Alert,
+  Badge,
   Accordion,
   Select,
   Text,
@@ -45,6 +46,8 @@ import {
   At,
   Key,
   WarningCircle,
+  ChartLineUp,
+  ChartLineDown,
 } from '@phosphor-icons/react';
 import {
   ComboboxShowcase,
@@ -114,6 +117,7 @@ const components = {
   ),
   AccordionHeader: ({ ...props }) => <Accordion.Header {...props} />,
   AccordionBody: ({ ...props }) => <Accordion.Body {...props} />,
+  Badge: ({ ...props }) => <Badge {...props} />,
   Button: ({ ...props }) => <Button {...props} />,
   Card: ({ ...props }) => <Card {...props} />,
   CardHeader: ({ ...props }) => <Card.Header {...props} />,
@@ -156,6 +160,8 @@ const components = {
   View: ({ ...props }) => <View {...props} />,
   MagnifyingGlass: ({ ...props }) => <MagnifyingGlass {...props} />,
   RocketLaunch: ({ ...props }) => <RocketLaunch {...props} />,
+  ChartLineUp: ({ ...props }) => <ChartLineUp {...props} />,
+  ChartLineDown: ({ ...props }) => <ChartLineDown {...props} />,
   Rocket: ({ ...props }) => <Rocket {...props} />,
   At: ({ ...props }) => <At {...props} />,
   Key: ({ ...props }) => <Key {...props} />,
