@@ -11,7 +11,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ...colors,
+        gray: colors.gray,
+        zinc: colors.zinc,
+        slate: colors.slate,
+        neutral: colors.neutral,
         blue: {
           50: '#E5F6FF',
           100: '#CCECFF',
