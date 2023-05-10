@@ -20,6 +20,7 @@ type ThemeComponents = {
     title: typeof styles.alertStyles.title;
     text: typeof styles.alertStyles.text;
   };
+  Badge: typeof styles.badgeStyles.base;
   Button: {
     base: typeof styles.buttonStyles.base;
     chevron: typeof styles.buttonStyles.chevron;
@@ -146,6 +147,7 @@ const defaultTheme: Theme = {
       title: styles.alertStyles.title,
       text: styles.alertStyles.text,
     },
+    Badge: styles.badgeStyles.base,
     Button: {
       base: styles.buttonStyles.base,
       chevron: styles.buttonStyles.chevron,
