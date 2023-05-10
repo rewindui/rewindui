@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['inline-flex', 'items-center'], {
+const base = cva(['inline-flex', 'items-center', 'text-center'], {
   variants: {
     tone: {
       solid: ['border', 'border-transparent', 'antialiased'],
@@ -21,8 +21,8 @@ const base = cva(['inline-flex', 'items-center'], {
     size: {
       xs: ['text-xs', 'px-1', 'h-5'],
       sm: ['text-sm', 'px-1.5', 'h-6'],
-      md: ['text-md', 'px-1.5', 'h-7'],
-      lg: ['text-base', 'px-2', 'h-8'],
+      md: ['text-base', 'px-1.5', 'h-7'],
+      lg: ['text-lg', 'px-2', 'h-8'],
     },
     radius: {
       none: ['rounded-none'],
@@ -41,7 +41,7 @@ const base = cva(['inline-flex', 'items-center'], {
       xl: ['shadow-xl'],
     },
     shadowColor: {
-      none: [''],
+      none: [],
       white: ['shadow-gray-200/50 hover:shadow-gray-200/60'],
       blue: ['shadow-blue-500/50', 'hover:shadow-blue-500/60'],
       red: ['shadow-red-500/50 hover:shadow-red-500/60'],

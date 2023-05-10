@@ -25,7 +25,7 @@ const base = cva(['flex', 'gap-x-3', 'w-full'], {
       lg: ['text-base', 'px-5', 'py-4'],
     },
     accent: {
-      none: [''],
+      none: [],
       top: ['border-t-2'],
       right: ['border-r-2'],
       bottom: ['border-b-2'],
@@ -48,7 +48,7 @@ const base = cva(['flex', 'gap-x-3', 'w-full'], {
       xl: ['shadow-xl'],
     },
     shadowColor: {
-      none: [''],
+      none: [],
       white: ['shadow-gray-200/50 hover:shadow-gray-200/60'],
       blue: ['shadow-blue-500/50', 'hover:shadow-blue-500/60'],
       red: ['shadow-red-500/50 hover:shadow-red-500/60'],
