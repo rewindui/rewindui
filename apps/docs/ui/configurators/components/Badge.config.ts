@@ -16,7 +16,7 @@ export const BadgeConfig = {
       label: 'Tone',
       name: 'tone',
       type: 'select',
-      options: ['solid', 'light', 'outline'],
+      options: ['solid', 'light', 'glossy', 'outline'],
     },
     {
       label: 'Color',

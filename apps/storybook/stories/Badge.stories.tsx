@@ -25,7 +25,7 @@ const colors: BadgeColor[] = [
   'dark',
   'black',
 ];
-const tones: BadgeTone[] = ['solid', 'light', 'outline'];
+const tones: BadgeTone[] = ['solid', 'light', 'glossy', 'outline'];
 const sizes: BadgeSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: BadgeRadius[] = ['none', 'sm', 'md', 'lg', 'full'];
 const shadows: BadgeShadow[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
