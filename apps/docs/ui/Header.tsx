@@ -29,7 +29,7 @@ export const Header = () => {
 
   return (
     <>
-      <div className="sticky top-0 flex items-center w-full h-20 backdrop-blur-md border-b border-b-gray-100 z-40">
+      <div className="sticky top-0 flex items-center w-full h-20 bg-white sm:bg-transparent sm:backdrop-blur-md border-b border-b-gray-100 z-50">
         <div className="container max-w-8xl h-full flex items-center justify-between mx-auto px-4 2xl:px-0">
           <Link href="/" className="flex items-center">
             <Image
