@@ -147,7 +147,9 @@ const _Combobox: ComboboxComponent = forwardRef(
     }, [onChange, selectedValue]);
 
     useEffect(() => {
-      inputRef.current?.focus();
+      if (open) {
+        inputRef.current?.focus();
+      }
       updateListClasses();
     }, [open]);
 
