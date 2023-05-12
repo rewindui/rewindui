@@ -150,6 +150,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       if (open) {
         inputRef.current?.focus();
       }
+
       updateListClasses();
     }, [open]);
 
