@@ -100,3 +100,5 @@ Special thanks to the following teams:
 * [Vercel](https://vercel.com/) - For creating Next.js and their awesome open source templates.
 * [Floating-UI](https://floating-ui.com/) - For creating Floating-UI.
 * [Phosphor](https://phosphoricons.com/) - For creating Phosphor icon family.
+
+[![Powered by Vercel](https://rewind-ui.dev/images/powered-by-vercel.svg)](https://vercel.com?utm_source=[RewindUI]&utm_campaign=oss.)
