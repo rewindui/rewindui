@@ -5,7 +5,6 @@ import * as React from 'react';
 export const ModalCode = (props: any) => {
   const {
     closeOnEscape,
-    color,
     mode,
     overlayBlur,
     overlayCloseOnClick,
@@ -18,7 +17,6 @@ export const ModalCode = (props: any) => {
 
   const defaultProps = {
     closeOnEscape: true,
-    color: 'white',
     mode: 'dialog',
     open: false,
     overlayBlur: 'sm',
@@ -32,7 +30,6 @@ export const ModalCode = (props: any) => {
 
   const attributes = [
     closeOnEscape !== defaultProps.closeOnEscape ? `closeOnEscape={${closeOnEscape}}` : null,
-    color !== defaultProps.color ? `color="${color}"` : null,
     mode !== defaultProps.mode ? `mode="${mode}"` : null,
     overlayBlur !== defaultProps.overlayBlur ? `overlayBlur="${overlayBlur}"` : null,
     overlayCloseOnClick !== defaultProps.overlayCloseOnClick

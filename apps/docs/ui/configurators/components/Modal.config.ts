@@ -5,7 +5,6 @@ export const ModalConfig = {
   default: ModalCode,
   state: {
     closeOnEscape: true,
-    color: 'white',
     mode: 'dialog',
     overlayBlur: 'sm',
     overlayCloseOnClick: true,
@@ -16,12 +15,6 @@ export const ModalConfig = {
     size: 'sm',
   },
   options: [
-    {
-      label: 'Color',
-      name: 'color',
-      type: 'color',
-      colors: ['white', 'gray', 'zinc', 'slate'],
-    },
     {
       label: 'Overlay color',
       name: 'overlayColor',

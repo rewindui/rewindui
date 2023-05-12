@@ -64,6 +64,8 @@ Then, you can use the component in your JSX code:
   <Button>Click Me</Button>
 </View>
 
+<Callout>Rewind-UI components are not compatible with NextJS 13 server components. To use them, the parent components must include the 'use client' directive.</Callout>
+
 # Properties
 ---
 Each component has a set of default styles that can be parameterized using the corresponding props. For example, the `Button` component has a default blue color and a medium size. These values can be changed by setting the `color` and `size` props to the component:
@@ -71,6 +73,7 @@ Each component has a set of default styles that can be parameterized using the c
 ```tsx
 <Button color="black" size="sm">Click Me</Button>
 ```
+
 <View>
   <Button color="black" size="sm">Click Me</Button>
 </View>
@@ -82,6 +85,7 @@ Rewind-UI is using [tailwind-merge](https://github.com/dcastil/tailwind-merge) t
 ```tsx
   <Button color="black" size="sm" className="font-semibold">Click Me</Button>
 ```
+
 <View>
   <Button color="black" size="sm" className="font-semibold">Click Me</Button>
 </View>
