@@ -262,9 +262,6 @@ const MultiModal = () => {
               <Button variant="secondary" onClick={() => setParentOpen(false)}>
                 Cancel
               </Button>
-              <Button variant="secondary" onClick={() => setParentOpen(false)}>
-                Close
-              </Button>
               <Button onClick={() => setFirstChildOpen(true)}>Next</Button>
             </Card.Footer>
           </Card>
