@@ -1,4 +1,4 @@
-import { Button, Card, CardProps, FormControl, Modal, ModalProps, Text } from '@rewind-ui/core';
+import { Button, Modal, ModalProps } from '@rewind-ui/core';
 import { useState } from 'react';
 import * as React from 'react';
 

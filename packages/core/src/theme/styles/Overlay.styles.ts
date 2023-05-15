@@ -5,9 +5,9 @@ const base = cva(
     'fixed',
     'inset-0',
     'overflow-hidden',
-    'z-[45]',
-    'transition-all',
-    'duration-300',
+    'z-[55]',
+    'transition-opacity',
+    'duration-50',
     'ease-in-out',
   ],
   {

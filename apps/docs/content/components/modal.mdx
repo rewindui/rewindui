@@ -184,6 +184,77 @@ The `closeOnEscape` prop can be used to close the modal when the escape key is p
 </View>
 ```
 
+# Multiple modals
+---
+An unlimited amount of modals can be added using the `Modal.Group` component.
+
+<View>
+  <ModalShowcase showcase="multi-modal" />
+</View>
+
+```tsx
+import { useState } from 'react';
+import { Modal, Card, Button } from '@rewind-ui/core';
+
+const MultiModal = () => {
+  const [parentOpen, setParentOpen] = useState(false);
+  const [firstChildOpen, setFirstChildOpen] = useState(false);
+  const [secondChildOpen, setSecondChildOpen] = useState(false);
+
+  return (
+    <>
+      <Modal.Group>
+        <Modal open={parentOpen} onClose={() => setParentOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a parent modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setParentOpen(false)}>
+                Cancel
+              </Button>
+              <Button onClick={() => setFirstChildOpen(true)}>Next</Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+
+        <Modal open={firstChildOpen} onClose={() => setFirstChildOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a child modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setFirstChildOpen(false)}>
+                Back
+              </Button>
+              <Button onClick={() => setSecondChildOpen(true)}>Next</Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+
+        <Modal open={secondChildOpen} onClose={() => setSecondChildOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a second child modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setSecondChildOpen(false)}>
+                Back
+              </Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+      </Modal.Group>
+
+      <Button onClick={() => setParentOpen(true)}>Open</Button>
+    </>
+  );
+};
+```
+
 # Focus trap
 ---
 The `Modal` component is using the [react-focus-lock](https://github.com/theKashey/react-focus-lock) library to trap focus within the modal. This means that when the modal is open, the user can only interact with the modal and not with the rest of the page.

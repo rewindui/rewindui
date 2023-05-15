@@ -1,8 +1,7 @@
-import { ModalSize, Modal, ModalProps, Card, Button, FormControl, Text } from '@rewind-ui/core';
+import { ModalSize, Modal, ModalProps, Card, Button, Text } from '@rewind-ui/core';
 import { Meta, Story } from '@storybook/react';
 import { useState } from 'react';
 import * as React from 'react';
-import { XCircle } from '@phosphor-icons/react';
 
 const sizes: ModalSize[] = ['auto', 'sm', 'md', 'lg', 'xl', 'screen'];
 
@@ -38,68 +37,59 @@ const meta: Meta = {
 export default meta;
 
 const Template: Story<ModalProps> = (args) => {
-  const [open, setOpen] = useState(false);
+  const [parentOpen, setParentOpen] = useState(false);
+  const [firstChildOpen, setFirstChildOpen] = useState(false);
+  const [secondChildOpen, setSecondChildOpen] = useState(false);
 
   return (
     <>
-      <Modal {...args} open={open} onClose={() => setOpen(false)}>
-        <Card size={'md'} className="w-full">
-          <Card.Header
-            className="bg-gray-50/50"
-            actions={
-              <Button onClick={() => setOpen(false)} size="xs" color="gray" icon={true}>
-                <XCircle />
+      <Modal.Group>
+        <Modal {...args} open={parentOpen} onClose={() => setParentOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a parent modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setParentOpen(false)}>
+                Cancel
               </Button>
-            }
-          >
-            Privacy Policy
-          </Card.Header>
-          <Card.Body className="max-h-[200px] overflow-y-scroll space-y-3">
-            <FormControl>
-              <FormControl.Label>Email Address</FormControl.Label>
-              <FormControl.Input placeholder="Enter your business email" withRing />
-            </FormControl>
-            <Text className="block">
-              At [Company], we are committed to protecting your privacy and personal information. We
-              collect information about you when you use our services and when you provide it to us
-              directly. This information is used to provide, maintain, and improve our services, as
-              well as to develop new features and protect the rights and safety of our users and the
-              public.
-            </Text>
+              <Button onClick={() => setFirstChildOpen(true)}>Next</Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
 
-            <Text className="block">
-              We may share your information with third parties in certain circumstances, such as
-              with your consent, to service providers and partners, or to comply with legal
-              obligations. We take steps to secure your information, but cannot guarantee its
-              complete protection.
-            </Text>
+        <Modal {...args} open={firstChildOpen} onClose={() => setFirstChildOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a child modal</h1>
+            </Card.Body>
 
-            <Text className="block">
-              We respect your right to privacy and will allow you to control your personal
-              information. You may access and update your information, or opt out of certain
-              communications, at any time by contacting us. If you have any concerns about how we
-              handle your information, please don't hesitate to reach out. We are committed to
-              addressing any issues and to continually improving our privacy practices.
-            </Text>
-          </Card.Body>
-          <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
-            <Button onClick={() => setOpen(false)} size="md" tone="transparent" color="gray">
-              Cancel
-            </Button>
-            <Button
-              className="font-semibold"
-              onClick={() => setOpen(false)}
-              size="md"
-              color="blue"
-              tone="light"
-            >
-              Accept
-            </Button>
-          </Card.Footer>
-        </Card>
-      </Modal>
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setFirstChildOpen(false)}>
+                Back
+              </Button>
+              <Button onClick={() => setSecondChildOpen(true)}>Next</Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
 
-      <Button onClick={() => setOpen(true)}>Open</Button>
+        <Modal {...args} open={secondChildOpen} onClose={() => setSecondChildOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a second child modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setSecondChildOpen(false)}>
+                Back
+              </Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+      </Modal.Group>
+
+      <Button onClick={() => setParentOpen(true)}>Open</Button>
     </>
   );
 };

@@ -1,12 +1,14 @@
 import { ModalComponent, ModalProps } from '@components/Modal/Modal.types';
+import { ModalGroup } from '@components/Modal/ModalGroup/ModalGroup';
+import { useModalGroupContext } from '@components/Modal/ModalGroup/ModalGroup.context';
 import { FloatingPortal, useMergeRefs } from '@floating-ui/react';
+import { useFocusTrap } from '@hooks/use-focus-trap.hook';
 import { useKeypress } from '@hooks/use-keypress';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import { Overlay } from '@components/Overlay';
 import { twMerge } from 'tailwind-merge';
-import FocusLock from 'react-focus-lock';
 
 const defaultProps: Partial<ModalProps> = {
   closeOnEscape: true,
@@ -22,7 +24,7 @@ const defaultProps: Partial<ModalProps> = {
   size: 'sm',
 };
 
-const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivElement>) => {
+const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivElement>) => {
   const theme = useComponentTheme('Modal');
   const {
     children,
@@ -46,9 +48,47 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
   };
   const id = usePropId(props.id);
   const modalRef = useRef<HTMLDivElement>(null);
-  const mergedRef = useMergeRefs<HTMLDivElement | null>([modalRef, ref || null]);
-  const animation = useRef<Animation | null>(null);
   const [activeFocusTrap, setActiveFocusTrap] = useState(false);
+  const trapRef = useFocusTrap(activeFocusTrap);
+  const mergedRef = useMergeRefs<HTMLDivElement | null>([modalRef, trapRef || null, ref || null]);
+  const animation = useRef<Animation | null>(null);
+  const { activeModalId, registry, setRegistry } = useModalGroupContext();
+
+  useEffect(() => {
+    if (!setRegistry || !registry || !modalRef.current) {
+      return;
+    }
+
+    const newRegistry: HTMLDivElement[] = open
+      ? [...registry, modalRef.current]
+      : registry.filter((ref) => ref !== modalRef.current);
+    setRegistry(newRegistry);
+
+    if (newRegistry.length === 0) {
+      return;
+    }
+
+    if (!open && newRegistry.length < registry.length) {
+      const activeModal = newRegistry[newRegistry.length - 1];
+
+      activeModal.animate(
+        [
+          {
+            opacity: 0,
+            transform: 'translateY(-50px)',
+            filter: 'blur(15px)',
+            visibility: 'hidden',
+          },
+          { opacity: 1, transform: 'translateY(0%)', filter: 'blur(0)', visibility: 'visible' },
+        ],
+        {
+          duration: 300,
+        }
+      );
+
+      setActiveFocusTrap(false);
+    }
+  }, [open]);
 
   const classes = useMemo(() => {
     return twMerge(
@@ -102,6 +142,20 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
     }
   }, [open]);
 
+  useEffect(() => {
+    if (!animation.current) {
+      return;
+    }
+
+    if (activeModalId === id) {
+      setTimeout(() => {
+        setActiveFocusTrap(true);
+      }, 100);
+    } else {
+      setActiveFocusTrap(false);
+    }
+  }, [activeModalId]);
+
   return (
     <>
       {mode !== 'fullscreen' && (
@@ -116,7 +170,7 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
       )}
 
       <FloatingPortal>
-        <FocusLock disabled={!activeFocusTrap} className="flex justify-center">
+        <div className="flex justify-center">
           <div
             id={id}
             role="dialog"
@@ -133,12 +187,16 @@ const Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivEl
           >
             {children}
           </div>
-        </FocusLock>
+        </div>
       </FloatingPortal>
     </>
   );
 });
 
-Modal.displayName = 'Modal';
+_Modal.displayName = 'Modal';
+
+const Modal = Object.assign(_Modal, {
+  Group: ModalGroup,
+});
 
 export default Modal;

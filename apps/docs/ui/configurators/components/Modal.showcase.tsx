@@ -12,6 +12,7 @@ export type ModalShowcaseProps = {
     | 'shadows'
     | 'close-on-click'
     | 'close-on-escape'
+    | 'multi-modal'
     | 'examples-card'
     | 'examples-form';
 };
@@ -27,6 +28,7 @@ export const ModalShowcase = (props: ModalShowcaseProps) => {
     shadows: <Shadows />,
     'close-on-click': <CloseOnClick />,
     'close-on-escape': <CloseOnEscape />,
+    'multi-modal': <MultiModal />,
     'examples-card': <ExamplesCard />,
     'examples-form': <ExamplesForm />,
   };
@@ -238,6 +240,67 @@ const CloseOnEscape = () => {
 
       <Button onClick={() => setEnabledOpen(true)}>Enabled</Button>
       <Button onClick={() => setDisabledOpen(true)}>Disabled</Button>
+    </>
+  );
+};
+
+const MultiModal = () => {
+  const [parentOpen, setParentOpen] = useState(false);
+  const [firstChildOpen, setFirstChildOpen] = useState(false);
+  const [secondChildOpen, setSecondChildOpen] = useState(false);
+
+  return (
+    <>
+      <Modal.Group>
+        <Modal open={parentOpen} onClose={() => setParentOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a parent modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setParentOpen(false)}>
+                Cancel
+              </Button>
+              <Button variant="secondary" onClick={() => setParentOpen(false)}>
+                Close
+              </Button>
+              <Button onClick={() => setFirstChildOpen(true)}>Next</Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+
+        <Modal open={firstChildOpen} onClose={() => setFirstChildOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a child modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setFirstChildOpen(false)}>
+                Back
+              </Button>
+              <Button onClick={() => setSecondChildOpen(true)}>Next</Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+
+        <Modal open={secondChildOpen} onClose={() => setSecondChildOpen(false)}>
+          <Card className="w-full">
+            <Card.Body>
+              <h1>This is a second child modal</h1>
+            </Card.Body>
+
+            <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
+              <Button variant="secondary" onClick={() => setSecondChildOpen(false)}>
+                Back
+              </Button>
+            </Card.Footer>
+          </Card>
+        </Modal>
+      </Modal.Group>
+
+      <Button onClick={() => setParentOpen(true)}>Open</Button>
     </>
   );
 };

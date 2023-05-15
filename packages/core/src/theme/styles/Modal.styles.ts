@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', 'z-50'], {
+const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', 'z-[60]'], {
   variants: {
     mode: {
       fullscreen: ['inset-0', 'mt-0'],
