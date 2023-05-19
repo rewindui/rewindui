@@ -19,7 +19,6 @@ export * from './components/Select';
 export * from './components/Selector';
 export * from './components/Spinner';
 export * from './components/Switch';
-export * from './components/Table';
 export * from './components/Tabs';
 export * from './components/Text';
 export * from './components/Textarea';
