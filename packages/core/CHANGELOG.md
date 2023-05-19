@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.4.0
+
+### Minor Changes
+
+- 304c719: Added Modal component positioning
+
 ## 0.3.0
 
 ### Minor Changes
