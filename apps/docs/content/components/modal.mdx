@@ -35,6 +35,30 @@ The `Modal` component can be used as a normal dialog or a fullscreen dialog. The
 </View>
 ```
 
+# Position
+---
+The `Modal` component can be positioned at the top, center or bottom of the screen. The `position` prop can be used to set the position of the dialog.
+
+<View>
+  <ModalShowcase showcase="positions" />
+</View>
+
+```tsx
+<View>
+  <Modal position="top">
+    // ...
+  </Modal>
+
+  <Modal position="center">
+    // ...
+  </Modal>
+
+  <Modal position="bottom">
+    // ...
+  </Modal>
+</View>
+```
+
 # Sizes
 ---
 Available `size` values are: `auto`, `sm`, `md`, `lg` and `screen`. The available sizes are responsive and will change based on the screen size.

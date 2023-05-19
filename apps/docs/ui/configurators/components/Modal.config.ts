@@ -10,6 +10,7 @@ export const ModalConfig = {
     overlayCloseOnClick: true,
     overlayColor: 'dark',
     overlayOpacity: '50',
+    position: 'top',
     radius: 'md',
     shadow: 'base',
     size: 'sm',
@@ -32,6 +33,12 @@ export const ModalConfig = {
       name: 'mode',
       type: 'selector',
       options: ['fullscreen', 'dialog'],
+    },
+    {
+      label: 'Position',
+      name: 'position',
+      type: 'selector',
+      options: ['top', 'center', 'bottom'],
     },
     {
       label: 'Size',

@@ -4,7 +4,7 @@ const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', '
   variants: {
     mode: {
       fullscreen: ['inset-0', 'mt-0'],
-      dialog: ['mt-12', 'mx-2', 'max-h-[calc(100%-6rem)]'],
+      dialog: ['mx-2', 'max-h-[calc(100%-6rem)]'],
     },
     color: {
       white: 'bg-white',
@@ -35,8 +35,28 @@ const base = cva(['fixed', 'top-0', 'flex', 'overflow-auto', 'justify-center', '
       xl: [],
       screen: [],
     },
+    position: {
+      top: [],
+      bottom: [],
+      center: [],
+    },
   },
   compoundVariants: [
+    {
+      position: 'top',
+      mode: 'dialog',
+      className: ['mt-12', 'top-0'],
+    },
+    {
+      position: 'bottom',
+      mode: 'dialog',
+      className: ['mb-12', 'top-auto', 'bottom-0'],
+    },
+    {
+      position: 'center',
+      mode: 'dialog',
+      className: ['top-1/2'],
+    },
     {
       size: 'auto',
       mode: 'dialog',

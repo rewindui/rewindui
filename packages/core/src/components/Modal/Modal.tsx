@@ -19,6 +19,7 @@ const defaultProps: Partial<ModalProps> = {
   overlayCloseOnClick: true,
   overlayColor: 'dark',
   overlayOpacity: '50',
+  position: 'center',
   radius: 'md',
   shadow: 'base',
   size: 'sm',
@@ -38,6 +39,7 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
     overlayCloseOnClick,
     overlayColor,
     overlayOpacity,
+    position,
     radius,
     shadow,
     size,
@@ -53,6 +55,21 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
   const mergedRef = useMergeRefs<HTMLDivElement | null>([modalRef, trapRef || null, ref || null]);
   const animation = useRef<Animation | null>(null);
   const { activeModalId, registry, setRegistry } = useModalGroupContext();
+
+  const translateY = useMemo(() => {
+    if (mode === 'fullscreen') {
+      return '0%';
+    }
+
+    switch (position) {
+      case 'top':
+        return '0%';
+      case 'bottom':
+        return '0%';
+      default:
+        return '-50%';
+    }
+  }, [position, mode]);
 
   useEffect(() => {
     if (!setRegistry || !registry || !modalRef.current) {
@@ -96,12 +113,13 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
         className,
         color,
         mode,
+        position,
         radius,
         shadow,
         size,
       })
     );
-  }, [className, color, mode, radius, shadow, size, theme]);
+  }, [className, color, mode, position, radius, shadow, size, theme]);
 
   useKeypress('Escape', closeOnEscape, onClose);
 
@@ -117,8 +135,13 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
     const keyframes = new KeyframeEffect(
       modalRef.current,
       [
-        { opacity: 0, transform: 'translateY(-50px)', filter: 'blur(15px)', visibility: 'hidden' },
-        { opacity: 1, transform: 'translateY(0%)', filter: 'blur(0)', visibility: 'visible' },
+        { opacity: 0, transform: 'translateY(-100px)', filter: 'blur(15px)', visibility: 'hidden' },
+        {
+          opacity: 1,
+          transform: `translateY(${translateY})`,
+          filter: 'blur(0)',
+          visibility: 'visible',
+        },
       ],
       { duration, fill: 'both', easing }
     );
@@ -178,7 +201,6 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
             aria-hidden={!open}
             style={{
               opacity: 0,
-              transform: 'translateY(-200%)',
               visibility: 'hidden',
             }}
             ref={mergedRef}

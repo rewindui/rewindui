@@ -6,6 +6,7 @@ import { X } from '@phosphor-icons/react';
 export type ModalShowcaseProps = {
   showcase:
     | 'modes'
+    | 'positions'
     | 'colors'
     | 'sizes'
     | 'radiuses'
@@ -22,6 +23,7 @@ export const ModalShowcase = (props: ModalShowcaseProps) => {
 
   const components = {
     modes: <Modes />,
+    positions: <Positions />,
     colors: <Colors />,
     sizes: <Sizes />,
     radiuses: <Radiuses />,
@@ -65,6 +67,24 @@ const Modes = () => {
 
       <Button onClick={() => setDialogOpen(true)}>Dialog</Button>
       <Button onClick={() => setFullscreenOpen(true)}>Fullscreen</Button>
+    </>
+  );
+};
+
+const Positions = () => {
+  const [topOpen, setTopOpen] = useState(false);
+  const [centerOpen, setCenterOpen] = useState(false);
+  const [bottomOpen, setBottomOpen] = useState(false);
+
+  return (
+    <>
+      <ModalTemplate position="top" open={topOpen} onClose={() => setTopOpen(false)} />
+      <ModalTemplate position="center" open={centerOpen} onClose={() => setCenterOpen(false)} />
+      <ModalTemplate position="bottom" open={bottomOpen} onClose={() => setBottomOpen(false)} />
+
+      <Button onClick={() => setTopOpen(true)}>Top</Button>
+      <Button onClick={() => setCenterOpen(true)}>Center</Button>
+      <Button onClick={() => setBottomOpen(true)}>Bottom</Button>
     </>
   );
 };
