@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.4.1
+
+### Patch Changes
+
+- 3653f10: Combobox list overflow hotfix
+
 ## 0.4.0
 
 ### Minor Changes
