@@ -242,7 +242,17 @@ const noResults = cva(['w-full', 'flex', 'items-center'], {
 });
 
 const list = cva(
-  ['flex', 'flex-col', 'border', 'border-gray-200', 'snap-y', 'isolation-auto', 'z-40', 'bg-white'],
+  [
+    'flex',
+    'flex-col',
+    'border',
+    'border-gray-200',
+    'snap-y',
+    'isolation-auto',
+    'z-40',
+    'bg-white',
+    'overflow-x-clip',
+  ],
   {
     variants: {
       overflown: {
