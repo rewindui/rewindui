@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.4.2
+
+### Patch Changes
+
+- 8cc2674: Combobox onChange event bug fix
+
 ## 0.4.1
 
 ### Patch Changes
