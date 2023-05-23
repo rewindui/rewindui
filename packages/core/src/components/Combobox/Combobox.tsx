@@ -144,7 +144,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       }
 
       mounted.current = false;
-    }, [onChange, selectedValue]);
+    }, [selectedValue]);
 
     useEffect(() => {
       if (open) {
