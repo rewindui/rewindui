@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.4.3
+
+### Patch Changes
+
+- 1a795f1: Path aliases fix
+
 ## 0.4.2
 
 ### Patch Changes
