@@ -4,11 +4,11 @@ import { AsProp } from '../../types/polymorphic.types';
 export const alertVariants: Record<AlertVariants, AlertProps & AsProp<any>> = {
   primary: {
     color: 'blue',
-    tone: 'solid',
+    tone: 'light',
   },
   secondary: {
     color: 'gray',
-    tone: 'solid',
+    tone: 'light',
   },
   tertiary: {
     color: 'gray',
@@ -16,18 +16,18 @@ export const alertVariants: Record<AlertVariants, AlertProps & AsProp<any>> = {
   },
   danger: {
     color: 'red',
-    tone: 'solid',
+    tone: 'light',
   },
   success: {
     color: 'green',
-    tone: 'solid',
+    tone: 'light',
   },
   warning: {
     color: 'yellow',
-    tone: 'solid',
+    tone: 'light',
   },
   info: {
     color: 'purple',
-    tone: 'solid',
+    tone: 'light',
   },
 };

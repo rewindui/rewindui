@@ -11,8 +11,8 @@ export const AlertConfig = {
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',
-    size: 'md',
-    tone: 'solid',
+    size: 'sm',
+    tone: 'light',
     title: '',
   },
   options: [

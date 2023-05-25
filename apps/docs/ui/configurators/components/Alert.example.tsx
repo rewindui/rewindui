@@ -23,9 +23,9 @@ export const AlertCode = (props: any) => {
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',
-    size: 'md',
+    size: 'sm',
     title: '',
-    tone: 'solid',
+    tone: 'light',
   };
 
   const attributes = [
