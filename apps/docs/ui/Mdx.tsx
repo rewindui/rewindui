@@ -110,6 +110,7 @@ const components = {
   Callout: ({ ...props }) => (
     <Alert
       {...props}
+      size="sm"
       shadow="sm"
       shadowColor="yellow"
       color="yellow"
@@ -149,7 +150,7 @@ const components = {
   Textarea: ({ ...props }) => <Textarea {...props} />,
   Select: ({ ...props }) => <Select {...props} />,
   Radio: ({ ...props }) => <Radio {...props} />,
-  RadioGroup: ({ ...props }) => <RadioGroup {...props} />,
+  RadioGroup: ({ name, ...props }) => <RadioGroup name={name} {...props} />,
   Switch: ({ ...props }) => <Switch {...props} />,
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />
