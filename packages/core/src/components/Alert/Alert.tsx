@@ -15,8 +15,8 @@ const defaultProps: Partial<AlertProps> = {
   radius: 'md',
   shadow: 'none',
   shadowColor: 'none',
-  size: 'md',
-  tone: 'solid',
+  size: 'sm',
+  tone: 'light',
 };
 
 const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivElement>) => {
@@ -66,11 +66,15 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
     <div id={id} role="alert" ref={ref} className={classes} {...additionalProps}>
       {icon && <span className={theme.iconWrapper()}>{icon}</span>}
       <div className={theme.infoWrapper({ size })}>
-        {title && <span className={theme.title({ size })}>{title}</span>}
+        {title && <span className={theme.title({ size, color, tone })}>{title}</span>}
         {children && <span className={theme.text()}>{children}</span>}
       </div>
       {dismissable && (
-        <button className={theme.iconWrapper()} onClick={() => setVisible(false)}>
+        <button
+          title="Close alert"
+          className={theme.iconWrapper()}
+          onClick={() => setVisible(false)}
+        >
           <XMarkIcon className={theme.dismissIcon({ size })} />
         </button>
       )}
