@@ -5,6 +5,7 @@ import { Footer } from '@/ui/Footer';
 import { Header } from '@/ui/Header';
 import { config } from '@/lib/config';
 import Script from 'next/script';
+import { ReactNode } from 'react';
 
 export const metadata = {
   title: {
@@ -50,7 +51,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className}>
       <body>
@@ -70,10 +71,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </main>
 
-        <Script
-          src="https://analytics.rewind-ui.dev/script.js"
-          data-website-id="74796605-6068-498d-99ff-89b791669743"
-        />
+        {process.env.NODE_ENV !== 'development' && (
+          <Script
+            src="https://analytics.rewind-ui.dev/script.js"
+            data-website-id="74796605-6068-498d-99ff-89b791669743"
+          />
+        )}
       </body>
     </html>
   );
