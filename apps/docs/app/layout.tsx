@@ -5,6 +5,7 @@ import { Footer } from '@/ui/Footer';
 import { Header } from '@/ui/Header';
 import { config } from '@/lib/config';
 import Script from 'next/script';
+import * as process from 'process';
 import { ReactNode } from 'react';
 
 export const metadata = {
