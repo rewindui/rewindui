@@ -15,6 +15,7 @@ import { RadioConfig } from '@/ui/configurators/components/Radio.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
 import { SelectorConfig } from '@/ui/configurators/components/Selector.config';
 import { SwitchConfig } from '@/ui/configurators/components/Switch.config';
+import { TableConfig } from '@/ui/configurators/components/Table.config';
 import { TabsConfig } from '@/ui/configurators/components/Tabs.config';
 import { TextConfig } from '@/ui/configurators/components/Text.config';
 import { TextareaConfig } from '@/ui/configurators/components/Textarea.config';
@@ -38,6 +39,7 @@ export const components = {
   select: SelectConfig,
   selector: SelectorConfig,
   switch: SwitchConfig,
+  table: TableConfig,
   tabs: TabsConfig,
   text: TextConfig,
   textarea: TextareaConfig,

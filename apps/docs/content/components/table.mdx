@@ -1,0 +1,690 @@
+---
+title: Table
+description: A responsive table component.
+intro: The Table component serves the purpose of presenting structured information to the user.
+source: Table
+theme: Table.styles.ts
+storybook: table--default
+---
+
+# Import
+---
+Import the `Table` component using the following import statement.
+
+```tsx
+import { Table } from '@rewind-ui/core';
+```
+
+# Header color
+---
+The header color can be changed by passing the `headerColor` prop to the `Table` component.
+
+Available colors are `white`, `gray`, `dark` and `black`.
+
+<View>
+  <TableShowcase showcase="header-color" />
+</View>
+
+```tsx
+<View>
+  <Table headerColor="white">
+    // ...
+  </Table>
+
+  <Table headerColor="gray">
+    // ...
+  </Table>
+
+  <Table headerColor="dark">
+    // ...
+  </Table>
+
+  <Table headerColor="black">
+    // ...
+  </Table>
+</View>
+```
+
+# Size
+---
+Available `size` values are: `sm`, `md` and `lg`.
+
+<View>
+  <TableShowcase showcase="size" />
+</View>
+
+```tsx
+<View>
+  <Table size="sm">
+    // ...
+  </Table>
+
+  <Table size="md">
+    // ...
+  </Table>
+
+  <Table size="lg">
+    // ...
+  </Table>
+</View>
+```
+
+# Radius
+---
+Available `radius` values are: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <TableShowcase showcase="radius" />
+</View>
+
+```tsx
+<View>
+  <Table radius="none">
+    // ...
+  </Table>
+
+  <Table radius="sm">
+    // ...
+  </Table>
+
+  <Table radius="base">
+    // ...
+  </Table>
+
+  <Table radius="md">
+    // ...
+  </Table>
+
+  <Table radius="lg">
+    // ...
+  </Table>
+</View>
+```
+
+# Striped
+---
+Stripes can be toggled by setting the `striped` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="striped" />
+</View>
+
+```tsx
+<View>
+  <Table striped="true">
+    // ...
+  </Table>
+
+  <Table striped="false">
+    // ...
+  </Table>
+</View>
+```
+
+## Stripe position
+The stripe position can be adjusted by passing the `stripePosition` prop to the `Table` component.
+
+Available positions are `odd` and `even`.
+
+<View>
+  <TableShowcase showcase="stripe-position" />
+</View>
+
+```tsx
+<View>
+  <Table striped="true" stripePositio="odd">
+    // ...
+  </Table>
+
+  <Table striped="true" stripePosition="even">
+    // ...
+  </Table>
+</View>
+```
+
+# Hoverable
+---
+Hover highlighting can be toggled by setting the `hoverable` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="hoverable" />
+</View>
+
+```tsx
+<View>
+  <Table hoverable="true">
+    // ...
+  </Table>
+
+  <Table hoverable="false">
+    // ...
+  </Table>
+</View>
+```
+
+# Row color
+---
+Row colors can be adjusted by passing the `color` prop to the `Table.Tr` component.
+
+Available colors are `none`, `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <TableShowcase showcase="row-color" />
+</View>
+
+```tsx
+<View>
+  <Table>
+    <Table.Tr color="none">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="white">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="blue">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="red">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="green">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="yellow">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="purple">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="gray">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="dark">
+      // ...
+    </Table.Tr>
+  </Table>
+
+  <Table>
+    <Table.Tr color="black">
+      // ...
+    </Table.Tr>
+  </Table>
+</View>
+```
+
+# Borders
+---
+
+## Border style
+Border styles can be adjusted by passing the `borderStyle` prop to the `Table` component.
+
+Available border styles are `solid` and `dashed`.
+
+<View>
+  <TableShowcase showcase="border-style" />
+</View>
+
+```tsx
+<View>
+  <Table borderStyle="solid">
+    // ...
+  </Table>
+
+  <Table borderStyle="dashed">
+    // ...
+  </Table>
+</View>
+```
+
+## Outer borders
+Outer borders can be toggled by setting the `outerBorders` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="outer-borders" />
+</View>
+
+```tsx
+<View>
+  <Table outerBorders={true}>
+    // ...
+  </Table>
+
+  <Table outerBorders={false}>
+    // ...
+  </Table>
+</View>
+```
+
+## Header borders
+Header borders can be toggled by setting the `headerBorders` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="header-borders" />
+</View>
+
+```tsx
+<View>
+  <Table headerBorders={true}>
+    // ...
+  </Table>
+
+  <Table headerBorders={false}>
+    // ...
+  </Table>
+</View>
+```
+
+## Footer borders
+Footer borders can be toggled by setting the `footerBorders` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="footer-borders" />
+</View>
+
+```tsx
+<View>
+  <Table footerBorders={true}>
+    // ...
+  </Table>
+
+  <Table footerBorders={false}>
+    // ...
+  </Table>
+</View>
+```
+
+## Horizontal borders
+Horizontal borders can be toggled by setting the `horizontalBorders` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="horizontal-borders" />
+</View>
+
+```tsx
+<View>
+  <Table horizontalBorders={true}>
+    // ...
+  </Table>
+
+  <Table horizontalBorders={false}>
+    // ...
+  </Table>
+</View>
+```
+
+## Vertical borders
+Vertical borders can be toggled by setting the `verticalBorders` prop to the `Table` component.
+
+<View>
+  <TableShowcase showcase="vertical-borders" />
+</View>
+
+```tsx
+<View>
+  <Table verticalBorders={true}>
+    // ...
+  </Table>
+
+  <Table verticalBorders={false}>
+    // ...
+  </Table>
+</View>
+```
+
+# Examples
+---
+## Users table
+<View>
+  <TableShowcase showcase="users-table" />
+</View>
+
+```tsx
+<View>
+  <Table radius="lg" striped={true} hoverable={true} headerColor="white" borderStyle="dashed">
+    <Table.Thead>
+      <Table.Tr>
+        <Table.Th align="left">User</Table.Th>
+        <Table.Th align="left">Role</Table.Th>
+        <Table.Th align="left">Status</Table.Th>
+        <Table.Th align="right">Actions</Table.Th>
+      </Table.Tr>
+    </Table.Thead>
+    <Table.Tbody>
+      <Table.Tr>
+        <Table.Td>
+          <UserCard initials="JD" name="John Doe" email="john.doe@mail.com" color="purple" />
+        </Table.Td>
+        <Table.Td>
+          <Badge color="purple" tone="light">
+            Admin
+          </Badge>
+        </Table.Td>
+        <Table.Td>
+          <Badge color="green" tone="outline">
+            <div className="w-1.5 h-1.5 bg-green-500 animate-pulse rounded-full mr-1.5" />
+            Active
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Dropdown
+            itemColor="gray"
+            tone="light"
+            placement="bottom-end"
+            shadow="sm"
+            withChevron={false}
+          >
+            <Dropdown.Trigger>
+              <Button color="white" tone="light" size="sm" shadow="sm" icon>
+                <DotsThree size={18} />
+              </Button>
+            </Dropdown.Trigger>
+            <Dropdown.Content className="min-w-[7rem]">
+              <Dropdown.Item>View</Dropdown.Item>
+              <Dropdown.Item>Edit</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item color="red">Delete</Dropdown.Item>
+            </Dropdown.Content>
+          </Dropdown>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>
+          <UserCard initials="JS" name="Jane Stan" email="jane.stan@mail.com" color="red" />
+        </Table.Td>
+        <Table.Td>
+          <Badge color="red" tone="light">
+            Moderator
+          </Badge>
+        </Table.Td>
+        <Table.Td>
+          <Badge color="green" tone="outline">
+            <div className="w-1.5 h-1.5 bg-green-500 animate-pulse rounded-full mr-1.5" />
+            Active
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Dropdown
+            itemColor="gray"
+            tone="light"
+            placement="bottom-end"
+            shadow="sm"
+            withChevron={false}
+          >
+            <Dropdown.Trigger>
+              <Button color="white" tone="light" size="sm" shadow="sm" icon>
+                <DotsThree size={18} />
+              </Button>
+            </Dropdown.Trigger>
+            <Dropdown.Content className="min-w-[7rem]">
+              <Dropdown.Item>View</Dropdown.Item>
+              <Dropdown.Item>Edit</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item color="red">Delete</Dropdown.Item>
+            </Dropdown.Content>
+          </Dropdown>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>
+          <UserCard initials="CD" name="Chris Doe" email="chris.dow@mail.com" color="gray" />
+        </Table.Td>
+        <Table.Td>
+          <Badge color="dark" tone="light">
+            User
+          </Badge>
+        </Table.Td>
+        <Table.Td>
+          <Badge color="red" tone="outline">
+            <div className="w-1.5 h-1.5 bg-red-500 rounded-full mr-1.5" />
+            Inactive
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Dropdown
+            itemColor="gray"
+            tone="light"
+            placement="bottom-end"
+            shadow="sm"
+            withChevron={false}
+          >
+            <Dropdown.Trigger>
+              <Button color="white" tone="light" size="sm" shadow="sm" icon>
+                <DotsThree size={18} />
+              </Button>
+            </Dropdown.Trigger>
+            <Dropdown.Content className="min-w-[7rem]">
+              <Dropdown.Item>View</Dropdown.Item>
+              <Dropdown.Item>Edit</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item color="red">Delete</Dropdown.Item>
+            </Dropdown.Content>
+          </Dropdown>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>
+          <UserCard initials="JC" name="John Clark" email="john.clark@mail.com" color="gray" />
+        </Table.Td>
+        <Table.Td>
+          <Badge color="dark" tone="light">
+            User
+          </Badge>
+        </Table.Td>
+        <Table.Td>
+          <Badge color="green" tone="outline">
+            <div className="w-1.5 h-1.5 bg-green-500 animate-pulse rounded-full mr-1.5" />
+            Active
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Dropdown
+            itemColor="gray"
+            tone="light"
+            placement="bottom-end"
+            shadow="sm"
+            withChevron={false}
+          >
+            <Dropdown.Trigger>
+              <Button color="white" tone="light" size="sm" shadow="sm" icon>
+                <DotsThree size={18} />
+              </Button>
+            </Dropdown.Trigger>
+            <Dropdown.Content className="min-w-[7rem]">
+              <Dropdown.Item>View</Dropdown.Item>
+              <Dropdown.Item>Edit</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item color="red">Delete</Dropdown.Item>
+            </Dropdown.Content>
+          </Dropdown>
+        </Table.Td>
+      </Table.Tr>
+    </Table.Tbody>
+  </Table>
+</View>
+```
+## Products table
+<View>
+  <TableShowcase showcase="products-table" />
+</View>
+
+```tsx
+<View>
+  <Table
+    radius="base"
+    striped={true}
+    hoverable={true}
+    horizontalBorders={false}
+    outerBorders={false}
+    headerColor="dark"
+  >
+    <Table.Thead>
+      <Table.Tr>
+        <Table.Th align="left">Product</Table.Th>
+        <Table.Th align="left">Category</Table.Th>
+        <Table.Th align="right">Price</Table.Th>
+      </Table.Tr>
+    </Table.Thead>
+    <Table.Tbody>
+      <Table.Tr>
+        <Table.Td>Google Pixel 7</Table.Td>
+        <Table.Td>
+          <Badge color="purple" tone="light">
+            Mobile
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Badge color="red" tone="outline">
+            <ChartLineDown size={16} className="mr-1" weight="duotone" />
+            $599.00
+          </Badge>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>iPhone 12 Pro Max</Table.Td>
+        <Table.Td>
+          <Badge color="purple" tone="light">
+            Mobile
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Badge color="green" tone="outline">
+            <ChartLineUp size={16} className="mr-1" weight="duotone" />
+            $1,099.00
+          </Badge>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>Apple Studio Display</Table.Td>
+        <Table.Td>
+          <Badge color="red" tone="light">
+            Monitors
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Badge color="red" tone="outline">
+            <ChartLineDown size={16} className="mr-1" weight="duotone" />
+            $1,799.00
+          </Badge>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>Microsoft Surface Pro</Table.Td>
+        <Table.Td>
+          <Badge color="blue" tone="light">
+            Laptop
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Badge color="green" tone="outline">
+            <ChartLineUp size={16} className="mr-1" weight="duotone" />
+            $1,099.00
+          </Badge>
+        </Table.Td>
+      </Table.Tr>
+      <Table.Tr>
+        <Table.Td>Magic Keyboard</Table.Td>
+        <Table.Td>
+          <Badge color="green" tone="light">
+            Accessories
+          </Badge>
+        </Table.Td>
+        <Table.Td align="right">
+          <Badge color="green" tone="outline">
+            <ChartLineUp size={16} className="mr-1" weight="duotone" />
+            $349.00
+          </Badge>
+        </Table.Td>
+      </Table.Tr>
+    </Table.Tbody>
+  </Table>
+</View>
+````
+
+# API Reference
+---
+## Properties
+### Table
+
+| Prop              | Type                  | Description                                    | Default |
+|:------------------|:----------------------|:-----------------------------------------------|:--------|
+| borderStyle       | `TableBorderStyle`    | Sets all borders style                         | `solid` |
+| footerBorders     | `boolean`             | Toggles footer border                          | `true`  |
+| headerBorders     | `boolean`             | Toggles header border                          | `true`  |
+| headerColor       | `TableHeaderColor`    | Sets the header background color               | `gray`  |
+| horizontalBorders | `boolean`             | Toggles horizontal borders                     | `true`  |
+| hoverable         | `boolean`             | Toggles row highlighting on hover              | `true`  |
+| outerBorders      | `boolean`             | Toggles outer borders                          | `true`  |
+| radius            | `TableRadius`         | Sets the table border radius                   | `lg`    |
+| size              | `TableSize`           | Sets the table size                            | `md`    |
+| striped           | `boolean`             | Toggles striped background highlighting effect | `true`  |
+| stripePosition    | `TableStripePosition` | Sets the stripe position                       | `even`  |
+| verticalBorders   | `boolean`             | Toggles vertical cell borders                  | `false` |
+
+### Table.Tr
+
+| Prop  | Type      | Description                         | Default |
+|:------|:----------|:------------------------------------|:--------|
+| color | `TrColor` | Sets the table row background color | `none`  |
+
+## Types
+### Table
+
+```tsx
+type TableBorderStyle = 'solid' | 'dashed';
+```
+
+```tsx
+type TableHeaderColor = 'white' | 'gray' | 'dark' | 'black';
+```
+
+```tsx
+type TableRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type TableSize = 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type TableStripePosition = 'odd' | 'even';
+```
+
+### Table.Tr
+
+```tsx
+type TrColor =
+  | 'none'
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```

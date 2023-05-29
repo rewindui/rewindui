@@ -12,6 +12,7 @@ import {
   SelectorShowcase,
   SelectorShowcaseProps,
 } from '@/ui/configurators/components/Selector.showcase';
+import { TableShowcase, TableShowcaseProps } from '@/ui/configurators/components/Table.showcase';
 import { TabsShowcase, TabsShowcaseProps } from '@/ui/configurators/components/Tabs.showcase';
 import {
   TooltipShowcase,
@@ -37,6 +38,7 @@ import {
   RadioGroup,
   Switch,
   FormControl,
+  Table,
 } from '@rewind-ui/core';
 import { View } from './View';
 import {
@@ -87,25 +89,19 @@ const components = {
   ),
   hr: ({ ...props }) => <hr className="my-2 border-gray-200 border-dashed" {...props} />,
   table: ({ ...props }) => (
-    <div className="my-6 w-full overflow-y-auto text-sm">
-      <table className="w-full rounded overflow-hidden" {...props} />
-    </div>
-  ),
-  tr: ({ ...props }) => (
-    <tr className="m-0 border-t border-gray-300 p-0 hover:bg-gray-100 even:bg-gray-50" {...props} />
-  ),
-  th: ({ ...props }) => (
-    <th
-      className="border border-gray-100 bg-gray-50 px-4 py-2 text-left text-gray-700 font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
+    <Table
       {...props}
+      className="my-6"
+      borderStyle="dashed"
+      headerColor="white"
+      stripePosition="odd"
     />
   ),
-  td: ({ ...props }) => (
-    <td
-      className="border border-gray-100 px-4 py-2 text-left text-gray-600 [&[align=center]]:text-center [&[align=right]]:text-right"
-      {...props}
-    />
-  ),
+  tbody: ({ ...props }) => <Table.Tbody {...props} />,
+  thead: ({ ...props }) => <Table.Thead {...props} />,
+  tr: ({ ...props }) => <Table.Tr {...props} />,
+  th: ({ ...props }) => <Table.Th {...props} />,
+  td: ({ ...props }) => <Table.Td {...props} />,
   option: ({ ...props }) => <option {...props} />,
   Callout: ({ ...props }) => (
     <Alert
@@ -161,6 +157,7 @@ const components = {
   TooltipShowcase: ({ showcase }: TooltipShowcaseProps) => <TooltipShowcase showcase={showcase} />,
   PopoverShowcase: ({ showcase }: PopoverShowcaseProps) => <PopoverShowcase showcase={showcase} />,
   TabsShowcase: ({ showcase }: TabsShowcaseProps) => <TabsShowcase showcase={showcase} />,
+  TableShowcase: ({ showcase }: TableShowcaseProps) => <TableShowcase showcase={showcase} />,
   ModalShowcase: ({ showcase }: ModalShowcaseProps) => <ModalShowcase showcase={showcase} />,
   ComboboxShowcase: ({ showcase }: ComboboxShowcaseProps) => (
     <ComboboxShowcase showcase={showcase} />

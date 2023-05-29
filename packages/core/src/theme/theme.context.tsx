@@ -118,6 +118,16 @@ type ThemeComponents = {
     description: typeof styles.switchStyles.description;
     error: typeof styles.switchStyles.error;
   };
+  Table: {
+    wrapper: typeof styles.tableStyles.wrapper;
+    table: typeof styles.tableStyles.table;
+    tbody: typeof styles.tableStyles.tbody;
+    thead: typeof styles.tableStyles.thead;
+    tfoot: typeof styles.tableStyles.tfoot;
+    tr: typeof styles.tableStyles.tr;
+    td: typeof styles.tableStyles.td;
+    th: typeof styles.tableStyles.th;
+  };
   Tabs: {
     wrapper: typeof styles.tabStyles.wrapper;
     tab: typeof styles.tabStyles.tab;
@@ -244,6 +254,16 @@ const defaultTheme: Theme = {
       label: styles.switchStyles.label,
       description: styles.switchStyles.description,
       error: styles.switchStyles.error,
+    },
+    Table: {
+      wrapper: styles.tableStyles.wrapper,
+      table: styles.tableStyles.table,
+      tbody: styles.tableStyles.tbody,
+      thead: styles.tableStyles.thead,
+      tfoot: styles.tableStyles.tfoot,
+      tr: styles.tableStyles.tr,
+      td: styles.tableStyles.td,
+      th: styles.tableStyles.th,
     },
     Tabs: {
       wrapper: styles.tabStyles.wrapper,

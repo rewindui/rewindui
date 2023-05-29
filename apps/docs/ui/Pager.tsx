@@ -119,6 +119,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'selector',
     },
     {
+      title: 'Table',
+      url: '/components/table',
+      slug: 'table',
+    },
+    {
       title: 'Tabs',
       url: '/components/tabs',
       slug: 'tabs',

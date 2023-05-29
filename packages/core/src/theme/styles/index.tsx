@@ -19,6 +19,7 @@ export * from './Selector.styles';
 export * from './Spinner.styles';
 export * from './Switch.styles';
 export * from './Tab.styles';
+export * from './Table.styles';
 export * from './Text.styles';
 export * from './Textarea.styles';
 export * from './Tooltip.styles';

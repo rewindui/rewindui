@@ -90,6 +90,10 @@ const menuItems: MenuItem[] = [
         path: '/components/selector',
       },
       {
+        title: 'Table',
+        path: '/components/table',
+      },
+      {
         title: 'Tabs',
         path: '/components/tabs',
       },

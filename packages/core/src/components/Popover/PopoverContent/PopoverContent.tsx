@@ -4,7 +4,7 @@ import {
   PopoverContentComponent,
   PopoverContentProps,
 } from '@components/Popover/PopoverContent/PopoverContent.types';
-import { FloatingArrow, FloatingPortal } from '@floating-ui/react';
+import { FloatingPortal } from '@floating-ui/react';
 import { arrowSideDictionary } from '@helpers/arrow-side.dictionary';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';

@@ -364,16 +364,10 @@ const ExamplesCard = () => {
             </Text>
           </Card.Body>
           <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
-            <Button onClick={() => setOpen(false)} size="md" tone="transparent" color="gray">
+            <Button onClick={() => setOpen(false)} size="md" color="white">
               Cancel
             </Button>
-            <Button
-              className="font-semibold"
-              onClick={() => setOpen(false)}
-              size="md"
-              color="blue"
-              tone="light"
-            >
+            <Button className="font-semibold" onClick={() => setOpen(false)} size="md" color="blue">
               Accept
             </Button>
           </Card.Footer>
@@ -418,16 +412,10 @@ const ExamplesForm = () => {
             </FormControl>
           </Card.Body>
           <Card.Footer className="bg-gray-50/50 justify-end space-x-2">
-            <Button onClick={() => setOpen(false)} size="sm" tone="transparent" color="gray">
+            <Button onClick={() => setOpen(false)} size="sm" color="white">
               Close
             </Button>
-            <Button
-              className="font-semibold"
-              onClick={() => setOpen(false)}
-              size="sm"
-              color="blue"
-              tone="light"
-            >
+            <Button className="font-semibold" onClick={() => setOpen(false)} size="sm" color="blue">
               Login
             </Button>
           </Card.Footer>
