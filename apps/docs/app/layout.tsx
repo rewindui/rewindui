@@ -3,8 +3,8 @@ import { Aside } from '@/ui/Aside';
 import { Inter } from 'next/font/google';
 import { Footer } from '@/ui/Footer';
 import { Header } from '@/ui/Header';
-import { Analytics } from '@vercel/analytics/react';
 import { config } from '@/lib/config';
+import Script from 'next/script';
 
 export const metadata = {
   title: {
@@ -70,7 +70,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Footer />
         </main>
 
-        <Analytics />
+        <Script
+          src="https://analytics.rewind-ui.dev/script.js"
+          data-website-id="74796605-6068-498d-99ff-89b791669743"
+        />
       </body>
     </html>
   );
