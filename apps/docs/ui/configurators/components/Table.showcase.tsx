@@ -379,7 +379,7 @@ const UsersTable = () => (
       </Table.Tr>
       <Table.Tr>
         <Table.Td>
-          <UserCard initials="CD" name="Chris Doe" email="chris.dow@mail.com" color="gray" />
+          <UserCard initials="CD" name="Chris Doe" email="chris.doe@mail.com" color="gray" />
         </Table.Td>
         <Table.Td>
           <Badge color="dark" tone="light">
