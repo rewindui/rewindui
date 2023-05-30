@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.5.0
+
+### Minor Changes
+
+- aff11c3: Added Table component
+
 ## 0.4.3
 
 ### Patch Changes
