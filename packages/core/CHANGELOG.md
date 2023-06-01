@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.6.0
+
+### Minor Changes
+
+- c4c8726: Added Progress component
+
 ## 0.5.0
 
 ### Minor Changes
