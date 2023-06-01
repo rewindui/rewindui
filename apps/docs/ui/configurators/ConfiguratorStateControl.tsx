@@ -23,6 +23,7 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
       size: 'sm',
       value: state,
       shadow: 'sm',
+      color: 'purple',
       onChange: (value: any) => onChange(option.name, value),
     };
     return (
@@ -85,7 +86,7 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
         size="sm"
         checked={state}
         label={option.label}
-        color="blue"
+        color="purple"
       />
     );
   }

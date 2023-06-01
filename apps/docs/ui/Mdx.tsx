@@ -74,7 +74,7 @@ const components = {
   ),
   a: ({ ...props }) => (
     <a
-      className="text-blue-600 underline decoration-2 decoration-blue-500"
+      className="text-purple-600 underline decoration-2 decoration-dashed decoration-purple-500"
       target="_blank"
       {...props}
     />
@@ -87,7 +87,7 @@ const components = {
   ),
   code: ({ ...props }) => (
     <code
-      className="py-[0.2rem] px-[0.3rem] bg-blue-50/75 text-blue-600 rounded font-mono text-sm font-medium"
+      className="py-[0.15rem] px-[0.3rem] bg-purple-50/75 border border-purple-100 text-purple-600 rounded font-mono text-sm font-medium"
       {...props}
     />
   ),
@@ -112,8 +112,8 @@ const components = {
       {...props}
       size="sm"
       shadow="sm"
-      shadowColor="yellow"
-      color="yellow"
+      shadowColor="purple"
+      color="purple"
       tone="light"
       className="mt-6"
     />

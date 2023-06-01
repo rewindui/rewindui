@@ -5,7 +5,7 @@ export const AlertConfig = {
   default: AlertCode,
   state: {
     accent: 'none',
-    color: 'blue',
+    color: 'purple',
     dismissable: false,
     dismissableAnimation: true,
     radius: 'md',

@@ -22,7 +22,7 @@ export const DropdownCode = (props: any) => {
     chevronRotation: true,
     color: 'white',
     initiallyOpen: true,
-    itemColor: 'blue',
+    itemColor: 'purple',
     mode: 'spacey',
     placement: 'bottom',
     radius: 'md',

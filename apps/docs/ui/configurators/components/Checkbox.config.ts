@@ -4,7 +4,7 @@ export const CheckboxConfig = {
   example: CheckboxExample,
   default: CheckboxCode,
   state: {
-    color: 'blue',
+    color: 'purple',
     disabled: false,
     description: '',
     error: '',

@@ -5,7 +5,7 @@ import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<CheckboxProps> = {
-  color: 'blue',
+  color: 'purple',
   disabled: false,
   radius: 'md',
   size: 'md',

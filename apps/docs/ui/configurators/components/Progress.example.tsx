@@ -7,7 +7,7 @@ export const ProgressCode = (props: any) => {
 
   const defaultProps = {
     animated: false,
-    color: 'blue',
+    color: 'purple',
     radius: 'md',
     shadow: 'none',
     showValue: true,

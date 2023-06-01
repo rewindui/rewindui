@@ -64,7 +64,7 @@ const base = cva(
       {
         validation: 'none',
         withRing: true,
-        className: ['focus:ring-blue-100'],
+        className: ['focus:ring-purple-100'],
       },
       {
         validation: 'invalid',
@@ -114,12 +114,12 @@ const base = cva(
       {
         tone: 'light',
         validation: 'none',
-        className: ['border-gray-300', 'focus-visible:border-blue-500'],
+        className: ['border-gray-300', 'focus-visible:border-purple-500'],
       },
       {
         tone: 'solid',
         validation: 'none',
-        className: ['border-gray-200', 'focus-visible:border-blue-500'],
+        className: ['border-gray-200', 'focus-visible:border-purple-500'],
       },
       {
         tone: 'transparent',
@@ -470,7 +470,7 @@ const button = cva(
       size: {
         xs: ['text-xs', 'px-2', 'py-1'],
         sm: ['text-sm', 'px-2', 'py-1'],
-        md: ['text-base', 'px-2', 'py-2'],
+        md: ['text-sm', 'px-2', 'py-1.5'],
         lg: ['text-lg', 'px-2', 'py-2'],
       },
       selected: {
@@ -604,11 +604,6 @@ const description = cva(['whitespace-normal'], {
       disabled: false,
       selected: false,
       className: ['text-gray-500'],
-    },
-    {
-      disabled: false,
-      selected: true,
-      className: ['text-gray-50'],
     },
   ],
 });

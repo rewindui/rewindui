@@ -1,11 +1,21 @@
-import { Select, Selector, SelectorProps, SelectProps } from '@rewind-ui/core';
+import { Selector, SelectorProps } from '@rewind-ui/core';
 import * as React from 'react';
 
 export const SelectorCode = (props: any) => {
-  const { size, fullWidth, orientation, tone, shadow, radius, withAnimation, withSeparator } =
-    props;
+  const {
+    color,
+    size,
+    fullWidth,
+    orientation,
+    tone,
+    shadow,
+    radius,
+    withAnimation,
+    withSeparator,
+  } = props;
 
   const defaultProps = {
+    color: 'purple',
     fullWidth: false,
     orientation: 'horizontal',
     radius: 'md',
@@ -17,6 +27,7 @@ export const SelectorCode = (props: any) => {
   };
 
   const attributes = [
+    color !== defaultProps.color ? `color="${color}"` : null,
     fullWidth !== defaultProps.fullWidth ? `fullWidth={${fullWidth}}` : null,
     orientation !== defaultProps.orientation ? `orientation="${orientation}"` : null,
     radius !== defaultProps.radius ? `radius="${radius}"` : null,

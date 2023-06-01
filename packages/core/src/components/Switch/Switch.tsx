@@ -5,7 +5,7 @@ import { forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<SwitchProps> = {
-  color: 'blue',
+  color: 'purple',
   radius: 'full',
   size: 'md',
   withRing: true,

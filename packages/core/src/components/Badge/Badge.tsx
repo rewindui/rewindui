@@ -6,7 +6,7 @@ import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<BadgeProps> = {
-  color: 'blue',
+  color: 'purple',
   radius: 'md',
   shadow: 'none',
   shadowColor: 'none',

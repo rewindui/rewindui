@@ -19,7 +19,7 @@ const defaultProps: Partial<ModalProps> = {
   overlayCloseOnClick: true,
   overlayColor: 'dark',
   overlayOpacity: '50',
-  position: 'center',
+  position: 'top',
   radius: 'md',
   shadow: 'base',
   size: 'sm',
@@ -99,7 +99,7 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
           { opacity: 1, transform: 'translateY(0%)', filter: 'blur(0)', visibility: 'visible' },
         ],
         {
-          duration: 300,
+          duration: 150,
         }
       );
 
@@ -131,7 +131,7 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
 
   useEffect(() => {
     const easing = open ? 'ease-in-out' : 'ease-out';
-    const duration = open ? 300 : 100;
+    const duration = open ? 150 : 100;
     const keyframes = new KeyframeEffect(
       modalRef.current,
       [

@@ -33,7 +33,7 @@ export const AccordionCode = (props: any) => {
   const { size, color, tone, shadow, shadowColor, radius, activeColor, bordered, withRing } = props;
 
   const defaultProps: Partial<AccordionProps> = {
-    activeColor: 'blue',
+    activeColor: 'purple',
     bordered: true,
     color: 'white',
     radius: 'md',

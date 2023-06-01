@@ -17,7 +17,7 @@ export const AlertCode = (props: any) => {
 
   const defaultProps = {
     accent: 'none',
-    color: 'blue',
+    color: 'purple',
     dismissable: false,
     dismissableAnimation: true,
     radius: 'md',

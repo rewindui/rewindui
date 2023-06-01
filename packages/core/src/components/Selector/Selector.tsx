@@ -22,7 +22,7 @@ import { twMerge } from 'tailwind-merge';
 import { SelectorContextProvider } from './Selector.context';
 
 const defaultProps: Partial<SelectorProps> = {
-  color: 'blue',
+  color: 'purple',
   fullWidth: false,
   orientation: 'horizontal',
   radius: 'md',

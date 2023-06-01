@@ -3,7 +3,7 @@ import { AsProp } from '../../types/polymorphic.types';
 
 export const buttonVariants: Record<ButtonVariants, ButtonProps & AsProp<any>> = {
   primary: {
-    color: 'blue',
+    color: 'purple',
     tone: 'solid',
   },
   secondary: {
@@ -15,7 +15,7 @@ export const buttonVariants: Record<ButtonVariants, ButtonProps & AsProp<any>> =
     tone: 'transparent',
   },
   link: {
-    color: 'blue',
+    color: 'purple',
     tone: 'transparent',
   },
   danger: {
@@ -31,7 +31,7 @@ export const buttonVariants: Record<ButtonVariants, ButtonProps & AsProp<any>> =
     tone: 'solid',
   },
   info: {
-    color: 'purple',
+    color: 'blue',
     tone: 'solid',
   },
 };

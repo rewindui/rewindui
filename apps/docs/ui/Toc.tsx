@@ -95,7 +95,7 @@ const tocAnchorStyles = cva(['inline-block', 'no-underline'], {
   variants: {
     active: {
       false: 'text-gray-600 hover:text-gray-900',
-      true: 'font-medium text-blue-500',
+      true: 'font-medium text-purple-500',
     },
   },
 });

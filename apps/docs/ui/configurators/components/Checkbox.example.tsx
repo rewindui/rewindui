@@ -5,7 +5,7 @@ export const CheckboxCode = (props: any) => {
   const { size, color, disabled, description, error, tone, radius, withRing } = props;
 
   const defaultProps = {
-    color: 'blue',
+    color: 'purple',
     disabled: false,
     error: '',
     description: '',

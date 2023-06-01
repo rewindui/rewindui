@@ -4,7 +4,7 @@ export const SwitchConfig = {
   example: SwitchExample,
   default: SwitchCode,
   state: {
-    color: 'blue',
+    color: 'purple',
     disabled: false,
     description: '',
     error: '',

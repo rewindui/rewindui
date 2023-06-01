@@ -8,7 +8,7 @@ export const DropdownConfig = {
     chevronRotation: true,
     color: 'white',
     initiallyOpen: true,
-    itemColor: 'blue',
+    itemColor: 'purple',
     mode: 'spacey',
     placement: 'bottom',
     radius: 'md',

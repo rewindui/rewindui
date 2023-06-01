@@ -2,7 +2,7 @@ import { BadgeProps, BadgeVariants } from '@components/Badge/Badge.types';
 
 export const badgeVariants: Record<BadgeVariants, BadgeProps> = {
   primary: {
-    color: 'blue',
+    color: 'purple',
     tone: 'solid',
   },
   secondary: {
@@ -22,7 +22,7 @@ export const badgeVariants: Record<BadgeVariants, BadgeProps> = {
     tone: 'solid',
   },
   info: {
-    color: 'purple',
+    color: 'blue',
     tone: 'solid',
   },
 };

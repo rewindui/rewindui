@@ -1,11 +1,10 @@
-import { CheckboxCode, CheckboxExample } from '@/ui/configurators/components/Checkbox.example';
 import { RadioCode, RadioExample } from '@/ui/configurators/components/Radio.example';
 
 export const RadioConfig = {
   example: RadioExample,
   default: RadioCode,
   state: {
-    color: 'blue',
+    color: 'purple',
     disabled: false,
     description: '',
     error: '',

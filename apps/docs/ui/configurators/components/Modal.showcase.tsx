@@ -367,7 +367,7 @@ const ExamplesCard = () => {
             <Button onClick={() => setOpen(false)} size="md" color="white">
               Cancel
             </Button>
-            <Button className="font-semibold" onClick={() => setOpen(false)} size="md" color="blue">
+            <Button className="font-semibold" onClick={() => setOpen(false)} size="md">
               Accept
             </Button>
           </Card.Footer>
@@ -415,7 +415,7 @@ const ExamplesForm = () => {
             <Button onClick={() => setOpen(false)} size="sm" color="white">
               Close
             </Button>
-            <Button className="font-semibold" onClick={() => setOpen(false)} size="sm" color="blue">
+            <Button className="font-semibold" onClick={() => setOpen(false)} size="sm">
               Login
             </Button>
           </Card.Footer>

@@ -6,7 +6,7 @@ import { ChangeEvent, forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<RadioProps> = {
-  color: 'blue',
+  color: 'purple',
   disabled: false,
   radius: 'full',
   size: 'md',

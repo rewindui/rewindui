@@ -18,7 +18,7 @@ export const MenuItem = (props: {
     {
       variants: {
         active: {
-          true: ['text-blue-600', 'font-medium'],
+          true: ['text-purple-600', 'font-medium'],
           false: ['text-gray-600'],
         },
         hasIcon: {
@@ -34,12 +34,12 @@ export const MenuItem = (props: {
         {
           active: true,
           hasIcon: false,
-          className: ['border-l-blue-500', 'bg-blue-50'],
+          className: ['border-l-purple-500', 'bg-purple-50'],
         },
         {
           active: false,
           hasIcon: false,
-          className: ['hover:border-l-blue-300', 'hover:bg-blue-50/25'],
+          className: ['hover:border-l-purple-300', 'hover:bg-purple-50/25'],
         },
       ],
     }
@@ -48,13 +48,19 @@ export const MenuItem = (props: {
   const iconStyles = cva(['border', 'rounded', 'p-1'], {
     variants: {
       active: {
-        true: ['border-blue-500', 'text-blue-500', 'bg-blue-50', 'shadow-sm', 'shadow-blue-500/50'],
+        true: [
+          'border-purple-500',
+          'text-purple-500',
+          'bg-purple-50',
+          'shadow-sm',
+          'shadow-purple-500/50',
+        ],
         false: [
           'border-gray-300',
           'text-gray-400',
-          'group-hover:text-blue-300',
-          'group-hover:border-blue-300',
-          'group-hover:bg-blue-50',
+          'group-hover:text-purple-300',
+          'group-hover:border-purple-300',
+          'group-hover:bg-purple-50',
         ],
       },
     },

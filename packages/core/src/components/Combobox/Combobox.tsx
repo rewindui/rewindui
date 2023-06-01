@@ -31,7 +31,7 @@ import { CaretUpDown } from '@icons/CaretUpDown';
 const defaultProps: Partial<ComboboxProps> = {
   clearable: true,
   closeOnEscape: true,
-  color: 'blue',
+  color: 'gray',
   disabled: false,
   loading: false,
   maxHeight: 250,

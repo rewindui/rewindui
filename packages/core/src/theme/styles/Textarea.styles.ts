@@ -57,7 +57,7 @@ const base = cva(
       {
         validation: 'none',
         withRing: true,
-        className: ['focus:ring-blue-100'],
+        className: ['focus:ring-purple-100'],
       },
       {
         validation: 'invalid',
@@ -107,12 +107,12 @@ const base = cva(
       {
         tone: 'light',
         validation: 'none',
-        className: ['border-gray-300', 'focus-visible:border-blue-500'],
+        className: ['border-gray-300', 'focus-visible:border-purple-500'],
       },
       {
         tone: 'solid',
         validation: 'none',
-        className: ['border-gray-200', 'focus-visible:border-blue-500'],
+        className: ['border-gray-200', 'focus-visible:border-purple-500'],
       },
       {
         tone: 'transparent',

@@ -8,7 +8,7 @@ import { forwardRef, Ref, useState } from 'react';
 import { TabsContextProvider } from './Tabs.context';
 
 const defaultProps: Partial<TabsProps> = {
-  color: 'blue',
+  color: 'purple',
   method: 'hide',
   radius: 'none',
   size: 'md',
