@@ -105,6 +105,10 @@ const menuItems: MenuItem[] = [
         title: 'Tooltip',
         path: '/components/tooltip',
       },
+      {
+        title: 'Progress',
+        path: '/components/progress',
+      },
     ],
   },
   {

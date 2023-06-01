@@ -90,6 +90,14 @@ type ThemeComponents = {
     base: typeof styles.popoverStyles.base;
     arrow: typeof styles.popoverStyles.arrow;
   };
+  Progress: {
+    base: typeof styles.progressStyles.base;
+    bar: typeof styles.progressStyles.bar;
+    wrapper: typeof styles.progressStyles.wrapper;
+    label: typeof styles.progressStyles.label;
+    description: typeof styles.progressStyles.description;
+    stripe: typeof styles.progressStyles.stripe;
+  };
   Radio: {
     base: typeof styles.radioStyles.base;
     label: typeof styles.radioStyles.label;
@@ -226,6 +234,14 @@ const defaultTheme: Theme = {
     Popover: {
       base: styles.popoverStyles.base,
       arrow: styles.popoverStyles.arrow,
+    },
+    Progress: {
+      base: styles.progressStyles.base,
+      bar: styles.progressStyles.bar,
+      wrapper: styles.progressStyles.wrapper,
+      label: styles.progressStyles.label,
+      description: styles.progressStyles.description,
+      stripe: styles.progressStyles.stripe,
     },
     Radio: {
       base: styles.radioStyles.base,

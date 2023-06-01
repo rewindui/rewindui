@@ -344,8 +344,8 @@ const _Combobox: ComboboxComponent = forwardRef(
                 minWidth: `${minWidth}px`,
                 maxWidth: `${maxWidth}px`,
                 position: strategy,
-                top: y ?? 0,
-                left: x ?? 0,
+                top: y || 0,
+                left: x || 0,
               }}
               {...getFloatingProps}
             >

@@ -50,7 +50,7 @@ const base = cva(
         full: ['rounded-full'],
       },
       animation: {
-        none: [''],
+        none: [],
         pulse: ['animate-pulse'],
         bounce: ['animate-bounce'],
       },

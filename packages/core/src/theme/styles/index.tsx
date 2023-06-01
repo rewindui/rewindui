@@ -13,6 +13,7 @@ export * from './InputGroup.styles';
 export * from './Modal.styles';
 export * from './Overlay.styles';
 export * from './Popover.styles';
+export * from './Progress.styles';
 export * from './Radio.styles';
 export * from './Select.styles';
 export * from './Selector.styles';

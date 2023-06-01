@@ -139,6 +139,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'tooltip',
     },
     {
+      title: 'Progress',
+      url: '/components/progress',
+      slug: 'progress',
+    },
+    {
       title: 'Button',
       url: '/components/button',
       slug: 'button',

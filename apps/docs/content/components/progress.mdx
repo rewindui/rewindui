@@ -1,0 +1,252 @@
+---
+title: Progress
+description: Status indicator for progressive actions.
+intro: The Progress component is used to indicate the status of a progressive action. It can be used to show the progress of a file upload, or any other action of this kind.
+source: Progress
+theme: Progress.styles.ts
+variants: Progress.variants.ts
+storybook: progress--default
+---
+
+# Import
+---
+Import the `Progress` component using the following import statement.
+
+```tsx
+import { Progress } from '@rewind-ui/core';
+```
+
+# Colors
+---
+The `Progress` component can be colored using the `color` prop. The following colors are available: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <ProgressShowcase showcase="colors" />
+</View>
+
+```tsx
+<View>
+  <Progress color="white" value={75} />
+  <Progress color="blue" value={75} />
+  <Progress color="red" value={75} />
+  <Progress color="green" value={75} />
+  <Progress color="yellow" value={75} />
+  <Progress color="purple" value={75} />
+  <Progress color="gray" value={75} />
+  <Progress color="dark" value={75} />
+  <Progress color="black" value={75} />
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <ProgressShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Progress size="xs" value={75} />
+  <Progress size="sm" value={75} />
+  <Progress size="md" value={75} />
+  <Progress size="lg" value={75} />
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md`, `lg` and `full`.
+
+<View>
+  <ProgressShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Progress radius="none" value={75} />
+  <Progress radius="sm" value={75} />
+  <Progress radius="base" value={75} />
+  <Progress radius="md" value={75} />
+  <Progress radius="lg" value={75} />
+  <Progress radius="full" value={75} />
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base` and `md`.
+
+<View>
+  <ProgressShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Progress shadow="none" value={75} />
+  <Progress shadow="sm" value={75} />
+  <Progress shadow="base" value={75} />
+  <Progress shadow="md" value={75} />
+</View>
+```
+
+# Stripes
+---
+The `striped` prop can be used to add stripes to the `Progress` component.
+
+<View>
+  <ProgressShowcase showcase="stripes" />
+</View>
+
+```tsx
+<View>
+  <Progress striped color="blue" value={75} />
+  <Progress striped color="red" value={75} />
+  <Progress striped color="green" value={75} />
+  <Progress striped color="yellow" value={75} />
+  <Progress striped color="purple" value={75} />
+  <Progress striped color="gray" value={75} />
+  <Progress striped color="dark" value={75} />
+  <Progress striped color="black" value={75} />
+</View>
+```
+
+# Animation
+---
+The `animated` prop can be used to animate the `Progress` component stripes.
+
+<Callout>The striped prop must be set to true in order to use the animated prop.</Callout>
+
+<View>
+  <ProgressShowcase showcase="animated" />
+</View>
+
+```tsx
+<View>
+  <Progress striped animated color="blue" value={75} />
+  <Progress striped animated color="red" value={75} />
+  <Progress striped animated color="green" value={75} />
+  <Progress striped animated color="yellow" value={75} />
+  <Progress striped animated color="purple" value={75} />
+  <Progress striped animated color="gray" value={75} />
+  <Progress striped animated color="dark" value={75} />
+  <Progress striped animated color="black" value={75} />
+</View>
+```
+
+# Information text
+---
+
+## Label
+The `label` prop can be used to add a label to the `Progress` component.
+
+<View>
+  <ProgressShowcase showcase="label" />
+</View>
+
+```tsx
+<View>
+  <Progress label="This is an extra small progress bar" size="xs" value={75} />
+  <Progress label="This is a small progress bar" size="sm" value={75} />
+  <Progress label="This is a medium progress bar" size="md" value={75} />
+  <Progress label="This is a large progress bar" size="lg" value={75} />
+</View>
+```
+
+## Description
+The `description` prop can be used to add a description to the `Progress` component.
+
+<View>
+  <ProgressShowcase showcase="description" />
+</View>
+
+```tsx
+<View>
+  <Progress description="This is an extra small progress bar" size="xs" value={75} />
+  <Progress description="This is a small progress bar" size="sm" value={75} />
+  <Progress description="This is a medium progress bar" size="md" value={75} />
+  <Progress description="This is a large progress bar" size="lg" value={75} />
+</View>
+```
+
+## Show value
+The `showValue` prop can be used to show the value of the `Progress` component.
+
+<Callout>On xs and sm sizes the value will be placed on the top side of the progress bar instead.</Callout>
+
+<View>
+  <ProgressShowcase showcase="value" />
+</View>
+
+```tsx
+<View>
+  <Progress showValue size="xs" value={75} />
+  <Progress showValue size="sm" value={75} />
+  <Progress showValue size="md" value={75} />
+  <Progress showValue size="lg" value={75} />
+</View>
+```
+
+<Callout>Adding a label and the showValue prop together will push the value at right side on xs and sm sizes.</Callout>
+
+<View>
+  <ProgressShowcase showcase="value-label" />
+</View>
+
+```tsx
+<View>
+  <Progress showValue label="This is an extra small progress bar" size="xs" value={75} />
+  <Progress showValue label="This is a small progress bar" size="sm" value={75} />
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop        | Type             | Description                                 | Default     |
+|:------------|:-----------------|:--------------------------------------------|:------------|
+| animated    | `boolean`        | Animates the background stripes             | `false`     |
+| color       | `ProgressColor`  | Sets the color                              | `blue`      |
+| description | `string`         | Adds a description                          | `undefined` |
+| label       | `string`         | Adds a label                                | `undefined` |
+| radius      | `ProgressRadius` | Sets the border radius                      | `md`        |
+| shadow      | `ProgressShadow` | Sets the shadow size                        | `none`      |
+| showValue   | `boolean`        | Shows the progress bar value                | `false`     |
+| size        | `ProgressSize`   | Sets the progress bar size                  | `md`        |
+| striped     | `boolean`        | Adds stripes to the progress bar background | `solid`     |
+| value       | `number`         | Sets the progress bar value                 | `0`         |
+
+## Types
+
+```tsx
+type ProgressColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ProgressRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type ProgressShadow = 'none' | 'sm' | 'base' | 'md';
+```
+
+```tsx
+type ProgressSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+# Accessibility
+---
+The `Progress` component adheres to the [ARIA: progressbar role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/progressbar_role).
+
+To make the progress bar fully accessible, `label` property should be used.

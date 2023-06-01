@@ -9,6 +9,10 @@ import {
   PopoverShowcaseProps,
 } from '@/ui/configurators/components/Popover.showcase';
 import {
+  ProgressShowcase,
+  ProgressShowcaseProps,
+} from '@/ui/configurators/components/Progress.showcase';
+import {
   SelectorShowcase,
   SelectorShowcaseProps,
 } from '@/ui/configurators/components/Selector.showcase';
@@ -159,6 +163,9 @@ const components = {
   TabsShowcase: ({ showcase }: TabsShowcaseProps) => <TabsShowcase showcase={showcase} />,
   TableShowcase: ({ showcase }: TableShowcaseProps) => <TableShowcase showcase={showcase} />,
   ModalShowcase: ({ showcase }: ModalShowcaseProps) => <ModalShowcase showcase={showcase} />,
+  ProgressShowcase: ({ showcase }: ProgressShowcaseProps) => (
+    <ProgressShowcase showcase={showcase} />
+  ),
   ComboboxShowcase: ({ showcase }: ComboboxShowcaseProps) => (
     <ComboboxShowcase showcase={showcase} />
   ),

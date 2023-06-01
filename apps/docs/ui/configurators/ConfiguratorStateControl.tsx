@@ -65,6 +65,19 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
     return <Input {...props} />;
   }
 
+  if (option.type === 'number') {
+    const props: Partial<InputProps> = {
+      tone: 'solid',
+      size: 'sm',
+      value: state,
+      shadow: 'sm',
+      type: 'number',
+      placeholder: option.placeholder || '',
+      onChange: (event: any) => onChange(option.name, event.target.value),
+    };
+    return <Input {...props} />;
+  }
+
   if (option.type === 'switch') {
     return (
       <Switch

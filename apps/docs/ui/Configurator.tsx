@@ -16,7 +16,7 @@ export type ConfiguratorOption = {
   label: string;
   name: any;
   placeholder?: string;
-  type: 'selector' | 'color' | 'switch' | 'select' | 'input';
+  type: 'selector' | 'color' | 'switch' | 'select' | 'input' | 'number';
   options?: string[];
   colors?: Color[];
   orientation?: 'horizontal' | 'vertical';

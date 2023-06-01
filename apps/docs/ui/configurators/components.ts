@@ -11,6 +11,7 @@ import { InputConfig } from '@/ui/configurators/components/Input.config';
 import { InputGroupConfig } from '@/ui/configurators/components/InputGroup.config';
 import { ModalConfig } from '@/ui/configurators/components/Modal.config';
 import { PopoverConfig } from '@/ui/configurators/components/Popover.config';
+import { ProgressConfig } from '@/ui/configurators/components/Progress.config';
 import { RadioConfig } from '@/ui/configurators/components/Radio.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
 import { SelectorConfig } from '@/ui/configurators/components/Selector.config';
@@ -35,6 +36,7 @@ export const components = {
   'input-group': InputGroupConfig,
   modal: ModalConfig,
   popover: PopoverConfig,
+  progress: ProgressConfig,
   radio: RadioConfig,
   select: SelectConfig,
   selector: SelectorConfig,
