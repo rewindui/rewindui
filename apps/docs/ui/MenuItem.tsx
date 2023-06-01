@@ -8,13 +8,14 @@ export const MenuItem = (props: {
   path: string;
   icon?: ReactNode;
   wip?: boolean;
+  newItem?: boolean;
 }) => {
-  const { title, path, icon, wip = false } = props;
+  const { title, path, icon, wip = false, newItem = false } = props;
   const pathname = usePathname();
   const active = pathname === path;
   const hasIcon = !!icon;
   const styles = cva(
-    ['group', 'w-full', 'py-1.5', 'flex', 'space-x-3', 'items-center', 'text-sm'],
+    ['group', 'w-full', 'py-1.5', 'flex', 'space-x-2', 'items-center', 'text-sm'],
     {
       variants: {
         active: {
@@ -73,8 +74,13 @@ export const MenuItem = (props: {
       {icon && <span className={iconStyles({ active })}>{icon}</span>}
       <span>{title}</span>
       {wip && (
-        <span className="text-xs bg-yellow-50 border border-dashed border-yellow-100 rounded px-1 py-0.5 text-yellow-500">
+        <span className="text-xs bg-yellow-50 border border-dashed border-yellow-100 rounded py-[0.15rem] px-[0.3rem] text-yellow-500">
           WIP
+        </span>
+      )}
+      {newItem && (
+        <span className="text-xs bg-purple-50/75 border border-dashed border-purple-100 rounded py-[0.15rem] px-[0.3rem] text-purple-600">
+          NEW
         </span>
       )}
     </Component>

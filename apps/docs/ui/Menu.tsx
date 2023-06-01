@@ -18,6 +18,7 @@ type MenuItem = {
     path: string;
     icon?: ReactNode;
     wip?: boolean;
+    newItem?: boolean;
   }[];
 };
 
@@ -92,6 +93,7 @@ const menuItems: MenuItem[] = [
       {
         title: 'Table',
         path: '/components/table',
+        newItem: true,
       },
       {
         title: 'Tabs',
@@ -108,6 +110,7 @@ const menuItems: MenuItem[] = [
       {
         title: 'Progress',
         path: '/components/progress',
+        newItem: true,
       },
     ],
   },
@@ -178,6 +181,7 @@ export const Menu = () => {
                 title={item.title}
                 path={item.path}
                 wip={item.wip}
+                newItem={item.newItem}
               />
             ))}
           </div>

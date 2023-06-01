@@ -40,7 +40,7 @@ const PagerItem = ({ item, side }: { item: CollectionItem; side: 'left' | 'right
     <Link
       href={item.url}
       className={clsx(
-        'flex justify-between items-center rounded border border-gray-200 hover:border-blue-500 hover:text-blue-500 hover:bg-blue-50 hover:shadow-sm p-4 w-1/2',
+        'flex justify-between items-center rounded border border-gray-200 hover:border-purple-500 hover:text-purple-500 hover:bg-purple-50 hover:shadow-sm p-4 w-1/2',
         side === 'right' && 'ml-auto'
       )}
     >
