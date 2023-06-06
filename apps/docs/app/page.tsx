@@ -12,8 +12,9 @@ export const generateMetadata = ({ params }) => {
     openGraph: {
       locale: 'en_US',
       url: 'https://rewind-ui.dev',
-      title: 'Main title',
-      description: 'Description',
+      title: 'Rewind-UI - A fully customizable React-TailwindCSS component library',
+      description:
+        'Rewind-UI offers a range of accessible, highly customizable components that can be easily integrated into any react project.',
       siteName: config.metadata.title,
       images: [
         {
