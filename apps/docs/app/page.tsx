@@ -6,15 +6,18 @@ import { Support } from '@/ui/Support';
 import * as React from 'react';
 
 export const generateMetadata = ({ params }) => {
+  const title = 'Rewind-UI - A fully customizable React-TailwindCSS component library';
+  const description =
+    'Rewind-UI offers a range of accessible, highly customizable components that can be easily integrated into any react project.';
+
   return {
-    title: 'Main Title',
-    description: 'Description',
+    title,
+    description,
     openGraph: {
       locale: 'en_US',
       url: 'https://rewind-ui.dev',
-      title: 'Rewind-UI - A fully customizable React-TailwindCSS component library',
-      description:
-        'Rewind-UI offers a range of accessible, highly customizable components that can be easily integrated into any react project.',
+      title,
+      description,
       siteName: config.metadata.title,
       images: [
         {
