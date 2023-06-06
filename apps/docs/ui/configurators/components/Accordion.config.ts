@@ -54,7 +54,7 @@ export const AccordionConfig = {
     {
       label: 'Radius',
       name: 'radius',
-      type: 'selector',
+      type: 'select',
       options: ['none', 'sm', 'base', 'md', 'lg'],
     },
     {

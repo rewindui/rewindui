@@ -104,8 +104,6 @@ const _Selector: SelectorComponent = forwardRef(
       );
     };
 
-    useEffect(() => {}, []);
-
     useEffect(() => {
       if (!activeTabAnchor) {
         return;

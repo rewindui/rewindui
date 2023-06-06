@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <footer className="relative w-full border-t border-t-gray-100 bg-white">
+    <footer className="relative w-full bg-white">
       <div className="container mx-auto flex flex-col space-y-1.5 py-4 items-center justify-center text-sm">
         <Text size="sm" color="dark">
           Copyright © 2023

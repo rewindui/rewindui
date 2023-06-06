@@ -6,10 +6,11 @@ import { ConfiguratorStateControl } from '@/ui/configurators/ConfiguratorStateCo
 import { CustomSandpack } from '@/ui/configurators/CustomSandpack';
 import { FormControl } from '@rewind-ui/core';
 import * as React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type Props = {
   component: ComponentSlug;
+  background?: 'none' | 'grid';
 };
 
 export type ConfiguratorOption = {
@@ -23,7 +24,7 @@ export type ConfiguratorOption = {
   fullWidth?: boolean;
 };
 
-export const Configurator = ({ component }: Props) => {
+export const Configurator = ({ component, background = 'grid' }: Props) => {
   const settings = components[component];
   const [state, setState] = useState<any>(settings.state);
   const options: ConfiguratorOption[] = settings.options as ConfiguratorOption[];
@@ -52,12 +53,16 @@ export const Configurator = ({ component }: Props) => {
 
   return (
     <div className="lg:block flex flex-col space-y-5">
-      <div className="flex flex-wrap rounded-md shadow-sm shadow-neutral-100 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200 border border-neutral-200">
-        <div className="w-full lg:w-2/3 bg-grid rounded-md flex p-4 items-center justify-center">
+      <div className="flex flex-wrap overflow-hidden rounded-md shadow-sm shadow-neutral-100 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200 border border-neutral-200">
+        <div
+          className={`w-full lg:w-2/3 rounded-md flex p-4 items-center justify-center ${
+            background === 'grid' ? 'bg-grid' : 'bg-neutral-50/50'
+          }`}
+        >
           <Example {...state} />
         </div>
 
-        <div className="w-full lg:w-1/3 flex flex-auto p-5">
+        <div className="w-full lg:w-1/3 flex flex-auto p-5 bg-white">
           <div className="flex flex-col space-y-3 w-full">{controls}</div>
         </div>
       </div>

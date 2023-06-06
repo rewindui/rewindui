@@ -8,12 +8,12 @@ export const ProgressConfig = {
     color: 'purple',
     radius: 'md',
     shadow: 'none',
-    showValue: false,
+    showValue: true,
     size: 'md',
     striped: true,
     value: 75,
-    label: '',
-    description: '',
+    label: 'Uploading...',
+    description: 'Filename: photo.png',
   },
   options: [
     {

@@ -74,7 +74,7 @@ const components = {
   ),
   a: ({ ...props }) => (
     <a
-      className="text-purple-600 underline decoration-2 decoration-dashed decoration-purple-500"
+      className="text-purple-600 underline decoration-2 decoration-solid decoration-purple-500"
       target="_blank"
       {...props}
     />
