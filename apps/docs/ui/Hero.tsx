@@ -60,7 +60,7 @@ export const Hero = () => {
         </div>
       </div>
 
-      <div className="relative w-full xl:w-1/2 py-4">
+      <div className="relative w-full xl:w-1/2 pt-4">
         <div className="absolute bottom-0 h-[15rem] w-full z-50 bg-gradient-to-t from-neutral-900"></div>
         <div className="flex md:items-end -top-10 left-6 md:-left-40 md:bottom-32 absolute">
           <span className="italic text-slate-600">Give it a go</span>

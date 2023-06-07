@@ -1,7 +1,5 @@
 import './globals.css';
-import { Aside } from '@/ui/Aside';
-import { Inter } from 'next/font/google';
-import { Footer } from '@/ui/Footer';
+import { Lato } from 'next/font/google';
 import { Header } from '@/ui/Header';
 import { config } from '@/lib/config';
 import Script from 'next/script';
@@ -47,14 +45,15 @@ export const metadata = {
   },
 };
 
-const inter = Inter({
+const lato = Lato({
   subsets: ['latin'],
   display: 'swap',
+  weight: ['100', '300', '400', '700', '900'],
 });
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={lato.className}>
       <body>
         <main className="min-h-screen">
           <Header />

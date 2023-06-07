@@ -33,10 +33,12 @@ export const generateMetadata = ({ params }) => {
 
 const LandingLayout = async ({ params }) => {
   return (
-    <div className="flex flex-col divide-y divide-gray-100">
-      <div className="bg-grid flex space-x-10 px-4 2xl:px-10 bg-gradient-to-r to-slate-50 from-transparent">
-        <div className="container max-w-8xl mx-auto">
-          <Hero />
+    <div className="flex flex-col divide-y divide-slate-100">
+      <div className="bg-grid">
+        <div className="flex space-x-10 px-4 2xl:px-10 bg-gradient-to-tr to-slate-100 from-transparent">
+          <div className="container max-w-8xl mx-auto">
+            <Hero />
+          </div>
         </div>
       </div>
 
@@ -46,7 +48,7 @@ const LandingLayout = async ({ params }) => {
         </div>
       </div>
 
-      <div className="flex bg-neutral-50 py-20 px-4 2xl:px-10">
+      <div className="flex bg-slate-50 py-20 px-4 2xl:px-10">
         <div className="container max-w-8xl mx-auto">
           <Support />
         </div>
