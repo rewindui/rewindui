@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.7.1
+
+### Patch Changes
+
+- 97c65dc: Drawer shadow prop fix
+
 ## 0.7.0
 
 ### Minor Changes
