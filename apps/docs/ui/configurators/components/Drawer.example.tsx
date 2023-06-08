@@ -98,7 +98,7 @@ export const DrawerExample = (props: DrawerProps) => {
 
   return (
     <>
-      <Drawer {...props} open={open} onClose={() => setOpen(false)} className="min-w-[30rem]">
+      <Drawer {...props} open={open} onClose={() => setOpen(false)} className="w-full md:w-[30rem]">
         <Card className="w-full" bordered={false}>
           <Card.Header className="bg-slate-50">
             <h3 className="text-lg text-slate-800 font-medium">Login</h3>
