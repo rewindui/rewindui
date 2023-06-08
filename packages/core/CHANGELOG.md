@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.7.0
+
+### Minor Changes
+
+- bdb5fe8: Drawer component
+
 ## 0.6.0
 
 ### Minor Changes
