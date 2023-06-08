@@ -171,7 +171,7 @@ const ExamplesCard = () => {
 
   return (
     <>
-      <Drawer open={open} size="md" onClose={() => setOpen(false)}>
+      <Drawer open={open} onClose={() => setOpen(false)}>
         <Card>
           <Card.Header
             className="bg-gray-50/50"
@@ -228,7 +228,7 @@ const ExamplesForm = () => {
 
   return (
     <>
-      <Drawer open={open} size="sm" onClose={() => setOpen(false)}>
+      <Drawer open={open} onClose={() => setOpen(false)}>
         <Card size="sm" className="w-full">
           <Card.Header
             className="bg-gray-50/50 font-medium"
