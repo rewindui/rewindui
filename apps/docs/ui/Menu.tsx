@@ -28,7 +28,7 @@ const menuItems: MenuItem[] = [
     items: [
       {
         title: 'Introduction',
-        path: '/',
+        path: '/introduction',
         icon: <Rocket size={18} weight="duotone" />,
       },
       {
