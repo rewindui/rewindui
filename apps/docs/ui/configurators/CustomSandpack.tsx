@@ -3,7 +3,7 @@ import { SandpackLayout, SandpackCodeViewer, SandpackProvider } from '@codesandb
 import { theme } from '@/lib/theme';
 
 export const CustomSandpack = (props: any) => {
-  const { children } = props;
+  const { children, showLineNumbers = true } = props;
 
   return (
     <SandpackProvider
@@ -14,7 +14,7 @@ export const CustomSandpack = (props: any) => {
       template="react"
     >
       <SandpackLayout>
-        <SandpackCodeViewer showLineNumbers={true} wrapContent />
+        <SandpackCodeViewer showLineNumbers={showLineNumbers} wrapContent />
       </SandpackLayout>
     </SandpackProvider>
   );

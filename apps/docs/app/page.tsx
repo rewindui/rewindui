@@ -49,7 +49,7 @@ const LandingLayout = async ({ params }) => {
       </div>
 
       <div className="flex bg-slate-50 py-20 px-4 2xl:px-10">
-        <div className="container max-w-8xl mx-auto">
+        <div className="container max-w-5xl mx-auto">
           <Support />
         </div>
       </div>

@@ -1,11 +1,7 @@
 import './../globals.css';
 import { Aside } from '@/ui/Aside';
-import { Inter } from 'next/font/google';
 import { Footer } from '@/ui/Footer';
-import { Header } from '@/ui/Header';
 import { config } from '@/lib/config';
-import Script from 'next/script';
-import * as process from 'process';
 import { ReactNode } from 'react';
 
 export const metadata = {
@@ -46,11 +42,6 @@ export const metadata = {
     creator: '@NickDunas',
   },
 };
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export default function DocsLayout({ children }: { children: ReactNode }) {
   return (
