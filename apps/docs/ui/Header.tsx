@@ -6,10 +6,10 @@ import * as React from 'react';
 import { ReactNode, useEffect, useState } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import { usePathname } from 'next/navigation';
-import { Overlay } from '@rewind-ui/core';
+import { Drawer } from '@rewind-ui/core';
 
 const headerButtonClasses =
-  'flex items-center justify-center w-8 h-8 md:w-10 md:h-10 rounded-lg border border-gray-100 p-2';
+  'flex items-center justify-center w-8 h-8 md:w-10 bg-white md:h-10 rounded-lg border border-gray-100 p-2';
 
 const SocialLink = ({ href, children }: { href: string; children: ReactNode }) => {
   return (
@@ -80,8 +80,13 @@ export const Header = () => {
         </div>
       </div>
 
-      {open && (
-        <div className="fixed top-0 right-0 overflow-auto w-full sm:w-fit min-w-[300px] h-full bg-white z-[70]">
+      <Drawer
+        className="w-full sm:w-fit min-w-[350px] z-[70]"
+        position="right"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <div className="overflow-auto w-full h-full bg-white">
           <div className="flex h-20 justify-between items-center px-4 py-2 bg-gray-50 border-b border-b-gray-100">
             <span className="text-xl font-semibold">Menu</span>
             <button onClick={() => setOpen(false)} className={headerButtonClasses}>
@@ -92,9 +97,7 @@ export const Header = () => {
             <Menu />
           </div>
         </div>
-      )}
-
-      {open && <Overlay onClose={() => setOpen(false)} closeOnClick={true} className="z-[60]" />}
+      </Drawer>
     </>
   );
 };

@@ -6,6 +6,7 @@ export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/Collapse';
 export * from './components/Combobox';
+export * from './components/Drawer';
 export * from './components/Dropdown';
 export * from './components/FormControl';
 export * from './components/Image';

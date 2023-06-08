@@ -1,0 +1,164 @@
+---
+title: Drawer
+description: A modal window that opens on top of all other content.
+intro: The Drawer component can be used to display a form that requires user input, display a message to the user that requires their attention or just a menu.
+source: Drawer
+theme: Drawer.styles.ts
+storybook: drawer--default
+---
+
+# Import
+---
+Import the `Drawer` component using the following import statement.
+
+```tsx
+import { Drawer } from '@rewind-ui/core';
+```
+
+# Position
+---
+The `Drawer` component can be positioned at the top, bottom, left or right of the screen. The `position` prop can be used to set the position of the dialog.
+
+<View>
+  <DrawerShowcase showcase="positions" />
+</View>
+
+```tsx
+<View>
+  <Drawer position="top">
+    // ...
+  </Drawer>
+
+  <Drawer position="bottom">
+    // ...
+  </Drawer>
+
+  <Drawer position="left">
+    // ...
+  </Drawer>
+
+  <Drawer position="right">
+    // ...
+  </Drawer>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+<View>
+  <DrawerShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Drawer shadow="none" overlayColor="white">
+    // ...
+  </Drawer>
+
+  <Drawer shadow="sm" overlayColor="white">
+    // ...
+  </Drawer>
+
+  <Drawer shadow="base" overlayColor="white">
+    // ...
+  </Drawer>
+
+  <Drawer shadow="md" overlayColor="white">
+    // ...
+  </Drawer>
+
+  <Drawer shadow="lg" overlayColor="white">
+    // ...
+  </Drawer>
+
+  <Drawer shadow="xl" overlayColor="white">
+    // ...
+  </Drawer>
+</View>
+```
+
+# Overlay
+---
+The underlying Overlay component can be customized using the `overlayColor`, `overlayBlur` and `overlayOpacity` props.
+
+## Close on click
+The `closeOnClick` prop can be used to close the modal when the overlay is clicked.
+
+<View>
+  <DrawerShowcase showcase="close-on-click" />
+</View>
+
+```tsx
+<View>
+  <Drawer overlayCloseOnClick={true}>
+    // ...
+  </Drawer>
+
+  <Drawer overlayCloseOnClick={false}>
+    // ...
+  </Drawer>
+</View>
+```
+
+# Close on escape
+---
+The `closeOnEscape` prop can be used to close the modal when the escape key is pressed.
+
+<View>
+  <DrawerShowcase showcase="close-on-escape" />
+</View>
+
+```tsx
+<View>
+  <Drawer closeOnEscape={true}>
+    // ...
+  </Drawer>
+
+  <Drawer closeOnEscape={false}>
+    // ...
+  </Drawer>
+</View>
+```
+
+# Focus trap
+---
+The `Drawer` component is using a focus trap hook to trap focus within the modal. This means that when the modal is open, the user can only interact with the modal and not with the rest of the page.
+
+# API Reference
+---
+## Properties
+
+| Prop                | Type             | Description                                           | Default     |
+|:--------------------|:-----------------|:------------------------------------------------------|:------------|
+| closeOnEscape       | `boolean`        | Makes the drawer close when the escape key is pressed | `true`      |
+| onClose             | `() => void`     | Sets the onClose callback function                    | `undefined` |
+| open                | `boolean`        | Sets the open state                                   | `false`     |
+| overlayBlur         | `OverlayBlur`    | Sets the overlay backdrop blur filter                 | `sm`        |
+| overlayCloseOnClick | `boolean`        | Makes the modal close when the overlay is clicked     | `true`      |
+| overlayColor        | `OverlayColor`   | Sets the overlay color                                | `dark`      |
+| overlayOpacity      | `OverlayOpacity` | Sets the overlay opacity                              | `50`        |
+| position            | `DrawerShadow`   | Sets the drawer position                              | `right`     |
+| shadow              | `DrawerShadow`   | Sets the shadow size                                  | `base`      |
+
+## Types
+
+```tsx
+type ModalShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+# Accessibility
+---
+The `Drawer` component partially adheres to the [WAI-ARIA Dialog (Modal) Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/).
+
+To make the drawer dialog fully accessible, `aria-labelledby` and `aria-describedby` props should be provided to the `Drawer` component. The `aria-labelledby` prop should point to the `id` of the Modal header element, and the `aria-describedby` prop should point to the `id` of the body element.
+
+## Keyboard interactions
+
+| Key             | Description                                   |
+|:----------------|:----------------------------------------------|
+| `Tab`           | Moves focus to the next focusable element     |
+| `Shift` + `Tab` | Moves focus to the previous focusable element |
+| `Escape`        | Closes the dialog                             |
+

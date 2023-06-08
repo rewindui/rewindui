@@ -109,6 +109,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'modal',
     },
     {
+      title: 'Drawer',
+      url: '/components/drawer',
+      slug: 'drawer',
+    },
+    {
       title: 'Popover',
       url: '/components/popover',
       slug: 'popover',

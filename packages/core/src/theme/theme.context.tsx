@@ -55,6 +55,7 @@ type ThemeComponents = {
     label: typeof styles.comboboxOptionStyles.label;
     description: typeof styles.comboboxOptionStyles.description;
   };
+  Drawer: typeof styles.drawerStyles.base;
   Dropdown: {
     base: typeof styles.dropdownStyles.base;
     arrow: typeof styles.dropdownStyles.arrow;
@@ -200,6 +201,7 @@ const defaultTheme: Theme = {
       label: styles.comboboxOptionStyles.label,
       description: styles.comboboxOptionStyles.description,
     },
+    Drawer: styles.drawerStyles.base,
     Dropdown: {
       arrow: styles.dropdownStyles.arrow,
       base: styles.dropdownStyles.base,

@@ -5,6 +5,7 @@ import { ButtonConfig } from '@/ui/configurators/components/Button.config';
 import { CardConfig } from '@/ui/configurators/components/Card.config';
 import { CheckboxConfig } from '@/ui/configurators/components/Checkbox.config';
 import { ComboboxConfig } from '@/ui/configurators/components/Combobox.config';
+import { DrawerConfig } from '@/ui/configurators/components/Drawer.config';
 import { DropdownConfig } from '@/ui/configurators/components/Dropdown.config';
 import { FormControlConfig } from '@/ui/configurators/components/FormControl.config';
 import { InputConfig } from '@/ui/configurators/components/Input.config';
@@ -30,6 +31,7 @@ export const components = {
   card: CardConfig,
   checkbox: CheckboxConfig,
   combobox: ComboboxConfig,
+  drawer: DrawerConfig,
   dropdown: DropdownConfig,
   'form-control': FormControlConfig,
   input: InputConfig,

@@ -1,4 +1,5 @@
 'use client';
+import { DrawerShowcase, DrawerShowcaseProps } from '@/ui/configurators/components/Drawer.showcase';
 import {
   DropdownShowcase,
   DropdownShowcaseProps,
@@ -155,6 +156,7 @@ const components = {
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />
   ),
+  DrawerShowcase: ({ showcase }: DrawerShowcaseProps) => <DrawerShowcase showcase={showcase} />,
   SelectorShowcase: ({ showcase }: SelectorShowcaseProps) => (
     <SelectorShowcase showcase={showcase} />
   ),

@@ -83,6 +83,11 @@ const menuItems: MenuItem[] = [
         path: '/components/modal',
       },
       {
+        title: 'Drawer',
+        path: '/components/drawer',
+        newItem: true,
+      },
+      {
         title: 'Popover',
         path: '/components/popover',
       },
