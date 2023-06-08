@@ -2,7 +2,7 @@ import { OverlayBlur, OverlayColor, OverlayOpacity } from '@components/Overlay';
 import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
 export type DrawerPosition = 'left' | 'right' | 'top' | 'bottom';
-export type DrawerShadow = 'none' | 'sm' | 'base' | 'md';
+export type DrawerShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 
 export interface DrawerProps extends ComponentPropsWithRef<'div'> {
   closeOnEscape?: boolean;
