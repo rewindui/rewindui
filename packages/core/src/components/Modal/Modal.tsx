@@ -93,10 +93,9 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
           {
             opacity: 0,
             transform: 'translateY(-50px)',
-            filter: 'blur(15px)',
             visibility: 'hidden',
           },
-          { opacity: 1, transform: 'translateY(0%)', filter: 'blur(0)', visibility: 'visible' },
+          { opacity: 1, transform: 'translateY(0%)', visibility: 'visible' },
         ],
         {
           duration: 150,
@@ -135,11 +134,14 @@ const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivE
     const keyframes = new KeyframeEffect(
       modalRef.current,
       [
-        { opacity: 0, transform: 'translateY(-100px)', filter: 'blur(15px)', visibility: 'hidden' },
+        {
+          opacity: 0,
+          transform: 'translateY(-100px)',
+          visibility: 'hidden',
+        },
         {
           opacity: 1,
           transform: `translateY(${translateY})`,
-          filter: 'blur(0)',
           visibility: 'visible',
         },
       ],
