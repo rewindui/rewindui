@@ -59,7 +59,7 @@ function App() {
           </Card.Header>
 
           <Card.Body>
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 md:w-[30rem] mx-auto">
               <FormControl>
                 <FormControl.Label className="text-sm" required>
                   Email
@@ -98,7 +98,7 @@ export const DrawerExample = (props: DrawerProps) => {
 
   return (
     <>
-      <Drawer {...props} open={open} onClose={() => setOpen(false)} className="w-full md:w-[30rem]">
+      <Drawer {...props} open={open} onClose={() => setOpen(false)}>
         <Card className="w-full" bordered={false}>
           <Card.Header className="bg-slate-50">
             <h3 className="text-lg text-slate-800 font-medium">Login</h3>
@@ -109,7 +109,7 @@ export const DrawerExample = (props: DrawerProps) => {
           </Card.Header>
 
           <Card.Body>
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 md:w-[30rem] mx-auto">
               <FormControl>
                 <FormControl.Label className="text-sm" required>
                   Email

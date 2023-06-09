@@ -126,21 +126,19 @@ const Drawer: DrawerComponent = forwardRef((props: DrawerProps, ref?: Ref<HTMLDi
       />
 
       <FloatingPortal>
-        <div className="flex justify-center">
-          <div
-            id={id}
-            role="dialog"
-            aria-hidden={!open}
-            style={{
-              opacity: 0,
-              visibility: 'hidden',
-            }}
-            ref={mergedRef}
-            className={classes}
-            {...additionalProps}
-          >
-            {children}
-          </div>
+        <div
+          id={id}
+          role="dialog"
+          aria-hidden={!open}
+          style={{
+            opacity: 0,
+            visibility: 'hidden',
+          }}
+          ref={mergedRef}
+          className={classes}
+          {...additionalProps}
+        >
+          {children}
         </div>
       </FloatingPortal>
     </>
