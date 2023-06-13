@@ -23,7 +23,7 @@ export function usePopover({
 }: Partial<PopoverProps>): any {
   const arrowRef = useRef(null);
   const [open, setOpen] = useState(initiallyOpen);
-  const { x, y, reference, floating, strategy, context } = useFloating({
+  const { x, y, refs, strategy, context } = useFloating({
     open,
     onOpenChange: setOpen,
     placement,
@@ -57,8 +57,8 @@ export function usePopover({
     () => ({
       x,
       y,
-      reference,
-      floating,
+      reference: refs.setReference,
+      floating: refs.setFloating,
       strategy,
       context,
       getFloatingProps: getFloatingProps(),

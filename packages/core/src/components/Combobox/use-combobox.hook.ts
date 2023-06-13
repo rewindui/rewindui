@@ -14,7 +14,7 @@ import { useMemo, useState } from 'react';
 
 export function useCombobox({ offset = 5 }: Partial<ComboboxProps>) {
   const [open, setOpen] = useState(false);
-  const { x, y, reference, floating, strategy, context } = useFloating({
+  const { x, y, refs, strategy, context } = useFloating({
     open,
     onOpenChange: setOpen,
     placement: 'bottom-start',
@@ -35,14 +35,14 @@ export function useCombobox({ offset = 5 }: Partial<ComboboxProps>) {
     () => ({
       x,
       y,
-      reference,
-      floating,
+      reference: refs.setReference,
+      floating: refs.setFloating,
       strategy,
       getFloatingProps: getFloatingProps(),
       getReferenceProps: getReferenceProps(),
       open,
       setOpen,
     }),
-    [floating, getFloatingProps, getReferenceProps, open, reference, strategy, x, y]
+    [refs, getFloatingProps, getReferenceProps, open, strategy, x, y]
   );
 }

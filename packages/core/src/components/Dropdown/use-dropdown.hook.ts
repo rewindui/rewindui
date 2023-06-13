@@ -24,7 +24,7 @@ export function useDropdown({
 }: Partial<DropdownProps>): any {
   const arrowRef = useRef(null);
   const [open, setOpen] = useState(initiallyOpen);
-  const { x, y, reference, floating, strategy, context } = useFloating({
+  const { x, y, refs, strategy, context } = useFloating({
     open,
     onOpenChange: setOpen,
     placement,
@@ -61,27 +61,16 @@ export function useDropdown({
     () => ({
       arrowRef,
       context,
-      floating,
+      floating: refs.setFloating,
       getFloatingProps: getFloatingProps(),
       getReferenceProps: getReferenceProps(),
       open,
       setOpen,
-      reference,
+      reference: refs.setReference,
       strategy,
       x,
       y,
     }),
-    [
-      context,
-      floating,
-      getFloatingProps,
-      getReferenceProps,
-      open,
-      setOpen,
-      reference,
-      strategy,
-      x,
-      y,
-    ]
+    [context, refs, getFloatingProps, getReferenceProps, open, setOpen, strategy, x, y]
   );
 }

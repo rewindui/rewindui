@@ -23,7 +23,7 @@ export function useTooltip({
 }: Partial<TooltipProps>): any {
   const arrowRef = useRef(null);
   const [open, setOpen] = useState(initiallyOpen);
-  const { x, y, reference, floating, strategy, context } = useFloating({
+  const { x, y, refs, strategy, context } = useFloating({
     open,
     onOpenChange: setOpen,
     placement,
@@ -63,11 +63,11 @@ export function useTooltip({
       arrowX,
       arrowY,
       context,
-      floating,
+      floating: refs.setFloating,
       getFloatingProps: getFloatingProps(),
       getReferenceProps: getReferenceProps(),
       open,
-      reference,
+      reference: refs.setReference,
       strategy,
       x,
       y,
@@ -77,11 +77,10 @@ export function useTooltip({
       arrowX,
       arrowY,
       context,
-      floating,
+      refs,
       getFloatingProps,
       getReferenceProps,
       open,
-      reference,
       strategy,
       x,
       y,
