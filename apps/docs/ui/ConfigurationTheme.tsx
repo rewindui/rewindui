@@ -1,8 +1,6 @@
 'use client';
 import { CustomSandpack } from '@/ui/configurators/CustomSandpack';
-import { useEffect, useState } from 'react';
 import * as React from 'react';
-import { Alert, AlertVariants } from '@rewind-ui/core';
 
 export const ConfigurationTheme = () => {
   const code = `function App() {
