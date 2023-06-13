@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.7.3
+
+### Patch Changes
+
+- 12e72e8: Floating-ui update adjustments
+
 ## 0.7.2
 
 ### Patch Changes
