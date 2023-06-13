@@ -1,6 +1,5 @@
 import { DropdownItemColor } from '@components/Dropdown/DropdownItem/DropdownItem.types';
-import { Strategy } from '@floating-ui/core';
-import { Placement } from '@floating-ui/react-dom';
+import { Placement, Strategy } from '@floating-ui/react-dom';
 import { FloatingContext, ReferenceType } from '@floating-ui/react';
 import { ComponentPropsWithRef, ForwardRefExoticComponent, Ref } from 'react';
 
