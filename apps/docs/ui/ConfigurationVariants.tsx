@@ -2,7 +2,7 @@
 import { CustomSandpack } from '@/ui/configurators/CustomSandpack';
 import { useEffect, useState } from 'react';
 import * as React from 'react';
-import { Alert, AlertVariants } from '@rewind-ui/core';
+import { Alert, AlertVariant } from '@rewind-ui/core';
 
 export const ConfigurationVariants = () => {
   const [alertCode, setAlertCode] = React.useState(
@@ -12,7 +12,7 @@ export const ConfigurationVariants = () => {
     id: number;
     title: string;
     description: string;
-    variant: AlertVariants;
+    variant: AlertVariant;
   }[] = [
     {
       id: 1,
