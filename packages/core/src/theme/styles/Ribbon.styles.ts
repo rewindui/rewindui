@@ -1,12 +1,15 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['inline-flex', 'items-center', 'text-center'], {
+const base = cva(['flex', 'items-center', 'text-center', 'absolute'], {
   variants: {
+    clipped: {
+      true: ['overflow-hidden'],
+      false: [],
+    },
     tone: {
-      solid: ['border', 'border-transparent', 'antialiased'],
+      solid: [],
       light: [],
       glossy: ['bg-gradient-to-r'],
-      outline: ['border', 'bg-white'],
     },
     color: {
       white: [],
@@ -19,19 +22,23 @@ const base = cva(['inline-flex', 'items-center', 'text-center'], {
       dark: [],
       black: [],
     },
+    position: {
+      left: ['left-0', 'top-auto', 'transform', '-translate-x-1'],
+      right: ['right-0', 'top-auto', 'transform', 'translate-x-1'],
+      'top-left': ['top-0', 'left-0', 'transform', 'translate-x-4', '-translate-y-1'],
+      'top-right': ['top-0', 'right-0', 'transform', '-translate-x-4', '-translate-y-1'],
+    },
     size: {
-      xs: ['text-xs', 'px-1', 'h-5'],
-      sm: ['text-sm', 'px-1.5', 'h-6'],
-      md: ['text-base', 'px-1.5', 'h-7'],
-      lg: ['text-lg', 'px-2', 'h-8'],
+      sm: ['text-sm', 'px-1.5', 'h-7'],
+      md: ['text-sm', 'px-2', 'h-8'],
+      lg: ['text-base', 'px-2.5', 'h-9'],
     },
     radius: {
       none: ['rounded-none'],
-      sm: ['rounded-sm'],
-      base: ['rounded'],
-      md: ['rounded-md'],
-      lg: ['rounded-lg'],
-      full: ['rounded-full'],
+      sm: [],
+      base: [],
+      md: [],
+      lg: [],
     },
     shadow: {
       none: ['shadow-none'],
@@ -42,7 +49,7 @@ const base = cva(['inline-flex', 'items-center', 'text-center'], {
       xl: ['shadow-xl'],
     },
     shadowColor: {
-      none: [],
+      none: ['shadow-neutral-300'],
       white: [],
       blue: [],
       red: [],
@@ -56,47 +63,47 @@ const base = cva(['inline-flex', 'items-center', 'text-center'], {
   },
   compoundVariants: [
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'white',
       className: ['shadow-gray-200/50 hover:shadow-gray-200/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'blue',
       className: ['shadow-blue-500/50', 'hover:shadow-blue-500/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'red',
       className: ['shadow-red-500/50 hover:shadow-red-500/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'green',
       className: ['shadow-green-500/50 hover:shadow-green-500/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'yellow',
       className: ['shadow-yellow-500/50 hover:shadow-yellow-500/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'purple',
       className: ['shadow-purple-500/50 hover:shadow-purple-500/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'gray',
       className: ['shadow-gray-400/50 hover:shadow-gray-400/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'dark',
       className: ['shadow-gray-600/50 hover:shadow-gray-600/60'],
     },
     {
-      tone: ['solid', 'glossy', 'outline'],
+      tone: ['solid', 'glossy'],
       shadowColor: 'black',
       className: ['shadow-gray-800/50 hover:shadow-gray-800/60'],
     },
@@ -144,6 +151,66 @@ const base = cva(['inline-flex', 'items-center', 'text-center'], {
       tone: 'light',
       shadowColor: 'black',
       className: ['shadow-gray-500/50 hover:shadow-gray-500/60'],
+    },
+    {
+      position: ['top-left', 'top-right'],
+      radius: 'sm',
+      className: ['rounded-b-sm'],
+    },
+    {
+      position: ['top-left', 'top-right'],
+      radius: 'base',
+      className: ['rounded-b'],
+    },
+    {
+      position: ['top-left', 'top-right'],
+      radius: 'md',
+      className: ['rounded-b-md'],
+    },
+    {
+      position: ['top-left', 'top-right'],
+      radius: 'lg',
+      className: ['rounded-b-lg'],
+    },
+    {
+      position: 'right',
+      radius: 'sm',
+      className: ['rounded-l-sm'],
+    },
+    {
+      position: 'right',
+      radius: 'base',
+      className: ['rounded-l'],
+    },
+    {
+      position: 'right',
+      radius: 'md',
+      className: ['rounded-l-md'],
+    },
+    {
+      position: 'right',
+      radius: 'lg',
+      className: ['rounded-l-lg'],
+    },
+    {
+      position: 'left',
+      radius: 'sm',
+      className: ['rounded-r-sm'],
+    },
+    {
+      position: 'left',
+      radius: 'base',
+      className: ['rounded-r'],
+    },
+    {
+      position: 'left',
+      radius: 'md',
+      className: ['rounded-r-md'],
+    },
+    {
+      position: 'left',
+      radius: 'lg',
+      className: ['rounded-r-lg'],
     },
     {
       color: 'white',
@@ -232,88 +299,48 @@ const base = cva(['inline-flex', 'items-center', 'text-center'], {
     {
       tone: 'light',
       color: 'blue',
-      className: ['text-blue-600', 'bg-blue-100/50', 'border-blue-500'],
+      className: ['text-blue-600', 'bg-blue-100', 'border-blue-500'],
     },
     {
       tone: 'light',
       color: 'red',
-      className: ['text-red-600', 'bg-red-100/50', 'border-red-500'],
+      className: ['text-red-600', 'bg-red-100', 'border-red-500'],
     },
     {
       tone: 'light',
       color: 'green',
-      className: ['text-green-600', 'bg-green-100/50', 'border-green-500'],
+      className: ['text-green-600', 'bg-green-100', 'border-green-500'],
     },
     {
       tone: 'light',
       color: 'yellow',
-      className: ['text-yellow-600', 'bg-yellow-100/50', 'border-yellow-500'],
+      className: ['text-yellow-600', 'bg-yellow-100', 'border-yellow-500'],
     },
     {
       tone: 'light',
       color: 'purple',
-      className: ['text-purple-600', 'bg-purple-100/50', 'border-purple-500'],
+      className: ['text-purple-600', 'bg-purple-100', 'border-purple-500'],
     },
     {
       tone: 'light',
       color: 'gray',
-      className: ['text-gray-600', 'bg-gray-100/50', 'border-gray-500'],
+      className: ['text-gray-600', 'bg-gray-100', 'border-gray-500'],
     },
     {
       tone: 'light',
       color: 'dark',
-      className: ['text-gray-700', 'bg-gray-300/50', 'border-gray-700'],
+      className: ['text-gray-700', 'bg-gray-300', 'border-gray-700'],
     },
     {
       tone: 'light',
       color: 'black',
-      className: ['text-black', 'bg-gray-400/50', 'border-gray-800'],
-    },
-    {
-      tone: 'outline',
-      color: 'blue',
-      className: ['text-blue-500', 'border-blue-500'],
-    },
-    {
-      tone: 'outline',
-      color: 'red',
-      className: ['text-red-500', 'border-red-500'],
-    },
-    {
-      tone: 'outline',
-      color: 'green',
-      className: ['text-green-500', 'border-green-500'],
-    },
-    {
-      tone: 'outline',
-      color: 'yellow',
-      className: ['text-yellow-400', 'border-yellow-400'],
-    },
-    {
-      tone: 'outline',
-      color: 'purple',
-      className: ['text-purple-500', 'border-purple-500'],
-    },
-    {
-      tone: 'outline',
-      color: 'gray',
-      className: ['text-gray-600', 'border-gray-500'],
-    },
-    {
-      tone: 'outline',
-      color: 'dark',
-      className: ['text-gray-600', 'border-gray-700'],
-    },
-    {
-      tone: 'outline',
-      color: 'black',
-      className: ['text-black', 'border-gray-800'],
+      className: ['text-black', 'bg-gray-400', 'border-gray-800'],
     },
   ],
 });
 
-const badgeStyles = {
+const ribbonStyles = {
   base,
 };
 
-export { badgeStyles };
+export { ribbonStyles };

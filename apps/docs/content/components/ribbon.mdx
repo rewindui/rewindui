@@ -1,0 +1,630 @@
+---
+title: Ribbon
+description: An information box.
+intro: The Ribbon component serves the purpose of presenting quick information to the user.
+source: Ribbon
+theme: Ribbon.styles.ts
+variants: Ribbon.variants.ts
+storybook: ribbon--default
+---
+
+# Import
+---
+Import the `Ribbon` component using the following import statement.
+
+```tsx
+import { Ribbon } from '@rewind-ui/core';
+```
+
+<Callout>The parent component of the `Ribbon` component must have `position: relative` set on it.</Callout>
+
+# Variants
+---
+The `Ribbon` component comes with a number of pre-defined variants that can be used to change the appearance of the component. The variants can be used by passing the variant name as a prop to the component. A variant is basically a pre-set set of properties. Read more about variants [here](https://rewind-ui.dev/variants).
+
+Available variants are: `primary`, `secondary`, `danger`, `success`, `warning` and `info`.
+
+<View>
+  <RibbonShowcase showcase="variants" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon variant="primary">Primary</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon variant="secondary">Secondary</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon variant="danger">Danger</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon variant="success">Success</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon variant="warning">Warning</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon variant="info">Info</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+# Tones & Colors
+---
+The `Ribbon` component comes with three tones: `solid`, `light` and `glossy`.
+
+The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <RibbonShowcase showcase="tones-solid" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="white">White</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="blue">Blue</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="red">Red</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="green">Green</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="yellow">Yellow</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="purple">Purple</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="gray">Gray</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="dark">Dark</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="solid" color="black">Black</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+## Light
+<View>
+  <RibbonShowcase showcase="tones-light" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="white">White</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="blue">Blue</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="red">Red</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="green">Green</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="yellow">Yellow</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="purple">Purple</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="gray">Gray</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="dark">Dark</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="light" color="black">Black</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+## Glossy
+<View>
+  <RibbonShowcase showcase="tones-glossy" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="white">White</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="blue">Blue</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="red">Red</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="green">Green</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="yellow">Yellow</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="purple">Purple</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="gray">Gray</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="dark">Dark</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon tone="glossy" color="black">Black</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `sm`, `md` and `lg`.
+
+<View>
+  <RibbonShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon size="sm">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon size="md">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon size="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <RibbonShowcase showcase="radiuses" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon radius="none">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon radius="sm">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon radius="base">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon radius="md">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon radius="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+<View>
+  <RibbonShowcase showcase="shadows" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadow="none">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadow="sm">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadow="base">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadow="md">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadow="xl">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+## Shadow colors
+Available `shadowColor` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <RibbonShowcase showcase="shadow-colors" />
+</View>
+
+```tsx
+<View>
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="blue" color="blue" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="red" color="red" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="green" color="green" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="yellow" color="yellow" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="purple" color="purple" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="gray" color="gray" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="dark" color="dark" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon shadowColor="black" color="black" shadow="lg">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+</View>
+```
+
+# Positions
+---
+Available `position` values are: `top-right`, `right`, `top-left` and `left`.
+
+<View>
+  <RibbonShowcase showcase="positions" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon position="top-right">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon position="right">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon position="top-left">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon position="left">Ribbon</Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+````
+
+# Examples
+---
+## With icon
+
+<View>
+  <RibbonShowcase showcase="example-icon" />
+</View>
+
+```tsx
+<View>
+  <Card>
+    <Card.Header className="relative">
+      <Ribbon size="lg">
+        <Star />
+      </Ribbon>
+      <span>This is just a Card</span>
+    </Card.Header>
+  </Card>
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop        | Type                | Description            | Default     |
+|:------------|:--------------------|:-----------------------|:------------|
+| color       | `RibbonColor`       | Sets the color         | `purple`    |
+| position    | `RibbonPosition`    | Sets the position      | `top-right` |
+| radius      | `RibbonRadius`      | Sets the border radius | `base`      |
+| shadow      | `RibbonShadow`      | Sets the shadow size   | `base`      |
+| shadowColor | `RibbonShadowColor` | Sets the shadow color  | `none`      |
+| size        | `RibbonSize`        | Sets the badge size    | `md`        |
+| tone        | `RibbonTone`        | Sets the badge tone    | `solid`     |
+| variant     | `RibbonVariant`     | Sets the badge variant | `undefined` |
+
+## Types
+
+```tsx
+type RibbonColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type RibbonPosition = 'left' | 'right' | 'top-left' | 'top-right';
+```
+
+```tsx
+type RibbonRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type RibbonShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type RibbonShadowColor =
+  | 'none'
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type RibbonSize = 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type RibbonTone = 'solid' | 'light' | 'glossy';
+```
+
+```tsx
+type RibbonVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info';
+```
+

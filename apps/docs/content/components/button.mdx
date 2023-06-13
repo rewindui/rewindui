@@ -418,7 +418,7 @@ All known button properties (e.g. type="submit") can be used on the `Button` com
 | Prop        | Type                | Description                                                                                | Default     |
 |:------------|:--------------------|:-------------------------------------------------------------------------------------------|:------------|
 | animation   | `ButtonAnimation`   | Sets the animation type                                                                    | `none`      |
-| color       | `ButtonColor`       | Sets the color                                                                             | `blue`      |
+| color       | `ButtonColor`       | Sets the color                                                                             | `purple`    |
 | disabled    | `boolean`           | Disables button                                                                            | `false`     |
 | icon        | `boolean`           | Makes the button a perfect square in case the button contains just an icon instead of text | `false`     |
 | loading     | `boolean`           | Shows a loading spinner and disables the button                                            | `false`     |
@@ -427,7 +427,7 @@ All known button properties (e.g. type="submit") can be used on the `Button` com
 | shadowColor | `ButtonShadowColor` | Sets the shadow color                                                                      | `none`      |
 | size        | `ButtonSize`        | Sets the button size                                                                       | `md`        |
 | tone        | `ButtonTone`        | Sets the button tone                                                                       | `solid`     |
-| variant     | `ButtonVariants`    | Sets the button variant                                                                    | `undefined` |
+| variant     | `ButtonVariant`     | Sets the button variant                                                                    | `undefined` |
 | withRing    | `boolean`           | Shows a ring around the button on active state                                             | `true`      |
 
 ## Events
@@ -486,7 +486,7 @@ type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
 ```
 
 ```tsx
-type ButtonVariants =
+type ButtonVariant =
   | 'primary'
   | 'secondary'
   | 'tertiary'

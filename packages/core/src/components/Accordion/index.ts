@@ -8,6 +8,6 @@ export type {
   AccordionSize,
   AccordionShadow,
   AccordionTone,
-  AccordionVariants,
+  AccordionVariant,
 } from './Accordion.types';
 export type { AccordionItemProps } from './AccordionItem/AccordionItem.types';

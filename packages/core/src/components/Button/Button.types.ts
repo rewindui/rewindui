@@ -27,7 +27,7 @@ export type ButtonShadowColor =
   | 'black';
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
 export type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
-export type ButtonVariants =
+export type ButtonVariant =
   | 'primary'
   | 'secondary'
   | 'tertiary'
@@ -48,7 +48,7 @@ export type ButtonProps = {
   shadowColor?: ButtonShadowColor;
   size?: ButtonSize;
   tone?: ButtonTone;
-  variant?: ButtonVariants;
+  variant?: ButtonVariant;
   withRing?: boolean;
 };
 

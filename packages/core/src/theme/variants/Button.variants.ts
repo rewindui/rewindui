@@ -1,7 +1,7 @@
-import { ButtonProps, ButtonVariants } from '@components/Button/Button.types';
+import { ButtonProps, ButtonVariant } from '@components/Button/Button.types';
 import { AsProp } from '../../types/polymorphic.types';
 
-export const buttonVariants: Record<ButtonVariants, ButtonProps & AsProp<any>> = {
+export const buttonVariants: Record<ButtonVariant, ButtonProps & AsProp<any>> = {
   primary: {
     color: 'purple',
     tone: 'solid',

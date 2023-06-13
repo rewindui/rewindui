@@ -1,7 +1,7 @@
-import { AlertProps, AlertVariants } from '@components/Alert/Alert.types';
+import { AlertProps, AlertVariant } from '@components/Alert/Alert.types';
 import { AsProp } from '../../types/polymorphic.types';
 
-export const alertVariants: Record<AlertVariants, AlertProps & AsProp<any>> = {
+export const alertVariants: Record<AlertVariant, AlertProps & AsProp<any>> = {
   primary: {
     color: 'purple',
     tone: 'light',

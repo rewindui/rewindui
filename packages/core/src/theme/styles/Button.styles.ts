@@ -63,16 +63,16 @@ const base = cva(
         xl: ['shadow-xl'],
       },
       shadowColor: {
-        none: [''],
-        white: ['shadow-gray-200/50', 'hover:shadow-gray-200/60'],
-        blue: ['shadow-blue-500/50', 'hover:shadow-blue-500/60'],
-        red: ['shadow-red-500/50', 'hover:shadow-red-500/60'],
-        green: ['shadow-green-500/50', 'hover:shadow-green-500/60'],
-        yellow: ['shadow-yellow-500/50', 'hover:shadow-yellow-500/60'],
-        purple: ['shadow-purple-500/50', 'hover:shadow-purple-500/60'],
-        gray: ['shadow-gray-400/50', 'hover:shadow-gray-400/60'],
-        dark: ['shadow-gray-600/50', 'hover:shadow-gray-600/60'],
-        black: ['shadow-gray-800/50', 'hover:shadow-gray-800/60'],
+        none: [],
+        white: [],
+        blue: [],
+        red: [],
+        green: [],
+        yellow: [],
+        purple: [],
+        gray: [],
+        dark: [],
+        black: [],
       },
       icon: {
         true: [],
@@ -96,6 +96,96 @@ const base = cva(
       color: 'blue',
     },
     compoundVariants: [
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'white',
+        className: ['shadow-gray-200/50 hover:shadow-gray-200/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'blue',
+        className: ['shadow-blue-500/50', 'hover:shadow-blue-500/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'red',
+        className: ['shadow-red-500/50 hover:shadow-red-500/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'green',
+        className: ['shadow-green-500/50 hover:shadow-green-500/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'yellow',
+        className: ['shadow-yellow-500/50 hover:shadow-yellow-500/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'purple',
+        className: ['shadow-purple-500/50 hover:shadow-purple-500/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'gray',
+        className: ['shadow-gray-400/50 hover:shadow-gray-400/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'dark',
+        className: ['shadow-gray-600/50 hover:shadow-gray-600/60'],
+      },
+      {
+        tone: ['solid', 'outline'],
+        shadowColor: 'black',
+        className: ['shadow-gray-800/50 hover:shadow-gray-800/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'white',
+        className: ['shadow-gray-200/50 hover:shadow-gray-200/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'blue',
+        className: ['shadow-blue-300/50', 'hover:shadow-blue-300/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'red',
+        className: ['shadow-red-300/50 hover:shadow-red-300/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'green',
+        className: ['shadow-green-300/50 hover:shadow-green-300/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'yellow',
+        className: ['shadow-yellow-300/50 hover:shadow-yellow-300/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'purple',
+        className: ['shadow-purple-300/50 hover:shadow-purple-300/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'gray',
+        className: ['shadow-gray-300/50 hover:shadow-gray-300/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'dark',
+        className: ['shadow-gray-400/50 hover:shadow-gray-400/60'],
+      },
+      {
+        tone: 'light',
+        shadowColor: 'black',
+        className: ['shadow-gray-500/50 hover:shadow-gray-500/60'],
+      },
       {
         icon: false,
         size: 'xs',

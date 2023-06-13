@@ -7,7 +7,7 @@ import {
   AlertShadow,
   AlertSize,
   AlertTone,
-  AlertVariants,
+  AlertVariant,
   Button,
   Text,
 } from '@rewind-ui/core';
@@ -16,7 +16,7 @@ import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 import { WarningCircle } from '@phosphor-icons/react';
 
-const variants: AlertVariants[] = [
+const variants: AlertVariant[] = [
   'primary',
   'secondary',
   'tertiary',

@@ -1,6 +1,6 @@
-import { BadgeProps, BadgeVariant } from '@components/Badge/Badge.types';
+import { RibbonProps, RibbonVariant } from '@components/Ribbon/Ribbon.types';
 
-export const badgeVariants: Record<BadgeVariant, BadgeProps> = {
+export const ribbonVariants: Record<RibbonVariant, RibbonProps> = {
   primary: {
     color: 'purple',
     tone: 'solid',

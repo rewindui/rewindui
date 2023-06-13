@@ -4,7 +4,7 @@ import { MagnifyingGlass } from '@phosphor-icons/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 import {
   Button,
-  ButtonVariants,
+  ButtonVariant,
   ButtonColor,
   ButtonRadius,
   ButtonShadow,
@@ -13,7 +13,7 @@ import {
   ButtonProps,
 } from '@rewind-ui/core';
 
-const variants: ButtonVariants[] = [
+const variants: ButtonVariant[] = [
   'primary',
   'secondary',
   'tertiary',

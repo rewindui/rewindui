@@ -414,7 +414,7 @@ To avoid completely [overwriting the default styles](https://rewind-ui.dev/themi
 | Prop                 | Type               | Description                                         | Default     |
 |:---------------------|:-------------------|:----------------------------------------------------|:------------|
 | accent               | `AlertAccent`      | Sets a border on the given side                     | `none`      |
-| color                | `AlertColor`       | Sets the color                                      | `blue`      |
+| color                | `AlertColor`       | Sets the color                                      | `purple`    |
 | dismissable          | `boolean`          | Adds a dismiss button                               | `false`     |
 | dismissableAnimation | `boolean`          | Adds a fading animation when the alert is dismissed | `false`     |
 | icon                 | `ReactNode`        | Adds an icon on the left side of the alert          | `undefined` |
@@ -424,7 +424,7 @@ To avoid completely [overwriting the default styles](https://rewind-ui.dev/themi
 | size                 | `AlertSize`        | Sets the alert size                                 | `md`        |
 | title                | `string`           | Sets the alert title                                | `solid`     |
 | tone                 | `AlertTone`        | Sets the alert tone                                 | `solid`     |
-| variant              | `AlertVariants`    | Sets the alert variant                              | `true`      |
+| variant              | `AlertVariant`     | Sets the alert variant                              | `true`      |
 
 ## Types
 
@@ -476,7 +476,7 @@ type AlertTone = 'solid' | 'light' | 'outline';
 ```
 
 ```tsx
-type AlertVariants =
+type AlertVariant =
   | 'primary'
   | 'secondary'
   | 'tertiary'

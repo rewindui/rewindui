@@ -14,6 +14,7 @@ import { ModalConfig } from '@/ui/configurators/components/Modal.config';
 import { PopoverConfig } from '@/ui/configurators/components/Popover.config';
 import { ProgressConfig } from '@/ui/configurators/components/Progress.config';
 import { RadioConfig } from '@/ui/configurators/components/Radio.config';
+import { RibbonConfig } from '@/ui/configurators/components/Ribbon.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
 import { SelectorConfig } from '@/ui/configurators/components/Selector.config';
 import { SwitchConfig } from '@/ui/configurators/components/Switch.config';
@@ -40,6 +41,7 @@ export const components = {
   popover: PopoverConfig,
   progress: ProgressConfig,
   radio: RadioConfig,
+  ribbon: RibbonConfig,
   select: SelectConfig,
   selector: SelectorConfig,
   switch: SwitchConfig,

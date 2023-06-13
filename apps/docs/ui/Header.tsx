@@ -42,7 +42,7 @@ export const Header = () => {
             <div className="flex flex-col space-y-0">
               <span className="flex items-center font-semibold text-gray-800 text-xl sm:text-2xl md:text-3xl">
                 <span>rewind-ui</span>
-                <span className="ml-2 text-xs text-red-50 py-0.5 px-1 bg-gradient-to-r from-red-500 to-red-900 shadow shadow-red-200 rounded">
+                <span className="ml-2 text-xs text-red-50 py-0.5 px-1 bg-gradient-to-r from-red-500 to-red-700 shadow shadow-red-200 rounded">
                   beta
                 </span>
               </span>

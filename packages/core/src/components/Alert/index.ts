@@ -8,5 +8,5 @@ export type {
   AlertShadowColor,
   AlertSize,
   AlertTone,
-  AlertVariants,
+  AlertVariant,
 } from './Alert.types';

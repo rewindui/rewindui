@@ -13,6 +13,7 @@ import {
   ProgressShowcase,
   ProgressShowcaseProps,
 } from '@/ui/configurators/components/Progress.showcase';
+import { RibbonShowcase, RibbonShowcaseProps } from '@/ui/configurators/components/Ribbon.showcase';
 import {
   SelectorShowcase,
   SelectorShowcaseProps,
@@ -109,15 +110,7 @@ const components = {
   td: ({ ...props }) => <Table.Td {...props} />,
   option: ({ ...props }) => <option {...props} />,
   Callout: ({ ...props }) => (
-    <Alert
-      {...props}
-      size="sm"
-      shadow="sm"
-      shadowColor="purple"
-      color="purple"
-      tone="light"
-      className="mt-6"
-    />
+    <Alert {...props} size="sm" color="purple" tone="light" className="mt-6" />
   ),
   Alert: ({ ...props }) => <Alert {...props} />,
   Accordion: ({ ...props }) => <Accordion {...props} />,
@@ -168,6 +161,7 @@ const components = {
   ProgressShowcase: ({ showcase }: ProgressShowcaseProps) => (
     <ProgressShowcase showcase={showcase} />
   ),
+  RibbonShowcase: ({ showcase }: RibbonShowcaseProps) => <RibbonShowcase showcase={showcase} />,
   ComboboxShowcase: ({ showcase }: ComboboxShowcaseProps) => (
     <ComboboxShowcase showcase={showcase} />
   ),

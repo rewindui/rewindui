@@ -16,6 +16,7 @@ export * from './Overlay.styles';
 export * from './Popover.styles';
 export * from './Progress.styles';
 export * from './Radio.styles';
+export * from './Ribbon.styles';
 export * from './Select.styles';
 export * from './Selector.styles';
 export * from './Spinner.styles';

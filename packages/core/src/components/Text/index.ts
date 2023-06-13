@@ -6,5 +6,5 @@ export type {
   TextWeight,
   TextLeading,
   TextTracking,
-  TextVariants,
+  TextVariant,
 } from './Text.types';

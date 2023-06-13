@@ -106,6 +106,7 @@ type ThemeComponents = {
     error: typeof styles.radioStyles.error;
     group: typeof styles.radioStyles.group;
   };
+  Ribbon: typeof styles.ribbonStyles.base;
   Select: {
     base: typeof styles.selectStyles.base;
     wrapper: typeof styles.selectStyles.wrapper;
@@ -252,6 +253,7 @@ const defaultTheme: Theme = {
       error: styles.radioStyles.error,
       group: styles.radioStyles.group,
     },
+    Ribbon: styles.ribbonStyles.base,
     Select: {
       base: styles.selectStyles.base,
       wrapper: styles.selectStyles.wrapper,

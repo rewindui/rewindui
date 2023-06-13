@@ -7,5 +7,5 @@ export type {
   ButtonShadowColor,
   ButtonSize,
   ButtonTone,
-  ButtonVariants,
+  ButtonVariant,
 } from './Button.types';

@@ -75,6 +75,11 @@ const menuItems: MenuItem[] = [
         path: '/components/badge',
       },
       {
+        title: 'Ribbon',
+        path: '/components/ribbon',
+        newItem: true,
+      },
+      {
         title: 'Card',
         path: '/components/card',
       },
@@ -98,7 +103,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Table',
         path: '/components/table',
-        newItem: true,
       },
       {
         title: 'Tabs',

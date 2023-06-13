@@ -25,7 +25,7 @@ export type BadgeShadowColor =
   | 'black';
 export type BadgeSize = 'xs' | 'sm' | 'md' | 'lg';
 export type BadgeTone = 'solid' | 'light' | 'glossy' | 'outline';
-export type BadgeVariants = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info';
+export type BadgeVariant = 'primary' | 'secondary' | 'danger' | 'success' | 'warning' | 'info';
 
 export interface BadgeProps extends ComponentPropsWithRef<'span'> {
   color?: BadgeColor;
@@ -34,7 +34,7 @@ export interface BadgeProps extends ComponentPropsWithRef<'span'> {
   shadowColor?: BadgeShadowColor;
   size?: BadgeSize;
   tone?: BadgeTone;
-  variant?: BadgeVariants;
+  variant?: BadgeVariant;
 }
 
 export type BadgeComponent = ForwardRefExoticComponent<BadgeProps> & {

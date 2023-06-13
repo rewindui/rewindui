@@ -41,18 +41,7 @@ export type TextSize =
   | '8xl'
   | '9xl';
 export type TextTracking = 'tighter' | 'tight' | 'normal' | 'wide' | 'wider' | 'widest';
-export type TextVariants =
-  | 'd1'
-  | 'd2'
-  | 'd3'
-  | 'd4'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'p';
+export type TextVariant = 'd1' | 'd2' | 'd3' | 'd4' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 export type TextWeight =
   | 'thin'
   | 'extraLight'
@@ -69,7 +58,7 @@ export type TextProps = {
   leading?: TextLeading;
   size?: TextSize;
   tracking?: TextTracking;
-  variant?: any;
+  variant?: TextVariant;
   weight?: TextWeight;
 };
 

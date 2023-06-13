@@ -7,5 +7,5 @@ export type {
   BadgeShadowColor,
   BadgeSize,
   BadgeTone,
-  BadgeVariants,
+  BadgeVariant,
 } from './Badge.types';

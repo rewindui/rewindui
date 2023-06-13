@@ -44,7 +44,7 @@ Available variants are: `primary`, `secondary`, `link`, `danger`, `success`, `wa
 
 # Tones & Colors
 ---
-The `Badge` component comes with four tones: `solid`, `light` and `outline`.
+The `Badge` component comes with four tones: `solid`, `light`, `glossy` and `outline`.
 
 The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
 
@@ -178,11 +178,12 @@ Available `size` values are: `xs`, `sm`, `md` and `lg`.
 
 # Radiuses
 ---
-Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
+Available `radius` values are: `none`, `sm`, `base`, `md`, `lg` and `full`.
 
 <View>
   <Badge radius="none">Badge</Badge>
   <Badge radius="sm">Badge</Badge>
+  <Badge radius="base">Badge</Badge>
   <Badge radius="md">Badge</Badge>
   <Badge radius="lg">Badge</Badge>
   <Badge radius="full">Badge</Badge>
@@ -192,6 +193,7 @@ Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
 <View>
   <Badge radius="none">Badge</Badge>
   <Badge radius="sm">Badge</Badge>
+  <Badge radius="base">Badge</Badge>
   <Badge radius="md">Badge</Badge>
   <Badge radius="lg">Badge</Badge>
   <Badge radius="full">Badge</Badge>
@@ -200,7 +202,7 @@ Available `radius` values are: `none`, `sm`, `md`, `lg` and `full`.
 
 # Shadows
 ---
-Available `shadow` values are: `none`, `xs`, `sm`, `md` and `lg`.
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
 
 <View>
   <Badge shadow="none" shadowColor="black">Badge</Badge>
@@ -302,15 +304,15 @@ Available `shadowColor` values are: `blue`, `red`, `green`, `yellow`, `purple`, 
 ---
 ## Properties
 
-| Prop        | Type               | Description            | Default |
-|:------------|:-------------------|:-----------------------|:--------|
-| color       | `BadgeColor`       | Sets the color         | `blue`  |
-| radius      | `BadgeRadius`      | Sets the border radius | `md`    |
-| shadow      | `BadgeShadow`      | Sets the shadow size   | `none`  |
-| shadowColor | `BadgeShadowColor` | Sets the shadow color  | `none`  |
-| size        | `BadgeSize`        | Sets the badge size    | `sm`    |
-| tone        | `BadgeTone`        | Sets the badge tone    | `solid` |
-| variant     | `BadgeVariants`    | Sets the badge variant | `true`  |
+| Prop        | Type               | Description            | Default  |
+|:------------|:-------------------|:-----------------------|:---------|
+| color       | `BadgeColor`       | Sets the color         | `purple` |
+| radius      | `BadgeRadius`      | Sets the border radius | `md`     |
+| shadow      | `BadgeShadow`      | Sets the shadow size   | `none`   |
+| shadowColor | `BadgeShadowColor` | Sets the shadow color  | `none`   |
+| size        | `BadgeSize`        | Sets the badge size    | `sm`     |
+| tone        | `BadgeTone`        | Sets the badge tone    | `solid`  |
+| variant     | `BadgeVariant`     | Sets the badge variant | `true`   |
 
 ## Types
 
@@ -354,11 +356,11 @@ type BadgeSize = 'xs' | 'sm' | 'md' | 'lg';
 ```
 
 ```tsx
-type BadgeTone = 'solid' | 'light' | 'outline';
+type BadgeTone = 'solid' | 'light' | 'glossy' | 'outline';
 ```
 
 ```tsx
-type BadgeVariants =
+type BadgeVariant =
   | 'primary'
   | 'secondary'
   | 'danger'

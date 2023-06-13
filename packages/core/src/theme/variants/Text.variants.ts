@@ -1,7 +1,7 @@
-import { TextProps, TextVariants } from '@components/Text';
+import { TextProps, TextVariant } from '@components/Text';
 import { AsProp } from '../../types/polymorphic.types';
 
-export const textVariants: Record<TextVariants, TextProps & AsProp<any>> = {
+export const textVariants: Record<TextVariant, TextProps & AsProp<any>> = {
   d1: {
     size: '9xl',
     weight: 'light',

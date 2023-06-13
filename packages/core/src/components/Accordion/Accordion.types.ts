@@ -21,7 +21,7 @@ export type AccordionShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type AccordionShadowColor = 'none' | 'gray' | 'slate' | 'zinc';
 export type AccordionSize = 'sm' | 'md' | 'lg' | 'xl';
 export type AccordionTone = 'solid' | 'light';
-export type AccordionVariants = 'primary';
+export type AccordionVariant = 'primary';
 
 export interface AccordionContext {
   activeColor?: AccordionActiveColor;
@@ -45,7 +45,7 @@ export interface AccordionProps extends ComponentPropsWithRef<'div'> {
   shadowColor?: AccordionShadowColor;
   size?: AccordionSize;
   tone?: AccordionTone;
-  variant?: AccordionVariants;
+  variant?: AccordionVariant;
   withRing?: boolean;
 }
 

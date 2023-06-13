@@ -136,10 +136,10 @@ const body = cva([], {
 const header = cva(['flex', 'flex-row', 'justify-between', 'items-center'], {
   variants: {
     size: {
-      sm: ['px-4', 'py-3', 'text-sm', 'max-h-[70px]'],
-      base: ['px-5', 'py-4', 'text-base', 'max-h-[70px]'],
-      md: ['px-6', 'py-5', 'text-md', 'max-h-[70px]'],
-      lg: ['px-7', 'py-6', 'text-lg', 'max-h-[70px]'],
+      sm: ['p-4', 'text-sm'],
+      base: ['p-5', 'text-base'],
+      md: ['p-6', 'text-md'],
+      lg: ['p-7', 'text-lg'],
     },
     radius: {
       none: ['rounded-t-none'],
@@ -154,10 +154,10 @@ const header = cva(['flex', 'flex-row', 'justify-between', 'items-center'], {
 const footer = cva(['flex', 'items-center'], {
   variants: {
     size: {
-      sm: ['px-4', 'py-3', 'text-sm', 'max-h-[70px]'],
-      base: ['px-5', 'py-4', 'text-base', 'max-h-[70px]'],
-      md: ['px-6', 'py-5', 'text-md', 'max-h-[70px]'],
-      lg: ['px-7', 'py-6', 'text-lg', 'max-h-[70px]'],
+      sm: ['p-4', 'text-sm'],
+      base: ['p-5', 'text-base'],
+      md: ['p-6', 'text-md'],
+      lg: ['p-7', 'text-lg'],
     },
     radius: {
       none: ['rounded-b-none'],

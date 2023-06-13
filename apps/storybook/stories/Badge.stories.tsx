@@ -6,13 +6,13 @@ import {
   BadgeShadow,
   BadgeSize,
   BadgeTone,
-  BadgeVariants,
+  BadgeVariant,
 } from '@rewind-ui/core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 
-const variants: BadgeVariants[] = ['primary', 'secondary', 'danger', 'success', 'warning', 'info'];
+const variants: BadgeVariant[] = ['primary', 'secondary', 'danger', 'success', 'warning', 'info'];
 
 const colors: BadgeColor[] = [
   'white',

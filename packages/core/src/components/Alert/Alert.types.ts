@@ -26,7 +26,7 @@ export type AlertShadowColor =
   | 'black';
 export type AlertSize = 'xs' | 'sm' | 'md' | 'lg';
 export type AlertTone = 'solid' | 'light' | 'outline';
-export type AlertVariants =
+export type AlertVariant =
   | 'primary'
   | 'secondary'
   | 'tertiary'
@@ -47,7 +47,7 @@ export interface AlertProps extends ComponentPropsWithRef<'div'> {
   size?: AlertSize;
   title?: string;
   tone?: AlertTone;
-  variant?: AlertVariants;
+  variant?: AlertVariant;
 }
 
 export type AlertComponent = ForwardRefExoticComponent<AlertProps> & {

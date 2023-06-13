@@ -5,7 +5,7 @@ import {
   TextProps,
   TextSize,
   TextTracking,
-  TextVariants,
+  TextVariant,
   TextWeight,
 } from '@rewind-ui/core';
 import * as React from 'react';
@@ -54,7 +54,7 @@ const sizes: TextSize[] = [
   '8xl',
   '9xl',
 ];
-const variants: TextVariants[] = ['d1', 'd2', 'd3', 'd4', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
+const variants: TextVariant[] = ['d1', 'd2', 'd3', 'd4', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
 const leadings: TextLeading[] = [
   '3',
   '4',

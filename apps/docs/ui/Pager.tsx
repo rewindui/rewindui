@@ -99,6 +99,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'badge',
     },
     {
+      title: 'Ribbon',
+      url: '/components/ribbon',
+      slug: 'ribbon',
+    },
+    {
       title: 'Card',
       url: '/components/card',
       slug: 'card',
