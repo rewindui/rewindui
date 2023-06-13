@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.7.2
+
+### Patch Changes
+
+- 107e894: Floating-ui imports fix
+
 ## 0.7.1
 
 ### Patch Changes

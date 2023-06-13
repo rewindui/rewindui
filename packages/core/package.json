@@ -1,7 +1,7 @@
 {
   "name": "@rewind-ui/core",
   "description": "A React component library for building modern web applications using Tailwind CSS.",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "license": "MIT",
   "author": {
     "name": "Nick Dunas",
