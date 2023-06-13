@@ -366,7 +366,7 @@ This is a basic example of a `Card` component.
     <CardHeader className="font-medium">
       <span>Terms of service</span>
     </CardHeader>
-    <CardBody className="font-light">Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.</CardBody>
+    <CardBody className="text-gray-600">Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.</CardBody>
     <CardFooter className="flex justify-end space-x-2">
       <Button variant="tertiary">Leave</Button>
       <Button variant="primary">Accept</Button>
@@ -380,7 +380,7 @@ This is a basic example of a `Card` component.
     <Card.Header className="font-medium">
       Terms of service
     </Card.Header>
-    <Card.Body className="font-light">
+    <Card.Body className="text-gray-600">
       Welcome to our website. By accessing or using our services, you agree to be bound by the following terms and conditions. If you do not agree to these terms, please do not use our services.
     </Card.Body>
     <Card.Footer className="flex justify-end space-x-2">
@@ -393,16 +393,18 @@ This is a basic example of a `Card` component.
 
 ## Cards with images
 This is an example of a `Card` component showcasing how to use the `Card.Image` component on a travel agency website.
+
 <View>
-  <Card className="max-w-[450px]">
-    <CardImage caption="New York" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+  <Card className="max-w-[450px] relative">
+    <Ribbon size="lg" shadow="base" shadowColor="purple" className="z-20">City tour</Ribbon>
+    <CardImage caption="USA" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <CardBody>
       <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
-          <span className="text-xl text-gray-800 font-medium">Full day city tour</span>
-          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$1,500.00</span>
+          <span className="text-xl text-gray-800 font-semibold">New York</span>
+          <Badge size="sm" color="green" tone="outline">$1,500.00</Badge>
         </div>
-        <span className="text-gray-700">Discover the magic of the city that never sleeps, as our experienced guides lead you through the vibrant streets of New York, showcasing its iconic landmarks, hidden gems and rich history.</span>
+        <span className="text-gray-600">Discover the magic of the city that never sleeps, as our experienced guides lead you through the vibrant streets of New York, showcasing its iconic landmarks, hidden gems and rich history.</span>
       </div>
     </CardBody>
     <CardFooter>
@@ -410,15 +412,16 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
     </CardFooter>
   </Card>
 
-  <Card className="max-w-[450px]">
+  <Card className="max-w-[450px] relative">
+    <Ribbon size="lg" shadow="base" color="green" shadowColor="green" className="z-20">Boat tour</Ribbon>
     <CardImage caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <CardBody>
       <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
-          <span className="text-xl text-gray-800 font-medium">Milos island boat tour</span>
-          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$2,500.00</span>
+          <span className="text-xl text-gray-800 font-semibold">Milos island</span>
+          <Badge size="sm" color="green" tone="outline">$2,500.00</Badge>
         </div>
-        <span className="text-gray-700">Discover the stunning beauty of Milos Island on our unforgettable boat tour. Let our experienced captain take you on a journey to explore the crystal-clear waters of this idyllic Greek island.</span>
+        <span className="text-gray-600">Discover the stunning beauty of Milos Island on our unforgettable boat tour. Let our experienced captain take you on a journey to explore the crystal-clear waters of this idyllic Greek island.</span>
       </div>
     </CardBody>
     <CardFooter>
@@ -429,15 +432,16 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
 
 ```tsx
 <View>
-  <Card className="max-w-[450px]">
-    <Card.Image caption="New york" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+  <Card className="max-w-[450px] relative">
+    <Ribbon size="lg" shadow="base" shadowColor="purple" className="z-20">City tour</Ribbon>
+    <Card.Image caption="USA" mode="dark" src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
     <Card.Body>
       <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
-          <span className="text-xl text-gray-800 font-medium">Full day city tour</span>
-          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$1,500.00</span>
+          <span className="text-xl text-gray-800 font-semibold">New York</span>
+          <Badge size="sm" color="green" tone="outline">$1,500.00</Badge>
         </div>
-        <span className="text-gray-700">Discover the magic of the city that never sleeps, as our experienced guides lead you through the vibrant streets of New York, showcasing its iconic landmarks, hidden gems and rich history.</span>
+        <span className="text-gray-600">Discover the magic of the city that never sleeps, as our experienced guides lead you through the vibrant streets of New York, showcasing its iconic landmarks, hidden gems and rich history.</span>
       </div>
     </Card.Body>
     <Card.Footer>
@@ -445,20 +449,21 @@ This is an example of a `Card` component showcasing how to use the `Card.Image` 
     </Card.Footer>
   </Card>
 
-  <Card className="max-w-[450px]">
-    <Card.Image caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
-    <Card.Body>
+  <Card className="max-w-[450px] relative">
+    <Ribbon size="lg" shadow="base" color="green" shadowColor="green" className="z-20">Boat tour</Ribbon>
+    <CardImage caption="Greece" mode="dark" src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=450&h=250&q=80" />
+    <CardBody>
       <div className="flex flex-col space-y-2">
         <div className="flex justify-between items-center">
-          <span className="text-xl text-gray-800 font-medium">Milos island boat tour</span>
-          <span className="px-1 py-0.5 rounded bg-teal-200 text-teal-700 shadow-sm text-sm">$2,500.00</span>
+          <span className="text-xl text-gray-800 font-semibold">Milos island</span>
+          <Badge size="sm" color="green" tone="outline">$2,500.00</Badge>
         </div>
-        <span className="text-gray-700">Discover the stunning beauty of Milos Island on our unforgettable boat tour. Let our experienced captain take you on a journey to explore the crystal-clear waters of this idyllic Greek island.</span>
+        <span className="text-gray-600">Discover the stunning beauty of Milos Island on our unforgettable boat tour. Let our experienced captain take you on a journey to explore the crystal-clear waters of this idyllic Greek island.</span>
       </div>
-    </Card.Body>
-    <Card.Footer>
+    </CardBody>
+    <CardFooter>
       <Button className="w-full" color="black">Book now!</Button>
-    </Card.Footer>
+    </CardFooter>
   </Card>
 </View>
 ```

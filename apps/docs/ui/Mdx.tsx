@@ -45,6 +45,7 @@ import {
   Switch,
   FormControl,
   Table,
+  Ribbon,
 } from '@rewind-ui/core';
 import { View } from './View';
 import {
@@ -145,6 +146,7 @@ const components = {
   Select: ({ ...props }) => <Select {...props} />,
   Radio: ({ ...props }) => <Radio {...props} />,
   RadioGroup: ({ name, ...props }) => <RadioGroup name={name} {...props} />,
+  Ribbon: ({ ...props }) => <Ribbon {...props} />,
   Switch: ({ ...props }) => <Switch {...props} />,
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />
