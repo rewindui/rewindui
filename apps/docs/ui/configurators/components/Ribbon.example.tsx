@@ -61,7 +61,7 @@ export const RibbonExample = (props: RibbonProps) => {
           <span className="text-gray-500 font-normal">Start your 7-days trial period</span>
         </div>
       </Card.Header>
-      <Card.Body className="min-w-[400px]">
+      <Card.Body className="min-w-[300px] md:min-w-[400px]">
         <div className="flex flex-col space-y-4">
           <FormControl>
             <FormControl.Label className="text-gray-700">Full name</FormControl.Label>

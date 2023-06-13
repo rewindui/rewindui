@@ -41,7 +41,7 @@ const Template = (props) => {
     props.position === 'left' || props.position === 'top-left' ? 'ml-auto' : 'mr-auto';
 
   return (
-    <Card className="min-w-[350px]">
+    <Card className="min-w-[300px]">
       <Card.Header className="relative">
         <Ribbon {...props}>{label}</Ribbon>
         <span className={className}>This is just a Card</span>
