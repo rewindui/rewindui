@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.8.0
+
+### Minor Changes
+
+- ddc1288: Ribbon component added
+
 ## 0.7.3
 
 ### Patch Changes
