@@ -13,7 +13,7 @@ export const ModalConfig = {
     position: 'top',
     radius: 'md',
     shadow: 'base',
-    size: 'sm',
+    size: 'md',
   },
   options: [
     {

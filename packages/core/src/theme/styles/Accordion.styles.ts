@@ -46,7 +46,7 @@ const base = cva([], {
   },
 });
 
-const body = cva(['font-light'], {
+const body = cva([], {
   variants: {
     size: {
       sm: ['text-sm', 'px-4', 'py-2'],
