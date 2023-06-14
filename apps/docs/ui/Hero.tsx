@@ -67,7 +67,7 @@ export const Hero = () => {
               </a>
             </div>
 
-            <div onClick={handleCopy} className="flex group items-center cursor-copy">
+            <div onClick={handleCopy} className="flex group items-center cursor-copy relative">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="fill-slate-600 mr-2"
@@ -80,8 +80,10 @@ export const Hero = () => {
                   d="M224 448c0-17.7 14.3-32 32-32H544c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32z"
                 />
               </svg>
-              <span className="text-slate-600">npm install @rewind-ui/core</span>
-              <span className="invisible group-hover:visible ml-2">
+              <span className="text-slate-500 group-hover:text-slate-600 transition-colors">
+                npm install @rewind-ui/core
+              </span>
+              <span className="invisible group-hover:visible ml-2 absolute -right-6">
                 {copying ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
