@@ -29,7 +29,7 @@ export const Hero = () => {
             Expressive, variant driven styling and configuration
           </h2>
 
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-3">
             <div className="flex flex-wrap md:flex-row justify-center items-center mx-auto gap-4">
               <Link
                 href="/introduction"
@@ -53,7 +53,7 @@ export const Hero = () => {
               <a
                 href="https://github.com/rewindui/rewindui"
                 target="_blank"
-                className="bg-gradient-to-r from-gray-700 to-black text-sm flex space-x-2 items-center border border-gray-200 text-gray-600 py-3 px-5 rounded-lg shadow-lg shadow-neutral-100/75"
+                className="bg-gradient-to-r from-gray-700 to-black text-sm flex space-x-2 items-center border border-gray-900 text-gray-600 py-3 px-5 rounded-lg shadow-lg shadow-gray-400/75"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
