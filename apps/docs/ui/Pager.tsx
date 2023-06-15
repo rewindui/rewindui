@@ -55,8 +55,8 @@ export const Pager = (props: PagerProps) => {
   const collection: CollectionItem[] = [
     {
       title: 'Introduction',
-      url: '/',
-      slug: '',
+      url: '/introduction',
+      slug: 'introduction',
     },
     {
       title: 'Theming',
