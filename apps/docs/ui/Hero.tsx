@@ -17,7 +17,7 @@ export const Hero = () => {
     <div className="flex flex-wrap md:flex-row items-center overflow-hidden">
       <div className="w-full xl:w-1/2 mx-auto intent-y-0 flex items-center py-20 h-full">
         <div className="w-full flex flex-col gap-8 p-2">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl text-slate-700 font-black flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl text-slate-700 font-black flex flex-col items-center">
             <span>A fully customizable</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-sky-500">
               React-TailwindCSS
@@ -25,7 +25,7 @@ export const Hero = () => {
             <span>component library</span>
           </h1>
 
-          <h2 className="md:text-2xl text-slate-600 text-center">
+          <h2 className="text-lg md:text-2xl text-slate-600 text-center">
             Expressive, variant driven styling and configuration
           </h2>
 
@@ -110,7 +110,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative w-full xl:w-1/2 pt-4">
-        <div className="absolute bottom-0 h-[15rem] w-full z-40 bg-gradient-to-t from-neutral-900"></div>
+        <div className="absolute bottom-0 h-[10rem] w-full z-40 bg-gradient-to-t from-neutral-900"></div>
         <div className="flex md:items-end -top-10 left-6 md:-left-40 md:bottom-32 absolute">
           <span className="italic text-slate-600">Give it a go</span>
           <img
