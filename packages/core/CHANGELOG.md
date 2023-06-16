@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.8.1
+
+### Patch Changes
+
+- b63bf6f: Added controlled state to combobox
+
 ## 0.8.0
 
 ### Minor Changes
