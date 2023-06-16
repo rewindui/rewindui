@@ -15,30 +15,21 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
     const { value, label, description, media } = props;
     const disabled = !!props.disabled;
     const id = usePropId(props.id);
-    const {
-      color,
-      size,
-      mode,
-      radius,
-      search,
-      selectedValue,
-      setSelectedValue,
-      selectedLabel,
-      setSelectedLabel,
-    } = useComboboxContext();
+    const { color, size, mode, radius, search, selectedValue, setSelectedValue, setSelectedLabel } =
+      useComboboxContext();
     const normalizedSearch = textNormalize(search || '');
     const normalizedLabel = textNormalize(label || '');
     const normalizedDescription = textNormalize(description || '');
     const hidden =
       !normalizedLabel.includes(normalizedSearch) &&
       !normalizedDescription.includes(normalizedSearch);
+    const selected = selectedValue === value && !disabled;
 
     useEffect(() => {
-      if (selectedValue === value && !disabled && !selectedLabel) {
+      if (selectedValue === value && !disabled) {
         setSelectedLabel(label);
       }
-    }, []);
-    const selected = selectedValue === value && !disabled;
+    }, [selectedValue]);
 
     return (
       <button

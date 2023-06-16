@@ -73,6 +73,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       tone,
       validation,
       withRing,
+      value,
       ...additionalProps
     } = {
       ...defaultProps,
@@ -145,6 +146,10 @@ const _Combobox: ComboboxComponent = forwardRef(
 
       mounted.current = false;
     }, [selectedValue]);
+
+    useEffect(() => {
+      setSelectedValue(value);
+    }, [value]);
 
     useEffect(() => {
       if (open) {

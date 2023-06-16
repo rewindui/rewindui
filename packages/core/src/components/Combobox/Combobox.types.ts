@@ -36,6 +36,7 @@ export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onCha
   size?: ComboboxSize;
   tone?: ComboboxTone;
   validation?: ComboboxValidation;
+  value?: string | null | undefined;
   withRing?: boolean;
 }
 

@@ -14,7 +14,9 @@ import {
   Image,
   InputGroup,
   FormControl,
+  Button,
 } from '@rewind-ui/core';
+import { useState } from 'react';
 import * as React from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 
@@ -40,7 +42,8 @@ export type ComboboxShowcaseProps = {
     | 'option-description'
     | 'option-media'
     | 'input-group'
-    | 'form-control';
+    | 'form-control'
+    | 'controlled';
 };
 
 export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
@@ -68,6 +71,7 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
     'option-media': <OptionMedia />,
     'input-group': <InputGroupCombobox />,
     'form-control': <FormControlCombobox />,
+    controlled: <Controlled />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -463,6 +467,22 @@ const Searchable = () => {
     <>
       <Template searchable={true} />
       <Template searchable={false} />
+    </>
+  );
+};
+
+const Controlled = () => {
+  const [value, setValue] = useState<string | null | undefined>(null);
+
+  return (
+    <>
+      <div className="flex w-full gap-2">
+        <Button onClick={() => setValue('1')}>Germany</Button>
+        <Button onClick={() => setValue('2')}>Great Britain</Button>
+        <Button onClick={() => setValue('3')}>Greece</Button>
+      </div>
+
+      <Template value={value} onChange={(newValue) => setValue(newValue)} />
     </>
   );
 };

@@ -390,6 +390,34 @@ The `Combobox` component can be made searchable by setting the `searchable` prop
 </View>
 ```
 
+# Controlled state
+---
+The `Combobox` component state can be controlled by setting the `value` and `onChange` props.
+
+<View>
+  <ComboboxShowcase showcase="controlled" />
+</View>
+
+```tsx
+const ControlledComponent = () => {
+  const [value, setValue] = useState<string | null | undefined>(null);
+
+  return (
+    <>
+      <div className="flex w-full gap-2">
+        <Button onClick={() => setValue('1')}>Germany</Button>
+        <Button onClick={() => setValue('2')}>Great Britain</Button>
+        <Button onClick={() => setValue('3')}>Greece</Button>
+      </div>
+
+      <Combobox value={value} onChange={(newValue) => setValue(newValue)}>
+        // ...
+      </Combobox>
+    </>
+  );
+};
+```
+
 # Groups
 ---
 The `Combobox.Option` components can be grouped using the `Combobox.Group` component.
@@ -481,6 +509,7 @@ An image can be added to the `Combobox.Option` component by setting the `media` 
 | size          | `ComboboxSize`       | Sets the combobox size                             | `md`        |
 | tone          | `ComboboxTone`       | Sets the combobox tone                             | `light`     |
 | validation    | `ComboboxValidation` | Sets the validation state                          | `none`      |
+| value         | `string`             | Sets the controlled state value                    | `undefined` |
 | withRing      | `boolean`            | Shows a ring around the combobox on active state   | `true`      |
 
 ### Combobox.Group

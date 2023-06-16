@@ -9,9 +9,11 @@ import {
   ComboboxShadow,
   ComboboxValidation,
   ComboboxGroupType,
+  Button,
 } from '@rewind-ui/core';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Meta, Story } from '@storybook/react';
+import { useState } from 'react';
 import * as React from 'react';
 
 const tones: ComboboxTone[] = ['light', 'solid', 'transparent'];
@@ -236,28 +238,36 @@ const meta: Meta = {
 export default meta;
 
 const DefaultTemplate: Story<ComboboxProps> = (args) => {
+  const [value, setValue] = useState<string | null>('1');
+
   return (
-    <Combobox
-      {...args}
-      leftIcon={<MagnifyingGlass />}
-      placeholder="Select a country..."
-      initialValue="1"
-    >
-      {options.map((group, index) => (
-        <Combobox.Group heading={group.heading} key={index}>
-          {group.options.map((option) => (
-            <Combobox.Option
-              key={option.value}
-              value={option.value}
-              label={option.label}
-              description={option.description}
-              disabled={option.disabled}
-              media={option.media}
-            />
-          ))}
-        </Combobox.Group>
-      ))}
-    </Combobox>
+    <>
+      <Button onClick={() => setValue('1')}>Select Germany</Button>
+      <Button onClick={() => setValue('2')}>Select Great Britain</Button>
+      <Button onClick={() => setValue('3')}>Select Greece</Button>
+
+      <Combobox
+        {...args}
+        leftIcon={<MagnifyingGlass />}
+        placeholder="Select a country..."
+        value={value}
+      >
+        {options.map((group, index) => (
+          <Combobox.Group heading={group.heading} key={index}>
+            {group.options.map((option) => (
+              <Combobox.Option
+                key={option.value}
+                value={option.value}
+                label={option.label}
+                description={option.description}
+                disabled={option.disabled}
+                media={option.media}
+              />
+            ))}
+          </Combobox.Group>
+        ))}
+      </Combobox>
+    </>
   );
 };
 
