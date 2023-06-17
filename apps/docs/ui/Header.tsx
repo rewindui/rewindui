@@ -61,6 +61,16 @@ export const Header = () => {
               />
             </SocialLink>
 
+            <SocialLink href="https://twitter.com/rewindui">
+              <Image
+                priority
+                src="/images/twitter.svg"
+                height={18}
+                width={18}
+                alt="Follow us on Twitter!"
+              />
+            </SocialLink>
+
             <SocialLink href="https://storybook.rewind-ui.dev/">
               <Image
                 priority
