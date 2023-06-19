@@ -1,5 +1,14 @@
 ![Rewind-UI, Effortless user interfaces](https://rewind-ui.dev/images/og.jpg)
 
+<div align="center">
+
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/rewindui/rewindui/blob/main/LICENSE)
+[![npm latest package](https://img.shields.io/npm/v/@rewind-ui/core/latest.svg)](https://www.npmjs.com/package/@rewind-ui/core)
+[![npm downloads](https://img.shields.io/npm/dm/@rewind-ui/core.svg)](https://www.npmjs.com/package/@rewind-ui/core)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/rewindui.svg?label=follow+@rewindui)](https://twitter.com/rewindui)
+
+</div>
+
 # Introduction
 Built specifically for use with [React](https://react.dev) and [Tailwind CSS](https://tailwindcss.com/), Rewind-UI offers a range of accessible, highly customizable components that can be easily integrated into any react project. Rewind-UI comes with a set of default styles that can be [easily customized](https://rewind-ui.dev/theming) using Tailwind CSS classes. Furthermore, each component can be parameterized using a set of props that can be used to change the default styles of the component.
 
