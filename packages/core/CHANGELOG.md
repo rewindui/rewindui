@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.9.0
+
+### Minor Changes
+
+- 7ea068d: Added use client directive
+
 ## 0.8.1
 
 ### Patch Changes
