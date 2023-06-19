@@ -1,3 +1,4 @@
+'use client';
 import { OverlayComponent, OverlayProps } from '@components/Overlay/Overlay.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';

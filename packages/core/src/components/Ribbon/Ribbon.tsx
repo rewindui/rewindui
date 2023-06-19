@@ -1,3 +1,4 @@
+'use client';
 import { RibbonComponent, RibbonProps } from '@components/Ribbon/Ribbon.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';

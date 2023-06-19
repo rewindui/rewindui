@@ -1,3 +1,4 @@
+'use client';
 import { useFormControlContext } from '@components/FormControl/FormControl.context';
 import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { SelectComponent, SelectProps } from '@components/Select/Select.types';

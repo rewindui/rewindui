@@ -1,3 +1,4 @@
+'use client';
 import { createContext, ReactNode, useContext } from 'react';
 
 export function createIndependentContext<ContextValue>() {

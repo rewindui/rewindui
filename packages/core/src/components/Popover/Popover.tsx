@@ -1,3 +1,4 @@
+'use client';
 import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { PopoverComponent, PopoverContext, PopoverProps } from '@components/Popover/Popover.types';
 import { PopoverContent } from '@components/Popover/PopoverContent/PopoverContent';

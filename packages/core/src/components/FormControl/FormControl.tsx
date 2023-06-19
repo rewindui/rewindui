@@ -1,3 +1,4 @@
+'use client';
 import { Combobox } from '@components/Combobox';
 import {
   FormControlComponent,

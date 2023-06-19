@@ -1,3 +1,4 @@
+'use client';
 import { ModalComponent, ModalProps } from '@components/Modal/Modal.types';
 import { ModalGroup } from '@components/Modal/ModalGroup/ModalGroup';
 import { useModalGroupContext } from '@components/Modal/ModalGroup/ModalGroup.context';

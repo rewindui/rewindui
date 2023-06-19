@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@components/Button';
 import { Combobox } from '@components/Combobox';
 import { useFormControlContext } from '@components/FormControl/FormControl.context';

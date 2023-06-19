@@ -1,3 +1,4 @@
+'use client';
 import { BadgeComponent, BadgeProps } from '@components/Badge/Badge.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';

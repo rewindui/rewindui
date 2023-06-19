@@ -60,6 +60,7 @@
     "rollup": "^3.21.3",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-preserve-directives": "^0.2.0",
     "rollup-plugin-typescript-paths": "^1.4.0",
     "tsc-alias": "^1.8.6",
     "tslib": "^2.5.0",

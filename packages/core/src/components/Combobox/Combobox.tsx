@@ -1,3 +1,4 @@
+'use client';
 import {
   ComboboxComponent,
   ComboboxContext,
@@ -72,8 +73,8 @@ const _Combobox: ComboboxComponent = forwardRef(
       size,
       tone,
       validation,
-      withRing,
       value,
+      withRing,
       ...additionalProps
     } = {
       ...defaultProps,

@@ -1,3 +1,4 @@
+'use client';
 import { ImageComponent, ImageProps } from '@components/Image/Image.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';

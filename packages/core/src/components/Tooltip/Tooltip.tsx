@@ -1,3 +1,4 @@
+'use client';
 import { TooltipComponent, TooltipProps } from '@components/Tooltip/Tooltip.types';
 import { useTooltip } from '@components/Tooltip/use-tooltip.hook';
 import { FloatingArrow, FloatingPortal } from '@floating-ui/react';

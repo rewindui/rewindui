@@ -7,6 +7,7 @@ import { exec } from 'child_process';
 import copy from 'rollup-plugin-copy';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
+import preserveDirectives from 'rollup-plugin-preserve-directives';
 
 const outputOptions = {
   sourcemap: false,
@@ -68,11 +69,17 @@ export default [
         exclude: ['**/stories/**', '**/tests/**', './styles.css'],
       }),
       typescriptPaths(),
-      terser(),
+      preserveDirectives(),
+      terser({ compress: { directives: false } }),
       copy({
         targets: [{ src: './../../README.md', dest: 'dist' }],
       }),
       tscAlias(),
     ],
+    onwarn(warning, warn) {
+      if (warning.code !== 'MODULE_LEVEL_DIRECTIVE') {
+        warn(warning);
+      }
+    },
   },
 ];

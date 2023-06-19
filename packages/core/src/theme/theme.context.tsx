@@ -1,3 +1,4 @@
+'use client';
 import * as styles from './styles';
 import { createContext, Provider, useContext } from 'react';
 

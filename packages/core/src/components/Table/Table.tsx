@@ -1,3 +1,4 @@
+'use client';
 import { TableContextProvider } from '@components/Table/Table.context';
 import { TableComponent, TableContext, TableProps } from '@components/Table/Table.types';
 import { Tbody } from '@components/Table/Tbody/Tbody';

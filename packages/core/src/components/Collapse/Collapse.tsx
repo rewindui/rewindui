@@ -1,3 +1,4 @@
+'use client';
 import { CollapseProps } from '@components/Collapse/Collapse.types';
 import { useEffect, useRef } from 'react';
 

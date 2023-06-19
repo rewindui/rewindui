@@ -1,3 +1,4 @@
+'use client';
 import { Tab } from '@components/Tabs/Tab';
 import { TabContent } from '@components/Tabs/TabContent';
 import { TabList } from '@components/Tabs/TabList';

@@ -1,3 +1,4 @@
+'use client';
 import { FaderProps } from '@components/Fader/Fader.types';
 import { forwardRef, Ref, useEffect, useRef, useState } from 'react';
 import { useMergeRefs } from '@floating-ui/react';

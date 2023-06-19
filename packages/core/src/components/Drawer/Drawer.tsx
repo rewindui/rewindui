@@ -1,3 +1,4 @@
+'use client';
 import { DrawerComponent, DrawerProps } from '@components/Drawer/Drawer.types';
 import { FloatingPortal, useMergeRefs } from '@floating-ui/react';
 import { useFocusTrap } from '@hooks/use-focus-trap.hook';

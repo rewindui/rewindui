@@ -1,3 +1,4 @@
+'use client';
 import { RadioComponent, RadioProps } from '@components/Radio';
 import { useRadioGroupContext } from '@components/Radio/RadioGroup.context';
 import { useComponentTheme } from '@theme/theme.context';

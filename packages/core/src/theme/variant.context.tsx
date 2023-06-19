@@ -1,3 +1,4 @@
+'use client';
 import { accordionVariants } from '@theme/variants/Accordion.variants';
 import { alertVariants } from '@theme/variants/Alert.variants';
 import { buttonVariants } from '@theme/variants/Button.variants';

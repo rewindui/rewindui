@@ -1,3 +1,4 @@
+'use client';
 import { CheckboxComponent, CheckboxProps } from '@components/Checkbox';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';

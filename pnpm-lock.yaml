@@ -138,6 +138,7 @@ importers:
       rollup: ^3.21.3
       rollup-plugin-copy: ^3.4.0
       rollup-plugin-peer-deps-external: ^2.2.4
+      rollup-plugin-preserve-directives: ^0.2.0
       rollup-plugin-typescript-paths: ^1.4.0
       tailwind-merge: ^1.10.0
       tailwind-scrollbar: ^2.0.1
@@ -162,7 +163,7 @@ importers:
       '@types/react': 18.2.0
       '@types/react-dom': 18.2.1
       eslint: 8.39.0
-      eslint-config-next: 13.4.5_tbtvr3a5zwdiktqy4vlmx63mqq
+      eslint-config-next: 13.4.6_tbtvr3a5zwdiktqy4vlmx63mqq
       eslint-config-prettier: 8.8.0_eslint@8.39.0
       eslint-config-turbo: 1.10.3_eslint@8.39.0
       eslint-plugin-react: 7.29.4_eslint@8.39.0
@@ -172,6 +173,7 @@ importers:
       rollup: 3.21.3
       rollup-plugin-copy: 3.4.0
       rollup-plugin-peer-deps-external: 2.2.4_rollup@3.21.3
+      rollup-plugin-preserve-directives: 0.2.0_rollup@3.21.3
       rollup-plugin-typescript-paths: 1.4.0_typescript@4.9.5
       tsc-alias: 1.8.6
       tslib: 2.5.0
@@ -2843,8 +2845,8 @@ packages:
       glob: 7.1.7
     dev: false
 
-  /@next/eslint-plugin-next/13.4.5:
-    resolution: {integrity: sha512-/xD/kyJhXmBZq+0xGKOdjL22c9/4i3mBAXaU9aOGEHTXqqFeOz8scJbScWF13aMqigeoFCsDqngIB2MIatcn4g==}
+  /@next/eslint-plugin-next/13.4.6:
+    resolution: {integrity: sha512-bPigeu0RI7bgy1ucBA2Yqcfg539y0Lzo38P2hIkrRB1GNvFSbYg6RTu8n6tGqPVrH3TTlPTNKLXG01wc+5NuwQ==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -8211,8 +8213,8 @@ packages:
       - supports-color
     dev: false
 
-  /eslint-config-next/13.4.5_tbtvr3a5zwdiktqy4vlmx63mqq:
-    resolution: {integrity: sha512-7qgJmRp9ClRzPgkzEz7ahK+Rasiv4k2aU3eqkkORzseNUGdtImZVYomcXUhUheHwkxzdN2p//nbIA7zJrCxsCg==}
+  /eslint-config-next/13.4.6_tbtvr3a5zwdiktqy4vlmx63mqq:
+    resolution: {integrity: sha512-nlv4FYish1RYYHILbQwM5/rD37cOvEqtMfDjtQCYbXdE2O3MggqHu2q6IDeLE2Z6u8ZJyNPgWOA6OimWcxj3qw==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -8220,7 +8222,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 13.4.5
+      '@next/eslint-plugin-next': 13.4.6
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/parser': 5.59.2_tbtvr3a5zwdiktqy4vlmx63mqq
       eslint: 8.39.0
@@ -11135,6 +11137,13 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
+  /magic-string/0.30.0:
+    resolution: {integrity: sha512-LA+31JYDJLs82r2ScLrlz1GjSgu66ZV518eyWT+S8VhyQn/JL0u9MeBOvQMGYiPk1DBiSN9DDMOcXvigJZaViQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
   /make-dir/2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
     engines: {node: '>=6'}
@@ -14044,6 +14053,15 @@ packages:
     peerDependencies:
       rollup: '*'
     dependencies:
+      rollup: 3.21.3
+    dev: true
+
+  /rollup-plugin-preserve-directives/0.2.0_rollup@3.21.3:
+    resolution: {integrity: sha512-KUwbBaFvD1zFIDNnOkR+u64sSod3m0l6q46/SzTOa4GTQ6hp6w0FRr2u7x99YkY9qhlna5panmTmuLWeJ/2KWw==}
+    peerDependencies:
+      rollup: 2.x || 3.x
+    dependencies:
+      magic-string: 0.30.0
       rollup: 3.21.3
     dev: true
 

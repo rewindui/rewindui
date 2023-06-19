@@ -1,3 +1,4 @@
+'use client';
 import { SwitchComponent, SwitchProps } from '@components/Switch/Switch.types';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';

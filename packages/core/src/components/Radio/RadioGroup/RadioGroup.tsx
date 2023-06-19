@@ -1,3 +1,4 @@
+'use client';
 import { RadioGroupContextProvider } from '@components/Radio/RadioGroup.context';
 import {
   RadioGroupComponent,

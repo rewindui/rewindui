@@ -1,3 +1,4 @@
+'use client';
 import { AlertComponent, AlertProps } from '@components/Alert/Alert.types';
 import { Fader } from '@components/Fader';
 import { useComponentTheme } from '@theme/theme.context';

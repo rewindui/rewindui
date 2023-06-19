@@ -1,3 +1,4 @@
+'use client';
 import { useDropdownContext } from '@components/Dropdown/Dropdown.context';
 import { useInputGroupContext } from '@components/InputGroup/InputGroup.context';
 import { Spinner } from '@components/Spinner';
