@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.9.1
+
+### Patch Changes
+
+- 3e181ee: Adjusted Selector component height to match height of form components (Input, Select)
+
 ## 0.9.0
 
 ### Minor Changes
