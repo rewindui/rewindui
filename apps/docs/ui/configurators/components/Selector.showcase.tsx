@@ -309,7 +309,7 @@ const SeparatorCustom = () => {
       </Selector>
       <Selector
         separator={
-          <span className="last-of-type:hidden self-center mx-1 w-1 h-8 bg-gray-200 rounded-full" />
+          <span className="last-of-type:hidden self-center mx-1 w-1 h-6 bg-gray-200 rounded-full" />
         }
         orientation="horizontal"
         value="1"

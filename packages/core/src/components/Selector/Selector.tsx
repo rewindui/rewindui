@@ -2,7 +2,9 @@
 import {
   SelectorComponent,
   SelectorContext,
+  SelectorOrientation,
   SelectorProps,
+  SelectorSize,
 } from '@components/Selector/Selector.types';
 import { SelectorTab } from '@components/Selector/SelectorTab/SelectorTab';
 import { SelectorTabColor } from '@components/Selector/SelectorTab/SelectorTab.types';
@@ -72,24 +74,50 @@ const _Selector: SelectorComponent = forwardRef(
           orientation,
           radius,
           shadow,
+          size,
         })
       );
-    }, [className, fullWidth, orientation, radius, shadow, theme]);
+    }, [className, fullWidth, orientation, radius, shadow, size, theme]);
     const refsMap: Map<string, HTMLButtonElement> = new Map();
 
     const positionSelector = (
       activeTab: HTMLButtonElement,
       selector: HTMLDivElement,
       value: string,
+      size: SelectorSize | undefined = 'md',
+      orientation: SelectorOrientation | undefined = 'horizontal',
       initialRun: boolean = true
     ) => {
+      const offsetCorrections = {
+        left: {
+          xs: 2,
+          sm: 1.75,
+          md: 3.75,
+          lg: 4,
+        },
+        top: {
+          xs: 2,
+          sm: 2.5,
+          md: 4,
+          lg: 4,
+        },
+      };
       const boundingClientRect = activeTab.getBoundingClientRect();
       const width = boundingClientRect.width;
-      const x = activeTab.offsetLeft - 4;
-      const y = activeTab.offsetTop - 4;
+      const height = boundingClientRect.height;
+      const x = activeTab.offsetLeft - offsetCorrections.left[size];
+      const y = activeTab.offsetTop - offsetCorrections.top[size];
+      console.log(activeTab.getClientRects());
 
       selector.style.setProperty('width', `${width}px`);
-      selector.style.setProperty('transform', `translate(${x}px, ${y}px)`);
+      selector.style.setProperty('height', `${height}px`);
+
+      if (orientation === 'vertical') {
+        selector.style.setProperty('top', `${activeTab.offsetTop}px`);
+      } else {
+        selector.style.setProperty('left', `${activeTab.offsetLeft}px`);
+      }
+      // selector.style.setProperty('transform', `translate(${x}px, ${y}px)`);
       selector.style.setProperty(
         'transition-duration',
         withAnimation && !initialRun ? '150ms' : '0ms'
@@ -120,7 +148,14 @@ const _Selector: SelectorComponent = forwardRef(
         return;
       }
 
-      positionSelector(activeTab, selectorRef.current, activeTabAnchor, mounted.current);
+      positionSelector(
+        activeTab,
+        selectorRef.current,
+        activeTabAnchor,
+        size,
+        orientation,
+        mounted.current
+      );
 
       mounted.current = false;
 
@@ -128,7 +163,14 @@ const _Selector: SelectorComponent = forwardRef(
         if (!selectorRef.current) {
           return;
         }
-        positionSelector(activeTab, selectorRef.current, activeTabAnchor, mounted.current);
+        positionSelector(
+          activeTab,
+          selectorRef.current,
+          activeTabAnchor,
+          size,
+          orientation,
+          mounted.current
+        );
       });
       observer.current.observe(selectorRef.current);
 
@@ -183,7 +225,7 @@ const _Selector: SelectorComponent = forwardRef(
       <SelectorContextProvider value={contextValue}>
         <div id={id} ref={ref} role="radiogroup" className={wrapperClasses} {...additionalProps}>
           {items}
-          <div ref={selectorRef} className={selectorClasses}></div>
+          <div ref={selectorRef} className={selectorClasses} />
         </div>
       </SelectorContextProvider>
     );
