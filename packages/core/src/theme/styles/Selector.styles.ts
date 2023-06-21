@@ -14,10 +14,10 @@ const base = cva(['absolute', 'shadow-sm', 'z-30'], {
       black: [],
     },
     size: {
-      xs: [],
-      sm: [],
-      md: [],
-      lg: [],
+      xs: ['h-6'],
+      sm: ['h-8'],
+      md: ['h-10'],
+      lg: ['h-12'],
     },
     radius: {
       none: ['rounded-none'],
@@ -129,7 +129,7 @@ const base = cva(['absolute', 'shadow-sm', 'z-30'], {
   },
 });
 
-const wrapper = cva(['flex', 'relative', 'bg-gray-50', 'items-center'], {
+const wrapper = cva(['flex', 'relative', 'p-1', 'bg-gray-50'], {
   variants: {
     radius: {
       none: ['rounded-none'],
@@ -147,43 +147,15 @@ const wrapper = cva(['flex', 'relative', 'bg-gray-50', 'items-center'], {
       lg: ['shadow-lg'],
       xl: ['shadow-xl'],
     },
-    size: {
-      xs: ['p-0.5'],
-      sm: ['p-0.5'],
-      md: ['p-[3px]'],
-      lg: ['p-[3px]'],
-    },
     orientation: {
       horizontal: ['flex-inline'],
-      vertical: ['flex-col', 'gap-y-1', 'h-auto'],
+      vertical: ['flex-col', 'gap-y-1'],
     },
     fullWidth: {
-      true: ['w-full', 'gap-x-0.5'],
+      true: ['w-full'],
       false: ['w-fit'],
     },
   },
-  compoundVariants: [
-    {
-      orientation: 'horizontal',
-      size: 'xs',
-      className: ['h-6'],
-    },
-    {
-      orientation: 'horizontal',
-      size: 'sm',
-      className: ['h-8'],
-    },
-    {
-      orientation: 'horizontal',
-      size: 'md',
-      className: ['h-10'],
-    },
-    {
-      orientation: 'horizontal',
-      size: 'lg',
-      className: ['h-12'],
-    },
-  ],
 });
 
 const tab = cva(
@@ -204,10 +176,10 @@ const tab = cva(
   {
     variants: {
       size: {
-        xs: ['text-xs', 'px-1.5'],
-        sm: ['text-sm', 'px-2.5'],
-        md: ['text-base', 'px-3'],
-        lg: ['text-lg', 'px-4'],
+        xs: ['text-xs', 'h-6', 'px-1.5'],
+        sm: ['text-sm', 'h-8', 'px-2.5'],
+        md: ['text-base', 'h-10', 'px-3'],
+        lg: ['text-lg', 'h-12', 'px-4'],
       },
       color: {
         white: ['focus-visible:ring-gray-100'],
@@ -237,31 +209,11 @@ const tab = cva(
         false: ['text-gray-800', 'disabled:text-gray-400', 'hover:disabled:cursor-not-allowed'],
       },
       orientation: {
-        horizontal: ['flex-1', 'h-full'],
+        horizontal: ['flex-1'],
         vertical: ['w-full'],
       },
     },
     compoundVariants: [
-      {
-        size: 'xs',
-        orientation: 'vertical',
-        className: ['h-6'],
-      },
-      {
-        size: 'sm',
-        orientation: 'vertical',
-        className: ['h-8'],
-      },
-      {
-        size: 'md',
-        orientation: 'vertical',
-        className: ['h-10'],
-      },
-      {
-        size: 'lg',
-        orientation: 'vertical',
-        className: ['h-12'],
-      },
       {
         active: true,
         color: ['white'],
@@ -335,58 +287,10 @@ const tab = cva(
 const separator = cva(['last-of-type:hidden', 'text-gray-300', 'mx-0.5', 'self-center'], {
   variants: {
     orientation: {
-      horizontal: ['bg-gray-300'],
-      vertical: ['bg-gray-300'],
-    },
-    size: {
-      xs: [],
-      sm: [],
-      md: [],
-      lg: [],
+      horizontal: ['w-px h-5 rounded-full bg-gray-300'],
+      vertical: ['w-5 h-px rounded-full bg-gray-300'],
     },
   },
-  compoundVariants: [
-    {
-      orientation: 'horizontal',
-      size: 'xs',
-      className: ['w-px h-3'],
-    },
-    {
-      orientation: 'horizontal',
-      size: 'sm',
-      className: ['w-px h-4'],
-    },
-    {
-      orientation: 'horizontal',
-      size: 'md',
-      className: ['w-px h-5'],
-    },
-    {
-      orientation: 'horizontal',
-      size: 'lg',
-      className: ['w-px h-6'],
-    },
-    {
-      orientation: 'vertical',
-      size: 'xs',
-      className: ['w-3 h-px'],
-    },
-    {
-      orientation: 'vertical',
-      size: 'sm',
-      className: ['w-4 h-px'],
-    },
-    {
-      orientation: 'vertical',
-      size: 'md',
-      className: ['w-5 h-px'],
-    },
-    {
-      orientation: 'vertical',
-      size: 'lg',
-      className: ['w-6 h-px'],
-    },
-  ],
 });
 
 const selectorStyles = {
