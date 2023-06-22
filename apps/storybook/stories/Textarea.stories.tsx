@@ -1,6 +1,7 @@
 import {
   Textarea,
   TextareaProps,
+  TextareaColor,
   TextareaRadius,
   TextareaShadow,
   TextareaSize,
@@ -12,6 +13,7 @@ import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 
 const tones: TextareaTone[] = ['light', 'solid', 'transparent'];
+const colors: TextareaColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
 const sizes: TextareaSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: TextareaRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'xl'];
 const validations: TextareaValidation[] = ['none', 'invalid', 'valid', 'warning'];
@@ -21,8 +23,12 @@ const meta: Meta = {
   title: 'Components/Textarea',
   component: Textarea,
   argTypes: {
-    color: {
+    tone: {
       options: tones,
+      control: { type: 'radio' },
+    },
+    color: {
+      options: colors,
       control: { type: 'radio' },
     },
     size: {
@@ -70,6 +76,20 @@ const ToneTemplate: Story<TextareaProps> = (args) => {
 };
 
 export const Tones = ToneTemplate.bind({});
+
+const ColorTemplate: Story<TextareaProps> = (args) => {
+  const items = colors.map((color) => (
+    <React.Fragment key={color}>
+      <View prop="color" value={color}>
+        <Textarea {...args} color={color} placeholder={color} />
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
+};
+
+export const Colors = ColorTemplate.bind({});
 
 const SizeTemplate: Story<TextareaProps> = (args) => {
   const items = sizes.map((size) => (

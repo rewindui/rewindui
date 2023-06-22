@@ -1,5 +1,6 @@
 import {
   Input,
+  InputColor,
   InputProps,
   InputRadius,
   InputShadow,
@@ -14,6 +15,7 @@ import { EnhancedView, View, ViewGroup } from '../components/View';
 import { MagnifyingGlass, Rocket, RocketLaunch } from '@phosphor-icons/react';
 
 const tones: InputTone[] = ['light', 'solid', 'transparent'];
+const colors: InputColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
 const sizes: InputSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: InputRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
 const validations: InputValidation[] = ['none', 'invalid', 'valid', 'warning'];
@@ -36,8 +38,12 @@ const meta: Meta = {
   title: 'Components/Input',
   component: Input,
   argTypes: {
-    color: {
+    tone: {
       options: tones,
+      control: { type: 'radio' },
+    },
+    color: {
+      options: colors,
       control: { type: 'radio' },
     },
     size: {
@@ -96,6 +102,20 @@ const ToneTemplate: Story<InputProps> = (args) => {
 };
 
 export const Tones = ToneTemplate.bind({});
+
+const ColorTemplate: Story<InputProps> = (args) => {
+  const items = colors.map((color) => (
+    <React.Fragment key={color}>
+      <View prop="color" value={color}>
+        <Input {...args} color={color} placeholder={color} />
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
+};
+
+export const Colors = ColorTemplate.bind({});
 
 const SizeTemplate: Story<InputProps> = (args) => {
   const items = sizes.map((size) => (

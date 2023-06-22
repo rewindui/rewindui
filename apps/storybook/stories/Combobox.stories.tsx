@@ -3,6 +3,7 @@ import {
   ComboboxProps,
   Image,
   Text,
+  ComboboxColor,
   ComboboxTone,
   ComboboxSize,
   ComboboxRadius,
@@ -17,6 +18,7 @@ import { useState } from 'react';
 import * as React from 'react';
 
 const tones: ComboboxTone[] = ['light', 'solid', 'transparent'];
+const colors: ComboboxColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
 const sizes: ComboboxSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: ComboboxRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
 const shadows: ComboboxShadow[] = ['none', 'sm', 'base', 'md', 'lg'];
@@ -224,6 +226,30 @@ const meta: Meta = {
   title: 'Components/Combobox',
   component: Combobox,
   argTypes: {
+    tone: {
+      options: tones,
+      control: { type: 'radio' },
+    },
+    color: {
+      options: colors,
+      control: { type: 'radio' },
+    },
+    size: {
+      options: sizes,
+      control: { type: 'radio' },
+    },
+    radius: {
+      options: radiuses,
+      control: { type: 'radio' },
+    },
+    validation: {
+      options: validations,
+      control: { type: 'radio' },
+    },
+    shadow: {
+      options: shadows,
+      control: { type: 'radio' },
+    },
     ref: {
       table: {
         disable: true,
@@ -303,9 +329,39 @@ const ToneTemplate: Story<ComboboxProps> = (args) => {
   return <div className={'flex flex-col space-y-4'}>{items}</div>;
 };
 
-// By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
-// https://storybook.js.org/docs/react/workflows/unit-testing
 export const Tones = ToneTemplate.bind({});
+
+const ColorTemplate: Story<ComboboxProps> = (args) => {
+  const items = colors.map((color) => (
+    <Combobox
+      key={color}
+      color={color}
+      {...args}
+      leftIcon={<MagnifyingGlass />}
+      placeholder="Select a country..."
+      initialValue="1"
+    >
+      {simpleOptions.map((group, index) => (
+        <Combobox.Group heading={group.heading} key={index}>
+          {group.options.map((option) => (
+            <Combobox.Option
+              key={option.value}
+              value={option.value}
+              label={option.label}
+              description={option.description}
+              disabled={option.disabled}
+              media={option.media}
+            />
+          ))}
+        </Combobox.Group>
+      ))}
+    </Combobox>
+  ));
+
+  return <div className={'flex flex-col space-y-4'}>{items}</div>;
+};
+
+export const Colors = ColorTemplate.bind({});
 
 const SizeTemplate: Story<ComboboxProps> = (args) => {
   const items = sizes.map((size) => (

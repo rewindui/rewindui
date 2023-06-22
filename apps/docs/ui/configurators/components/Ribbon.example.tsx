@@ -5,7 +5,7 @@ export const RibbonCode = (props: any) => {
   const { color, position, radius, shadow, shadowColor, size, tone } = props;
 
   const defaultProps = {
-    color: 'purple',
+    color: 'dark',
     position: 'top-right',
     radius: 'base',
     shadow: 'base',

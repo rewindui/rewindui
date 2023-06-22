@@ -5,7 +5,7 @@ export const RadioCode = (props: any) => {
   const { size, color, disabled, description, error, tone, radius, withRing } = props;
 
   const defaultProps = {
-    color: 'purple',
+    color: 'dark',
     disabled: false,
     error: '',
     description: '',

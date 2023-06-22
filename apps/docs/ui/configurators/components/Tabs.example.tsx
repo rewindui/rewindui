@@ -23,7 +23,7 @@ export const TabsCode = (props: any) => {
   const { size, color, fullWidth, tone, method, radius } = props;
 
   const defaultProps: Partial<TabsProps> = {
-    color: 'purple',
+    color: 'dark',
     fullWidth: false,
     method: 'hide',
     radius: 'none',

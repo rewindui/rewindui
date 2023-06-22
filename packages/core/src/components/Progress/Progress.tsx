@@ -10,7 +10,7 @@ import { ForwardedRef, forwardRef, useEffect, useRef } from 'react';
 
 const defaultProps: Partial<ProgressProps> = {
   animated: false,
-  color: 'purple',
+  color: 'dark',
   radius: 'md',
   shadow: 'none',
   showValue: false,

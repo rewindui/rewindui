@@ -4,6 +4,7 @@ export const TextareaConfig = {
   example: TextareaExample,
   default: TextareaCode,
   state: {
+    color: 'dark',
     disabled: false,
     placeholder: 'This is just a placeholder...',
     radius: 'md',
@@ -19,6 +20,12 @@ export const TextareaConfig = {
       name: 'tone',
       type: 'select',
       options: ['solid', 'light', 'transparent'],
+    },
+    {
+      label: 'Color',
+      name: 'color',
+      type: 'color',
+      colors: ['blue', 'purple', 'gray', 'dark', 'black'],
     },
     {
       label: 'Size',

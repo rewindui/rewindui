@@ -4,7 +4,7 @@ export const TabsConfig = {
   example: TabsExample,
   default: TabsCode,
   state: {
-    color: 'purple',
+    color: 'dark',
     fullWidth: false,
     method: 'hide',
     radius: 'none',

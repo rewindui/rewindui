@@ -4,6 +4,7 @@ export const SelectConfig = {
   example: SelectExample,
   default: SelectCode,
   state: {
+    color: 'dark',
     disabled: false,
     radius: 'md',
     shadow: 'none',
@@ -18,6 +19,12 @@ export const SelectConfig = {
       name: 'tone',
       type: 'select',
       options: ['solid', 'light', 'transparent'],
+    },
+    {
+      label: 'Color',
+      name: 'color',
+      type: 'color',
+      colors: ['blue', 'purple', 'gray', 'dark', 'black'],
     },
     {
       label: 'Size',

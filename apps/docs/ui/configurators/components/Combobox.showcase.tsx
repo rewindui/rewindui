@@ -9,12 +9,13 @@ import {
   ComboboxSize,
   ComboboxTone,
   ComboboxValidation,
-  ComboboxColor,
+  ComboboxOptionColor,
   ComboboxGroupProps,
   Image,
   InputGroup,
   FormControl,
   Button,
+  ComboboxColor,
 } from '@rewind-ui/core';
 import { useState } from 'react';
 import * as React from 'react';
@@ -23,6 +24,7 @@ import { MagnifyingGlass } from '@phosphor-icons/react';
 export type ComboboxShowcaseProps = {
   showcase:
     | 'tones'
+    | 'option-colors'
     | 'colors'
     | 'modes'
     | 'sizes'
@@ -51,6 +53,7 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
 
   const components = {
     tones: <Tones />,
+    'option-colors': <OptionColors />,
     colors: <Colors />,
     modes: <Modes />,
     sizes: <Sizes />,
@@ -262,7 +265,7 @@ const groupedOptions: ComboboxGroupType[] = [
 
 const tones: ComboboxTone[] = ['light', 'solid', 'transparent'];
 const modes: ComboboxMode[] = ['tight', 'spacey'];
-const colors: ComboboxColor[] = [
+const optionColors: ComboboxOptionColor[] = [
   'blue',
   'red',
   'green',
@@ -272,6 +275,7 @@ const colors: ComboboxColor[] = [
   'dark',
   'black',
 ];
+const colors: ComboboxColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
 const sizes: ComboboxSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: ComboboxRadius[] = ['none', 'sm', 'base', 'md', 'lg'];
 const shadows: ComboboxShadow[] = ['none', 'sm', 'base', 'md', 'lg'];
@@ -346,6 +350,14 @@ const GroupedTemplate = (args: ComboboxGroupProps) => (
 
 const Tones = () => {
   const items = tones.map((tone: ComboboxTone) => <Template key={tone} tone={tone} />);
+
+  return <>{items}</>;
+};
+
+const OptionColors = () => {
+  const items = optionColors.map((optionColor: ComboboxOptionColor) => (
+    <Template key={optionColor} optionColor={optionColor} />
+  ));
 
   return <>{items}</>;
 };

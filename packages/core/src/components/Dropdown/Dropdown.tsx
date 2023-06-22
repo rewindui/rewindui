@@ -19,7 +19,7 @@ const defaultProps: Partial<DropdownProps> = {
   chevronRotation: true,
   color: 'white',
   initiallyOpen: false,
-  itemColor: 'purple',
+  itemColor: 'gray',
   mode: 'spacey',
   outsidePress: true,
   placement: 'bottom',

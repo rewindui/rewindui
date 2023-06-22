@@ -39,9 +39,9 @@ The `Combobox` component supports three tones: `light`, `solid` and `transparent
 
 # Colors
 ---
-Using the `color` prop, the color of the selected option can be adjusted.
+The `Combobox` component supports the following colors: `blue`, `purple`, `gray`, `dark` and `black`.
 
-The available `color` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+The `color` property can be used to specify the color of the border and the ring on the focus state.
 
 <View>
   <ComboboxShowcase showcase="colors" />
@@ -50,15 +50,6 @@ The available `color` values are: `blue`, `red`, `green`, `yellow`, `purple`, `g
 ```tsx
 <View>
   <Combobox color="blue">
-    // ...
-  </Combobox>
-  <Combobox color="red">
-    // ...
-  </Combobox>
-  <Combobox color="green">
-    // ...
-  </Combobox>
-  <Combobox color="yellow">
     // ...
   </Combobox>
   <Combobox color="purple">
@@ -71,6 +62,45 @@ The available `color` values are: `blue`, `red`, `green`, `yellow`, `purple`, `g
     // ...
   </Combobox>
   <Combobox color="black">
+    // ...
+  </Combobox>
+</View>
+```
+
+# Option colors
+---
+Using the `optionColor` prop, the color of the selected option can be adjusted.
+
+The available `optionColor` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <ComboboxShowcase showcase="option-colors" />
+</View>
+
+```tsx
+<View>
+  <Combobox optionColor="blue">
+    // ...
+  </Combobox>
+  <Combobox optionColor="red">
+    // ...
+  </Combobox>
+  <Combobox optionColor="green">
+    // ...
+  </Combobox>
+  <Combobox optionColor="yellow">
+    // ...
+  </Combobox>
+  <Combobox optionColor="purple">
+    // ...
+  </Combobox>
+  <Combobox optionColor="gray">
+    // ...
+  </Combobox>
+  <Combobox optionColor="dark">
+    // ...
+  </Combobox>
+  <Combobox optionColor="black">
     // ...
   </Combobox>
 </View>
@@ -489,34 +519,34 @@ An image can be added to the `Combobox.Option` component by setting the `media` 
 ## Properties
 ### Combobox
 
-| Prop          | Type                 | Description                                        | Default     |
-|:--------------|:---------------------|:---------------------------------------------------|:------------|
-| clearable     | `boolean`            | Adds a clear button                                | `true`      |
-| closeOnEscape | `boolean`            | Closes the combobox listbox on escape              | `true`      |
-| color         | `ComboboxColor`      | Sets the selected option color                     | `purple`    |
-| disabled      | `boolean`            | Disables combobox                                  | `false`     |
-| initialValue  | `string`             | Sets the initial value of the combobox             | `undefined` |
-| leftIcon      | `ReactElement`       | Sets the left icon element                         | `undefined` |
-| loading       | `boolean`            | Enables loading state                              | `false`     |
-| maxHeight     | `number`             | Sets the combobox list max height css property     | `250`       |
-| minWidth      | `number`             | Sets the combobox list min width css property      | `250`       |
-| mode          | `ComboboxMode`       | Sets some or zero padding around the combobox list | `spacey`    |
-| offset        | `number`             | Sets the combobox list offset                      | `5`         |
-| placeholder   | `string`             | Adds a placeholder to the combobox                 | `undefined` |
-| radius        | `ComboboxRadius`     | Sets the combobox, list and option radius          | `md`        |
-| searchable    | `boolean`            | Makes the combobox searchable                      | `true`      |
-| shadow        | `ComboboxShadow`     | Sets the combobox shadow                           | `none`      |
-| size          | `ComboboxSize`       | Sets the combobox size                             | `md`        |
-| tone          | `ComboboxTone`       | Sets the combobox tone                             | `light`     |
-| validation    | `ComboboxValidation` | Sets the validation state                          | `none`      |
-| value         | `string`             | Sets the controlled state value                    | `undefined` |
-| withRing      | `boolean`            | Shows a ring around the combobox on active state   | `true`      |
+| Prop          | Type                  | Description                                        | Default     |
+|:--------------|:----------------------|:---------------------------------------------------|:------------|
+| clearable     | `boolean`             | Adds a clear button                                | `true`      |
+| closeOnEscape | `boolean`             | Closes the combobox listbox on escape              | `true`      |
+| color         | `ComboboxColor`       | Sets the border and ring color on focus state      | `dark`      |
+| disabled      | `boolean`             | Disables combobox                                  | `false`     |
+| initialValue  | `string`              | Sets the initial value of the combobox             | `undefined` |
+| leftIcon      | `ReactElement`        | Sets the left icon element                         | `undefined` |
+| loading       | `boolean`             | Enables loading state                              | `false`     |
+| maxHeight     | `number`              | Sets the combobox list max height css property     | `250`       |
+| minWidth      | `number`              | Sets the combobox list min width css property      | `250`       |
+| mode          | `ComboboxMode`        | Sets some or zero padding around the combobox list | `spacey`    |
+| optionColor   | `ComboboxOptionColor` | Sets the selected option color                     | `gray`      |
+| offset        | `number`              | Sets the combobox list offset                      | `5`         |
+| placeholder   | `string`              | Adds a placeholder to the combobox                 | `undefined` |
+| radius        | `ComboboxRadius`      | Sets the combobox, list and option radius          | `md`        |
+| searchable    | `boolean`             | Makes the combobox searchable                      | `true`      |
+| shadow        | `ComboboxShadow`      | Sets the combobox shadow                           | `none`      |
+| size          | `ComboboxSize`        | Sets the combobox size                             | `md`        |
+| tone          | `ComboboxTone`        | Sets the combobox tone                             | `light`     |
+| validation    | `ComboboxValidation`  | Sets the validation state                          | `none`      |
+| value         | `string`              | Sets the controlled state value                    | `undefined` |
+| withRing      | `boolean`             | Shows a ring around the combobox on active state   | `true`      |
 
 ### Combobox.Group
 
 | Prop    | Type                  | Description                        | Default     |
 |:--------|:----------------------|:-----------------------------------|:------------|
-| color   | `ComboboxColor`       | Sets the group heading color       | `gray`      |
 | heading | `string`              | Sets the group heading             | `undefined` |
 | weight  | `ComboboxGroupWeight` | Sets the group heading font weight | `normal`    |
 
@@ -538,9 +568,17 @@ An image can be added to the `Combobox.Option` component by setting the `media` 
 
 ## Types
 ### Combobox
-
 ```tsx
 type ComboboxColor =
+  | 'blue'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ComboboxOptionColor =
   | 'blue'
   | 'red'
   | 'green'

@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<AlertProps> = {
   accent: 'none',
-  color: 'purple',
+  color: 'dark',
   dismissable: false,
   dismissableAnimation: true,
   radius: 'md',

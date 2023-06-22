@@ -6,6 +6,7 @@ export const ComboboxCode = (props: any) => {
   const {
     clearable,
     closeOnEscape,
+    color,
     disabled,
     loading,
     mode,
@@ -22,6 +23,7 @@ export const ComboboxCode = (props: any) => {
   const defaultProps = {
     clearable: true,
     closeOnEscape: true,
+    color: 'dark',
     disabled: false,
     loading: false,
     mode: 'spacey',
@@ -38,6 +40,7 @@ export const ComboboxCode = (props: any) => {
   const attributes = [
     clearable !== defaultProps.clearable ? `clearable={${clearable}}` : null,
     closeOnEscape !== defaultProps.closeOnEscape ? `closeOnEscape={${closeOnEscape}}` : null,
+    color !== defaultProps.color ? `color="${color}"` : null,
     disabled !== defaultProps.disabled ? `disabled={${disabled}}` : null,
     loading !== defaultProps.loading ? `loading={${loading}}` : null,
     mode !== defaultProps.mode ? `mode="${mode}"` : null,

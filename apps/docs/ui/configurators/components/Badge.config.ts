@@ -4,7 +4,7 @@ export const BadgeConfig = {
   example: BadgeExample,
   default: BadgeCode,
   state: {
-    color: 'purple',
+    color: 'dark',
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',

@@ -4,7 +4,7 @@ export const RibbonConfig = {
   example: RibbonExample,
   default: RibbonCode,
   state: {
-    color: 'purple',
+    color: 'dark',
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',

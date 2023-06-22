@@ -5,7 +5,7 @@ export const ProgressConfig = {
   default: ProgressCode,
   state: {
     animated: true,
-    color: 'purple',
+    color: 'dark',
     radius: 'md',
     shadow: 'none',
     showValue: true,

@@ -7,7 +7,7 @@ import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<RibbonProps> = {
-  color: 'purple',
+  color: 'dark',
   position: 'top-right',
   radius: 'base',
   shadow: 'base',

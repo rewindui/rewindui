@@ -15,8 +15,16 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
     const { value, label, description, media } = props;
     const disabled = !!props.disabled;
     const id = usePropId(props.id);
-    const { color, size, mode, radius, search, selectedValue, setSelectedValue, setSelectedLabel } =
-      useComboboxContext();
+    const {
+      mode,
+      optionColor,
+      radius,
+      search,
+      selectedValue,
+      setSelectedLabel,
+      setSelectedValue,
+      size,
+    } = useComboboxContext();
     const normalizedSearch = textNormalize(search || '');
     const normalizedLabel = textNormalize(label || '');
     const normalizedDescription = textNormalize(description || '');
@@ -35,7 +43,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
       <button
         id={id}
         ref={ref}
-        className={theme.button({ color, radius, selected, hidden, size, mode })}
+        className={theme.button({ optionColor, radius, selected, hidden, size, mode })}
         aria-hidden={hidden}
         disabled={disabled}
         aria-disabled={disabled}

@@ -4,6 +4,13 @@ const base = cva(
   ['w-full', 'transition-colors', 'duration-100', 'ease-in-out', 'outline-none', 'z-10'],
   {
     variants: {
+      color: {
+        blue: [],
+        purple: [],
+        gray: [],
+        dark: [],
+        black: [],
+      },
       size: {
         xs: ['text-xs', 'h-6'],
         sm: ['text-sm', 'h-8'],
@@ -63,8 +70,33 @@ const base = cva(
     compoundVariants: [
       {
         validation: 'none',
+        color: 'blue',
+        withRing: true,
+        className: ['focus:ring-blue-100'],
+      },
+      {
+        validation: 'none',
+        color: 'purple',
         withRing: true,
         className: ['focus:ring-purple-100'],
+      },
+      {
+        validation: 'none',
+        color: 'gray',
+        withRing: true,
+        className: ['focus:ring-gray-100'],
+      },
+      {
+        validation: 'none',
+        color: 'dark',
+        withRing: true,
+        className: ['focus:ring-gray-200'],
+      },
+      {
+        validation: 'none',
+        color: 'black',
+        withRing: true,
+        className: ['focus:ring-gray-300'],
       },
       {
         validation: 'invalid',
@@ -114,17 +146,42 @@ const base = cva(
       {
         tone: 'light',
         validation: 'none',
-        className: ['border-gray-300', 'focus-visible:border-purple-500'],
+        className: ['border-gray-300'],
       },
       {
         tone: 'solid',
         validation: 'none',
-        className: ['border-gray-200', 'focus-visible:border-purple-500'],
+        className: ['border-gray-200'],
       },
       {
         tone: 'transparent',
         validation: 'none',
         className: ['border-transparent'],
+      },
+      {
+        validation: 'none',
+        color: 'blue',
+        className: ['focus-visible:border-blue-500'],
+      },
+      {
+        validation: 'none',
+        color: 'purple',
+        className: ['focus-visible:border-purple-500'],
+      },
+      {
+        validation: 'none',
+        color: 'gray',
+        className: ['focus-visible:border-gray-500'],
+      },
+      {
+        validation: 'none',
+        color: 'dark',
+        className: ['focus-visible:border-gray-700'],
+      },
+      {
+        validation: 'none',
+        color: 'black',
+        className: ['focus-visible:border-black'],
       },
       {
         hasLeftIcon: false,
@@ -380,6 +437,7 @@ const group = cva(
     'border-b',
     'border-b-gray-200',
     'mb-1',
+    'text-gray-400',
   ],
   {
     variants: {
@@ -390,16 +448,6 @@ const group = cva(
       mode: {
         spacey: [],
         tight: [],
-      },
-      color: {
-        blue: 'text-blue-500',
-        red: 'text-red-500',
-        green: 'text-green-500',
-        yellow: 'text-yellow-400',
-        purple: 'text-purple-500',
-        gray: 'text-gray-400',
-        dark: 'text-gray-900',
-        black: 'text-black',
       },
       weight: {
         thin: 'font-thin',
@@ -446,7 +494,7 @@ const button = cva(
         true: ['hidden'],
         false: [],
       },
-      color: {
+      optionColor: {
         blue: [],
         red: [],
         green: [],
@@ -511,42 +559,42 @@ const button = cva(
       },
       {
         selected: true,
-        color: 'blue',
+        optionColor: 'blue',
         className: ['bg-blue-500', 'text-white'],
       },
       {
         selected: true,
-        color: 'red',
+        optionColor: 'red',
         className: ['bg-red-500', 'text-white'],
       },
       {
         selected: true,
-        color: 'green',
+        optionColor: 'green',
         className: ['bg-green-500', 'text-white'],
       },
       {
         selected: true,
-        color: 'yellow',
+        optionColor: 'yellow',
         className: ['bg-yellow-400', 'text-white'],
       },
       {
         selected: true,
-        color: 'purple',
+        optionColor: 'purple',
         className: ['bg-purple-500', 'text-white'],
       },
       {
         selected: true,
-        color: 'gray',
+        optionColor: 'gray',
         className: ['bg-gray-200', 'text-gray-700'],
       },
       {
         selected: true,
-        color: 'dark',
+        optionColor: 'dark',
         className: ['bg-gray-500', 'text-white'],
       },
       {
         selected: true,
-        color: 'black',
+        optionColor: 'black',
         className: ['bg-black', 'text-white'],
       },
     ],

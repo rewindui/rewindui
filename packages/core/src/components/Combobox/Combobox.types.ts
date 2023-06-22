@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement, ReactNode } from 'react';
 
-export type ComboboxColor =
+export type ComboboxColor = 'blue' | 'purple' | 'gray' | 'dark' | 'black';
+export type ComboboxOptionColor =
   | 'blue'
   | 'red'
   | 'green'
@@ -29,6 +30,7 @@ export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onCha
   mode?: ComboboxMode;
   offset?: number;
   onChange?(value: string | null | undefined): void;
+  optionColor?: ComboboxOptionColor;
   placeholder?: string;
   radius?: ComboboxRadius;
   searchable?: boolean;
@@ -41,8 +43,8 @@ export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onCha
 }
 
 export interface ComboboxContext {
-  color?: ComboboxColor;
   mode?: ComboboxMode;
+  optionColor?: ComboboxOptionColor;
   radius?: ComboboxRadius;
   search?: string;
   selectedLabel?: string | null;

@@ -7,7 +7,7 @@ export const ButtonCode = (props: any) => {
 
   const defaultProps = {
     animation: 'none',
-    color: 'purple',
+    color: 'dark',
     disabled: false,
     icon: false,
     loading: false,

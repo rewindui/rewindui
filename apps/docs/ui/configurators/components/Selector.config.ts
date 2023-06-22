@@ -4,7 +4,7 @@ export const SelectorConfig = {
   example: SelectorExample,
   default: SelectorCode,
   state: {
-    color: 'purple',
+    color: 'dark',
     fullWidth: false,
     orientation: 'horizontal',
     radius: 'md',

@@ -2,19 +2,21 @@ import { Select, SelectProps } from '@rewind-ui/core';
 import * as React from 'react';
 
 export const SelectCode = (props: any) => {
-  const { size, disabled, tone, shadow, radius, validation, withRing } = props;
+  const { color, size, disabled, tone, shadow, radius, validation, withRing } = props;
 
   const defaultProps = {
-    tone: 'light',
-    radius: 'md',
-    size: 'md',
-    validation: 'none',
-    shadow: 'none',
-    withRing: true,
+    color: 'dark',
     disabled: false,
+    radius: 'md',
+    shadow: 'none',
+    size: 'md',
+    tone: 'light',
+    validation: 'none',
+    withRing: true,
   };
 
   const attributes = [
+    color !== defaultProps.color ? `color="${color}"` : null,
     disabled !== defaultProps.disabled ? `disabled={${disabled}}` : null,
     radius !== defaultProps.radius ? `radius="${radius}"` : null,
     shadow !== defaultProps.shadow ? `shadow="${shadow}"` : null,

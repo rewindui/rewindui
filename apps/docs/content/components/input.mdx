@@ -33,6 +33,30 @@ The `Input` component supports three tones: `light`, `solid` and `transparent`.
 </View>
 ```
 
+# Colors
+---
+The `Input` component supports the following colors: `blue`, `purple`, `gray`, `dark` and `black`.
+
+The `color` property can be used to specify the color of the border and the ring on the focus state.
+
+<View>
+  <Input color="blue" placeholder="Blue color" />
+  <Input color="purple" placeholder="Purple color" />
+  <Input color="gray" placeholder="Gray color" />
+  <Input color="dark" placeholder="Dark color" />
+  <Input color="black" placeholder="Black color" />
+</View>
+
+```tsx
+<View>
+  <Input color="blue" placeholder="Blue color" />
+  <Input color="purple" placeholder="Purple color" />
+  <Input color="gray" placeholder="Gray color" />
+  <Input color="dark" placeholder="Dark color" />
+  <Input color="black" placeholder="Black color" />
+</View>
+```
+
 # Sizes
 ---
 The `Input` component supports four size options: `xs`, `sm`, `md` and `lg`.
@@ -221,6 +245,7 @@ function App() {
 
 | Prop       | Type              | Description                                        | Default     |
 |:-----------|:------------------|:---------------------------------------------------|:------------|
+| color      | `InputColor`      | Sets the border and ring color on focus state      | `dark`      |
 | disabled   | `boolean`         | Disables input                                     | `false`     |
 | leftIcon   | `ReactElement`    | Adds the given icon to the left side of the input  | `undefined` |
 | loading    | `boolean`         | Shows a loading spinner and disables the input     | `false`     |
@@ -235,6 +260,10 @@ function App() {
 
 
 ## Types
+```tsx
+type InputColor = 'blue' | 'purple' | 'gray' | 'dark' | 'black';
+```
+
 ```tsx
 type InputRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 ```

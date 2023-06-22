@@ -15,7 +15,7 @@ import { twMerge } from 'tailwind-merge';
 import { AccordionContextProvider } from './Accordion.context';
 
 const defaultProps: Partial<AccordionProps> = {
-  activeColor: 'purple',
+  activeColor: 'dark',
   bordered: true,
   color: 'white',
   radius: 'md',

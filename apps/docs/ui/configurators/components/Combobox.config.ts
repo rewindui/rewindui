@@ -6,6 +6,7 @@ export const ComboboxConfig = {
   state: {
     clearable: true,
     closeOnEscape: true,
+    color: 'dark',
     disabled: false,
     loading: false,
     mode: 'spacey',
@@ -24,6 +25,12 @@ export const ComboboxConfig = {
       name: 'tone',
       type: 'select',
       options: ['solid', 'light', 'transparent'],
+    },
+    {
+      label: 'Color',
+      name: 'color',
+      type: 'color',
+      colors: ['blue', 'purple', 'gray', 'dark', 'black'],
     },
     {
       label: 'Mode',

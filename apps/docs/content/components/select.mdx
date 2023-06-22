@@ -51,6 +51,60 @@ The `Select` component supports three tones: `light`, `solid` and `transparent`.
 </View>
 ```
 
+# Colors
+---
+The `Select` component supports the following colors: `blue`, `purple`, `gray`, `dark` and `black`.
+
+The `color` property can be used to specify the color of the border and the ring on the focus state.
+
+<View>
+  <Select color="blue">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select color="purple">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select color="gray">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select color="dark">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+  <Select color="black">
+    <option>Option 1</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </Select>
+</View>
+
+```tsx
+<View>
+  <Select color="blue">
+    // ...
+  </Select>
+  <Select color="purple">
+    // ...
+  </Select>
+  <Select color="gray">
+    // ...
+  </Select>
+  <Select color="dark">
+    // ...
+  </Select>
+  <Select color="black">
+    // ...
+  </Select>
+</View>
+```
+
 # Sizes
 ---
 The `Select` component supports four size options: `xs`, `sm`, `md` and `lg`.
@@ -337,6 +391,7 @@ function App() {
 
 | Prop       | Type               | Description                                                | Default     |
 |:-----------|:-------------------|:-----------------------------------------------------------|:------------|
+| color      | `SelectColor`      | Sets the border and ring color on focus state              | `dark`      |
 | disabled   | `boolean`          | Disables select element                                    | `false`     |
 | leftIcon   | `ReactElement`     | Adds the given icon to the left side of the select element | `undefined` |
 | radius     | `SelectRadius`     | Sets the border radius                                     | `md`        |
@@ -348,6 +403,10 @@ function App() {
 
 
 ## Types
+```tsx
+type SelectColor = 'blue' | 'purple' | 'gray' | 'dark' | 'black';
+```
+
 ```tsx
 type SelectRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 ```

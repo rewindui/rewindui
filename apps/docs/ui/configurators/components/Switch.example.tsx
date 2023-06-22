@@ -5,7 +5,7 @@ export const SwitchCode = (props: any) => {
   const { size, color, disabled, description, error, radius, withRing } = props;
 
   const defaultProps = {
-    color: 'purple',
+    color: 'dark',
     disabled: false,
     error: '',
     description: '',

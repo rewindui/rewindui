@@ -13,7 +13,7 @@ import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ButtonProps> = {
   animation: 'none',
-  color: 'purple',
+  color: 'dark',
   disabled: false,
   icon: false,
   loading: false,

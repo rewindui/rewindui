@@ -89,7 +89,7 @@ const base = cva(['absolute', 'shadow-sm', 'z-30'], {
     {
       color: 'dark',
       tone: 'solid',
-      className: ['bg-gray-800'],
+      className: ['bg-gray-700'],
     },
     {
       color: 'black',

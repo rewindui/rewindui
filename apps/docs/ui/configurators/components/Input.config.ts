@@ -4,6 +4,7 @@ export const InputConfig = {
   example: InputExample,
   default: InputCode,
   state: {
+    color: 'dark',
     disabled: false,
     loading: false,
     placeholder: 'This is just a placeholder...',
@@ -21,6 +22,12 @@ export const InputConfig = {
       name: 'tone',
       type: 'select',
       options: ['solid', 'light', 'transparent'],
+    },
+    {
+      label: 'Color',
+      name: 'color',
+      type: 'color',
+      colors: ['blue', 'purple', 'gray', 'dark', 'black'],
     },
     {
       label: 'Size',

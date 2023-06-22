@@ -9,7 +9,7 @@ export const AccordionConfig = {
     radius: 'md',
     shadow: 'base',
     color: 'white',
-    activeColor: 'purple',
+    activeColor: 'dark',
     shadowColor: 'gray',
     bordered: false,
     withRing: true,

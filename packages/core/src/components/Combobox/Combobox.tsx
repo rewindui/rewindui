@@ -32,13 +32,14 @@ import { CaretUpDown } from '@icons/CaretUpDown';
 const defaultProps: Partial<ComboboxProps> = {
   clearable: true,
   closeOnEscape: true,
-  color: 'gray',
+  color: 'dark',
   disabled: false,
   loading: false,
   maxHeight: 250,
   minWidth: 250,
   mode: 'spacey',
   offset: 5,
+  optionColor: 'gray',
   radius: 'md',
   searchable: true,
   shadow: 'none',
@@ -66,6 +67,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       mode,
       offset,
       onChange,
+      optionColor,
       placeholder,
       radius,
       searchable,
@@ -101,8 +103,8 @@ const _Combobox: ComboboxComponent = forwardRef(
     const listRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const contextValue: ComboboxContext = {
-      color,
       mode,
+      optionColor,
       radius,
       search,
       selectedLabel,
@@ -266,6 +268,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       setInputClasses(
         theme.base({
           className,
+          color,
           disabled,
           hasLeftElement,
           hasLeftIcon,
@@ -281,6 +284,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       );
     }, [
       className,
+      color,
       disabled,
       hasLeftIcon,
       hasRightIcon,

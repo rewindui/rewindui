@@ -9,6 +9,7 @@ import { cloneElement, forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<SelectProps> = {
+  color: 'dark',
   disabled: false,
   radius: 'md',
   shadow: 'none',
@@ -23,6 +24,7 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
   const {
     children,
     className = '',
+    color,
     controlId,
     disabled,
     leftIcon,
@@ -47,6 +49,7 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
     return twMerge(
       theme.base({
         className,
+        color,
         disabled,
         hasLeftIcon,
         radius,
@@ -57,7 +60,19 @@ const Select: SelectComponent = forwardRef((props: SelectProps, ref?: Ref<HTMLSe
         withRing,
       })
     );
-  }, [className, disabled, hasLeftIcon, radius, shadow, size, theme, tone, validation, withRing]);
+  }, [
+    className,
+    color,
+    disabled,
+    hasLeftIcon,
+    radius,
+    shadow,
+    size,
+    theme,
+    tone,
+    validation,
+    withRing,
+  ]);
 
   const selectElement = (
     <select id={id} ref={ref} className={classes} {...additionalProps} disabled={disabled}>

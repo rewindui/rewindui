@@ -8,6 +8,7 @@ import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<TextareaProps> = {
+  color: 'dark',
   tone: 'light',
   radius: 'md',
   size: 'md',
@@ -22,6 +23,7 @@ const Textarea: TextareaComponent = forwardRef(
     const theme = useComponentTheme('Textarea');
     const {
       className = '',
+      color,
       controlId,
       disabled,
       tone,
@@ -45,6 +47,7 @@ const Textarea: TextareaComponent = forwardRef(
       return twMerge(
         theme({
           className,
+          color,
           disabled,
           radius,
           shadow,
@@ -54,7 +57,7 @@ const Textarea: TextareaComponent = forwardRef(
           withRing,
         })
       );
-    }, [className, disabled, radius, shadow, size, theme, tone, validation, withRing]);
+    }, [className, color, disabled, radius, shadow, size, theme, tone, validation, withRing]);
 
     return (
       <textarea id={id} ref={ref} className={classes} {...additionalProps} disabled={disabled} />

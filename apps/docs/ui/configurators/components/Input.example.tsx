@@ -2,9 +2,10 @@ import { Input, InputProps } from '@rewind-ui/core';
 import * as React from 'react';
 
 export const InputCode = (props: any) => {
-  const { size, disabled, tone, shadow, radius, loading, validation, withRing } = props;
+  const { color, size, disabled, tone, shadow, radius, loading, validation, withRing } = props;
 
   const defaultProps = {
+    color: 'dark',
     disabled: false,
     loading: false,
     radius: 'md',
@@ -16,6 +17,7 @@ export const InputCode = (props: any) => {
   };
 
   const attributes = [
+    color !== defaultProps.color ? `color="${color}"` : null,
     disabled !== defaultProps.disabled ? `disabled={${disabled}}` : null,
     loading !== defaultProps.loading ? `loading={${loading}}` : null,
     radius !== defaultProps.radius ? `radius="${radius}"` : null,

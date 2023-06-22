@@ -1,6 +1,5 @@
 import { Accordion, AccordionProps } from '@rewind-ui/core';
 import * as React from 'react';
-import { HandWaving, Sparkle, Info, Lifebuoy } from '@phosphor-icons/react';
 
 const accordionItems = [
   {
@@ -65,7 +64,7 @@ export const AccordionCode = (props: any) => {
   const { size, color, tone, shadow, shadowColor, radius, activeColor, bordered, withRing } = props;
 
   const defaultProps: Partial<AccordionProps> = {
-    activeColor: 'purple',
+    activeColor: 'dark',
     bordered: true,
     color: 'white',
     radius: 'md',

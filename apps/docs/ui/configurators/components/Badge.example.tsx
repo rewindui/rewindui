@@ -5,7 +5,7 @@ export const BadgeCode = (props: any) => {
   const { color, radius, shadow, shadowColor, size, tone } = props;
 
   const defaultProps = {
-    color: 'purple',
+    color: 'dark',
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',

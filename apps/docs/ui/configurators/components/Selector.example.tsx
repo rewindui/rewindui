@@ -15,7 +15,7 @@ export const SelectorCode = (props: any) => {
   } = props;
 
   const defaultProps = {
-    color: 'purple',
+    color: 'dark',
     fullWidth: false,
     orientation: 'horizontal',
     radius: 'md',

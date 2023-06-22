@@ -1,7 +1,8 @@
 export { default as Combobox } from './Combobox';
 export type {
-  ComboboxColor,
   ComboboxProps,
+  ComboboxColor,
+  ComboboxOptionColor,
   ComboboxMode,
   ComboboxRadius,
   ComboboxShadow,

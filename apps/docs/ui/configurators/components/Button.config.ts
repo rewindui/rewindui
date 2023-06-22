@@ -5,7 +5,7 @@ export const ButtonConfig = {
   default: ButtonCode,
   state: {
     animation: 'none',
-    color: 'purple',
+    color: 'dark',
     disabled: false,
     loading: false,
     icon: false,

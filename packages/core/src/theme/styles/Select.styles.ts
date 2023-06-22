@@ -14,6 +14,13 @@ const base = cva(
   ],
   {
     variants: {
+      color: {
+        blue: [],
+        purple: [],
+        gray: [],
+        dark: [],
+        black: [],
+      },
       size: {
         xs: ['text-xs', 'h-6'],
         sm: ['text-sm', 'h-8'],
@@ -61,8 +68,33 @@ const base = cva(
     compoundVariants: [
       {
         validation: 'none',
+        color: 'blue',
+        withRing: true,
+        className: ['focus:ring-blue-100'],
+      },
+      {
+        validation: 'none',
+        color: 'purple',
         withRing: true,
         className: ['focus:ring-purple-100'],
+      },
+      {
+        validation: 'none',
+        color: 'gray',
+        withRing: true,
+        className: ['focus:ring-gray-100'],
+      },
+      {
+        validation: 'none',
+        color: 'dark',
+        withRing: true,
+        className: ['focus:ring-gray-200'],
+      },
+      {
+        validation: 'none',
+        color: 'black',
+        withRing: true,
+        className: ['focus:ring-gray-300'],
       },
       {
         validation: 'invalid',
@@ -112,17 +144,42 @@ const base = cva(
       {
         tone: 'light',
         validation: 'none',
-        className: ['border-gray-300', 'focus-visible:border-purple-500'],
+        className: ['border-gray-300'],
       },
       {
         tone: 'solid',
         validation: 'none',
-        className: ['border-gray-200', 'focus-visible:border-purple-500'],
+        className: ['border-gray-200'],
       },
       {
         tone: 'transparent',
         validation: 'none',
         className: ['border-transparent'],
+      },
+      {
+        validation: 'none',
+        color: 'blue',
+        className: ['focus-visible:border-blue-500'],
+      },
+      {
+        validation: 'none',
+        color: 'purple',
+        className: ['focus-visible:border-purple-500'],
+      },
+      {
+        validation: 'none',
+        color: 'gray',
+        className: ['focus-visible:border-gray-500'],
+      },
+      {
+        validation: 'none',
+        color: 'dark',
+        className: ['focus-visible:border-gray-700'],
+      },
+      {
+        validation: 'none',
+        color: 'black',
+        className: ['focus-visible:border-black'],
       },
       {
         hasLeftIcon: false,

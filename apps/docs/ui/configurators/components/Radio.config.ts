@@ -4,7 +4,7 @@ export const RadioConfig = {
   example: RadioExample,
   default: RadioCode,
   state: {
-    color: 'purple',
+    color: 'dark',
     disabled: false,
     description: '',
     error: '',

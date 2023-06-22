@@ -1,5 +1,6 @@
 import {
   Select,
+  SelectColor,
   SelectProps,
   SelectRadius,
   SelectShadow,
@@ -13,6 +14,7 @@ import { EnhancedView, View, ViewGroup } from '../components/View';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 
 const tones: SelectTone[] = ['light', 'solid', 'transparent'];
+const colors: SelectColor[] = ['blue', 'purple', 'gray', 'dark', 'black'];
 const sizes: SelectSize[] = ['xs', 'sm', 'md', 'lg'];
 const radiuses: SelectRadius[] = ['none', 'sm', 'base', 'md', 'lg', 'full'];
 const validations: SelectValidation[] = ['none', 'invalid', 'valid', 'warning'];
@@ -30,8 +32,12 @@ const meta: Meta = {
   title: 'Components/Select',
   component: Select,
   argTypes: {
-    color: {
+    tone: {
       options: tones,
+      control: { type: 'radio' },
+    },
+    color: {
+      options: colors,
       control: { type: 'radio' },
     },
     size: {
@@ -90,6 +96,22 @@ const ToneTemplate: Story<SelectProps> = (args) => {
 };
 
 export const Tones = ToneTemplate.bind({});
+
+const ColorTemplate: Story<SelectProps> = (args) => {
+  const items = colors.map((color) => (
+    <React.Fragment key={color}>
+      <View prop="color" value={color}>
+        <Select {...args} color={color} placeholder={color}>
+          {options}
+        </Select>
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
+};
+
+export const Colors = ColorTemplate.bind({});
 
 const SizeTemplate: Story<SelectProps> = (args) => {
   const items = sizes.map((size) => (

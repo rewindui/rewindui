@@ -33,6 +33,30 @@ The `Textarea` component supports three tones: `light`, `solid` and `transparent
 </View>
 ```
 
+# Colors
+---
+The `Textarea` component supports the following colors: `blue`, `purple`, `gray`, `dark` and `black`.
+
+The `color` property can be used to specify the color of the border and the ring on the focus state.
+
+<View>
+  <Textarea color="blue" placeholder="Blue color" />
+  <Textarea color="purple" placeholder="Purple color" />
+  <Textarea color="gray" placeholder="Gray color" />
+  <Textarea color="dark" placeholder="Dark color" />
+  <Textarea color="black" placeholder="Black color" />
+</View>
+
+```tsx
+<View>
+  <Textarea color="blue" placeholder="Blue color" />
+  <Textarea color="purple" placeholder="Purple color" />
+  <Textarea color="gray" placeholder="Gray color" />
+  <Textarea color="dark" placeholder="Dark color" />
+  <Textarea color="black" placeholder="Black color" />
+</View>
+```
+
 # Sizes
 ---
 The `Textarea` component supports four size options: `xs`, `sm`, `md` and `lg`.
@@ -167,6 +191,7 @@ function App() {
 
 | Prop       | Type                 | Description                                      | Default |
 |:-----------|:---------------------|:-------------------------------------------------|:--------|
+| color      | `TextareaColor`      | Sets the border and ring color on focus state    | `dark`  |
 | disabled   | `boolean`            | Disables textarea                                | `false` |
 | radius     | `TextareaRadius`     | Sets the border radius                           | `md`    |
 | shadow     | `TextareaShadow`     | Sets the shadow size                             | `none`  |
@@ -177,6 +202,10 @@ function App() {
 
 
 ## Types
+```tsx
+type TextareaColor = 'blue' | 'purple' | 'gray' | 'dark' | 'black';
+```
+
 ```tsx
 type TextareaRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 ```

@@ -17,14 +17,13 @@ import React, {
 } from 'react';
 
 const defaultProps: Partial<ComboboxGroupProps> = {
-  color: 'gray',
   weight: 'normal',
 };
 
 const ComboboxGroup: ComboboxGroupComponent = forwardRef(
   (props: ComboboxGroupProps, ref?: ForwardedRef<HTMLDivElement>) => {
     const theme = useComponentTheme('Combobox');
-    const { children, className, heading, color, weight, ...additionalProps } = {
+    const { children, className, heading, weight, ...additionalProps } = {
       ...defaultProps,
       ...props,
     };
@@ -59,8 +58,8 @@ const ComboboxGroup: ComboboxGroupComponent = forwardRef(
     }, [children, hiddenChildrenCount]);
 
     useEffect(() => {
-      setClasses(theme.group({ className, hidden, size, mode, color, weight }));
-    }, [className, color, hidden, mode, size, theme, weight]);
+      setClasses(theme.group({ className, hidden, size, mode, weight }));
+    }, [className, hidden, mode, size, theme, weight]);
 
     return (
       <>
