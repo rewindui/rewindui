@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.9.2
+
+### Patch Changes
+
+- e486958: Added color prop to all form components. Changed default color to dark to all components.
+
 ## 0.9.1
 
 ### Patch Changes
