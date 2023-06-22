@@ -120,7 +120,7 @@ export const Hero = () => {
           />
         </div>
 
-        <Tabs defaultTab="accordion" size="sm" className="w-full">
+        <Tabs defaultTab="accordion" method="unmount" size="sm" className="w-full">
           <Tabs.List className="mb-4">
             <Tabs.Tab anchor="accordion">Accordion</Tabs.Tab>
             <Tabs.Tab anchor="selector">Selector</Tabs.Tab>

@@ -139,7 +139,7 @@ const options: SelectorTabProps[] = [
     label: (
       <Tooltip
         label="This is a react node with a tooltip"
-        accent="solid"
+        tone="solid"
         color="dark"
         offset={15}
         shadow="base"
@@ -366,13 +366,7 @@ const OrientationTemplate: Story<SelectorProps> = (args) => {
   return (
     <ViewGroup>
       <View prop="orientation" value="horizontal">
-        <Selector
-          {...args}
-          orientation="horizontal"
-          withSeparator={true}
-          separator={<div className="w-px h-5 rounded-full bg-gray-300"></div>}
-          value={generateRandomLetter(options)}
-        >
+        <Selector {...args} orientation="horizontal" value={generateRandomLetter(options)}>
           {options.map((option) => (
             <Selector.Tab
               key={3 + option.anchor}
@@ -386,13 +380,7 @@ const OrientationTemplate: Story<SelectorProps> = (args) => {
       </View>
 
       <View prop="orientation" value="vertical">
-        <Selector
-          {...args}
-          orientation="vertical"
-          withSeparator={true}
-          separator={<div className="w-5 h-px rounded-full bg-gray-300"></div>}
-          value={generateRandomLetter(options)}
-        >
+        <Selector {...args} orientation="vertical" value={generateRandomLetter(options)}>
           {options.map((option) => (
             <Selector.Tab
               key={3 + option.anchor}
@@ -419,7 +407,7 @@ const FullWidthTemplate: Story<SelectorProps> = (args) => {
           fullWidth={true}
           orientation="horizontal"
           withSeparator={true}
-          separator={<div className="w-px h-5 rounded-full bg-gray-300"></div>}
+          separator={<span className="last-of-type:hidden w-px h-5 rounded-full bg-gray-300" />}
           value={generateRandomLetter(options)}
         >
           {options.map((option) => (
@@ -440,7 +428,7 @@ const FullWidthTemplate: Story<SelectorProps> = (args) => {
           fullWidth={true}
           orientation="vertical"
           withSeparator={true}
-          separator={<div className="w-5 h-px rounded-full bg-gray-300"></div>}
+          separator={<span className="last-of-type:hidden w-px h-5 rounded-full bg-gray-300" />}
           value={generateRandomLetter(options)}
         >
           {options.map((option) => (

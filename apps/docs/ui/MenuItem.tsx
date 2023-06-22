@@ -9,8 +9,9 @@ export const MenuItem = (props: {
   icon?: ReactNode;
   wip?: boolean;
   newItem?: boolean;
+  updated?: boolean;
 }) => {
-  const { title, path, icon, wip = false, newItem = false } = props;
+  const { title, path, icon, wip = false, newItem = false, updated = false } = props;
   const pathname = usePathname();
   const active = pathname === path;
   const hasIcon = !!icon;
@@ -81,6 +82,11 @@ export const MenuItem = (props: {
       {newItem && (
         <span className="text-xs bg-purple-50/75 border border-dashed border-purple-100 rounded py-[0.15rem] px-[0.3rem] text-purple-600">
           NEW
+        </span>
+      )}
+      {updated && (
+        <span className="text-xs bg-green-50/75 border border-dashed border-green-100 rounded py-[0.15rem] px-[0.3rem] text-green-600">
+          UPDATED
         </span>
       )}
     </Component>
