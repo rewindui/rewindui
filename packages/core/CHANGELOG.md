@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.9.1
+
+### Patch Changes
+
+- 8074d19: Adjusted Selector component height
+
 ## 0.9.0
 
 ### Minor Changes
