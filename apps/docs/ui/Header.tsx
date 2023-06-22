@@ -22,6 +22,7 @@ const SocialLink = ({ href, children }: { href: string; children: ReactNode }) =
 export const Header = () => {
   const [open, setOpen] = useState<boolean>(false);
   const pathname = usePathname();
+  const menuButtonClasses = pathname === '/' ? '' : '2xl:hidden';
 
   useEffect(() => {
     setOpen(false);
@@ -81,7 +82,7 @@ export const Header = () => {
               />
             </SocialLink>
 
-            <div className="2xl:hidden">
+            <div className={menuButtonClasses}>
               <button onClick={() => setOpen(true)} className={headerButtonClasses}>
                 <List size={32} />
               </button>
