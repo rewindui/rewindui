@@ -37,6 +37,7 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
 
   if (option.type === 'select') {
     const props: Partial<SelectProps> = {
+      color: 'purple',
       tone: 'solid',
       size: 'sm',
       value: state,
@@ -56,6 +57,7 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
 
   if (option.type === 'input') {
     const props: Partial<InputProps> = {
+      color: 'purple',
       tone: 'solid',
       size: 'sm',
       value: state,
@@ -68,6 +70,7 @@ export const ConfiguratorStateControl = ({ option, state, onChange }: Props) => 
 
   if (option.type === 'number') {
     const props: Partial<InputProps> = {
+      color: 'purple',
       tone: 'solid',
       size: 'sm',
       value: state,
