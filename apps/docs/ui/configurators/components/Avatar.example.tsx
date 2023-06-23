@@ -60,7 +60,7 @@ export const AvatarExample = ({ withImage, ...props }: AvatarProps & { withImage
   if (withImage) {
     return (
       <Avatar
-        src="https://avatars.githubusercontent.com/u/810438?s=60&v=4"
+        src="https://avatars.githubusercontent.com/u/810438?s=96&v=4"
         initials="DA"
         {...props}
       />
