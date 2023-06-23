@@ -21,6 +21,12 @@ type ThemeComponents = {
     title: typeof styles.alertStyles.title;
     text: typeof styles.alertStyles.text;
   };
+  Avatar: {
+    base: typeof styles.avatarStyles.base;
+    status: typeof styles.avatarStyles.status;
+    image: typeof styles.avatarStyles.image;
+    group: typeof styles.avatarStyles.group;
+  };
   Badge: typeof styles.badgeStyles.base;
   Button: {
     base: typeof styles.buttonStyles.base;
@@ -167,6 +173,12 @@ const defaultTheme: Theme = {
       dismissIcon: styles.alertStyles.dismissIcon,
       title: styles.alertStyles.title,
       text: styles.alertStyles.text,
+    },
+    Avatar: {
+      base: styles.avatarStyles.base,
+      status: styles.avatarStyles.status,
+      image: styles.avatarStyles.image,
+      group: styles.avatarStyles.group,
     },
     Badge: styles.badgeStyles.base,
     Button: {

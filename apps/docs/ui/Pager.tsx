@@ -94,6 +94,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'alert',
     },
     {
+      title: 'Avatar',
+      url: '/components/avatar',
+      slug: 'avatar',
+    },
+    {
       title: 'Badge',
       url: '/components/badge',
       slug: 'badge',

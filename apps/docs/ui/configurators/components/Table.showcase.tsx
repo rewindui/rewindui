@@ -8,6 +8,8 @@ import {
   Badge,
   Dropdown,
   Button,
+  Avatar,
+  AvatarColor,
 } from '@rewind-ui/core';
 import { TableStripePosition } from '@rewind-ui/core/dist/components/Table/Table.types';
 import { TrColor } from '@rewind-ui/core/dist/components/Table/Tr/Tr.types';
@@ -270,20 +272,17 @@ const FooterBorders = () => {
   return <>{items}</>;
 };
 
-const UserCard = ({ initials, color = 'blue', name, email }) => {
-  const colors = {
-    red: 'bg-red-600',
-    purple: 'bg-purple-600',
-    gray: 'bg-gray-600',
-  };
+type UserCardProps = {
+  initials: string;
+  color?: AvatarColor;
+  name: string;
+  email: string;
+};
 
+const UserCard = ({ initials, color = 'blue', name, email }: UserCardProps) => {
   return (
     <div className="flex space-x-3 p-2">
-      <div
-        className={`rounded-full w-12 h-12 flex items-center justify-center text-white ${colors[color]}`}
-      >
-        {initials}
-      </div>
+      <Avatar color={color} initials={initials} tone="glossy" />
       <div className="flex flex-col space-y-1 text-sm">
         <div className="font-medium">{name}</div>
         <div className="text-gray-500">{email}</div>
@@ -416,7 +415,7 @@ const UsersTable = () => (
       </Table.Tr>
       <Table.Tr>
         <Table.Td>
-          <UserCard initials="JC" name="John Clark" email="john.clark@mail.com" color="gray" />
+          <UserCard initials="JC" name="John Clark" email="john.clark@mail.com" color="blue" />
         </Table.Td>
         <Table.Td>
           <Badge color="dark" tone="light">

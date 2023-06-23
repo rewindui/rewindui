@@ -259,42 +259,42 @@ const base = cva(['flex', 'items-center', 'text-center', 'absolute'], {
     {
       tone: 'glossy',
       color: 'blue',
-      className: ['text-white', 'from-blue-500', 'to-blue-700'],
+      className: ['text-white', 'from-blue-600', 'to-blue-500'],
     },
     {
       tone: 'glossy',
       color: 'red',
-      className: ['text-white', 'from-red-500', 'to-red-700'],
+      className: ['text-white', 'from-red-600', 'to-red-500'],
     },
     {
       tone: 'glossy',
       color: 'green',
-      className: ['text-white', 'from-green-500', 'to-green-700'],
+      className: ['text-white', 'from-green-600', 'to-green-500'],
     },
     {
       tone: 'glossy',
       color: 'yellow',
-      className: ['text-white', 'from-yellow-400', 'to-yellow-600'],
+      className: ['text-white', 'from-yellow-500', 'to-yellow-400'],
     },
     {
       tone: 'glossy',
       color: 'purple',
-      className: ['text-white', 'from-purple-500', 'to-purple-700'],
+      className: ['text-white', 'from-purple-600', 'to-purple-500'],
     },
     {
       tone: 'glossy',
       color: 'gray',
-      className: ['text-gray-800', 'from-gray-100', 'to-gray-300'],
+      className: ['text-gray-800', 'from-gray-200', 'to-gray-100'],
     },
     {
       tone: 'glossy',
       color: 'dark',
-      className: ['text-white', 'from-gray-700', 'to-gray-900'],
+      className: ['text-white', 'from-gray-600', 'to-gray-500'],
     },
     {
       tone: 'glossy',
       color: 'black',
-      className: ['text-white', 'from-gray-800', 'to-black'],
+      className: ['text-white', 'from-black', 'to-gray-700'],
     },
     {
       tone: 'light',

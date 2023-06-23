@@ -30,6 +30,7 @@ import {
   AccordionItemProps,
   CardImageProps,
   Alert,
+  Avatar,
   Badge,
   Accordion,
   Select,
@@ -128,6 +129,8 @@ const components = {
     <Alert {...props} size="sm" color="purple" tone="light" className="mt-6" />
   ),
   Alert: ({ ...props }) => <Alert {...props} />,
+  Avatar: ({ ...props }) => <Avatar {...props} />,
+  AvatarGroup: ({ ...props }) => <Avatar.Group {...props} />,
   Accordion: ({ ...props }) => <Accordion {...props} />,
   AccordionItem: ({ anchor, ...props }: AccordionItemProps) => (
     <Accordion.Item anchor={anchor} {...props} />

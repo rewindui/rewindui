@@ -1,5 +1,6 @@
 export * from './Accordion.styles';
 export * from './Alert.styles';
+export * from './Avatar.styles';
 export * from './Badge.styles';
 export * from './Button.styles';
 export * from './Card.styles';

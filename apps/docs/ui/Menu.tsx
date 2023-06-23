@@ -72,6 +72,11 @@ const menuItems: MenuItem[] = [
         path: '/components/alert',
       },
       {
+        title: 'Avatar',
+        path: '/components/avatar',
+        newItem: true,
+      },
+      {
         title: 'Badge',
         path: '/components/badge',
       },
@@ -91,7 +96,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Drawer',
         path: '/components/drawer',
-        newItem: true,
       },
       {
         title: 'Popover',
@@ -121,7 +125,6 @@ const menuItems: MenuItem[] = [
       {
         title: 'Progress',
         path: '/components/progress',
-        newItem: true,
       },
     ],
   },
