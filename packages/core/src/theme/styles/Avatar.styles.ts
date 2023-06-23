@@ -506,7 +506,7 @@ const status = cva(['absolute', 'rounded-full', 'outline'], {
   ],
 });
 
-const image = cva(['object-cover', 'w-fit', 'h-fit'], {
+const image = cva(['object-cover', 'w-full', 'h-full'], {
   variants: {
     radius: {
       none: ['rounded-none'],
