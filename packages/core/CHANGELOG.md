@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.10.0
+
+### Minor Changes
+
+- 207f135: Added Avatar component
+
 ## 0.9.2
 
 ### Patch Changes
