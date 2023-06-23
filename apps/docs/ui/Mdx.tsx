@@ -65,10 +65,24 @@ import {
 
 const components = {
   h1: ({ ...props }) => (
-    <h1 className="mt-8 text-3xl text-gray-800 font-semibold scroll-mt-[7rem]" {...props} />
+    <h1 className="group mt-8 text-3xl text-gray-800 font-semibold scroll-mt-[7rem]" {...props}>
+      <a
+        href={`#${props.id}`}
+        className="group-hover:before:visible before:invisible before:content-['#'] before:text-purple-200 before:mr-1 before:-ml-6"
+      >
+        {props.children}
+      </a>
+    </h1>
   ),
   h2: ({ ...props }) => (
-    <h2 className="mt-8 text-2xl text-gray-700 font-semibold scroll-mt-[7rem]" {...props} />
+    <h2 className="group mt-8 text-2xl text-gray-700 font-semibold scroll-mt-[7rem]" {...props}>
+      <a
+        href={`#${props.id}`}
+        className="group-hover:before:visible before:invisible before:content-['#'] before:text-purple-200 before:mr-1 before:-ml-5"
+      >
+        {props.children}
+      </a>
+    </h2>
   ),
   h3: ({ ...props }) => <p className="mt-8 text-xl text-gray-700 font-semibold" {...props} />,
   h4: ({ ...props }) => <p className="mt-8 text-lg text-gray-700 font-medium" {...props} />,
