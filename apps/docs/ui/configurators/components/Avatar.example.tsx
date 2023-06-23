@@ -13,6 +13,7 @@ export const AvatarCode = (props: any) => {
     status,
     statusPosition,
     tone,
+    withImage,
   } = props;
 
   const defaultProps = {
@@ -37,6 +38,7 @@ export const AvatarCode = (props: any) => {
     status !== defaultProps.status ? `status="${status}"` : null,
     statusPosition !== defaultProps.statusPosition ? `statusPosition="${statusPosition}"` : null,
     tone !== defaultProps.tone ? `tone="${tone}"` : null,
+    withImage ? `src="..."` : null,
     `initials="${initials}"`,
   ].filter(Boolean);
 
@@ -54,6 +56,16 @@ function App() {
 `.trim();
 };
 
-export const AvatarExample = (props: AvatarProps) => {
-  return <Avatar initials="ND" {...props} />;
+export const AvatarExample = ({ withImage, ...props }: AvatarProps & { withImage?: boolean }) => {
+  if (withImage) {
+    return (
+      <Avatar
+        src="https://avatars.githubusercontent.com/u/810438?s=60&v=4"
+        initials="DA"
+        {...props}
+      />
+    );
+  }
+
+  return <Avatar initials="DA" {...props} />;
 };

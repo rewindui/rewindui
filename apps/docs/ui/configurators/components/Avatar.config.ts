@@ -13,7 +13,8 @@ export const AvatarConfig = {
     status: 'online',
     statusPosition: 'bottom-right',
     outlined: true,
-    initials: 'ND',
+    withImage: false,
+    initials: 'DA',
   },
   options: [
     {
@@ -68,6 +69,11 @@ export const AvatarConfig = {
       name: 'statusPosition',
       type: 'select',
       options: ['top-right', 'top-left', 'bottom-right', 'bottom-left'],
+    },
+    {
+      label: 'With image',
+      name: 'withImage',
+      type: 'switch',
     },
   ],
 };
