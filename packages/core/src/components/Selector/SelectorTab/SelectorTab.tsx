@@ -1,10 +1,8 @@
 import { SelectorTabComponent, SelectorTabProps } from '@components/Selector';
 import { useSelectorContext } from '@components/Selector/Selector.context';
-import { textNormalize } from '@helpers/text-normalize.utility';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
 import { ForwardedRef, forwardRef, useMemo } from 'react';
-import { renderToString } from 'react-dom/server';
 import { twMerge } from 'tailwind-merge';
 
 const SelectorTab: SelectorTabComponent = forwardRef(

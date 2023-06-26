@@ -188,6 +188,56 @@ The `Tabs` component supports an `unmount` and a `hide` method. The `unmount` me
 </View>
 ```
 
+# Ref
+---
+The `Tabs.Tab` component supports the `ref` prop, which allows for obtaining a reference to the associated underlying HTML element.
+
+<View>
+  <TabsShowcase showcase="ref" />
+</View>
+
+```tsx
+const App = () => {
+  const ref1 = useRef<HTMLButtonElement>(null);
+  const ref2 = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <Button
+          onClick={() => {
+            ref1.current?.click();
+          }}
+        >
+          Activate Tab 1
+        </Button>
+        <Button
+          onClick={() => {
+            ref2.current?.click();
+          }}
+        >
+          Activate Tab 2
+        </Button>
+      </div>
+
+      <Tabs defaultTab="tab-2" fullWidth>
+        <Tabs.List>
+          <Tabs.Tab ref={ref1} anchor="tab-1">
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab ref={ref2} anchor="tab-2">
+            Tab 2
+          </Tabs.Tab>
+        </Tabs.List>
+
+        <Tabs.Content anchor="tab-1">Tab 1 content</Tabs.Content>
+        <Tabs.Content anchor="tab-2">Tab 2 content</Tabs.Content>
+      </Tabs>
+    </div>
+  );
+};
+```
+
 # Examples
 ---
 ## Content in Cards

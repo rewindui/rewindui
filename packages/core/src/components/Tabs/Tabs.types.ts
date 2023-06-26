@@ -1,9 +1,4 @@
-import {
-  ComponentPropsWithRef,
-  ForwardRefExoticComponent,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react';
+import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
 export type TabsColor = 'blue' | 'red' | 'green' | 'yellow' | 'purple' | 'gray' | 'dark' | 'black';
 export type TabsMethod = 'unmount' | 'hide';
@@ -33,8 +28,6 @@ export interface TabsProps extends ComponentPropsWithRef<'div'> {
   tone?: TabsTone;
 }
 
-export type TabsComponent = ForwardRefExoticComponent<
-  PropsWithoutRef<TabsProps> & RefAttributes<HTMLDivElement>
-> & {
+export type TabsComponent = ForwardRefExoticComponent<TabsProps> & {
   displayName?: string;
 };

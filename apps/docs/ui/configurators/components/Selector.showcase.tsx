@@ -1,4 +1,5 @@
-import { Selector, Tooltip } from '@rewind-ui/core';
+import { Button, Selector, Tabs, Tooltip } from '@rewind-ui/core';
+import { useRef } from 'react';
 import * as React from 'react';
 import { SunDim, MoonStars } from '@phosphor-icons/react';
 
@@ -16,7 +17,8 @@ export type SelectorShowcaseProps = {
     | 'separator'
     | 'border-background'
     | 'extended-composition'
-    | 'icons';
+    | 'icons'
+    | 'ref';
 };
 
 export const SelectorShowcase = (props: SelectorShowcaseProps) => {
@@ -37,6 +39,7 @@ export const SelectorShowcase = (props: SelectorShowcaseProps) => {
     'border-background': <BorderBackground />,
     'extended-composition': <ExtendedComposition />,
     icons: <Icons />,
+    ref: <Ref />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -383,5 +386,36 @@ const Icons = () => {
         <Selector.Tab color="dark" label={<MoonStars size={16} weight="duotone" />} anchor="2" />
       </Selector>
     </>
+  );
+};
+
+const Ref = () => {
+  const ref1 = useRef<HTMLButtonElement>(null);
+  const ref2 = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <Button
+          onClick={() => {
+            ref1.current?.click();
+          }}
+        >
+          Activate Tab 1
+        </Button>
+        <Button
+          onClick={() => {
+            ref2.current?.click();
+          }}
+        >
+          Activate Tab 2
+        </Button>
+      </div>
+
+      <Selector value="tab-1">
+        <Selector.Tab ref={ref1} label="Tab 1" anchor="tab-1" />
+        <Selector.Tab ref={ref2} label="Tab 2" anchor="tab-2" />
+      </Selector>
+    </div>
   );
 };

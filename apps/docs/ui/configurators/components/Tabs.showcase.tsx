@@ -1,4 +1,5 @@
-import { Tabs, Radio, Card } from '@rewind-ui/core';
+import { Tabs, Radio, Card, Button } from '@rewind-ui/core';
+import { useRef } from 'react';
 import * as React from 'react';
 import { HandWaving, Lifebuoy } from '@phosphor-icons/react';
 
@@ -12,7 +13,8 @@ export type TabsShowcaseProps = {
     | 'methods-hide'
     | 'methods-unmount'
     | 'examples-content-in-cards'
-    | 'examples-tabs-in-card';
+    | 'examples-tabs-in-card'
+    | 'ref';
 };
 
 const tabs = [
@@ -63,6 +65,7 @@ export const TabsShowcase = (props: TabsShowcaseProps) => {
     'methods-unmount': <MethodsUnmount />,
     'examples-content-in-cards': <ExamplesContentInCards />,
     'examples-tabs-in-card': <ExamplesTabsInCard />,
+    ref: <Ref />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -562,6 +565,47 @@ const MethodsUnmount = () => {
         ))}
       </Tabs>
     </>
+  );
+};
+
+const Ref = () => {
+  const ref1 = useRef<HTMLButtonElement>(null);
+  const ref2 = useRef<HTMLButtonElement>(null);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <Button
+          onClick={() => {
+            ref1.current?.click();
+          }}
+        >
+          Activate Tab 1
+        </Button>
+        <Button
+          onClick={() => {
+            ref2.current?.click();
+          }}
+        >
+          Activate Tab 2
+        </Button>
+      </div>
+
+      <Tabs defaultTab="tab-2" fullWidth>
+        <Tabs.List>
+          <Tabs.Tab ref={ref1} anchor="tab-1">
+            Tab 1
+          </Tabs.Tab>
+          <Tabs.Tab ref={ref2} anchor="tab-2">
+            Tab 2
+          </Tabs.Tab>
+        </Tabs.List>
+
+        <Tabs.Content anchor="tab-1">Tab 1 content</Tabs.Content>
+
+        <Tabs.Content anchor="tab-2">Tab 2 content</Tabs.Content>
+      </Tabs>
+    </div>
   );
 };
 

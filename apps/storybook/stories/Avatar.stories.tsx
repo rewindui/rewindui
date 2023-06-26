@@ -36,7 +36,7 @@ const statusPositions: AvatarStatusPosition[] = [
   'bottom-right',
 ];
 const src = 'https://avatars.githubusercontent.com/u/463230?v=4';
-// const src = 'https://avatars.githubusercontent.com/u/46323asd0?v=4';
+
 const group = [
   'https://avatars.githubusercontent.com/u/4800338?s=96&v=4',
   'https://avatars.githubusercontent.com/u/810438?s=96&v=4',

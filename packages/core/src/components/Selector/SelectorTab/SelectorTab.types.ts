@@ -1,4 +1,3 @@
-import { SelectorSize } from '@components/Selector';
 import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactNode } from 'react';
 
 export type SelectorTabColor =

@@ -1,18 +1,36 @@
 import { useKeypress } from '@hooks/use-keypress';
+import { RefObject } from 'react';
 
-export function useHorizontalArrows(refs: Map<string, HTMLButtonElement>, active: boolean = true) {
+export function useHorizontalArrows(
+  ref: RefObject<HTMLElement> | undefined,
+  active: boolean = true
+) {
   useKeypress('ArrowRight', active, () => {
     if (!active) {
       return;
     }
 
     const activeElement = document.activeElement as HTMLButtonElement;
-    const ids: string[] = [];
-    refs.forEach((el) => ids.push(el.id));
 
     if (!activeElement) {
       return;
     }
+
+    if (!ref) {
+      return;
+    }
+
+    const buttons = ref.current?.querySelectorAll('button:not([disabled="true"])');
+
+    if (!buttons) {
+      return;
+    }
+
+    const ids: string[] = [];
+
+    buttons.forEach((button: Element) => {
+      ids.push(button.id);
+    });
 
     if (!ids.includes(activeElement.id)) {
       return;
@@ -29,12 +47,26 @@ export function useHorizontalArrows(refs: Map<string, HTMLButtonElement>, active
     }
 
     const activeElement = document.activeElement as HTMLButtonElement;
-    const ids: string[] = [];
-    refs.forEach((el) => ids.push(el.id));
 
     if (!activeElement) {
       return;
     }
+
+    if (!ref) {
+      return;
+    }
+
+    const buttons = ref.current?.querySelectorAll('button:not([disabled="true"])');
+
+    if (!buttons) {
+      return;
+    }
+
+    const ids: string[] = [];
+
+    buttons.forEach((button: Element) => {
+      ids.push(button.id);
+    });
 
     if (!ids.includes(activeElement.id)) {
       return;

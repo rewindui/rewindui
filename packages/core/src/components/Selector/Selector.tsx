@@ -8,19 +8,11 @@ import {
 } from '@components/Selector/Selector.types';
 import { SelectorTab } from '@components/Selector/SelectorTab/SelectorTab';
 import { SelectorTabColor } from '@components/Selector/SelectorTab/SelectorTab.types';
+import { useMergeRefs } from '@floating-ui/react';
 import { useHorizontalArrows } from '@hooks/use-horizontal-arrows.hook';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import React, {
-  Children,
-  cloneElement,
-  forwardRef,
-  Ref,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { Children, forwardRef, Ref, useEffect, useMemo, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SelectorContextProvider } from './Selector.context';
 
@@ -60,6 +52,8 @@ const _Selector: SelectorComponent = forwardRef(
       ...props,
     };
     const id = usePropId(props.id);
+    const localRef = useRef<HTMLDivElement>(null);
+    const mergedRef = useMergeRefs([ref || null, localRef]);
     const [activeTabAnchor, setActiveTabAnchor] = useState(value);
     const mounted = useRef(true);
     const selectorRef = useRef<HTMLDivElement>(null);
@@ -78,7 +72,6 @@ const _Selector: SelectorComponent = forwardRef(
         })
       );
     }, [className, fullWidth, orientation, radius, shadow, size, theme]);
-    const refsMap: Map<string, HTMLButtonElement> = new Map();
 
     const positionSelector = (
       activeTab: HTMLButtonElement,
@@ -114,7 +107,9 @@ const _Selector: SelectorComponent = forwardRef(
         return;
       }
 
-      const activeTab = refsMap.get(activeTabAnchor);
+      const activeTab = localRef.current?.querySelector(
+        'button[aria-checked="true"]'
+      ) as HTMLButtonElement;
 
       if (!activeTab) {
         return;
@@ -187,21 +182,22 @@ const _Selector: SelectorComponent = forwardRef(
       withSeparator,
     };
 
-    const items = Children.map(children, (child: any) => {
+    Children.map(children, (child: any) => {
       colorsMap.set(child.props.anchor, child.props.color || color);
-
-      return cloneElement(child, {
-        ...child.props,
-        ref: (ref: HTMLButtonElement) => refsMap.set(child.props.anchor, ref),
-      });
     });
 
-    useHorizontalArrows(refsMap);
+    useHorizontalArrows(localRef);
 
     return (
       <SelectorContextProvider value={contextValue}>
-        <div id={id} ref={ref} role="radiogroup" className={wrapperClasses} {...additionalProps}>
-          {items}
+        <div
+          id={id}
+          ref={mergedRef}
+          role="radiogroup"
+          className={wrapperClasses}
+          {...additionalProps}
+        >
+          {children}
           <div ref={selectorRef} className={selectorClasses} />
         </div>
       </SelectorContextProvider>

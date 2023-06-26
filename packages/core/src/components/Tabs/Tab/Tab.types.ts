@@ -1,18 +1,11 @@
-import {
-  ComponentPropsWithoutRef,
-  ForwardRefExoticComponent,
-  PropsWithoutRef,
-  RefAttributes,
-} from 'react';
+import { ComponentPropsWithRef, ForwardRefExoticComponent } from 'react';
 
 export type TabStateType = 'active' | 'inactive';
 
-export interface TabProps extends ComponentPropsWithoutRef<'button'> {
+export interface TabProps extends ComponentPropsWithRef<'button'> {
   anchor: string;
 }
 
-export type TabComponent = ForwardRefExoticComponent<
-  PropsWithoutRef<TabProps> & RefAttributes<HTMLButtonElement>
-> & {
+export type TabComponent = ForwardRefExoticComponent<TabProps> & {
   displayName?: string;
 };
