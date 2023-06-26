@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.10.1
+
+### Patch Changes
+
+- 0e7c0ea: Tabs.Tab and Selector.Tab components ref bug fix
+
 ## 0.10.0
 
 ### Minor Changes
