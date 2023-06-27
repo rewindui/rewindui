@@ -1,4 +1,4 @@
-![Rewind-UI, Effortless user interfaces](https://rewind-ui.dev/images/og.jpg)
+![Rewind-UI, Effortless user interfaces](https://rewind-ui.dev/images/og-image.jpg)
 
 <div align="center">
 
