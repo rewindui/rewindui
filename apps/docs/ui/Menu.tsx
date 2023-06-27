@@ -52,12 +52,6 @@ const menuItems: MenuItem[] = [
         path: '/roadmap',
         icon: <RoadHorizon size={18} weight="duotone" />,
       },
-      {
-        title: 'Contributing',
-        path: '/contributing',
-        icon: <Lifebuoy size={18} weight="duotone" />,
-        wip: true,
-      },
     ],
   },
   {

@@ -11,6 +11,6 @@ export const config = {
   metadata: {
     title: 'Rewind-UI',
     description: 'Effortless user interfaces',
-    ogImage: 'https://rewind-ui.dev/images/og.jpg',
+    ogImage: 'https://rewind-ui.dev/images/og-image.jpg',
   },
 };
