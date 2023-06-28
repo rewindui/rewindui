@@ -1,22 +1,18 @@
 const path = require('path');
+
 module.exports = {
-  stories: ['../stories/**/*.stories.tsx'],
+  stories: ['../stories/**/*.stories.mdx', '../stories/**/*.stories.tsx'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
-  framework: {
-    name: '@storybook/react-vite',
-    options: {},
+  framework: '@storybook/react',
+  core: {
+    builder: '@storybook/builder-vite',
   },
   async viteFinal(config, { configType }) {
     // customize the Vite config here
     return {
       ...config,
-      define: {
-        'process.env': {},
-      },
       esbuild: {
-        logOverride: {
-          'this-is-undefined-in-esm': 'silent',
-        },
+        logOverride: { 'this-is-undefined-in-esm': 'silent' },
       },
       resolve: {
         alias: [
@@ -27,8 +23,5 @@ module.exports = {
         ],
       },
     };
-  },
-  docs: {
-    autodocs: true,
   },
 };
