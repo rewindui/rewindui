@@ -66,7 +66,7 @@ function App() {
       <Combobox.Option value="1" label="Apple" />
       <Combobox.Option value="2" label="Orange" />
       <Combobox.Option value="3" label="Banana" />
-    </Select>
+    </Combobox>
   );
 }
 `.trim();
