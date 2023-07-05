@@ -1,4 +1,4 @@
-## Contributing Guidelines
+## Contributing guidelines
 Thank you for considering contributing to this project! We appreciate your time and effort in making this project better.
 
 ## Tech stack
@@ -15,7 +15,7 @@ Basic animations are implemented using the [Web Animations API](https://develope
 
 Before you get started, please take a moment to review the following guidelines.
 
-## Ways to Contribute
+## Ways to contribute
 There are many ways to contribute to this project! Here are some ideas:
 - Submit bugs and feature requests
 - Review source code changes
@@ -23,7 +23,7 @@ There are many ways to contribute to this project! Here are some ideas:
 - Review open issues
 - Contribute to the codebase
 
-## Submitting an Issue
+## Submitting an issue
 If you encounter a bug, have a feature request, or need assistance, please submit an issue using the issue tracker. Before submitting an issue, please check if a similar issue already exists. Include as much detail as possible to help us understand and address the problem.
 
 ## Contribution workflow
