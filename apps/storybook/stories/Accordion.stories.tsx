@@ -9,7 +9,7 @@ import {
   AccordionProps,
 } from '@rewind-ui/core';
 import * as React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';
 import { HandWaving, Sparkle, Info, Lifebuoy } from '@phosphor-icons/react';
 
@@ -93,10 +93,8 @@ const meta: Meta = {
 
 export default meta;
 
-type Story = StoryObj<typeof Accordion>;
-
-export const Default: Story = {
-  render: (args) => (
+const DefaultTemplate: Story<AccordionProps> = (args) => {
+  return (
     <EnhancedView prop="Default">
       <Accordion {...args} defaultItem={'item-1'}>
         {accordionItems.map((item) => (
@@ -107,38 +105,61 @@ export const Default: Story = {
         ))}
       </Accordion>
     </EnhancedView>
-  ),
+  );
 };
 
-export const Tones: Story = {
-  render: (args) => {
-    const items = activeColors.map((color) => (
-      <React.Fragment key={color}>
-        <View prop="color" value={color}>
-          {tones.map((tone) => (
-            <Accordion key={tone} {...args} tone={tone} activeColor={color} defaultItem={'item-1'}>
-              {accordionItems.map((item) => (
-                <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                  <Accordion.Header>{item.header}</Accordion.Header>
-                  <Accordion.Body>{item.body}</Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
+export const Default = DefaultTemplate.bind({});
+
+const ToneTemplate: Story<AccordionProps> = (args) => {
+  const items = activeColors.map((color) => (
+    <React.Fragment key={color}>
+      <View prop="color" value={color}>
+        {tones.map((tone) => (
+          <Accordion key={tone} {...args} tone={tone} activeColor={color} defaultItem={'item-1'}>
+            {accordionItems.map((item) => (
+              <Accordion.Item key={item.anchor} anchor={item.anchor}>
+                <Accordion.Header>{item.header}</Accordion.Header>
+                <Accordion.Body>{item.body}</Accordion.Body>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        ))}
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
+};
+
+export const Tones = ToneTemplate.bind({});
+
+const ColorTemplate: Story<AccordionProps> = (args) => {
+  const items = colors.map((color) => (
+    <React.Fragment key={color}>
+      <View prop="color" value={color}>
+        <Accordion {...args} color={color} defaultItem={'item-1'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body>{item.body}</Accordion.Body>
+            </Accordion.Item>
           ))}
-        </View>
-      </React.Fragment>
-    ));
+        </Accordion>
+      </View>
+    </React.Fragment>
+  ));
 
-    return <ViewGroup>{items}</ViewGroup>;
-  },
+  return <ViewGroup>{items}</ViewGroup>;
 };
 
-export const Colors: Story = {
-  render: (args) => {
-    const items = colors.map((color) => (
-      <React.Fragment key={color}>
-        <View prop="color" value={color}>
-          <Accordion {...args} color={color} defaultItem={'item-1'}>
+export const Colors = ColorTemplate.bind({});
+
+const ActiveColorTemplate: Story<AccordionProps> = (args) => {
+  const items = tones.map((tone) => (
+    <React.Fragment key={tone}>
+      <View prop="tone" value={tone}>
+        {activeColors.map((color) => (
+          <Accordion key={color} {...args} tone={tone} activeColor={color} defaultItem={'item-1'}>
             {accordionItems.map((item) => (
               <Accordion.Item key={item.anchor} anchor={item.anchor}>
                 <Accordion.Header>{item.header}</Accordion.Header>
@@ -146,191 +167,170 @@ export const Colors: Story = {
               </Accordion.Item>
             ))}
           </Accordion>
-        </View>
-      </React.Fragment>
-    ));
+        ))}
+      </View>
+    </React.Fragment>
+  ));
 
-    return <ViewGroup>{items}</ViewGroup>;
-  },
+  return <ViewGroup>{items}</ViewGroup>;
 };
 
-export const ActiveColors: Story = {
-  render: (args) => {
-    const items = tones.map((tone) => (
-      <React.Fragment key={tone}>
-        <View prop="tone" value={tone}>
-          {activeColors.map((color) => (
-            <Accordion key={color} {...args} tone={tone} activeColor={color} defaultItem={'item-1'}>
-              {accordionItems.map((item) => (
-                <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                  <Accordion.Header>{item.header}</Accordion.Header>
-                  <Accordion.Body>{item.body}</Accordion.Body>
-                </Accordion.Item>
-              ))}
-            </Accordion>
+export const ActiveColors = ActiveColorTemplate.bind({});
+
+const RadiusTemplate: Story<AccordionProps> = (args) => {
+  const items = radiuses.map((radius) => (
+    <React.Fragment key={radius}>
+      <View prop="radius" value={radius}>
+        <Accordion {...args} radius={radius} defaultItem={'item-1'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body>{item.body}</Accordion.Body>
+            </Accordion.Item>
           ))}
-        </View>
-      </React.Fragment>
-    ));
+        </Accordion>
+      </View>
+    </React.Fragment>
+  ));
 
-    return <ViewGroup>{items}</ViewGroup>;
-  },
+  return <ViewGroup>{items}</ViewGroup>;
 };
 
-export const Radiuses: Story = {
-  render: (args) => {
-    const items = radiuses.map((radius) => (
-      <React.Fragment key={radius}>
-        <View prop="radius" value={radius}>
-          <Accordion {...args} radius={radius} defaultItem={'item-1'}>
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>{item.header}</Accordion.Header>
-                <Accordion.Body>{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </View>
-      </React.Fragment>
-    ));
+export const Radiuses = RadiusTemplate.bind({});
 
-    return <ViewGroup>{items}</ViewGroup>;
-  },
+const SizeTemplate: Story<AccordionProps> = (args) => {
+  const items = sizes.map((size) => (
+    <React.Fragment key={size}>
+      <View prop="size" value={size}>
+        <Accordion {...args} size={size} defaultItem={'item-1'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body>{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
 };
 
-export const Sizes: Story = {
-  render: (args) => {
-    const items = sizes.map((size) => (
-      <React.Fragment key={size}>
-        <View prop="size" value={size}>
-          <Accordion {...args} size={size} defaultItem={'item-1'}>
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>{item.header}</Accordion.Header>
-                <Accordion.Body>{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </View>
-      </React.Fragment>
-    ));
+export const Sizes = SizeTemplate.bind({});
 
-    return <ViewGroup>{items}</ViewGroup>;
-  },
+const ShadowTemplate: Story<AccordionProps> = (args) => {
+  const items = shadows.map((shadow) => (
+    <React.Fragment key={shadow}>
+      <View prop="shadow" value={shadow}>
+        <Accordion {...args} shadow={shadow} defaultItem={'item-1'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body>{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
 };
 
-export const Shadows: Story = {
-  render: (args) => {
-    const items = shadows.map((shadow) => (
-      <React.Fragment key={shadow}>
-        <View prop="shadow" value={shadow}>
-          <Accordion {...args} shadow={shadow} defaultItem={'item-1'}>
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>{item.header}</Accordion.Header>
-                <Accordion.Body>{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </View>
-      </React.Fragment>
-    ));
+export const Shadows = ShadowTemplate.bind({});
 
-    return <ViewGroup>{items}</ViewGroup>;
-  },
+const BorderTemplate: Story<AccordionProps> = (args) => {
+  return (
+    <ViewGroup>
+      <View prop="bordered" value={'true'}>
+        <Accordion {...args} bordered={true} defaultItem={'item-1'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body>{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </View>
+      <View prop="bordered" value={'false'}>
+        <Accordion {...args} bordered={false} defaultItem={'item-1'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body>{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </View>
+    </ViewGroup>
+  );
 };
 
-export const Borders: Story = {
-  render: (args) => {
-    return (
-      <ViewGroup>
-        <View prop="bordered" value={'true'}>
-          <Accordion {...args} bordered={true} defaultItem={'item-1'}>
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>{item.header}</Accordion.Header>
-                <Accordion.Body>{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </View>
-        <View prop="bordered" value={'false'}>
-          <Accordion {...args} bordered={false} defaultItem={'item-1'}>
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>{item.header}</Accordion.Header>
-                <Accordion.Body>{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </View>
-      </ViewGroup>
-    );
-  },
+export const Borders = BorderTemplate.bind({});
+
+const ExampleTemplate: Story<AccordionProps> = (args) => {
+  return (
+    <ViewGroup>
+      <EnhancedView prop="Simple Accordion">
+        <Accordion
+          {...args}
+          activeColor="dark"
+          size="md"
+          shadow="base"
+          bordered={true}
+          defaultItem={'item-1'}
+        >
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>{item.header}</Accordion.Header>
+              <Accordion.Body className="font-light">{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </EnhancedView>
+
+      <EnhancedView prop="Borderless Accordion with Icons">
+        <Accordion {...args} activeColor="blue" size="md" bordered={false} defaultItem={'item-2'}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>
+                <div className="flex items-center space-x-2">
+                  {item.icon}
+                  <span>{item.header}</span>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body className="font-light">{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </EnhancedView>
+
+      <EnhancedView prop="Borderless Accordion with extra padding & Icons">
+        <Accordion
+          {...args}
+          className="px-3 py-2"
+          activeColor="purple"
+          size="md"
+          shadow="base"
+          bordered={false}
+          defaultItem={'item-2'}
+        >
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.anchor} anchor={item.anchor}>
+              <Accordion.Header>
+                <div className="flex items-center space-x-2">
+                  {item.icon}
+                  <span>{item.header}</span>
+                </div>
+              </Accordion.Header>
+              <Accordion.Body className="font-light">{item.body}</Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </EnhancedView>
+    </ViewGroup>
+  );
 };
 
-export const Examples: Story = {
-  render: (args) => {
-    return (
-      <ViewGroup>
-        <EnhancedView prop="Simple Accordion">
-          <Accordion
-            {...args}
-            activeColor="dark"
-            size="md"
-            shadow="base"
-            bordered={true}
-            defaultItem={'item-1'}
-          >
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>{item.header}</Accordion.Header>
-                <Accordion.Body className="font-light">{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </EnhancedView>
-
-        <EnhancedView prop="Borderless Accordion with Icons">
-          <Accordion {...args} activeColor="blue" size="md" bordered={false} defaultItem={'item-2'}>
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>
-                  <div className="flex items-center space-x-2">
-                    {item.icon}
-                    <span>{item.header}</span>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Body className="font-light">{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </EnhancedView>
-
-        <EnhancedView prop="Borderless Accordion with extra padding & Icons">
-          <Accordion
-            {...args}
-            className="px-3 py-2"
-            activeColor="purple"
-            size="md"
-            shadow="base"
-            bordered={false}
-            defaultItem={'item-2'}
-          >
-            {accordionItems.map((item) => (
-              <Accordion.Item key={item.anchor} anchor={item.anchor}>
-                <Accordion.Header>
-                  <div className="flex items-center space-x-2">
-                    {item.icon}
-                    <span>{item.header}</span>
-                  </div>
-                </Accordion.Header>
-                <Accordion.Body className="font-light">{item.body}</Accordion.Body>
-              </Accordion.Item>
-            ))}
-          </Accordion>
-        </EnhancedView>
-      </ViewGroup>
-    );
-  },
-};
+export const Examples = ExampleTemplate.bind({});

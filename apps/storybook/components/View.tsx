@@ -13,7 +13,7 @@ export const View = ({ prop, value = '', direction = 'row', justify = 'evenly', 
       </div>
       <div
         style={{ flexDirection, justifyContent }}
-        className="bg-grid bg-gray-50/25 flex flex-wrap justify-center gap-x-2 gap-y-2 p-2.5"
+        className="bg-grid bg-gray-50/25 flex flex-wrap items-start justify-center gap-x-2 gap-y-2 p-2.5"
       >
         {children}
       </div>
