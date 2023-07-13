@@ -1,0 +1,934 @@
+---
+title: Toast
+description: A notification box.
+intro: The Toast component can be used to deliver timely and non-intrusive notifications to the user. It can display a concise message and can be customized to draw the user's attention by modifying its color, position and other properties.
+source: Toast
+theme: Toast.styles.ts
+variants: Toast.variants.ts
+storybook: toast--default
+---
+
+# Import
+---
+Import the `ToastContainer` component using the following import statement and the `useToast` hook.
+
+```tsx
+import { ToastContainer, useToast } from '@rewind-ui/core';
+```
+
+To trigger a new toast, use the `toast.add()` method.
+
+It is highly recommended to add a unique id to each toast when using the `toast.add()` method. Adding a unique id will enable you to [remove](#remove-toast) a specific toast using the `toast.remove()` method or [update](#update-toast) the toast using the `toast.update()` method. Additionally, it will help you avoid duplicate toasts.
+
+# Position
+---
+The following positions are available for the `ToastContainer` component: `top-left`, `top-right`, `bottom-left` and `bottom-right`.
+
+```tsx
+<View>
+  <ToastContainer position="top-left" />
+</View>
+```
+
+```tsx
+<View>
+  <ToastContainer position="top-right" />
+</View>
+```
+
+```tsx
+<View>
+  <ToastContainer position="bottom-left" />
+</View>
+```
+
+```tsx
+<View>
+  <ToastContainer position="bottom-right" />
+</View>
+```
+
+# Maximum toasts
+---
+The maximum number of toasts can be set by using the `max` prop.
+
+```tsx
+<View>
+  <ToastContainer max="3" />
+</View>
+```
+
+# Variants
+---
+The `Toast` component comes with a number of pre-defined variants that can be used to change the appearance of the component. The variants can be used by passing the variant name as a prop to the component. A variant is basically a pre-set set of properties. Read more about variants [here](https://rewind-ui.dev/variants).
+
+Available variants are: `primary`, `secondary`, `danger`, `success`, `warning` and `info`.
+
+<View>
+  <ToastShowcase showcase="variants" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          title: 'Primary',
+          variant: 'primary',
+        });
+      }}>Primary</Button>
+      <Button onClick={() => {
+        toast.add({
+          title: 'Secondary',
+          variant: 'secondary',
+        });
+      }}>Secondary</Button>
+      <Button onClick={() => {
+        toast.add({
+          title: 'Danger',
+          variant: 'danger',
+        });
+      }}>Danger</Button>
+      <Button onClick={() => {
+        toast.add({
+          title: 'Success',
+          variant: 'success',
+        });
+      }}>Success</Button>
+      <Button onClick={() => {
+        toast.add({
+          title: 'Warning',
+          variant: 'warning',
+        });
+      }}>Warning</Button>
+      <Button onClick={() => {
+        toast.add({
+          title: 'Info',
+          variant: 'info',
+        });
+      }}>Info</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Tones & Colors
+---
+The `Alert` component comes with four tones: `solid` and `light`.
+
+The available `color` values are: `white`, `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+## Solid
+<View>
+  <ToastShowcase showcase="tones-solid" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          color: 'white',
+          tone: 'solid',
+        });
+      }}>White</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'blue',
+          tone: 'solid',
+        });
+      }}>Blue</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'red',
+          tone: 'solid',
+        });
+      }}>Red</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'green',
+          tone: 'solid',
+        });
+      }}>Green</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'yellow',
+          tone: 'solid',
+        });
+      }}>Yellow</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'gray',
+          tone: 'solid',
+        });
+      }}>Gray</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'dark',
+          tone: 'solid',
+        });
+      }}>Dark</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'black',
+          tone: 'solid',
+        });
+      }}>Black</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+## Light
+<View>
+  <ToastShowcase showcase="tones-light" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          color: 'white',
+          tone: 'light',
+        });
+      }}>White</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'blue',
+          tone: 'light',
+        });
+      }}>Blue</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'red',
+          tone: 'light',
+        });
+      }}>Red</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'green',
+          tone: 'light',
+        });
+      }}>Green</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'yellow',
+          tone: 'light',
+        });
+      }}>Yellow</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'gray',
+          tone: 'light',
+        });
+      }}>Gray</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'dark',
+          tone: 'light',
+        });
+      }}>Dark</Button>
+      <Button onClick={() => {
+        toast.add({
+          color: 'black',
+          tone: 'light',
+        });
+      }}>Black</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md` and `lg`.
+
+<View>
+  <ToastShowcase showcase="radiuses" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          radius: 'none',
+        });
+      }}>None</Button>
+      <Button onClick={() => {
+        toast.add({
+          radius: 'sm',
+        });
+      }}>Small</Button>
+      <Button onClick={() => {
+        toast.add({
+          radius: 'base',
+        });
+      }}>Base</Button>
+      <Button onClick={() => {
+        toast.add({
+          radius: 'md',
+        });
+      }}>Medium</Button>
+      <Button onClick={() => {
+        toast.add({
+          radius: 'lg',
+        });
+      }}>Large</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `xs`, `sm`, `md` and `lg`.
+
+<View>
+  <ToastShowcase showcase="shadows" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          shadow: 'none',
+        });
+      }}>None</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadow: 'xs',
+        });
+      }}>Extra small</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadow: 'sm',
+        });
+      }}>Small</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadow: 'md',
+        });
+      }}>Medium</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadow: 'lg',
+        });
+      }}>Large</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+## Shadow colors
+Available `shadowColor` values are: `blue`, `red`, `green`, `yellow`, `purple`, `gray`, `dark` and `black`.
+
+<View>
+  <ToastShowcase showcase="shadow-colors" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'white',
+          tone: 'solid',
+        });
+      }}>White</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'blue',
+          tone: 'solid',
+        });
+      }}>Blue</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'red',
+          tone: 'solid',
+        });
+      }}>Red</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'green',
+          tone: 'solid',
+        });
+      }}>Green</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'yellow',
+          tone: 'solid',
+        });
+      }}>Yellow</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'gray',
+          tone: 'solid',
+        });
+      }}>Gray</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'dark',
+          tone: 'solid',
+        });
+      }}>Dark</Button>
+      <Button onClick={() => {
+        toast.add({
+          shadowColor: 'black',
+          tone: 'solid',
+        });
+      }}>Black</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Icon types
+---
+The `Toast` component comes with a set of icons that can be used to represent the type of the toast.
+Available `iconType` values are: `info`, `success`, `warning`, `error` and `question`.
+
+<View>
+  <ToastShowcase showcase="icon-types" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'info',
+        });
+      }}>White</Button>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'success',
+        });
+      }}>Blue</Button>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'warning',
+        });
+      }}>Red</Button>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'error',
+        });
+      }}>Green</Button>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'question',
+        });
+      }}>Yellow</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Title
+---
+A title can be added to the toast notification by using the `title` prop.
+
+<View>
+  <ToastShowcase showcase="title" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'info',
+          title: 'This is a fancy title',
+        });
+      }}>Click me!</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Description
+---
+A description can be added to the toast notification by using the `title` prop.
+
+<Callout>The font size of the description is adjusted if there is no title included.</Callout>
+
+<View>
+  <ToastShowcase showcase="description" />
+</View>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          iconType: 'info',
+          description: 'This is a fancy description',
+        });
+      }}>Click me!</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Actions
+---
+Actions can be added to the toast notification by using the `actions` prop.
+
+<View>
+  <ToastShowcase showcase="actions" />
+</View>
+
+<Callout>It is highly suggested to use the primary prop to highlight the primary action.</Callout>
+
+```tsx
+function App() {
+  const toast = useToast();
+
+  return (
+    <View>
+      <Button onClick={() => {
+        toast.add({
+          variant: 'info',
+          title: 'Are you sure?',
+          description: 'Do you really want to delete the selected item?',
+          actions: [
+            {
+              label: 'Cancel',
+              onClick: () => {
+                console.log('Clicked cancel');
+              },
+              primary: false,
+            },
+            {
+              label: 'Delete',
+              onClick: () => {
+                console.log('Clicked delete');
+              },
+              primary: true,
+            },
+          ],
+        });
+      }}>Click me!</Button>
+      <ToastContainer />
+    </View>
+  );
+}
+```
+
+# Close on click
+---
+The toast notification can be closed when clicking on it by using the `closeOnClick` prop.
+
+<View>
+  <ToastShowcase showcase="close-on-click" />
+</View>
+
+```tsx
+const App = () => {
+  const toast = useToast();
+
+  return (
+    <>
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'close-on-click',
+            closeOnClick: true,
+            description: 'Close me by clicking on me!',
+          });
+        }}
+      >
+        Enabled
+      </Button>
+
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'dont-close-on-click',
+            closeOnClick: false,
+            description: 'Close me if you can!',
+          });
+        }}
+      >
+        Disabled
+      </Button>
+
+      <ToastContainer />
+    </>
+  );
+};
+```
+
+# Duration
+---
+The duration of the toast notification can be set by using the `duration` prop.
+
+<View>
+  <ToastShowcase showcase="duration" />
+</View>
+
+```tsx
+const App = () => {
+  const toast = useToast();
+
+  return (
+    <>
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'duration-quick',
+            duration: 1000,
+            title: 'Read me quickly!',
+            description: 'Duration is set to 1000ms',
+          });
+        }}
+      >
+        Quick
+      </Button>
+
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'duration-slow',
+            duration: 5000,
+            title: 'Take your time!',
+            description: 'Duration is set to 5000ms',
+          });
+        }}
+      >
+        Slow
+      </Button>
+
+      <ToastContainer />
+    </>
+  );
+};
+```
+
+# Pause on hover
+---
+The progress of the toast notification can be paused when hovering over it by using the `pauseOnHover` prop.
+
+<View>
+  <ToastShowcase showcase="pause-on-hover" />
+</View>
+
+```tsx
+const App = () => {
+  const toast = useToast();
+
+  return (
+    <>
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'pause-on-hover',
+            pauseOnHover: true,
+            description: 'Hover me to pause!'
+          });
+        }}
+      >
+        Enabled
+      </Button>
+
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'dont-pause-on-hover',
+            pauseOnHover: false,
+            description: 'Sorry, you cannot pause me!',
+          });
+        }}
+      >
+        Disabled
+      </Button>
+
+      <ToastContainer />
+    </>
+  );
+};
+```
+
+# Show progress
+---
+The progress of the toast notification can be shown by using the `showProgress` prop.
+
+<View>
+  <ToastShowcase showcase="show-progress" />
+</View>
+
+```tsx
+const App = () => {
+  const toast = useToast();
+
+  return (
+    <>
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'show-progress',
+            showProgress: true,
+            description: 'You can see my progress!',
+          });
+        }}
+      >
+        Enabled
+      </Button>
+
+      <Button
+        onClick={() => {
+          toast.add({
+            id: 'dont-show-progress',
+            showProgress: false,
+            description: 'You cannot see my progress!',
+          });
+        }}
+      >
+        Disabled
+      </Button>
+
+      <ToastContainer />
+    </>
+  );
+};
+```
+
+# Update toast
+---
+To manually update a toast notification, the `update` method can be used.
+
+<View>
+  <ToastShowcase showcase="update" />
+</View>
+
+```tsx
+const App = () => {
+  const toast = useToast();
+
+  return (
+    <>
+      <Button
+        onClick={() =>
+          toast.add({
+            description: 'I am a toast!',
+            id: 'update-toast-id',
+          })
+        }
+      >
+        Add
+      </Button>
+
+      <Button
+        onClick={() =>
+          toast.update({
+            description: 'I am am updated toast!',
+            color: 'green',
+            id: 'update-toast-id',
+          })
+        }
+      >
+        Update
+      </Button>
+
+      <ToastContainer />
+    </>
+  );
+};
+```
+
+# Remove toast
+---
+To manually remove a toast notification, the `remove` method can be used.
+
+<View>
+  <ToastShowcase showcase="remove" />
+</View>
+
+```tsx
+const App = () => {
+  const toast = useToast();
+
+  return (
+    <>
+      <Button onClick={() =>
+        toast.add({
+          description: 'I am a toast!',
+          id: 'remove-toast-id',
+        })
+      }>Add</Button>
+
+      <Button onClick={() => toast.remove('remove-toast-id')}>Remove</Button>
+
+      <ToastContainer />
+    </>
+  );
+};
+```
+
+# Clear all toasts
+---
+All toasts can be cleared by using the `clear` method.
+
+<View>
+  <ToastShowcase showcase="clear" />
+</View>
+
+```tsx
+const App = () => {
+  const [counter, setCounter] = React.useState(0);
+  const toast = useToast();
+
+  useEffect(() => {
+    if (!counter) {
+      return;
+    }
+
+    toast.add({
+      description: 'I am a random toast!',
+      id: counter.toString(),
+    });
+  }, [counter]);
+
+  return (
+    <>
+      <Button onClick={() => setCounter((prev) => prev + 1)}>Add</Button>
+      <Button onClick={() => toast.clear()}>Clear</Button>
+    </>
+  );
+};
+```
+
+# API Reference
+---
+## Properties
+### ToastContainer
+
+| Prop     | Type            | Description                       | Default     |
+|:---------|:----------------|:----------------------------------|:------------|
+| max      | `number`        | Sets the maximum number of toasts | `5`         |
+| position | `ToastPosition` | Sets the toast container position | `top-right` |
+
+### Toast
+The following properties can be passed to the `add` or `update` method on the `useToast` hook.
+
+| Prop         | Type               | Description                                                   | Default     |
+|:-------------|:-------------------|:--------------------------------------------------------------|:------------|
+| actions      | `ToastAction[]`    | Adds actions to the toast notification                        | `undefined` |
+| closeOnClick | `boolean`          | Makes the toast notification dismissable on click             | `true`      |
+| color        | `ToastColor`       | Sets the toast notification color                             | `blue`      |
+| description  | `string`           | Sets the toast notification description                       | `undefined` |
+| duration     | `number`           | Sets the duration that the toast notification will be visible | `3000`      |
+| iconType     | `ToastIconType`    | Sets the icon type                                            | `undefined` |
+| pauseOnHover | `boolean`          | Pauses the progress bar on hover                              | `true`      |
+| radius       | `ToastRadius`      | Sets the toast notification border radius                     | `md`        |
+| shadow       | `ToastShadow`      | Sets the toast notification shadow                            | `base`      |
+| shadowColor  | `ToastShadowColor` | Sets the toast notification shadow color                      | `gray`      |
+| showProgress | `boolean`          | Adds an animated progress bar                                 | `true`      |
+| title        | `string`           | Sets the toast notification title                             | `undefined` |
+| tone         | `ToastTone`        | Sets the toast notification tone                              | `solid`     |
+| variant      | `ToastVariant`     | Sets the toast notification variant                           | `undefined` |
+
+## Types
+### ToastContainer
+
+```tsx
+type ToastPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+```
+
+### Toast
+```tsx
+type ToastColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ToastIconType = 'info' | 'success' | 'warning' | 'error' | 'question';
+```
+
+```tsx
+type ToastRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type ToastShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type ToastShadowColor =
+  | 'none'
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ToastTone = 'solid' | 'light';
+```
+
+```tsx
+type ToastVariant =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info';
+```
+
+# Accessibility
+---
+The `Toast` component adheres to the [WAI-ARIA Alert Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/alert/).

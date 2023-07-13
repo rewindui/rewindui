@@ -73,37 +73,22 @@ const menuItems: MenuItem[] = [
       {
         title: 'Avatar',
         path: '/components/avatar',
-        newItem: true,
       },
       {
         title: 'Badge',
         path: '/components/badge',
       },
       {
-        title: 'Ribbon',
-        path: '/components/ribbon',
-        newItem: true,
-      },
-      {
         title: 'Card',
         path: '/components/card',
       },
       {
-        title: 'Modal',
-        path: '/components/modal',
+        title: 'Progress',
+        path: '/components/progress',
       },
       {
-        title: 'Drawer',
-        path: '/components/drawer',
-      },
-      {
-        title: 'Popover',
-        path: '/components/popover',
-      },
-      {
-        title: 'Selector',
-        path: '/components/selector',
-        updated: true,
+        title: 'Ribbon',
+        path: '/components/ribbon',
       },
       {
         title: 'Table',
@@ -117,13 +102,35 @@ const menuItems: MenuItem[] = [
         title: 'Text',
         path: '/components/text',
       },
+    ],
+  },
+  {
+    title: 'Overlays',
+    items: [
+      {
+        title: 'Drawer',
+        path: '/components/drawer',
+      },
+      {
+        title: 'Dropdown',
+        path: '/components/dropdown',
+      },
+      {
+        title: 'Modal',
+        path: '/components/modal',
+      },
+      {
+        title: 'Popover',
+        path: '/components/popover',
+      },
+      {
+        title: 'Toast',
+        path: '/components/toast',
+        newItem: true,
+      },
       {
         title: 'Tooltip',
         path: '/components/tooltip',
-      },
-      {
-        title: 'Progress',
-        path: '/components/progress',
       },
     ],
   },
@@ -135,44 +142,44 @@ const menuItems: MenuItem[] = [
         path: '/components/button',
       },
       {
-        title: 'Dropdown',
-        path: '/components/dropdown',
-      },
-      {
         title: 'Checkbox',
         path: '/components/checkbox',
-      },
-      {
-        title: 'Radio',
-        path: '/components/radio',
-      },
-      {
-        title: 'Switch',
-        path: '/components/switch',
-      },
-      {
-        title: 'Input',
-        path: '/components/input',
-      },
-      {
-        title: 'Select',
-        path: '/components/select',
       },
       {
         title: 'Combobox',
         path: '/components/combobox',
       },
       {
-        title: 'Textarea',
-        path: '/components/textarea',
+        title: 'Form Control',
+        path: '/components/form-control',
+      },
+      {
+        title: 'Input',
+        path: '/components/input',
       },
       {
         title: 'Input Group',
         path: '/components/input-group',
       },
       {
-        title: 'Form Control',
-        path: '/components/form-control',
+        title: 'Radio',
+        path: '/components/radio',
+      },
+      {
+        title: 'Select',
+        path: '/components/select',
+      },
+      {
+        title: 'Selector',
+        path: '/components/selector',
+      },
+      {
+        title: 'Switch',
+        path: '/components/switch',
+      },
+      {
+        title: 'Textarea',
+        path: '/components/textarea',
       },
     ],
   },

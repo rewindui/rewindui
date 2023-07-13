@@ -104,34 +104,19 @@ export const Pager = (props: PagerProps) => {
       slug: 'badge',
     },
     {
-      title: 'Ribbon',
-      url: '/components/ribbon',
-      slug: 'ribbon',
-    },
-    {
       title: 'Card',
       url: '/components/card',
       slug: 'card',
     },
     {
-      title: 'Modal',
-      url: '/components/modal',
-      slug: 'modal',
+      title: 'Progress',
+      url: '/components/progress',
+      slug: 'progress',
     },
     {
-      title: 'Drawer',
-      url: '/components/drawer',
-      slug: 'drawer',
-    },
-    {
-      title: 'Popover',
-      url: '/components/popover',
-      slug: 'popover',
-    },
-    {
-      title: 'Selector',
-      url: '/components/selector',
-      slug: 'selector',
+      title: 'Ribbon',
+      url: '/components/ribbon',
+      slug: 'ribbon',
     },
     {
       title: 'Table',
@@ -149,19 +134,9 @@ export const Pager = (props: PagerProps) => {
       slug: 'text',
     },
     {
-      title: 'Tooltip',
-      url: '/components/tooltip',
-      slug: 'tooltip',
-    },
-    {
-      title: 'Progress',
-      url: '/components/progress',
-      slug: 'progress',
-    },
-    {
-      title: 'Button',
-      url: '/components/button',
-      slug: 'button',
+      title: 'Drawer',
+      url: '/components/drawer',
+      slug: 'drawer',
     },
     {
       title: 'Dropdown',
@@ -169,29 +144,34 @@ export const Pager = (props: PagerProps) => {
       slug: 'dropdown',
     },
     {
+      title: 'Modal',
+      url: '/components/modal',
+      slug: 'modal',
+    },
+    {
+      title: 'Popover',
+      url: '/components/popover',
+      slug: 'popover',
+    },
+    {
+      title: 'Toast',
+      url: '/components/toast',
+      slug: 'toast',
+    },
+    {
+      title: 'Tooltip',
+      url: '/components/tooltip',
+      slug: 'tooltip',
+    },
+    {
+      title: 'Button',
+      url: '/components/button',
+      slug: 'button',
+    },
+    {
       title: 'Checkbox',
       url: '/components/checkbox',
       slug: 'checkbox',
-    },
-    {
-      title: 'Radio',
-      url: '/components/radio',
-      slug: 'radio',
-    },
-    {
-      title: 'Switch',
-      url: '/components/switch',
-      slug: 'switch',
-    },
-    {
-      title: 'Input',
-      url: '/components/input',
-      slug: 'input',
-    },
-    {
-      title: 'Select',
-      url: '/components/select',
-      slug: 'select',
     },
     {
       title: 'Combobox',
@@ -199,9 +179,14 @@ export const Pager = (props: PagerProps) => {
       slug: 'combobox',
     },
     {
-      title: 'Textarea',
-      url: '/components/textarea',
-      slug: 'textarea',
+      title: 'Form Control',
+      url: '/components/form-control',
+      slug: 'form-control',
+    },
+    {
+      title: 'Input',
+      url: '/components/input',
+      slug: 'input',
     },
     {
       title: 'Input Group',
@@ -209,9 +194,29 @@ export const Pager = (props: PagerProps) => {
       slug: 'input-group',
     },
     {
-      title: 'Form Control',
-      url: '/components/form-control',
-      slug: 'form-control',
+      title: 'Radio',
+      url: '/components/radio',
+      slug: 'radio',
+    },
+    {
+      title: 'Select',
+      url: '/components/select',
+      slug: 'select',
+    },
+    {
+      title: 'Selector',
+      url: '/components/selector',
+      slug: 'selector',
+    },
+    {
+      title: 'Switch',
+      url: '/components/switch',
+      slug: 'switch',
+    },
+    {
+      title: 'Textarea',
+      url: '/components/textarea',
+      slug: 'textarea',
     },
   ];
   const { current } = props;

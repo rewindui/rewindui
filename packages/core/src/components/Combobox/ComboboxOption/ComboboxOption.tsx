@@ -11,7 +11,7 @@ import React, { ForwardedRef, forwardRef, useEffect } from 'react';
 
 const ComboboxOption: ComboboxOptionComponent = forwardRef(
   (props: ComboboxOptionProps, ref?: ForwardedRef<HTMLButtonElement>) => {
-    const theme = useComponentTheme('Combobox');
+    const theme = useComponentTheme('ComboboxOption');
     const { value, label, description, media } = props;
     const disabled = !!props.disabled;
     const id = usePropId(props.id);

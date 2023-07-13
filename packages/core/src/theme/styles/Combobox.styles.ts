@@ -658,22 +658,23 @@ const description = cva(['whitespace-normal'], {
 
 const comboboxStyles = {
   base,
-  wrapper,
-  noResults,
-  list,
+  group,
   icon,
   leftIconWrapper,
+  list,
+  noResults,
   rightIconWrapper,
-  group,
+  wrapper,
 };
 
 const comboboxOptionStyles = {
   button,
-  optionWrapper,
+  description,
+  icon,
   infoWrapper,
   label,
-  description,
   optionIcon,
+  optionWrapper,
 };
 
 export { comboboxStyles, comboboxOptionStyles };

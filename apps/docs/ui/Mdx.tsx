@@ -20,6 +20,7 @@ import {
 } from '@/ui/configurators/components/Selector.showcase';
 import { TableShowcase, TableShowcaseProps } from '@/ui/configurators/components/Table.showcase';
 import { TabsShowcase, TabsShowcaseProps } from '@/ui/configurators/components/Tabs.showcase';
+import { ToastShowcase, ToastShowcaseProps } from '@/ui/configurators/components/Toast.showcase';
 import {
   TooltipShowcase,
   TooltipShowcaseProps,
@@ -47,6 +48,7 @@ import {
   FormControl,
   Table,
   Ribbon,
+  Toast,
 } from '@rewind-ui/core';
 import { View } from './View';
 import {
@@ -93,7 +95,7 @@ const components = {
   a: ({ ...props }) => (
     <a
       className="text-purple-600 underline decoration-2 decoration-solid decoration-purple-500"
-      target="_blank"
+      target={props.href && props.href.startsWith('http') ? '_blank' : undefined}
       {...props}
     />
   ),
@@ -165,6 +167,8 @@ const components = {
   RadioGroup: ({ name, ...props }) => <RadioGroup name={name} {...props} />,
   Ribbon: ({ ...props }) => <Ribbon {...props} />,
   Switch: ({ ...props }) => <Switch {...props} />,
+  Toast: ({ ...props }) => <Toast {...props} />,
+  ToastShowcase: ({ showcase }: ToastShowcaseProps) => <ToastShowcase showcase={showcase} />,
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />
   ),

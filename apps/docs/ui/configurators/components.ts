@@ -23,6 +23,7 @@ import { TableConfig } from '@/ui/configurators/components/Table.config';
 import { TabsConfig } from '@/ui/configurators/components/Tabs.config';
 import { TextConfig } from '@/ui/configurators/components/Text.config';
 import { TextareaConfig } from '@/ui/configurators/components/Textarea.config';
+import { ToastConfig } from '@/ui/configurators/components/Toast.config';
 import { TooltipConfig } from '@/ui/configurators/components/Tooltip.config';
 
 export const components = {
@@ -51,5 +52,6 @@ export const components = {
   tabs: TabsConfig,
   text: TextConfig,
   textarea: TextareaConfig,
+  toast: ToastConfig,
   tooltip: TooltipConfig,
 };

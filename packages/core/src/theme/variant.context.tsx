@@ -2,6 +2,7 @@
 import { accordionVariants } from '@theme/variants/Accordion.variants';
 import { alertVariants } from '@theme/variants/Alert.variants';
 import { buttonVariants } from '@theme/variants/Button.variants';
+import { toastVariants } from '@theme/variants/Toast.variants';
 import { createContext, Provider, useContext } from 'react';
 import { badgeVariants, ribbonVariants, textVariants } from './variants';
 
@@ -15,6 +16,7 @@ type VariantComponents = {
   Badge: typeof badgeVariants;
   Button: typeof buttonVariants;
   Text: typeof textVariants;
+  Toast: typeof toastVariants;
   Ribbon: typeof ribbonVariants;
 };
 
@@ -25,6 +27,7 @@ const defaultVariant: Variant = {
     Badge: badgeVariants,
     Button: buttonVariants,
     Text: textVariants,
+    Toast: toastVariants,
     Ribbon: ribbonVariants,
   },
 };
