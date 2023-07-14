@@ -1,9 +1,15 @@
 'use client';
-import { AlertComponent, AlertProps } from '@components/Alert/Alert.types';
+import { AlertComponent, AlertIconType, AlertProps } from '@components/Alert/Alert.types';
 import { Fader } from '@components/Fader';
+import { ErrorIcon } from '@icons/Error';
+import { InfoIcon } from '@icons/Info';
+import { QuestionIcon } from '@icons/Question';
+import { SuccessIcon } from '@icons/Success';
+import { WarningIcon } from '@icons/Warning';
 import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
+import * as React from 'react';
 import { Ref, forwardRef, useMemo, useState } from 'react';
 import { XMarkIcon } from '@icons/XMark';
 import { twMerge } from 'tailwind-merge';
@@ -20,6 +26,14 @@ const defaultProps: Partial<AlertProps> = {
   tone: 'light',
 };
 
+const icons: Record<AlertIconType, JSX.Element> = {
+  error: <ErrorIcon />,
+  info: <InfoIcon />,
+  question: <QuestionIcon />,
+  success: <SuccessIcon />,
+  warning: <WarningIcon />,
+};
+
 const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivElement>) => {
   const variantProps = useComponentVariant('Alert', props.variant) as Partial<AlertProps>;
   const theme = useComponentTheme('Alert');
@@ -31,6 +45,7 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
     dismissable,
     dismissableAnimation = false,
     icon,
+    iconType,
     radius,
     shadow,
     shadowColor,
@@ -65,7 +80,9 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
 
   const items = (
     <div id={id} role="alert" ref={ref} className={classes} {...additionalProps}>
-      {icon && <span className={theme.iconWrapper()}>{icon}</span>}
+      {(icon || iconType) && (
+        <span className={theme.iconWrapper()}>{!iconType ? icon : icons[iconType]}</span>
+      )}
       <div className={theme.infoWrapper({ size })}>
         {title && <span className={theme.title({ size, color, tone })}>{title}</span>}
         {children && <span className={theme.text()}>{children}</span>}

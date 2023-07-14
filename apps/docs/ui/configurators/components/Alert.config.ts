@@ -5,15 +5,16 @@ export const AlertConfig = {
   default: AlertCode,
   state: {
     accent: 'none',
-    color: 'dark',
+    color: 'purple',
     dismissable: false,
     dismissableAnimation: true,
+    iconType: 'info',
     radius: 'md',
     shadow: 'none',
     shadowColor: 'none',
     size: 'sm',
     tone: 'light',
-    title: '',
+    title: 'Critical information!',
   },
   options: [
     {
@@ -57,6 +58,12 @@ export const AlertConfig = {
       name: 'radius',
       type: 'select',
       options: ['none', 'sm', 'base', 'md', 'lg', 'full'],
+    },
+    {
+      label: 'Icon type',
+      name: 'iconType',
+      type: 'select',
+      options: ['', 'info', 'success', 'warning', 'error', 'question'],
     },
     {
       label: 'Dismissable',

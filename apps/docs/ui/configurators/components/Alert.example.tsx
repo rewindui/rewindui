@@ -7,6 +7,7 @@ export const AlertCode = (props: any) => {
     color,
     dismissable,
     dismissableAnimation,
+    iconType,
     radius,
     shadow,
     shadowColor,
@@ -35,6 +36,7 @@ export const AlertCode = (props: any) => {
     dismissableAnimation !== defaultProps.dismissableAnimation
       ? `dismissableAnimation={${dismissableAnimation}}`
       : null,
+    iconType ? `iconType="${iconType}"` : null,
     radius !== defaultProps.radius ? `radius="${radius}"` : null,
     shadow !== defaultProps.shadow ? `shadow="${shadow}"` : null,
     shadowColor !== defaultProps.shadowColor ? `shadowColor="${shadowColor}"` : null,

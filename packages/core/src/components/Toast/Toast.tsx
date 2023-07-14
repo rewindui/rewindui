@@ -1,3 +1,4 @@
+'use client';
 import { ToastComponent, ToastIconType, ToastProps } from '@components/Toast/Toast.types';
 import { useToast } from '@components/Toast/use-toast.hook';
 import { ErrorIcon } from '@icons/Error';

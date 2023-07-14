@@ -23,24 +23,24 @@ The `Alert` component comes with a number of pre-defined variants that can be us
 Available variants are: `primary`, `secondary`, `tertiary`, `danger`, `success`, `warning` and `info`.
 
 <View>
-  <Alert variant="primary">Primary</Alert>
-  <Alert variant="secondary">Secondary</Alert>
-  <Alert variant="tertiary">Tertiary</Alert>
-  <Alert variant="danger">Danger</Alert>
-  <Alert variant="success">Success</Alert>
-  <Alert variant="warning">Warning</Alert>
-  <Alert variant="info">Info</Alert>
+  <Alert variant="primary" title="Alert!">This is a primary alert</Alert>
+  <Alert variant="secondary" title="Alert!">This is a secondary alert</Alert>
+  <Alert variant="tertiary" title="Alert!">This is a tertiary alert</Alert>
+  <Alert variant="danger" title="Alert!">This is a danger alert</Alert>
+  <Alert variant="success" title="Alert!">This is a success alert</Alert>
+  <Alert variant="warning" title="Alert!">This is a warning alert</Alert>
+  <Alert variant="info" title="Alert!">This is an info alert</Alert>
 </View>
 
 ```tsx
 <View>
-  <Alert variant="primary">Primary</Alert>
-  <Alert variant="secondary">Secondary</Alert>
-  <Alert variant="tertiary">Tertiary</Alert>
-  <Alert variant="danger">Danger</Alert>
-  <Alert variant="success">Success</Alert>
-  <Alert variant="warning">Warning</Alert>
-  <Alert variant="info">Info</Alert>
+  <Alert variant="primary" title="Alert!">This is a primary alert</Alert>
+  <Alert variant="secondary" title="Alert!">This is a secondary alert</Alert>
+  <Alert variant="tertiary" title="Alert!">This is a tertiary alert</Alert>
+  <Alert variant="danger" title="Alert!">This is a danger alert</Alert>
+  <Alert variant="success" title="Alert!">This is a success alert</Alert>
+  <Alert variant="warning" title="Alert!">This is a warning alert</Alert>
+  <Alert variant="info" title="Alert!">This is an info alert</Alert>
 </View>
 ```
 
@@ -293,17 +293,41 @@ A title can be added to the alert by using the `title` prop.
 </View>
 ```
 
-# Icon
+# Icon types
 ---
-An icon can be added to the alert by using the `icon` prop.
+The `Alert` component comes with a set of icons that can be used to represent the type of the toast.
+Available `iconType` values are: `info`, `success`, `warning`, `error` and `question`.
 
 <View>
-  <Alert variant="info" icon={<WarningCircle weight="duotone" className="w-8 h-8 mt-1" />} title="Informative Alert">This is a simple informative alert. It has a title, an icon, and some content.</Alert>
+  <Alert iconType="info" color="purple" title="Alert">This is the info type</Alert>
+  <Alert iconType="success" color="green" title="Alert">This is the success type</Alert>
+  <Alert iconType="warning" color="yellow" title="Alert">This is the warning type</Alert>
+  <Alert iconType="error" color="red" title="Alert">This is the error type</Alert>
+  <Alert iconType="question" color="blue" title="Alert">This is the question type</Alert>
 </View>
 
 ```tsx
 <View>
-  <Alert variant="info" icon={<WarningCircle weight="duotone" className="w-8 h-8 mt-1" />} title="Informative Alert">This is a simple informative alert. It has a title, an icon, and some content.</Alert>
+  <Alert iconType="info" color="purple" title="Alert">This is the info type</Alert>
+  <Alert iconType="success" color="green" title="Alert">This is the success type</Alert>
+  <Alert iconType="warning" color="yellow" title="Alert">This is the warning type</Alert>
+  <Alert iconType="error" color="red" title="Alert">This is the error type</Alert>
+  <Alert iconType="question" color="blue" title="Alert">This is the question type</Alert>
+</View>
+```
+
+
+# Custom Icon
+---
+A custom icon can be added to the alert by using the `icon` prop.
+
+<View>
+  <Alert icon={<WarningCircle weight="duotone" className="w-8 h-8 mt-1" />} color="purple" title="Informative Alert">This is a simple informative alert. It has a title, an icon and some content.</Alert>
+</View>
+
+```tsx
+<View>
+  <Alert icon={<WarningCircle weight="duotone" className="w-8 h-8 mt-1" />} color="purple" title="Informative Alert">This is a simple informative alert. It has a title, an icon and some content.</Alert>
 </View>
 ```
 
@@ -354,22 +378,22 @@ To avoid completely [overwriting the default styles](https://rewind-ui.dev/themi
 <View>
   <Alert
     title="Informative Alert"
-    icon={<WarningCircle weight="duotone" className="w-10 h-10" />}
+    iconType="info"
     tone="light"
     color="purple"
     className="border border-2 border-dashed border-purple-700"
-  >This is a simple informative alert. It has a title, an icon, and some content.</Alert>
+  >This is a simple informative alert. It has a title, an icon and some content.</Alert>
 </View>
 
 ```tsx
 <View>
   <Alert
     title="Informative Alert"
-    icon={<WarningCircle weight="duotone" className="w-10 h-10" />}
+    iconType="info"
     tone="light"
     color="purple"
     className="border border-2 border-dashed border-purple-700"
-  >This is a simple informative alert. It has a title, an icon, and some content.</Alert>
+  >This is a simple informative alert. It has a title, an icon and some content.</Alert>
 </View>
 ```
 
@@ -418,6 +442,7 @@ To avoid completely [overwriting the default styles](https://rewind-ui.dev/themi
 | dismissable          | `boolean`          | Adds a dismiss button                               | `false`     |
 | dismissableAnimation | `boolean`          | Adds a fading animation when the alert is dismissed | `false`     |
 | icon                 | `ReactNode`        | Adds an icon on the left side of the alert          | `undefined` |
+| iconType             | `AlertIconType`    | Sets the icon type                                  | `undefined` |
 | radius               | `AlertRadius`      | Sets the border radius                              | `md`        |
 | shadow               | `AlertShadow`      | Sets the shadow size                                | `none`      |
 | shadowColor          | `AlertShadowColor` | Sets the shadow color                               | `none`      |
@@ -443,6 +468,10 @@ type AlertColor =
   | 'gray'
   | 'dark'
   | 'black';
+```
+
+```tsx
+type AlertIconType = 'info' | 'success' | 'warning' | 'error' | 'question';
 ```
 
 ```tsx

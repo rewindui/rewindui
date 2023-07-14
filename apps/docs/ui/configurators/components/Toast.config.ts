@@ -61,7 +61,7 @@ export const ToastConfig = {
       label: 'Icon type',
       name: 'iconType',
       type: 'select',
-      options: ['info', 'success', 'warning', 'error', 'question'],
+      options: ['', 'info', 'success', 'warning', 'error', 'question'],
     },
     {
       label: 'Duration',

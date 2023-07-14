@@ -9,4 +9,5 @@ export type {
   AlertSize,
   AlertTone,
   AlertVariant,
+  AlertIconType,
 } from './Alert.types';

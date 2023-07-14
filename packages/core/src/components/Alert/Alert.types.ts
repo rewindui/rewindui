@@ -11,6 +11,7 @@ export type AlertColor =
   | 'gray'
   | 'dark'
   | 'black';
+export type AlertIconType = 'info' | 'success' | 'warning' | 'error' | 'question';
 export type AlertRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type AlertShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type AlertShadowColor =
@@ -41,6 +42,7 @@ export interface AlertProps extends ComponentPropsWithRef<'div'> {
   dismissable?: boolean;
   dismissableAnimation?: boolean;
   icon?: ReactNode;
+  iconType?: AlertIconType;
   radius?: AlertRadius;
   shadow?: AlertShadow;
   shadowColor?: AlertShadowColor;
