@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.12.0
+
+### Minor Changes
+
+- 1027c4e: Added icon type functionality to Alert component
+
 ## 0.11.0
 
 ### Minor Changes
