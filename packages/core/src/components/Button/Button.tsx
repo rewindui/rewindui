@@ -96,7 +96,7 @@ const Button: ButtonComponent = forwardRef(
 
     const Component = as || 'button';
     const id = usePropId(props.id);
-    const type = props.type || 'button';
+    const type = props.type || Component === 'button' ? 'button' : undefined;
 
     return (
       <Component
