@@ -30,6 +30,7 @@ export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onCha
   mode?: ComboboxMode;
   offset?: number;
   onChange?(value: string | null | undefined): void;
+  onSearch?(value: string | null | undefined): void;
   optionColor?: ComboboxOptionColor;
   placeholder?: string;
   radius?: ComboboxRadius;
