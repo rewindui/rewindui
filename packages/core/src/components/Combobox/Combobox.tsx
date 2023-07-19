@@ -67,6 +67,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       mode,
       offset,
       onChange,
+      onSearch,
       optionColor,
       placeholder,
       radius,
@@ -226,6 +227,9 @@ const _Combobox: ComboboxComponent = forwardRef(
         onChange={(event) => {
           setSearching(true);
           setSearch(event.target.value);
+          if (onSearch) {
+            onSearch(event.target.value);
+          }
 
           if (!open) {
             setOpen(true);
