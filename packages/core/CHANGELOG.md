@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.12.1
+
+### Patch Changes
+
+- c7c303a: Added on Search Prop on Combobox component
+
 ## 0.12.0
 
 ### Minor Changes
