@@ -44,6 +44,7 @@ export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onCha
 }
 
 export interface ComboboxContext {
+  externalSearch?: boolean;
   mode?: ComboboxMode;
   optionColor?: ComboboxOptionColor;
   radius?: ComboboxRadius;

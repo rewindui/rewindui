@@ -45,7 +45,8 @@ export type ComboboxShowcaseProps = {
     | 'option-media'
     | 'input-group'
     | 'form-control'
-    | 'controlled';
+    | 'controlled'
+    | 'on-search';
 };
 
 export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
@@ -75,6 +76,7 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
     'input-group': <InputGroupCombobox />,
     'form-control': <FormControlCombobox />,
     controlled: <Controlled />,
+    'on-search': <OnSearch />,
   };
 
   return components[showcase] || <div>Error: Invalid showcase type</div>;
@@ -479,6 +481,31 @@ const Searchable = () => {
     <>
       <Template searchable={true} />
       <Template searchable={false} />
+    </>
+  );
+};
+
+const OnSearch = () => {
+  const [query, setQuery] = useState<string | null | undefined>(null);
+  const filteredOptions =
+    query && query.length > 0
+      ? simpleOptions.filter(
+          (option) => option.label.toLowerCase().includes(query || '') && !option.disabled
+        )
+      : simpleOptions;
+
+  return (
+    <>
+      <Combobox placeholder="Select a country..." onSearch={(searchQuery) => setQuery(searchQuery)}>
+        {filteredOptions.map((option, index) => (
+          <Combobox.Option
+            key={index}
+            value={option.value}
+            label={option.label}
+            disabled={option.disabled}
+          />
+        ))}
+      </Combobox>
     </>
   );
 };

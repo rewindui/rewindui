@@ -268,9 +268,11 @@ const DefaultTemplate: Story<ComboboxProps> = (args) => {
 
   return (
     <>
-      <Button onClick={() => setValue('1')}>Select Germany</Button>
-      <Button onClick={() => setValue('2')}>Select Great Britain</Button>
-      <Button onClick={() => setValue('3')}>Select Greece</Button>
+      <div className="flex gap-2 mb-2">
+        <Button onClick={() => setValue('1')}>Select Germany</Button>
+        <Button onClick={() => setValue('2')}>Select Great Britain</Button>
+        <Button onClick={() => setValue('3')}>Select Greece</Button>
+      </div>
 
       <Combobox
         {...args}

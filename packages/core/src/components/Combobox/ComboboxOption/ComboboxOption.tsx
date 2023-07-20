@@ -16,6 +16,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
     const disabled = !!props.disabled;
     const id = usePropId(props.id);
     const {
+      externalSearch,
       mode,
       optionColor,
       radius,
@@ -29,6 +30,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
     const normalizedLabel = textNormalize(label || '');
     const normalizedDescription = textNormalize(description || '');
     const hidden =
+      !externalSearch &&
       !normalizedLabel.includes(normalizedSearch) &&
       !normalizedDescription.includes(normalizedSearch);
     const selected = selectedValue === value && !disabled;

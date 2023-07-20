@@ -420,6 +420,43 @@ The `Combobox` component can be made searchable by setting the `searchable` prop
 </View>
 ```
 
+# On Search
+---
+The filtering of the `Combobox` component can be controlled by setting the `onSearch` prop. When the `onSearch` prop is set, the `Combobox` component will not filter the options automatically.
+
+This is useful when you want to control the filtering of the options yourself. For example, when you want to filter the options based on a remote API call.
+
+<View>
+  <ComboboxShowcase showcase="on-search" />
+</View>
+
+```tsx
+const App = () => {
+  const [query, setQuery] = useState<string | null | undefined>(null);
+  const filteredOptions =
+    query && query.length > 0
+      ? options.filter(
+          (option) => option.label.toLowerCase().includes(query || '') && !option.disabled
+        )
+      : options;
+
+  return (
+    <>
+      <Combobox placeholder="Select a country..." onSearch={(searchQuery) => setQuery(searchQuery)}>
+        {filteredOptions.map((option, index) => (
+          <Combobox.Option
+            key={index}
+            value={option.value}
+            label={option.label}
+            disabled={option.disabled}
+          />
+        ))}
+      </Combobox>
+    </>
+  );
+};
+```
+
 # Controlled state
 ---
 The `Combobox` component state can be controlled by setting the `value` and `onChange` props.
@@ -562,9 +599,10 @@ An image can be added to the `Combobox.Option` component by setting the `media` 
 ## Events
 ### Combobox
 
-| Event    | Type                      | Description                               |
-|:---------|:--------------------------|:------------------------------------------|
-| onChange | `(value: string) => void` | Fires when the selected option is changed |
+| Event    | Type                      | Description                                   |
+|:---------|:--------------------------|:----------------------------------------------|
+| onChange | `(value: string) => void` | Fires when the selected option is changed     |
+| onSearch | `(value: string) => void` | Fires when the search query string is changed |
 
 ## Types
 ### Combobox

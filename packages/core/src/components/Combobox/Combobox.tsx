@@ -104,6 +104,7 @@ const _Combobox: ComboboxComponent = forwardRef(
     const listRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const contextValue: ComboboxContext = {
+      externalSearch: !!onSearch,
       mode,
       optionColor,
       radius,
