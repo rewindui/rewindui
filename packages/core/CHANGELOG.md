@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.12.2
+
+### Patch Changes
+
+- 4091c7d: Combobox: Options filtering gets disabled when the onSearch prop is passed.
+
 ## 0.12.1
 
 ### Patch Changes
