@@ -16,6 +16,7 @@ import {
   FormControl,
   Button,
   ComboboxColor,
+  Badge,
 } from '@rewind-ui/core';
 import { useState } from 'react';
 import * as React from 'react';
@@ -36,9 +37,11 @@ export type ComboboxShowcaseProps = {
     | 'icon'
     | 'clearable'
     | 'close-on-escape'
+    | 'close-on-select'
     | 'max-height'
     | 'min-width'
     | 'offset'
+    | 'multiple'
     | 'searchable'
     | 'groups'
     | 'option-description'
@@ -66,16 +69,19 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
     icon: <Icon />,
     clearable: <Clearable />,
     'close-on-escape': <CloseOnEscape />,
+    'close-on-select': <CloseOnSelect />,
     'max-height': <MaxHeight />,
     'min-width': <MinWidth />,
     offset: <Offset />,
+    multiple: <Multiple />,
     searchable: <Searchable />,
     groups: <Groups />,
     'option-description': <OptionDescription />,
     'option-media': <OptionMedia />,
     'input-group': <InputGroupCombobox />,
     'form-control': <FormControlCombobox />,
-    controlled: <Controlled />,
+    'controlled-single': <ControlledSingle />,
+    'controlled-multiple': <ControlledMultiple />,
     'on-search': <OnSearch />,
   };
 
@@ -284,7 +290,7 @@ const shadows: ComboboxShadow[] = ['none', 'sm', 'base', 'md', 'lg'];
 const validations: ComboboxValidation[] = ['none', 'invalid', 'valid', 'warning'];
 
 const Template = (args: ComboboxProps) => (
-  <Combobox {...args} placeholder="Select a country..." initialValue="1">
+  <Combobox {...args} placeholder="Select a country...">
     {simpleOptions.map((option, index) => (
       <Combobox.Option
         key={index}
@@ -358,7 +364,13 @@ const Tones = () => {
 
 const OptionColors = () => {
   const items = optionColors.map((optionColor: ComboboxOptionColor) => (
-    <Template key={optionColor} optionColor={optionColor} />
+    <Template
+      key={optionColor}
+      optionColor={optionColor}
+      multiple={true}
+      closeOnSelect={false}
+      initialValue={['2', '4']}
+    />
   ));
 
   return <>{items}</>;
@@ -428,6 +440,14 @@ const Icon = () => {
   );
 };
 
+const Multiple = () => {
+  return (
+    <>
+      <Template multiple={true} closeOnSelect={false} />
+    </>
+  );
+};
+
 const Clearable = () => {
   return (
     <>
@@ -442,6 +462,15 @@ const CloseOnEscape = () => {
     <>
       <Template closeOnEscape={true} />
       <Template closeOnEscape={false} />
+    </>
+  );
+};
+
+const CloseOnSelect = () => {
+  return (
+    <>
+      <Template closeOnSelect={true} />
+      <Template closeOnSelect={false} />
     </>
   );
 };
@@ -510,18 +539,49 @@ const OnSearch = () => {
   );
 };
 
-const Controlled = () => {
-  const [value, setValue] = useState<string | null | undefined>(null);
+const ControlledSingle = () => {
+  const [value, setValue] = useState<string | string[] | null | undefined>(null);
 
   return (
     <>
+      <Badge>Value: {value ? value : 'Select a country!'}</Badge>
       <div className="flex w-full gap-2">
         <Button onClick={() => setValue('1')}>Germany</Button>
         <Button onClick={() => setValue('2')}>Great Britain</Button>
         <Button onClick={() => setValue('3')}>Greece</Button>
       </div>
 
-      <Template value={value} onChange={(newValue) => setValue(newValue)} />
+      <Template
+        value={value}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
+      />
+    </>
+  );
+};
+
+const ControlledMultiple = () => {
+  const [value, setValue] = useState<string | string[] | null | undefined>(null);
+
+  return (
+    <>
+      <Badge>
+        Value: {Array.isArray(value) && value.length > 0 ? value.join(', ') : 'Select a country!'}
+      </Badge>
+      <div className="flex w-full gap-2">
+        <Button onClick={() => setValue(['1', '3'])}>Germany & Greece</Button>
+        <Button onClick={() => setValue(['2'])}>Great Britain</Button>
+      </div>
+
+      <Template
+        value={value}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
+        closeOnSelect={false}
+        multiple={true}
+      />
     </>
   );
 };

@@ -6,10 +6,12 @@ export const ComboboxCode = (props: any) => {
   const {
     clearable,
     closeOnEscape,
+    closeOnSelect,
     color,
     disabled,
     loading,
     mode,
+    multiple,
     placeholder,
     radius,
     searchable,
@@ -23,10 +25,12 @@ export const ComboboxCode = (props: any) => {
   const defaultProps = {
     clearable: true,
     closeOnEscape: true,
+    closeOnSelect: true,
     color: 'dark',
     disabled: false,
     loading: false,
     mode: 'spacey',
+    multiple: false,
     placeholder: null,
     radius: 'md',
     searchable: true,
@@ -40,10 +44,12 @@ export const ComboboxCode = (props: any) => {
   const attributes = [
     clearable !== defaultProps.clearable ? `clearable={${clearable}}` : null,
     closeOnEscape !== defaultProps.closeOnEscape ? `closeOnEscape={${closeOnEscape}}` : null,
+    closeOnSelect !== defaultProps.closeOnSelect ? `closeOnSelect={${closeOnSelect}}` : null,
     color !== defaultProps.color ? `color="${color}"` : null,
     disabled !== defaultProps.disabled ? `disabled={${disabled}}` : null,
     loading !== defaultProps.loading ? `loading={${loading}}` : null,
     mode !== defaultProps.mode ? `mode="${mode}"` : null,
+    multiple !== defaultProps.multiple ? `multiple={${multiple}}` : null,
     placeholder !== defaultProps.placeholder ? `placeholder="${placeholder}"` : null,
     radius !== defaultProps.radius ? `radius="${radius}"` : null,
     searchable !== defaultProps.searchable ? `searchable={${searchable}}` : null,
@@ -62,10 +68,17 @@ export const ComboboxCode = (props: any) => {
 
 function App() {
   return (
-    <Combobox${attributes.join(' ')}>
-      <Combobox.Option value="1" label="Apple" />
-      <Combobox.Option value="2" label="Orange" />
-      <Combobox.Option value="3" label="Banana" />
+    <Combobox${attributes.join(' ')} initialValue="1">
+      <Combobox.Option value="1" label="Germany" />
+      <Combobox.Option value="2" label="Great Britain" />
+      <Combobox.Option value="3" label="Greece" />
+      <Combobox.Option value="4" label="Sweden" />
+      <Combobox.Option value="5" label="Japan" />
+      <Combobox.Option value="6" label="China" />
+      <Combobox.Option value="7" label="India" />
+      <Combobox.Option value="8" label="United States" />
+      <Combobox.Option value="9" label="Canada" />
+      <Combobox.Option value="10" label="Mexico" />
     </Combobox>
   );
 }
@@ -75,9 +88,16 @@ function App() {
 export const ComboboxExample = (props: ComboboxProps) => {
   return (
     <Combobox {...props} leftIcon={<MagnifyingGlass />} initialValue="1">
-      <Combobox.Option value="1" label="Apple" />
-      <Combobox.Option value="2" label="Orange" />
-      <Combobox.Option value="3" label="Banana" />
+      <Combobox.Option value="1" label="Germany" />
+      <Combobox.Option value="2" label="Great Britain" />
+      <Combobox.Option value="3" label="Greece" />
+      <Combobox.Option value="4" label="Sweden" />
+      <Combobox.Option value="5" label="Japan" />
+      <Combobox.Option value="6" label="China" />
+      <Combobox.Option value="7" label="India" />
+      <Combobox.Option value="8" label="United States" />
+      <Combobox.Option value="9" label="Canada" />
+      <Combobox.Option value="10" label="Mexico" />
     </Combobox>
   );
 };

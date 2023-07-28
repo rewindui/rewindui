@@ -1,4 +1,22 @@
-import { ComponentPropsWithRef, ForwardRefExoticComponent, ReactElement, ReactNode } from 'react';
+import {
+  ComponentPropsWithRef,
+  Dispatch,
+  ForwardRefExoticComponent,
+  ReactElement,
+  ReactNode,
+} from 'react';
+
+export enum ComboboxActionEnum {
+  register = 'REGISTER',
+  reset = 'RESET',
+  init_single_select = 'INIT_SINGLE_SELECT',
+  single_select = 'SINGLE_SELECT',
+  multi_select = 'MULTI_SELECT',
+  init_multi_select = 'INIT_MULTI_SELECT',
+  search_start = 'SEARCH_START',
+  search_reset = 'SEARCH_RESET',
+  remove_last = 'REMOVE_LAST',
+}
 
 export type ComboboxColor = 'blue' | 'purple' | 'gray' | 'dark' | 'black';
 export type ComboboxOptionColor =
@@ -17,19 +35,69 @@ export type ComboboxSize = 'xs' | 'sm' | 'md' | 'lg';
 export type ComboboxTone = 'light' | 'solid' | 'transparent';
 export type ComboboxValidation = 'none' | 'invalid' | 'valid' | 'warning';
 
+export type ComboboxOptionEntry = {
+  label: string;
+  value: string;
+};
+
+export type ComboboxState = {
+  multiple: boolean;
+  initialValue: string | string[] | null | undefined;
+  searching: boolean;
+  search: string;
+  options: ComboboxOptionEntry[] | any[];
+  selectedOptions: ComboboxOptionEntry[] | any[];
+};
+
+export type ComboboxAction =
+  | {
+      type: ComboboxActionEnum.register;
+      payload: ComboboxOptionEntry;
+    }
+  | {
+      type: ComboboxActionEnum.reset;
+      payload: null;
+    }
+  | {
+      type: ComboboxActionEnum.remove_last;
+      payload: null;
+    }
+  | {
+      type: ComboboxActionEnum.search_reset;
+      payload: null;
+    }
+  | {
+      type: ComboboxActionEnum.search_start;
+      payload: { search: string };
+    }
+  | {
+      type: ComboboxActionEnum.single_select | ComboboxActionEnum.multi_select;
+      payload: Omit<ComboboxOptionEntry, 'label'> & { toggle?: boolean };
+    }
+  | {
+      type: ComboboxActionEnum.init_single_select;
+      payload: { value: string };
+    }
+  | {
+      type: ComboboxActionEnum.init_multi_select;
+      payload: { values: string[] };
+    };
+
 export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onChange'> {
   clearable?: boolean;
   closeOnEscape?: boolean;
+  closeOnSelect?: boolean;
   color?: ComboboxColor;
   disabled?: boolean;
-  initialValue?: string;
+  initialValue?: string | string[];
   leftIcon?: ReactElement;
   loading?: boolean;
   maxHeight?: number;
   minWidth?: number;
   mode?: ComboboxMode;
+  multiple?: boolean;
   offset?: number;
-  onChange?(value: string | null | undefined): void;
+  onChange?(value: string | string[] | null | undefined): void;
   onSearch?(value: string | null | undefined): void;
   optionColor?: ComboboxOptionColor;
   placeholder?: string;
@@ -39,22 +107,19 @@ export interface ComboboxProps extends Omit<ComponentPropsWithRef<'div'>, 'onCha
   size?: ComboboxSize;
   tone?: ComboboxTone;
   validation?: ComboboxValidation;
-  value?: string | null | undefined;
+  value?: string | string[] | null | undefined;
   withRing?: boolean;
 }
 
 export interface ComboboxContext {
+  dispatch: Dispatch<ComboboxAction>;
   externalSearch?: boolean;
   mode?: ComboboxMode;
+  multiple?: boolean;
   optionColor?: ComboboxOptionColor;
   radius?: ComboboxRadius;
-  search?: string;
-  selectedLabel?: string | null;
-  selectedValue?: string | null;
-  setSearch(value: string): void;
-  setSelectedLabel(value: string | null): void;
-  setSelectedValue(value: string | null): void;
   size?: ComboboxSize;
+  state: ComboboxState;
 }
 
 export type ComboboxOptionType = {

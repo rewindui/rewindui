@@ -297,6 +297,22 @@ An icon can be added to the `Combobox` by setting the `leftIcon` prop to a valid
 </View>
 ```
 
+# Multiple
+---
+The `Combobox` component can handle multiple selections by setting the `multiple` prop to `true`. Selected options will be shown as tags.
+
+<View>
+  <ComboboxShowcase showcase="multiple" />
+</View>
+
+```tsx
+<View>
+  <Combobox multiple={true} closeOnSelect={false}>
+    // ...
+  </Combobox>
+</View>
+```
+
 # Clearable
 ---
 The `Combobox` component can be made clearable by setting the `clearable` prop to `true`. Setting the `clearable` prop to `false` will hide the clear button.
@@ -330,6 +346,25 @@ The `Combobox` component can be made to close on escape by setting the `closeOnE
     // ...
   </Combobox>
   <Combobox closeOnEscape={false}>
+    // ...
+  </Combobox>
+</View>
+```
+
+# Close on select
+---
+The `Combobox` component can be made to close on select by setting the `closeOnSelect` prop to `true`. Setting the `closeOnSelect` prop to `false` will disable this behavior.
+
+<View>
+  <ComboboxShowcase showcase="close-on-select" />
+</View>
+
+```tsx
+<View>
+  <Combobox closeOnSelect={true}>
+    // ...
+  </Combobox>
+  <Combobox closeOnSelect={false}>
     // ...
   </Combobox>
 </View>
@@ -461,25 +496,65 @@ const App = () => {
 ---
 The `Combobox` component state can be controlled by setting the `value` and `onChange` props.
 
+## Single option
+
 <View>
-  <ComboboxShowcase showcase="controlled" />
+  <ComboboxShowcase showcase="controlled-single" />
 </View>
 
 ```tsx
 const ControlledComponent = () => {
-  const [value, setValue] = useState<string | null | undefined>(null);
+  const [value, setValue] = useState<string | string[] | null | undefined>(null);
 
   return (
     <>
+      <Badge>Value: {value ? value : 'Select a country!'}</Badge>
       <div className="flex w-full gap-2">
         <Button onClick={() => setValue('1')}>Germany</Button>
         <Button onClick={() => setValue('2')}>Great Britain</Button>
         <Button onClick={() => setValue('3')}>Greece</Button>
       </div>
 
-      <Combobox value={value} onChange={(newValue) => setValue(newValue)}>
-        // ...
-      </Combobox>
+      <Template
+        value={value}
+        onChange={(newValue) => {
+          setValue(newValue);
+        }}
+      />
+    </>
+  );
+};
+```
+
+## Multiple options
+
+<View>
+  <ComboboxShowcase showcase="controlled-multiple" />
+</View>
+
+```tsx
+const ControlledComponent = () => {
+  const [value, setValue] = useState<string | string[] | null | undefined>(null);
+
+  return (
+    <>
+      <Badge>
+        Value: {Array.isArray(value) && value.length > 0 ? value.join(', ') : 'Select a country!'}
+      </Badge>
+      <div className="flex w-full gap-2">
+        <Button onClick={() => setValue(['1', '3'])}>Germany & Greece</Button>
+        <Button onClick={() => setValue(['2'])}>Great Britain</Button>
+      </div>
+
+      <Template
+        value={value}
+        onChange={(newValue) => {
+          console.log('newValue', newValue);
+          setValue(newValue);
+        }}
+        closeOnSelect={false}
+        multiple={true}
+      />
     </>
   );
 };
@@ -560,14 +635,16 @@ An image can be added to the `Combobox.Option` component by setting the `media` 
 |:--------------|:----------------------|:---------------------------------------------------|:------------|
 | clearable     | `boolean`             | Adds a clear button                                | `true`      |
 | closeOnEscape | `boolean`             | Closes the combobox listbox on escape              | `true`      |
+| closeOnSelect | `boolean`             | Closes the combobox listbox on select              | `true`      |
 | color         | `ComboboxColor`       | Sets the border and ring color on focus state      | `dark`      |
 | disabled      | `boolean`             | Disables combobox                                  | `false`     |
-| initialValue  | `string`              | Sets the initial value of the combobox             | `undefined` |
+| initialValue  | `string`, `string[]`  | Sets the initial value of the combobox             | `undefined` |
 | leftIcon      | `ReactElement`        | Sets the left icon element                         | `undefined` |
 | loading       | `boolean`             | Enables loading state                              | `false`     |
 | maxHeight     | `number`              | Sets the combobox list max height css property     | `250`       |
 | minWidth      | `number`              | Sets the combobox list min width css property      | `250`       |
 | mode          | `ComboboxMode`        | Sets some or zero padding around the combobox list | `spacey`    |
+| multiple      | `boolean`             | Allows multiple selections                         | `false`     |
 | optionColor   | `ComboboxOptionColor` | Sets the selected option color                     | `gray`      |
 | offset        | `number`              | Sets the combobox list offset                      | `5`         |
 | placeholder   | `string`              | Adds a placeholder to the combobox                 | `undefined` |
@@ -577,7 +654,7 @@ An image can be added to the `Combobox.Option` component by setting the `media` 
 | size          | `ComboboxSize`        | Sets the combobox size                             | `md`        |
 | tone          | `ComboboxTone`        | Sets the combobox tone                             | `light`     |
 | validation    | `ComboboxValidation`  | Sets the validation state                          | `none`      |
-| value         | `string`              | Sets the controlled state value                    | `undefined` |
+| value         | `string`, `string[]`  | Sets the controlled state value                    | `undefined` |
 | withRing      | `boolean`             | Shows a ring around the combobox on active state   | `true`      |
 
 ### Combobox.Group

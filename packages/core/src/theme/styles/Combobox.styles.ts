@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 const base = cva(
-  ['w-full', 'transition-colors', 'duration-100', 'ease-in-out', 'outline-none', 'z-10'],
+  ['w-full', 'flex', 'items-center', 'transition-colors', 'duration-100', 'ease-in-out', 'z-10'],
   {
     variants: {
       color: {
@@ -12,10 +12,10 @@ const base = cva(
         black: [],
       },
       size: {
-        xs: ['text-xs', 'h-6'],
-        sm: ['text-sm', 'h-8'],
-        md: ['text-base', 'h-10'],
-        lg: ['text-lg', 'h-12'],
+        xs: ['text-xs', 'min-h-[1.5rem]'],
+        sm: ['text-sm', 'min-h-[2rem]'],
+        md: ['text-base', 'min-h-[2.5rem]'],
+        lg: ['text-lg', 'min-h-[3rem]'],
       },
       tone: {
         light: ['text-gray-800', 'border', 'focus:bg-gray-50', 'placeholder:text-gray-400'],
@@ -54,13 +54,13 @@ const base = cva(
       },
       validation: {
         none: [],
-        invalid: ['border-red-500', 'focus-visible:border-red-500'],
-        valid: ['border-green-500', 'focus-visible:border-green-500'],
-        warning: ['border-yellow-400', 'focus-visible:border-yellow-400'],
+        invalid: ['border-red-500', 'focus-within:border-red-500'],
+        valid: ['border-green-500', 'focus-within:border-green-500'],
+        warning: ['border-yellow-400', 'focus-within:border-yellow-400'],
       },
       withRing: {
-        true: ['focus:ring-2', 'focus:ring-offset-1'],
-        false: ['focus:ring-0'],
+        true: ['focus-within:ring-2', 'focus-within:ring-offset-1'],
+        false: ['focus-within:ring-0'],
       },
       disabled: {
         true: ['cursor-not-allowed'],
@@ -72,46 +72,46 @@ const base = cva(
         validation: 'none',
         color: 'blue',
         withRing: true,
-        className: ['focus:ring-blue-100'],
+        className: ['focus-within:ring-blue-100'],
       },
       {
         validation: 'none',
         color: 'purple',
         withRing: true,
-        className: ['focus:ring-purple-100'],
+        className: ['focus-within:ring-purple-100'],
       },
       {
         validation: 'none',
         color: 'gray',
         withRing: true,
-        className: ['focus:ring-gray-100'],
+        className: ['focus-within:ring-gray-100'],
       },
       {
         validation: 'none',
         color: 'dark',
         withRing: true,
-        className: ['focus:ring-gray-200'],
+        className: ['focus-within:ring-gray-200'],
       },
       {
         validation: 'none',
         color: 'black',
         withRing: true,
-        className: ['focus:ring-gray-300'],
+        className: ['focus-within:ring-gray-300'],
       },
       {
         validation: 'invalid',
         withRing: true,
-        className: ['focus:ring-red-100'],
+        className: ['focus-within:ring-red-100'],
       },
       {
         validation: 'valid',
         withRing: true,
-        className: ['focus:ring-green-100'],
+        className: ['focus-within:ring-green-100'],
       },
       {
         validation: 'warning',
         withRing: true,
-        className: ['focus:ring-yellow-100'],
+        className: ['focus-within:ring-yellow-100'],
       },
       {
         tone: 'light',
@@ -161,27 +161,27 @@ const base = cva(
       {
         validation: 'none',
         color: 'blue',
-        className: ['focus-visible:border-blue-500'],
+        className: ['focus-within:border-blue-500'],
       },
       {
         validation: 'none',
         color: 'purple',
-        className: ['focus-visible:border-purple-500'],
+        className: ['focus-within:border-purple-500'],
       },
       {
         validation: 'none',
         color: 'gray',
-        className: ['focus-visible:border-gray-500'],
+        className: ['focus-within:border-gray-500'],
       },
       {
         validation: 'none',
         color: 'dark',
-        className: ['focus-visible:border-gray-700'],
+        className: ['focus-within:border-gray-700'],
       },
       {
         validation: 'none',
         color: 'black',
-        className: ['focus-visible:border-black'],
+        className: ['focus-within:border-black'],
       },
       {
         hasLeftIcon: false,
@@ -278,6 +278,20 @@ const base = cva(
   }
 );
 
+const input = cva(
+  ['outline-none', 'bg-transparent', 'w-full', 'min-w-[1rem]', 'h-full', 'flex-1'],
+  {
+    variants: {
+      size: {
+        xs: ['min-h-[1.125rem]'],
+        sm: ['min-h-[1.375rem]'],
+        md: ['min-h-[1.625rem]'],
+        lg: ['min-h-[1.875rem]'],
+      },
+    },
+  }
+);
+
 const wrapper = cva(['relative', 'w-full', 'flex', 'items-center'], {
   variants: {
     disabled: {
@@ -287,13 +301,103 @@ const wrapper = cva(['relative', 'w-full', 'flex', 'items-center'], {
   },
 });
 
+const tagWrapper = cva(['flex', 'flex-wrap', 'items-center', 'flex-start', 'mr-2'], {
+  variants: {
+    size: {
+      xs: ['gap-0.5', 'py-0.5'],
+      sm: ['gap-1', 'py-1'],
+      md: ['gap-1.5', 'py-1.5'],
+      lg: ['gap-1.5', 'py-1.5'],
+    },
+  },
+});
+
+const tagButton = cva(['flex', 'items-center', 'h-full', 'mr-1'], {
+  variants: {
+    disabled: {
+      true: ['cursor-not-allowed'],
+      false: ['cursor-pointer'],
+    },
+    color: {
+      blue: ['focus-visible:outline-blue-100'],
+      purple: ['focus-visible:outline-purple-100'],
+      gray: ['focus-visible:outline-gray-100'],
+      dark: ['focus-visible:outline-gray-200'],
+      black: ['focus-visible:outline-gray-300'],
+    },
+  },
+});
+
+const tagButtonIcon = cva(['text-xs', 'text-gray-500']);
+
+const tag = cva(
+  [
+    'flex',
+    'items-center',
+    'rounded',
+    'border',
+    'border-gray-200',
+    'whitespace-nowrap',
+    'leading-none',
+    'shadow-sm',
+  ],
+  {
+    variants: {
+      disabled: {
+        true: [],
+        false: ['text-gray-600'],
+      },
+      tone: {
+        light: [],
+        solid: [],
+        transparent: [],
+      },
+      size: {
+        xs: ['text-xs', 'px-1', 'h-[1.125rem]'],
+        sm: ['text-sm', 'px-1.5', 'h-[1.375rem]'],
+        md: ['text-sm', 'px-2', 'h-[1.625rem]'],
+        lg: ['text-base', 'px-2.5', 'h-[1.875rem]'],
+      },
+      radius: {
+        none: ['rounded-none'],
+        sm: ['rounded-sm'],
+        base: ['rounded'],
+        md: ['rounded-md'],
+        lg: ['rounded-lg'],
+      },
+    },
+    compoundVariants: [
+      {
+        disabled: true,
+        tone: ['light', 'transparent'],
+        className: ['bg-gray-100', 'text-gray-500'],
+      },
+      {
+        disabled: false,
+        tone: ['light', 'transparent'],
+        className: ['bg-gray-50'],
+      },
+      {
+        disabled: true,
+        tone: 'solid',
+        className: ['bg-gray-50', 'text-gray-500'],
+      },
+      {
+        disabled: false,
+        tone: 'solid',
+        className: ['bg-white'],
+      },
+    ],
+  }
+);
+
 const noResults = cva(['w-full', 'flex', 'items-center'], {
   variants: {
     size: {
       xs: ['text-xs', 'px-2', 'py-1'],
       sm: ['text-sm', 'px-2', 'py-1'],
-      md: ['text-base', 'px-2', 'py-2'],
-      lg: ['text-lg', 'px-2', 'py-2'],
+      md: ['text-sm', 'px-2', 'py-1.5'],
+      lg: ['text-base', 'px-2', 'py-2'],
     },
   },
 });
@@ -309,6 +413,11 @@ const list = cva(
     'z-40',
     'bg-white',
     'overflow-x-clip',
+    'scrollbar',
+    'scrollbar-thin',
+    'scrollbar-rounded-lg',
+    'scrollbar-thumb-gray-200',
+    'scrollbar-track-gray-100',
   ],
   {
     variants: {
@@ -378,9 +487,9 @@ const list = cva(
 const icon = cva([], {
   variants: {
     tone: {
-      light: ['text-gray-600'],
-      solid: ['text-gray-600'],
-      transparent: ['text-gray-600'],
+      light: ['fill-gray-600'],
+      solid: ['fill-gray-600'],
+      transparent: ['fill-gray-600'],
     },
     size: {
       xs: ['h-3.5', 'w-3.5'],
@@ -411,16 +520,27 @@ const rightIconWrapper = cva(
     'h-full',
     'flex',
     'items-center',
+    'rounded',
     'enabled:cursor-pointer',
     'disabled:cursor-not-allowed',
+    'focus:outline-none',
+    'focus:ring',
+    'focus:ring-offset-1',
   ],
   {
     variants: {
+      color: {
+        blue: ['focus-visible:ring-blue-100'],
+        purple: ['focus-visible:ring-purple-100'],
+        gray: ['focus-visible:ring-gray-100'],
+        dark: ['focus-visible:ring-gray-200'],
+        black: ['focus-visible:ring-gray-300'],
+      },
       size: {
-        xs: ['pr-2'],
-        sm: ['pr-2.5'],
-        md: ['pr-3'],
-        lg: ['pr-3'],
+        xs: ['px-2'],
+        sm: ['px-2.5'],
+        md: ['px-3'],
+        lg: ['px-3'],
       },
     },
   }
@@ -519,7 +639,7 @@ const button = cva(
         xs: ['text-xs', 'px-2', 'py-1'],
         sm: ['text-sm', 'px-2', 'py-1'],
         md: ['text-sm', 'px-2', 'py-1.5'],
-        lg: ['text-lg', 'px-2', 'py-2'],
+        lg: ['text-base', 'px-2', 'py-2'],
       },
       selected: {
         true: [],
@@ -658,6 +778,7 @@ const description = cva(['whitespace-normal'], {
 
 const comboboxStyles = {
   base,
+  input,
   group,
   icon,
   leftIconWrapper,
@@ -665,6 +786,10 @@ const comboboxStyles = {
   noResults,
   rightIconWrapper,
   wrapper,
+  tag,
+  tagWrapper,
+  tagButton,
+  tagButtonIcon,
 };
 
 const comboboxOptionStyles = {

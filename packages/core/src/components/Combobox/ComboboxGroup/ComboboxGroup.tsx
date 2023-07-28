@@ -31,7 +31,7 @@ const ComboboxGroup: ComboboxGroupComponent = forwardRef(
     const localRef = useRef<HTMLDivElement>(null);
     const mergedRef = useMergeRefs([localRef, ref || null]);
     const [hidden, setHidden] = useState<boolean>(false);
-    const { search, size, mode } = useComboboxContext();
+    const { size, state, mode } = useComboboxContext();
     const [items, setItems] = useState<any>(null);
     const [classes, setClasses] = useState<string>('');
     const [hiddenChildrenCount, setHiddenChildrenCount] = useState<number>(0);
@@ -51,7 +51,7 @@ const ComboboxGroup: ComboboxGroupComponent = forwardRef(
           });
         })
       );
-    }, [search]);
+    }, [state.search]);
 
     useEffect(() => {
       setHidden(hiddenChildrenCount === Children.count(children));

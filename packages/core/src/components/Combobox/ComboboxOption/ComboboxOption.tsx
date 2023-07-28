@@ -1,4 +1,5 @@
 import { useComboboxContext } from '@components/Combobox/Combobox.context';
+import { ComboboxActionEnum, ComboboxOptionEntry } from '@components/Combobox/Combobox.types';
 import {
   ComboboxOptionComponent,
   ComboboxOptionProps,
@@ -15,31 +16,72 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
     const { value, label, description, media } = props;
     const disabled = !!props.disabled;
     const id = usePropId(props.id);
-    const {
-      externalSearch,
-      mode,
-      optionColor,
-      radius,
-      search,
-      selectedValue,
-      setSelectedLabel,
-      setSelectedValue,
-      size,
-    } = useComboboxContext();
-    const normalizedSearch = textNormalize(search || '');
+    const { dispatch, externalSearch, mode, multiple, optionColor, radius, size, state } =
+      useComboboxContext();
+    const normalizedSearch = textNormalize(state.search || '');
     const normalizedLabel = textNormalize(label || '');
     const normalizedDescription = textNormalize(description || '');
     const hidden =
       !externalSearch &&
       !normalizedLabel.includes(normalizedSearch) &&
       !normalizedDescription.includes(normalizedSearch);
-    const selected = selectedValue === value && !disabled;
+    const selected =
+      state.selectedOptions.findIndex((option: ComboboxOptionEntry) => option.value === value) !==
+      -1;
 
     useEffect(() => {
-      if (selectedValue === value && !disabled) {
-        setSelectedLabel(label);
+      dispatch({
+        type: ComboboxActionEnum.register,
+        payload: {
+          value,
+          label,
+        },
+      });
+
+      if (!state.initialValue) {
+        return;
       }
-    }, [selectedValue]);
+
+      if (typeof state.initialValue === 'string' && state.initialValue === value) {
+        dispatch({
+          type: ComboboxActionEnum.single_select,
+          payload: {
+            value,
+          },
+        });
+        return;
+      }
+
+      if (Array.isArray(state.initialValue) && state.initialValue.includes(value)) {
+        dispatch({
+          type: ComboboxActionEnum.multi_select,
+          payload: {
+            value,
+          },
+        });
+        return;
+      }
+    }, []);
+
+    const handleOnClick = () => {
+      if (multiple) {
+        dispatch({
+          type: ComboboxActionEnum.multi_select,
+          payload: {
+            value,
+            toggle: true,
+          },
+        });
+      } else {
+        dispatch({
+          type: ComboboxActionEnum.single_select,
+          payload: {
+            value,
+            toggle: true,
+          },
+        });
+      }
+    };
 
     return (
       <button
@@ -49,15 +91,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
         aria-hidden={hidden}
         disabled={disabled}
         aria-disabled={disabled}
-        onClick={() => {
-          if (selectedValue === value) {
-            setSelectedValue(null);
-            setSelectedLabel(null);
-          } else {
-            setSelectedValue(value);
-            setSelectedLabel(label);
-          }
-        }}
+        onClick={handleOnClick}
       >
         <div className={theme.optionWrapper()}>
           {media}

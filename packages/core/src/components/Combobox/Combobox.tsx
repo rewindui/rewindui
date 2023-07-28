@@ -1,5 +1,7 @@
 'use client';
+import { comboboxReducer } from '@components/Combobox/combobox.reducer';
 import {
+  ComboboxActionEnum,
   ComboboxComponent,
   ComboboxContext,
   ComboboxProps,
@@ -23,6 +25,7 @@ import React, {
   useEffect,
   useId,
   useLayoutEffect,
+  useReducer,
   useRef,
   useState,
 } from 'react';
@@ -32,12 +35,14 @@ import { CaretUpDown } from '@icons/CaretUpDown';
 const defaultProps: Partial<ComboboxProps> = {
   clearable: true,
   closeOnEscape: true,
+  closeOnSelect: true,
   color: 'dark',
   disabled: false,
   loading: false,
   maxHeight: 250,
   minWidth: 250,
   mode: 'spacey',
+  multiple: false,
   offset: 5,
   optionColor: 'gray',
   radius: 'md',
@@ -57,6 +62,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       className,
       clearable,
       closeOnEscape,
+      closeOnSelect,
       color,
       controlId,
       initialValue,
@@ -65,6 +71,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       maxHeight,
       minWidth,
       mode,
+      multiple,
       offset,
       onChange,
       onSearch,
@@ -91,30 +98,45 @@ const _Combobox: ComboboxComponent = forwardRef(
     const disabled = props.disabled || loading;
     const hasLeftIcon = !!leftIcon;
     const hasRightIcon = true;
-    const [search, setSearch] = useState<string>('');
-    const [searching, setSearching] = useState<boolean>(false);
-    const [selectedValue, setSelectedValue] = useState<string | null | undefined>(initialValue);
-    const [selectedLabel, setSelectedLabel] = useState<string | null | undefined>('');
+    const [state, dispatch] = useReducer(comboboxReducer, {
+      multiple: multiple || false,
+      initialValue,
+      options: [],
+      selectedOptions: [],
+      search: '',
+      searching: false,
+    });
     const [visibleRefs, setVisibleRefs] = useState<HTMLButtonElement[]>([]);
     const [listClasses, setListClasses] = useState<string>('');
-    const [inputClasses, setInputClasses] = useState<string>('');
+    const [baseClasses, setBaseClasses] = useState<string>(
+      theme.base({
+        className,
+        color,
+        disabled,
+        hasLeftIcon,
+        hasRightIcon,
+        radius,
+        shadow,
+        size,
+        tone,
+        validation,
+        withRing,
+      })
+    );
     const [maxWidth, setMaxWidth] = useState<number | null>(null);
-    const mounted = useRef(true);
+    const mounted = useRef(false);
     const localWrapperRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
     const contextValue: ComboboxContext = {
       externalSearch: !!onSearch,
       mode,
+      multiple,
       optionColor,
       radius,
-      search,
-      selectedLabel,
-      selectedValue,
-      setSearch,
-      setSelectedLabel,
-      setSelectedValue,
       size,
+      state,
+      dispatch,
     };
     const { x, y, reference, floating, strategy, getFloatingProps, open, setOpen } = useCombobox({
       offset,
@@ -129,7 +151,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       : null;
     const leftWrapperStyles = theme.leftIconWrapper({ size });
     const rightIconClasses = theme.icon({ tone, size });
-    const rightWrapperStyles = theme.rightIconWrapper({ size });
+    const rightWrapperStyles = theme.rightIconWrapper({ color, size });
 
     useEffect(() => {
       if (!localWrapperRef.current) {
@@ -140,21 +162,54 @@ const _Combobox: ComboboxComponent = forwardRef(
     }, []);
 
     useEffect(() => {
-      setSearch('');
-      setSearching(false);
-    }, [selectedLabel]);
-
-    useEffect(() => {
-      if (onChange && !mounted.current) {
-        onChange(selectedValue);
+      if (!onChange) {
+        return;
       }
 
-      mounted.current = false;
-    }, [selectedValue]);
+      if (!mounted.current) {
+        mounted.current = true;
+        return;
+      }
+
+      if (multiple) {
+        onChange(state.selectedOptions.map((o) => o.value));
+        return;
+      }
+
+      if (!multiple) {
+        onChange(state.selectedOptions[0]?.value);
+        return;
+      }
+    }, [state.selectedOptions]);
 
     useEffect(() => {
-      setSelectedValue(value);
-    }, [value]);
+      if (!value) {
+        dispatch({
+          type: ComboboxActionEnum.reset,
+          payload: null,
+        });
+
+        return;
+      }
+
+      if (multiple && Array.isArray(value) && value.length > 0) {
+        dispatch({
+          type: ComboboxActionEnum.init_multi_select,
+          payload: { values: value },
+        });
+
+        return;
+      }
+
+      if (!multiple && typeof value === 'string') {
+        dispatch({
+          type: ComboboxActionEnum.single_select,
+          payload: { value },
+        });
+
+        return;
+      }
+    }, [value, multiple]);
 
     useEffect(() => {
       if (open) {
@@ -165,16 +220,29 @@ const _Combobox: ComboboxComponent = forwardRef(
     }, [open]);
 
     useKeypress('Escape', true, () => {
-      setSearch('');
-      setSearching(false);
+      dispatch({
+        type: ComboboxActionEnum.search_reset,
+        payload: null,
+      });
 
       if (open && closeOnEscape) {
         setOpen(false);
       }
     });
 
+    useKeypress('Backspace', open, () => {
+      if (state.search) {
+        return;
+      }
+
+      dispatch({
+        type: ComboboxActionEnum.remove_last,
+        payload: null,
+      });
+    });
+
     useKeypress('Enter', true, () => {
-      if (!searching) {
+      if (!state.searching) {
         return;
       }
 
@@ -202,42 +270,76 @@ const _Combobox: ComboboxComponent = forwardRef(
       }, 1);
 
       updateListClasses();
-    }, [search]);
+    }, [state.search]);
 
     useEffect(() => {
-      if (open) {
+      if (open && closeOnSelect) {
         setOpen(false);
       }
-    }, [selectedLabel]);
+    }, [state.selectedOptions]);
 
     useVerticalArrows(visibleRefs, open);
 
     const inputElement = (
-      <input
-        id={inputId}
-        ref={inputRef}
-        disabled={disabled}
-        role="combobox"
-        aria-controls={contentId}
-        aria-expanded={open}
-        value={searching ? search : selectedLabel || ''}
-        placeholder={placeholder}
-        className={inputClasses}
-        readOnly={!searchable}
-        onBlur={() => setSearching(false)}
-        onChange={(event) => {
-          setSearching(true);
-          setSearch(event.target.value);
-          if (onSearch) {
-            onSearch(event.target.value);
-          }
+      <div className={baseClasses}>
+        <div className={theme.tagWrapper({ size })}>
+          {multiple &&
+            state.selectedOptions?.map((option, index) => (
+              <div key={`label-${index}`} className={theme.tag({ disabled, radius, size, tone })}>
+                <button
+                  type="button"
+                  disabled={disabled}
+                  aria-label={`Remove ${option.label}`}
+                  className={theme.tagButton({ color, disabled })}
+                  onClick={(event) => {
+                    dispatch({
+                      type: ComboboxActionEnum.multi_select,
+                      payload: { value: option.value, toggle: true },
+                    });
+                    event.stopPropagation();
+                  }}
+                >
+                  <span className={theme.tagButtonIcon()}>&#10005;</span>
+                </button>
+                <span>{option.label}</span>
+              </div>
+            ))}
+          {(!multiple || open || state.selectedOptions.length === 0) && (
+            <input
+              id={inputId}
+              ref={inputRef}
+              disabled={disabled}
+              className={theme.input({ size })}
+              role="combobox"
+              aria-controls={contentId}
+              aria-expanded={open}
+              value={
+                state.searching
+                  ? state.search
+                  : (!multiple ? state.selectedOptions[0]?.label : '') || ''
+              }
+              placeholder={state.selectedOptions.length ? '' : placeholder}
+              readOnly={!searchable}
+              onBlur={() => dispatch({ type: ComboboxActionEnum.search_reset, payload: null })}
+              onChange={(event) => {
+                dispatch({
+                  type: ComboboxActionEnum.search_start,
+                  payload: { search: event.target.value },
+                });
 
-          if (!open) {
-            setOpen(true);
-          }
-        }}
-        type="text"
-      />
+                if (onSearch) {
+                  onSearch(event.target.value);
+                }
+
+                if (!open) {
+                  setOpen(true);
+                }
+              }}
+              type="text"
+            />
+          )}
+        </div>
+      </div>
     );
 
     const spinnerColor = tone === 'solid' ? 'slate' : 'gray';
@@ -270,7 +372,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       const hasLeftElement = dataset.hasOwnProperty('hasLeftElement');
       const hasRightElement = dataset.hasOwnProperty('hasRightElement');
 
-      setInputClasses(
+      setBaseClasses(
         theme.base({
           className,
           color,
@@ -303,75 +405,79 @@ const _Combobox: ComboboxComponent = forwardRef(
     ]);
 
     return (
-      <div
-        id={id}
-        ref={wrapperRef}
-        className={wrapperClasses}
-        onClick={() => {
-          if (!open && !disabled) {
-            setOpen(true);
-          }
-        }}
-        {...additionalProps}
-      >
-        {leftIcon && (
-          <span className={leftWrapperStyles}>
-            {cloneElement(leftIcon, {
-              className: leftIconClasses,
-            })}
-          </span>
-        )}
-        {inputElement}
-        {loading && (
-          <span className={rightWrapperStyles}>
-            <Spinner size={size} color={spinnerColor} />
-          </span>
-        )}
-        {!loading && clearable && selectedValue && (
-          <button
-            disabled={disabled}
-            onClick={(event) => {
-              setSelectedLabel('');
-              setSelectedValue(null);
-              setSearch('');
-              event.stopPropagation();
-            }}
-            className={rightWrapperStyles}
-          >
-            <XMarkIcon className={rightIconClasses} />
-          </button>
-        )}
-        {!loading && (!clearable || !selectedValue) && (
-          <div className={rightWrapperStyles}>
-            <CaretUpDown className={rightIconClasses} />
-          </div>
-        )}
-        <ComboboxContextProvider value={contextValue}>
-          <FloatingPortal>
-            <div
-              id={contentId}
-              ref={floatingRef}
-              className={listClasses}
-              style={{
-                display: open ? 'block' : 'none',
-                opacity: open && !disabled ? 1 : 0,
-                maxHeight: `${maxHeight}px`,
-                minWidth: `${minWidth}px`,
-                maxWidth: `${maxWidth}px`,
-                position: strategy,
-                top: y && y > 0 && y !== Infinity ? y : 0,
-                left: x || 0,
+      <>
+        <div
+          id={id}
+          ref={wrapperRef}
+          className={wrapperClasses}
+          onClick={() => {
+            if (!open && !disabled) {
+              setOpen(true);
+            }
+
+            inputRef?.current?.focus();
+          }}
+          {...additionalProps}
+        >
+          {leftIcon && (
+            <span className={leftWrapperStyles}>
+              {cloneElement(leftIcon, {
+                className: leftIconClasses,
+              })}
+            </span>
+          )}
+          {inputElement}
+          {loading && (
+            <span className={rightWrapperStyles}>
+              <Spinner size={size} color={spinnerColor} />
+            </span>
+          )}
+          {!loading && clearable && state.selectedOptions?.length > 0 && (
+            <button
+              type="button"
+              disabled={disabled}
+              onClick={(event) => {
+                dispatch({ type: ComboboxActionEnum.reset, payload: null });
+                dispatch({ type: ComboboxActionEnum.search_reset, payload: null });
+                event.stopPropagation();
               }}
-              {...getFloatingProps}
+              className={rightWrapperStyles}
             >
-              {visibleRefs?.length === 0 && searching && (
-                <div className={noResultsClasses}>No results</div>
-              )}
-              {children}
+              <XMarkIcon className={rightIconClasses} />
+            </button>
+          )}
+          {!loading && (!clearable || state.selectedOptions?.length === 0) && (
+            <div className={rightWrapperStyles}>
+              <CaretUpDown className={rightIconClasses} />
             </div>
-          </FloatingPortal>
-        </ComboboxContextProvider>
-      </div>
+          )}
+          <ComboboxContextProvider value={contextValue}>
+            <FloatingPortal>
+              <div
+                id={contentId}
+                ref={floatingRef}
+                className={listClasses}
+                style={{
+                  display: open ? 'block' : 'none',
+                  opacity: open && !disabled ? 1 : 0,
+                  maxHeight: `${maxHeight}px`,
+                  minWidth: `${minWidth}px`,
+                  maxWidth: `${maxWidth}px`,
+                  position: strategy,
+                  top: y && y > 0 && y !== Infinity ? y : 0,
+                  left: x || 0,
+                }}
+                {...getFloatingProps}
+              >
+                {visibleRefs?.length === 0 && state.searching && (
+                  <div className={noResultsClasses}>No results</div>
+                )}
+                {children}
+              </div>
+            </FloatingPortal>
+          </ComboboxContextProvider>
+        </div>
+      </>
     );
   }
 );

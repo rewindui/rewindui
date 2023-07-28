@@ -6,11 +6,13 @@ export const ComboboxConfig = {
   state: {
     clearable: true,
     closeOnEscape: true,
+    closeOnSelect: true,
     color: 'dark',
+    multiple: false,
     disabled: false,
     loading: false,
     mode: 'spacey',
-    placeholder: 'Select a fruit...',
+    placeholder: 'Select a country...',
     radius: 'md',
     searchable: true,
     shadow: 'none',
@@ -57,6 +59,11 @@ export const ComboboxConfig = {
       options: ['none', 'sm', 'base', 'md', 'lg'],
     },
     {
+      label: 'Multiple',
+      name: 'multiple',
+      type: 'switch',
+    },
+    {
       label: 'Clearable',
       name: 'clearable',
       type: 'switch',
@@ -64,6 +71,11 @@ export const ComboboxConfig = {
     {
       label: 'Close on escape',
       name: 'closeOnEscape',
+      type: 'switch',
+    },
+    {
+      label: 'Close on select',
+      name: 'closeOnSelect',
       type: 'switch',
     },
     {
