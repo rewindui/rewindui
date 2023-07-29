@@ -224,6 +224,7 @@ const _Combobox: ComboboxComponent = forwardRef(
         placeholder={placeholder}
         className={inputClasses}
         readOnly={!searchable}
+        autoComplete="off"
         onBlur={() => setSearching(false)}
         onChange={(event) => {
           setSearching(true);
