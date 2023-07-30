@@ -10,7 +10,6 @@ import {
   ComboboxShadow,
   ComboboxValidation,
   ComboboxGroupType,
-  Button,
 } from '@rewind-ui/core';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Meta, Story } from '@storybook/react';
@@ -264,21 +263,15 @@ const meta: Meta = {
 export default meta;
 
 const DefaultTemplate: Story<ComboboxProps> = (args) => {
-  const [value, setValue] = useState<string | null>('1');
-
   return (
     <>
-      <div className="flex gap-2 mb-2">
-        <Button onClick={() => setValue('1')}>Select Germany</Button>
-        <Button onClick={() => setValue('2')}>Select Great Britain</Button>
-        <Button onClick={() => setValue('3')}>Select Greece</Button>
-      </div>
-
       <Combobox
         {...args}
         leftIcon={<MagnifyingGlass />}
         placeholder="Select a country..."
-        value={value}
+        onChange={(selectedValue) => console.log('story selected value', selectedValue)}
+        initialValue={['1']}
+        multiple
       >
         {options.map((group, index) => (
           <Combobox.Group heading={group.heading} key={index}>
