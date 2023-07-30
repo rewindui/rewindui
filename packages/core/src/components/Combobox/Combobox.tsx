@@ -320,6 +320,7 @@ const _Combobox: ComboboxComponent = forwardRef(
               }
               placeholder={state.selectedOptions.length ? '' : placeholder}
               readOnly={!searchable}
+              autoComplete="off"
               onBlur={() => dispatch({ type: ComboboxActionEnum.search_reset, payload: null })}
               onChange={(event) => {
                 dispatch({
