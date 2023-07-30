@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.13.0
+
+### Minor Changes
+
+- cdd43a6: Added multiple prop to Combobox component
+
 ## 0.12.2
 
 ### Patch Changes
