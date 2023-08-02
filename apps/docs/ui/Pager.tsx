@@ -44,9 +44,35 @@ const PagerItem = ({ item, side }: { item: CollectionItem; side: 'left' | 'right
         side === 'right' && 'ml-auto'
       )}
     >
-      {side === 'left' && <CaretCircleLeft size={28} weight="duotone" />}
+      {side === 'left' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          height="1.5em"
+          viewBox="0 0 512 512"
+        >
+          <path d="M167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273z" />
+          <path
+            className="opacity-20"
+            d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"
+          />
+        </svg>
+      )}
       <span>{item.title}</span>
-      {side === 'right' && <CaretCircleRight size={28} weight="duotone" />}
+      {side === 'right' && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          height="1.5em"
+          viewBox="0 0 512 512"
+        >
+          <path d="M345 239c9.4 9.4 9.4 24.6 0 33.9L241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239z" />
+          <path
+            className="opacity-20"
+            d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"
+          />
+        </svg>
+      )}
     </Link>
   );
 };
