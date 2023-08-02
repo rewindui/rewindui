@@ -350,7 +350,6 @@ const _Combobox: ComboboxComponent = forwardRef(
         return;
       }
 
-      const overflown = listRef.current.scrollHeight > (maxHeight || 0);
       setListClasses(
         theme.list({
           size,
@@ -358,7 +357,6 @@ const _Combobox: ComboboxComponent = forwardRef(
           mode,
           radius,
           shadow,
-          overflown,
         })
       );
     };

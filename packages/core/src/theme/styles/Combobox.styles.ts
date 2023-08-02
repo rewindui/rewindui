@@ -413,6 +413,7 @@ const list = cva(
     'z-40',
     'bg-white',
     'overflow-x-clip',
+    'overflow-y-auto',
     'scrollbar',
     'scrollbar-thin',
     'scrollbar-rounded-lg',
@@ -421,10 +422,6 @@ const list = cva(
   ],
   {
     variants: {
-      overflown: {
-        true: ['overflow-y-scroll'],
-        false: ['overflow-y-hidden'],
-      },
       open: {
         true: ['opacity-100', 'scale-100'],
         false: ['opacity-0', 'scale-95', 'hidden'],
@@ -458,27 +455,13 @@ const list = cva(
     compoundVariants: [
       {
         mode: 'spacey',
-        overflown: false,
         size: ['xs', 'sm'],
         className: ['p-1'],
       },
       {
         mode: 'spacey',
-        overflown: false,
         size: ['md', 'lg'],
         className: ['p-1.5'],
-      },
-      {
-        mode: 'spacey',
-        overflown: true,
-        size: ['xs', 'sm'],
-        className: ['py-1', 'px-1'],
-      },
-      {
-        mode: 'spacey',
-        overflown: true,
-        size: ['md', 'lg'],
-        className: ['py-1.5', 'px-1.5'],
       },
     ],
   }
