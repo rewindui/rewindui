@@ -4,10 +4,13 @@ description: Learn how to contribute to the project
 ---
 
 ## Contributing guidelines
+
 Thank you for considering contributing to this project! We appreciate your time and effort in making this project better.
 
 ## Tech stack
+
 Rewind-UI is built as a [monorepo using Turborepo](https://turbo.build/repo/docs/handbook/what-is-a-monorepo) on top of the following amazing projects:
+
 - [React](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [CVA](https://cva.style)
@@ -21,7 +24,9 @@ Basic animations are implemented using the [Web Animations API](https://develope
 Before you get started, please take a moment to review the following guidelines.
 
 ## Ways to contribute
+
 There are many ways to contribute to this project! Here are some ideas:
+
 - Submit bugs and feature requests
 - Review source code changes
 - Review the documentation and make pull requests for anything from typos to new content
@@ -29,9 +34,11 @@ There are many ways to contribute to this project! Here are some ideas:
 - Contribute to the codebase
 
 ## Submitting an issue
+
 If you encounter a bug, have a feature request, or need assistance, please submit an issue using the issue tracker. Before submitting an issue, please check if a similar issue already exists. Include as much detail as possible to help us understand and address the problem.
 
 ## Contribution workflow
+
 1. Fork the repository
 2. Create a new branch for your changes
 3. Make your changes
@@ -43,6 +50,7 @@ If you encounter a bug, have a feature request, or need assistance, please submi
 9. Celebrate your success after your pull request is merged!
 
 ## Local development
+
 After cloning the repository, you can run the following commands:
 
 - [Install pnpm](https://pnpm.io/installation) globally: `npm install -g pnpm`
@@ -51,22 +59,36 @@ After cloning the repository, you can run the following commands:
 Having installed the dependencies, you need to start the dev servers for each package/app:
 
 ### @rewind-ui/core
+
 Open the `rewindui/packages/core` directory and run `pnpm dev` to start the development server on the core package.
 
 ### Storybook
+
 Open the `rewindui/apps/storybook` directory and run `pnpm dev` to start the Storybook server.
 Storybook is used to develop and test components in isolation.
 
+### Testing
+
+Component tests leverage [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) and are co-located with component implementations. New components should include functional tests that cover how a user would interact with them.
+
+To run the test suite once, run `pnpm run test`.
+
+To run the test suite in watch mode, run `pnpm run test:watch`.
+
 ### Documentation
+
 Open the `rewindui/apps/docs` directory and run `pnpm dev` to start the documentation server.
 
 ## Project structure
+
 The structure of each component should be as follows:
 
 ### @rewind-ui/core
+
 Each component should be in its own directory inside `rewindui/packages/core/src/components`. The [Button](https://github.com/rewindui/rewindui/tree/main/packages/core/src/components/Button) component can be used as an example.
 
 The component directory should contain the following files:
+
 - `index.ts` - exports the component and its types
 - `Component.tsx` - contains the component logic
 - `Component.types.ts` - contains the component types
@@ -77,7 +99,9 @@ The CVA file of each component should be placed in `rewindui/packages/core/src/t
 Each component should be exported from `rewindui/packages/core/src/index.ts` as well.
 
 ### Storybook
+
 To add a new component to Storybook, add a new story file in `rewindui/apps/storybook/stories` and import the component from `@rewind-ui/core`.
 
 ### Documentation
+
 It is recommended to submit your pull request without documentation changes. If the new component is accepted, the documentation will be updated by the maintainers.
