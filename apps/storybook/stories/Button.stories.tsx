@@ -280,3 +280,22 @@ const IconTemplate: Story<ButtonProps> = (args) => {
 };
 
 export const Icons = IconTemplate.bind({});
+
+const LabelWithIconTemplate: Story<ButtonProps> = (args) => {
+  const items = colors.map((color) => (
+    <React.Fragment key={color}>
+      <View prop="color" value={color}>
+        {tones.map((tone) => (
+          <Button {...args} key={tone} color={color} tone={tone} className="capitalize">
+            <MagnifyingGlass className="mr-2 w-4 h-4" />
+            Search
+          </Button>
+        ))}
+      </View>
+    </React.Fragment>
+  ));
+
+  return <ViewGroup>{items}</ViewGroup>;
+};
+
+export const LabelWithIcons = LabelWithIconTemplate.bind({});
