@@ -98,13 +98,12 @@ const _Combobox: ComboboxComponent = forwardRef(
     const disabled = props.disabled || loading;
     const hasLeftIcon = !!leftIcon;
     const hasRightIcon = true;
-    const selectedOptions = Array.isArray(initialValue) ? initialValue : [initialValue];
     const [state, dispatch] = useReducer(comboboxReducer, {
       multiple: multiple || false,
       initialValue,
       onChange,
       options: [],
-      selectedOptions,
+      selectedOptions: [],
       search: '',
       searching: false,
     });
