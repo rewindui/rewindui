@@ -12,3 +12,7 @@ server/dist
 public/dist
 storybook-static/
 .idea
+
+
+# Contentlayer
+.contentlayer
