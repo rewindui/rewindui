@@ -47,6 +47,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
           type: ComboboxActionEnum.single_select,
           payload: {
             value,
+            emitOnChange: true,
           },
         });
         return;
@@ -57,6 +58,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
           type: ComboboxActionEnum.multi_select,
           payload: {
             value,
+            emitOnChange: true,
           },
         });
         return;

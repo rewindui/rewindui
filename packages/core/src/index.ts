@@ -29,6 +29,7 @@ export * from './components/Text';
 export * from './components/Textarea';
 export * from './components/Toast';
 export * from './components/Tooltip';
+export * from './animations';
 export * from './theme';
 export * from './types';
 export * from './utils';

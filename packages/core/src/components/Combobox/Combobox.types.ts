@@ -9,7 +9,6 @@ import {
 export enum ComboboxActionEnum {
   register = 'REGISTER',
   reset = 'RESET',
-  init_single_select = 'INIT_SINGLE_SELECT',
   single_select = 'SINGLE_SELECT',
   multi_select = 'MULTI_SELECT',
   init_multi_select = 'INIT_MULTI_SELECT',
@@ -41,11 +40,12 @@ export type ComboboxOptionEntry = {
 };
 
 export type ComboboxState = {
-  multiple: boolean;
   initialValue: string | string[] | null | undefined;
-  searching: boolean;
-  search: string;
+  multiple: boolean;
+  onChange?(value: string | string[] | null | undefined): void;
   options: ComboboxOptionEntry[] | any[];
+  search: string;
+  searching: boolean;
   selectedOptions: ComboboxOptionEntry[] | any[];
 };
 
@@ -72,11 +72,7 @@ export type ComboboxAction =
     }
   | {
       type: ComboboxActionEnum.single_select | ComboboxActionEnum.multi_select;
-      payload: Omit<ComboboxOptionEntry, 'label'> & { toggle?: boolean };
-    }
-  | {
-      type: ComboboxActionEnum.init_single_select;
-      payload: { value: string };
+      payload: Omit<ComboboxOptionEntry, 'label'> & { toggle?: boolean; emitOnChange?: boolean };
     }
   | {
       type: ComboboxActionEnum.init_multi_select;

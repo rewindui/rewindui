@@ -18,6 +18,10 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
         ],
       };
     case ComboboxActionEnum.single_select:
+      if (!action.payload.emitOnChange && state.onChange) {
+        state.onChange(action.payload.value);
+      }
+
       if (action.payload.value === undefined) {
         return state;
       }
@@ -33,13 +37,18 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
       };
     case ComboboxActionEnum.multi_select:
       const multiOption = state.selectedOptions.find((el) => el.value === action.payload.value);
+      let selectedOptions = state.selectedOptions.filter((el) => el.value !== multiOption?.value);
 
       if (multiOption && action.payload.toggle) {
+        if (!action.payload.emitOnChange && state.onChange) {
+          state.onChange(selectedOptions.map((el) => el.value));
+        }
+
         return {
           ...state,
           search: '',
           searching: false,
-          selectedOptions: state.selectedOptions.filter((el) => el.value !== multiOption?.value),
+          selectedOptions,
         };
       }
 
@@ -48,12 +57,17 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
       }
 
       const multipleSourceOption = state.options.find((el) => el.value === action.payload.value);
+      selectedOptions = [...state.selectedOptions, multipleSourceOption];
+
+      if (!action.payload.emitOnChange && state.onChange) {
+        state.onChange(selectedOptions.map((el) => el.value));
+      }
 
       return {
         ...state,
         search: '',
         searching: false,
-        selectedOptions: [...state.selectedOptions, multipleSourceOption],
+        selectedOptions,
       };
     case ComboboxActionEnum.init_multi_select:
       const stateValues = state.selectedOptions.map((el) => el.value).sort();

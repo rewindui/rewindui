@@ -6,7 +6,7 @@ import { ConfiguratorStateControl } from '@/ui/configurators/ConfiguratorStateCo
 import { CustomSandpack } from '@/ui/configurators/CustomSandpack';
 import { FormControl } from '@rewind-ui/core';
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 type Props = {
   component: ComponentSlug;

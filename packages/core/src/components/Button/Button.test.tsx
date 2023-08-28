@@ -1,3 +1,4 @@
+import { createRef } from 'react';
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Button } from '.';
@@ -6,6 +7,13 @@ import '@testing-library/jest-dom';
 describe('Button', () => {
   it('should render', () => {
     render(<Button>Button</Button>);
+  });
+
+  it('should forward ref', () => {
+    const ref = createRef<HTMLButtonElement>();
+
+    render(<Button ref={ref}>Button</Button>);
+    expect(ref.current).not.toBeNull();
   });
 
   it('should pass type prop', () => {

@@ -1,6 +1,6 @@
 'use client';
+import { useFade } from '@animations/use-fade.hook';
 import { AlertComponent, AlertIconType, AlertProps } from '@components/Alert/Alert.types';
-import { Fader } from '@components/Fader';
 import { ErrorIcon } from '@icons/Error';
 import { InfoIcon } from '@icons/Info';
 import { QuestionIcon } from '@icons/Question';
@@ -10,9 +10,10 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import * as React from 'react';
-import { Ref, forwardRef, useMemo, useState } from 'react';
+import { Ref, forwardRef, useMemo, useState, useRef } from 'react';
 import { XMarkIcon } from '@icons/XMark';
 import { twMerge } from 'tailwind-merge';
+import { useMergeRefs } from '@floating-ui/react';
 
 const defaultProps: Partial<AlertProps> = {
   accent: 'none',
@@ -60,6 +61,10 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
     ...props,
   };
   const [visible, setVisible] = useState(true);
+  const localRef = useRef<HTMLDivElement>(null);
+  const mergedRef = useMergeRefs([ref || null, localRef]);
+
+  useFade({ ref: localRef, visible, enabled: dismissableAnimation });
 
   const classes = useMemo(() => {
     return twMerge(
@@ -78,8 +83,8 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
 
   const id = usePropId(props.id);
 
-  const items = (
-    <div id={id} role="alert" ref={ref} className={classes} {...additionalProps}>
+  return (
+    <div id={id} role="alert" ref={mergedRef} className={classes} {...additionalProps}>
       {(icon || iconType) && (
         <span className={theme.iconWrapper()}>{!iconType ? icon : icons[iconType]}</span>
       )}
@@ -89,6 +94,9 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
       </div>
       {dismissable && (
         <button
+          type="button"
+          aria-label="Close alert"
+          role="button"
           title="Close alert"
           className={theme.iconWrapper()}
           onClick={() => setVisible(false)}
@@ -97,12 +105,6 @@ const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivEl
         </button>
       )}
     </div>
-  );
-
-  return (
-    <Fader ref={ref} isActive={dismissableAnimation} isShown={visible} method="unmount">
-      {items}
-    </Fader>
   );
 });
 

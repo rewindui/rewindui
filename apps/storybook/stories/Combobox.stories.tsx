@@ -270,7 +270,7 @@ const DefaultTemplate: Story<ComboboxProps> = (args) => {
         leftIcon={<MagnifyingGlass />}
         placeholder="Select a country..."
         onChange={(selectedValue) => console.log('story selected value', selectedValue)}
-        initialValue={['1']}
+        initialValue={['1', '2']}
         multiple
       >
         {options.map((group, index) => (

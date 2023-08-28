@@ -98,11 +98,13 @@ const _Combobox: ComboboxComponent = forwardRef(
     const disabled = props.disabled || loading;
     const hasLeftIcon = !!leftIcon;
     const hasRightIcon = true;
+    const selectedOptions = Array.isArray(initialValue) ? initialValue : [initialValue];
     const [state, dispatch] = useReducer(comboboxReducer, {
       multiple: multiple || false,
       initialValue,
+      onChange,
       options: [],
-      selectedOptions: [],
+      selectedOptions,
       search: '',
       searching: false,
     });
@@ -124,7 +126,6 @@ const _Combobox: ComboboxComponent = forwardRef(
       })
     );
     const [maxWidth, setMaxWidth] = useState<number | null>(null);
-    const mounted = useRef(false);
     const localWrapperRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -160,27 +161,6 @@ const _Combobox: ComboboxComponent = forwardRef(
 
       setMaxWidth(localWrapperRef.current.getBoundingClientRect().width);
     }, []);
-
-    useEffect(() => {
-      if (!onChange) {
-        return;
-      }
-
-      if (!mounted.current) {
-        mounted.current = true;
-        return;
-      }
-
-      if (multiple) {
-        onChange(state.selectedOptions.map((o) => o.value));
-        return;
-      }
-
-      if (!multiple) {
-        onChange(state.selectedOptions[0]?.value);
-        return;
-      }
-    }, [state.selectedOptions]);
 
     useEffect(() => {
       if (!value) {
