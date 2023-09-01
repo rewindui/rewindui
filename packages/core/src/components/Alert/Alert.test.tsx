@@ -1,3 +1,5 @@
+import { axe, toHaveNoViolations } from 'jest-axe';
+import * as React from 'react';
 import { createRef } from 'react';
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
@@ -49,5 +51,12 @@ describe('Alert', () => {
   it('should have dismiss button', () => {
     render(<Alert dismissable>Alert</Alert>);
     expect(screen.getByRole('button')).toBeInTheDocument();
+  });
+
+  it('should be accessible', async () => {
+    expect.extend(toHaveNoViolations);
+    const { container } = render(<Alert>Alert</Alert>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

@@ -1,27 +1,20 @@
 import { axe, toHaveNoViolations } from 'jest-axe';
-import { createRef } from 'react';
 import * as React from 'react';
+import { createRef } from 'react';
 import { describe, it } from 'vitest';
 import { render } from '@testing-library/react';
-import { Card } from '.';
+import { Ribbon } from '.';
+import '@testing-library/jest-dom';
 
-const cardContent = (
-  <>
-    <Card.Header>Header</Card.Header>
-    <Card.Body>Body</Card.Body>
-    <Card.Footer>Footer</Card.Footer>
-  </>
-);
-
-describe('Card', () => {
+describe('Ribbon', () => {
   it('should render', () => {
-    render(<Card>{cardContent}</Card>);
+    render(<Ribbon>Ribbon</Ribbon>);
   });
 
   it('should forward ref', () => {
     const ref = createRef<HTMLDivElement>();
 
-    render(<Card ref={ref}>{cardContent}</Card>);
+    render(<Ribbon ref={ref}>Ribbon</Ribbon>);
     expect(ref.current).not.toBeNull();
   });
 
@@ -29,23 +22,23 @@ describe('Card', () => {
     const ref = createRef<HTMLDivElement>();
 
     render(
-      <Card ref={ref} id="card-id">
-        {cardContent}
-      </Card>
+      <Ribbon ref={ref} id="ribbon-id">
+        Ribbon
+      </Ribbon>
     );
-    expect(ref.current).toHaveProperty('id', 'card-id');
+    expect(ref.current).toHaveProperty('id', 'ribbon-id');
   });
 
   it('should generate id prop', () => {
     const ref = createRef<HTMLDivElement>();
 
-    render(<Card ref={ref}>{cardContent}</Card>);
+    render(<Ribbon ref={ref}>Ribbon</Ribbon>);
     expect(ref.current).toHaveProperty('id');
   });
 
   it('should be accessible', async () => {
     expect.extend(toHaveNoViolations);
-    const { container } = render(<Card>{cardContent}</Card>);
+    const { container } = render(<Ribbon>Ribbon</Ribbon>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });

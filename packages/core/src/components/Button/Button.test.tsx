@@ -3,6 +3,7 @@ import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Button } from '.';
 import '@testing-library/jest-dom';
+import { axe, toHaveNoViolations } from 'jest-axe';
 
 describe('Button', () => {
   it('should render', () => {
@@ -74,5 +75,12 @@ describe('Button', () => {
   it('should render as a button', () => {
     render(<Button as="button">Button</Button>);
     expect(screen.getByRole('button')).toBeInTheDocument();
+  });
+
+  it('should be accessible', async () => {
+    expect.extend(toHaveNoViolations);
+    const { container } = render(<Button>Button</Button>);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

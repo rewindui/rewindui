@@ -81,7 +81,6 @@ const Drawer: DrawerComponent = forwardRef((props: DrawerProps, ref?: Ref<HTMLDi
   }, [position]);
 
   useEffect(() => {
-    const easing = open ? 'ease-in-out' : 'ease-out';
     const duration = open ? 150 : 100;
     const keyframes = new KeyframeEffect(
       drawerRef.current,
@@ -93,7 +92,7 @@ const Drawer: DrawerComponent = forwardRef((props: DrawerProps, ref?: Ref<HTMLDi
           transform: translate[1],
         },
       ],
-      { duration, fill: 'both', easing }
+      { duration, fill: 'both', easing: 'ease-in-out' }
     );
 
     animation.current = new Animation(keyframes, document.timeline);

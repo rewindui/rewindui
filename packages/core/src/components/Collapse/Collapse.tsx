@@ -14,9 +14,13 @@ const Collapse = (props: CollapseProps) => {
       return;
     }
 
+    if (!element.animate) {
+      element.style.height = isOpen ? 'auto' : '0';
+      return;
+    }
+
     if (mounted.current) {
       element.style.height = isOpen ? 'auto' : '0';
-      element.style.overflow = 'hidden';
       mounted.current = false;
       return;
     }
@@ -31,16 +35,14 @@ const Collapse = (props: CollapseProps) => {
       });
     }
 
-    element.style.overflow = 'hidden';
     const heightAnimation = [currentHeight, endHeight];
-    const easing = isOpen ? 'ease-in' : 'ease-out';
     const keyframes = {
       height: heightAnimation,
     };
 
     const animation: Animation = element.animate(keyframes, {
       duration,
-      easing,
+      easing: 'ease-in-out',
     });
 
     animation.onfinish = () => {
@@ -49,7 +51,17 @@ const Collapse = (props: CollapseProps) => {
     };
   }, [duration, isOpen]);
 
-  return <div ref={collapseRef}>{children}</div>;
+  return (
+    <div
+      ref={collapseRef}
+      style={{
+        height: '0px',
+        overflow: 'hidden',
+      }}
+    >
+      {children}
+    </div>
+  );
 };
 
 Collapse.displayName = 'Collapse';

@@ -13,7 +13,6 @@ import {
 } from '@rewind-ui/core';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 import { Meta, Story } from '@storybook/react';
-import { useState } from 'react';
 import * as React from 'react';
 
 const tones: ComboboxTone[] = ['light', 'solid', 'transparent'];
