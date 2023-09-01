@@ -47,7 +47,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
           type: ComboboxActionEnum.single_select,
           payload: {
             value,
-            emitOnChange: true,
+            omitOnChange: true,
           },
         });
         return;
@@ -58,7 +58,7 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
           type: ComboboxActionEnum.multi_select,
           payload: {
             value,
-            emitOnChange: true,
+            omitOnChange: true,
           },
         });
         return;
@@ -89,6 +89,8 @@ const ComboboxOption: ComboboxOptionComponent = forwardRef(
       <button
         id={id}
         ref={ref}
+        aria-selected={selected}
+        role="option"
         className={theme.button({ optionColor, radius, selected, hidden, size, mode })}
         aria-hidden={hidden}
         disabled={disabled}

@@ -18,7 +18,7 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
         ],
       };
     case ComboboxActionEnum.single_select:
-      if (!action.payload.emitOnChange && state.onChange) {
+      if (!action.payload.omitOnChange && state.onChange) {
         state.onChange(action.payload.value);
       }
 
@@ -40,7 +40,7 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
       let selectedOptions = state.selectedOptions.filter((el) => el.value !== multiOption?.value);
 
       if (multiOption && action.payload.toggle) {
-        if (!action.payload.emitOnChange && state.onChange) {
+        if (!action.payload.omitOnChange && state.onChange) {
           state.onChange(selectedOptions.map((el) => el.value));
         }
 
@@ -59,7 +59,7 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
       const multipleSourceOption = state.options.find((el) => el.value === action.payload.value);
       selectedOptions = [...state.selectedOptions, multipleSourceOption];
 
-      if (!action.payload.emitOnChange && state.onChange) {
+      if (!action.payload.omitOnChange && state.onChange) {
         state.onChange(selectedOptions.map((el) => el.value));
       }
 
@@ -88,6 +88,11 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
         selectedOptions: multipleSourceOptions,
       };
     case ComboboxActionEnum.remove_last:
+      if (state.onChange) {
+        const values = state.selectedOptions.slice(0, -1).map((el) => el.value);
+        state.onChange(state.multiple ? values : values[0]);
+      }
+
       return {
         ...state,
         search: '',
@@ -95,6 +100,10 @@ export const comboboxReducer = (state: ComboboxState, action: ComboboxAction) =>
         selectedOptions: state.selectedOptions.slice(0, -1),
       };
     case ComboboxActionEnum.reset:
+      if (state.onChange) {
+        state.onChange(null);
+      }
+
       return {
         ...state,
         search: '',

@@ -72,7 +72,7 @@ export type ComboboxAction =
     }
   | {
       type: ComboboxActionEnum.single_select | ComboboxActionEnum.multi_select;
-      payload: Omit<ComboboxOptionEntry, 'label'> & { toggle?: boolean; emitOnChange?: boolean };
+      payload: Omit<ComboboxOptionEntry, 'label'> & { toggle?: boolean; omitOnChange?: boolean };
     }
   | {
       type: ComboboxActionEnum.init_multi_select;
