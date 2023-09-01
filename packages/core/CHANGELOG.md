@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.14.0
+
+### Minor Changes
+
+- 5723c7a: Added fade hook, Alert component tests, Combobox bug fix and improvements
+
 ## 0.13.0
 
 ### Minor Changes
