@@ -93,7 +93,7 @@ const _Combobox: ComboboxComponent = forwardRef(
       ...props,
     };
     const id = usePropId(props.id);
-    const contentId = useId();
+    const listboxId = useId();
     const inputId = usePropId(controlId);
     const disabled = props.disabled || loading;
     const hasLeftIcon = !!leftIcon;
@@ -290,7 +290,9 @@ const _Combobox: ComboboxComponent = forwardRef(
               disabled={disabled}
               className={theme.input({ size })}
               role="combobox"
-              aria-controls={contentId}
+              aria-controls={listboxId}
+              aria-autocomplete={searchable ? 'both' : 'list'}
+              aria-haspopup="listbox"
               aria-expanded={open}
               value={
                 state.searching
@@ -412,6 +414,7 @@ const _Combobox: ComboboxComponent = forwardRef(
           )}
           {!loading && clearable && state.selectedOptions?.length > 0 && (
             <button
+              aria-label="Clear"
               type="button"
               disabled={disabled}
               onClick={(event) => {
@@ -432,7 +435,8 @@ const _Combobox: ComboboxComponent = forwardRef(
           <ComboboxContextProvider value={contextValue}>
             <FloatingPortal>
               <div
-                id={contentId}
+                id={listboxId}
+                role="listbox"
                 ref={floatingRef}
                 className={listClasses}
                 style={{
