@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.15.0
+
+### Minor Changes
+
+- e1bad7b: Replaced Fader component with useFade hook. Updated Combobox aria attributes. Fixed Combobox minor bugs. Implement additional tests.
+
 ## 0.14.0
 
 ### Minor Changes
