@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef } from 'react';
 
 export function useFade(props: {
   enabled?: boolean;
@@ -6,7 +6,7 @@ export function useFade(props: {
   visible: boolean;
   fadeInDuration?: number;
   fadeOutDuration?: number;
-  easing?: string; // New prop for easing function
+  easing?: string;
 }) {
   const {
     enabled = true,
@@ -14,7 +14,7 @@ export function useFade(props: {
     visible,
     fadeInDuration = 250,
     fadeOutDuration = 250,
-    easing = 'linear', // Default easing function
+    easing = 'linear',
   } = props;
 
   const mounted = useRef<boolean>(false);
