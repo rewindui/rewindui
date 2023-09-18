@@ -143,7 +143,7 @@ The `Input` component supports the following validation options: `none`, `invali
 
 # Types
 ---
-The `Input` component supports the following type options: `color`, `datetime-local`, `date`, `email`, `file`, `number`, `password`, `range`, `search`, `text` and `time`.
+The `Input` component supports the following type options: `color`, `datetime-local`, `date`, `email`, `file`, `number`, `password`, `range`, `search`, `tel`, `text` and `time`.
 
 <View>
   <Input type="color" placeholder="color" />
@@ -157,6 +157,7 @@ The `Input` component supports the following type options: `color`, `datetime-lo
   <Input type="search" placeholder="search" />
   <Input type="text" placeholder="text" />
   <Input type="time" placeholder="time" />
+  <Input type="tel" placeholder="tel" />
 </View>
 
 ```tsx
@@ -172,6 +173,7 @@ The `Input` component supports the following type options: `color`, `datetime-lo
   <Input type="search" placeholder="search" />
   <Input type="text" placeholder="text" />
   <Input type="time" placeholder="time" />
+  <Input type="tel" placeholder="tel" />
 </View>
 ```
 
@@ -289,6 +291,7 @@ type InputType =
   | 'date'
   | 'time'
   | 'email'
+  | 'tel'
   | 'search'
   | 'range'
   | 'datetime-local'

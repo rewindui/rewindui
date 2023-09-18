@@ -16,7 +16,8 @@ export type InputType =
   | 'search'
   | 'range'
   | 'datetime-local'
-  | 'color';
+  | 'color'
+  | 'tel';
 export type InputValidation = 'none' | 'invalid' | 'valid' | 'warning';
 
 export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'size' | 'type'> {

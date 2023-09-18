@@ -63,6 +63,7 @@ export const InputConfig = {
         'search',
         'text',
         'time',
+        'tel',
       ],
     },
     {

@@ -32,6 +32,7 @@ const types: InputType[] = [
   'search',
   'text',
   'time',
+  'tel',
 ];
 
 const meta: Meta = {

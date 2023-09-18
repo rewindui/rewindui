@@ -254,7 +254,7 @@ const leftIconWrapper = cva(['absolute', 'left-0', 'z-20'], {
   },
 });
 
-const rightIconWrapper = cva(['absolute', 'right-0', 'z-20'], {
+const rightIconWrapper = cva(['absolute', 'right-0', 'z-20', 'pointer-events-none'], {
   variants: {
     size: {
       xs: ['pr-2'],
