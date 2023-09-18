@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.16.0
+
+### Minor Changes
+
+- 8866746: Added Input component tel type, fixed Select component pointer events
+
 ## 0.15.0
 
 ### Minor Changes
