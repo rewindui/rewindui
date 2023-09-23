@@ -20,6 +20,7 @@ export * from './Radio.styles';
 export * from './Ribbon.styles';
 export * from './Select.styles';
 export * from './Selector.styles';
+export * from './Sidebar.styles';
 export * from './Spinner.styles';
 export * from './Switch.styles';
 export * from './Tab.styles';

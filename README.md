@@ -4,7 +4,7 @@
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/rewindui/rewindui/blob/main/LICENSE)
 [![npm latest package](https://img.shields.io/npm/v/@rewind-ui/core/latest.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@rewind-ui/core)
-[![npm downloads](https://img.shields.io/npm/dm/@rewind-ui/core.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@rewind-ui/core)
+[![npm downloads](https://img.shields.io/npm/dt/@rewind-ui/core.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@rewind-ui/core)
 [![bundle size](https://img.shields.io/bundlephobia/minzip/@rewind-ui/core.svg?style=for-the-badge&label=minified)](https://bundlephobia.com/package/@rewind-ui/core)
 
 </div>

@@ -27,6 +27,7 @@
       "@theme/*": ["./src/theme/*"],
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@types/*": ["./src/types/*"],
       "@animations/*": ["./src/animations/*"],
       "@helpers/*": ["./src/helpers/*"],
     }
