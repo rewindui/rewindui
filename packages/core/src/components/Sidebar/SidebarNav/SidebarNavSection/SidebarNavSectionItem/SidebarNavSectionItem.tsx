@@ -60,11 +60,11 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
       <Component
         {...additionalProps}
         className={classes}
-        onClick={() => {
+        onClick={(event: any) => {
           setIsCollapsed(!isCollapsed);
 
           if (onClick) {
-            onClick();
+            onClick(event);
           }
         }}
         tabIndex={childrenCollapsed ? -1 : 0}
