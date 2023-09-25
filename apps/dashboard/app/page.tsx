@@ -8,18 +8,25 @@ import { Shield } from '@/icons/Shield';
 import { Sliders } from '@/icons/Sliders';
 import { LifeRing } from '@/icons/LifeRing';
 import { Users } from '@/icons/Users';
-import { Button, Sidebar, SidebarColor, useSidebar } from '@rewind-ui/core';
+import { Button, Overlay, Sidebar, SidebarColor, SidebarState, useSidebar } from '@rewind-ui/core';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Home() {
   const [expanded, setExpanded] = useState(true);
+  const [mobile, setMobile] = useState(false);
   const sidebar = useSidebar();
-  const [color, setColor] = useState<SidebarColor>('white');
+  const [color, setColor] = useState<SidebarColor>('slate');
 
   return (
     <div className="relative flex flex-row bg-slate-100">
-      <Sidebar color={color} onToggle={(event: boolean) => setExpanded(event)}>
+      <Sidebar
+        color={color}
+        onToggle={(state: SidebarState) => {
+          setExpanded(state.expanded);
+          setMobile(state.mobile);
+        }}
+      >
         <Sidebar.Head>
           <Sidebar.Head.Logo>
             <Image src="/rewind.svg" width={48} height={48} alt="Rewind-UI" />
@@ -35,41 +42,36 @@ export default function Home() {
                 <Sidebar.Nav.Section.Item
                   as="button"
                   onClick={() => setColor('white')}
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="White"
-                  href="#"
                   active={color === 'white'}
                 />
                 <Sidebar.Nav.Section.Item
                   as="button"
                   onClick={() => setColor('gray')}
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="Gray"
-                  href="#"
                   active={color === 'gray'}
                 />
                 <Sidebar.Nav.Section.Item
                   as="button"
                   onClick={() => setColor('dark')}
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="Dark"
-                  href="#"
                   active={color === 'dark'}
                 />
                 <Sidebar.Nav.Section.Item
                   as="button"
                   onClick={() => setColor('slate')}
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="Slate"
-                  href="#"
                   active={color === 'slate'}
                 />
                 <Sidebar.Nav.Section.Item
                   as="button"
                   onClick={() => setColor('zinc')}
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="Zinc"
-                  href="#"
                   active={color === 'zinc'}
                 />
               </Sidebar.Nav.Section>
@@ -82,17 +84,17 @@ export default function Home() {
             <Sidebar.Nav.Section.Item icon={<Users />} label="Users" as="button">
               <Sidebar.Nav.Section isChild>
                 <Sidebar.Nav.Section.Item
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="List all"
                   href="#"
                 />
                 <Sidebar.Nav.Section.Item
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="Add new"
                   href="#"
                 />
                 <Sidebar.Nav.Section.Item
-                  icon={<span className="w-1 h-1 rounded bg-slate-50" />}
+                  icon={<span className="w-1 h-1 rounded bg-transparent" />}
                   label="Archived"
                   href="#"
                 />
@@ -125,6 +127,15 @@ export default function Home() {
           expanded ? 'md:ml-64' : 'md:ml-20'
         }`}
       >
+        {mobile && (
+          <Overlay
+            blur="none"
+            onClick={() => {
+              sidebar.toggleMobile();
+            }}
+            className="md:hidden z-40"
+          />
+        )}
         <header className="flex flex-row sticky top-0 px-8 items-center bg-white border-b border-b-gray-100 w-full shadow-sm min-h-[4rem]">
           <span>Navbar</span>
 

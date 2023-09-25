@@ -71,8 +71,8 @@ const SidebarRoot: SidebarComponent = forwardRef<HTMLElement, SidebarProps>(
         return;
       }
 
-      onToggle(state.expanded);
-    }, [state.expanded, onToggle]);
+      onToggle(state);
+    }, [state, onToggle]);
 
     const toggleMobileEvent = (e: CustomEvent) => {
       dispatch({ type: sidebarActionEnum.mobile });

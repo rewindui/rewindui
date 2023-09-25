@@ -48,7 +48,7 @@ export interface SidebarProps extends ComponentPropsWithRef<'aside'> {
   expanded?: boolean;
   size?: SidebarSize;
   shadow?: SidebarShadow;
-  onToggle?(expanded: boolean): void;
+  onToggle?(state: SidebarState): void;
 }
 
 export interface SidebarContext {
