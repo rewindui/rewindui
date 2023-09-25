@@ -34,6 +34,9 @@ const SidebarHeadToggle: SidebarHeadToggleComponent = forwardRef<
       ref={ref}
       type="button"
       title={state.expanded ? 'Collapse' : 'Expand'}
+      aria-pressed={state.expanded}
+      aria-expanded={state.expanded}
+      data-role="sidebar-head-toggle"
       className={classes}
       onClick={(event) => {
         dispatch({ type: sidebarActionEnum.toggle });

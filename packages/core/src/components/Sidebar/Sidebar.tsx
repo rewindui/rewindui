@@ -12,7 +12,7 @@ import { SidebarNav } from '@components/Sidebar/SidebarNav/SidebarNav';
 import { SidebarSeparator } from '@components/Sidebar/SidebarSeparator/SidebarSeparator';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import { forwardRef, Ref, useEffect, useReducer, useRef } from 'react';
+import { forwardRef, MouseEvent, Ref, useEffect, useReducer, useRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { SidebarContextProvider } from './Sidebar.context';
 
@@ -91,16 +91,24 @@ const SidebarRoot: SidebarComponent = forwardRef<HTMLElement, SidebarProps>(
         id={id}
         ref={ref}
         className={classes}
-        onMouseEnter={() => {
+        onMouseEnter={(event: MouseEvent<HTMLElement>) => {
+          const target = event.target as HTMLElement;
+
+          if (target.dataset.role === 'sidebar-head-toggle') {
+            return;
+          }
+
           if (state.expanded) {
             return;
           }
+
           dispatch({ type: sidebarActionEnum.hover, payload: { hovered: true } });
         }}
         onMouseLeave={() => {
           if (state.expanded) {
             return;
           }
+
           dispatch({ type: sidebarActionEnum.hover, payload: { hovered: false } });
         }}
         {...additionalProps}
