@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.17.1
+
+### Patch Changes
+
+- cecceff: Sidebar shadow improvement
+
 ## 0.17.0
 
 ### Minor Changes
