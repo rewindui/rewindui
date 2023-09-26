@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.17.0
+
+### Minor Changes
+
+- 37e329c: Sidebar component added
+
 ## 0.16.0
 
 ### Minor Changes
