@@ -17,11 +17,11 @@ const base = cva(
   {
     variants: {
       color: {
-        white: ['bg-white', 'text-gray-700', 'border-r', 'border-gray-100', 'shadow-gray-200/50'],
-        gray: ['bg-gray-50', 'text-gray-800', 'border-r', 'border-gray-200', 'shadow-gray-300/50'],
-        dark: ['bg-gray-900', 'text-gray-200', 'shadow-gray-900/50'],
-        slate: ['bg-slate-900', 'text-slate-200', 'shadow-slate-900/50'],
-        zinc: ['bg-zinc-900', 'text-zinc-200', 'shadow-zinc-900/50'],
+        white: ['bg-white', 'text-gray-700', 'border-r', 'border-gray-100', 'shadow-gray-300'],
+        gray: ['bg-gray-50', 'text-gray-800', 'border-r', 'border-gray-200', 'shadow-gray-300'],
+        dark: ['bg-gray-900', 'text-gray-200', 'shadow-gray-950'],
+        slate: ['bg-slate-900', 'text-slate-200', 'shadow-slate-950'],
+        zinc: ['bg-zinc-900', 'text-zinc-200', 'shadow-zinc-950'],
       },
       shadow: {
         none: ['shadow-none'],
