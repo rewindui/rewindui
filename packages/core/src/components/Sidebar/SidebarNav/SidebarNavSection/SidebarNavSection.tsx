@@ -16,7 +16,7 @@ const SidebarNavSectionRoot: SidebarNavSectionComponent = forwardRef<
   SidebarNavSectionProps
 >((props: SidebarNavSectionProps, ref?: Ref<HTMLUListElement>) => {
   const theme = useComponentTheme('Sidebar');
-  const { children, className, isChild = false } = props;
+  const { children, className, isChild = false, ...additionalProps } = props;
   const { color } = useSidebarContext();
   const classes = useMemo(() => {
     return twMerge(
@@ -30,7 +30,7 @@ const SidebarNavSectionRoot: SidebarNavSectionComponent = forwardRef<
   const id = usePropId(props.id);
 
   return (
-    <ul id={id} className={classes} ref={ref}>
+    <ul id={id} className={classes} ref={ref} {...additionalProps}>
       {children}
     </ul>
   );

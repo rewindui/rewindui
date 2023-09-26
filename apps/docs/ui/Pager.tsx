@@ -180,6 +180,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'popover',
     },
     {
+      title: 'Sidebar',
+      url: '/components/sidebar',
+      slug: 'sidebar',
+    },
+    {
       title: 'Toast',
       url: '/components/toast',
       slug: 'toast',

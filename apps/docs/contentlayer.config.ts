@@ -2,7 +2,13 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
-export type ComponentSlug = 'accordion' | 'button' | 'selector' | 'progress' | 'combobox';
+export type ComponentSlug =
+  | 'accordion'
+  | 'button'
+  | 'selector'
+  | 'progress'
+  | 'combobox'
+  | 'sidebar';
 
 const Page = defineDocumentType(() => ({
   name: 'Page',

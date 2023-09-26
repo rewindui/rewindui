@@ -381,7 +381,6 @@ const separator = cva(['border-t', 'border-slate-700', 'border-dashed', 'my-2'],
 
 const footer = cva(
   [
-    'transition-all',
     'truncate',
     'w-full',
     'items-center',

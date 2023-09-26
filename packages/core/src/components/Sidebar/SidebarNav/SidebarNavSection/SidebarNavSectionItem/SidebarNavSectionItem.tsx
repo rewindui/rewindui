@@ -31,6 +31,7 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
     icon,
     collapsed = true,
     onClick,
+    ...additionalProps
   } = props;
   const { color, state } = useSidebarContext();
   const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed);
@@ -47,7 +48,7 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
   }, [active, className, color, opened, theme]);
   const id = usePropId(props.id);
   const Component = as || 'a';
-  const additionalProps =
+  const componentProps =
     as === 'button' ? ({ type: 'button' } as { type: 'button' | 'submit' | 'reset' }) : { href };
   const contextValue: SidebarNavSectionItemContext = {
     childrenCollapsed: isCollapsed,
@@ -56,9 +57,9 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
   const { childrenCollapsed } = useSidebarNavSectionItemContext();
 
   return (
-    <li id={id} ref={ref} className={theme.navSectionItemWrapper({ opened })}>
+    <li id={id} ref={ref} className={theme.navSectionItemWrapper({ opened })} {...additionalProps}>
       <Component
-        {...additionalProps}
+        {...componentProps}
         className={classes}
         onClick={(event: any) => {
           setIsCollapsed(!isCollapsed);

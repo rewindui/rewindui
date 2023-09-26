@@ -55,9 +55,9 @@ export const Configurator = ({ component, background = 'grid' }: Props) => {
     <div className="lg:block flex flex-col space-y-5">
       <div className="flex flex-wrap overflow-hidden rounded-md shadow-sm shadow-neutral-100 divide-y lg:divide-y-0 lg:divide-x divide-neutral-200 border border-neutral-200">
         <div
-          className={`w-full lg:w-2/3 rounded-md flex p-4 items-center justify-center ${
+          className={`w-full lg:w-2/3 rounded-md flex items-center justify-center ${
             background === 'grid' ? 'bg-grid' : 'bg-neutral-50/50'
-          }`}
+          } ${component === 'sidebar' ? '' : 'p-4'}`}
         >
           <Example {...state} />
         </div>

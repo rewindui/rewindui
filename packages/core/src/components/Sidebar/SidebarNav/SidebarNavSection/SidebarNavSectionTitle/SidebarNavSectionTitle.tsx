@@ -14,7 +14,7 @@ const SidebarNavSectionTitle: SidebarNavSectionTitleComponent = forwardRef<
   SidebarNavSectionTitleProps
 >((props: SidebarNavSectionTitleProps, ref?: Ref<HTMLLIElement>) => {
   const theme = useComponentTheme('Sidebar');
-  const { children, className } = props;
+  const { children, className, ...additionalProps } = props;
   const { color, state } = useSidebarContext();
   const classes = useMemo(() => {
     return twMerge(
@@ -27,7 +27,7 @@ const SidebarNavSectionTitle: SidebarNavSectionTitleComponent = forwardRef<
   const id = usePropId(props.id);
 
   return (
-    <li id={id} ref={ref} className={classes}>
+    <li id={id} ref={ref} className={classes} {...additionalProps}>
       {(state.expanded || state.hovered) && children}
     </li>
   );

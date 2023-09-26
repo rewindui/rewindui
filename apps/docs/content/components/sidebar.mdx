@@ -1,0 +1,341 @@
+---
+title: Sidebar
+description: A sidebar navigation menu.
+intro: The Sidebar component provides quick access to the main navigation of a web application. It is a composite component that can have multiple sections. Each section can have a title and a list of links. It is responsive and can be collapsed on smaller screens.
+source: Sidebar
+theme: Sidebar.styles.ts
+storybook: sidebar--default
+---
+
+# Import
+---
+Import the `Sidebar` component and the `useSidebar` hook using the following import statement.
+
+```tsx
+import { Sidebar, useSidebar } from '@rewind-ui/core';
+```
+
+# Colors
+---
+The following colors are available for the `Sidebar` component: `white`, `gray`, `dark`, `slate` and `zinc`.
+
+<SidebarShowcase showcase="colors" />
+
+```tsx
+<View>
+  <Sidebar color="white">
+    // ...
+  </Sidebar>
+
+  <Sidebar color="gray">
+    // ...
+  </Sidebar>
+
+  <Sidebar color="dark">
+    // ...
+  </Sidebar>
+
+  <Sidebar color="slate">
+    // ...
+  </Sidebar>
+
+  <Sidebar color="zinc">
+    // ...
+  </Sidebar>
+</View>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+Shadow property adds a subtle shadow to the sidebar.
+
+<SidebarShowcase showcase="shadows" />
+
+```tsx
+<View>
+  <Sidebar shadow="none">
+    // ...
+  </Sidebar>
+
+  <Sidebar shadow="sm">
+    // ...
+  </Sidebar>
+
+  <Sidebar shadow="base">
+    // ...
+  </Sidebar>
+
+  <Sidebar shadow="md">
+    // ...
+  </Sidebar>
+
+  <Sidebar shadow="lg">
+    // ...
+  </Sidebar>
+
+  <Sidebar shadow="xl">
+    // ...
+  </Sidebar>
+</View>
+```
+
+# Composition
+---
+The `Sidebar` component is a composite component that can have multiple sections.
+
+## Head
+
+The `Sidebar.Head` component is used to render the header of the sidebar. It can have a logo a title and a toggle button.
+
+<SidebarShowcase showcase="head" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Head>
+      <Sidebar.Head.Logo>
+        <Image src="/images/rewind.svg" width={48} height={48} alt="Rewind-UI" />
+      </Sidebar.Head.Logo>
+      <Sidebar.Head.Title>Rewind-UI</Sidebar.Head.Title>
+      <Sidebar.Head.Toggle />
+    </Sidebar.Head>
+  </Sidebar>
+</View>
+```
+
+## Nav
+
+The `Sidebar.Nav` component is used to render the navigation links of the sidebar. It can have multiple `Sidebar.Nav.Section` components and each one can have multiple `Sidebar.Nav.Section.Item` components.
+
+<SidebarShowcase showcase="nav" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Item icon={<RocketLaunch />} label="Dashboard" href="#" active />
+      </Sidebar.Nav.Section>
+
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Item icon={<LifeRing />} label="Contact" href="#" />
+        <Sidebar.Nav.Section.Item icon={<EnvelopeOpen />} label="Tickets" href="#" />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+  </Sidebar>
+</View>
+```
+
+### Title
+
+The `Sidebar.Nav.Section.Title` component is used to render the title of a section.
+
+<SidebarShowcase showcase="title" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Item icon={<RocketLaunch />} label="Dashboard" href="#" active />
+      </Sidebar.Nav.Section>
+
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Title>Support</Sidebar.Nav.Section.Title>
+        <Sidebar.Nav.Section.Item icon={<LifeRing />} label="Contact" href="#" />
+        <Sidebar.Nav.Section.Item icon={<EnvelopeOpen />} label="Tickets" href="#" />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+  </Sidebar>
+</View>
+```
+
+### Separator
+
+The `Sidebar.Separator` component is used to render a separator between sections or items.
+
+<SidebarShowcase showcase="separator" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Title>Support</Sidebar.Nav.Section.Title>
+        <Sidebar.Nav.Section.Item icon={<LifeRing />} label="Contact" href="#" />
+        <Sidebar.Separator />
+        <Sidebar.Nav.Section.Item icon={<EnvelopeOpen />} label="Tickets" href="#" />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+  </Sidebar>
+</View>
+```
+
+### Item
+
+The `Sidebar.Nav.Section.Item` component is used to render an item of a section.
+
+<SidebarShowcase showcase="item" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Item icon={<RocketLaunch />} label="Dashboard" href="#" active />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+  </Sidebar>
+</View>
+```
+
+#### Child Items
+
+The `Sidebar.Nav.Section.Item` component support inner section that will be rendered as a collapsible menu.
+
+The parent item can be rendered as a button using the `as` prop.
+
+The underlying `Sidebar.Nav.Section` component can be rendered as a child section using the `isChild` prop. Adding the `isChild` prop will add a different background color to the section.
+
+<SidebarShowcase showcase="child-items" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Title>Management</Sidebar.Nav.Section.Title>
+        <Sidebar.Nav.Section.Item icon={<Users />} label="Users" as="button">
+          <Sidebar.Nav.Section isChild>
+            <Sidebar.Nav.Section.Item
+              icon={<span className="w-1 h-1 rounded bg-transparent" />}
+              label="List all"
+              href="#"
+            />
+            <Sidebar.Nav.Section.Item
+              icon={<span className="w-1 h-1 rounded bg-transparent" />}
+              label="Add new"
+              href="#"
+            />
+            <Sidebar.Nav.Section.Item
+              icon={<span className="w-1 h-1 rounded bg-transparent" />}
+              label="Archived"
+              href="#"
+            />
+          </Sidebar.Nav.Section>
+        </Sidebar.Nav.Section.Item>
+        <Sidebar.Nav.Section.Item icon={<Shield />} label="Roles" href="#" />
+        <Sidebar.Nav.Section.Item icon={<Key />} label="Permissions" href="#" />
+        <Sidebar.Nav.Section.Item icon={<Sliders />} label="Settings" href="#" />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+  </Sidebar>
+</View>
+```
+
+## Footer
+---
+The `Sidebar.Footer` component is used to render the footer of the sidebar.
+
+<SidebarShowcase showcase="footer" />
+
+```tsx
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Title>Support</Sidebar.Nav.Section.Title>
+        <Sidebar.Nav.Section.Item icon={<LifeRing />} label="Contact" href="#" />
+        <Sidebar.Separator />
+        <Sidebar.Nav.Section.Item icon={<EnvelopeOpen />} label="Tickets" href="#" />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+
+    <Sidebar.Footer>
+      <div className="flex flex-col justify-center items-center text-sm">
+        <span className="font-semibold">Rewind-UI</span>
+        <span>version x.y.z</span>
+      </div>
+    </Sidebar.Footer>
+  </Sidebar>
+</View>
+```
+
+# Hook
+---
+The `useSidebar` hook can be used to toggle the visibility of the Sidebar on smaller screens.
+
+```tsx
+import { useSidebar, Sidebar, Button } from '@rewind-ui/core';
+
+export const App = () => {
+  const sidebar = useSidebar();
+
+  return (
+    <div className="relative flex flex-row w-full h-full">
+      <Sidebar>
+        // ...
+      </Sidebar>
+
+      <Button onClick={() => sidebar.toggleMobile()} className="ml-auto flex md:hidden">
+        Toggle
+      </Button>
+    </div>
+  );
+};
+```
+
+# API Reference
+---
+## Properties
+### Sidebar
+
+| Prop     | Type            | Description                    | Default |
+|:---------|:----------------|:-------------------------------|:--------|
+| color    | `SidebarColor`  | Sets the sidebar color         | `slate` |
+| expanded | `boolean`       | Sets the initial sidebar state | `true`  |
+| shadow   | `SidebarShadow` | Sets the shadow size           | `lg`    |
+
+### Sidebar.Nav.Section
+
+| Prop    | Type      | Description                                                | Default |
+|:--------|:----------|:-----------------------------------------------------------|:--------|
+| isChild | `boolean` | Adds a background color when the parent Item gets expanded | `false` |
+
+### Sidebar.Nav.Section.Item
+
+| Prop      | Type           | Description                              | Default     |
+|:----------|:---------------|:-----------------------------------------|:------------|
+| as        | `button` / `a` | Defines the type of the rendered element | `a`         |
+| icon      | `ReactNode`    | Sets the item icon                       | `undefined` |
+| label     | `string`       | Sets the item label                      | `undefined` |
+| active    | `boolean`      | Sets the item state                      | `false`     |
+| collapsed | `boolean`      | Sets the item's initial collapsed state  | `true`      |
+
+## Events
+### Sidebar
+
+| Event    | Type                            | Description                             |
+|:---------|:--------------------------------|:----------------------------------------|
+| onToggle | `(state: SidebarState) => void` | Fires when the sidebar state is changed |
+
+
+## Types
+
+```tsx
+type SidebarColor = 'white' | 'gray' | 'dark' | 'slate' | 'zinc';
+```
+
+```tsx
+type SidebarShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type SidebarState = {
+  expanded: boolean;
+  hovered: boolean;
+  mobile: boolean;
+};
+```

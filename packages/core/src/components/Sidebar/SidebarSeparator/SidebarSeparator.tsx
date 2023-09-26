@@ -14,7 +14,7 @@ const SidebarSeparator: SidebarSeparatorComponent = forwardRef<
   SidebarSeparatorProps
 >((props: SidebarSeparatorProps, ref?: Ref<HTMLHRElement>) => {
   const theme = useComponentTheme('Sidebar');
-  const { className } = props;
+  const { className, ...additionalProps } = props;
   const { color } = useSidebarContext();
   const classes = useMemo(() => {
     return twMerge(
@@ -26,7 +26,7 @@ const SidebarSeparator: SidebarSeparatorComponent = forwardRef<
   }, [className, color, theme]);
   const id = usePropId(props.id);
 
-  return <hr id={id} className={classes} ref={ref} />;
+  return <hr id={id} className={classes} ref={ref} {...additionalProps} />;
 });
 
 SidebarSeparator.displayName = 'SidebarSeparator';

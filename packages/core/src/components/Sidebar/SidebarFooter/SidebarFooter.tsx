@@ -12,7 +12,7 @@ import { twMerge } from 'tailwind-merge';
 const SidebarFooter: SidebarFooterComponent = forwardRef<HTMLDivElement, SidebarFooterProps>(
   (props: SidebarFooterProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Sidebar');
-    const { children, className } = props;
+    const { children, className, ...additionalProps } = props;
     const { color, state } = useSidebarContext();
     const classes = useMemo(() => {
       return twMerge(
@@ -28,7 +28,7 @@ const SidebarFooter: SidebarFooterComponent = forwardRef<HTMLDivElement, Sidebar
     const id = usePropId(props.id);
 
     return (
-      <div id={id} ref={ref} className={classes}>
+      <div id={id} ref={ref} className={classes} {...additionalProps}>
         {(state.expanded || state.hovered) && children}
       </div>
     );

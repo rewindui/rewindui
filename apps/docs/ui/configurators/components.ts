@@ -18,6 +18,7 @@ import { RadioConfig } from '@/ui/configurators/components/Radio.config';
 import { RibbonConfig } from '@/ui/configurators/components/Ribbon.config';
 import { SelectConfig } from '@/ui/configurators/components/Select.config';
 import { SelectorConfig } from '@/ui/configurators/components/Selector.config';
+import { SidebarConfig } from '@/ui/configurators/components/Sidebar.config';
 import { SwitchConfig } from '@/ui/configurators/components/Switch.config';
 import { TableConfig } from '@/ui/configurators/components/Table.config';
 import { TabsConfig } from '@/ui/configurators/components/Tabs.config';
@@ -47,6 +48,7 @@ export const components = {
   ribbon: RibbonConfig,
   select: SelectConfig,
   selector: SelectorConfig,
+  sidebar: SidebarConfig,
   switch: SwitchConfig,
   table: TableConfig,
   tabs: TabsConfig,

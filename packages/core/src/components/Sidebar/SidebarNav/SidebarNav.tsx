@@ -13,7 +13,7 @@ import { twMerge } from 'tailwind-merge';
 const SidebarNavRoot: SidebarNavComponent = forwardRef<HTMLElement, SidebarNavProps>(
   (props: SidebarNavProps, ref?: Ref<HTMLElement>) => {
     const theme = useComponentTheme('Sidebar');
-    const { children, className } = props;
+    const { children, className, ...additionalProps } = props;
     const { color, state } = useSidebarContext();
     const classes = useMemo(() => {
       return twMerge(
@@ -27,7 +27,7 @@ const SidebarNavRoot: SidebarNavComponent = forwardRef<HTMLElement, SidebarNavPr
     const id = usePropId(props.id);
 
     return (
-      <nav id={id} className={classes} ref={ref}>
+      <nav id={id} className={classes} ref={ref} {...additionalProps}>
         {children}
       </nav>
     );

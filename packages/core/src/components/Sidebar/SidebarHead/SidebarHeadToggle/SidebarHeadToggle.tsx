@@ -16,7 +16,7 @@ const SidebarHeadToggle: SidebarHeadToggleComponent = forwardRef<
   SidebarHeadToggleProps
 >((props: SidebarHeadToggleProps, ref?: Ref<HTMLButtonElement>) => {
   const theme = useComponentTheme('Sidebar');
-  const { className, onClick } = props;
+  const { className, onClick, ...additionalProps } = props;
   const { color, state, dispatch } = useSidebarContext();
   const classes = useMemo(() => {
     return twMerge(
@@ -45,6 +45,7 @@ const SidebarHeadToggle: SidebarHeadToggleComponent = forwardRef<
           onClick(event);
         }
       }}
+      {...additionalProps}
     >
       <LeftToLineIcon className={theme.headToggleIcon({ expanded: state.expanded })} />
     </button>

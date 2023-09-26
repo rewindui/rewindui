@@ -11,7 +11,7 @@ import { twMerge } from 'tailwind-merge';
 const SidebarHeadLogo: SidebarHeadLogoComponent = forwardRef<HTMLDivElement, SidebarHeadLogoProps>(
   (props: SidebarHeadLogoProps, ref?: Ref<HTMLDivElement>) => {
     const theme = useComponentTheme('Sidebar');
-    const { children, className } = props;
+    const { children, className, ...additionalProps } = props;
     const classes = useMemo(() => {
       return twMerge(
         theme.headLogo({
@@ -22,7 +22,7 @@ const SidebarHeadLogo: SidebarHeadLogoComponent = forwardRef<HTMLDivElement, Sid
     const id = usePropId(props.id);
 
     return (
-      <div id={id} ref={ref} className={classes}>
+      <div id={id} ref={ref} className={classes} {...additionalProps}>
         {children}
       </div>
     );
