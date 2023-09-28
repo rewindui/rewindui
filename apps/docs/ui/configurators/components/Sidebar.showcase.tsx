@@ -1,4 +1,3 @@
-import { Briefcase } from '@/ui/icons/Briefcase';
 import { Key } from '@/ui/icons/Key';
 import { RocketLaunch } from '@/ui/icons/RocketLaunch';
 import { LifeRing } from '@/ui/icons/LifeRing';
@@ -10,6 +9,7 @@ import { Button, Overlay, Sidebar, SidebarProps, SidebarState, useSidebar } from
 import { ReactNode, useState } from 'react';
 import * as React from 'react';
 import Image from 'next/image';
+import { Logo } from '@/ui/Logo';
 
 export type SidebarShowcaseProps = {
   showcase:
@@ -116,7 +116,7 @@ const SidebarTemplate = (props: SidebarProps) => {
       >
         <Sidebar.Head>
           <Sidebar.Head.Logo>
-            <Image src="/images/rewind.svg" width={48} height={48} alt="Rewind-UI" />
+            <Logo />
           </Sidebar.Head.Logo>
           <Sidebar.Head.Title>Rewind-UI</Sidebar.Head.Title>
           <Sidebar.Head.Toggle />

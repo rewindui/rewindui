@@ -1,10 +1,10 @@
 import { EnvelopeOpen } from '@/ui/icons/EnvelopeOpen';
 import { LifeRing } from '@/ui/icons/LifeRing';
 import { RocketLaunch } from '@/ui/icons/RocketLaunch';
+import { Logo } from '@/ui/Logo';
 import { Button, Overlay, Sidebar, SidebarProps, SidebarState, useSidebar } from '@rewind-ui/core';
 import { useState } from 'react';
 import * as React from 'react';
-import Image from 'next/image';
 import { Briefcase } from '@/ui/icons/Briefcase';
 import { Shield } from '@/ui/icons/Shield';
 import { Sliders } from '@/ui/icons/Sliders';
@@ -169,7 +169,7 @@ export const SidebarExample = (props: SidebarProps) => {
       >
         <Sidebar.Head>
           <Sidebar.Head.Logo>
-            <Image src="/images/rewind.svg" width={48} height={48} alt="Rewind-UI" />
+            <Logo />
           </Sidebar.Head.Logo>
           <Sidebar.Head.Title>Rewind-UI</Sidebar.Head.Title>
           <Sidebar.Head.Toggle />
