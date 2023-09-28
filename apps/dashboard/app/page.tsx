@@ -8,6 +8,7 @@ import { Shield } from '@/icons/Shield';
 import { Sliders } from '@/icons/Sliders';
 import { LifeRing } from '@/icons/LifeRing';
 import { Users } from '@/icons/Users';
+import { Logo } from '@/icons/Logo';
 import { Button, Overlay, Sidebar, SidebarColor, SidebarState, useSidebar } from '@rewind-ui/core';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -29,7 +30,7 @@ export default function Home() {
       >
         <Sidebar.Head>
           <Sidebar.Head.Logo>
-            <Image src="/rewind.svg" width={48} height={48} alt="Rewind-UI" />
+            <Logo />
           </Sidebar.Head.Logo>
           <Sidebar.Head.Title>Rewind-UI</Sidebar.Head.Title>
           <Sidebar.Head.Toggle />
@@ -117,14 +118,14 @@ export default function Home() {
         <Sidebar.Footer>
           <div className="flex flex-col justify-center items-center text-sm">
             <span className="font-semibold">Rewind-UI</span>
-            <span>version 0.16.0</span>
+            <span>version x.y.z</span>
           </div>
         </Sidebar.Footer>
       </Sidebar>
 
       <main
-        className={`transition-all transform duration-100 text-slate-700 flex w-full min-h-screen flex-col items-center ${
-          expanded ? 'md:ml-64' : 'md:ml-20'
+        className={`transition-all transform duration-300 text-slate-700 flex w-full min-h-screen flex-col items-center ${
+          expanded ? 'md:ml-[16rem]' : 'md:ml-[4.5rem]'
         }`}
       >
         {mobile && (

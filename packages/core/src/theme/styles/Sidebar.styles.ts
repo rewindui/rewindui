@@ -48,7 +48,7 @@ const base = cva(
       {
         expanded: false,
         hovered: false,
-        className: ['md:min-w-[5rem]'],
+        className: ['md:min-w-[4.5rem]'],
       },
     ],
   }
@@ -56,7 +56,7 @@ const base = cva(
 
 const head = cva(
   [
-    'sticky',
+    'transition-opacity',
     'top-0',
     'w-full',
     'items-center',
@@ -65,12 +65,15 @@ const head = cva(
     'border-b',
     'border-dashed',
     'bg-inherit',
+    'flex',
+    'flex-nowrap',
+    'truncate',
   ],
   {
     variants: {
       mobile: {
-        true: ['flex'],
-        false: ['hidden', 'md:flex'],
+        true: ['opacity-100'],
+        false: ['opacity-0', 'md:opacity-100'],
       },
       color: {
         white: ['border-gray-200'],
@@ -83,9 +86,16 @@ const head = cva(
   }
 );
 
-const headTitle = cva(['text-lg', 'font-medium', 'truncate', 'ml-2']);
+const headTitle = cva(['text-lg', 'font-medium', 'truncate'], {
+  variants: {
+    opened: {
+      true: ['ml-2'],
+      false: [],
+    },
+  },
+});
 
-const headLogo = cva(['w-8', 'h-8']);
+const headLogo = cva(['h-8', 'flex', 'flex-none', 'items-center', 'justify-center']);
 
 const headToggle = cva(
   [
@@ -126,14 +136,14 @@ const headToggleIcon = cva(['transition', 'transform', 'duration-250', 'ease-in-
 
 const nav = cva(
   [
-    'my-5',
+    'my-4',
     'overflow-x-hidden',
     'scrollbar-thin',
     'scrollbar-thumb-rounded-lg',
     'scrollbar-track-rounded-lg',
     'flex',
     'flex-col',
-    'gap-y-8',
+    'gap-y-6',
   ],
   {
     variants: {
@@ -195,23 +205,30 @@ const navSection = cva(['flex', 'flex-col'], {
   ],
 });
 
-const navSectionTitle = cva(['text-sm', 'font-medium', 'truncate', 'uppercase', 'mb-3', 'px-5'], {
-  variants: {
-    color: {
-      white: ['text-gray-400'],
-      gray: ['text-gray-500'],
-      dark: ['text-gray-500'],
-      slate: ['text-slate-500'],
-      zinc: ['text-zinc-500'],
+const navSectionTitle = cva(
+  ['transition-opacity', 'text-sm', 'font-medium', 'truncate', 'uppercase', 'mb-3', 'px-5'],
+  {
+    variants: {
+      color: {
+        white: ['text-gray-400'],
+        gray: ['text-gray-500'],
+        dark: ['text-gray-500'],
+        slate: ['text-slate-500'],
+        zinc: ['text-zinc-500'],
+      },
+      opened: {
+        true: ['opacity-100'],
+        false: ['opacity-0'],
+      },
     },
-  },
-});
+  }
+);
 
 const navSectionItemWrapper = cva(['cursor-pointer'], {
   variants: {
     opened: {
       true: [],
-      false: ['px-4'],
+      false: ['px-3'],
     },
   },
 });
@@ -223,13 +240,14 @@ const navSectionItem = cva(
     'w-full',
     'flex',
     'items-center',
-    'gap-x-3',
     'text-sm',
-    'flex',
     'outline-none',
     'ring-inset',
     'focus-visible:ring-2',
     'focus-visible:rounded',
+    'py-2.5',
+    'gap-x-3',
+    'border',
   ],
   {
     variants: {
@@ -242,23 +260,18 @@ const navSectionItem = cva(
       },
       active: {
         true: [],
-        false: [],
+        false: ['border-transparent'],
       },
       expanded: {
         true: [],
         false: [],
       },
       opened: {
-        true: ['py-3', 'px-5'],
-        false: ['justify-center', 'px-2', 'rounded'],
+        true: ['px-6', 'border-transparent'],
+        false: ['justify-start', 'px-3', 'rounded'],
       },
     },
     compoundVariants: [
-      {
-        active: true,
-        opened: false,
-        className: ['border'],
-      },
       {
         active: true,
         color: 'white',
@@ -339,24 +352,35 @@ const navSectionItem = cva(
         color: 'zinc',
         className: ['text-zinc-400', 'hover:text-zinc-200'],
       },
-      {
-        opened: false,
-        active: true,
-        className: ['py-3'],
-      },
-      {
-        opened: false,
-        active: false,
-        className: ['py-3'],
-      },
     ],
   }
 );
 
-const navSectionItemIcon = cva(['w-5', 'h-5', 'flex', 'items-center', 'justify-center']);
+const navSectionItemIcon = cva([
+  'w-6',
+  'h-6',
+  'flex-none',
+  'flex',
+  'items-center',
+  'justify-center',
+]);
+
+const navSectionItemLabelWrapper = cva(
+  ['transition-opacity', 'duration-1500', 'flex', 'items-center', 'justify-between', 'w-full'],
+  {
+    variants: {
+      opened: {
+        true: ['opacity-100'],
+        false: ['opacity-0'],
+      },
+    },
+  }
+);
+
+const navSectionItemLabel = cva(['text-left']);
 
 const navSectionItemCollapseIcon = cva(
-  ['transition', 'transform', 'duration-250', 'ease-in-out', 'w-4', 'h-4', 'ml-auto'],
+  ['transition', 'transform', 'duration-250', 'ease-in-out', 'h-4', 'w-4', 'ml-auto'],
   {
     variants: {
       collapsed: {
@@ -432,6 +456,8 @@ const sidebarStyles = {
   navSectionItemWrapper,
   navSectionItem,
   navSectionItemIcon,
+  navSectionItemLabelWrapper,
+  navSectionItemLabel,
   navSectionItemCollapseIcon,
   separator,
   footer,

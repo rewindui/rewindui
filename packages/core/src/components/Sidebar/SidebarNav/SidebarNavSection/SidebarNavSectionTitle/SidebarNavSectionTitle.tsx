@@ -16,19 +16,21 @@ const SidebarNavSectionTitle: SidebarNavSectionTitleComponent = forwardRef<
   const theme = useComponentTheme('Sidebar');
   const { children, className, ...additionalProps } = props;
   const { color, state } = useSidebarContext();
+  const opened = state.expanded || state.hovered;
   const classes = useMemo(() => {
     return twMerge(
       theme.navSectionTitle({
         className,
         color,
+        opened,
       })
     );
-  }, [className, color, theme]);
+  }, [className, color, opened, theme]);
   const id = usePropId(props.id);
 
   return (
     <li id={id} ref={ref} className={classes} {...additionalProps}>
-      {(state.expanded || state.hovered) && children}
+      {children}
     </li>
   );
 });

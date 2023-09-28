@@ -20,6 +20,7 @@ const SidebarHeadTitle: SidebarHeadTitleComponent = forwardRef<
     return twMerge(
       theme.headTitle({
         className,
+        opened: state.expanded || state.hovered || state.mobile,
       })
     );
   }, [className, theme]);

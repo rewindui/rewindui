@@ -34,8 +34,8 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
     ...additionalProps
   } = props;
   const { color, state } = useSidebarContext();
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(collapsed);
   const opened = state.expanded || state.hovered;
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(opened === false ? true : collapsed);
   const classes = useMemo(() => {
     return twMerge(
       theme.navSectionItem({
@@ -71,17 +71,15 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
         tabIndex={childrenCollapsed ? -1 : 0}
       >
         {icon && <span className={theme.navSectionItemIcon()}>{icon}</span>}
-        {opened && (
-          <>
-            {label}
+        <div className={theme.navSectionItemLabelWrapper({ opened })}>
+          <span className={theme.navSectionItemLabel()}>{label}</span>
 
-            {children && (
-              <ChevronDownIcon
-                className={theme.navSectionItemCollapseIcon({ collapsed: isCollapsed })}
-              />
-            )}
-          </>
-        )}
+          {children && (
+            <ChevronDownIcon
+              className={theme.navSectionItemCollapseIcon({ collapsed: isCollapsed })}
+            />
+          )}
+        </div>
       </Component>
 
       {children && opened && (
