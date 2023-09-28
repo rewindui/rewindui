@@ -58,7 +58,7 @@ const Container = ({
 
       <main
         className={`transition-all transform duration-100 text-slate-700 flex w-full flex-col items-center ${
-          expanded ? 'md:ml-64' : 'md:ml-20'
+          expanded ? 'md:ml-[16rem]' : 'md:ml-[4.5rem]'
         }`}
       >
         {mobile && (
