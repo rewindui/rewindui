@@ -1,5 +1,12 @@
 # @rewind-ui/dashboard
 
+## 0.1.3
+
+### Patch Changes
+
+- Updated dependencies [9064a94]
+  - @rewind-ui/core@0.17.2
+
 ## 0.1.2
 
 ### Patch Changes
