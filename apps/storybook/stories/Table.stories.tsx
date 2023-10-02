@@ -152,8 +152,10 @@ const Template = (args: TableProps) => (
   <Table {...args}>
     <Table.Thead>
       <Table.Tr>
-        {headings.map((heading: string) => (
-          <Table.Th key={heading}>{heading}</Table.Th>
+        {headings.map((heading: string, index: number) => (
+          <Table.Th key={heading} align={index === 0 ? 'center' : 'left'}>
+            {heading}
+          </Table.Th>
         ))}
       </Table.Tr>
     </Table.Thead>
@@ -169,8 +171,8 @@ const Template = (args: TableProps) => (
     </Table.Tbody>
     <Table.Tfoot>
       <Table.Tr>
-        {headings.map((heading: string) => (
-          <Table.Td key={heading} align="center">
+        {headings.map((heading: string, index: number) => (
+          <Table.Td key={heading} align={index === 0 ? 'center' : 'left'}>
             {heading}
           </Table.Td>
         ))}
