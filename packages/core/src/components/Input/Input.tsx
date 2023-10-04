@@ -13,7 +13,7 @@ const defaultProps: Partial<InputProps> = {
   loading: false,
   radius: 'base',
   shadow: 'none',
-  size: 'md',
+  size: 'sm',
   tone: 'light',
   validation: 'none',
   withRing: false,
