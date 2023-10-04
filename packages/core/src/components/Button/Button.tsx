@@ -17,11 +17,11 @@ const defaultProps: Partial<ButtonProps> = {
   disabled: false,
   icon: false,
   loading: false,
-  radius: 'md',
+  radius: 'full',
   shadow: 'none',
   shadowColor: 'none',
-  size: 'sm',
-  tone: 'light',
+  size: 'md',
+  tone: 'solid',
   withRing: false,
 };
 

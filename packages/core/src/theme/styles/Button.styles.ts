@@ -15,6 +15,7 @@ const base = cva(
     'data-[has-left-element=true]:h-auto',
     'data-[has-right-element=true]:h-auto',
     'focus:z-20',
+    'font-bold',
   ],
   {
     variants: {
