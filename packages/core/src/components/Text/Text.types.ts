@@ -1,4 +1,4 @@
-import { ElementType, ReactElement } from 'react';
+import { ElementType, ReactNode } from 'react';
 import { PolymorphicComponentPropWithRef } from '../../types';
 
 export type TextColor =
@@ -66,6 +66,6 @@ type PolymorphicTextProps<C extends ElementType> = PolymorphicComponentPropWithR
 
 type PolymorphicTextComponent = <C extends ElementType = 'span'>(
   props: PolymorphicTextProps<C>
-) => ReactElement | null;
+) => ReactNode;
 
 export type TextComponent = PolymorphicTextComponent & { displayName?: string };

@@ -62,6 +62,7 @@ const _Avatar: AvatarComponent = forwardRef((props: AvatarProps, ref?: Ref<HTMLD
   return (
     <div id={id} ref={ref} className={classes} {...additionalProps}>
       {src && !errored && (
+        // eslint-disable-next-line @next/next/no-img-element
         <img
           onError={() => setErrored(true)}
           className={theme.image({ radius })}

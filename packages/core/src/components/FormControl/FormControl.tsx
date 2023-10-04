@@ -7,8 +7,8 @@ import {
 } from '@components/FormControl/FormControl.types';
 import { FormControlLabel } from '@components/FormControl/FormControlLabel/FormControlLabel';
 import { FormControlText } from '@components/FormControl/FormControlText/FormControlText';
-import { Input } from '@components/Input';
-import { InputGroup } from '@components/InputGroup';
+import { default as Input } from '@components/Input/Input';
+import { default as InputGroup } from '@components/InputGroup/InputGroup';
 import { Select } from '@components/Select';
 import { Textarea } from '@components/Textarea';
 import { useComponentTheme } from '@theme/theme.context';
