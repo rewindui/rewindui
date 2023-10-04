@@ -12,7 +12,7 @@ const defaultProps: Partial<RadioProps> = {
   radius: 'full',
   size: 'md',
   tone: 'solid',
-  withRing: true,
+  withRing: false,
 };
 
 const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
