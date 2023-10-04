@@ -30,7 +30,7 @@ const base = cva(
       },
       size: {
         xs: ['text-xs', 'h-6'],
-        sm: ['text-sm', 'h-8'],
+        sm: ['text-sm', 'h-10'],
         md: ['text-base', 'h-10'],
         lg: ['text-lg', 'h-12'],
       },
