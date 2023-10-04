@@ -69,7 +69,7 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
 
     return (
       <div className="flex flex-col items-center">
-        <div className='flex flex-row'>
+        <div className='flex flex-row items-center'>
           <input
             id={id}
             ref={ref}
