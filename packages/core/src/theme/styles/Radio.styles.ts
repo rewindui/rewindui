@@ -126,8 +126,8 @@ const base = cva(['cursor-pointer', 'form-radio'], {
 const label = cva(['cursor-pointer'], {
   variants: {
     size: {
-      sm: ['text-sm', 'pl-1.5'],
-      md: ['text-base', 'pl-1.5'],
+      sm: ['text-sm', 'pl-2'],
+      md: ['text-base', 'pl-2'],
       lg: ['text-lg', 'pl-2'],
       xl: ['text-xl', 'pl-2'],
     },

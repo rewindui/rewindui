@@ -13,16 +13,16 @@ import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ButtonProps> = {
   animation: 'none',
-  color: 'dark',
+  color: 'blue',
   disabled: false,
   icon: false,
   loading: false,
   radius: 'md',
   shadow: 'none',
   shadowColor: 'none',
-  size: 'md',
-  tone: 'solid',
-  withRing: true,
+  size: 'sm',
+  tone: 'light',
+  withRing: false,
 };
 
 const Button: ButtonComponent = forwardRef(
