@@ -8,15 +8,15 @@ import { twMerge } from 'tailwind-merge';
 import { Spinner, useComponentTheme } from '../..';
 
 const defaultProps: Partial<InputProps> = {
-  color: 'dark',
+  color: 'blue',
   disabled: false,
   loading: false,
-  radius: 'md',
+  radius: 'base',
   shadow: 'none',
   size: 'md',
   tone: 'light',
   validation: 'none',
-  withRing: true,
+  withRing: false,
 };
 
 const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInputElement>) => {

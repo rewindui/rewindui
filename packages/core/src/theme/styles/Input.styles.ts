@@ -10,11 +10,19 @@ const base = cva(
     'data-[has-left-element=true]:rounded-l-none',
     'data-[has-right-element=true]:rounded-r-none',
     'z-10',
+    'rounded',
+    'font-medium',
   ],
   {
     variants: {
       color: {
-        blue: [],
+        blue: [,
+          'border-blue-200',
+          'focus:border-blue-200',
+          'focus:outline-none',
+          'active:border-blue-200',
+          'active:outline-none'
+        ],
         purple: [],
         gray: [],
         dark: [],
