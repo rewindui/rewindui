@@ -1,6 +1,10 @@
 {
   "name": "@rewind-ui/rewind-ui",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "/packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --no-cache --continue",
@@ -27,5 +31,5 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "packageManager": "pnpm@7.15.0"
+  "packageManager": "npm@9.8.1"
 }

@@ -36,7 +36,7 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "rollup -c rollup.config.mjs",
-    "dev": "pnpm run build --watch",
+    "dev": "npm run build --watch",
     "lint": "eslint \"src/**/*.ts*\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
     "test": "vitest run"
