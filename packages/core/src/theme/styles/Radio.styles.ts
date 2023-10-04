@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['cursor-pointer', 'form-radio'], {
+const base = cva(['peer', 'cursor-pointer', 'form-radio'], {
   variants: {
     color: {
       blue: [
@@ -123,7 +123,7 @@ const base = cva(['cursor-pointer', 'form-radio'], {
   },
 });
 
-const label = cva(['cursor-pointer'], {
+const label = cva(['peer-checked:font-bold', 'cursor-pointer'], {
   variants: {
     size: {
       sm: ['text-sm', 'pl-2'],

@@ -68,20 +68,20 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
     }, [theme, color, tone, size, radius, validation, withRing, className]);
 
     return (
-      <div className="flex items-center">
-        <input
-          id={id}
-          ref={ref}
-          type="radio"
-          aria-labelledby={`${id}-label`}
-          className={classes}
-          disabled={disabled}
-          onChange={handleChange}
-          name={name}
-          defaultChecked={!!initialValue ? initialValue === value : defaultChecked}
-          {...additionalProps}
-        />
-        <div className="grid grid-cols-1 justify-items-start">
+      <div className="flex flex-col items-center">
+        <div className='flex flex-row'>
+          <input
+            id={id}
+            ref={ref}
+            type="radio"
+            aria-labelledby={`${id}-label`}
+            className={classes}
+            disabled={disabled}
+            onChange={handleChange}
+            name={name}
+            defaultChecked={!!initialValue ? initialValue === value : defaultChecked}
+            {...additionalProps}
+          />
           <label
             id={`${id}-label`}
             htmlFor={id}
@@ -89,6 +89,8 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
           >
             {label}
           </label>
+        </div>
+        <div className="grid grid-cols-1 justify-items-start">
           {description && (
             <span
               className={twMerge(
