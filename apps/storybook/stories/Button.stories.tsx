@@ -11,7 +11,7 @@ import {
   ButtonSize,
   ButtonTone,
   ButtonProps,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 
 const variants: ButtonVariant[] = [
   'primary',

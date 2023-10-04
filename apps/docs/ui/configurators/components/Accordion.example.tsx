@@ -1,4 +1,4 @@
-import { Accordion, AccordionProps } from '@rewind-ui/core';
+import { Accordion, AccordionProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 const accordionItems = [
@@ -87,7 +87,7 @@ export const AccordionCode = (props: any) => {
     withRing !== defaultProps.withRing ? `withRing={${withRing}}` : null,
   ];
 
-  return `import { Accordion } from '@rewind-ui/core';
+  return `import { Accordion } from '@idb-dab/ui-core';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
-import { Button } from '@rewind-ui/core';
-import { useFade } from '@rewind-ui/core';
+import { Button } from '@idb-dab/ui-core';
+import { useFade } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { View, ViewGroup } from '../components/View';

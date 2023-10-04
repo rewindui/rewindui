@@ -6,7 +6,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './icons/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@rewind-ui/core/src/theme/styles/*.ts',
+    './node_modules/@idb-dab/ui-core/src/theme/styles/*.ts',
   ],
   theme: {
     extend: {},

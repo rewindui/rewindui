@@ -13,7 +13,7 @@ import {
   ToastVariant,
   AlertProps,
   Alert,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import { useEffect } from 'react';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';

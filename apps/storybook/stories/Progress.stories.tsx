@@ -4,8 +4,8 @@ import {
   ProgressRadius,
   ProgressShadow,
   ProgressSize,
-} from '@rewind-ui/core';
-import { ProgressColor } from '@rewind-ui/core/dist/components/Progress/Progress.types';
+} from '@idb-dab/ui-core';
+import { ProgressColor } from '@idb-dab/ui-core/dist/components/Progress/Progress.types';
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

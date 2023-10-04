@@ -1,4 +1,4 @@
-import { BadgeProps, Badge } from '@rewind-ui/core';
+import { BadgeProps, Badge } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const BadgeCode = (props: any) => {
@@ -26,7 +26,7 @@ export const BadgeCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Badge } from '@rewind-ui/core';
+  return `import { Badge } from '@idb-dab/ui-core';
 
 function App() {
   return (

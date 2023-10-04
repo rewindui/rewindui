@@ -5,7 +5,7 @@ import {
   InputGroupSize,
   InputGroupTone,
   InputGroupShadow,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import { Meta, Story } from '@storybook/react';
 import {
   ChatDots,

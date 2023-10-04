@@ -1,4 +1,4 @@
-import { Button, Selector, Tabs, Tooltip } from '@rewind-ui/core';
+import { Button, Selector, Tabs, Tooltip } from '@idb-dab/ui-core';
 import { useRef } from 'react';
 import * as React from 'react';
 import { SunDim, MoonStars } from '@phosphor-icons/react';

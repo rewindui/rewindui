@@ -1,4 +1,4 @@
-import { Progress } from '@rewind-ui/core';
+import { Progress } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export type ProgressShowcaseProps = {

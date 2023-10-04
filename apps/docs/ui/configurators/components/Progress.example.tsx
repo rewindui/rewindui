@@ -1,4 +1,4 @@
-import { Progress, ProgressProps } from '@rewind-ui/core';
+import { Progress, ProgressProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const ProgressCode = (props: any) => {
@@ -32,7 +32,7 @@ export const ProgressCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Progress } from '@rewind-ui/core';
+  return `import { Progress } from '@idb-dab/ui-core';
 
 function App() {
   return (

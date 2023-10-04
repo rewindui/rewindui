@@ -3,9 +3,9 @@
 <div align="center">
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](https://github.com/rewindui/rewindui/blob/main/LICENSE)
-[![npm latest package](https://img.shields.io/npm/v/@rewind-ui/core/latest.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@rewind-ui/core)
-[![npm downloads](https://img.shields.io/npm/dt/@rewind-ui/core.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@rewind-ui/core)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/@rewind-ui/core.svg?style=for-the-badge&label=minified)](https://bundlephobia.com/package/@rewind-ui/core)
+[![npm latest package](https://img.shields.io/npm/v/@idb-dab/ui-core/latest.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@idb-dab/ui-core)
+[![npm downloads](https://img.shields.io/npm/dt/@idb-dab/ui-core.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@idb-dab/ui-core)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/@idb-dab/ui-core.svg?style=for-the-badge&label=minified)](https://bundlephobia.com/package/@idb-dab/ui-core)
 
 </div>
 
@@ -16,7 +16,7 @@ Built specifically for use with [React](https://react.dev) and [Tailwind CSS](ht
 Rewind-UI is available as an NPM package and can be installed using the following command:
 
 ```bash
-npm install @rewind-ui/core
+npm install @idb-dab/ui-core
 ```
 
 # Configuration
@@ -35,10 +35,10 @@ module.exports = {
   content: [
     './src/**/*.{html,jsx,tsx}',
     // you can either add all styles
-    './node_modules/@rewind-ui/core/dist/theme/styles/*.js',
+    './node_modules/@idb-dab/ui-core/dist/theme/styles/*.js',
     // OR you can add only the styles you need
-    './node_modules/@rewind-ui/core/dist/theme/styles/Button.styles.js',
-    './node_modules/@rewind-ui/core/dist/theme/styles/Text.styles.js'
+    './node_modules/@idb-dab/ui-core/dist/theme/styles/Button.styles.js',
+    './node_modules/@idb-dab/ui-core/dist/theme/styles/Text.styles.js'
   ],
   plugins: [
     require('@tailwindcss/typography'),
@@ -54,7 +54,7 @@ module.exports = {
 To start using Rewind-UI components just add the following import statement to the top of your React component:
 
 ```tsx
-import { Button } from '@rewind-ui/core';
+import { Button } from '@idb-dab/ui-core';
 ```
 
 Then, you can use the component in your JSX code:

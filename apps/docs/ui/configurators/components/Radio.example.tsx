@@ -1,4 +1,4 @@
-import { Radio, RadioGroup, RadioProps } from '@rewind-ui/core';
+import { Radio, RadioGroup, RadioProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const RadioCode = (props: any) => {
@@ -30,7 +30,7 @@ export const RadioCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Radio, RadioGroup } from '@rewind-ui/core';
+  return `import { Radio, RadioGroup } from '@idb-dab/ui-core';
 
 function App() {
   return (

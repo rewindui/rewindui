@@ -1,4 +1,4 @@
-import { Button, Dropdown, DropdownColor, DropdownProps } from '@rewind-ui/core';
+import { Button, Dropdown, DropdownColor, DropdownProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 import {
   ChatCircleText,

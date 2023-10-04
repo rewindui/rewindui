@@ -1,4 +1,4 @@
-import { Button, Card, FormControl, Modal, ModalProps } from '@rewind-ui/core';
+import { Button, Card, FormControl, Modal, ModalProps } from '@idb-dab/ui-core';
 import { useState } from 'react';
 import * as React from 'react';
 import { X } from '@phosphor-icons/react';
@@ -50,7 +50,7 @@ export const ModalCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Modal } from '@rewind-ui/core';
+  return `import { Modal } from '@idb-dab/ui-core';
 
 function App() {
   const [open, setOpen] = useState(false);

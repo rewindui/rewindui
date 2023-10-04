@@ -7,7 +7,7 @@ import {
   SelectorTabProps,
   SelectorTone,
   Tooltip,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import { Meta, Story } from '@storybook/react';
 import * as React from 'react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

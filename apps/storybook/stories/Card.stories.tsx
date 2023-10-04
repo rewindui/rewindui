@@ -1,4 +1,4 @@
-import { Card, CardColor, CardProps, CardRadius, CardShadow, CardSize } from '@rewind-ui/core';
+import { Card, CardColor, CardProps, CardRadius, CardShadow, CardSize } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

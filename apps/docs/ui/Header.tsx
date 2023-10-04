@@ -6,7 +6,7 @@ import * as React from 'react';
 import { ReactNode, useEffect, useState } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import { usePathname } from 'next/navigation';
-import { Drawer } from '@rewind-ui/core';
+import { Drawer } from '@idb-dab/ui-core';
 
 const headerButtonClasses =
   'flex items-center justify-center w-8 h-8 md:w-10 bg-white md:h-10 rounded-lg border border-gray-100 p-2';

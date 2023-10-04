@@ -1,4 +1,4 @@
-import { Button, Card, Modal, ModalProps, Text, FormControl } from '@rewind-ui/core';
+import { Button, Card, Modal, ModalProps, Text, FormControl } from '@idb-dab/ui-core';
 import { useState } from 'react';
 import * as React from 'react';
 import { X } from '@phosphor-icons/react';

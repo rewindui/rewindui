@@ -5,7 +5,7 @@ import {
   OverlayColor,
   OverlayOpacity,
   OverlayProps,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import { Meta, Story } from '@storybook/react';
 import { useState } from 'react';
 import * as React from 'react';

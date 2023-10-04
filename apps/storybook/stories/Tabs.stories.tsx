@@ -1,4 +1,4 @@
-import { Card, Tabs, TabsColor, TabsProps, TabsRadius, TabsSize, TabsTone } from '@rewind-ui/core';
+import { Card, Tabs, TabsColor, TabsProps, TabsRadius, TabsSize, TabsTone } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

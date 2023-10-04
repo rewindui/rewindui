@@ -1,4 +1,4 @@
-import { FormControl, FormControlProps } from '@rewind-ui/core';
+import { FormControl, FormControlProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { At } from '@phosphor-icons/react';
 
@@ -19,7 +19,7 @@ export const FormControlCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { FormControl } from '@rewind-ui/core';
+  return `import { FormControl } from '@idb-dab/ui-core';
 import { At } from '@phosphor-icons/react';
 
 function App() {

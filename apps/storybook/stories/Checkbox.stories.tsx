@@ -5,7 +5,7 @@ import {
   CheckboxRadius,
   CheckboxSize,
   CheckboxTone,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { View, ViewGroup } from '../components/View';

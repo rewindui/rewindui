@@ -8,8 +8,8 @@ import {
   RibbonShadow,
   RibbonSize,
   RibbonTone,
-} from '@rewind-ui/core';
-import { RibbonVariant } from '@rewind-ui/core/dist/components/Ribbon/Ribbon.types';
+} from '@idb-dab/ui-core';
+import { RibbonVariant } from '@idb-dab/ui-core/dist/components/Ribbon/Ribbon.types';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

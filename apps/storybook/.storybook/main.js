@@ -26,7 +26,7 @@ module.exports = {
       resolve: {
         alias: [
           {
-            find: '@rewind-ui/core',
+            find: '@idb-dab/ui-core',
             replacement: path.resolve(__dirname, '../../../packages/core/'),
           },
         ],

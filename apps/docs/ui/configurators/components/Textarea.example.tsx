@@ -1,4 +1,4 @@
-import { Textarea, TextareaProps } from '@rewind-ui/core';
+import { Textarea, TextareaProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const TextareaCode = (props: any) => {
@@ -30,7 +30,7 @@ export const TextareaCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Input } from '@rewind-ui/core';
+  return `import { Input } from '@idb-dab/ui-core';
 
 function App() {
   return (

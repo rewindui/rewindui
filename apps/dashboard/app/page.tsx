@@ -9,7 +9,7 @@ import { Sliders } from '@/icons/Sliders';
 import { LifeRing } from '@/icons/LifeRing';
 import { Users } from '@/icons/Users';
 import { Logo } from '@/icons/Logo';
-import { Button, Overlay, Sidebar, SidebarColor, SidebarState, useSidebar } from '@rewind-ui/core';
+import { Button, Overlay, Sidebar, SidebarColor, SidebarState, useSidebar } from '@idb-dab/ui-core';
 import Image from 'next/image';
 import { useState } from 'react';
 

@@ -10,9 +10,9 @@ import {
   Button,
   Avatar,
   AvatarColor,
-} from '@rewind-ui/core';
-import { TableStripePosition } from '@rewind-ui/core/dist/components/Table/Table.types';
-import { TrColor } from '@rewind-ui/core/dist/components/Table/Tr/Tr.types';
+} from '@idb-dab/ui-core';
+import { TableStripePosition } from '@idb-dab/ui-core/dist/components/Table/Table.types';
+import { TrColor } from '@idb-dab/ui-core/dist/components/Table/Tr/Tr.types';
 import * as React from 'react';
 import { DotsThree, ChartLineUp, ChartLineDown } from '@phosphor-icons/react';
 

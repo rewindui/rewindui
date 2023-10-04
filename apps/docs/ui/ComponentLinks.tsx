@@ -1,7 +1,7 @@
 'use client';
 import { Component } from '@/.contentlayer/generated/types';
 import { config } from '@/lib/config';
-import { Button } from '@rewind-ui/core';
+import { Button } from '@idb-dab/ui-core';
 import Image from 'next/image';
 
 export const ComponentLinks = (props: { component: Component }) => {

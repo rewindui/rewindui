@@ -1,4 +1,4 @@
-import { TableProps, Table } from '@rewind-ui/core';
+import { TableProps, Table } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const TableCode = (props: any) => {
@@ -55,7 +55,7 @@ export const TableCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Table } from '@rewind-ui/core';
+  return `import { Table } from '@idb-dab/ui-core';
 
 function App() {
   return (

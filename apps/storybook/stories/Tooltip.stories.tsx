@@ -6,8 +6,8 @@ import {
   TooltipRadius,
   TooltipShadow,
   TooltipSize,
-} from '@rewind-ui/core';
-import { TooltipPlacement } from '@rewind-ui/core/src/components/Tooltip/Tooltip.types';
+} from '@idb-dab/ui-core';
+import { TooltipPlacement } from '@idb-dab/ui-core/src/components/Tooltip/Tooltip.types';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

@@ -1,4 +1,4 @@
-import { ModalSize, Modal, ModalProps, Card, Button, Text } from '@rewind-ui/core';
+import { ModalSize, Modal, ModalProps, Card, Button, Text } from '@idb-dab/ui-core';
 import { Meta, Story } from '@storybook/react';
 import { useState } from 'react';
 import * as React from 'react';

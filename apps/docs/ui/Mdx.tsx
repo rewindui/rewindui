@@ -53,7 +53,7 @@ import {
   Table,
   Ribbon,
   Toast,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import { View } from './View';
 import {
   MagnifyingGlass,

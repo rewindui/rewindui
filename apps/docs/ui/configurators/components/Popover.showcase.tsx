@@ -1,4 +1,4 @@
-import { Button, Popover, Card, Radio } from '@rewind-ui/core';
+import { Button, Popover, Card, Radio } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export type PopoverShowcaseProps = {

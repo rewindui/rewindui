@@ -1,4 +1,4 @@
-import { Button, Card, Drawer, DrawerProps, FormControl } from '@rewind-ui/core';
+import { Button, Card, Drawer, DrawerProps, FormControl } from '@idb-dab/ui-core';
 import { useState } from 'react';
 import * as React from 'react';
 import { X } from '@phosphor-icons/react';
@@ -41,7 +41,7 @@ export const DrawerCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Drawer } from '@rewind-ui/core';
+  return `import { Drawer } from '@idb-dab/ui-core';
 
 function App() {
   const [open, setOpen] = useState(false);

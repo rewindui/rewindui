@@ -4,7 +4,7 @@ import { Color } from '@/ui/ColorPicker';
 import { components } from '@/ui/configurators/components';
 import { ConfiguratorStateControl } from '@/ui/configurators/ConfiguratorStateControl';
 import { CustomSandpack } from '@/ui/configurators/CustomSandpack';
-import { FormControl } from '@rewind-ui/core';
+import { FormControl } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { useState } from 'react';
 

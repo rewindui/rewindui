@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Tooltip, TooltipProps } from '@rewind-ui/core';
+import { Button, ButtonProps, Tooltip, TooltipProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const TooltipCode = (props: any) => {
@@ -26,7 +26,7 @@ export const TooltipCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Tooltip } from '@rewind-ui/core';
+  return `import { Tooltip } from '@idb-dab/ui-core';
 
 function App() {
   return (

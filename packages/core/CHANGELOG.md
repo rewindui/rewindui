@@ -1,4 +1,4 @@
-# @rewind-ui/core
+# @idb-dab/ui-core
 
 ## 0.17.2
 

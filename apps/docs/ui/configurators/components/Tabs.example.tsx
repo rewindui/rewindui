@@ -1,4 +1,4 @@
-import { Tabs, TabsProps } from '@rewind-ui/core';
+import { Tabs, TabsProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { HandWaving, Lifebuoy } from '@phosphor-icons/react';
 
@@ -44,7 +44,7 @@ export const TabsCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Tabs } from '@rewind-ui/core';
+  return `import { Tabs } from '@idb-dab/ui-core';
 
 function App() {
   return (

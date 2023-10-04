@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Popover, PopoverProps } from '@rewind-ui/core';
+import { Button, ButtonProps, Popover, PopoverProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const PopoverCode = (props: any) => {
@@ -24,7 +24,7 @@ export const PopoverCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Popover } from '@rewind-ui/core';
+  return `import { Popover } from '@idb-dab/ui-core';
 
 function App() {
   return (

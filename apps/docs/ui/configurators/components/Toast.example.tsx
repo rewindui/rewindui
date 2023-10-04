@@ -1,5 +1,5 @@
-import { Button, ToastContainer, ToastProps, useToast } from '@rewind-ui/core';
-import { ToastContainerProps } from '@rewind-ui/core/dist/components/Toast/ToastContainer/ToastContainer.types';
+import { Button, ToastContainer, ToastProps, useToast } from '@idb-dab/ui-core';
+import { ToastContainerProps } from '@idb-dab/ui-core/dist/components/Toast/ToastContainer/ToastContainer.types';
 import * as React from 'react';
 
 export const ToastCode = (props: any) => {
@@ -45,7 +45,7 @@ export const ToastCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { ToastContainer, useToast } from '@rewind-ui/core';
+  return `import { ToastContainer, useToast } from '@idb-dab/ui-core';
 
 function App() {
   const toast = useToast();

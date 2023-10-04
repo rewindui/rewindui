@@ -1,4 +1,4 @@
-import { RibbonProps, Ribbon, Card, FormControl, Button } from '@rewind-ui/core';
+import { RibbonProps, Ribbon, Card, FormControl, Button } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const RibbonCode = (props: any) => {
@@ -28,7 +28,7 @@ export const RibbonCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Ribbon } from '@rewind-ui/core';
+  return `import { Ribbon } from '@idb-dab/ui-core';
 
 function App() {
   return (

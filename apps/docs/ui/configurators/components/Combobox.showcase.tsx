@@ -17,7 +17,7 @@ import {
   Button,
   ComboboxColor,
   Badge,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import { useState } from 'react';
 import * as React from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';

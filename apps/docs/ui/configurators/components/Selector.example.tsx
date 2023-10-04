@@ -1,4 +1,4 @@
-import { Selector, SelectorProps } from '@rewind-ui/core';
+import { Selector, SelectorProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const SelectorCode = (props: any) => {
@@ -42,7 +42,7 @@ export const SelectorCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Selector } from '@rewind-ui/core';
+  return `import { Selector } from '@idb-dab/ui-core';
 
 function App() {
   return (

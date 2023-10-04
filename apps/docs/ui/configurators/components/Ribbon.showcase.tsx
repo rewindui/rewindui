@@ -1,4 +1,4 @@
-import { Card, Ribbon } from '@rewind-ui/core';
+import { Card, Ribbon } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Star } from '@phosphor-icons/react';
 

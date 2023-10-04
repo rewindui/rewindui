@@ -1,5 +1,5 @@
 'use client';
-import { Text } from '@rewind-ui/core';
+import { Text } from '@idb-dab/ui-core';
 import { ReactNode } from 'react';
 import { MenuItem } from './MenuItem';
 import {

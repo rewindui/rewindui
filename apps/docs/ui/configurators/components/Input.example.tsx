@@ -1,4 +1,4 @@
-import { Input, InputProps } from '@rewind-ui/core';
+import { Input, InputProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const InputCode = (props: any) => {
@@ -32,7 +32,7 @@ export const InputCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Input } from '@rewind-ui/core';
+  return `import { Input } from '@idb-dab/ui-core';
 
 function App() {
   return (

@@ -2,7 +2,7 @@ import { EnvelopeOpen } from '@/ui/icons/EnvelopeOpen';
 import { LifeRing } from '@/ui/icons/LifeRing';
 import { RocketLaunch } from '@/ui/icons/RocketLaunch';
 import { Logo } from '@/ui/Logo';
-import { Button, Overlay, Sidebar, SidebarProps, SidebarState, useSidebar } from '@rewind-ui/core';
+import { Button, Overlay, Sidebar, SidebarProps, SidebarState, useSidebar } from '@idb-dab/ui-core';
 import { useState } from 'react';
 import * as React from 'react';
 import { Briefcase } from '@/ui/icons/Briefcase';
@@ -29,7 +29,7 @@ export const SidebarCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Sidebar, useSidebar, Overlay } from '@rewind-ui/core';
+  return `import { Sidebar, useSidebar, Overlay } from '@idb-dab/ui-core';
 
 function App() {
   const [expanded, setExpanded] = useState(true);

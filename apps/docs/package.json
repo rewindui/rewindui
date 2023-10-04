@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.2.9",
-    "@rewind-ui/core": "workspace:*",
+    "@idb-dab/ui-core": "workspace:*",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",

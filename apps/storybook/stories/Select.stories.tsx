@@ -7,7 +7,7 @@ import {
   SelectSize,
   SelectTone,
   SelectValidation,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

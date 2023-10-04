@@ -1,4 +1,4 @@
-import { Text, TextProps } from '@rewind-ui/core';
+import { Text, TextProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const TextCode = (props: any) => {
@@ -24,7 +24,7 @@ export const TextCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Text } from '@rewind-ui/core';
+  return `import { Text } from '@idb-dab/ui-core';
 
 function App() {
   return (

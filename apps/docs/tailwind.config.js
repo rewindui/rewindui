@@ -6,7 +6,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './content/**/*.mdx',
     './ui/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@rewind-ui/core/src/theme/styles/*.ts',
+    './node_modules/@idb-dab/ui-core/src/theme/styles/*.ts',
   ],
   theme: {
     extend: {

@@ -1,4 +1,4 @@
-import { Select, SelectProps } from '@rewind-ui/core';
+import { Select, SelectProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const SelectCode = (props: any) => {
@@ -30,7 +30,7 @@ export const SelectCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Select } from '@rewind-ui/core';
+  return `import { Select } from '@idb-dab/ui-core';
 
 function App() {
   return (

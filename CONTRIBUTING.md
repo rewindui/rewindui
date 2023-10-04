@@ -53,7 +53,7 @@ After cloning the repository, you can run the following commands:
 
 Having installed the dependencies, you need to start the dev servers for each package/app:
 
-### @rewind-ui/core
+### @idb-dab/ui-core
 
 Open the `rewindui/packages/core` directory and run `pnpm dev` to start the development server on the core package.
 
@@ -78,7 +78,7 @@ Open the `rewindui/apps/docs` directory and run `pnpm dev` to start the document
 
 The structure of each component should be as follows:
 
-### @rewind-ui/core
+### @idb-dab/ui-core
 
 Each component should be in its own directory inside `rewindui/packages/core/src/components`. The [Button](https://github.com/rewindui/rewindui/tree/main/packages/core/src/components/Button) component can be used as an example.
 
@@ -95,7 +95,7 @@ Each component should be exported from `rewindui/packages/core/src/index.ts` as 
 
 ### Storybook
 
-To add a new component to Storybook, add a new story file in `rewindui/apps/storybook/stories` and import the component from `@rewind-ui/core`.
+To add a new component to Storybook, add a new story file in `rewindui/apps/storybook/stories` and import the component from `@idb-dab/ui-core`.
 
 ### Documentation
 

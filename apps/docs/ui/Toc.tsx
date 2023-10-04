@@ -3,7 +3,7 @@
 'use client';
 import { useMounted } from '@/hooks/use-mounted';
 import { TableOfContents } from '@/utils/toc.util';
-import { Text } from '@rewind-ui/core';
+import { Text } from '@idb-dab/ui-core';
 import { cva } from 'class-variance-authority';
 import { useEffect, useMemo, useState } from 'react';
 import * as React from 'react';

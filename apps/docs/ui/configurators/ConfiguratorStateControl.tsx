@@ -8,7 +8,7 @@ import {
   Switch,
   Input,
   InputProps,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import * as React from 'react';
 
 type Props = {

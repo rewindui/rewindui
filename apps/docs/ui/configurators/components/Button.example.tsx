@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from '@rewind-ui/core';
+import { Button, ButtonProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const ButtonCode = (props: any) => {
@@ -36,7 +36,7 @@ export const ButtonCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Button } from '@rewind-ui/core';
+  return `import { Button } from '@idb-dab/ui-core';
 
 function App() {
   return (

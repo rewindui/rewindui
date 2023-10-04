@@ -1,4 +1,4 @@
-import { Button, Tooltip } from '@rewind-ui/core';
+import { Button, Tooltip } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export type TooltipShowcaseProps = {

@@ -1,4 +1,4 @@
-import { Card, CardProps } from '@rewind-ui/core';
+import { Card, CardProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const CardCode = (props: any) => {
@@ -26,7 +26,7 @@ export const CardCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Card } from '@rewind-ui/core';
+  return `import { Card } from '@idb-dab/ui-core';
 
 function App() {
   return (

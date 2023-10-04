@@ -1,6 +1,6 @@
 'use client';
 import { Configurator } from '@/ui/Configurator';
-import { Image, Tabs } from '@rewind-ui/core';
+import { Image, Tabs } from '@idb-dab/ui-core';
 import * as React from 'react';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ export const Hero = () => {
   const [copying, setCopying] = React.useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('npm install @rewind-ui/core');
+    navigator.clipboard.writeText('npm install @idb-dab/ui-core');
     setCopying(true);
     setTimeout(() => setCopying(false), 1500);
   };
@@ -81,7 +81,7 @@ export const Hero = () => {
                 />
               </svg>
               <span className="text-slate-500 group-hover:text-slate-600 transition-colors">
-                npm install @rewind-ui/core
+                npm install @idb-dab/ui-core
               </span>
               <span className="invisible group-hover:visible ml-2 absolute -right-6">
                 {copying ? (

@@ -1,4 +1,4 @@
-import { ComboboxProps, Combobox } from '@rewind-ui/core';
+import { ComboboxProps, Combobox } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 
@@ -64,7 +64,7 @@ export const ComboboxCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Combobox } from '@rewind-ui/core';
+  return `import { Combobox } from '@idb-dab/ui-core';
 
 function App() {
   return (

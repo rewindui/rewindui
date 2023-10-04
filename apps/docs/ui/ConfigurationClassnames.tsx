@@ -2,7 +2,7 @@
 import { CustomSandpack } from '@/ui/configurators/CustomSandpack';
 import { useEffect, useState } from 'react';
 import * as React from 'react';
-import { Alert } from '@rewind-ui/core';
+import { Alert } from '@idb-dab/ui-core';
 
 export const ConfigurationClassnames = () => {
   const [alertCode, setAlertCode] = React.useState(

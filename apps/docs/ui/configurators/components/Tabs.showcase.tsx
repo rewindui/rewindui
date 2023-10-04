@@ -1,4 +1,4 @@
-import { Tabs, Radio, Card, Button } from '@rewind-ui/core';
+import { Tabs, Radio, Card, Button } from '@idb-dab/ui-core';
 import { useRef } from 'react';
 import * as React from 'react';
 import { HandWaving, Lifebuoy } from '@phosphor-icons/react';

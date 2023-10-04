@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxProps } from '@rewind-ui/core';
+import { Checkbox, CheckboxProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const CheckboxCode = (props: any) => {
@@ -27,7 +27,7 @@ export const CheckboxCode = (props: any) => {
     withRing !== defaultProps.withRing ? `withRing={${withRing}}` : null,
   ];
 
-  return `import { Checkbox } from '@rewind-ui/core';
+  return `import { Checkbox } from '@idb-dab/ui-core';
 
 function App() {
   return (

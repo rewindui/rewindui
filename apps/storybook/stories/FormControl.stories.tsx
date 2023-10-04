@@ -3,7 +3,7 @@ import {
   FormControlProps,
   FormControlSize,
   FormControlTextValidation,
-} from '@rewind-ui/core';
+} from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { At } from '@phosphor-icons/react';

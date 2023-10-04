@@ -1,4 +1,4 @@
-import { Button, Dropdown, DropdownProps } from '@rewind-ui/core';
+import { Button, Dropdown, DropdownProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { ChatCircleText, Gear, SignOut, Trash } from '@phosphor-icons/react';
 
@@ -54,7 +54,7 @@ export const DropdownCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Dropdown, Button } from '@rewind-ui/core';
+  return `import { Dropdown, Button } from '@idb-dab/ui-core';
 
 function App() {
   return (

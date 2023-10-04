@@ -1,4 +1,4 @@
-import { Switch, SwitchProps, SwitchColor, SwitchRadius, SwitchSize } from '@rewind-ui/core';
+import { Switch, SwitchProps, SwitchColor, SwitchRadius, SwitchSize } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { EnhancedView, View, ViewGroup } from '../components/View';

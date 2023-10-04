@@ -1,4 +1,4 @@
-import { AlertProps, Alert } from '@rewind-ui/core';
+import { AlertProps, Alert } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const AlertCode = (props: any) => {
@@ -49,7 +49,7 @@ export const AlertCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { Alert } from '@rewind-ui/core';
+  return `import { Alert } from '@idb-dab/ui-core';
 
 function App() {
   return (

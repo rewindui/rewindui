@@ -1,4 +1,4 @@
-import { Switch, SwitchProps } from '@rewind-ui/core';
+import { Switch, SwitchProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 
 export const SwitchCode = (props: any) => {
@@ -25,7 +25,7 @@ export const SwitchCode = (props: any) => {
     withRing !== defaultProps.withRing ? `withRing={${withRing}}` : null,
   ];
 
-  return `import { Checkbox } from '@rewind-ui/core';
+  return `import { Checkbox } from '@idb-dab/ui-core';
 
 function App() {
   return (

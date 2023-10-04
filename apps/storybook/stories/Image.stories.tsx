@@ -1,4 +1,4 @@
-import { Image, ImageFit, ImageProps, ImageRadius } from '@rewind-ui/core';
+import { Image, ImageFit, ImageProps, ImageRadius } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { View } from '../components/View';

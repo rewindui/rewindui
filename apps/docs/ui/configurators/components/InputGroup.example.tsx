@@ -1,4 +1,4 @@
-import { InputGroup, InputGroupProps } from '@rewind-ui/core';
+import { InputGroup, InputGroupProps } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { MagnifyingGlass } from '@phosphor-icons/react';
 
@@ -23,7 +23,7 @@ export const InputGroupCode = (props: any) => {
     attributes.unshift(null);
   }
 
-  return `import { InputGroup } from '@rewind-ui/core';
+  return `import { InputGroup } from '@idb-dab/ui-core';
 
 function App() {
   return (

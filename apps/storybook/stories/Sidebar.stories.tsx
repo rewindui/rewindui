@@ -1,4 +1,4 @@
-import { Sidebar, SidebarColor, SidebarProps, SidebarShadow } from '@rewind-ui/core';
+import { Sidebar, SidebarColor, SidebarProps, SidebarShadow } from '@idb-dab/ui-core';
 import * as React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Briefcase, Key, RocketLaunch, Shield, Users } from '@phosphor-icons/react';
