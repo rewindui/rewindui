@@ -18,6 +18,8 @@ const base = cva(['fixed', 'flex', 'overflow-auto', 'justify-center', 'z-[60]'],
       base: ['rounded'],
       md: ['rounded-md'],
       lg: ['rounded-lg'],
+      xl: ['rounded-xl'],
+      '2xl': ['rounded-2xl'],
     },
     shadow: {
       none: ['shadow-none'],

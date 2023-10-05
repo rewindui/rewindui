@@ -12,18 +12,18 @@ import { Overlay } from '@components/Overlay';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ModalProps> = {
-  closeOnEscape: true,
+  closeOnEscape: false,
   color: 'white',
   mode: 'dialog',
   open: false,
   overlayBlur: 'sm',
-  overlayCloseOnClick: true,
+  overlayCloseOnClick: false,
   overlayColor: 'dark',
-  overlayOpacity: '50',
-  position: 'top',
-  radius: 'md',
+  overlayOpacity: '75',
+  position: 'center',
+  radius: '2xl',
   shadow: 'base',
-  size: 'sm',
+  size: 'auto',
 };
 
 const _Modal: ModalComponent = forwardRef((props: ModalProps, ref?: Ref<HTMLDivElement>) => {

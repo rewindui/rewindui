@@ -6,12 +6,12 @@ import { forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<CheckboxProps> = {
-  color: 'dark',
+  color: 'blue',
   disabled: false,
-  radius: 'md',
-  size: 'md',
+  radius: 'sm',
+  size: 'sm',
   tone: 'solid',
-  withRing: true,
+  withRing: false,
 };
 
 const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
@@ -55,7 +55,7 @@ const Checkbox: CheckboxComponent = forwardRef<HTMLInputElement, CheckboxProps>(
     }, [theme, color, tone, size, radius, validation, withRing, className]);
 
     return (
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <input
           id={id}
           ref={ref}

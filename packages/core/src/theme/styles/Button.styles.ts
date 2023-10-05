@@ -195,17 +195,17 @@ const base = cva(
       {
         icon: false,
         size: 'sm',
-        className: ['px-2.5', 'h-8'],
+        className: ['px-4', 'h-8'],
       },
       {
         icon: false,
         size: 'md',
-        className: ['px-4', 'h-10'],
+        className: ['px-6', 'h-10'],
       },
       {
         icon: false,
         size: 'lg',
-        className: ['px-5', 'h-12'],
+        className: ['px-8', 'h-12'],
       },
       {
         icon: true,
@@ -251,12 +251,8 @@ const base = cva(
         color: 'blue',
         className: [
           'text-white',
-          'bg-blue-500',
-          'focus:bg-blue-600',
-          'hover:bg-blue-600',
-          'active:bg-blue-600/90',
-          'disabled:bg-blue-300',
-          'disabled:hover:bg-blue-300',
+          'bg-blue-900',
+          'disabled:opacity-20',
         ],
       },
       {
