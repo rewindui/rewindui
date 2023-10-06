@@ -15,3 +15,7 @@ html body * {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+input[type="password"]::-ms-reveal {
+    display: none;
+}
