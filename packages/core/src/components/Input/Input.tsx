@@ -5,8 +5,11 @@ import { useInputGroupContext } from '@components/InputGroup/InputGroup.context'
 import { default as Spinner } from '@components/Spinner/Spinner';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import { cloneElement, forwardRef, Ref, useMemo } from 'react';
+import { cloneElement, forwardRef, Ref, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { KeyboardIcon } from '@icons/Keyboard';
+import { EyeSlashIcon } from '@icons/EyeSlash';
+import { EyeIcon } from '@icons/Eye';
 
 const defaultProps: Partial<InputProps> = {
   color: 'blue',
@@ -18,6 +21,8 @@ const defaultProps: Partial<InputProps> = {
   tone: 'light',
   validation: 'none',
   withRing: false,
+  withKeyboard: false,
+  enabledPasswordToggle: true
 };
 
 const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInputElement>) => {
@@ -36,6 +41,8 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     type = 'text',
     validation,
     withRing,
+    withKeyboard,
+    enabledPasswordToggle,
     ...additionalProps
   } = {
     ...defaultProps,
@@ -48,6 +55,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
   const hasLeftIcon = !!leftIcon;
   const hasRightIcon = !!rightIcon;
   const disabled = props.disabled || loading;
+  const [showText, setShowText] = useState(false);
 
   const classes = useMemo(() => {
     return twMerge(
@@ -65,6 +73,8 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
         type,
         validation,
         withRing,
+        withKeyboard,
+        enabledPasswordToggle
       })
     );
   }, [
@@ -82,12 +92,22 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     type,
     validation,
     withRing,
+    withKeyboard,
+    enabledPasswordToggle
   ]);
+
+  const togglePassword = () => setShowText(!showText);
+
+  const getActiveType = () => {
+    if (showText)
+      return 'text';
+    return 'password';
+  }
 
   const inputElement = (
     <input
       id={id}
-      type={type}
+      type={type === 'password' ? getActiveType() : type}
       ref={ref}
       className={classes}
       {...additionalProps}
@@ -95,7 +115,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     />
   );
 
-  return hasLeftIcon || hasRightIcon || loading ? (
+  return hasLeftIcon || hasRightIcon || loading || withKeyboard || (type == 'password' && enabledPasswordToggle) ? (
     <div className={theme.wrapper()}>
       {leftIcon && (
         <span className={theme.leftIconWrapper({ size })}>
@@ -115,6 +135,18 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
       {loading && (
         <span className={theme.rightIconWrapper({ size })}>
           <Spinner size={size} color="gray" />
+        </span>
+      )}
+      {
+        type == 'password' && enabledPasswordToggle && (
+          <span className={theme.eyeIconWrapper({ size, withKeyboard })} onClick={togglePassword}>
+            {showText ? <EyeSlashIcon /> : <EyeIcon />}
+          </span>
+        )
+      }
+      {withKeyboard && (
+        <span className={theme.keyboardIconWrapper({ size })}>
+          <KeyboardIcon />
         </span>
       )}
     </div>

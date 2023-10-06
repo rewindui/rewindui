@@ -101,6 +101,14 @@ const base = cva(
         true: [],
         false: [],
       },
+      withKeyboard: {
+        true: [],
+        false: [],
+      },
+      enabledPasswordToggle: {
+        true: [],
+        false: [],
+      },
     },
     compoundVariants: [
       {
@@ -552,12 +560,60 @@ const rightIconWrapper = cva(['absolute', 'right-0', 'z-20'], {
   },
 });
 
+const keyboardIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-center', 'pr-3'], {
+  variants: {
+    size: {
+      xs: [],
+      sm: [],
+      md: [],
+      lg: [],
+    },
+  },
+});
+
+const eyeIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-center', 'pr-12'], {
+  variants: {
+    size: {
+      xs: [],
+      sm: [],
+      md: [],
+      lg: [],
+    },
+    withKeyboard: {
+      true: [],
+      false: [],
+    },
+    enabledPasswordToggle: {
+      true: [],
+      false: [],
+    },
+  },
+  compoundVariants: [
+    {
+      withKeyboard: true,
+      enabledPasswordToggle: true,
+      className: ['pr-12'],
+    },
+    {
+      withKeyboard: false,
+      enabledPasswordToggle: true,
+      className: ['pr-3'],
+    }
+  ],
+  defaultVariants: {
+    withKeyboard: false,
+    enabledPasswordToggle: true
+  }
+});
+
 const inputStyles = {
   base,
   wrapper,
   icon,
   leftIconWrapper,
   rightIconWrapper,
+  keyboardIconWrapper,
+  eyeIconWrapper
 };
 
 export { inputStyles };
