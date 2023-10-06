@@ -15,8 +15,8 @@ const arrowSideDictionary = cva('', {
       'left': 'right',
       'left-start': 'right',
       'left-end': 'right',
-    }
-  }
+    },
+  },
 });
 
 export { arrowSideDictionary };

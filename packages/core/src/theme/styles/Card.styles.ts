@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['flex', 'flex-col'], {
+const base = cva(['flex', 'flex-col', 'rounded-lg', 'shadow-md'], {
   variants: {
     bordered: {
       true: ['border'],
@@ -15,14 +15,14 @@ const base = cva(['flex', 'flex-col'], {
     radius: {
       none: ['rounded-none'],
       sm: ['rounded-sm'],
-      base: ['rounded'],
+      base: ['rounded-lg'], // Updated to rounded-lg for the card style
       md: ['rounded-md'],
       lg: ['rounded-lg'],
     },
     shadow: {
       none: ['shadow-none'],
       sm: ['shadow-sm'],
-      base: ['shadow'],
+      base: ['shadow-md'], // Updated to shadow-md for the card style
       md: ['shadow-md'],
       lg: ['shadow-lg'],
       xl: ['shadow-xl'],
@@ -144,7 +144,7 @@ const header = cva(['flex', 'flex-row', 'justify-between', 'items-center'], {
     radius: {
       none: ['rounded-t-none'],
       sm: ['rounded-t-sm'],
-      base: ['rounded-t'],
+      base: ['rounded-t-lg'], // Updated to rounded-t-lg for the card style
       md: ['rounded-t-md'],
       lg: ['rounded-t-lg'],
     },
@@ -162,7 +162,7 @@ const footer = cva(['flex', 'items-center'], {
     radius: {
       none: ['rounded-b-none'],
       sm: ['rounded-b-sm'],
-      base: ['rounded-b'],
+      base: ['rounded-b-lg'], // Updated to rounded-b-lg for the card style
       md: ['rounded-b-md'],
       lg: ['rounded-b-lg'],
     },
@@ -174,7 +174,7 @@ const image = cva(['flex', 'flex-row', 'items-center', 'justify-center'], {
     radius: {
       none: ['rounded-t-none'],
       sm: ['rounded-t-sm'],
-      base: ['rounded-t'],
+      base: ['rounded-t-lg'], // Updated to rounded-t-lg for the card style
       md: ['rounded-t-md'],
       lg: ['rounded-t-lg'],
     },
