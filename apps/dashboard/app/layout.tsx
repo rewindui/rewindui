@@ -1,11 +1,14 @@
+// Import required dependencies and styles
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { config } from '@/lib/config';
 
+// Initialize the Inter font with the 'latin' subset
 const inter = Inter({ subsets: ['latin'] });
 
-export const metadata: Metadata = {
+// Define metadata for the application
+const metadata: Metadata = {
   metadataBase: new URL('https://dashboard.rewind-ui.dev'),
   title: 'Rewind-UI - Admin Dashboard',
   description: 'Effortless interfaces',
@@ -42,10 +45,13 @@ export const metadata: Metadata = {
   },
 };
 
+// Define the RootLayout component
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+      </body>
     </html>
   );
 }
