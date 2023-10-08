@@ -5,12 +5,13 @@ import { useInputGroupContext } from '@components/InputGroup/InputGroup.context'
 import { default as Spinner } from '@components/Spinner/Spinner';
 import { useComponentTheme } from '@theme/theme.context';
 import { usePropId } from '@utils/usePropId';
-import { cloneElement, forwardRef, Ref, useMemo, useState } from 'react';
+import { cloneElement, forwardRef, Ref, useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { KeyboardIcon } from '@icons/Keyboard';
 import { EyeSlashIcon } from '@icons/EyeSlash';
 import { EyeIcon } from '@icons/Eye';
-
+import { countryData } from './Countries';
+import { Dropdown, Button } from '../..';
 const defaultProps: Partial<InputProps> = {
   color: 'blue',
   disabled: false,
@@ -22,7 +23,8 @@ const defaultProps: Partial<InputProps> = {
   validation: 'none',
   withRing: false,
   withKeyboard: false,
-  enabledPasswordToggle: true
+  enabledPasswordToggle: true,
+  enableCountryCode: true,
 };
 
 const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInputElement>) => {
@@ -43,6 +45,8 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     withRing,
     withKeyboard,
     enabledPasswordToggle,
+    enableCountryCode,
+    setCountryCode,
     ...additionalProps
   } = {
     ...defaultProps,
@@ -56,6 +60,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
   const hasRightIcon = !!rightIcon;
   const disabled = props.disabled || loading;
   const [showText, setShowText] = useState(false);
+  const [selectedCountry, setSelectedCountry] = useState(countryData[0]);
 
   const classes = useMemo(() => {
     return twMerge(
@@ -74,7 +79,8 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
         validation,
         withRing,
         withKeyboard,
-        enabledPasswordToggle
+        enabledPasswordToggle,
+        enableCountryCode,
       })
     );
   }, [
@@ -93,8 +99,16 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     validation,
     withRing,
     withKeyboard,
-    enabledPasswordToggle
+    enabledPasswordToggle,
+    enableCountryCode,
   ]);
+
+
+  useEffect(() => {
+    if(props.setCountryCode){
+      props.setCountryCode(selectedCountry.code);
+    }
+  }, [selectedCountry]);
 
   const togglePassword = () => setShowText(!showText);
 
@@ -104,18 +118,39 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     return 'password';
   }
 
+  const handleCountryCodeSelection = (country: typeof selectedCountry) => {
+    let selectedCountry = { ...country };
+    setSelectedCountry(selectedCountry);
+  }
+
   const inputElement = (
     <input
       id={id}
-      type={type === 'password' ? getActiveType() : type}
       ref={ref}
+      type={type === 'password' ? getActiveType() : type}
       className={classes}
       {...additionalProps}
       disabled={disabled}
     />
   );
 
-  return hasLeftIcon || hasRightIcon || loading || withKeyboard || (type == 'password' && enabledPasswordToggle) ? (
+  const dropdownItem = (country: typeof selectedCountry) => {
+    return (
+      <Dropdown.Item
+        key={`country-item-${country.code}`}
+        onClick={(event) => handleCountryCodeSelection(country)}
+        className='hover:bg-primary-100 flex cursor-pointer flex-row items-center gap-2 p-2.5 border-b-2 border-solid border-gray-200 '>
+        {country.code} - {country.name}
+      </Dropdown.Item>
+    );
+  }
+
+  return hasLeftIcon ||
+    hasRightIcon ||
+    loading ||
+    withKeyboard ||
+    (type == 'password' && enabledPasswordToggle) ||
+    (type == 'tel' && enableCountryCode) ? (
     <div className={theme.wrapper()}>
       {leftIcon && (
         <span className={theme.leftIconWrapper({ size })}>
@@ -124,6 +159,22 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
           })}
         </span>
       )}
+      {
+        type == 'tel' && enableCountryCode && (
+          <span className={theme.countryCodeWrapper({})}>
+            <Dropdown>
+              <Dropdown.Trigger>
+                <Button variant="tertiary" className='px-4'>
+                  {selectedCountry.code}
+                </Button>
+              </Dropdown.Trigger>
+              <Dropdown.Content>
+                {countryData.map(country => dropdownItem(country))}
+              </Dropdown.Content>
+            </Dropdown>
+          </span>
+        )
+      }
       {inputElement}
       {rightIcon && !loading && (
         <span className={theme.rightIconWrapper({ size })}>

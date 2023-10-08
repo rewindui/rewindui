@@ -35,6 +35,8 @@ export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'size' 
   withRing?: boolean;
   withKeyboard?: boolean;
   enabledPasswordToggle?: boolean;
+  enableCountryCode?: boolean;
+  setCountryCode?: (inputText:string) => void;
 }
 
 export type InputComponent = ForwardRefExoticComponent<InputProps> & {

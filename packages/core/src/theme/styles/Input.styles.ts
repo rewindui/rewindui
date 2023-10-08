@@ -109,6 +109,10 @@ const base = cva(
         true: [],
         false: [],
       },
+      enableCountryCode: {
+        true: [],
+        false: [],
+      },
     },
     compoundVariants: [
       {
@@ -516,6 +520,16 @@ const base = cva(
         size: 'lg',
         className: ['px-12'],
       },
+      {
+        enabledPasswordToggle: true,
+        withKeyboard: true,
+        className: ['pr-20'],
+      },
+      {
+        enableCountryCode: true,
+        type: 'tel',
+        className: ['pl-20'],
+      },
     ],
   }
 );
@@ -560,7 +574,7 @@ const rightIconWrapper = cva(['absolute', 'right-0', 'z-20'], {
   },
 });
 
-const keyboardIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-center', 'pr-3'], {
+const keyboardIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-center', 'pr-3', 'cursor-pointer'], {
   variants: {
     size: {
       xs: [],
@@ -571,7 +585,7 @@ const keyboardIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'it
   },
 });
 
-const eyeIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-center', 'pr-12'], {
+const eyeIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-center', 'pr-12', 'cursor-pointer'], {
   variants: {
     size: {
       xs: [],
@@ -606,6 +620,11 @@ const eyeIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-c
   }
 });
 
+const countryCodeWrapper = cva(['absolute', 'left-0', 'z-20', 'cursor-pointer'],{
+  variants: {}
+})
+
+
 const inputStyles = {
   base,
   wrapper,
@@ -613,7 +632,8 @@ const inputStyles = {
   leftIconWrapper,
   rightIconWrapper,
   keyboardIconWrapper,
-  eyeIconWrapper
+  eyeIconWrapper,
+  countryCodeWrapper
 };
 
 export { inputStyles };
