@@ -11,7 +11,9 @@ import { KeyboardIcon } from '@icons/Keyboard';
 import { EyeSlashIcon } from '@icons/EyeSlash';
 import { EyeIcon } from '@icons/Eye';
 import { countryData } from './Countries';
-import { Dropdown, Button } from '../..';
+import { default as Dropdown } from '@components/Dropdown/Dropdown'
+import { default as Button } from '@components/Button/Button'
+
 const defaultProps: Partial<InputProps> = {
   color: 'blue',
   disabled: false,

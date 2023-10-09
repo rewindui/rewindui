@@ -1,21 +1,18 @@
 {
   "name": "@idb-dab/ui-core",
   "description": "A React component library for building modern web applications using Tailwind CSS.",
-  "version": "0.17.2",
+  "version": "0.0.1",
   "license": "MIT",
-  "author": {
-    "name": "Nick Dunas",
-    "email": "nick.dunas@gmail.com"
-  },
-  "homepage": "https://rewind-ui.dev/",
+  "author": "Aaron Rumao",
   "repository": {
-    "url": "https://github.com/rewindui/rewindui.git",
     "type": "git",
+    "url": "git+https://github.com/idb-dab/exp-ui-common-library",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/rewindui/rewindui/issues"
+    "url": "https://github.com/idb-dab/exp-ui-common-library/issues"
   },
+  "homepage": "https://github.com/idb-dab/exp-ui-common-library#readme",
   "keywords": [
     "react",
     "reactjs",
@@ -86,6 +83,6 @@
     "react-dom": "^18.2.0"
   },
   "publishConfig": {
-    "access": "public"
+    "@idb-dab:registry": "https://npm.pkg.github.com"
   }
 }

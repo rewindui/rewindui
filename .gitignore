@@ -12,6 +12,7 @@ server/dist
 public/dist
 storybook-static/
 .idea
+.npmrc
 
 
 # Contentlayer
