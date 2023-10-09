@@ -11,7 +11,9 @@ export type ButtonColor =
   | 'purple'
   | 'gray'
   | 'dark'
-  | 'black';
+  | 'black'
+  | 'primary'
+  | 'secondary';
 export type ButtonRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type ButtonShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type ButtonShadowColor =

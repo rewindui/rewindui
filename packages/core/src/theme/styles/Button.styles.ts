@@ -35,6 +35,8 @@ const base = cva(
         gray: ['focus:ring-gray-100'],
         dark: ['focus:ring-gray-200'],
         black: ['focus:ring-gray-300'],
+        primary: ['focus:ring-primary-100'],
+        secondary: ['focus:ring-secondary-100']
       },
       size: {
         xs: ['text-xs'],
@@ -94,7 +96,7 @@ const base = cva(
     },
     defaultVariants: {
       tone: 'solid',
-      color: 'blue',
+      color: 'secondary',
     },
     compoundVariants: [
       {
@@ -340,6 +342,27 @@ const base = cva(
         className: ['text-white', 'bg-black', 'active:bg-black/90', 'disabled:bg-gray-800'],
       },
       {
+        tone: 'solid',
+        color: 'primary',
+        className: [
+          'text-black',
+          'bg-primary-900',
+          'disabled:opacity-20',
+          'dark:bg-primary-100'
+        ],
+      },
+      {
+        tone: 'solid',
+        color: 'secondary',
+        className: [
+          'text-white',
+          'bg-secondary-900',
+          'disabled:opacity-20',
+          'dark:text-black',
+          'dark:bg-white',
+        ],
+      },
+      {
         tone: 'light',
         color: 'white',
         className: [
@@ -488,6 +511,40 @@ const base = cva(
         ],
       },
       {
+        tone: 'light',
+        color: 'primary',
+        className: [
+          'text-primary-500',
+          'disabled:text-primary-400',
+          'disabled:hover:text-primary-400',
+          'bg-primary-100',
+          'hover:bg-primary-200',
+          'active:bg-primary-100',
+          'active:text-primary-600',
+          'hover:text-primary-800',
+          'focus:text-primary-700',
+          'disabled:bg-primary-50',
+          'disabled:hover:bg-primary-50',
+        ],
+      },
+      {
+        tone: 'light',
+        color: 'secondary',
+        className: [
+          'text-secondary-500',
+          'disabled:text-secondary-400',
+          'disabled:hover:text-secondary-400',
+          'bg-secondary-100',
+          'hover:bg-secondary-200',
+          'active:bg-secondary-100',
+          'active:text-secondary-600',
+          'hover:text-secondary-800',
+          'focus:text-secondary-700',
+          'disabled:bg-secondary-50',
+          'disabled:hover:bg-secondary-50',
+        ],
+      },
+      {
         tone: 'transparent',
         color: 'blue',
         className: [
@@ -561,6 +618,28 @@ const base = cva(
         tone: 'transparent',
         color: 'black',
         className: ['text-black', 'disabled:text-gray-700'],
+      },
+      {
+        tone: 'transparent',
+        color: 'primary',
+        className: [
+          'text-primary-500',
+          'disabled:text-primary-200',
+          'hover:text-primary-600',
+          'active:text-primary-700',
+          'dark:text-primary-100'
+        ],
+      },
+      {
+        tone: 'transparent',
+        color: 'secondary',
+        className: [
+          'text-secondary-500',
+          'disabled:text-secondary-200',
+          'hover:text-secondary-600',
+          'active:text-secondary-700',
+          'dark:text-white'
+        ],
       },
       {
         tone: 'outline',
@@ -672,6 +751,34 @@ const base = cva(
           'active:border-black',
           'border-black',
           'disabled:border-gray-500',
+        ],
+      },
+      {
+        tone: 'outline',
+        color: 'primary',
+        className: [
+          'text-primary-500',
+          'disabled:text-primary-300',
+          'disabled:hover:text-primary-300',
+          'hover:text-primary-600',
+          'active:text-primary-700',
+          'active:border-primary-700',
+          'border-primary-500',
+          'disabled:border-primary-300',
+        ],
+      },
+      {
+        tone: 'outline',
+        color: 'secondary',
+        className: [
+          'text-secondary-500',
+          'disabled:text-secondary-300',
+          'disabled:hover:text-secondary-300',
+          'hover:text-secondary-600',
+          'active:text-secondary-700',
+          'active:border-secondary-700',
+          'border-secondary-500',
+          'disabled:border-secondary-300',
         ],
       },
     ],

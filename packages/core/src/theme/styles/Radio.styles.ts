@@ -133,7 +133,7 @@ const label = cva(['peer-checked:font-bold', 'cursor-pointer'], {
     },
     disabled: {
       true: ['text-gray-500'],
-      false: ['text-gray-700'],
+      false: ['text-gray-700 dark:text-white'],
     },
   },
 });
