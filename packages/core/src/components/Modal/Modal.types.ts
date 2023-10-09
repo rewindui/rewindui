@@ -5,7 +5,7 @@ export type ModalColor = 'white' | 'gray' | 'slate' | 'zinc';
 export type ModalMode = 'fullscreen' | 'dialog';
 export type ModalPosition = 'top' | 'center' | 'bottom';
 export type ModalRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl';
-export type ModalShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+export type ModalShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | 'modal';
 export type ModalSize = 'auto' | 'sm' | 'md' | 'lg' | 'xl' | 'screen';
 
 export interface ModalProps extends ComponentPropsWithRef<'div'> {

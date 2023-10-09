@@ -28,6 +28,7 @@ const base = cva(['fixed', 'flex', 'overflow-auto', 'justify-center', 'z-[60]'],
       md: ['shadow-md'],
       lg: ['shadow-lg'],
       xl: ['shadow-xl'],
+      modal: ['shadow-modal'],
     },
     size: {
       auto: [],

@@ -22,7 +22,7 @@ const defaultProps: Partial<ModalProps> = {
   overlayOpacity: '75',
   position: 'center',
   radius: '2xl',
-  shadow: 'base',
+  shadow: 'modal',
   size: 'auto',
 };
 
