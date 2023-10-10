@@ -49,6 +49,7 @@
     "@types/jest-axe": "^3.5.5",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.1.0",
     "eslint": "^8.48.0",
     "eslint-config-next": "^13.4.19",
     "eslint-config-prettier": "^8.10.0",
@@ -66,6 +67,7 @@
     "tsc-alias": "^1.8.7",
     "tslib": "^2.6.2",
     "typescript": "^4.9.5",
+    "vite": "^4.4.11",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.28.5"
   },
