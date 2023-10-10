@@ -556,7 +556,7 @@ const leftIconWrapper = cva(['absolute', 'left-0', 'z-20'], {
   variants: {
     size: {
       xs: ['pl-2'],
-      sm: ['pl-2.5'],
+      sm: ['pl-2'],
       md: ['pl-3'],
       lg: ['pl-3'],
     },
