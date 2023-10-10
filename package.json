@@ -1,5 +1,5 @@
 {
-  "name": "@rewind-ui/rewind-ui",
+  "name": "@idb-dab/ui-common-library",
   "private": true,
   "workspaces": [
     "apps/*",

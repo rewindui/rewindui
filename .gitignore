@@ -13,6 +13,7 @@ public/dist
 storybook-static/
 .idea
 .npmrc
+coverage
 
 
 # Contentlayer

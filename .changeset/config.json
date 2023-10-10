@@ -6,6 +6,6 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["@rewind-ui/docs", "@rewind-ui/storybook", "@rewind-ui/dashboard"],
+  "ignore": ["@idb-dab/ui-common-library-docs", "@idb-dab/ui-common-library-storybook", "@idb-dab/ui-common-library-dashboard"],
   "baseBranch": "main"
 }

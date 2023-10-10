@@ -1,0 +1,5 @@
+auto-install-peers = true
+node-linker=hoisted
+//npm.pkg.github.com/:_authToken=<github_token>
+@idb-dab:registry=https://npm.pkg.github.com
+@digitalassetportal:registry=https://npm.pkg.github.com
