@@ -1,0 +1,42 @@
+{
+    "name": "@idb-dab/ui-models",
+    "version": "0.0.1",
+    "description": "Models/Types/Interfaces defined for digital UI",
+    "main": "dist/index.js",
+    "types": "dist/types/index.d.ts",
+    "readmeFilename": "README.md",
+    "files": [
+        "dist/**/*",
+        "*.md"
+    ],
+    "scripts": {
+        "start:dev": "tsc -w",
+        "build": "tsc",
+        "prepare": "npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/idb-dab/digital-ui-common-library"
+    },
+    "keywords": [
+        "library",
+        "ui",
+        "react"
+    ],
+    "author": "Aaron Rumao",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/idb-dab/digital-ui-common-library/issues"
+    },
+    "publishConfig": {
+        "@idb-dab:registry": "https://npm.pkg.github.com"
+    },
+    "homepage": "https://github.com/idb-dab/digital-ui-common-library#readme",
+    "devDependencies": {
+        "@types/node": "^20.6.5",
+        "ts-node": "^10.9.1",
+        "tsc-watch": "^6.0.4",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.2.2"
+    }
+}

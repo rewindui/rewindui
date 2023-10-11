@@ -1,0 +1,46 @@
+{
+    "name": "@idb-dab/ui-utils",
+    "version": "0.0.1",
+    "description": "Utility functions for UI",
+    "main": "dist/index.js",
+    "types": "dist/types/index.d.ts",
+    "readmeFilename": "README.md",
+    "files": [
+        "dist/**/*",
+        "*.md"
+    ],
+    "scripts": {
+        "start:dev": "tsc -w",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/idb-dab/digital-ui-common-library"
+    },
+    "keywords": [
+        "library",
+        "ui",
+        "react"
+    ],
+    "author": "Aaron Rumao",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/idb-dab/digital-ui-common-library/issues"
+    },
+    "homepage": "https://github.com/idb-dab/digital-ui-common-library#readme",
+    "devDependencies": {
+        "@types/node": "^20.6.5",
+        "ts-node": "^10.9.1",
+        "tsc-watch": "^6.0.4",
+        "tsconfig-paths": "^4.2.0",
+        "typescript": "^5.2.2"
+    },
+    "publishConfig": {
+        "@idb-dab:registry": "https://npm.pkg.github.com"
+    },
+    "dependencies": {
+        "@idb-dab/ui-models": "0.0.1",
+        "axios": "*",
+        "buffer": "6.0.3"
+    }
+}

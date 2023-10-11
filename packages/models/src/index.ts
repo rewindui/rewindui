@@ -1,0 +1,1 @@
+export { HeadersType } from './headers/headersType'
