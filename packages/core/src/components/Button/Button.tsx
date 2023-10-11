@@ -8,7 +8,7 @@ import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import { PolymorphicComponentProp, PolymorphicRef } from '../../types';
 import { ButtonComponent, ButtonProps } from './Button.types';
-import { ElementType, forwardRef, useMemo } from 'react';
+import { ElementType, cloneElement, forwardRef, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<ButtonProps> = {
@@ -48,6 +48,7 @@ const Button: ButtonComponent = forwardRef(
       tone,
       variant,
       withRing,
+      chevronIcon,
       ...additionalProps
     } = {
       ...defaultProps,
@@ -110,7 +111,16 @@ const Button: ButtonComponent = forwardRef(
       >
         {loading && <Spinner className={spinnerClasses} />}
         {children}
-        {withChevron && <ChevronDownIcon className={chevronClasses} />}
+        {withChevron &&
+          (chevronIcon ? (
+            <>
+              {cloneElement(chevronIcon, {
+                className: `${chevronClasses} ${chevronIcon.props.className}`,
+              })}
+            </>
+          ) : (
+            <ChevronDownIcon className={chevronClasses} />
+          ))}
       </Component>
     );
   }
