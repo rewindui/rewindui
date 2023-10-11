@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/idb-dab/digital-ui-common-library"
+        "url": "git+https://github.com/idb-dab/lib-ui-common"
     },
     "keywords": [
         "library",
@@ -25,9 +25,9 @@
     "author": "Aaron Rumao",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/idb-dab/digital-ui-common-library/issues"
+        "url": "https://github.com/idb-dab/lib-ui-common/issues"
     },
-    "homepage": "https://github.com/idb-dab/digital-ui-common-library#readme",
+    "homepage": "https://github.com/idb-dab/lib-ui-common#readme",
     "devDependencies": {
         "@types/node": "^20.6.5",
         "ts-node": "^10.9.1",

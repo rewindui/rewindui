@@ -1,1 +1,1 @@
-## digital-ui-common-library/models
+## lib-ui-common/models

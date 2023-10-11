@@ -1,1 +1,1 @@
-## digital-ui-common-library/utils
+## lib-ui-common/utils

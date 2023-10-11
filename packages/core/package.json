@@ -6,13 +6,13 @@
   "author": "Aaron Rumao",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idb-dab/exp-ui-common-library",
+    "url": "git+https://github.com/idb-dab/lib-ui-common",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/idb-dab/exp-ui-common-library/issues"
+    "url": "https://github.com/idb-dab/lib-ui-common/issues"
   },
-  "homepage": "https://github.com/idb-dab/exp-ui-common-library#readme",
+  "homepage": "https://github.com/idb-dab/lib-ui-common#readme",
   "keywords": [
     "react",
     "reactjs",
