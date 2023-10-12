@@ -27,18 +27,17 @@ export default async function apiConnector(requestProps: {
     const aesKey = generateAesKey();
 
     // get publicKey and uuid from crypto service
-    const cryptoResponse = await axios
-      .get(
-        `${process.env.CRYPTO_BASE_URL ||
-        process.env.NEXT_PUBLIC_CRYPTO_BASE_URL ||
-        'https://api-gateway.digital.idb-digitallabs.com/crypto'
-        }/${process.env.CRYPTO_SERVICE_URL || process.env.NEXT_PUBLIC_CRYPTO_SERVICE_URL || 'api/crypto/v1/keys/get'}`
-      )
-      .then((res) =>
-        JSON.parse(Buffer.from(res.data, 'base64').toString())
-      )
-      .catch((err) => {
-        throw err;
+    const cryptoResponse = await fetch(
+      'https://api-gateway.digital.idb-digitallabs.com/crypto/api/crypto/v1/keys/get',
+      {
+        method: 'GET',
+        headers: requestProps.headers,
+      }
+    )
+      .then((res) => res.json())
+      .then((response) => JSON.parse(Buffer.from(response.data, 'base64').toString()))
+      .catch((error) => {
+        throw error;
       });
     const sessionUUID = structuredClone(cryptoResponse.uuid);
     const publicKey = structuredClone(cryptoResponse.publicKey);
