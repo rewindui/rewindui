@@ -11,8 +11,8 @@ import { KeyboardIcon } from '@icons/Keyboard';
 import { EyeSlashIcon } from '@icons/EyeSlash';
 import { EyeIcon } from '@icons/Eye';
 import { countryData } from './Countries';
-import { default as Dropdown } from '@components/Dropdown/Dropdown'
-import { default as Button } from '@components/Button/Button'
+import { default as Dropdown } from '@components/Dropdown/Dropdown';
+import { default as Button } from '@components/Button/Button';
 
 const defaultProps: Partial<InputProps> = {
   color: 'blue',
@@ -27,6 +27,7 @@ const defaultProps: Partial<InputProps> = {
   withKeyboard: false,
   enabledPasswordToggle: true,
   enableCountryCode: true,
+  validationMessage: '',
 };
 
 const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInputElement>) => {
@@ -49,6 +50,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     enabledPasswordToggle,
     enableCountryCode,
     setCountryCode,
+    validationMessage,
     ...additionalProps
   } = {
     ...defaultProps,
@@ -78,7 +80,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
         size,
         tone,
         type,
-        validation,
+        validation: validationMessage === '' ? validation : 'invalid',
         withRing,
         withKeyboard,
         enabledPasswordToggle,
@@ -99,6 +101,7 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
     tone,
     type,
     validation,
+    validationMessage,
     withRing,
     withKeyboard,
     enabledPasswordToggle,
@@ -107,23 +110,23 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
 
 
   useEffect(() => {
-    if(props.setCountryCode){
+    if (props.setCountryCode) {
       props.setCountryCode(selectedCountry.code);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCountry]);
 
   const togglePassword = () => setShowText(!showText);
 
   const getActiveType = () => {
-    if (showText)
-      return 'text';
+    if (showText) return 'text';
     return 'password';
-  }
+  };
 
   const handleCountryCodeSelection = (country: typeof selectedCountry) => {
     let selectedCountry = { ...country };
     setSelectedCountry(selectedCountry);
-  }
+  };
 
   const inputElement = (
     <input
@@ -141,66 +144,69 @@ const Input: InputComponent = forwardRef((props: InputProps, ref?: Ref<HTMLInput
       <Dropdown.Item
         key={`country-item-${country.code}`}
         onClick={(event) => handleCountryCodeSelection(country)}
-        className='hover:bg-primary-100 flex cursor-pointer flex-row items-center gap-2 p-2.5 border-b-2 border-solid border-gray-200 '>
+        className="hover:bg-primary-100 flex cursor-pointer flex-row items-center gap-2 p-2.5 border-b-2 border-solid border-gray-200 "
+      >
         {country.code} - {country.name}
       </Dropdown.Item>
     );
-  }
+  };
 
   return hasLeftIcon ||
     hasRightIcon ||
     loading ||
     withKeyboard ||
+    validationMessage ||
     (type == 'password' && enabledPasswordToggle) ||
     (type == 'tel' && enableCountryCode) ? (
-    <div className={theme.wrapper()}>
-      {leftIcon && (
-        <span className={theme.leftIconWrapper({ size })}>
-          {cloneElement(leftIcon, {
-            className: theme.icon({ tone, size, className: leftIcon.props.className }),
-          })}
-        </span>
-      )}
-      {
-        type == 'tel' && enableCountryCode && (
+    <div className="flex flex-col">
+      <div className={theme.wrapper()}>
+        {leftIcon && (
+          <span className={theme.leftIconWrapper({ size })}>
+            {cloneElement(leftIcon, {
+              className: theme.icon({ tone, size, className: leftIcon.props.className }),
+            })}
+          </span>
+        )}
+        {type == 'tel' && enableCountryCode && (
           <span className={theme.countryCodeWrapper({})}>
             <Dropdown>
               <Dropdown.Trigger>
-                <Button variant="tertiary" className='px-4'>
+                <Button variant="tertiary" className="px-4">
                   {selectedCountry.code}
                 </Button>
               </Dropdown.Trigger>
               <Dropdown.Content>
-                {countryData.map(country => dropdownItem(country))}
+                {countryData.map((country) => dropdownItem(country))}
               </Dropdown.Content>
             </Dropdown>
           </span>
-        )
-      }
-      {inputElement}
-      {rightIcon && !loading && (
-        <span className={theme.rightIconWrapper({ size })}>
-          {cloneElement(rightIcon, {
-            className: theme.icon({ tone, size, className: rightIcon.props.className }),
-          })}
-        </span>
-      )}
-      {loading && (
-        <span className={theme.rightIconWrapper({ size })}>
-          <Spinner size={size} color="gray" />
-        </span>
-      )}
-      {
-        type == 'password' && enabledPasswordToggle && (
+        )}
+        {inputElement}
+        {rightIcon && !loading && (
+          <span className={theme.rightIconWrapper({ size })}>
+            {cloneElement(rightIcon, {
+              className: theme.icon({ tone, size, className: rightIcon.props.className }),
+            })}
+          </span>
+        )}
+        {loading && (
+          <span className={theme.rightIconWrapper({ size })}>
+            <Spinner size={size} color="gray" />
+          </span>
+        )}
+        {type == 'password' && enabledPasswordToggle && (
           <span className={theme.eyeIconWrapper({ size, withKeyboard })} onClick={togglePassword}>
             {showText ? <EyeSlashIcon /> : <EyeIcon />}
           </span>
-        )
-      }
-      {withKeyboard && (
-        <span className={theme.keyboardIconWrapper({ size })}>
-          <KeyboardIcon />
-        </span>
+        )}
+        {withKeyboard && (
+          <span className={theme.keyboardIconWrapper({ size })}>
+            <KeyboardIcon />
+          </span>
+        )}
+      </div>
+      {validationMessage?.trim() !== '' && (
+        <div className={theme.validationMessage({ size })}>{validationMessage}</div>
       )}
     </div>
   ) : (

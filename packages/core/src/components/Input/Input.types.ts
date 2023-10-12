@@ -37,6 +37,7 @@ export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'size' 
   enabledPasswordToggle?: boolean;
   enableCountryCode?: boolean;
   setCountryCode?: (inputText:string) => void;
+  validationMessage?: string;
 }
 
 export type InputComponent = ForwardRefExoticComponent<InputProps> & {

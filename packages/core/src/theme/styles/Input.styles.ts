@@ -620,10 +620,20 @@ const eyeIconWrapper = cva(['absolute', 'inset-y-0', 'right-0', 'flex', 'items-c
   }
 });
 
-const countryCodeWrapper = cva(['absolute', 'left-0', 'z-20', 'cursor-pointer'],{
+const countryCodeWrapper = cva(['absolute', 'left-0', 'z-20', 'cursor-pointer'], {
   variants: {}
 })
 
+const validationMessage = cva(['text-red-500', 'pt-2'], {
+  variants: {
+    size: {
+      xs: ['text-[0.625rem]'],
+      sm: ['text-xs'],
+      md: ['text-xs'],
+      lg: ['text-sm'],
+    },
+  }
+})
 
 const inputStyles = {
   base,
@@ -633,7 +643,8 @@ const inputStyles = {
   rightIconWrapper,
   keyboardIconWrapper,
   eyeIconWrapper,
-  countryCodeWrapper
+  countryCodeWrapper,
+  validationMessage,
 };
 
 export { inputStyles };
