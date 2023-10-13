@@ -1,7 +1,7 @@
 {
   "name": "@idb-dab/ui-core",
   "description": "A React component library for building modern web applications using Tailwind CSS.",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "license": "MIT",
   "author": "Aaron Rumao",
   "repository": {
