@@ -1,8 +1,8 @@
-export { encryptPayload } from './crypto/encryptPayload';
-export { decryptPayload } from './crypto/decryptPayload';
-export { generateAesKey } from './crypto/helpers/generateAesKey';
+export { encryptPayload } from './api-connector/helpers/encrypt-payload';
+export { decryptPayload } from './api-connector/helpers/decrypt-payload';
+export { generateAesKey } from './api-connector/helpers/generate-aes-key';
 
-import apiConnector from './apiConnector/apiConnector';
-import apiConnectorOld from './apiConnector/apiConnectorOld';
+import apiConnector from './api-connector/api-connector';
+import apiConnectorOld from './api-connector/api-connector-old';
 
 export { apiConnector, apiConnectorOld };

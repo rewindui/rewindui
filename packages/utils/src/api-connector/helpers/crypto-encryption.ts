@@ -1,5 +1,5 @@
 import * as crypto from 'crypto'
-import { encryptAesKey } from './encryptAesKey';
+import { encryptAesKey } from './encrypt-aes-key';
 import { Buffer } from 'buffer';
 
 /**

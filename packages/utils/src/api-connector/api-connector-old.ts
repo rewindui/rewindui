@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { generateAesKey } from '../crypto/helpers/generateAesKey';
-import { encryptPayload } from '../crypto/encryptPayload';
-import { decryptPayload } from '../crypto/decryptPayload';
+import { generateAesKey } from './helpers/generate-aes-key';
+import { encryptPayload } from './helpers/encrypt-payload';
+import { decryptPayload } from './helpers/decrypt-payload';
 import { HeadersType } from '@idb-dab/ui-models';
 
 /**

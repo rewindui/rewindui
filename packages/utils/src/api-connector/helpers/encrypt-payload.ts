@@ -1,4 +1,4 @@
-import { cryptoEncryption } from './helpers/cryptoEncryption';
+import { cryptoEncryption } from './crypto-encryption';
 import { Buffer } from 'buffer';
 
 /**

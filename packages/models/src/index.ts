@@ -1,1 +1,1 @@
-export { HeadersType } from './headers/headersType'
+export { HeadersType } from './headers.type'
