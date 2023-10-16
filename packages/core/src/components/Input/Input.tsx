@@ -5,7 +5,8 @@ import { useInputGroupContext } from '@components/InputGroup/InputGroup.context'
 import { usePropId } from '@utils/usePropId';
 import { cloneElement, forwardRef, Ref, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { Spinner, useComponentTheme } from '../..';
+import { Spinner } from '@components/Spinner';
+import { useComponentTheme } from '@theme/theme.context';
 
 const defaultProps: Partial<InputProps> = {
   color: 'dark',

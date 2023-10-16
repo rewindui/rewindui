@@ -1,5 +1,6 @@
 'use client';
-import { Toast, ToastProps } from '@components/Toast';
+import { default as Toast } from '@components/Toast/Toast';
+import { ToastProps } from '@components/Toast';
 import { toastActionEnum, toastReducer } from '@components/Toast/ToastContainer/toast.reducer';
 import {
   ToastContainerComponent,

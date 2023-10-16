@@ -56,7 +56,12 @@ const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
       offset,
     });
 
+    const controlsId = `${id}-controls`;
+    const labelledbyId = `${id}-labelledby`;
+
     const contextValue: PopoverContext = {
+      controlsId,
+      labelledbyId,
       x,
       y,
       reference,
@@ -79,8 +84,6 @@ const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
         <div
           id={id}
           ref={ref}
-          role="dialog"
-          aria-modal={true}
           className={className}
           {...additionalProps}
         >

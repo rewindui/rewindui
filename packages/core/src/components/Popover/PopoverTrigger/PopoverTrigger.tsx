@@ -9,12 +9,16 @@ import { useMergeRefs } from '@floating-ui/react';
 const PopoverTrigger: PopoverTriggerComponent = forwardRef<HTMLDivElement, PopoverTriggerProps>(
   (props: PopoverTriggerProps, ref?: ForwardedRef<HTMLDivElement>) => {
     const { children } = props;
-    const { reference, getReferenceProps } = usePopoverContext();
+    const { controlsId, labelledbyId, reference, getReferenceProps, open } = usePopoverContext();
     const child = Children.only(children) as ReactElement;
     const childRef = useMergeRefs([reference, ref || null]);
 
     const triggerElement = cloneElement(child, {
       ref: childRef,
+      id: labelledbyId,
+      'aria-haspopup': 'dialog',
+      'aria-controls': controlsId,
+      'aria-expanded': open,
       ...child.props,
       ...getReferenceProps,
     });

@@ -81,7 +81,7 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
     }, [open]);
 
     const child = Children.only(children) as ReactElement;
-    const childRef = useMergeRefs([reference, ref || null]);
+    const tooltipRef = useMergeRefs([floating, ref || null]);
 
     const classes = useMemo(() => {
       return twMerge(
@@ -101,31 +101,32 @@ const Tooltip: TooltipComponent = forwardRef<HTMLDivElement, TooltipProps>(
     const tooltipElement = !hidden && (
       <div
         id={id}
-        ref={floating}
+        ref={tooltipRef}
         className={classes}
         role="dialog"
         aria-modal="true"
         aria-hidden={!open}
         style={{
           position: strategy,
-          top: y ?? 0,
-          left: x ?? 0,
+          top: y && y > 0 && !isNaN(y) && isFinite(y) ? y : 0,
+          left: x && x > 0 && !isNaN(x) && isFinite(x) ? x : 0,
           visibility: x == null ? 'hidden' : 'visible',
         }}
-        {...getFloatingProps}
       >
-        <FloatingArrow
-          className={theme.arrow({ tone, color })}
-          ref={arrowRef}
-          width={8}
-          height={4}
-          context={context}
-        />
+        {context.x && context.y && (
+          <FloatingArrow
+            className={theme.arrow({ tone, color })}
+            ref={arrowRef}
+            width={8}
+            height={4}
+            context={context}
+          />
+        )}
         {label}
       </div>
     );
     const triggerElement = cloneElement(child, {
-      ref: childRef,
+      ref: reference,
       ...child.props,
       ...getReferenceProps,
     });

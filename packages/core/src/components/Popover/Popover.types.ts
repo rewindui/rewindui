@@ -13,10 +13,12 @@ export interface PopoverContext<RT extends ReferenceType = ReferenceType> {
   arrowRef?: Ref<HTMLSpanElement>;
   color?: PopoverColor;
   context: FloatingContext<RT>;
+  controlsId: string;
   floating: (node: HTMLElement | null) => void;
   getFloatingProps: Record<string, unknown>;
   getReferenceProps: Record<string, unknown>;
   initiallyOpen?: boolean;
+  labelledbyId: string;
   open?: boolean;
   placement?: PopoverPlacement;
   radius?: PopoverRadius;

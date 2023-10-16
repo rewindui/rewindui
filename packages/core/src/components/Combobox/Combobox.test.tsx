@@ -1,10 +1,9 @@
-import { Alert } from '@components/Alert';
 import { axe, toHaveNoViolations } from 'jest-axe';
 import * as React from 'react';
 import { createRef } from 'react';
 import { act } from 'react-dom/test-utils';
 import { describe, it } from 'vitest';
-import { render, RenderResult, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { Combobox, ComboboxGroupType } from '.';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';

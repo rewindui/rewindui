@@ -21,8 +21,9 @@ const PopoverContent: PopoverContentComponent = forwardRef<HTMLDivElement, Popov
     } = {
       ...props,
     };
-    const id = usePropId(props.id);
     const {
+      controlsId,
+      labelledbyId,
       arrowRef,
       color,
       context,
@@ -81,13 +82,13 @@ const PopoverContent: PopoverContentComponent = forwardRef<HTMLDivElement, Popov
     );
     const popoverElement = !hidden && (
       <div
-        id={id}
+        id={controlsId}
         ref={floating}
         className={classes}
         style={{
           position: strategy,
-          top: y ?? 0,
-          left: x ?? 0,
+          top: y && y > 0 && !isNaN(y) && isFinite(y) ? y : 0,
+          left: x && x > 0 && !isNaN(x) && isFinite(x) ? x : 0,
           visibility: x == null ? 'hidden' : 'visible',
         }}
         {...getFloatingProps}
@@ -99,7 +100,15 @@ const PopoverContent: PopoverContentComponent = forwardRef<HTMLDivElement, Popov
     );
 
     return (
-      <div ref={ref} className={className} aria-hidden={!open}>
+      <div
+        ref={ref}
+        className={className}
+        role="dialog"
+        aria-modal={true}
+        aria-expanded={open}
+        aria-labelledby={labelledbyId}
+        aria-hidden={!open}
+      >
         {withinPortal ? <FloatingPortal>{popoverElement}</FloatingPortal> : popoverElement}
       </div>
     );
