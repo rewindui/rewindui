@@ -1,17 +1,37 @@
-import * as React from 'react';
-
-export const SuccessIcon = () => (
+export const SuccessIcon = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    style={{ flexShrink: 0 }}
-    height="2.25rem"
-    viewBox="0 0 512 512"
+    width="85"
+    height="85"
+    className={className}
+    viewBox="0 0 85 85"
   >
-    <path d="M369 175c9.4 9.4 9.4 24.6 0 33.9L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0z" />
-    <path
-      style={{ opacity: 0.25 }}
-      d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+    <image
+      id="img_0"
+      x="0"
+      y="0"
+      width="85"
+      height="85"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUiIGhlaWdodD0iODUiIHZpZXdCb3g9IjAgMCA4NSA4NSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDIuOTI5NyIgY3k9IjQyLjE1MjgiIHI9IjQwIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjMUFDMjlGIiBzdHJva2Utd2lkdGg9IjQiLz4KPC9zdmc+Cg=="
+      opacity="1"
+    />
+    <image
+      id="img_1"
+      x="10.5"
+      y="9.5"
+      width="66"
+      height="66"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjYiIGhlaWdodD0iNjYiIHZpZXdCb3g9IjAgMCA2NiA2NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzIuNTQ2OSIgY3k9IjMyLjY1MjgiIHI9IjMyLjUiIGZpbGw9IiMxQUMyOUYiLz4KPC9zdmc+Cg=="
+      opacity="1"
+    />
+    <image
+      id="img_2"
+      x="26"
+      y="29"
+      width="34"
+      height="28"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAzNCAyOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMuMDQ2ODggMTYuMDAyNkwxMC45NDQ3IDIzLjkxODRMMzEuNzE2NiAzLjE1MjgzIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjQuNDkxMjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K"
+      opacity="1"
     />
   </svg>
 );
