@@ -24,8 +24,8 @@ export const ProgressCode = (props: any) => {
     size !== defaultProps.size ? `size="${size}"` : null,
     `value="${value}"`,
     striped !== defaultProps.striped ? `striped={${striped}}` : null,
-    label ? `label={${label}}` : null,
-    description ? `description={${description}}` : null,
+    label ? `label="${label}"` : null,
+    description ? `description="${description}"` : null,
   ].filter(Boolean);
 
   if (attributes.length) {

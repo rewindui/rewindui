@@ -113,7 +113,7 @@ export const Hero = () => {
         <div className="absolute bottom-0 h-[10rem] w-full z-40 bg-gradient-to-t from-neutral-900"></div>
         <div className="flex md:items-end -top-10 left-6 md:-left-40 md:bottom-32 absolute">
           <span className="italic text-slate-600">Give it a go</span>
-          <Image
+          <img
             className="h-10 ml-2 mt-2 md:mt-0 md:mb-2 rotate-90 md:rotate-0"
             src="images/curved-arrow.svg"
             alt="Curved arrow pointing to configurator"
