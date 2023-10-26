@@ -1,0 +1,9 @@
+---
+const props = Astro.props;
+---
+<a
+  {...props}
+  target={props.href && props.href.startsWith('http') ? '_blank' : undefined}
+  class="text-purple-600 underline decoration-2 decoration-solid decoration-purple-500">
+  <slot />
+</a>

@@ -1,0 +1,34 @@
+---
+group: data-display
+title: Accordion
+description: A collapsible list for displaying and organizing information.
+intro: The Accordion component is a versatile and easy-to-use component that allows you to display a list of headers, each of which can be clicked to expand or collapse the associated content. This makes it a great choice for organizing content in a compact and user-friendly way.
+source: Accordion
+theme: Accordion.styles.ts
+variants: Accordion.variants.ts
+storybook: accordion--default
+---
+
+# Import
+---
+Import the `Accordion` component using the following import statement.
+
+# Colors
+---
+The `Accordion` component comes with four colors: `white`, `gray`, `zinc` and `slate`.
+
+```tsx
+type AccordionShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+# Accessibility
+---
+The `Accordion` component adheres to the [WAI-ARIA Accordion Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/).
+
+## Keyboard interactions
+
+| Key                | Description                                   |
+|:-------------------|:----------------------------------------------|
+| `Enter` or `Space` | Toggles the state of focused header           |
+| `Tab`              | Moves focus to the next focusable element     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element |

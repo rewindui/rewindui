@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+const componentEntries = await getCollection('components');
+---
+<>
+  <h3>This is the landing page</h3>
+  <ul>
+    {componentEntries.map(componentEntry =>
+      <li><a href={`/components/${componentEntry.slug}`}>{componentEntry.data.title}</a></li>)}
+  </ul>
+</>

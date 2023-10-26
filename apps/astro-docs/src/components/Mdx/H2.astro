@@ -1,0 +1,11 @@
+---
+const props = Astro.props;
+---
+<h2 {...props} class="group mt-8 text-2xl text-neutral-700 font-semibold scroll-mt-[1.25rem]">
+  <a
+    href={`#${props.id}`}
+    class="group-hover:before:visible before:invisible before:content-['#'] before:text-purple-200 before:mr-1 before:-ml-5"
+  >
+    <slot />
+  </a>
+</h2>

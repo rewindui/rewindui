@@ -1,0 +1,16 @@
+---
+import { Image } from 'astro:assets';
+import logo from '@public/rewind.svg';
+import json from '@rewind-ui/core/package.json';
+---
+<div class="flex gap-2 mr-6">
+  <Image src={logo} alt="Rewind-UI" width="45" height="45" />
+
+  <div class="flex flex-col">
+    <div class="flex gap-2 justify-between items-center">
+      <span class="font-bold text-neutral-800 text-base sm:text-lg md:text-xl lg:text-xl">Rewind-UI</span>
+      <span class="p-1 border border-r-2 border-b-2 rounded text-xs text-purple-500 border-purple-200 bg-purple-50">v{json.version}</span>
+    </div>
+    <span class="font-light text-sm whitespace-nowrap text-neutral-500">Effortless user interfaces</span>
+  </div>
+</div>

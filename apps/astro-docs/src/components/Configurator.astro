@@ -1,0 +1,11 @@
+---
+import { getHighlighter } from 'shiki';
+let html = '';
+await getHighlighter({
+  theme: 'github-dark',
+})
+.then(highlighter => {
+  html = highlighter.codeToHtml(`import { Button } from '@rewind-ui/core';`, { lang: 'tsx' })
+})
+---
+<div class="text-[0.85rem] px-6 py-5 bg-[#24292e] rounded-md shadow-md shadow-gray-400/75 mt-5 font-mono font-normal antialiased" set:html={html} />

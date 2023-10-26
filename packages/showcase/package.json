@@ -1,0 +1,52 @@
+{
+  "name": "@rewind-ui/showcase",
+  "license": "MIT",
+  "author": {
+    "name": "Nick Dunas",
+    "email": "nick.dunas@gmail.com"
+  },
+  "homepage": "https://rewind-ui.dev/",
+  "repository": {
+    "url": "https://github.com/rewindui/rewindui.git",
+    "type": "git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/rewindui/rewindui/issues"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@rewind-ui/core": "workspace:*",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "eslint": "^8.48.0",
+    "eslint-config-next": "^13.4.19",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-config-turbo": "^1.10.13",
+    "eslint-plugin-react": "7.29.4",
+    "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^7.2.0",
+    "typescript": "^4.9.5"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

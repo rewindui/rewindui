@@ -1,0 +1,61 @@
+---
+group: getting-started
+order: 2
+title: Theming
+description: Easily customise the look and feel of Rewind-UI components
+---
+import { Callout } from "@components/Callout";
+
+Rewind-UI theming system is built on top of [Class Variance Authority](https://cva.style/docs) library. Please make sure you are familiar with the CVA library before proceeding.
+
+# Customization
+---
+The default theme can be easily customized by passing the new theme object to the `ThemeProvider` component.
+
+To store your custom styles it is suggested to create a `theme` directory into your project containing a `styles` subdirectory.
+
+```
+public
+src
+theme
+├── styles
+│   ├── Button.styles.ts
+```
+
+Then, you can copy all or some of the default styles from the [@rewind-ui/core](https://github.com/rewindui/rewindui/tree/main/packages/core/src/theme/styles) package and customize them as you wish. Finally you can import them into your `App.tsx` file and pass them to the `ThemeProvider` component.
+
+<Callout>Don't forget to adjust your tailwind.config.js file to include the new theme/styles files!</Callout>
+
+```tsx
+import {
+  Button,
+  ThemeContextType,
+  useTheme,
+  ThemeProvider,
+} from '@rewind-ui/core';
+import './App.css'
+import { buttonStyles } from './theme/styles/Button.styles';
+
+function App() {
+  const defaultTheme = useTheme();
+
+  const themeContext: ThemeContextType = {
+    theme: {
+      components: {
+        ...defaultTheme.components,
+        Button: buttonStyles,
+      }
+    },
+  };
+
+  return (
+    <div className="App">
+      <ThemeProvider value={themeContext}>
+        <Button color="blue">Blue</Button>
+      </ThemeProvider>
+    </div>
+  );
+}
+
+export default App;
+```

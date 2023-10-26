@@ -1,0 +1,8 @@
+---
+const props = Astro.props;
+---
+<div class="w-full overflow-auto border-collapse border-dashed border border-gray-200 rounded-lg my-6">
+  <table {...props} class="table-auto w-full overflow-hidden bg-white text-base">
+    <slot />
+  </table>
+</div>

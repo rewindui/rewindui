@@ -1,0 +1,55 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+import Aside from '@components/Aside.astro';
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="overflow-y-auto bg-neutral-50">
+		<div class="flex justify-evenly w-full">
+			<div class="min-w-[18rem]">
+				<Aside />
+			</div>
+			<!--<div class="hidden md:block min-h-screen relative bg-neutral-50 border-r-2 border-neutral-100">-->
+			<!--</div>-->
+
+			<div class="basis-full min-h-screen bg-white border-neutral-100 border-l-2 -ml-0.5">
+				<slot />
+			</div>
+
+			<div class="hidden xl:block min-w-[18rem] min-h-screen relative bg-white">
+				<slot name="toc" />
+			</div>
+		</div>
+	</body>
+</html>
+
+<style is:global>
+	.expressive-code {
+		margin-top: 1rem;
+	}
+	.bg-grid {
+		background-color: #F5F5F5;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='100%25' height='100%25'%3E%3Cdefs%3E%3Cpattern id='p' width='100' height='100' patternUnits='userSpaceOnUse' patternTransform='rotate(45) scale(0.8)'%3E%3Cg id='a' data-color='fill' fill='%23FFF'%3E%3Cpath d='M50-50h100V50H50z'%3E%3C/path%3E%3Cpath opacity='.5' d='M-50-50V50H50v100h100V-50z'%3E%3C/path%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23p)' width='100%25' height='100%25'%3E%3C/rect%3E%3C/svg%3E");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

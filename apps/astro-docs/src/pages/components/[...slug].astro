@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import Docs from '../../layouts/Docs.astro';
+import H1 from '@components/Mdx/H1.astro';
+import H2 from '@components/Mdx/H2.astro';
+import H3 from '@components/Mdx/H3.astro';
+import H4 from '@components/Mdx/H4.astro';
+import P from '@components/Mdx/P.astro';
+import Ahref from '@components/Mdx/Ahref.astro';
+import Ul from '@components/Mdx/Ul.astro';
+import Code from '@components/Mdx/Code.astro';
+import Hr from '@components/Mdx/Hr.astro';
+import Table from '@components/Mdx/Table.astro';
+import Tbody from '@components/Mdx/Tbody.astro';
+import Thead from '@components/Mdx/Thead.astro';
+import Tr from '@components/Mdx/Tr.astro';
+import Th from '@components/Mdx/Th.astro';
+import Td from '@components/Mdx/Td.astro';
+import { TOC } from '@components/TOC';
+import { ComponentLinks } from '@components/ComponentLinks';
+export async function getStaticPaths() {
+  const components = await getCollection('components');
+  return components.map((entry) => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content, headings } = await entry.render();
+---
+<Docs title={entry.data.title}>
+  <div class="max-w-[72rem] mx-auto pt-5 pb-10 px-10">
+    <div class="flex flex-col gap-y-4 mb-8">
+      <div class="flex items-center">
+        <h1 class="text-3xl md:text-5xl font-extrabold text-neutral-800">{entry.data.title}</h1>
+        {entry.data.polymorphic && (
+          <div class="px-2 py-1 ml-3 text-xs border-r-2 border-b-2 border-fuchsia-900 rounded text-white bg-gradient-to-r from-purple-500 to-fuchsia-900 shadow shadow-fuchsia-200">
+            polymorphic
+          </div>
+        )}
+      </div>
+      <p class="text-lg md:text-xl leading-7 text-neutral-600">{entry.data.description}</p>
+      <p class="text-neutral-800">{entry.data.intro}</p>
+      <ComponentLinks source={entry.data.source} theme={entry.data.theme} variants={entry.data.variants} />
+    </div>
+
+    <Content components={{
+      h1: H1,
+      h2: H2,
+      h3: H3,
+      h4: H4,
+      p: P,
+      a: Ahref,
+      ul: Ul,
+      code: Code,
+      hr: Hr,
+      table: Table,
+      tbody: Tbody,
+      thead: Thead,
+      tr: Tr,
+      th: Th,
+      td: Td,
+    }} />
+  </div>
+
+  <div slot="toc" class="sticky top-0 py-5">
+    <TOC client:load headings={headings} />
+  </div>
+</Docs>

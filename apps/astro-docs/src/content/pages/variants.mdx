@@ -1,0 +1,87 @@
+---
+group: getting-started
+order: 3
+title: Variants
+description: A convenient way to apply a set of properties that are commonly used together
+---
+Rewind-UI provides a wide range of customization options, allowing the developer to adjust the look and feel of each component to suit their needs. To make this process easier, we've included a set of pre-defined attributes called variants, which allow you to quickly apply a set of commonly-used styles to your components.
+
+Each variant is a pre-selected set of attributes that are designed to work together to create a specific look and feel. For example, you might use the "primary" variant to apply a set of styles that make your button stand out as the primary action on your page.
+
+Using variants can save you time and effort, as you won't need to adjust multiple attributes individually for common use cases. Instead, you can simply apply the appropriate variant to your component, and the styles will be automatically applied.
+
+Of course, if you need to customize your components further, you can still adjust individual attributes as needed.
+
+# Usage
+---
+To use a variant, simply add the appropriate variant name to your component. For example, to apply the "primary" variant to the `Button` component, you would set the `variant` attribute to `primary`:
+
+```tsx
+<View>
+  <Button variant="primary">Primary</Button>
+</View>
+```
+
+The above variant is equivalent to the following set of attributes:
+
+```tsx
+<View>
+  <Button color="purple" tone="solid">Primary</Button>
+</View>
+```
+
+All variant properties can be overridden by setting the corresponding attribute on the component. For example, to change the color of the button, you can set the `color` attribute:
+
+```tsx
+<View>
+  <Button variant="primary" color="blue">Blue primary</Button>
+</View>
+```
+
+# Customization
+---
+You can customize the variants that are available to your application by passing a set of variables on the `VariantProvider` component using the `value` property.
+
+To store your custom variants it is suggested to create a `theme` directory into your project containing a `variants` subdirectory.
+
+```
+public
+src
+theme
+├── variants
+│   ├── Button.variants.ts
+```
+
+Then, you can copy all the variants from the [@rewind-ui/core](https://github.com/rewindui/rewindui/tree/main/packages/core/src/theme/variants) package and customize them as you wish. Finally you can import them into your `App.tsx` file and pass them to the `VariantProvider` component.
+
+```tsx
+import {
+  Button,
+  VariantProvider,
+  VariantContextType,
+  useVariant,
+} from '@rewind-ui/core';
+import { buttonVariants } from './theme/variants/Button.variants';
+
+function App() {
+  const defaultVariant = useVariant();
+  const variantContext: VariantContextType = {
+    variant: {
+      components: {
+        ...defaultVariant.components,
+        Button: buttonVariants,
+      }
+    }
+  };
+
+  return (
+    <div className="App">
+      <VariantProvider value={variantContext}>
+        <Button variant="primary">Primary</Button>
+      </VariantProvider>
+    </div>
+  );
+}
+
+export default App;
+```

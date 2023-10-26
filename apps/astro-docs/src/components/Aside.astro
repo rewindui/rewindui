@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content'
+import Logo from '@components/Logo.astro'
+import { MenuItem } from '@components/MenuItem';
+
+const pages = await getCollection('pages')
+const components = await getCollection('components')
+const icons = {
+
+}
+const groups = [
+  {
+    entries: pages.sort((a, b) => a.data.order - b.data.order),
+    path: '/',
+    type: 'page',
+    sections: [
+      {
+        label: 'Getting started',
+        slug: 'getting-started',
+      },
+    ],
+  },
+  {
+    entries: components,
+    path: '/components/',
+    type: 'component',
+    sections: [
+      {
+        label: 'Data display',
+        slug: 'data-display',
+      },
+      {
+        label: 'Overlay',
+        slug: 'overlay',
+      },
+      {
+        label: 'Forms',
+        slug: 'forms',
+      }
+    ],
+  },
+];
+const activeSlug = Astro.params.slug;
+---
+<aside class="py-6 pl-6 sticky top-0 flex w-full">
+  <div class="flex flex-col gap-5 w-full">
+    <Logo />
+
+    <div class="flex flex-col overflow-y-auto gap-5">
+      {groups.map(group => (
+        group.sections.map(section => {
+          const entries = group.entries.filter(entry => entry.data.group === section.slug)
+          return (
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center border-b border-neutral-200 py-2 mb-2 mr-1 border-dashed">
+                <h2 class="text-base leading-normal tracking-normal font-semibold text-neutral-600">{section.label}</h2>
+              </div>
+              <ul class="flex flex-col text-sm">
+                {entries.map(entry => (
+                  <MenuItem
+                    title={entry.data.title}
+                    active={activeSlug === entry.slug}
+                    href={`${group.path}${entry.slug}`}
+                    slug={entry.slug}
+                    type={group.type}
+                  />
+                ))}
+              </ul>
+            </div>
+          )
+        })
+      ))}
+    </div>
+  </div>
+</aside>

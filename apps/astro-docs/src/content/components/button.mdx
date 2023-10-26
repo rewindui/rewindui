@@ -1,0 +1,134 @@
+---
+group: forms
+title: Button
+description: A clickable element that can function as either a hyperlink or a regular button.
+intro: The Button component is a versatile component that can function as either a regular button or an anchor link element. It can be configured in a variety of ways by adjusting properties such as size, color and more.
+source: Button
+theme: Button.styles.ts
+variants: Button.variants.ts
+storybook: button--default
+polymorphic: true
+---
+import { ButtonShowcase } from '@rewind-ui/showcase';
+import { ButtonConfigurator } from '@components/configurators/ButtonConfigurator';
+
+<ButtonConfigurator client:load />
+
+# Import
+---
+Import the `Button` component using the following import statement.
+
+```tsx
+import { Button } from '@rewind-ui/core';
+```
+
+# Variants
+---
+The `Button` component comes with a number of pre-defined variants that can be used to change the appearance of the component. The variants can be used by passing the variant name as a prop to the component. A variant is basically a pre-set set of properties. Read more about variants [here](https://rewind-ui.dev/variants).
+
+Available variants are: `primary`, `secondary`, `tertiary`, `link`, `danger`, `success`, `warning` and `info`.
+
+<ButtonShowcase client:load showcase="variants">Test</ButtonShowcase>
+
+```tsx ins="variant="primary"" ins="variant="danger"" ins={4}
+<Button variant="primary">Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="tertiary">Tertiary</Button>
+<Button variant="link">Link</Button>
+<Button variant="success">Success</Button>
+<Button variant="danger">Danger</Button>
+<Button variant="warning">Warning</Button>
+<Button variant="info">Info</Button>
+```
+
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+
+[Link](https://rewind-ui.dev)
+
+
+# API Reference
+---
+## Properties
+All known button properties (e.g. type="submit") can be used on the `Button` component. Furthermore, the following properties are also supported:
+
+| Prop        | Type                | Description                                                                                | Default     |
+|:------------|:--------------------|:-------------------------------------------------------------------------------------------|:------------|
+| animation   | `ButtonAnimation`   | Sets the animation type                                                                    | `none`      |
+| color       | `ButtonColor`       | Sets the color                                                                             | `dark`      |
+| disabled    | `boolean`           | Disables button                                                                            | `false`     |
+| icon        | `boolean`           | Makes the button a perfect square in case the button contains just an icon instead of text | `false`     |
+| loading     | `boolean`           | Shows a loading spinner and disables the button                                            | `false`     |
+| radius      | `ButtonRadius`      | Sets the border radius                                                                     | `md`        |
+| shadow      | `ButtonShadow`      | Sets the shadow size                                                                       | `none`      |
+| shadowColor | `ButtonShadowColor` | Sets the shadow color                                                                      | `none`      |
+| size        | `ButtonSize`        | Sets the button size                                                                       | `md`        |
+| tone        | `ButtonTone`        | Sets the button tone                                                                       | `solid`     |
+| variant     | `ButtonVariant`     | Sets the button variant                                                                    | `undefined` |
+| withRing    | `boolean`           | Shows a ring around the button on active state                                             | `true`      |
+
+## Events
+The `Button` component supports all known button events (e.g. `onClick`, `onMouseEnter`, `onMouseLeave`, `onFocus`, `onBlur`, etc.).
+
+## Types
+
+```tsx
+type ButtonAnimation = 'none' | 'pulse' | 'bounce';
+```
+
+```tsx
+type ButtonColor =
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ButtonRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
+```
+
+```tsx
+type ButtonShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type ButtonShadowColor =
+  | 'none'
+  | 'white'
+  | 'blue'
+  | 'red'
+  | 'green'
+  | 'yellow'
+  | 'purple'
+  | 'gray'
+  | 'dark'
+  | 'black';
+```
+
+```tsx
+type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
+```
+
+```tsx
+type ButtonTone = 'solid' | 'light' | 'outline' | 'transparent';
+```
+
+```tsx
+type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'link'
+  | 'danger'
+  | 'success'
+  | 'warning'
+  | 'info';
+```
