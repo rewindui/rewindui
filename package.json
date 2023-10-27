@@ -18,7 +18,7 @@
     "@changesets/cli": "^2.26.0",
     "@manypkg/cli": "latest",
     "eslint": "^8.35.0",
-    "prettier": "^2.8.4",
+    "prettier": "^3.0.3",
     "turbo": "^1.8.2"
   },
   "prettier": {
