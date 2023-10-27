@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={lato.className}>
       <body>
-        <main className="min-h-screen">
+        <main className="min-h-screen antialiased">
           <Header />
           {children}
         </main>

@@ -7,6 +7,7 @@ import { ReactNode, useEffect, useState } from 'react';
 import { List, X } from '@phosphor-icons/react';
 import { usePathname } from 'next/navigation';
 import { Drawer } from '@rewind-ui/core';
+import json from '@rewind-ui/core/package.json';
 
 const headerButtonClasses =
   'flex items-center justify-center w-8 h-8 md:w-10 bg-white md:h-10 rounded-lg border border-gray-100 p-2';
@@ -44,10 +45,12 @@ export const Header = () => {
               <span className="flex items-center font-semibold text-gray-800 text-xl sm:text-2xl md:text-3xl">
                 <span>rewind-ui</span>
                 <span className="ml-2 text-xs text-red-50 py-0.5 px-1 bg-gradient-to-r from-red-500 to-red-700 shadow shadow-red-200 rounded">
-                  beta
+                  v{json.version}
                 </span>
               </span>
-              <span className="hidden md:block text-gray-500">Effortless user interfaces</span>
+              <span className="hidden md:block text-gray-500 font-medium tracking-wide">
+                Effortless user interfaces
+              </span>
             </div>
           </Link>
 
