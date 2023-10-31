@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.18.0
+
+### Minor Changes
+
+- 159fdd4: Added Breadcrumbs component
+
 ## 0.17.2
 
 ### Patch Changes
