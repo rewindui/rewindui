@@ -26,12 +26,14 @@ import { TextConfig } from '@/ui/configurators/components/Text.config';
 import { TextareaConfig } from '@/ui/configurators/components/Textarea.config';
 import { ToastConfig } from '@/ui/configurators/components/Toast.config';
 import { TooltipConfig } from '@/ui/configurators/components/Tooltip.config';
+import { BreadcrumbsConfig } from '@/ui/configurators/components/Breadcrumbs.config';
 
 export const components = {
   accordion: AccordionConfig,
   alert: AlertConfig,
   avatar: AvatarConfig,
   badge: BadgeConfig,
+  breadcrumbs: BreadcrumbsConfig,
   button: ButtonConfig,
   card: CardConfig,
   checkbox: CheckboxConfig,

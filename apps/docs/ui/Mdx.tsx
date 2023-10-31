@@ -69,6 +69,10 @@ import {
   ComboboxShowcase,
   ComboboxShowcaseProps,
 } from '@/ui/configurators/components/Combobox.showcase';
+import {
+  BreadcrumbsShowcase,
+  BreadcrumbsShowcaseProps,
+} from '@/ui/configurators/components/Breadcrumbs.showcase';
 
 const components = {
   h1: ({ ...props }) => (
@@ -189,6 +193,9 @@ const components = {
     <ProgressShowcase showcase={showcase} />
   ),
   RibbonShowcase: ({ showcase }: RibbonShowcaseProps) => <RibbonShowcase showcase={showcase} />,
+  BreadcrumbsShowcase: ({ showcase }: BreadcrumbsShowcaseProps) => (
+    <BreadcrumbsShowcase showcase={showcase} />
+  ),
   ComboboxShowcase: ({ showcase }: ComboboxShowcaseProps) => (
     <ComboboxShowcase showcase={showcase} />
   ),

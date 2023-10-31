@@ -9,8 +9,15 @@ import { Sliders } from '@/icons/Sliders';
 import { LifeRing } from '@/icons/LifeRing';
 import { Users } from '@/icons/Users';
 import { Logo } from '@/icons/Logo';
-import { Button, Overlay, Sidebar, SidebarColor, SidebarState, useSidebar } from '@rewind-ui/core';
-import Image from 'next/image';
+import {
+  Breadcrumbs,
+  Button,
+  Overlay,
+  Sidebar,
+  SidebarColor,
+  SidebarState,
+  useSidebar,
+} from '@rewind-ui/core';
 import { useState } from 'react';
 
 export default function Home() {
@@ -20,7 +27,7 @@ export default function Home() {
   const [color, setColor] = useState<SidebarColor>('slate');
 
   return (
-    <div className="relative flex flex-row bg-slate-100">
+    <div className="relative antialiased flex flex-row bg-slate-100">
       <Sidebar
         color={color}
         onToggle={(state: SidebarState) => {
@@ -160,7 +167,12 @@ export default function Home() {
         </header>
 
         <div className="w-full h-full p-8">
-          <p>Dashboard</p>
+          <Breadcrumbs>
+            <Breadcrumbs.Item href="/">
+              <RocketLaunch />
+            </Breadcrumbs.Item>
+            <Breadcrumbs.Item>Dashboard</Breadcrumbs.Item>
+          </Breadcrumbs>
         </div>
 
         <div className="flex sticky bottom-0 items-center bg-white w-full min-h-[4rem] px-8">

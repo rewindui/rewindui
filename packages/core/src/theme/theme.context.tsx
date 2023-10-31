@@ -11,6 +11,7 @@ type ThemeComponents = {
   Alert: typeof styles.alertStyles;
   Avatar: typeof styles.avatarStyles;
   Badge: typeof styles.badgeStyles.base;
+  Breadcrumbs: typeof styles.breadcrumbsStyles;
   Button: typeof styles.buttonStyles;
   Card: typeof styles.cardStyles;
   Checkbox: typeof styles.checkBoxStyles;
@@ -47,6 +48,7 @@ const defaultTheme: Theme = {
     Alert: styles.alertStyles,
     Avatar: styles.avatarStyles,
     Badge: styles.badgeStyles.base,
+    Breadcrumbs: styles.breadcrumbsStyles,
     Button: styles.buttonStyles,
     Card: styles.cardStyles,
     Checkbox: styles.checkBoxStyles,

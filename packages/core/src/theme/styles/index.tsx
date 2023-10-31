@@ -2,6 +2,7 @@ export * from './Accordion.styles';
 export * from './Alert.styles';
 export * from './Avatar.styles';
 export * from './Badge.styles';
+export * from './Breadcrumbs.styles';
 export * from './Button.styles';
 export * from './Card.styles';
 export * from './Checkbox.styles';

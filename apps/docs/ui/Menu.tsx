@@ -79,6 +79,11 @@ const menuItems: MenuItem[] = [
         path: '/components/badge',
       },
       {
+        title: 'Breadcrumbs',
+        path: '/components/breadcrumbs',
+        newItem: true,
+      },
+      {
         title: 'Card',
         path: '/components/card',
       },

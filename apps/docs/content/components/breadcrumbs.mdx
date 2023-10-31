@@ -1,0 +1,108 @@
+---
+title: Breadcrumbs
+description: A quick hierarchical navigation list.
+intro: The Breadcrumbs component is a navigational tool that displays a user's current location within a hierarchical structure as clickable links, aiding in easy navigation and backtracking.
+source: Breadcrumbs
+theme: Breadcrumbs.styles.ts
+---
+
+# Import
+---
+Import the `Breadcrumbs` component using the following import statement.
+
+```tsx
+import { Breadcrumbs } from '@rewind-ui/core';
+```
+
+# Colors
+---
+The `Breadcrumbs` component comes with three colors: `gray`, `zinc` and `slate`.
+
+<View direction="column">
+  <BreadcrumbsShowcase showcase="colors" />
+</View>
+
+```tsx
+<View>
+  <Breadcrumbs color="gray">
+    // ...
+  </Breadcrumbs>
+
+  <Breadcrumbs color="zinc">
+    // ...
+  </Breadcrumbs>
+
+  <Breadcrumbs color="slate">
+    // ...
+  </Breadcrumbs>
+</View>
+```
+
+# Sizes
+---
+Available `size` values are: `sm`, `base`, `md` and `lg`.
+
+<View direction="column">
+  <BreadcrumbsShowcase showcase="sizes" />
+</View>
+
+```tsx
+<View>
+  <Breadcrumbs size="sm">
+    // ...
+  </Breadcrumbs>
+
+  <Breadcrumbs size="base">
+    // ...
+  </Breadcrumbs>
+
+  <Breadcrumbs size="md">
+    // ...
+  </Breadcrumbs>
+
+  <Breadcrumbs size="lg">
+    // ...
+  </Breadcrumbs>
+</View>
+```
+
+# Separator
+---
+The `separator` prop allows you to customize the separator between the breadcrumbs.
+
+<View direction="column">
+  <BreadcrumbsShowcase showcase="separators" />
+</View>
+
+```tsx
+<View>
+  <Breadcrumbs separator="-">
+    // ...
+  </Breadcrumbs>
+
+  <Breadcrumbs separator={<span className="block w-1 h-1 rounded-full bg-gray-400" />}>
+    // ...
+  </Breadcrumbs>
+</View>
+```
+
+# API Reference
+---
+## Properties
+
+| Prop      | Type               | Description                    | Default |
+|:----------|:-------------------|:-------------------------------|:--------|
+| color     | `BreadcrumbsColor` | Sets the breadcrumbs color     | `gray`  |
+| separator | `ReactNode`        | Sets the breadcrumbs separator | `/`     |
+| size      | `BreadcrumbsSize`  | Sets the breadcrumbs size      | `md`    |
+
+## Types
+
+```tsx
+type BreadcrumbsColor = 'gray' | 'slate' | 'zinc';
+```
+
+```tsx
+type BreadcrumbsSize = 'sm' | 'base' | 'md' | 'lg';
+```
+

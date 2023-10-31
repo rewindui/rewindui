@@ -130,6 +130,11 @@ export const Pager = (props: PagerProps) => {
       slug: 'badge',
     },
     {
+      title: 'Breadcrumbs',
+      url: '/components/breadcrumbs',
+      slug: 'breadcrumbs',
+    },
+    {
       title: 'Card',
       url: '/components/card',
       slug: 'card',
