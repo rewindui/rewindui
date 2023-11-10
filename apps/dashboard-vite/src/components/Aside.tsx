@@ -2,8 +2,15 @@ import { Sidebar, SidebarState } from '@rewind-ui/core';
 import { Logo } from '@icons/Logo.tsx';
 import { Briefcase } from '@icons/Briefcase.tsx';
 import { Link } from 'react-router-dom';
+import { Dispatch } from 'react';
 
-export default function Aside({ setExpanded, setMobile }: any) {
+export default function Aside({
+  setExpanded,
+  setMobile,
+}: {
+  setExpanded: Dispatch<boolean>;
+  setMobile: Dispatch<boolean>;
+}) {
   return (
     <Sidebar
       onToggle={(state: SidebarState) => {
