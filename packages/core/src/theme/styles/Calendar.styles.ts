@@ -75,10 +75,10 @@ const navButton = cva(
 );
 const navMonth = cva([
   'flex',
+  'gap-1',
   'basis-6/8',
   'items-center',
   'justify-center',
-  'w-6/8',
   'font-medium',
 ]);
 

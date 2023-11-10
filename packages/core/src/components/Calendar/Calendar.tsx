@@ -131,7 +131,7 @@ const Calendar: CalendarComponent = forwardRef<HTMLDivElement, CalendarProps>(
                 locale,
               })}
             </time>
-          </button>{' '}
+          </button>
           <button
             type="button"
             aria-label="Select year"
