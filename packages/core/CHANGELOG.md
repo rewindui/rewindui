@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.1
+
+### Patch Changes
+
+- b34dd63: Calendar hotfix
+
 ## 0.19.0
 
 ### Minor Changes
