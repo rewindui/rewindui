@@ -1,0 +1,453 @@
+---
+title: Calendar
+description: A monthly Calendar component.
+intro: The Calendar component is a monthly calendar that can be used to enable the user to select a date. It comes with multiple styling options and can be used in a controlled or uncontrolled way.
+source: Calendar
+theme: Calendar.styles.ts
+---
+
+# Dependencies
+---
+The `Calendar` component is using `date-fns` and `framer-motion` under the hood.
+
+You can install them by running the following command:
+
+```bash
+npm install date-fns framer-motion
+```
+
+# Import
+---
+Import the `Calendar` component using the following import statement.
+
+```tsx
+import { Calendar } from '@rewind-ui/core';
+```
+
+# Sizes
+---
+Available `size` values are: `xs`, `sm`, `md`, `lg` and `xl`.
+
+The `xl` variant is responsive and will look like the `lg` variant on smaller screens.
+
+<CalendarShowcase showcase="sizes" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[16rem]">
+      <Calendar size="xs" />
+    </div>
+  </View>
+
+  <View>
+    <div className="w-[18rem]">
+      <Calendar size="sm" />
+    </div>
+  </View>
+
+  <View>
+    <div className="w-[20rem]">
+      <Calendar size="md" />
+    </div>
+  </View>
+
+  <View>
+    <div className="w-[22rem]">
+      <Calendar size="lg" />
+    </div>
+  </View>
+
+  <View>
+    <div className="w-[24rem]">
+      <Calendar size="xl" />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+# Radiuses
+---
+Available `radius` values are: `none`, `sm`, `base`, `md` and `lg`.
+
+<CalendarShowcase showcase="radiuses" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar radius="none" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar radius="sm" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar radius="base" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar radius="md" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar radius="lg" />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+# Shadows
+---
+Available `shadow` values are: `none`, `sm`, `base`, `md`, `lg` and `xl`.
+
+<CalendarShowcase showcase="shadows" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar shadow="none" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar shadow="sm" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar shadow="base" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar shadow="md" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar shadow="lg" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar shadow="xl" />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+
+# Borders
+---
+
+## Outer borders
+Outer borders can be toggled by setting the `bordered` prop.
+
+<CalendarShowcase showcase="bordered" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar bordered={true} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar bordered={false} />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+## Horizontal borders
+Horizontal borders can be toggled by setting the `horizontalBorders` prop.
+
+<CalendarShowcase showcase="horizontal-borders" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar horizontalBorders={true} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar horizontalBorders={false} />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+## Vertical borders
+Vertical borders can be toggled by setting the `verticalBorders` prop.
+
+<CalendarShowcase showcase="vertical-borders" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar verticalBorders={true} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar verticalBorders={false} />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+## Border style
+Border styles can be adjusted by passing the `borderStyle` prop.
+
+Available border styles are `solid` and `dashed`.
+
+<CalendarShowcase showcase="border-styles" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar borderStyle="solid" />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar borderStyle="dashed" />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+# Min date
+---
+A minimum date can be set by passing the `minDate` prop.
+
+<CalendarShowcase showcase="min-date" />
+
+```tsx
+ <View>
+  <div className="w-[20rem]">
+    <Calendar minDate={new Date()} />
+  </div>
+</View>
+```
+
+# Max date
+---
+A maximum date can be set by passing the `maxDate` prop.
+
+<CalendarShowcase showcase="max-date" />
+
+```tsx
+ <View>
+  <div className="w-[20rem]">
+    <Calendar maxDate={new Date()} />
+  </div>
+</View>
+```
+
+# Disabled dates
+---
+Dates can be disabled by passing the `disabledDates` prop.
+
+<CalendarShowcase showcase="disabled-dates" />
+
+```tsx
+ <View>
+  <div className="w-[20rem]">
+    <Calendar disabledDates={[new Date()]} />
+  </div>
+</View>
+```
+
+## Disabled weekends
+Weekends can be disabled by passing the `disabledWeekends` prop.
+
+<CalendarShowcase showcase="disabled-weekends" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar disabledWeekends={true} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar disabledWeekends={false} />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+# Colored dates
+---
+Dates can be colored by using the `blueDates`, `redDates`, `greenDates`, `yellowDates` and `purpleDates` props.
+
+<CalendarShowcase showcase="colored-dates" />
+
+```tsx
+<ViewGroup>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar blueDates={dates} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar redDates={dates} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar greenDates={dates} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar yellowDates={dates} />
+    </div>
+  </View>
+  <View>
+    <div className="w-[20rem]">
+      <Calendar purpleDates={dates} />
+    </div>
+  </View>
+</ViewGroup>
+```
+
+# Controlled state
+---
+The `Calendar` component state can be controlled by setting the `value` and `onChange` props.
+
+<CalendarShowcase showcase="controlled-state" />
+
+```tsx
+import { format, isValid } from 'date-fns';
+
+const ControlledState = () => {
+  const [date, setDate] = React.useState<Date | null | undefined>(new Date());
+
+  return (
+    <View>
+      <div className="w-[20rem] flex flex-col gap-4">
+        {<div>Selected date: {date && isValid(date) && format(date, 'yyyy-MM-dd')}</div>}
+        <Input
+          type="date"
+          onChange={(event) => {
+            setDate(
+              event.target.value && isValid(new Date(event.target.value))
+                ? new Date(event.target.value)
+                : null
+            );
+          }}
+          value={date && isValid(date) ? format(date, 'yyyy-MM-dd') : undefined}
+        />
+
+        <Calendar
+          value={date}
+          onChange={(updatedDate) => {
+            if (updatedDate) {
+              setDate(updatedDate);
+            }
+          }}
+        />
+      </div>
+    </View>
+  );
+};
+```
+
+# Localization
+---
+The `Calendar` component can be localized by passing the `locale` prop.
+
+<CalendarShowcase showcase="locales" />
+
+```tsx
+import { Locale } from 'date-fns';
+import { default as el } from 'date-fns/locale/el';
+import { default as enGB } from 'date-fns/locale/en-GB';
+import { default as de } from 'date-fns/locale/de';
+
+const App = () => {
+  const [locale, setLocale] = React.useState<Locale>(enGB);
+
+  return (
+    <View>
+      <div className="w-[20rem] flex flex-col gap-2">
+        <div className="flex justify-evenly">
+          <Button onClick={() => setLocale(el)}>Greek</Button>
+          <Button onClick={() => setLocale(enGB)}>English</Button>
+          <Button onClick={() => setLocale(de)}>German</Button>
+        </div>
+        <Calendar locale={locale} value={new Date()} dayFormat="EEE" />
+      </div>
+    </View>
+  );
+};
+```
+
+# API Reference
+---
+## Properties
+
+| Prop              | Type                  | Description                                 | Default     |
+|:------------------|:----------------------|:--------------------------------------------|:------------|
+| blueDates         | `Date[]`              | Sets the dates that will be shown as blue   | `[]`        |
+| bordered          | `boolean`             | Toggles the outer borders                   | `true`      |
+| borderStyle       | `CalendarBorderStyle` | Sets the border style                       | `solid`     |
+| dayFormat         | `CalendarDayFormat`   | Sets the week-days locale format            | `EEEEE`     |
+| disabledDates     | `Date[]`              | Sets the disabled dates                     | `[]`        |
+| disabledWeekends  | `boolean`             | Toggles the disable state for weekends      | `true`      |
+| greenDates        | `Date[]`              | Sets the dates that will be shown as green  | `[]`        |
+| horizontalBorders | `boolean`             | Toggles the horizontal borders              | `true`      |
+| locale            | `Locale`              | Sets the Calendar locale                    | `enGB`      |
+| maxDate           | `Date`                | Sets the maximum available date             | `undefined` |
+| minDate           | `Date`                | Sets the minimum available date             | `undefined` |
+| onChange          | `(value) => void`     | Sets the onChange event                     | `undefined` |
+| purpleDates       | `Date[]`              | Sets the dates that will be shown as purple | `[]`        |
+| radius            | `CalendarRadius`      | Sets the Calendar radius                    | `md`        |
+| redDates          | `Date[]`              | Sets the dates that will be shown as red    | `[]`        |
+| shadow            | `CalendarShadow`      | Sets Calendar shadow size                   | `sm`        |
+| size              | `CalendarSize`        | Sets the Calendar size                      | `md`        |
+| value             | `Date` or `null`      | Sets the selected date value                | `undefined` |
+| verticalBorders   | `boolean`             | Toggles the vertical borders                | `true`      |
+| yellowDates       | `Date[]`              | Sets the dates that will be shown as yellow | `[]`        |
+
+## Types
+
+```tsx
+type CalendarBorderStyle = 'dashed' | 'solid';
+```
+
+```tsx
+type CalendarDayFormat = 'EEE' | 'EEEEE' | 'EEEEEE';
+```
+
+```tsx
+type CalendarHighlightColor = 'white' | 'blue' | 'red' | 'green' | 'yellow' | 'purple';
+```
+
+```tsx
+type CalendarRadius = 'none' | 'sm' | 'base' | 'md' | 'lg';
+```
+
+```tsx
+type CalendarShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
+```
+
+```tsx
+type CalendarSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+```

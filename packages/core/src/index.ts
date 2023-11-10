@@ -5,6 +5,7 @@ export * from './components/Badge';
 export * from './components/Breadcrumbs';
 export * from './components/Button';
 export * from './components/Card';
+export * from './components/Calendar';
 export * from './components/Checkbox';
 export * from './components/Collapse';
 export * from './components/Combobox';

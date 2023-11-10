@@ -12,6 +12,7 @@ import { Logo } from '@/icons/Logo';
 import {
   Breadcrumbs,
   Button,
+  Calendar,
   Overlay,
   Sidebar,
   SidebarColor,
@@ -173,6 +174,10 @@ export default function Home() {
             </Breadcrumbs.Item>
             <Breadcrumbs.Item>Dashboard</Breadcrumbs.Item>
           </Breadcrumbs>
+
+          <div className="mt-8">
+            <Calendar />
+          </div>
         </div>
 
         <div className="flex sticky bottom-0 items-center bg-white w-full min-h-[4rem] px-8">

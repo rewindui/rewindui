@@ -25,7 +25,8 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
     active = false,
     children,
     className,
-    as,
+    as = 'a',
+    asProps,
     href = '#',
     label,
     icon,
@@ -60,6 +61,7 @@ const SidebarNavSectionItem: SidebarNavSectionItemComponent = forwardRef<
     <li id={id} ref={ref} className={theme.navSectionItemWrapper({ opened })} {...additionalProps}>
       <Component
         {...componentProps}
+        {...asProps}
         className={classes}
         onClick={(event: any) => {
           setIsCollapsed(!isCollapsed);

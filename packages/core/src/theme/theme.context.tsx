@@ -14,6 +14,7 @@ type ThemeComponents = {
   Breadcrumbs: typeof styles.breadcrumbsStyles;
   Button: typeof styles.buttonStyles;
   Card: typeof styles.cardStyles;
+  Calendar: typeof styles.calendarStyles;
   Checkbox: typeof styles.checkBoxStyles;
   Combobox: typeof styles.comboboxStyles;
   ComboboxOption: typeof styles.comboboxOptionStyles;
@@ -51,6 +52,7 @@ const defaultTheme: Theme = {
     Breadcrumbs: styles.breadcrumbsStyles,
     Button: styles.buttonStyles,
     Card: styles.cardStyles,
+    Calendar: styles.calendarStyles,
     Checkbox: styles.checkBoxStyles,
     Combobox: styles.comboboxStyles,
     ComboboxOption: styles.comboboxOptionStyles,

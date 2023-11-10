@@ -254,6 +254,11 @@ export const Pager = (props: PagerProps) => {
       url: '/components/textarea',
       slug: 'textarea',
     },
+    {
+      title: 'Calendar',
+      url: '/components/calendar',
+      slug: 'calendar',
+    },
   ];
   const { current } = props;
   const index: number | undefined = collection.findIndex(

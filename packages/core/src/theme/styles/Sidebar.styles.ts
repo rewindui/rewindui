@@ -206,7 +206,16 @@ const navSection = cva(['flex', 'flex-col'], {
 });
 
 const navSectionTitle = cva(
-  ['transition-opacity', 'text-sm', 'font-medium', 'truncate', 'uppercase', 'mb-3', 'px-5'],
+  [
+    'transition-opacity',
+    'text-sm',
+    'font-medium',
+    'truncate',
+    'uppercase',
+    'mb-3',
+    'px-5',
+    'mr-auto',
+  ],
   {
     variants: {
       color: {

@@ -10,6 +10,7 @@ import { ReactNode, useState } from 'react';
 import * as React from 'react';
 import Image from 'next/image';
 import { Logo } from '@/ui/Logo';
+import Link from 'next/link';
 
 export type SidebarShowcaseProps = {
   showcase:
@@ -18,6 +19,7 @@ export type SidebarShowcaseProps = {
     | 'head'
     | 'nav'
     | 'title'
+    | 'render-as'
     | 'separator'
     | 'child-items'
     | 'footer';
@@ -34,6 +36,7 @@ export const SidebarShowcase = (props: SidebarShowcaseProps) => {
     title: <Title />,
     separator: <Separator />,
     item: <Item />,
+    'render-as': <RenderAs />,
     'child-items': <ChildItems />,
     footer: <Footer />,
   };
@@ -211,6 +214,43 @@ const Nav = () => {
           <Sidebar.Nav.Section>
             <Sidebar.Nav.Section.Item icon={<LifeRing />} label="Contact" href="#" />
             <Sidebar.Nav.Section.Item icon={<EnvelopeOpen />} label="Tickets" href="#" />
+          </Sidebar.Nav.Section>
+        </Sidebar.Nav>
+      </Sidebar>
+    </Container>
+  );
+};
+
+const RenderAs = () => {
+  const [expanded, setExpanded] = useState(true);
+  const [mobile, setMobile] = useState(false);
+
+  return (
+    <Container expanded={expanded} mobile={mobile}>
+      <Sidebar
+        onToggle={(state: SidebarState) => {
+          setExpanded(state.expanded);
+          setMobile(state.mobile);
+        }}
+        className="absolute"
+      >
+        <Sidebar.Head>
+          <Sidebar.Head.Logo>
+            <Image src="/images/rewind.svg" width={48} height={48} alt="Rewind-UI" />
+          </Sidebar.Head.Logo>
+          <Sidebar.Head.Title>Rewind-UI</Sidebar.Head.Title>
+          <Sidebar.Head.Toggle />
+        </Sidebar.Head>
+
+        <Sidebar.Nav>
+          <Sidebar.Nav.Section>
+            <Sidebar.Nav.Section.Item
+              icon={<RocketLaunch />}
+              label="Dashboard"
+              as={Link}
+              asProps={{ href: '/' }}
+              active
+            />
           </Sidebar.Nav.Section>
         </Sidebar.Nav>
       </Sidebar>

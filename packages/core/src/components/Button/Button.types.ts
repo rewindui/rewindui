@@ -1,5 +1,5 @@
 import { ElementType, ReactElement } from 'react';
-import { PolymorphicComponentPropWithRef } from '../../types';
+import { PolymorphicComponentPropWithRef } from '@types';
 
 export type ButtonAnimation = 'none' | 'pulse' | 'bounce';
 export type ButtonColor =

@@ -14,7 +14,6 @@ export const metadata: Metadata = {
   referrer: 'origin-when-cross-origin',
   keywords: ['Next.js', 'React', 'Tailwind CSS', 'UI', 'React component library'],
   authors: [{ name: 'Nick Dunas' }],
-  colorScheme: 'light',
   creator: 'Nick Dunas',
   publisher: 'Nick Dunas',
   formatDetection: {

@@ -1,5 +1,5 @@
 import './globals.css';
-import { Lato } from 'next/font/google';
+import { GeistSans } from 'geist/font';
 import { Header } from '@/ui/Header';
 import { config } from '@/lib/config';
 import Script from 'next/script';
@@ -45,15 +45,9 @@ export const metadata = {
   },
 };
 
-const lato = Lato({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['100', '300', '400', '700', '900'],
-});
-
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={lato.className}>
+    <html lang="en" className={GeistSans.className}>
       <body>
         <main className="min-h-screen antialiased">
           <Header />

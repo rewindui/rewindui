@@ -82,16 +82,7 @@ interface TreeProps {
   activeItem?: string | null;
 }
 
-const tocListStyles = cva(['m-0', 'list-none', ' text-sm'], {
-  variants: {
-    inner: {
-      false: 'pl-0',
-      true: 'pl-4',
-    },
-  },
-});
-
-const tocAnchorStyles = cva(['inline-block', 'no-underline'], {
+const tocAnchorStyles = cva(['flex', 'items-center', 'gap-2', 'no-underline'], {
   variants: {
     active: {
       false: 'text-gray-600 hover:text-gray-900',
@@ -102,7 +93,7 @@ const tocAnchorStyles = cva(['inline-block', 'no-underline'], {
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
   return tree?.items?.length && level < 3 ? (
-    <ul className={tocListStyles({ inner: level > 1 })}>
+    <ul className="m-0 list-none text-sm">
       {tree.items.map((item, index) => {
         return (
           <li key={index} className="pt-3">
@@ -110,6 +101,7 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
               href={item.url}
               className={tocAnchorStyles({ active: item.url === `#${activeItem}` })}
             >
+              {level == 2 && <span className="block w-1 h-1 rounded-full bg-gray-300" />}{' '}
               {item.title}
             </a>
             {item.items?.length ? (

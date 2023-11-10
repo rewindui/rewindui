@@ -6,6 +6,6 @@
   "linked": [],
   "access": "public",
   "updateInternalDependencies": "patch",
-  "ignore": ["@rewind-ui/docs", "@rewind-ui/storybook", "@rewind-ui/dashboard"],
+  "ignore": ["@rewind-ui/docs", "@rewind-ui/storybook", "@rewind-ui/dashboard", "@rewind-ui/dashboard-vite"],
   "baseBranch": "main"
 }

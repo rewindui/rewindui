@@ -1,5 +1,6 @@
 import {
   ComponentPropsWithRef,
+  ElementType,
   ForwardRefExoticComponent,
   PropsWithoutRef,
   ReactNode,
@@ -7,7 +8,8 @@ import {
 } from 'react';
 
 export interface SidebarNavSectionItemProps extends ComponentPropsWithRef<'li'> {
-  as?: 'button' | 'a';
+  as?: ElementType;
+  asProps?: Record<string, any>;
   href?: string;
   icon?: ReactNode;
   label: string;

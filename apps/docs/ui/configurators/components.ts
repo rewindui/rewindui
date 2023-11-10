@@ -27,6 +27,7 @@ import { TextareaConfig } from '@/ui/configurators/components/Textarea.config';
 import { ToastConfig } from '@/ui/configurators/components/Toast.config';
 import { TooltipConfig } from '@/ui/configurators/components/Tooltip.config';
 import { BreadcrumbsConfig } from '@/ui/configurators/components/Breadcrumbs.config';
+import { CalendarConfig } from '@/ui/configurators/components/Calendar.config';
 
 export const components = {
   accordion: AccordionConfig,
@@ -35,6 +36,7 @@ export const components = {
   badge: BadgeConfig,
   breadcrumbs: BreadcrumbsConfig,
   button: ButtonConfig,
+  calendar: CalendarConfig,
   card: CardConfig,
   checkbox: CheckboxConfig,
   combobox: ComboboxConfig,

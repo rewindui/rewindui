@@ -192,6 +192,16 @@ const menuItems: MenuItem[] = [
       },
     ],
   },
+  {
+    title: 'Dates',
+    items: [
+      {
+        title: 'Calendar',
+        path: '/components/calendar',
+        newItem: true,
+      },
+    ],
+  },
 ];
 
 export const Menu = () => {

@@ -73,6 +73,10 @@ import {
   BreadcrumbsShowcase,
   BreadcrumbsShowcaseProps,
 } from '@/ui/configurators/components/Breadcrumbs.showcase';
+import {
+  CalendarShowcase,
+  CalendarShowcaseProps,
+} from '@/ui/configurators/components/Calendar.showcase';
 
 const components = {
   h1: ({ ...props }) => (
@@ -176,6 +180,9 @@ const components = {
   Ribbon: ({ ...props }) => <Ribbon {...props} />,
   Switch: ({ ...props }) => <Switch {...props} />,
   Toast: ({ ...props }) => <Toast {...props} />,
+  CalendarShowcase: ({ showcase }: CalendarShowcaseProps) => (
+    <CalendarShowcase showcase={showcase} />
+  ),
   ToastShowcase: ({ showcase }: ToastShowcaseProps) => <ToastShowcase showcase={showcase} />,
   DropdownShowcase: ({ showcase }: DropdownShowcaseProps) => (
     <DropdownShowcase showcase={showcase} />

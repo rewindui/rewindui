@@ -13,14 +13,18 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.2.9",
     "@rewind-ui/core": "workspace:*",
+    "@tailwindcss/forms": "^0.5.5",
     "@types/node": "^18.15.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
     "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "contentlayer": "0.3.2",
+    "date-fns": "^2.30.0",
     "eslint": "^8.35.0",
     "eslint-config-next": "13.3.0",
+    "framer-motion": "^10.16.1",
+    "geist": "^1.0.0",
     "mdast-util-toc": "^6.1.1",
     "next": "13.3.0",
     "next-contentlayer": "0.3.2",
@@ -28,6 +32,7 @@
     "react-dom": "^18.2.0",
     "rehype-pretty-code": "^0.9.4",
     "rehype-slug": "^5.1.0",
+    "tailwind-merge": "^1.14.0",
     "typescript": "^4.9.3"
   },
   "devDependencies": {
@@ -37,7 +42,7 @@
     "postcss": "^8.4.21",
     "remark": "^14.0.2",
     "remark-gfm": "^3.0.1",
-    "tailwind-scrollbar": "^2.0.1",
+    "tailwind-scrollbar": "^2.1.0",
     "tailwindcss": "^3.3.1",
     "unist-util-visit": "^4.1.2"
   }

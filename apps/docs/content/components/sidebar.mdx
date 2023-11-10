@@ -194,6 +194,30 @@ The `Sidebar.Nav.Section.Item` component is used to render an item of a section.
 </View>
 ```
 
+#### Render as
+
+The `Sidebar.Nav.Section.Item` component accepts an `as` prop that defines the type of the rendered element.
+
+The `as` prop can be used to render the item as a Next.js Link for example.
+
+The `asProps` property can be used to pass props to the rendered element.
+
+<SidebarShowcase showcase="render-as" />
+
+```tsx
+import Link from 'next/link';
+
+<View>
+  <Sidebar>
+    <Sidebar.Nav>
+      <Sidebar.Nav.Section>
+        <Sidebar.Nav.Section.Item icon={<RocketLaunch />} label="Dashboard" as={Link} asProps={{ href: '/ '}} active />
+      </Sidebar.Nav.Section>
+    </Sidebar.Nav>
+  </Sidebar>
+</View>
+```
+
 #### Child Items
 
 The `Sidebar.Nav.Section.Item` component support inner section that will be rendered as a collapsible menu.
@@ -309,13 +333,14 @@ export const App = () => {
 
 ### Sidebar.Nav.Section.Item
 
-| Prop      | Type           | Description                              | Default     |
-|:----------|:---------------|:-----------------------------------------|:------------|
-| as        | `button` / `a` | Defines the type of the rendered element | `a`         |
-| icon      | `ReactNode`    | Sets the item icon                       | `undefined` |
-| label     | `string`       | Sets the item label                      | `undefined` |
-| active    | `boolean`      | Sets the item state                      | `false`     |
-| collapsed | `boolean`      | Sets the item's initial collapsed state  | `true`      |
+| Prop      | Type                  | Description                              | Default     |
+|:----------|:----------------------|:-----------------------------------------|:------------|
+| as        | `ElementType`         | Defines the type of the rendered element | `a`         |
+| asProps   | `Record<string, any>` | Defines the as Element properties        | `undefined` |
+| icon      | `ReactNode`           | Sets the item icon                       | `undefined` |
+| label     | `string`              | Sets the item label                      | `undefined` |
+| active    | `boolean`             | Sets the item state                      | `false`     |
+| collapsed | `boolean`             | Sets the item's initial collapsed state  | `true`      |
 
 ## Events
 ### Sidebar

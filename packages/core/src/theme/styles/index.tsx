@@ -5,6 +5,7 @@ export * from './Badge.styles';
 export * from './Breadcrumbs.styles';
 export * from './Button.styles';
 export * from './Card.styles';
+export * from './Calendar.styles';
 export * from './Checkbox.styles';
 export * from './Combobox.styles';
 export * from './Drawer.styles';
