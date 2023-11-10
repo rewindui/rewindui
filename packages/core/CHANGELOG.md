@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.0
+
+### Minor Changes
+
+- 12ab8f7: Added Calendar component
+
 ## 0.18.0
 
 ### Minor Changes
