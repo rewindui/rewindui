@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.2
+
+### Patch Changes
+
+- ded7cdb: Button Spinner opacity fix
+
 ## 0.19.1
 
 ### Patch Changes
