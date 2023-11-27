@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.3
+
+### Patch Changes
+
+- c61bc18: Hotfix
+
 ## 0.19.2
 
 ### Patch Changes
