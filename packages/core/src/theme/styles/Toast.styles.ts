@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const container = cva(['fixed', 'flex', 'flex-col', 'gap-y-2', 'z-[60]'], {
+const container = cva(['fixed', 'flex', 'flex-col', 'gap-y-2', 'z-[70]'], {
   variants: {
     position: {
       'top-left': ['top-2', 'left-2'],
