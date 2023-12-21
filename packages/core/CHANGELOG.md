@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.4
+
+### Patch Changes
+
+- 7e0c702: Adjusted Toast z-index value
+
 ## 0.19.3
 
 ### Patch Changes
