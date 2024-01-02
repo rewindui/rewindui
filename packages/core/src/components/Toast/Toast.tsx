@@ -17,7 +17,7 @@ const defaultProps: Partial<ToastProps> = {
   closeOnClick: true,
   color: 'blue',
   pauseOnHover: true,
-  radius: 'md',
+  radius: 'lg',
   shadow: 'base',
   shadowColor: 'gray',
   showProgress: true,

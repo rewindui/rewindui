@@ -45,7 +45,7 @@ const defaultProps: Partial<ComboboxProps> = {
   multiple: false,
   offset: 5,
   optionColor: 'gray',
-  radius: 'md',
+  radius: 'lg',
   searchable: true,
   shadow: 'none',
   size: 'md',

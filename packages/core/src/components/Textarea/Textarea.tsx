@@ -10,7 +10,7 @@ import { twMerge } from 'tailwind-merge';
 const defaultProps: Partial<TextareaProps> = {
   color: 'dark',
   tone: 'light',
-  radius: 'md',
+  radius: 'lg',
   size: 'md',
   validation: 'none',
   shadow: 'none',

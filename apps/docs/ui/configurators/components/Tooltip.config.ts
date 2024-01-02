@@ -6,7 +6,7 @@ export const TooltipConfig = {
   state: {
     color: 'dark',
     placement: 'top',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'sm',
     tone: 'solid',

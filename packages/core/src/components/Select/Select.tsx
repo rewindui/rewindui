@@ -11,7 +11,7 @@ import { twMerge } from 'tailwind-merge';
 const defaultProps: Partial<SelectProps> = {
   color: 'dark',
   disabled: false,
-  radius: 'md',
+  radius: 'lg',
   shadow: 'none',
   size: 'md',
   tone: 'light',

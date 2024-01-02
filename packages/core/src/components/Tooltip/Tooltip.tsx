@@ -22,7 +22,7 @@ const defaultProps: Partial<TooltipProps> = {
   initiallyOpen: false,
   offset: 6,
   placement: 'top',
-  radius: 'md',
+  radius: 'lg',
   shadow: 'none',
   size: 'sm',
   tone: 'solid',

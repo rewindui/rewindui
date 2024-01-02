@@ -6,7 +6,7 @@ export const CardConfig = {
   state: {
     bordered: true,
     color: 'white',
-    radius: 'base',
+    radius: 'md',
     shadow: 'sm',
     size: 'base',
     withDivider: true,

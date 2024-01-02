@@ -8,7 +8,7 @@ export const InputConfig = {
     disabled: false,
     loading: false,
     placeholder: 'This is just a placeholder...',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',

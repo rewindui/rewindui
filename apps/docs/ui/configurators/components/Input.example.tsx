@@ -8,7 +8,7 @@ export const InputCode = (props: any) => {
     color: 'dark',
     disabled: false,
     loading: false,
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',

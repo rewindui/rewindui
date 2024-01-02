@@ -9,7 +9,7 @@ export const AlertConfig = {
     dismissable: false,
     dismissableAnimation: true,
     iconType: 'info',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     shadowColor: 'none',
     size: 'sm',

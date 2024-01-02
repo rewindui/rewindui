@@ -254,6 +254,26 @@ The initial state of the `Popover` component can be controlled by setting the `i
 </View>
 ```
 
+# Trigger
+---
+The `Popover` component can be triggered by hovering over the trigger element, or by clicking on it. The `Popover` component can be configured to be triggered by either of these events by setting the `trigger` prop.
+
+<View>
+  <PopoverShowcase showcase="trigger" />
+</View>
+
+```tsx
+<View>
+  <Popover trigger="hover">
+    // ...
+  </Popover>
+
+  <Popover trigger="click">
+    // ...
+  </Popover>
+</View>
+```
+
 # Examples
 ---
 ## With Card component

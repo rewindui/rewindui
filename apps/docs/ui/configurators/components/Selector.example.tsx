@@ -18,7 +18,7 @@ export const SelectorCode = (props: any) => {
     color: 'dark',
     fullWidth: false,
     orientation: 'horizontal',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'base',
     size: 'md',
     tone: 'solid',

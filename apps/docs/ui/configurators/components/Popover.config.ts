@@ -6,7 +6,7 @@ export const PopoverConfig = {
   state: {
     color: 'white',
     placement: 'top',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'sm',
   },

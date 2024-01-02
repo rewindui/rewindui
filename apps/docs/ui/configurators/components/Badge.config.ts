@@ -5,7 +5,7 @@ export const BadgeConfig = {
   default: BadgeCode,
   state: {
     color: 'dark',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     shadowColor: 'none',
     size: 'sm',

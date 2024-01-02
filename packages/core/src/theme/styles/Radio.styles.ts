@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-const base = cva(['cursor-pointer', 'form-radio'], {
+const base = cva(['cursor-pointer', 'form-radio', 'self-start'], {
   variants: {
     color: {
       blue: [
@@ -126,10 +126,10 @@ const base = cva(['cursor-pointer', 'form-radio'], {
 const label = cva(['cursor-pointer'], {
   variants: {
     size: {
-      sm: ['text-sm', 'pl-1.5'],
-      md: ['text-base', 'pl-1.5'],
-      lg: ['text-lg', 'pl-2'],
-      xl: ['text-xl', 'pl-2'],
+      sm: ['text-sm', 'pl-1.5', 'leading-4'],
+      md: ['text-base', 'pl-1.5', 'leading-5'],
+      lg: ['text-lg', 'pl-2', 'leading-6'],
+      xl: ['text-xl', 'pl-2', 'leading-7'],
     },
     disabled: {
       true: ['text-gray-500'],

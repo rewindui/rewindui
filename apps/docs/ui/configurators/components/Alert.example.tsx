@@ -21,7 +21,7 @@ export const AlertCode = (props: any) => {
     color: 'dark',
     dismissable: false,
     dismissableAnimation: true,
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     shadowColor: 'none',
     size: 'sm',

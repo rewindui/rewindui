@@ -14,7 +14,8 @@ export type PopoverShowcaseProps = {
     | 'placements-extended-right'
     | 'initially-open'
     | 'example-card'
-    | 'example-radio';
+    | 'example-radio'
+    | 'teigger';
 };
 
 export const PopoverShowcase = (props: PopoverShowcaseProps) => {
@@ -26,6 +27,7 @@ export const PopoverShowcase = (props: PopoverShowcaseProps) => {
     radiuses: <Radiuses />,
     shadows: <Shadows />,
     placements: <Placements />,
+    trigger: <Trigger />,
     'placements-extended-top': <PlacementsExtendedTop />,
     'placements-extended-bottom': <PlacementsExtendedBottom />,
     'placements-extended-left': <PlacementsExtendedLeft />,
@@ -322,6 +324,26 @@ const InitiallyOpen = () => {
       <Popover initiallyOpen={false}>
         <Popover.Trigger>
           <Button>Closed</Button>
+        </Popover.Trigger>
+        <Popover.Content>I am the popover content</Popover.Content>
+      </Popover>
+    </>
+  );
+};
+
+const Trigger = () => {
+  return (
+    <>
+      <Popover trigger="click">
+        <Popover.Trigger>
+          <Button>Click me!</Button>
+        </Popover.Trigger>
+        <Popover.Content>I am the popover content</Popover.Content>
+      </Popover>
+
+      <Popover trigger="hover">
+        <Popover.Trigger>
+          <Button>Hover over me!</Button>
         </Popover.Trigger>
         <Popover.Content>I am the popover content</Popover.Content>
       </Popover>

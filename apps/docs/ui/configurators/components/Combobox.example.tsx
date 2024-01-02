@@ -32,7 +32,7 @@ export const ComboboxCode = (props: any) => {
     mode: 'spacey',
     multiple: false,
     placeholder: null,
-    radius: 'md',
+    radius: 'lg',
     searchable: true,
     shadow: 'none',
     size: 'md',

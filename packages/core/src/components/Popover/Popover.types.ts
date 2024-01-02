@@ -8,6 +8,7 @@ export type PopoverRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type PopoverShadow = 'none' | 'sm' | 'base' | 'md';
 export type PopoverArrowPlacement = 'left' | 'right' | 'top' | 'bottom';
 export type PopoverPlacement = Placement;
+export type PopoverTrigger = 'click' | 'hover';
 
 export interface PopoverContext<RT extends ReferenceType = ReferenceType> {
   arrowRef?: Ref<HTMLSpanElement>;
@@ -39,6 +40,7 @@ export interface PopoverProps extends Omit<ComponentPropsWithRef<'div'>, 'size'>
   radius?: PopoverRadius;
   shadow?: PopoverShadow;
   size?: PopoverSize;
+  trigger?: PopoverTrigger;
   withinPortal?: boolean;
 }
 

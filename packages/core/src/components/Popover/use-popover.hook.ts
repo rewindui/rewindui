@@ -20,6 +20,7 @@ export function usePopover({
   placement = 'bottom',
   initiallyOpen = false,
   offset = 8,
+  trigger = 'hover',
 }: Partial<PopoverProps>): any {
   const arrowRef = useRef(null);
   const [open, setOpen] = useState(initiallyOpen);
@@ -38,11 +39,16 @@ export function usePopover({
     ],
     whileElementsMounted: autoUpdate,
   });
+
+  console.log(trigger);
+  console.log({ open });
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useClick(context, {
-      enabled: open == null,
+      enabled: trigger === 'click',
+      toggle: true,
     }),
     useHover(context, {
+      enabled: trigger === 'hover',
       move: true,
       handleClose: safePolygon(),
     }),
@@ -52,6 +58,8 @@ export function usePopover({
     }),
     useRole(context, { role: 'dialog' }),
   ]);
+
+  console.log(getReferenceProps());
 
   return useMemo(
     () => ({

@@ -10,6 +10,7 @@ const base = cva(
     'duration-50',
     'ease-in-out',
     'cursor-pointer',
+    'self-start',
   ],
   {
     variants: {
@@ -235,10 +236,10 @@ const inner = cva(['inline-block', 'bg-white', 'shadow'], {
 const label = cva(['cursor-pointer'], {
   variants: {
     size: {
-      sm: ['text-sm', 'pl-1.5'],
-      md: ['text-base', 'pl-1.5'],
-      lg: ['text-lg', 'pl-2'],
-      xl: ['text-xl', 'pl-2'],
+      sm: ['text-sm', 'pl-1.5', 'leading-[21px]'],
+      md: ['text-base', 'pl-1.5', 'leading-[24px]'],
+      lg: ['text-lg', 'pl-2', 'leading-[25px]'],
+      xl: ['text-xl', 'pl-2', 'leading-[26px]'],
     },
     disabled: {
       true: ['text-gray-500'],

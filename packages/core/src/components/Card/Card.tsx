@@ -13,7 +13,7 @@ import { CardContextProvider } from './Card.context';
 const defaultProps: Partial<CardProps> = {
   bordered: true,
   color: 'white',
-  radius: 'base',
+  radius: 'md',
   shadow: 'sm',
   size: 'base',
   withDivider: true,

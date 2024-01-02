@@ -7,7 +7,7 @@ export const SelectCode = (props: any) => {
   const defaultProps = {
     color: 'dark',
     disabled: false,
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',

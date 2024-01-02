@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Popover, PopoverProps } from '@rewind-ui/core';
+import { Button, Popover, PopoverProps } from '@rewind-ui/core';
 import * as React from 'react';
 
 export const PopoverCode = (props: any) => {
@@ -7,7 +7,7 @@ export const PopoverCode = (props: any) => {
   const defaultProps = {
     color: 'white',
     placement: 'top',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'sm',
   };

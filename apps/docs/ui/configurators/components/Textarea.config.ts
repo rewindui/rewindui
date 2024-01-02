@@ -7,7 +7,7 @@ export const TextareaConfig = {
     color: 'dark',
     disabled: false,
     placeholder: 'This is just a placeholder...',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',

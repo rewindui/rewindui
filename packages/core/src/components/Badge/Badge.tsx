@@ -8,7 +8,7 @@ import { twMerge } from 'tailwind-merge';
 
 const defaultProps: Partial<BadgeProps> = {
   color: 'dark',
-  radius: 'md',
+  radius: 'lg',
   shadow: 'none',
   shadowColor: 'none',
   size: 'sm',

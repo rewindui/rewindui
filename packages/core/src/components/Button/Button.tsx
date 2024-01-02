@@ -17,7 +17,7 @@ const defaultProps: Partial<ButtonProps> = {
   disabled: false,
   icon: false,
   loading: false,
-  radius: 'md',
+  radius: 'lg',
   shadow: 'none',
   shadowColor: 'none',
   size: 'md',

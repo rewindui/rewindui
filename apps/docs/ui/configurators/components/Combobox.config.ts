@@ -13,7 +13,7 @@ export const ComboboxConfig = {
     loading: false,
     mode: 'spacey',
     placeholder: 'Select a country...',
-    radius: 'md',
+    radius: 'lg',
     searchable: true,
     shadow: 'none',
     size: 'md',

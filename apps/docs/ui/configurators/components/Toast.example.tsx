@@ -27,7 +27,7 @@ export const ToastCode = (props: any) => {
     max: 5,
     pauseOnHover: true,
     position: 'top-right',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     shadowColor: 'none',
     showProgress: true,

@@ -7,7 +7,7 @@ export const TooltipCode = (props: any) => {
   const defaultProps = {
     color: 'dark',
     placement: 'top',
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'sm',
     tone: 'solid',

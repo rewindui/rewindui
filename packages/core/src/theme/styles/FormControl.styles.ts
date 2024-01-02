@@ -2,13 +2,13 @@ import { cva } from 'class-variance-authority';
 
 const base = cva(['flex', 'flex-col', 'space-y-1']);
 
-const label = cva(['text-gray-800'], {
+const label = cva(['text-gray-700', 'font-medium', 'w-fit'], {
   variants: {
     size: {
       xs: ['text-xs'],
       sm: ['text-sm'],
-      md: ['text-base'],
-      lg: ['text-lg'],
+      md: ['text-sm'],
+      lg: ['text-base'],
     },
     required: {
       true: ["after:content-['*']", 'after:ml-0.5', 'after:text-red-500'],

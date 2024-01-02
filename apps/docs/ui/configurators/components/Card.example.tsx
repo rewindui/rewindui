@@ -7,7 +7,7 @@ export const CardCode = (props: any) => {
   const defaultProps = {
     bordered: true,
     color: 'white',
-    radius: 'base',
+    radius: 'md',
     shadow: 'sm',
     size: 'base',
     withDivider: true,

@@ -11,7 +11,7 @@ export const ButtonCode = (props: any) => {
     disabled: false,
     icon: false,
     loading: false,
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     shadowColor: 'none',
     size: 'md',

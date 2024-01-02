@@ -6,7 +6,7 @@ export const SelectConfig = {
   state: {
     color: 'dark',
     disabled: false,
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',

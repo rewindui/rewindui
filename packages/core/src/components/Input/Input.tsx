@@ -12,7 +12,7 @@ const defaultProps: Partial<InputProps> = {
   color: 'dark',
   disabled: false,
   loading: false,
-  radius: 'md',
+  radius: 'lg',
   shadow: 'none',
   size: 'md',
   tone: 'light',

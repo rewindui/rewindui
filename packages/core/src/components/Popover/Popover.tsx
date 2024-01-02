@@ -13,25 +13,27 @@ const defaultProps: Partial<PopoverProps> = {
   initiallyOpen: false,
   offset: 8,
   placement: 'top',
-  radius: 'md',
+  radius: 'lg',
   shadow: 'base',
   size: 'md',
+  trigger: 'hover',
   withinPortal: true,
 };
 
 const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
   (props: PopoverProps, ref?: ForwardedRef<HTMLDivElement>) => {
     const {
+      children,
       className = '',
       color,
-      children,
-      size,
-      radius,
-      placement,
-      shadow,
       initiallyOpen,
-      withinPortal,
       offset,
+      placement,
+      radius,
+      shadow,
+      size,
+      trigger,
+      withinPortal,
       ...additionalProps
     } = {
       ...defaultProps,
@@ -54,6 +56,7 @@ const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
       placement,
       initiallyOpen,
       offset,
+      trigger,
     });
 
     const controlsId = `${id}-controls`;
@@ -81,12 +84,7 @@ const _Popover: PopoverComponent = forwardRef<HTMLDivElement, PopoverProps>(
 
     return (
       <PopoverContextProvider value={contextValue}>
-        <div
-          id={id}
-          ref={ref}
-          className={className}
-          {...additionalProps}
-        >
+        <div id={id} ref={ref} className={className} {...additionalProps}>
           {children}
         </div>
       </PopoverContextProvider>

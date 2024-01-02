@@ -9,7 +9,7 @@ export const ButtonConfig = {
     disabled: false,
     loading: false,
     icon: false,
-    radius: 'md',
+    radius: 'lg',
     shadow: 'base',
     shadowColor: 'none',
     size: 'md',
