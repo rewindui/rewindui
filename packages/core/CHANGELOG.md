@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.5
+
+### Patch Changes
+
+- 2339c3f: Minor style improvements
+
 ## 0.19.4
 
 ### Patch Changes
