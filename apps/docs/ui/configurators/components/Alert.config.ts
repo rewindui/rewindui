@@ -63,7 +63,7 @@ export const AlertConfig = {
       label: 'Icon type',
       name: 'iconType',
       type: 'select',
-      options: ['', 'info', 'success', 'warning', 'error', 'question'],
+      options: ['', 'info', 'success', 'warning', 'error', 'question', 'loading'],
     },
     {
       label: 'Dismissable',

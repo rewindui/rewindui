@@ -11,7 +11,7 @@ export type AlertColor =
   | 'gray'
   | 'dark'
   | 'black';
-export type AlertIconType = 'info' | 'success' | 'warning' | 'error' | 'question';
+export type AlertIconType = 'info' | 'success' | 'warning' | 'error' | 'question' | 'loading';
 export type AlertRadius = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'full';
 export type AlertShadow = 'none' | 'sm' | 'base' | 'md' | 'lg' | 'xl';
 export type AlertShadowColor =

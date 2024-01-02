@@ -10,10 +10,11 @@ import { useComponentTheme } from '@theme/theme.context';
 import { useComponentVariant } from '@theme/variant.context';
 import { usePropId } from '@utils/usePropId';
 import * as React from 'react';
-import { Ref, forwardRef, useMemo, useState, useRef } from 'react';
+import { Ref, forwardRef, useMemo, useState, useRef, ReactNode } from 'react';
 import { XMarkIcon } from '@icons/XMark';
 import { twMerge } from 'tailwind-merge';
 import { useMergeRefs } from '@floating-ui/react';
+import { Spinner } from '@components/Spinner';
 
 const defaultProps: Partial<AlertProps> = {
   accent: 'none',
@@ -27,12 +28,13 @@ const defaultProps: Partial<AlertProps> = {
   tone: 'light',
 };
 
-const icons: Record<AlertIconType, JSX.Element> = {
+const icons: Record<AlertIconType, ReactNode> = {
   error: <ErrorIcon />,
   info: <InfoIcon />,
   question: <QuestionIcon />,
   success: <SuccessIcon />,
   warning: <WarningIcon />,
+  loading: <Spinner size="xl" />,
 };
 
 const Alert: AlertComponent = forwardRef((props: AlertProps, ref?: Ref<HTMLDivElement>) => {
