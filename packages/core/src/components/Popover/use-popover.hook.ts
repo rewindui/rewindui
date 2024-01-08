@@ -40,8 +40,6 @@ export function usePopover({
     whileElementsMounted: autoUpdate,
   });
 
-  console.log(trigger);
-  console.log({ open });
   const { getFloatingProps, getReferenceProps } = useInteractions([
     useClick(context, {
       enabled: trigger === 'click',
@@ -58,8 +56,6 @@ export function usePopover({
     }),
     useRole(context, { role: 'dialog' }),
   ]);
-
-  console.log(getReferenceProps());
 
   return useMemo(
     () => ({
