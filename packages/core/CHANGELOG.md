@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.7
+
+### Patch Changes
+
+- 10d338e: RadioGroup onChange event value fix
+
 ## 0.19.6
 
 ### Patch Changes
