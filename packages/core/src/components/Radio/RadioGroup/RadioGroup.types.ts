@@ -13,7 +13,6 @@ export interface RadioGroupContext {
   initialValue?: string;
   name: string;
   setValue(value: string): void;
-  value?: string;
 }
 
 export type RadioGroupComponent = ForwardRefExoticComponent<RadioGroupProps> & {

@@ -27,7 +27,6 @@ const RadioGroup: RadioGroupComponent = forwardRef(
       initialValue,
       name,
       setValue,
-      value,
     };
 
     const classes = useMemo(() => {

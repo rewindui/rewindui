@@ -79,6 +79,7 @@ const Radio: RadioComponent = forwardRef<HTMLInputElement, RadioProps>(
           onChange={handleChange}
           name={name}
           defaultChecked={!!initialValue ? initialValue === value : defaultChecked}
+          value={value}
           {...additionalProps}
         />
         <div className="grid grid-cols-1 justify-items-start">
