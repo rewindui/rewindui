@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.6
+
+### Patch Changes
+
+- e137939: Added loading icon type on Alert component
+
 ## 0.19.5
 
 ### Patch Changes
