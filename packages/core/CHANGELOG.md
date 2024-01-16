@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.8
+
+### Patch Changes
+
+- bb48b0a: Added button type on SelectorTab component. Added aria-live attribute on Toast component.
+
 ## 0.19.7
 
 ### Patch Changes
