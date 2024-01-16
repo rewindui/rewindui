@@ -62,6 +62,7 @@ const SelectorTab: SelectorTabComponent = forwardRef(
           onClick={handleClick}
           className={classes}
           disabled={disabled}
+          type="button"
           tabIndex={active ? 0 : -1}
           {...additionalProps}
         >

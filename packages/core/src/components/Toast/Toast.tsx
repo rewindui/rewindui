@@ -123,6 +123,7 @@ const Toast: ToastComponent = forwardRef<HTMLDivElement, ToastProps>(
         id={id}
         ref={ref}
         role="alert"
+        aria-live="assertive"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         className={classes}
