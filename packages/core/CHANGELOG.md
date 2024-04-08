@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.9
+
+### Patch Changes
+
+- 9b50005: Combobox tag overflow fix
+
 ## 0.19.8
 
 ### Patch Changes
