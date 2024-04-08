@@ -18,7 +18,7 @@ import { twMerge } from 'tailwind-merge';
 import { InputGroupContextProvider } from './InputGroup.context';
 
 const defaultProps: Partial<InputGroupProps> = {
-  radius: 'md',
+  radius: 'lg',
   shadow: 'none',
   size: 'md',
   tone: 'light',

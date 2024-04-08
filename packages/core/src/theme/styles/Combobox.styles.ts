@@ -331,16 +331,7 @@ const tagButton = cva(['flex', 'items-center', 'h-full', 'mr-1'], {
 const tagButtonIcon = cva(['text-xs', 'text-gray-500']);
 
 const tag = cva(
-  [
-    'flex',
-    'items-center',
-    'rounded',
-    'border',
-    'border-gray-200',
-    'whitespace-nowrap',
-    'leading-none',
-    'shadow-sm',
-  ],
+  ['flex', 'items-center', 'rounded', 'border', 'border-gray-200', 'leading-none', 'shadow-sm'],
   {
     variants: {
       disabled: {
@@ -353,10 +344,10 @@ const tag = cva(
         transparent: [],
       },
       size: {
-        xs: ['text-xs', 'px-1', 'h-[1.125rem]'],
-        sm: ['text-sm', 'px-1.5', 'h-[1.375rem]'],
-        md: ['text-sm', 'px-2', 'h-[1.625rem]'],
-        lg: ['text-base', 'px-2.5', 'h-[1.875rem]'],
+        xs: ['text-xs', 'px-1', 'py-0.5', 'min-h-[1.125rem]'],
+        sm: ['text-sm', 'px-1.5', 'py-1', 'min-h-[1.375rem]'],
+        md: ['text-sm', 'px-2', 'py-1', 'min-h-[1.625rem]'],
+        lg: ['text-base', 'px-2.5', 'py-1', 'min-h-[1.875rem]'],
       },
       radius: {
         none: ['rounded-none'],
@@ -410,7 +401,7 @@ const list = cva(
     'border-gray-200',
     'snap-y',
     'isolation-auto',
-    'z-40',
+    'z-[70]',
     'bg-white',
     'overflow-x-clip',
     'overflow-y-auto',

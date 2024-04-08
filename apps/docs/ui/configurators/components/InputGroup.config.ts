@@ -7,7 +7,7 @@ export const InputGroupConfig = {
   example: InputGroupExample,
   default: InputGroupCode,
   state: {
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',

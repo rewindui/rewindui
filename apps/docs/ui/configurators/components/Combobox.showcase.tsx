@@ -20,7 +20,7 @@ import {
 } from '@rewind-ui/core';
 import { useState } from 'react';
 import * as React from 'react';
-import { MagnifyingGlass } from '@phosphor-icons/react';
+import { MagnifyingGlass, Globe, Phone } from '@phosphor-icons/react';
 
 export type ComboboxShowcaseProps = {
   showcase:
@@ -47,6 +47,7 @@ export type ComboboxShowcaseProps = {
     | 'option-description'
     | 'option-media'
     | 'input-group'
+    | 'input-group-multiple'
     | 'form-control'
     | 'controlled'
     | 'on-search';
@@ -79,6 +80,7 @@ export const ComboboxShowcase = (props: ComboboxShowcaseProps) => {
     'option-description': <OptionDescription />,
     'option-media': <OptionMedia />,
     'input-group': <InputGroupCombobox />,
+    'input-group-multiple': <InputGroupComboboxMultiple />,
     'form-control': <FormControlCombobox />,
     'controlled-single': <ControlledSingle />,
     'controlled-multiple': <ControlledMultiple />,
@@ -129,6 +131,10 @@ const simpleOptions: ComboboxOptionType[] = [
   {
     value: '10',
     label: 'Mexico',
+  },
+  {
+    value: '11',
+    label: 'Saint Vincent and the Grenadines',
   },
 ];
 
@@ -268,6 +274,130 @@ const groupedOptions: ComboboxGroupType[] = [
         ),
       },
     ],
+  },
+];
+
+const codeOptions: ComboboxOptionType[] = [
+  {
+    value: '+49',
+    label: '+49',
+    description: 'Germany',
+    media: (
+      <Image
+        alt="Germany"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/germany-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+44',
+    label: '+44',
+    description: 'Great Britain',
+    media: (
+      <Image
+        alt="Great Britain"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/great-britain-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+30',
+    label: '+30',
+    description: 'Greece',
+    media: (
+      <Image
+        alt="Greece"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/greece-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+46',
+    label: '+46',
+    description: 'Sweden',
+    media: (
+      <Image
+        alt="Greece"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/sweden-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+81',
+    label: '+81',
+    description: 'Japan',
+    media: (
+      <Image
+        alt="Japan"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/japan-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+86',
+    label: '+86',
+    description: 'China',
+    disabled: true,
+    media: (
+      <Image
+        alt="China"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/china-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+91',
+    label: '+91',
+    description: 'India',
+    media: (
+      <Image
+        alt="India"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/india-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+1',
+    label: '+1',
+    description: 'USA',
+    media: (
+      <Image
+        alt="USA"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/usa-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+1',
+    label: '+1',
+    description: 'Canada',
+    media: (
+      <Image
+        alt="Canada"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/canada-circular.png"
+      />
+    ),
+  },
+  {
+    value: '+52',
+    label: '+52',
+    description: 'Mexico',
+    media: (
+      <Image
+        alt="Mexico"
+        className="w-10 h-10"
+        src="https://img.icons8.com/color/64/mexico-circular.png"
+      />
+    ),
   },
 ];
 
@@ -610,6 +740,32 @@ const InputGroupCombobox = () => {
       <InputGroup.Text>
         <MagnifyingGlass weight="duotone" />
       </InputGroup.Text>
+    </InputGroup>
+  );
+};
+
+const InputGroupComboboxMultiple = () => {
+  return (
+    <InputGroup className="w-full">
+      <InputGroup.Text>
+        <Globe />
+      </InputGroup.Text>
+      <InputGroup.Combobox initialValue="1">
+        {codeOptions.map((option, index) => (
+          <InputGroup.Combobox.Option
+            key={index}
+            value={option.value}
+            label={option.label}
+            description={option.description}
+            disabled={option.disabled}
+            media={option.media}
+          />
+        ))}
+      </InputGroup.Combobox>
+      <InputGroup.Text>
+        <Phone />
+      </InputGroup.Text>
+      <InputGroup.Input />
     </InputGroup>
   );
 };

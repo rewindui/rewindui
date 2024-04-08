@@ -79,6 +79,7 @@ function App() {
       <Combobox.Option value="8" label="United States" />
       <Combobox.Option value="9" label="Canada" />
       <Combobox.Option value="10" label="Mexico" />
+      <Combobox.Option value="11" label="Saint Vincent and the Grenadines" />
     </Combobox>
   );
 }
@@ -98,6 +99,7 @@ export const ComboboxExample = (props: ComboboxProps) => {
       <Combobox.Option value="8" label="United States" />
       <Combobox.Option value="9" label="Canada" />
       <Combobox.Option value="10" label="Mexico" />
+      <Combobox.Option value="11" label="Saint Vincent and the Grenadines" />
     </Combobox>
   );
 };

@@ -6,7 +6,7 @@ export const InputGroupCode = (props: any) => {
   const { size, tone, shadow, radius } = props;
 
   const defaultProps = {
-    radius: 'md',
+    radius: 'lg',
     shadow: 'none',
     size: 'md',
     tone: 'light',
