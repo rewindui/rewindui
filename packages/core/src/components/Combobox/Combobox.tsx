@@ -349,8 +349,10 @@ const _Combobox: ComboboxComponent = forwardRef(
 
       const dataset = Object.assign({}, localWrapperRef.current?.dataset);
 
-      const hasLeftElement = dataset.hasOwnProperty('hasLeftElement');
-      const hasRightElement = dataset.hasOwnProperty('hasRightElement');
+      const hasLeftElement =
+        dataset.hasOwnProperty('hasLeftElement') && dataset.hasLeftElement === 'true';
+      const hasRightElement =
+        dataset.hasOwnProperty('hasRightElement') && dataset.hasRightElement === 'true';
 
       setBaseClasses(
         theme.base({
