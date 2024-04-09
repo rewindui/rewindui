@@ -301,7 +301,7 @@ const wrapper = cva(['relative', 'w-full', 'flex', 'items-center'], {
   },
 });
 
-const tagWrapper = cva(['flex', 'flex-wrap', 'items-center', 'flex-start', 'mr-2'], {
+const tagWrapper = cva(['w-full', 'flex', 'flex-wrap', 'items-center', 'flex-start', 'mr-2'], {
   variants: {
     size: {
       xs: ['gap-0.5', 'py-0.5'],
