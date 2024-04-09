@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.11
+
+### Patch Changes
+
+- d19c5a1: Combobox styles fix
+
 ## 0.19.10
 
 ### Patch Changes
