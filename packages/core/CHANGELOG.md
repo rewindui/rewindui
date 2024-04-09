@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.10
+
+### Patch Changes
+
+- 90fc522: Combobox Input Group radius fix
+
 ## 0.19.9
 
 ### Patch Changes
