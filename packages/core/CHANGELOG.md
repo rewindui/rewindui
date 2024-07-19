@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.19.12
+
+### Patch Changes
+
+- a0b980f: Vite hotfix
+
 ## 0.19.11
 
 ### Patch Changes
