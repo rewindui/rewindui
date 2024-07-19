@@ -32,7 +32,18 @@ const tscAlias = () => {
   };
 };
 
-export default [
+// Custom plugin to conditionally apply the terser plugin
+const conditionalTerser = (excludedPatterns, options) => ({
+  name: 'conditional-terser',
+  renderChunk(code, chunk) {
+    if (excludedPatterns.some((pattern) => pattern.test(chunk.fileName))) {
+      return { code, map: null }; // Skip minification
+    }
+    return terser().renderChunk.call(this, code, chunk, options);
+  },
+});
+
+const config = [
   {
     input: 'src/index.ts',
     output: [
@@ -70,7 +81,7 @@ export default [
       }),
       typescriptPaths(),
       preserveDirectives(),
-      terser({ compress: { directives: false } }),
+      conditionalTerser([/theme\/styles\/.*.styles.js/], { compress: { directives: false } }),
       copy({
         targets: [{ src: './../../README.md', dest: 'dist' }],
       }),
@@ -83,3 +94,5 @@ export default [
     },
   },
 ];
+
+export default config;
