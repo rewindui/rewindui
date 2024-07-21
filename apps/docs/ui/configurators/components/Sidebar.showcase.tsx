@@ -5,7 +5,7 @@ import { EnvelopeOpen } from '@/ui/icons/EnvelopeOpen';
 import { Shield } from '@/ui/icons/Shield';
 import { Sliders } from '@/ui/icons/Sliders';
 import { Users } from '@/ui/icons/Users';
-import { Button, Overlay, Sidebar, SidebarProps, SidebarState, useSidebar } from '@rewind-ui/core';
+import { Badge, Button, Overlay, Sidebar, SidebarProps, SidebarState, useSidebar } from '@rewind-ui/core';
 import { ReactNode, useState } from 'react';
 import * as React from 'react';
 import Image from 'next/image';
@@ -352,7 +352,17 @@ const Item = () => {
 
         <Sidebar.Nav>
           <Sidebar.Nav.Section>
-            <Sidebar.Nav.Section.Item icon={<RocketLaunch />} label="Dashboard" href="#" active />
+            <Sidebar.Nav.Section.Item
+              icon={<RocketLaunch />}
+              label={
+                <span>
+                  Dashboard
+                  <Badge color="red" size="xs" className="ml-1">Beta</Badge>
+                </span>
+              }
+              href="#"
+              active
+            />
           </Sidebar.Nav.Section>
         </Sidebar.Nav>
       </Sidebar>

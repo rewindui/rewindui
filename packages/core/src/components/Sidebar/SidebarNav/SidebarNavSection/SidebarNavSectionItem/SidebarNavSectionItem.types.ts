@@ -12,7 +12,7 @@ export interface SidebarNavSectionItemProps extends ComponentPropsWithRef<'li'> 
   asProps?: Record<string, any>;
   href?: string;
   icon?: ReactNode;
-  label: string;
+  label: ReactNode;
   active?: boolean;
   collapsed?: boolean;
 }
