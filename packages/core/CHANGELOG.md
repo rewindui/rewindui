@@ -1,5 +1,11 @@
 # @rewind-ui/core
 
+## 0.20.0
+
+### Minor Changes
+
+- f9cbefc: Adjusted Sidebar Item label type
+
 ## 0.19.12
 
 ### Patch Changes
