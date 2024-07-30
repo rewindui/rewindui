@@ -186,10 +186,20 @@ The `Sidebar.Nav.Section.Item` component is used to render an item of a section.
 <View>
   <Sidebar>
     <Sidebar.Nav>
-      <Sidebar.Nav.Section>
-        <Sidebar.Nav.Section.Item icon={<RocketLaunch />} label="Dashboard" href="#" active />
-      </Sidebar.Nav.Section>
-    </Sidebar.Nav>
+          <Sidebar.Nav.Section>
+            <Sidebar.Nav.Section.Item
+              icon={<RocketLaunch />}
+              label={
+                <span>
+                  Dashboard
+                  <Badge color="red" size="xs" className="ml-2">Beta</Badge>
+                </span>
+              }
+              href="#"
+              active
+            />
+          </Sidebar.Nav.Section>
+        </Sidebar.Nav>
   </Sidebar>
 </View>
 ```
@@ -338,7 +348,7 @@ export const App = () => {
 | as        | `ElementType`         | Defines the type of the rendered element | `a`         |
 | asProps   | `Record<string, any>` | Defines the as Element properties        | `undefined` |
 | icon      | `ReactNode`           | Sets the item icon                       | `undefined` |
-| label     | `string`              | Sets the item label                      | `undefined` |
+| label     | `ReactNode`           | Sets the item label                      | `undefined` |
 | active    | `boolean`             | Sets the item state                      | `false`     |
 | collapsed | `boolean`             | Sets the item's initial collapsed state  | `true`      |
 
