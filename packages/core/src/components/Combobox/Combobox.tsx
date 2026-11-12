@@ -140,6 +140,7 @@ const _Combobox: ComboboxComponent = forwardRef(
     };
     const { x, y, reference, floating, strategy, getFloatingProps, open, setOpen } = useCombobox({
       offset,
+      disabled,
     });
     const wrapperRef = useMergeRefs([reference, localWrapperRef, ref || null]);
     const floatingRef = useMergeRefs([listRef, floating]);
@@ -443,7 +444,6 @@ const _Combobox: ComboboxComponent = forwardRef(
                 className={listClasses}
                 style={{
                   display: open ? 'block' : 'none',
-                  opacity: open && !disabled ? 1 : 0,
                   maxHeight: `${maxHeight}px`,
                   minWidth: `${minWidth}px`,
                   maxWidth: `${maxWidth}px`,
