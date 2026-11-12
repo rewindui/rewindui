@@ -2,7 +2,7 @@ import { axe, toHaveNoViolations } from 'jest-axe';
 import * as React from 'react';
 import { createRef } from 'react';
 import { act } from 'react-dom/test-utils';
-import { describe, it } from 'vitest';
+import { describe, it, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { Combobox, ComboboxGroupType } from '.';
 import '@testing-library/jest-dom';
@@ -137,6 +137,39 @@ describe('Combobox', () => {
     );
     await userEvent.click(ref.current as Element);
     expect(screen.queryByRole('listbox')).toBeInTheDocument();
+  });
+
+  it('should close the listbox when disabled after opening', async () => {
+    const onChange = vi.fn();
+    const props = { placeholder: 'Choose fruit', onChange };
+    const { rerender } = render(
+      <Combobox {...props}>
+        <Combobox.Option value="apple" label="Apple" />
+      </Combobox>
+    );
+    const input = screen.getByRole('combobox');
+
+    await userEvent.click(input);
+    expect(screen.getByRole('option', { name: 'Apple' })).toBeVisible();
+    onChange.mockClear();
+
+    rerender(
+      <Combobox {...props} disabled>
+        <Combobox.Option value="apple" label="Apple" />
+      </Combobox>
+    );
+    expect(input).toHaveAttribute('aria-expanded', 'false');
+    expect(screen.queryByRole('listbox')).not.toBeInTheDocument();
+    expect(onChange).not.toHaveBeenCalled();
+
+    rerender(
+      <Combobox {...props}>
+        <Combobox.Option value="apple" label="Apple" />
+      </Combobox>
+    );
+    await userEvent.click(input);
+    await userEvent.click(screen.getByRole('option', { name: 'Apple' }));
+    expect(onChange).toHaveBeenCalledWith('apple');
   });
 
   it('should close listbox on escape', async () => {

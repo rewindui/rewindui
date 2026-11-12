@@ -10,10 +10,16 @@ import {
   useRole,
 } from '@floating-ui/react';
 import { flip, inline } from '@floating-ui/react-dom';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
-export function useCombobox({ offset = 5 }: Partial<ComboboxProps>) {
-  const [open, setOpen] = useState(false);
+export function useCombobox({ offset = 5, disabled = false }: Partial<ComboboxProps>) {
+  const [requestedOpen, setOpen] = useState(false);
+  const open = requestedOpen && !disabled;
+
+  useEffect(() => {
+    if (disabled) setOpen(false);
+  }, [disabled]);
+
   const { x, y, refs, strategy, context } = useFloating({
     open,
     onOpenChange: setOpen,
@@ -23,7 +29,7 @@ export function useCombobox({ offset = 5 }: Partial<ComboboxProps>) {
   });
 
   const { getReferenceProps, getFloatingProps } = useInteractions([
-    useFocus(context),
+    useFocus(context, { enabled: !disabled }),
     useDismiss(context, {
       escapeKey: false,
       referencePress: false,
